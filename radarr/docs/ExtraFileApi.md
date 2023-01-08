@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost:7878*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ListExtrafile**](ExtraFileApi.md#ListExtrafile) | **Get** /api/v3/extrafile | 
+[**ListExtraFile**](ExtraFileApi.md#ListExtraFile) | **Get** /api/v3/extrafile | 
 
 
 
-## ListExtrafile
+## ListExtraFile
 
-> []ExtraFileResource ListExtrafile(ctx).MovieId(movieId).Execute()
+> []ExtraFileResource ListExtraFile(ctx).MovieId(movieId).Execute()
 
 
 
@@ -31,13 +31,13 @@ func main() {
 
     configuration := radarrClient.NewConfiguration()
     apiClient := radarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExtraFileApi.ListExtrafile(context.Background()).MovieId(movieId).Execute()
+    resp, r, err := apiClient.ExtraFileApi.ListExtraFile(context.Background()).MovieId(movieId).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ExtraFileApi.ListExtrafile``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ExtraFileApi.ListExtraFile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListExtrafile`: []ExtraFileResource
-    fmt.Fprintf(os.Stdout, "Response from `ExtraFileApi.ListExtrafile`: %v\n", resp)
+    // response from `ListExtraFile`: []ExtraFileResource
+    fmt.Fprintf(os.Stdout, "Response from `ExtraFileApi.ListExtraFile`: %v\n", resp)
 }
 ```
 
@@ -47,7 +47,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListExtrafileRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListExtraFileRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

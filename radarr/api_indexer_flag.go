@@ -21,23 +21,23 @@ import (
 
 // IndexerFlagApiService IndexerFlagApi service
 type IndexerFlagApiService service
-type ApiListIndexerflagRequest struct {
+type ApiListIndexerFlagRequest struct {
 	ctx context.Context
 	ApiService *IndexerFlagApiService
 }
 
-func (r ApiListIndexerflagRequest) Execute() ([]*IndexerFlagResource, *http.Response, error) {
-	return r.ApiService.ListIndexerflagExecute(r)
+func (r ApiListIndexerFlagRequest) Execute() ([]*IndexerFlagResource, *http.Response, error) {
+	return r.ApiService.ListIndexerFlagExecute(r)
 }
 
 /*
-ListIndexerflag Method for ListIndexerflag
+ListIndexerFlag Method for ListIndexerFlag
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListIndexerflagRequest
+ @return ApiListIndexerFlagRequest
 */
-func (a *IndexerFlagApiService) ListIndexerflag(ctx context.Context) ApiListIndexerflagRequest {
-	return ApiListIndexerflagRequest{
+func (a *IndexerFlagApiService) ListIndexerFlag(ctx context.Context) ApiListIndexerFlagRequest {
+	return ApiListIndexerFlagRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -45,7 +45,7 @@ func (a *IndexerFlagApiService) ListIndexerflag(ctx context.Context) ApiListInde
 
 // Execute executes the request
 //  @return []IndexerFlagResource
-func (a *IndexerFlagApiService) ListIndexerflagExecute(r ApiListIndexerflagRequest) ([]*IndexerFlagResource, *http.Response, error) {
+func (a *IndexerFlagApiService) ListIndexerFlagExecute(r ApiListIndexerFlagRequest) ([]*IndexerFlagResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -53,7 +53,7 @@ func (a *IndexerFlagApiService) ListIndexerflagExecute(r ApiListIndexerflagReque
 		localVarReturnValue  []*IndexerFlagResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerFlagApiService.ListIndexerflag")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerFlagApiService.ListIndexerFlag")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

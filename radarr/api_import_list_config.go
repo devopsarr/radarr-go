@@ -22,23 +22,23 @@ import (
 
 // ImportListConfigApiService ImportListConfigApi service
 type ImportListConfigApiService service
-type ApiGetConfigImportlistRequest struct {
+type ApiGetImportListConfigRequest struct {
 	ctx context.Context
 	ApiService *ImportListConfigApiService
 }
 
-func (r ApiGetConfigImportlistRequest) Execute() (*ImportListConfigResource, *http.Response, error) {
-	return r.ApiService.GetConfigImportlistExecute(r)
+func (r ApiGetImportListConfigRequest) Execute() (*ImportListConfigResource, *http.Response, error) {
+	return r.ApiService.GetImportListConfigExecute(r)
 }
 
 /*
-GetConfigImportlist Method for GetConfigImportlist
+GetImportListConfig Method for GetImportListConfig
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetConfigImportlistRequest
+ @return ApiGetImportListConfigRequest
 */
-func (a *ImportListConfigApiService) GetConfigImportlist(ctx context.Context) ApiGetConfigImportlistRequest {
-	return ApiGetConfigImportlistRequest{
+func (a *ImportListConfigApiService) GetImportListConfig(ctx context.Context) ApiGetImportListConfigRequest {
+	return ApiGetImportListConfigRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
@@ -46,7 +46,7 @@ func (a *ImportListConfigApiService) GetConfigImportlist(ctx context.Context) Ap
 
 // Execute executes the request
 //  @return ImportListConfigResource
-func (a *ImportListConfigApiService) GetConfigImportlistExecute(r ApiGetConfigImportlistRequest) (*ImportListConfigResource, *http.Response, error) {
+func (a *ImportListConfigApiService) GetImportListConfigExecute(r ApiGetImportListConfigRequest) (*ImportListConfigResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -54,7 +54,7 @@ func (a *ImportListConfigApiService) GetConfigImportlistExecute(r ApiGetConfigIm
 		localVarReturnValue  *ImportListConfigResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListConfigApiService.GetConfigImportlist")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListConfigApiService.GetImportListConfig")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -146,25 +146,25 @@ func (a *ImportListConfigApiService) GetConfigImportlistExecute(r ApiGetConfigIm
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiGetConfigImportlistByIdRequest struct {
+type ApiGetImportListConfigByIdRequest struct {
 	ctx context.Context
 	ApiService *ImportListConfigApiService
 	id int32
 }
 
-func (r ApiGetConfigImportlistByIdRequest) Execute() (*ImportListConfigResource, *http.Response, error) {
-	return r.ApiService.GetConfigImportlistByIdExecute(r)
+func (r ApiGetImportListConfigByIdRequest) Execute() (*ImportListConfigResource, *http.Response, error) {
+	return r.ApiService.GetImportListConfigByIdExecute(r)
 }
 
 /*
-GetConfigImportlistById Method for GetConfigImportlistById
+GetImportListConfigById Method for GetImportListConfigById
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiGetConfigImportlistByIdRequest
+ @return ApiGetImportListConfigByIdRequest
 */
-func (a *ImportListConfigApiService) GetConfigImportlistById(ctx context.Context, id int32) ApiGetConfigImportlistByIdRequest {
-	return ApiGetConfigImportlistByIdRequest{
+func (a *ImportListConfigApiService) GetImportListConfigById(ctx context.Context, id int32) ApiGetImportListConfigByIdRequest {
+	return ApiGetImportListConfigByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -173,7 +173,7 @@ func (a *ImportListConfigApiService) GetConfigImportlistById(ctx context.Context
 
 // Execute executes the request
 //  @return ImportListConfigResource
-func (a *ImportListConfigApiService) GetConfigImportlistByIdExecute(r ApiGetConfigImportlistByIdRequest) (*ImportListConfigResource, *http.Response, error) {
+func (a *ImportListConfigApiService) GetImportListConfigByIdExecute(r ApiGetImportListConfigByIdRequest) (*ImportListConfigResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -181,7 +181,7 @@ func (a *ImportListConfigApiService) GetConfigImportlistByIdExecute(r ApiGetConf
 		localVarReturnValue  *ImportListConfigResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListConfigApiService.GetConfigImportlistById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListConfigApiService.GetImportListConfigById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -274,31 +274,31 @@ func (a *ImportListConfigApiService) GetConfigImportlistByIdExecute(r ApiGetConf
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiUpdateConfigImportlistRequest struct {
+type ApiUpdateImportListConfigRequest struct {
 	ctx context.Context
 	ApiService *ImportListConfigApiService
 	id string
 	importListConfigResource *ImportListConfigResource
 }
 
-func (r ApiUpdateConfigImportlistRequest) ImportListConfigResource(importListConfigResource ImportListConfigResource) ApiUpdateConfigImportlistRequest {
+func (r ApiUpdateImportListConfigRequest) ImportListConfigResource(importListConfigResource ImportListConfigResource) ApiUpdateImportListConfigRequest {
 	r.importListConfigResource = &importListConfigResource
 	return r
 }
 
-func (r ApiUpdateConfigImportlistRequest) Execute() (*ImportListConfigResource, *http.Response, error) {
-	return r.ApiService.UpdateConfigImportlistExecute(r)
+func (r ApiUpdateImportListConfigRequest) Execute() (*ImportListConfigResource, *http.Response, error) {
+	return r.ApiService.UpdateImportListConfigExecute(r)
 }
 
 /*
-UpdateConfigImportlist Method for UpdateConfigImportlist
+UpdateImportListConfig Method for UpdateImportListConfig
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiUpdateConfigImportlistRequest
+ @return ApiUpdateImportListConfigRequest
 */
-func (a *ImportListConfigApiService) UpdateConfigImportlist(ctx context.Context, id string) ApiUpdateConfigImportlistRequest {
-	return ApiUpdateConfigImportlistRequest{
+func (a *ImportListConfigApiService) UpdateImportListConfig(ctx context.Context, id string) ApiUpdateImportListConfigRequest {
+	return ApiUpdateImportListConfigRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -307,7 +307,7 @@ func (a *ImportListConfigApiService) UpdateConfigImportlist(ctx context.Context,
 
 // Execute executes the request
 //  @return ImportListConfigResource
-func (a *ImportListConfigApiService) UpdateConfigImportlistExecute(r ApiUpdateConfigImportlistRequest) (*ImportListConfigResource, *http.Response, error) {
+func (a *ImportListConfigApiService) UpdateImportListConfigExecute(r ApiUpdateImportListConfigRequest) (*ImportListConfigResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -315,7 +315,7 @@ func (a *ImportListConfigApiService) UpdateConfigImportlistExecute(r ApiUpdateCo
 		localVarReturnValue  *ImportListConfigResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListConfigApiService.UpdateConfigImportlist")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListConfigApiService.UpdateImportListConfig")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

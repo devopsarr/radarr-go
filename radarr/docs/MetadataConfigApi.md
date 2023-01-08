@@ -4,15 +4,15 @@ All URIs are relative to *http://localhost:7878*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetConfigMetadata**](MetadataConfigApi.md#GetConfigMetadata) | **Get** /api/v3/config/metadata | 
-[**GetConfigMetadataById**](MetadataConfigApi.md#GetConfigMetadataById) | **Get** /api/v3/config/metadata/{id} | 
-[**UpdateConfigMetadata**](MetadataConfigApi.md#UpdateConfigMetadata) | **Put** /api/v3/config/metadata/{id} | 
+[**GetMetadataConfig**](MetadataConfigApi.md#GetMetadataConfig) | **Get** /api/v3/config/metadata | 
+[**GetMetadataConfigById**](MetadataConfigApi.md#GetMetadataConfigById) | **Get** /api/v3/config/metadata/{id} | 
+[**UpdateMetadataConfig**](MetadataConfigApi.md#UpdateMetadataConfig) | **Put** /api/v3/config/metadata/{id} | 
 
 
 
-## GetConfigMetadata
+## GetMetadataConfig
 
-> MetadataConfigResource GetConfigMetadata(ctx).Execute()
+> MetadataConfigResource GetMetadataConfig(ctx).Execute()
 
 
 
@@ -32,13 +32,13 @@ func main() {
 
     configuration := radarrClient.NewConfiguration()
     apiClient := radarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataConfigApi.GetConfigMetadata(context.Background()).Execute()
+    resp, r, err := apiClient.MetadataConfigApi.GetMetadataConfig(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataConfigApi.GetConfigMetadata``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataConfigApi.GetMetadataConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetConfigMetadata`: MetadataConfigResource
-    fmt.Fprintf(os.Stdout, "Response from `MetadataConfigApi.GetConfigMetadata`: %v\n", resp)
+    // response from `GetMetadataConfig`: MetadataConfigResource
+    fmt.Fprintf(os.Stdout, "Response from `MetadataConfigApi.GetMetadataConfig`: %v\n", resp)
 }
 ```
 
@@ -48,7 +48,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetConfigMetadataRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetMetadataConfigRequest struct via the builder pattern
 
 
 ### Return type
@@ -69,9 +69,9 @@ Other parameters are passed through a pointer to a apiGetConfigMetadataRequest s
 [[Back to README]](../README.md)
 
 
-## GetConfigMetadataById
+## GetMetadataConfigById
 
-> MetadataConfigResource GetConfigMetadataById(ctx, id).Execute()
+> MetadataConfigResource GetMetadataConfigById(ctx, id).Execute()
 
 
 
@@ -92,13 +92,13 @@ func main() {
 
     configuration := radarrClient.NewConfiguration()
     apiClient := radarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataConfigApi.GetConfigMetadataById(context.Background(), id).Execute()
+    resp, r, err := apiClient.MetadataConfigApi.GetMetadataConfigById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataConfigApi.GetConfigMetadataById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataConfigApi.GetMetadataConfigById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetConfigMetadataById`: MetadataConfigResource
-    fmt.Fprintf(os.Stdout, "Response from `MetadataConfigApi.GetConfigMetadataById`: %v\n", resp)
+    // response from `GetMetadataConfigById`: MetadataConfigResource
+    fmt.Fprintf(os.Stdout, "Response from `MetadataConfigApi.GetMetadataConfigById`: %v\n", resp)
 }
 ```
 
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetConfigMetadataByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetMetadataConfigByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -137,9 +137,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UpdateConfigMetadata
+## UpdateMetadataConfig
 
-> MetadataConfigResource UpdateConfigMetadata(ctx, id).MetadataConfigResource(metadataConfigResource).Execute()
+> MetadataConfigResource UpdateMetadataConfig(ctx, id).MetadataConfigResource(metadataConfigResource).Execute()
 
 
 
@@ -161,13 +161,13 @@ func main() {
 
     configuration := radarrClient.NewConfiguration()
     apiClient := radarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MetadataConfigApi.UpdateConfigMetadata(context.Background(), id).MetadataConfigResource(metadataConfigResource).Execute()
+    resp, r, err := apiClient.MetadataConfigApi.UpdateMetadataConfig(context.Background(), id).MetadataConfigResource(metadataConfigResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MetadataConfigApi.UpdateConfigMetadata``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MetadataConfigApi.UpdateMetadataConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateConfigMetadata`: MetadataConfigResource
-    fmt.Fprintf(os.Stdout, "Response from `MetadataConfigApi.UpdateConfigMetadata`: %v\n", resp)
+    // response from `UpdateMetadataConfig`: MetadataConfigResource
+    fmt.Fprintf(os.Stdout, "Response from `MetadataConfigApi.UpdateMetadataConfig`: %v\n", resp)
 }
 ```
 
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateConfigMetadataRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateMetadataConfigRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

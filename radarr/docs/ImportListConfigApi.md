@@ -4,15 +4,15 @@ All URIs are relative to *http://localhost:7878*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetConfigImportlist**](ImportListConfigApi.md#GetConfigImportlist) | **Get** /api/v3/config/importlist | 
-[**GetConfigImportlistById**](ImportListConfigApi.md#GetConfigImportlistById) | **Get** /api/v3/config/importlist/{id} | 
-[**UpdateConfigImportlist**](ImportListConfigApi.md#UpdateConfigImportlist) | **Put** /api/v3/config/importlist/{id} | 
+[**GetImportListConfig**](ImportListConfigApi.md#GetImportListConfig) | **Get** /api/v3/config/importlist | 
+[**GetImportListConfigById**](ImportListConfigApi.md#GetImportListConfigById) | **Get** /api/v3/config/importlist/{id} | 
+[**UpdateImportListConfig**](ImportListConfigApi.md#UpdateImportListConfig) | **Put** /api/v3/config/importlist/{id} | 
 
 
 
-## GetConfigImportlist
+## GetImportListConfig
 
-> ImportListConfigResource GetConfigImportlist(ctx).Execute()
+> ImportListConfigResource GetImportListConfig(ctx).Execute()
 
 
 
@@ -32,13 +32,13 @@ func main() {
 
     configuration := radarrClient.NewConfiguration()
     apiClient := radarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ImportListConfigApi.GetConfigImportlist(context.Background()).Execute()
+    resp, r, err := apiClient.ImportListConfigApi.GetImportListConfig(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ImportListConfigApi.GetConfigImportlist``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ImportListConfigApi.GetImportListConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetConfigImportlist`: ImportListConfigResource
-    fmt.Fprintf(os.Stdout, "Response from `ImportListConfigApi.GetConfigImportlist`: %v\n", resp)
+    // response from `GetImportListConfig`: ImportListConfigResource
+    fmt.Fprintf(os.Stdout, "Response from `ImportListConfigApi.GetImportListConfig`: %v\n", resp)
 }
 ```
 
@@ -48,7 +48,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetConfigImportlistRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetImportListConfigRequest struct via the builder pattern
 
 
 ### Return type
@@ -69,9 +69,9 @@ Other parameters are passed through a pointer to a apiGetConfigImportlistRequest
 [[Back to README]](../README.md)
 
 
-## GetConfigImportlistById
+## GetImportListConfigById
 
-> ImportListConfigResource GetConfigImportlistById(ctx, id).Execute()
+> ImportListConfigResource GetImportListConfigById(ctx, id).Execute()
 
 
 
@@ -92,13 +92,13 @@ func main() {
 
     configuration := radarrClient.NewConfiguration()
     apiClient := radarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ImportListConfigApi.GetConfigImportlistById(context.Background(), id).Execute()
+    resp, r, err := apiClient.ImportListConfigApi.GetImportListConfigById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ImportListConfigApi.GetConfigImportlistById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ImportListConfigApi.GetImportListConfigById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetConfigImportlistById`: ImportListConfigResource
-    fmt.Fprintf(os.Stdout, "Response from `ImportListConfigApi.GetConfigImportlistById`: %v\n", resp)
+    // response from `GetImportListConfigById`: ImportListConfigResource
+    fmt.Fprintf(os.Stdout, "Response from `ImportListConfigApi.GetImportListConfigById`: %v\n", resp)
 }
 ```
 
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetConfigImportlistByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetImportListConfigByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -137,9 +137,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UpdateConfigImportlist
+## UpdateImportListConfig
 
-> ImportListConfigResource UpdateConfigImportlist(ctx, id).ImportListConfigResource(importListConfigResource).Execute()
+> ImportListConfigResource UpdateImportListConfig(ctx, id).ImportListConfigResource(importListConfigResource).Execute()
 
 
 
@@ -161,13 +161,13 @@ func main() {
 
     configuration := radarrClient.NewConfiguration()
     apiClient := radarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ImportListConfigApi.UpdateConfigImportlist(context.Background(), id).ImportListConfigResource(importListConfigResource).Execute()
+    resp, r, err := apiClient.ImportListConfigApi.UpdateImportListConfig(context.Background(), id).ImportListConfigResource(importListConfigResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `ImportListConfigApi.UpdateConfigImportlist``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ImportListConfigApi.UpdateImportListConfig``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateConfigImportlist`: ImportListConfigResource
-    fmt.Fprintf(os.Stdout, "Response from `ImportListConfigApi.UpdateConfigImportlist`: %v\n", resp)
+    // response from `UpdateImportListConfig`: ImportListConfigResource
+    fmt.Fprintf(os.Stdout, "Response from `ImportListConfigApi.UpdateImportListConfig`: %v\n", resp)
 }
 ```
 
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateConfigImportlistRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateImportListConfigRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
