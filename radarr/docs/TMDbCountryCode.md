@@ -15,6 +15,8 @@
 
 * `GB` (value: `"gb"`)
 
+* `IE` (value: `"ie"`)
+
 * `IT` (value: `"it"`)
 
 * `ES` (value: `"es"`)

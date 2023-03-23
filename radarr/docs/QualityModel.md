@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Quality** | Pointer to [**Quality**](Quality.md) |  | [optional] 
 **Revision** | Pointer to [**Revision**](Revision.md) |  | [optional] 
-**HardcodedSubs** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -77,41 +76,6 @@ SetRevision sets Revision field to given value.
 
 HasRevision returns a boolean if a field has been set.
 
-### GetHardcodedSubs
-
-`func (o *QualityModel) GetHardcodedSubs() string`
-
-GetHardcodedSubs returns the HardcodedSubs field if non-nil, zero value otherwise.
-
-### GetHardcodedSubsOk
-
-`func (o *QualityModel) GetHardcodedSubsOk() (*string, bool)`
-
-GetHardcodedSubsOk returns a tuple with the HardcodedSubs field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHardcodedSubs
-
-`func (o *QualityModel) SetHardcodedSubs(v string)`
-
-SetHardcodedSubs sets HardcodedSubs field to given value.
-
-### HasHardcodedSubs
-
-`func (o *QualityModel) HasHardcodedSubs() bool`
-
-HasHardcodedSubs returns a boolean if a field has been set.
-
-### SetHardcodedSubsNil
-
-`func (o *QualityModel) SetHardcodedSubsNil(b bool)`
-
- SetHardcodedSubsNil sets the value for HardcodedSubs to be an explicit nil
-
-### UnsetHardcodedSubs
-`func (o *QualityModel) UnsetHardcodedSubs()`
-
-UnsetHardcodedSubs ensures that no value is present for HardcodedSubs, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
