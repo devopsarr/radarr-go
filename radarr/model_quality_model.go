@@ -18,7 +18,6 @@ import (
 type QualityModel struct {
 	Quality *Quality `json:"quality,omitempty"`
 	Revision *Revision `json:"revision,omitempty"`
-	HardcodedSubs NullableString `json:"hardcodedSubs,omitempty"`
 }
 
 // NewQualityModel instantiates a new QualityModel object
@@ -102,48 +101,6 @@ func (o *QualityModel) SetRevision(v Revision) {
 	o.Revision = &v
 }
 
-// GetHardcodedSubs returns the HardcodedSubs field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *QualityModel) GetHardcodedSubs() string {
-	if o == nil || isNil(o.HardcodedSubs.Get()) {
-		var ret string
-		return ret
-	}
-	return *o.HardcodedSubs.Get()
-}
-
-// GetHardcodedSubsOk returns a tuple with the HardcodedSubs field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *QualityModel) GetHardcodedSubsOk() (*string, bool) {
-	if o == nil {
-    return nil, false
-	}
-	return o.HardcodedSubs.Get(), o.HardcodedSubs.IsSet()
-}
-
-// HasHardcodedSubs returns a boolean if a field has been set.
-func (o *QualityModel) HasHardcodedSubs() bool {
-	if o != nil && o.HardcodedSubs.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetHardcodedSubs gets a reference to the given NullableString and assigns it to the HardcodedSubs field.
-func (o *QualityModel) SetHardcodedSubs(v string) {
-	o.HardcodedSubs.Set(&v)
-}
-// SetHardcodedSubsNil sets the value for HardcodedSubs to be an explicit nil
-func (o *QualityModel) SetHardcodedSubsNil() {
-	o.HardcodedSubs.Set(nil)
-}
-
-// UnsetHardcodedSubs ensures that no value is present for HardcodedSubs, not even an explicit nil
-func (o *QualityModel) UnsetHardcodedSubs() {
-	o.HardcodedSubs.Unset()
-}
-
 func (o QualityModel) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Quality) {
@@ -151,9 +108,6 @@ func (o QualityModel) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.Revision) {
 		toSerialize["revision"] = o.Revision
-	}
-	if o.HardcodedSubs.IsSet() {
-		toSerialize["hardcodedSubs"] = o.HardcodedSubs.Get()
 	}
 	return json.Marshal(toSerialize)
 }

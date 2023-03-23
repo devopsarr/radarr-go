@@ -28,7 +28,7 @@ type ParsedMovieInfo struct {
 	Year *int32 `json:"year,omitempty"`
 	ImdbId NullableString `json:"imdbId,omitempty"`
 	TmdbId *int32 `json:"tmdbId,omitempty"`
-	ExtraInfo map[string]interface{} `json:"extraInfo,omitempty"`
+	HardcodedSubs NullableString `json:"hardcodedSubs,omitempty"`
 	MovieTitle NullableString `json:"movieTitle,omitempty"`
 	PrimaryMovieTitle NullableString `json:"primaryMovieTitle,omitempty"`
 }
@@ -506,37 +506,46 @@ func (o *ParsedMovieInfo) SetTmdbId(v int32) {
 	o.TmdbId = &v
 }
 
-// GetExtraInfo returns the ExtraInfo field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ParsedMovieInfo) GetExtraInfo() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+// GetHardcodedSubs returns the HardcodedSubs field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ParsedMovieInfo) GetHardcodedSubs() string {
+	if o == nil || isNil(o.HardcodedSubs.Get()) {
+		var ret string
 		return ret
 	}
-	return o.ExtraInfo
+	return *o.HardcodedSubs.Get()
 }
 
-// GetExtraInfoOk returns a tuple with the ExtraInfo field value if set, nil otherwise
+// GetHardcodedSubsOk returns a tuple with the HardcodedSubs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ParsedMovieInfo) GetExtraInfoOk() (map[string]interface{}, bool) {
-	if o == nil || isNil(o.ExtraInfo) {
-    return map[string]interface{}{}, false
+func (o *ParsedMovieInfo) GetHardcodedSubsOk() (*string, bool) {
+	if o == nil {
+    return nil, false
 	}
-	return o.ExtraInfo, true
+	return o.HardcodedSubs.Get(), o.HardcodedSubs.IsSet()
 }
 
-// HasExtraInfo returns a boolean if a field has been set.
-func (o *ParsedMovieInfo) HasExtraInfo() bool {
-	if o != nil && isNil(o.ExtraInfo) {
+// HasHardcodedSubs returns a boolean if a field has been set.
+func (o *ParsedMovieInfo) HasHardcodedSubs() bool {
+	if o != nil && o.HardcodedSubs.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetExtraInfo gets a reference to the given map[string]interface{} and assigns it to the ExtraInfo field.
-func (o *ParsedMovieInfo) SetExtraInfo(v map[string]interface{}) {
-	o.ExtraInfo = v
+// SetHardcodedSubs gets a reference to the given NullableString and assigns it to the HardcodedSubs field.
+func (o *ParsedMovieInfo) SetHardcodedSubs(v string) {
+	o.HardcodedSubs.Set(&v)
+}
+// SetHardcodedSubsNil sets the value for HardcodedSubs to be an explicit nil
+func (o *ParsedMovieInfo) SetHardcodedSubsNil() {
+	o.HardcodedSubs.Set(nil)
+}
+
+// UnsetHardcodedSubs ensures that no value is present for HardcodedSubs, not even an explicit nil
+func (o *ParsedMovieInfo) UnsetHardcodedSubs() {
+	o.HardcodedSubs.Unset()
 }
 
 // GetMovieTitle returns the MovieTitle field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -661,8 +670,8 @@ func (o ParsedMovieInfo) MarshalJSON() ([]byte, error) {
 	if !isNil(o.TmdbId) {
 		toSerialize["tmdbId"] = o.TmdbId
 	}
-	if o.ExtraInfo != nil {
-		toSerialize["extraInfo"] = o.ExtraInfo
+	if o.HardcodedSubs.IsSet() {
+		toSerialize["hardcodedSubs"] = o.HardcodedSubs.Get()
 	}
 	if o.MovieTitle.IsSet() {
 		toSerialize["movieTitle"] = o.MovieTitle.Get()

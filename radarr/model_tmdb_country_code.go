@@ -26,6 +26,7 @@ const (
 	TMDBCOUNTRYCODE_FR TMDbCountryCode = "fr"
 	TMDBCOUNTRYCODE_DE TMDbCountryCode = "de"
 	TMDBCOUNTRYCODE_GB TMDbCountryCode = "gb"
+	TMDBCOUNTRYCODE_IE TMDbCountryCode = "ie"
 	TMDBCOUNTRYCODE_IT TMDbCountryCode = "it"
 	TMDBCOUNTRYCODE_ES TMDbCountryCode = "es"
 	TMDBCOUNTRYCODE_US TMDbCountryCode = "us"
@@ -40,6 +41,7 @@ var AllowedTMDbCountryCodeEnumValues = []TMDbCountryCode{
 	"fr",
 	"de",
 	"gb",
+	"ie",
 	"it",
 	"es",
 	"us",

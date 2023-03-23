@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **Size** | Pointer to **float64** |  | [optional] 
 **Title** | Pointer to **NullableString** |  | [optional] 
 **Sizeleft** | Pointer to **float64** |  | [optional] 
-**Timeleft** | Pointer to [**TimeSpan**](TimeSpan.md) |  | [optional] 
+**Timeleft** | Pointer to **string** |  | [optional] 
 **EstimatedCompletionTime** | Pointer to **NullableTime** |  | [optional] 
 **Status** | Pointer to **NullableString** |  | [optional] 
 **TrackedDownloadStatus** | Pointer to [**TrackedDownloadStatus**](TrackedDownloadStatus.md) |  | [optional] 
@@ -312,20 +312,20 @@ HasSizeleft returns a boolean if a field has been set.
 
 ### GetTimeleft
 
-`func (o *QueueResource) GetTimeleft() TimeSpan`
+`func (o *QueueResource) GetTimeleft() string`
 
 GetTimeleft returns the Timeleft field if non-nil, zero value otherwise.
 
 ### GetTimeleftOk
 
-`func (o *QueueResource) GetTimeleftOk() (*TimeSpan, bool)`
+`func (o *QueueResource) GetTimeleftOk() (*string, bool)`
 
 GetTimeleftOk returns a tuple with the Timeleft field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTimeleft
 
-`func (o *QueueResource) SetTimeleft(v TimeSpan)`
+`func (o *QueueResource) SetTimeleft(v string)`
 
 SetTimeleft sets Timeleft field to given value.
 

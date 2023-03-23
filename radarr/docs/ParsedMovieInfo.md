@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **Year** | Pointer to **int32** |  | [optional] 
 **ImdbId** | Pointer to **NullableString** |  | [optional] 
 **TmdbId** | Pointer to **int32** |  | [optional] 
-**ExtraInfo** | Pointer to **map[string]interface{}** |  | [optional] 
+**HardcodedSubs** | Pointer to **NullableString** |  | [optional] 
 **MovieTitle** | Pointer to **NullableString** |  | [optional] [readonly] 
 **PrimaryMovieTitle** | Pointer to **NullableString** |  | [optional] [readonly] 
 
@@ -429,41 +429,41 @@ SetTmdbId sets TmdbId field to given value.
 
 HasTmdbId returns a boolean if a field has been set.
 
-### GetExtraInfo
+### GetHardcodedSubs
 
-`func (o *ParsedMovieInfo) GetExtraInfo() map[string]interface{}`
+`func (o *ParsedMovieInfo) GetHardcodedSubs() string`
 
-GetExtraInfo returns the ExtraInfo field if non-nil, zero value otherwise.
+GetHardcodedSubs returns the HardcodedSubs field if non-nil, zero value otherwise.
 
-### GetExtraInfoOk
+### GetHardcodedSubsOk
 
-`func (o *ParsedMovieInfo) GetExtraInfoOk() (*map[string]interface{}, bool)`
+`func (o *ParsedMovieInfo) GetHardcodedSubsOk() (*string, bool)`
 
-GetExtraInfoOk returns a tuple with the ExtraInfo field if it's non-nil, zero value otherwise
+GetHardcodedSubsOk returns a tuple with the HardcodedSubs field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetExtraInfo
+### SetHardcodedSubs
 
-`func (o *ParsedMovieInfo) SetExtraInfo(v map[string]interface{})`
+`func (o *ParsedMovieInfo) SetHardcodedSubs(v string)`
 
-SetExtraInfo sets ExtraInfo field to given value.
+SetHardcodedSubs sets HardcodedSubs field to given value.
 
-### HasExtraInfo
+### HasHardcodedSubs
 
-`func (o *ParsedMovieInfo) HasExtraInfo() bool`
+`func (o *ParsedMovieInfo) HasHardcodedSubs() bool`
 
-HasExtraInfo returns a boolean if a field has been set.
+HasHardcodedSubs returns a boolean if a field has been set.
 
-### SetExtraInfoNil
+### SetHardcodedSubsNil
 
-`func (o *ParsedMovieInfo) SetExtraInfoNil(b bool)`
+`func (o *ParsedMovieInfo) SetHardcodedSubsNil(b bool)`
 
- SetExtraInfoNil sets the value for ExtraInfo to be an explicit nil
+ SetHardcodedSubsNil sets the value for HardcodedSubs to be an explicit nil
 
-### UnsetExtraInfo
-`func (o *ParsedMovieInfo) UnsetExtraInfo()`
+### UnsetHardcodedSubs
+`func (o *ParsedMovieInfo) UnsetHardcodedSubs()`
 
-UnsetExtraInfo ensures that no value is present for ExtraInfo, not even an explicit nil
+UnsetHardcodedSubs ensures that no value is present for HardcodedSubs, not even an explicit nil
 ### GetMovieTitle
 
 `func (o *ParsedMovieInfo) GetMovieTitle() string`
