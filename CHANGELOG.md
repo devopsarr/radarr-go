@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/devopsarr/radarr-go/compare/v0.1.0...v0.2.0) (2023-03-23)
+
+
+### Features
+
+* sdk generation alignment ([0533d5c](https://github.com/devopsarr/radarr-go/commit/0533d5c1c82fea70008f2f1e0c974b9eab3d3198))
+
 ## 0.1.0 (2023-01-24)
 
 
