@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/devopsarr/radarr-go/compare/v0.2.0...v0.2.1) (2023-03-27)
+
+
+### Bug Fixes
+
+* **devopsarr/sonarr-py#6:** remove timespan validator ([9136034](https://github.com/devopsarr/radarr-go/commit/913603435f489df764fe58bfaef650081a8167de))
+
 ## [0.2.0](https://github.com/devopsarr/radarr-go/compare/v0.1.0...v0.2.0) (2023-03-23)
 
 
