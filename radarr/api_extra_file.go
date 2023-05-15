@@ -19,11 +19,11 @@ import (
 )
 
 
-// ExtraFileAPIService ExtraFileAPI service
-type ExtraFileAPIService service
+// ExtraFileApiService ExtraFileApi service
+type ExtraFileApiService service
 type ApiListExtraFileRequest struct {
 	ctx context.Context
-	ApiService *ExtraFileAPIService
+	ApiService *ExtraFileApiService
 	movieId *int32
 }
 
@@ -42,7 +42,7 @@ ListExtraFile Method for ListExtraFile
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListExtraFileRequest
 */
-func (a *ExtraFileAPIService) ListExtraFile(ctx context.Context) ApiListExtraFileRequest {
+func (a *ExtraFileApiService) ListExtraFile(ctx context.Context) ApiListExtraFileRequest {
 	return ApiListExtraFileRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -51,7 +51,7 @@ func (a *ExtraFileAPIService) ListExtraFile(ctx context.Context) ApiListExtraFil
 
 // Execute executes the request
 //  @return []ExtraFileResource
-func (a *ExtraFileAPIService) ListExtraFileExecute(r ApiListExtraFileRequest) ([]*ExtraFileResource, *http.Response, error) {
+func (a *ExtraFileApiService) ListExtraFileExecute(r ApiListExtraFileRequest) ([]*ExtraFileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -59,7 +59,7 @@ func (a *ExtraFileAPIService) ListExtraFileExecute(r ApiListExtraFileRequest) ([
 		localVarReturnValue  []*ExtraFileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtraFileAPIService.ListExtraFile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtraFileApiService.ListExtraFile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

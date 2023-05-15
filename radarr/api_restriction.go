@@ -20,11 +20,11 @@ import (
 )
 
 
-// RestrictionAPIService RestrictionAPI service
-type RestrictionAPIService service
+// RestrictionApiService RestrictionApi service
+type RestrictionApiService service
 type ApiCreateRestrictionRequest struct {
 	ctx context.Context
-	ApiService *RestrictionAPIService
+	ApiService *RestrictionApiService
 	restrictionResource *RestrictionResource
 }
 
@@ -43,7 +43,7 @@ CreateRestriction Method for CreateRestriction
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateRestrictionRequest
 */
-func (a *RestrictionAPIService) CreateRestriction(ctx context.Context) ApiCreateRestrictionRequest {
+func (a *RestrictionApiService) CreateRestriction(ctx context.Context) ApiCreateRestrictionRequest {
 	return ApiCreateRestrictionRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -52,7 +52,7 @@ func (a *RestrictionAPIService) CreateRestriction(ctx context.Context) ApiCreate
 
 // Execute executes the request
 //  @return RestrictionResource
-func (a *RestrictionAPIService) CreateRestrictionExecute(r ApiCreateRestrictionRequest) (*RestrictionResource, *http.Response, error) {
+func (a *RestrictionApiService) CreateRestrictionExecute(r ApiCreateRestrictionRequest) (*RestrictionResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *RestrictionAPIService) CreateRestrictionExecute(r ApiCreateRestrictionR
 		localVarReturnValue  *RestrictionResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestrictionAPIService.CreateRestriction")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestrictionApiService.CreateRestriction")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -156,7 +156,7 @@ func (a *RestrictionAPIService) CreateRestrictionExecute(r ApiCreateRestrictionR
 }
 type ApiDeleteRestrictionRequest struct {
 	ctx context.Context
-	ApiService *RestrictionAPIService
+	ApiService *RestrictionApiService
 	id int32
 }
 
@@ -171,7 +171,7 @@ DeleteRestriction Method for DeleteRestriction
  @param id
  @return ApiDeleteRestrictionRequest
 */
-func (a *RestrictionAPIService) DeleteRestriction(ctx context.Context, id int32) ApiDeleteRestrictionRequest {
+func (a *RestrictionApiService) DeleteRestriction(ctx context.Context, id int32) ApiDeleteRestrictionRequest {
 	return ApiDeleteRestrictionRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -180,14 +180,14 @@ func (a *RestrictionAPIService) DeleteRestriction(ctx context.Context, id int32)
 }
 
 // Execute executes the request
-func (a *RestrictionAPIService) DeleteRestrictionExecute(r ApiDeleteRestrictionRequest) (*http.Response, error) {
+func (a *RestrictionApiService) DeleteRestrictionExecute(r ApiDeleteRestrictionRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestrictionAPIService.DeleteRestriction")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestrictionApiService.DeleteRestriction")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -273,7 +273,7 @@ func (a *RestrictionAPIService) DeleteRestrictionExecute(r ApiDeleteRestrictionR
 }
 type ApiGetRestrictionByIdRequest struct {
 	ctx context.Context
-	ApiService *RestrictionAPIService
+	ApiService *RestrictionApiService
 	id int32
 }
 
@@ -288,7 +288,7 @@ GetRestrictionById Method for GetRestrictionById
  @param id
  @return ApiGetRestrictionByIdRequest
 */
-func (a *RestrictionAPIService) GetRestrictionById(ctx context.Context, id int32) ApiGetRestrictionByIdRequest {
+func (a *RestrictionApiService) GetRestrictionById(ctx context.Context, id int32) ApiGetRestrictionByIdRequest {
 	return ApiGetRestrictionByIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -298,7 +298,7 @@ func (a *RestrictionAPIService) GetRestrictionById(ctx context.Context, id int32
 
 // Execute executes the request
 //  @return RestrictionResource
-func (a *RestrictionAPIService) GetRestrictionByIdExecute(r ApiGetRestrictionByIdRequest) (*RestrictionResource, *http.Response, error) {
+func (a *RestrictionApiService) GetRestrictionByIdExecute(r ApiGetRestrictionByIdRequest) (*RestrictionResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -306,7 +306,7 @@ func (a *RestrictionAPIService) GetRestrictionByIdExecute(r ApiGetRestrictionByI
 		localVarReturnValue  *RestrictionResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestrictionAPIService.GetRestrictionById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestrictionApiService.GetRestrictionById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -401,7 +401,7 @@ func (a *RestrictionAPIService) GetRestrictionByIdExecute(r ApiGetRestrictionByI
 }
 type ApiListRestrictionRequest struct {
 	ctx context.Context
-	ApiService *RestrictionAPIService
+	ApiService *RestrictionApiService
 }
 
 func (r ApiListRestrictionRequest) Execute() ([]*RestrictionResource, *http.Response, error) {
@@ -414,7 +414,7 @@ ListRestriction Method for ListRestriction
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListRestrictionRequest
 */
-func (a *RestrictionAPIService) ListRestriction(ctx context.Context) ApiListRestrictionRequest {
+func (a *RestrictionApiService) ListRestriction(ctx context.Context) ApiListRestrictionRequest {
 	return ApiListRestrictionRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -423,7 +423,7 @@ func (a *RestrictionAPIService) ListRestriction(ctx context.Context) ApiListRest
 
 // Execute executes the request
 //  @return []RestrictionResource
-func (a *RestrictionAPIService) ListRestrictionExecute(r ApiListRestrictionRequest) ([]*RestrictionResource, *http.Response, error) {
+func (a *RestrictionApiService) ListRestrictionExecute(r ApiListRestrictionRequest) ([]*RestrictionResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -431,7 +431,7 @@ func (a *RestrictionAPIService) ListRestrictionExecute(r ApiListRestrictionReque
 		localVarReturnValue  []*RestrictionResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestrictionAPIService.ListRestriction")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestrictionApiService.ListRestriction")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -525,7 +525,7 @@ func (a *RestrictionAPIService) ListRestrictionExecute(r ApiListRestrictionReque
 }
 type ApiUpdateRestrictionRequest struct {
 	ctx context.Context
-	ApiService *RestrictionAPIService
+	ApiService *RestrictionApiService
 	id string
 	restrictionResource *RestrictionResource
 }
@@ -546,7 +546,7 @@ UpdateRestriction Method for UpdateRestriction
  @param id
  @return ApiUpdateRestrictionRequest
 */
-func (a *RestrictionAPIService) UpdateRestriction(ctx context.Context, id string) ApiUpdateRestrictionRequest {
+func (a *RestrictionApiService) UpdateRestriction(ctx context.Context, id string) ApiUpdateRestrictionRequest {
 	return ApiUpdateRestrictionRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -556,7 +556,7 @@ func (a *RestrictionAPIService) UpdateRestriction(ctx context.Context, id string
 
 // Execute executes the request
 //  @return RestrictionResource
-func (a *RestrictionAPIService) UpdateRestrictionExecute(r ApiUpdateRestrictionRequest) (*RestrictionResource, *http.Response, error) {
+func (a *RestrictionApiService) UpdateRestrictionExecute(r ApiUpdateRestrictionRequest) (*RestrictionResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -564,7 +564,7 @@ func (a *RestrictionAPIService) UpdateRestrictionExecute(r ApiUpdateRestrictionR
 		localVarReturnValue  *RestrictionResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestrictionAPIService.UpdateRestriction")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestrictionApiService.UpdateRestriction")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

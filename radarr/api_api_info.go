@@ -19,11 +19,11 @@ import (
 )
 
 
-// ApiInfoAPIService ApiInfoAPI service
-type ApiInfoAPIService service
+// ApiInfoApiService ApiInfoApi service
+type ApiInfoApiService service
 type ApiGetApiRequest struct {
 	ctx context.Context
-	ApiService *ApiInfoAPIService
+	ApiService *ApiInfoApiService
 }
 
 func (r ApiGetApiRequest) Execute() (*ApiInfoResource, *http.Response, error) {
@@ -36,7 +36,7 @@ GetApi Method for GetApi
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetApiRequest
 */
-func (a *ApiInfoAPIService) GetApi(ctx context.Context) ApiGetApiRequest {
+func (a *ApiInfoApiService) GetApi(ctx context.Context) ApiGetApiRequest {
 	return ApiGetApiRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -45,7 +45,7 @@ func (a *ApiInfoAPIService) GetApi(ctx context.Context) ApiGetApiRequest {
 
 // Execute executes the request
 //  @return ApiInfoResource
-func (a *ApiInfoAPIService) GetApiExecute(r ApiGetApiRequest) (*ApiInfoResource, *http.Response, error) {
+func (a *ApiInfoApiService) GetApiExecute(r ApiGetApiRequest) (*ApiInfoResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -53,7 +53,7 @@ func (a *ApiInfoAPIService) GetApiExecute(r ApiGetApiRequest) (*ApiInfoResource,
 		localVarReturnValue  *ApiInfoResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiInfoAPIService.GetApi")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ApiInfoApiService.GetApi")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

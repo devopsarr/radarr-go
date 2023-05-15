@@ -21,11 +21,11 @@ import (
 )
 
 
-// MovieFileAPIService MovieFileAPI service
-type MovieFileAPIService service
+// MovieFileApiService MovieFileApi service
+type MovieFileApiService service
 type ApiDeleteMovieFileRequest struct {
 	ctx context.Context
-	ApiService *MovieFileAPIService
+	ApiService *MovieFileApiService
 	id int32
 }
 
@@ -40,7 +40,7 @@ DeleteMovieFile Method for DeleteMovieFile
  @param id
  @return ApiDeleteMovieFileRequest
 */
-func (a *MovieFileAPIService) DeleteMovieFile(ctx context.Context, id int32) ApiDeleteMovieFileRequest {
+func (a *MovieFileApiService) DeleteMovieFile(ctx context.Context, id int32) ApiDeleteMovieFileRequest {
 	return ApiDeleteMovieFileRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -49,14 +49,14 @@ func (a *MovieFileAPIService) DeleteMovieFile(ctx context.Context, id int32) Api
 }
 
 // Execute executes the request
-func (a *MovieFileAPIService) DeleteMovieFileExecute(r ApiDeleteMovieFileRequest) (*http.Response, error) {
+func (a *MovieFileApiService) DeleteMovieFileExecute(r ApiDeleteMovieFileRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieFileAPIService.DeleteMovieFile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieFileApiService.DeleteMovieFile")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -142,7 +142,7 @@ func (a *MovieFileAPIService) DeleteMovieFileExecute(r ApiDeleteMovieFileRequest
 }
 type ApiDeleteMovieFileBulkRequest struct {
 	ctx context.Context
-	ApiService *MovieFileAPIService
+	ApiService *MovieFileApiService
 	movieFileListResource *MovieFileListResource
 }
 
@@ -161,7 +161,7 @@ DeleteMovieFileBulk Method for DeleteMovieFileBulk
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiDeleteMovieFileBulkRequest
 */
-func (a *MovieFileAPIService) DeleteMovieFileBulk(ctx context.Context) ApiDeleteMovieFileBulkRequest {
+func (a *MovieFileApiService) DeleteMovieFileBulk(ctx context.Context) ApiDeleteMovieFileBulkRequest {
 	return ApiDeleteMovieFileBulkRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -169,14 +169,14 @@ func (a *MovieFileAPIService) DeleteMovieFileBulk(ctx context.Context) ApiDelete
 }
 
 // Execute executes the request
-func (a *MovieFileAPIService) DeleteMovieFileBulkExecute(r ApiDeleteMovieFileBulkRequest) (*http.Response, error) {
+func (a *MovieFileApiService) DeleteMovieFileBulkExecute(r ApiDeleteMovieFileBulkRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieFileAPIService.DeleteMovieFileBulk")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieFileApiService.DeleteMovieFileBulk")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -263,7 +263,7 @@ func (a *MovieFileAPIService) DeleteMovieFileBulkExecute(r ApiDeleteMovieFileBul
 }
 type ApiGetMovieFileByIdRequest struct {
 	ctx context.Context
-	ApiService *MovieFileAPIService
+	ApiService *MovieFileApiService
 	id int32
 }
 
@@ -278,7 +278,7 @@ GetMovieFileById Method for GetMovieFileById
  @param id
  @return ApiGetMovieFileByIdRequest
 */
-func (a *MovieFileAPIService) GetMovieFileById(ctx context.Context, id int32) ApiGetMovieFileByIdRequest {
+func (a *MovieFileApiService) GetMovieFileById(ctx context.Context, id int32) ApiGetMovieFileByIdRequest {
 	return ApiGetMovieFileByIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -288,7 +288,7 @@ func (a *MovieFileAPIService) GetMovieFileById(ctx context.Context, id int32) Ap
 
 // Execute executes the request
 //  @return MovieFileResource
-func (a *MovieFileAPIService) GetMovieFileByIdExecute(r ApiGetMovieFileByIdRequest) (*MovieFileResource, *http.Response, error) {
+func (a *MovieFileApiService) GetMovieFileByIdExecute(r ApiGetMovieFileByIdRequest) (*MovieFileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -296,7 +296,7 @@ func (a *MovieFileAPIService) GetMovieFileByIdExecute(r ApiGetMovieFileByIdReque
 		localVarReturnValue  *MovieFileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieFileAPIService.GetMovieFileById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieFileApiService.GetMovieFileById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -391,7 +391,7 @@ func (a *MovieFileAPIService) GetMovieFileByIdExecute(r ApiGetMovieFileByIdReque
 }
 type ApiListMovieFileRequest struct {
 	ctx context.Context
-	ApiService *MovieFileAPIService
+	ApiService *MovieFileApiService
 	movieId *int32
 	movieFileIds *[]int32
 }
@@ -416,7 +416,7 @@ ListMovieFile Method for ListMovieFile
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListMovieFileRequest
 */
-func (a *MovieFileAPIService) ListMovieFile(ctx context.Context) ApiListMovieFileRequest {
+func (a *MovieFileApiService) ListMovieFile(ctx context.Context) ApiListMovieFileRequest {
 	return ApiListMovieFileRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -425,7 +425,7 @@ func (a *MovieFileAPIService) ListMovieFile(ctx context.Context) ApiListMovieFil
 
 // Execute executes the request
 //  @return []MovieFileResource
-func (a *MovieFileAPIService) ListMovieFileExecute(r ApiListMovieFileRequest) ([]*MovieFileResource, *http.Response, error) {
+func (a *MovieFileApiService) ListMovieFileExecute(r ApiListMovieFileRequest) ([]*MovieFileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -433,7 +433,7 @@ func (a *MovieFileAPIService) ListMovieFileExecute(r ApiListMovieFileRequest) ([
 		localVarReturnValue  []*MovieFileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieFileAPIService.ListMovieFile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieFileApiService.ListMovieFile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -541,7 +541,7 @@ func (a *MovieFileAPIService) ListMovieFileExecute(r ApiListMovieFileRequest) ([
 }
 type ApiPutMovieFileEditorRequest struct {
 	ctx context.Context
-	ApiService *MovieFileAPIService
+	ApiService *MovieFileApiService
 	movieFileListResource *MovieFileListResource
 }
 
@@ -560,7 +560,7 @@ PutMovieFileEditor Method for PutMovieFileEditor
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPutMovieFileEditorRequest
 */
-func (a *MovieFileAPIService) PutMovieFileEditor(ctx context.Context) ApiPutMovieFileEditorRequest {
+func (a *MovieFileApiService) PutMovieFileEditor(ctx context.Context) ApiPutMovieFileEditorRequest {
 	return ApiPutMovieFileEditorRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -568,14 +568,14 @@ func (a *MovieFileAPIService) PutMovieFileEditor(ctx context.Context) ApiPutMovi
 }
 
 // Execute executes the request
-func (a *MovieFileAPIService) PutMovieFileEditorExecute(r ApiPutMovieFileEditorRequest) (*http.Response, error) {
+func (a *MovieFileApiService) PutMovieFileEditorExecute(r ApiPutMovieFileEditorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieFileAPIService.PutMovieFileEditor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieFileApiService.PutMovieFileEditor")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -662,7 +662,7 @@ func (a *MovieFileAPIService) PutMovieFileEditorExecute(r ApiPutMovieFileEditorR
 }
 type ApiUpdateMovieFileRequest struct {
 	ctx context.Context
-	ApiService *MovieFileAPIService
+	ApiService *MovieFileApiService
 	id string
 	movieFileResource *MovieFileResource
 }
@@ -683,7 +683,7 @@ UpdateMovieFile Method for UpdateMovieFile
  @param id
  @return ApiUpdateMovieFileRequest
 */
-func (a *MovieFileAPIService) UpdateMovieFile(ctx context.Context, id string) ApiUpdateMovieFileRequest {
+func (a *MovieFileApiService) UpdateMovieFile(ctx context.Context, id string) ApiUpdateMovieFileRequest {
 	return ApiUpdateMovieFileRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -693,7 +693,7 @@ func (a *MovieFileAPIService) UpdateMovieFile(ctx context.Context, id string) Ap
 
 // Execute executes the request
 //  @return MovieFileResource
-func (a *MovieFileAPIService) UpdateMovieFileExecute(r ApiUpdateMovieFileRequest) (*MovieFileResource, *http.Response, error) {
+func (a *MovieFileApiService) UpdateMovieFileExecute(r ApiUpdateMovieFileRequest) (*MovieFileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -701,7 +701,7 @@ func (a *MovieFileAPIService) UpdateMovieFileExecute(r ApiUpdateMovieFileRequest
 		localVarReturnValue  *MovieFileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieFileAPIService.UpdateMovieFile")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieFileApiService.UpdateMovieFile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

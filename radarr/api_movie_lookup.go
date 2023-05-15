@@ -20,11 +20,11 @@ import (
 )
 
 
-// MovieLookupAPIService MovieLookupAPI service
-type MovieLookupAPIService service
+// MovieLookupApiService MovieLookupApi service
+type MovieLookupApiService service
 type ApiGetMovieLookupRequest struct {
 	ctx context.Context
-	ApiService *MovieLookupAPIService
+	ApiService *MovieLookupApiService
 	term *string
 }
 
@@ -43,7 +43,7 @@ GetMovieLookup Method for GetMovieLookup
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetMovieLookupRequest
 */
-func (a *MovieLookupAPIService) GetMovieLookup(ctx context.Context) ApiGetMovieLookupRequest {
+func (a *MovieLookupApiService) GetMovieLookup(ctx context.Context) ApiGetMovieLookupRequest {
 	return ApiGetMovieLookupRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -51,14 +51,14 @@ func (a *MovieLookupAPIService) GetMovieLookup(ctx context.Context) ApiGetMovieL
 }
 
 // Execute executes the request
-func (a *MovieLookupAPIService) GetMovieLookupExecute(r ApiGetMovieLookupRequest) (*http.Response, error) {
+func (a *MovieLookupApiService) GetMovieLookupExecute(r ApiGetMovieLookupRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieLookupAPIService.GetMovieLookup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieLookupApiService.GetMovieLookup")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -146,7 +146,7 @@ func (a *MovieLookupAPIService) GetMovieLookupExecute(r ApiGetMovieLookupRequest
 }
 type ApiGetMovieLookupByIdRequest struct {
 	ctx context.Context
-	ApiService *MovieLookupAPIService
+	ApiService *MovieLookupApiService
 	id int32
 }
 
@@ -161,7 +161,7 @@ GetMovieLookupById Method for GetMovieLookupById
  @param id
  @return ApiGetMovieLookupByIdRequest
 */
-func (a *MovieLookupAPIService) GetMovieLookupById(ctx context.Context, id int32) ApiGetMovieLookupByIdRequest {
+func (a *MovieLookupApiService) GetMovieLookupById(ctx context.Context, id int32) ApiGetMovieLookupByIdRequest {
 	return ApiGetMovieLookupByIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -171,7 +171,7 @@ func (a *MovieLookupAPIService) GetMovieLookupById(ctx context.Context, id int32
 
 // Execute executes the request
 //  @return MovieResource
-func (a *MovieLookupAPIService) GetMovieLookupByIdExecute(r ApiGetMovieLookupByIdRequest) (*MovieResource, *http.Response, error) {
+func (a *MovieLookupApiService) GetMovieLookupByIdExecute(r ApiGetMovieLookupByIdRequest) (*MovieResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -179,7 +179,7 @@ func (a *MovieLookupAPIService) GetMovieLookupByIdExecute(r ApiGetMovieLookupByI
 		localVarReturnValue  *MovieResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieLookupAPIService.GetMovieLookupById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieLookupApiService.GetMovieLookupById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -274,7 +274,7 @@ func (a *MovieLookupAPIService) GetMovieLookupByIdExecute(r ApiGetMovieLookupByI
 }
 type ApiGetMovieLookupImdbRequest struct {
 	ctx context.Context
-	ApiService *MovieLookupAPIService
+	ApiService *MovieLookupApiService
 	imdbId *string
 }
 
@@ -293,7 +293,7 @@ GetMovieLookupImdb Method for GetMovieLookupImdb
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetMovieLookupImdbRequest
 */
-func (a *MovieLookupAPIService) GetMovieLookupImdb(ctx context.Context) ApiGetMovieLookupImdbRequest {
+func (a *MovieLookupApiService) GetMovieLookupImdb(ctx context.Context) ApiGetMovieLookupImdbRequest {
 	return ApiGetMovieLookupImdbRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -301,14 +301,14 @@ func (a *MovieLookupAPIService) GetMovieLookupImdb(ctx context.Context) ApiGetMo
 }
 
 // Execute executes the request
-func (a *MovieLookupAPIService) GetMovieLookupImdbExecute(r ApiGetMovieLookupImdbRequest) (*http.Response, error) {
+func (a *MovieLookupApiService) GetMovieLookupImdbExecute(r ApiGetMovieLookupImdbRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieLookupAPIService.GetMovieLookupImdb")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieLookupApiService.GetMovieLookupImdb")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -396,7 +396,7 @@ func (a *MovieLookupAPIService) GetMovieLookupImdbExecute(r ApiGetMovieLookupImd
 }
 type ApiGetMovieLookupTmdbRequest struct {
 	ctx context.Context
-	ApiService *MovieLookupAPIService
+	ApiService *MovieLookupApiService
 	tmdbId *int32
 }
 
@@ -415,7 +415,7 @@ GetMovieLookupTmdb Method for GetMovieLookupTmdb
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetMovieLookupTmdbRequest
 */
-func (a *MovieLookupAPIService) GetMovieLookupTmdb(ctx context.Context) ApiGetMovieLookupTmdbRequest {
+func (a *MovieLookupApiService) GetMovieLookupTmdb(ctx context.Context) ApiGetMovieLookupTmdbRequest {
 	return ApiGetMovieLookupTmdbRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -423,14 +423,14 @@ func (a *MovieLookupAPIService) GetMovieLookupTmdb(ctx context.Context) ApiGetMo
 }
 
 // Execute executes the request
-func (a *MovieLookupAPIService) GetMovieLookupTmdbExecute(r ApiGetMovieLookupTmdbRequest) (*http.Response, error) {
+func (a *MovieLookupApiService) GetMovieLookupTmdbExecute(r ApiGetMovieLookupTmdbRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieLookupAPIService.GetMovieLookupTmdb")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieLookupApiService.GetMovieLookupTmdb")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

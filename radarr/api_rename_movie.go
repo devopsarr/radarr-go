@@ -19,11 +19,11 @@ import (
 )
 
 
-// RenameMovieAPIService RenameMovieAPI service
-type RenameMovieAPIService service
+// RenameMovieApiService RenameMovieApi service
+type RenameMovieApiService service
 type ApiListRenameRequest struct {
 	ctx context.Context
-	ApiService *RenameMovieAPIService
+	ApiService *RenameMovieApiService
 	movieId *int32
 }
 
@@ -42,7 +42,7 @@ ListRename Method for ListRename
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListRenameRequest
 */
-func (a *RenameMovieAPIService) ListRename(ctx context.Context) ApiListRenameRequest {
+func (a *RenameMovieApiService) ListRename(ctx context.Context) ApiListRenameRequest {
 	return ApiListRenameRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -51,7 +51,7 @@ func (a *RenameMovieAPIService) ListRename(ctx context.Context) ApiListRenameReq
 
 // Execute executes the request
 //  @return []RenameMovieResource
-func (a *RenameMovieAPIService) ListRenameExecute(r ApiListRenameRequest) ([]*RenameMovieResource, *http.Response, error) {
+func (a *RenameMovieApiService) ListRenameExecute(r ApiListRenameRequest) ([]*RenameMovieResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -59,7 +59,7 @@ func (a *RenameMovieAPIService) ListRenameExecute(r ApiListRenameRequest) ([]*Re
 		localVarReturnValue  []*RenameMovieResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RenameMovieAPIService.ListRename")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RenameMovieApiService.ListRename")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

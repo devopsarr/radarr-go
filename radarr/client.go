@@ -47,74 +47,74 @@ type APIClient struct {
 	common service // Reuse a single struct instead of allocating one for each service on the heap.
 
 	// API Services
-	AlternativeTitleAPI *AlternativeTitleAPIService
-	ApiInfoAPI *ApiInfoAPIService
-	AuthenticationAPI *AuthenticationAPIService
-	BackupAPI *BackupAPIService
-	BlocklistAPI *BlocklistAPIService
-	CalendarAPI *CalendarAPIService
-	CalendarFeedAPI *CalendarFeedAPIService
-	CollectionAPI *CollectionAPIService
-	CommandAPI *CommandAPIService
-	CreditAPI *CreditAPIService
-	CustomFilterAPI *CustomFilterAPIService
-	CustomFormatAPI *CustomFormatAPIService
-	DelayProfileAPI *DelayProfileAPIService
-	DiskSpaceAPI *DiskSpaceAPIService
-	DownloadClientAPI *DownloadClientAPIService
-	DownloadClientConfigAPI *DownloadClientConfigAPIService
-	ExtraFileAPI *ExtraFileAPIService
-	FileSystemAPI *FileSystemAPIService
-	HealthAPI *HealthAPIService
-	HistoryAPI *HistoryAPIService
-	HostConfigAPI *HostConfigAPIService
-	ImportExclusionsAPI *ImportExclusionsAPIService
-	ImportListAPI *ImportListAPIService
-	ImportListConfigAPI *ImportListConfigAPIService
-	ImportListMoviesAPI *ImportListMoviesAPIService
-	IndexerAPI *IndexerAPIService
-	IndexerConfigAPI *IndexerConfigAPIService
-	IndexerFlagAPI *IndexerFlagAPIService
-	InitializeJsAPI *InitializeJsAPIService
-	LanguageAPI *LanguageAPIService
-	LocalizationAPI *LocalizationAPIService
-	LogAPI *LogAPIService
-	LogFileAPI *LogFileAPIService
-	ManualImportAPI *ManualImportAPIService
-	MediaCoverAPI *MediaCoverAPIService
-	MediaManagementConfigAPI *MediaManagementConfigAPIService
-	MetadataAPI *MetadataAPIService
-	MetadataConfigAPI *MetadataConfigAPIService
-	MovieAPI *MovieAPIService
-	MovieEditorAPI *MovieEditorAPIService
-	MovieFileAPI *MovieFileAPIService
-	MovieImportAPI *MovieImportAPIService
-	MovieLookupAPI *MovieLookupAPIService
-	NamingConfigAPI *NamingConfigAPIService
-	NotificationAPI *NotificationAPIService
-	ParseAPI *ParseAPIService
-	PingAPI *PingAPIService
-	QualityDefinitionAPI *QualityDefinitionAPIService
-	QualityProfileAPI *QualityProfileAPIService
-	QualityProfileSchemaAPI *QualityProfileSchemaAPIService
-	QueueAPI *QueueAPIService
-	QueueActionAPI *QueueActionAPIService
-	QueueDetailsAPI *QueueDetailsAPIService
-	QueueStatusAPI *QueueStatusAPIService
-	ReleaseAPI *ReleaseAPIService
-	ReleasePushAPI *ReleasePushAPIService
-	RemotePathMappingAPI *RemotePathMappingAPIService
-	RenameMovieAPI *RenameMovieAPIService
-	RestrictionAPI *RestrictionAPIService
-	RootFolderAPI *RootFolderAPIService
-	StaticResourceAPI *StaticResourceAPIService
-	SystemAPI *SystemAPIService
-	TagAPI *TagAPIService
-	TagDetailsAPI *TagDetailsAPIService
-	TaskAPI *TaskAPIService
-	UiConfigAPI *UiConfigAPIService
-	UpdateAPI *UpdateAPIService
-	UpdateLogFileAPI *UpdateLogFileAPIService
+	AlternativeTitleApi *AlternativeTitleApiService
+	ApiInfoApi *ApiInfoApiService
+	AuthenticationApi *AuthenticationApiService
+	BackupApi *BackupApiService
+	BlocklistApi *BlocklistApiService
+	CalendarApi *CalendarApiService
+	CalendarFeedApi *CalendarFeedApiService
+	CollectionApi *CollectionApiService
+	CommandApi *CommandApiService
+	CreditApi *CreditApiService
+	CustomFilterApi *CustomFilterApiService
+	CustomFormatApi *CustomFormatApiService
+	DelayProfileApi *DelayProfileApiService
+	DiskSpaceApi *DiskSpaceApiService
+	DownloadClientApi *DownloadClientApiService
+	DownloadClientConfigApi *DownloadClientConfigApiService
+	ExtraFileApi *ExtraFileApiService
+	FileSystemApi *FileSystemApiService
+	HealthApi *HealthApiService
+	HistoryApi *HistoryApiService
+	HostConfigApi *HostConfigApiService
+	ImportExclusionsApi *ImportExclusionsApiService
+	ImportListApi *ImportListApiService
+	ImportListConfigApi *ImportListConfigApiService
+	ImportListMoviesApi *ImportListMoviesApiService
+	IndexerApi *IndexerApiService
+	IndexerConfigApi *IndexerConfigApiService
+	IndexerFlagApi *IndexerFlagApiService
+	InitializeJsApi *InitializeJsApiService
+	LanguageApi *LanguageApiService
+	LocalizationApi *LocalizationApiService
+	LogApi *LogApiService
+	LogFileApi *LogFileApiService
+	ManualImportApi *ManualImportApiService
+	MediaCoverApi *MediaCoverApiService
+	MediaManagementConfigApi *MediaManagementConfigApiService
+	MetadataApi *MetadataApiService
+	MetadataConfigApi *MetadataConfigApiService
+	MovieApi *MovieApiService
+	MovieEditorApi *MovieEditorApiService
+	MovieFileApi *MovieFileApiService
+	MovieImportApi *MovieImportApiService
+	MovieLookupApi *MovieLookupApiService
+	NamingConfigApi *NamingConfigApiService
+	NotificationApi *NotificationApiService
+	ParseApi *ParseApiService
+	PingApi *PingApiService
+	QualityDefinitionApi *QualityDefinitionApiService
+	QualityProfileApi *QualityProfileApiService
+	QualityProfileSchemaApi *QualityProfileSchemaApiService
+	QueueApi *QueueApiService
+	QueueActionApi *QueueActionApiService
+	QueueDetailsApi *QueueDetailsApiService
+	QueueStatusApi *QueueStatusApiService
+	ReleaseApi *ReleaseApiService
+	ReleasePushApi *ReleasePushApiService
+	RemotePathMappingApi *RemotePathMappingApiService
+	RenameMovieApi *RenameMovieApiService
+	RestrictionApi *RestrictionApiService
+	RootFolderApi *RootFolderApiService
+	StaticResourceApi *StaticResourceApiService
+	SystemApi *SystemApiService
+	TagApi *TagApiService
+	TagDetailsApi *TagDetailsApiService
+	TaskApi *TaskApiService
+	UiConfigApi *UiConfigApiService
+	UpdateApi *UpdateApiService
+	UpdateLogFileApi *UpdateLogFileApiService
 }
 
 type service struct {
@@ -133,74 +133,74 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.common.client = c
 
 	// API Services
-	c.AlternativeTitleAPI = (*AlternativeTitleAPIService)(&c.common)
-	c.ApiInfoAPI = (*ApiInfoAPIService)(&c.common)
-	c.AuthenticationAPI = (*AuthenticationAPIService)(&c.common)
-	c.BackupAPI = (*BackupAPIService)(&c.common)
-	c.BlocklistAPI = (*BlocklistAPIService)(&c.common)
-	c.CalendarAPI = (*CalendarAPIService)(&c.common)
-	c.CalendarFeedAPI = (*CalendarFeedAPIService)(&c.common)
-	c.CollectionAPI = (*CollectionAPIService)(&c.common)
-	c.CommandAPI = (*CommandAPIService)(&c.common)
-	c.CreditAPI = (*CreditAPIService)(&c.common)
-	c.CustomFilterAPI = (*CustomFilterAPIService)(&c.common)
-	c.CustomFormatAPI = (*CustomFormatAPIService)(&c.common)
-	c.DelayProfileAPI = (*DelayProfileAPIService)(&c.common)
-	c.DiskSpaceAPI = (*DiskSpaceAPIService)(&c.common)
-	c.DownloadClientAPI = (*DownloadClientAPIService)(&c.common)
-	c.DownloadClientConfigAPI = (*DownloadClientConfigAPIService)(&c.common)
-	c.ExtraFileAPI = (*ExtraFileAPIService)(&c.common)
-	c.FileSystemAPI = (*FileSystemAPIService)(&c.common)
-	c.HealthAPI = (*HealthAPIService)(&c.common)
-	c.HistoryAPI = (*HistoryAPIService)(&c.common)
-	c.HostConfigAPI = (*HostConfigAPIService)(&c.common)
-	c.ImportExclusionsAPI = (*ImportExclusionsAPIService)(&c.common)
-	c.ImportListAPI = (*ImportListAPIService)(&c.common)
-	c.ImportListConfigAPI = (*ImportListConfigAPIService)(&c.common)
-	c.ImportListMoviesAPI = (*ImportListMoviesAPIService)(&c.common)
-	c.IndexerAPI = (*IndexerAPIService)(&c.common)
-	c.IndexerConfigAPI = (*IndexerConfigAPIService)(&c.common)
-	c.IndexerFlagAPI = (*IndexerFlagAPIService)(&c.common)
-	c.InitializeJsAPI = (*InitializeJsAPIService)(&c.common)
-	c.LanguageAPI = (*LanguageAPIService)(&c.common)
-	c.LocalizationAPI = (*LocalizationAPIService)(&c.common)
-	c.LogAPI = (*LogAPIService)(&c.common)
-	c.LogFileAPI = (*LogFileAPIService)(&c.common)
-	c.ManualImportAPI = (*ManualImportAPIService)(&c.common)
-	c.MediaCoverAPI = (*MediaCoverAPIService)(&c.common)
-	c.MediaManagementConfigAPI = (*MediaManagementConfigAPIService)(&c.common)
-	c.MetadataAPI = (*MetadataAPIService)(&c.common)
-	c.MetadataConfigAPI = (*MetadataConfigAPIService)(&c.common)
-	c.MovieAPI = (*MovieAPIService)(&c.common)
-	c.MovieEditorAPI = (*MovieEditorAPIService)(&c.common)
-	c.MovieFileAPI = (*MovieFileAPIService)(&c.common)
-	c.MovieImportAPI = (*MovieImportAPIService)(&c.common)
-	c.MovieLookupAPI = (*MovieLookupAPIService)(&c.common)
-	c.NamingConfigAPI = (*NamingConfigAPIService)(&c.common)
-	c.NotificationAPI = (*NotificationAPIService)(&c.common)
-	c.ParseAPI = (*ParseAPIService)(&c.common)
-	c.PingAPI = (*PingAPIService)(&c.common)
-	c.QualityDefinitionAPI = (*QualityDefinitionAPIService)(&c.common)
-	c.QualityProfileAPI = (*QualityProfileAPIService)(&c.common)
-	c.QualityProfileSchemaAPI = (*QualityProfileSchemaAPIService)(&c.common)
-	c.QueueAPI = (*QueueAPIService)(&c.common)
-	c.QueueActionAPI = (*QueueActionAPIService)(&c.common)
-	c.QueueDetailsAPI = (*QueueDetailsAPIService)(&c.common)
-	c.QueueStatusAPI = (*QueueStatusAPIService)(&c.common)
-	c.ReleaseAPI = (*ReleaseAPIService)(&c.common)
-	c.ReleasePushAPI = (*ReleasePushAPIService)(&c.common)
-	c.RemotePathMappingAPI = (*RemotePathMappingAPIService)(&c.common)
-	c.RenameMovieAPI = (*RenameMovieAPIService)(&c.common)
-	c.RestrictionAPI = (*RestrictionAPIService)(&c.common)
-	c.RootFolderAPI = (*RootFolderAPIService)(&c.common)
-	c.StaticResourceAPI = (*StaticResourceAPIService)(&c.common)
-	c.SystemAPI = (*SystemAPIService)(&c.common)
-	c.TagAPI = (*TagAPIService)(&c.common)
-	c.TagDetailsAPI = (*TagDetailsAPIService)(&c.common)
-	c.TaskAPI = (*TaskAPIService)(&c.common)
-	c.UiConfigAPI = (*UiConfigAPIService)(&c.common)
-	c.UpdateAPI = (*UpdateAPIService)(&c.common)
-	c.UpdateLogFileAPI = (*UpdateLogFileAPIService)(&c.common)
+	c.AlternativeTitleApi = (*AlternativeTitleApiService)(&c.common)
+	c.ApiInfoApi = (*ApiInfoApiService)(&c.common)
+	c.AuthenticationApi = (*AuthenticationApiService)(&c.common)
+	c.BackupApi = (*BackupApiService)(&c.common)
+	c.BlocklistApi = (*BlocklistApiService)(&c.common)
+	c.CalendarApi = (*CalendarApiService)(&c.common)
+	c.CalendarFeedApi = (*CalendarFeedApiService)(&c.common)
+	c.CollectionApi = (*CollectionApiService)(&c.common)
+	c.CommandApi = (*CommandApiService)(&c.common)
+	c.CreditApi = (*CreditApiService)(&c.common)
+	c.CustomFilterApi = (*CustomFilterApiService)(&c.common)
+	c.CustomFormatApi = (*CustomFormatApiService)(&c.common)
+	c.DelayProfileApi = (*DelayProfileApiService)(&c.common)
+	c.DiskSpaceApi = (*DiskSpaceApiService)(&c.common)
+	c.DownloadClientApi = (*DownloadClientApiService)(&c.common)
+	c.DownloadClientConfigApi = (*DownloadClientConfigApiService)(&c.common)
+	c.ExtraFileApi = (*ExtraFileApiService)(&c.common)
+	c.FileSystemApi = (*FileSystemApiService)(&c.common)
+	c.HealthApi = (*HealthApiService)(&c.common)
+	c.HistoryApi = (*HistoryApiService)(&c.common)
+	c.HostConfigApi = (*HostConfigApiService)(&c.common)
+	c.ImportExclusionsApi = (*ImportExclusionsApiService)(&c.common)
+	c.ImportListApi = (*ImportListApiService)(&c.common)
+	c.ImportListConfigApi = (*ImportListConfigApiService)(&c.common)
+	c.ImportListMoviesApi = (*ImportListMoviesApiService)(&c.common)
+	c.IndexerApi = (*IndexerApiService)(&c.common)
+	c.IndexerConfigApi = (*IndexerConfigApiService)(&c.common)
+	c.IndexerFlagApi = (*IndexerFlagApiService)(&c.common)
+	c.InitializeJsApi = (*InitializeJsApiService)(&c.common)
+	c.LanguageApi = (*LanguageApiService)(&c.common)
+	c.LocalizationApi = (*LocalizationApiService)(&c.common)
+	c.LogApi = (*LogApiService)(&c.common)
+	c.LogFileApi = (*LogFileApiService)(&c.common)
+	c.ManualImportApi = (*ManualImportApiService)(&c.common)
+	c.MediaCoverApi = (*MediaCoverApiService)(&c.common)
+	c.MediaManagementConfigApi = (*MediaManagementConfigApiService)(&c.common)
+	c.MetadataApi = (*MetadataApiService)(&c.common)
+	c.MetadataConfigApi = (*MetadataConfigApiService)(&c.common)
+	c.MovieApi = (*MovieApiService)(&c.common)
+	c.MovieEditorApi = (*MovieEditorApiService)(&c.common)
+	c.MovieFileApi = (*MovieFileApiService)(&c.common)
+	c.MovieImportApi = (*MovieImportApiService)(&c.common)
+	c.MovieLookupApi = (*MovieLookupApiService)(&c.common)
+	c.NamingConfigApi = (*NamingConfigApiService)(&c.common)
+	c.NotificationApi = (*NotificationApiService)(&c.common)
+	c.ParseApi = (*ParseApiService)(&c.common)
+	c.PingApi = (*PingApiService)(&c.common)
+	c.QualityDefinitionApi = (*QualityDefinitionApiService)(&c.common)
+	c.QualityProfileApi = (*QualityProfileApiService)(&c.common)
+	c.QualityProfileSchemaApi = (*QualityProfileSchemaApiService)(&c.common)
+	c.QueueApi = (*QueueApiService)(&c.common)
+	c.QueueActionApi = (*QueueActionApiService)(&c.common)
+	c.QueueDetailsApi = (*QueueDetailsApiService)(&c.common)
+	c.QueueStatusApi = (*QueueStatusApiService)(&c.common)
+	c.ReleaseApi = (*ReleaseApiService)(&c.common)
+	c.ReleasePushApi = (*ReleasePushApiService)(&c.common)
+	c.RemotePathMappingApi = (*RemotePathMappingApiService)(&c.common)
+	c.RenameMovieApi = (*RenameMovieApiService)(&c.common)
+	c.RestrictionApi = (*RestrictionApiService)(&c.common)
+	c.RootFolderApi = (*RootFolderApiService)(&c.common)
+	c.StaticResourceApi = (*StaticResourceApiService)(&c.common)
+	c.SystemApi = (*SystemApiService)(&c.common)
+	c.TagApi = (*TagApiService)(&c.common)
+	c.TagDetailsApi = (*TagDetailsApiService)(&c.common)
+	c.TaskApi = (*TaskApiService)(&c.common)
+	c.UiConfigApi = (*UiConfigApiService)(&c.common)
+	c.UpdateApi = (*UpdateApiService)(&c.common)
+	c.UpdateLogFileApi = (*UpdateLogFileApiService)(&c.common)
 
 	return c
 }

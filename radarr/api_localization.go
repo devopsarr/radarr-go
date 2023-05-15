@@ -19,11 +19,11 @@ import (
 )
 
 
-// LocalizationAPIService LocalizationAPI service
-type LocalizationAPIService service
+// LocalizationApiService LocalizationApi service
+type LocalizationApiService service
 type ApiGetLocalizationRequest struct {
 	ctx context.Context
-	ApiService *LocalizationAPIService
+	ApiService *LocalizationApiService
 }
 
 func (r ApiGetLocalizationRequest) Execute() (string, *http.Response, error) {
@@ -36,7 +36,7 @@ GetLocalization Method for GetLocalization
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetLocalizationRequest
 */
-func (a *LocalizationAPIService) GetLocalization(ctx context.Context) ApiGetLocalizationRequest {
+func (a *LocalizationApiService) GetLocalization(ctx context.Context) ApiGetLocalizationRequest {
 	return ApiGetLocalizationRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -45,7 +45,7 @@ func (a *LocalizationAPIService) GetLocalization(ctx context.Context) ApiGetLoca
 
 // Execute executes the request
 //  @return string
-func (a *LocalizationAPIService) GetLocalizationExecute(r ApiGetLocalizationRequest) (string, *http.Response, error) {
+func (a *LocalizationApiService) GetLocalizationExecute(r ApiGetLocalizationRequest) (string, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -53,7 +53,7 @@ func (a *LocalizationAPIService) GetLocalizationExecute(r ApiGetLocalizationRequ
 		localVarReturnValue  string
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalizationAPIService.GetLocalization")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "LocalizationApiService.GetLocalization")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

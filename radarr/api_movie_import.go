@@ -20,11 +20,11 @@ import (
 )
 
 
-// MovieImportAPIService MovieImportAPI service
-type MovieImportAPIService service
+// MovieImportApiService MovieImportApi service
+type MovieImportApiService service
 type ApiCreateMovieImportRequest struct {
 	ctx context.Context
-	ApiService *MovieImportAPIService
+	ApiService *MovieImportApiService
 	movieResource *[]MovieResource
 }
 
@@ -43,7 +43,7 @@ CreateMovieImport Method for CreateMovieImport
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateMovieImportRequest
 */
-func (a *MovieImportAPIService) CreateMovieImport(ctx context.Context) ApiCreateMovieImportRequest {
+func (a *MovieImportApiService) CreateMovieImport(ctx context.Context) ApiCreateMovieImportRequest {
 	return ApiCreateMovieImportRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -51,14 +51,14 @@ func (a *MovieImportAPIService) CreateMovieImport(ctx context.Context) ApiCreate
 }
 
 // Execute executes the request
-func (a *MovieImportAPIService) CreateMovieImportExecute(r ApiCreateMovieImportRequest) (*http.Response, error) {
+func (a *MovieImportApiService) CreateMovieImportExecute(r ApiCreateMovieImportRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieImportAPIService.CreateMovieImport")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieImportApiService.CreateMovieImport")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -145,7 +145,7 @@ func (a *MovieImportAPIService) CreateMovieImportExecute(r ApiCreateMovieImportR
 }
 type ApiGetMovieImportByIdRequest struct {
 	ctx context.Context
-	ApiService *MovieImportAPIService
+	ApiService *MovieImportApiService
 	id int32
 }
 
@@ -160,7 +160,7 @@ GetMovieImportById Method for GetMovieImportById
  @param id
  @return ApiGetMovieImportByIdRequest
 */
-func (a *MovieImportAPIService) GetMovieImportById(ctx context.Context, id int32) ApiGetMovieImportByIdRequest {
+func (a *MovieImportApiService) GetMovieImportById(ctx context.Context, id int32) ApiGetMovieImportByIdRequest {
 	return ApiGetMovieImportByIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -170,7 +170,7 @@ func (a *MovieImportAPIService) GetMovieImportById(ctx context.Context, id int32
 
 // Execute executes the request
 //  @return MovieResource
-func (a *MovieImportAPIService) GetMovieImportByIdExecute(r ApiGetMovieImportByIdRequest) (*MovieResource, *http.Response, error) {
+func (a *MovieImportApiService) GetMovieImportByIdExecute(r ApiGetMovieImportByIdRequest) (*MovieResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -178,7 +178,7 @@ func (a *MovieImportAPIService) GetMovieImportByIdExecute(r ApiGetMovieImportByI
 		localVarReturnValue  *MovieResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieImportAPIService.GetMovieImportById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieImportApiService.GetMovieImportById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
