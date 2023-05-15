@@ -24,7 +24,9 @@ Name | Type | Description | Notes
 **OnMovieFileDelete** | Pointer to **bool** |  | [optional] 
 **OnMovieFileDeleteForUpgrade** | Pointer to **bool** |  | [optional] 
 **OnHealthIssue** | Pointer to **bool** |  | [optional] 
+**OnHealthRestored** | Pointer to **bool** |  | [optional] 
 **OnApplicationUpdate** | Pointer to **bool** |  | [optional] 
+**OnManualInteractionRequired** | Pointer to **bool** |  | [optional] 
 **SupportsOnGrab** | Pointer to **bool** |  | [optional] 
 **SupportsOnDownload** | Pointer to **bool** |  | [optional] 
 **SupportsOnUpgrade** | Pointer to **bool** |  | [optional] 
@@ -34,7 +36,9 @@ Name | Type | Description | Notes
 **SupportsOnMovieFileDelete** | Pointer to **bool** |  | [optional] 
 **SupportsOnMovieFileDeleteForUpgrade** | Pointer to **bool** |  | [optional] 
 **SupportsOnHealthIssue** | Pointer to **bool** |  | [optional] 
+**SupportsOnHealthRestored** | Pointer to **bool** |  | [optional] 
 **SupportsOnApplicationUpdate** | Pointer to **bool** |  | [optional] 
+**SupportsOnManualInteractionRequired** | Pointer to **bool** |  | [optional] 
 **IncludeHealthWarnings** | Pointer to **bool** |  | [optional] 
 **TestCommand** | Pointer to **NullableString** |  | [optional] 
 
@@ -647,6 +651,31 @@ SetOnHealthIssue sets OnHealthIssue field to given value.
 
 HasOnHealthIssue returns a boolean if a field has been set.
 
+### GetOnHealthRestored
+
+`func (o *NotificationResource) GetOnHealthRestored() bool`
+
+GetOnHealthRestored returns the OnHealthRestored field if non-nil, zero value otherwise.
+
+### GetOnHealthRestoredOk
+
+`func (o *NotificationResource) GetOnHealthRestoredOk() (*bool, bool)`
+
+GetOnHealthRestoredOk returns a tuple with the OnHealthRestored field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOnHealthRestored
+
+`func (o *NotificationResource) SetOnHealthRestored(v bool)`
+
+SetOnHealthRestored sets OnHealthRestored field to given value.
+
+### HasOnHealthRestored
+
+`func (o *NotificationResource) HasOnHealthRestored() bool`
+
+HasOnHealthRestored returns a boolean if a field has been set.
+
 ### GetOnApplicationUpdate
 
 `func (o *NotificationResource) GetOnApplicationUpdate() bool`
@@ -671,6 +700,31 @@ SetOnApplicationUpdate sets OnApplicationUpdate field to given value.
 `func (o *NotificationResource) HasOnApplicationUpdate() bool`
 
 HasOnApplicationUpdate returns a boolean if a field has been set.
+
+### GetOnManualInteractionRequired
+
+`func (o *NotificationResource) GetOnManualInteractionRequired() bool`
+
+GetOnManualInteractionRequired returns the OnManualInteractionRequired field if non-nil, zero value otherwise.
+
+### GetOnManualInteractionRequiredOk
+
+`func (o *NotificationResource) GetOnManualInteractionRequiredOk() (*bool, bool)`
+
+GetOnManualInteractionRequiredOk returns a tuple with the OnManualInteractionRequired field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOnManualInteractionRequired
+
+`func (o *NotificationResource) SetOnManualInteractionRequired(v bool)`
+
+SetOnManualInteractionRequired sets OnManualInteractionRequired field to given value.
+
+### HasOnManualInteractionRequired
+
+`func (o *NotificationResource) HasOnManualInteractionRequired() bool`
+
+HasOnManualInteractionRequired returns a boolean if a field has been set.
 
 ### GetSupportsOnGrab
 
@@ -897,6 +951,31 @@ SetSupportsOnHealthIssue sets SupportsOnHealthIssue field to given value.
 
 HasSupportsOnHealthIssue returns a boolean if a field has been set.
 
+### GetSupportsOnHealthRestored
+
+`func (o *NotificationResource) GetSupportsOnHealthRestored() bool`
+
+GetSupportsOnHealthRestored returns the SupportsOnHealthRestored field if non-nil, zero value otherwise.
+
+### GetSupportsOnHealthRestoredOk
+
+`func (o *NotificationResource) GetSupportsOnHealthRestoredOk() (*bool, bool)`
+
+GetSupportsOnHealthRestoredOk returns a tuple with the SupportsOnHealthRestored field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportsOnHealthRestored
+
+`func (o *NotificationResource) SetSupportsOnHealthRestored(v bool)`
+
+SetSupportsOnHealthRestored sets SupportsOnHealthRestored field to given value.
+
+### HasSupportsOnHealthRestored
+
+`func (o *NotificationResource) HasSupportsOnHealthRestored() bool`
+
+HasSupportsOnHealthRestored returns a boolean if a field has been set.
+
 ### GetSupportsOnApplicationUpdate
 
 `func (o *NotificationResource) GetSupportsOnApplicationUpdate() bool`
@@ -921,6 +1000,31 @@ SetSupportsOnApplicationUpdate sets SupportsOnApplicationUpdate field to given v
 `func (o *NotificationResource) HasSupportsOnApplicationUpdate() bool`
 
 HasSupportsOnApplicationUpdate returns a boolean if a field has been set.
+
+### GetSupportsOnManualInteractionRequired
+
+`func (o *NotificationResource) GetSupportsOnManualInteractionRequired() bool`
+
+GetSupportsOnManualInteractionRequired returns the SupportsOnManualInteractionRequired field if non-nil, zero value otherwise.
+
+### GetSupportsOnManualInteractionRequiredOk
+
+`func (o *NotificationResource) GetSupportsOnManualInteractionRequiredOk() (*bool, bool)`
+
+GetSupportsOnManualInteractionRequiredOk returns a tuple with the SupportsOnManualInteractionRequired field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSupportsOnManualInteractionRequired
+
+`func (o *NotificationResource) SetSupportsOnManualInteractionRequired(v bool)`
+
+SetSupportsOnManualInteractionRequired sets SupportsOnManualInteractionRequired field to given value.
+
+### HasSupportsOnManualInteractionRequired
+
+`func (o *NotificationResource) HasSupportsOnManualInteractionRequired() bool`
+
+HasSupportsOnManualInteractionRequired returns a boolean if a field has been set.
 
 ### GetIncludeHealthWarnings
 
