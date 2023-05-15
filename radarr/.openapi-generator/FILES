@@ -100,6 +100,7 @@ docs/Command.md
 docs/CommandApi.md
 docs/CommandPriority.md
 docs/CommandResource.md
+docs/CommandResult.md
 docs/CommandStatus.md
 docs/CommandTrigger.md
 docs/CreditApi.md
@@ -284,6 +285,7 @@ model_colon_replacement_format.go
 model_command.go
 model_command_priority.go
 model_command_resource.go
+model_command_result.go
 model_command_status.go
 model_command_trigger.go
 model_credit_resource.go

@@ -390,7 +390,7 @@ paths:
         style: form
       - explode: true
         in: query
-        name: tagList
+        name: tags
         required: false
         schema:
           default: ""
@@ -8752,6 +8752,7 @@ components:
           sendUpdatesToClient: true
           updateScheduledTask: true
         priority: null
+        result: null
         duration: duration
         commandName: commandName
         name: name
@@ -8780,6 +8781,8 @@ components:
           $ref: '#/components/schemas/CommandPriority'
         status:
           $ref: '#/components/schemas/CommandStatus'
+        result:
+          $ref: '#/components/schemas/CommandResult'
         queued:
           format: date-time
           type: string
@@ -8814,6 +8817,12 @@ components:
           nullable: true
           type: string
       type: object
+    CommandResult:
+      enum:
+      - unknown
+      - successful
+      - unsuccessful
+      type: string
     CommandStatus:
       enum:
       - queued
@@ -16663,8 +16672,10 @@ components:
         supportsOnRename: true
         link: link
         onMovieAdded: true
+        supportsOnManualInteractionRequired: true
         onGrab: true
         onMovieDelete: true
+        onHealthRestored: true
         supportsOnDownload: true
         supportsOnMovieFileDelete: true
         supportsOnMovieDelete: true
@@ -16691,7 +16702,9 @@ components:
         - null
         - null
         onDownload: true
+        supportsOnHealthRestored: true
         configContract: configContract
+        onManualInteractionRequired: true
         name: name
         onMovieFileDelete: true
         includeHealthWarnings: true
@@ -16805,7 +16818,11 @@ components:
           type: boolean
         onHealthIssue:
           type: boolean
+        onHealthRestored:
+          type: boolean
         onApplicationUpdate:
+          type: boolean
+        onManualInteractionRequired:
           type: boolean
         supportsOnGrab:
           type: boolean
@@ -16825,7 +16842,11 @@ components:
           type: boolean
         supportsOnHealthIssue:
           type: boolean
+        supportsOnHealthRestored:
+          type: boolean
         supportsOnApplicationUpdate:
+          type: boolean
+        supportsOnManualInteractionRequired:
           type: boolean
         includeHealthWarnings:
           type: boolean
