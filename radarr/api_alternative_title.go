@@ -20,11 +20,11 @@ import (
 )
 
 
-// AlternativeTitleApiService AlternativeTitleApi service
-type AlternativeTitleApiService service
+// AlternativeTitleAPIService AlternativeTitleAPI service
+type AlternativeTitleAPIService service
 type ApiGetAlttitleByIdRequest struct {
 	ctx context.Context
-	ApiService *AlternativeTitleApiService
+	ApiService *AlternativeTitleAPIService
 	id int32
 }
 
@@ -39,7 +39,7 @@ GetAlttitleById Method for GetAlttitleById
  @param id
  @return ApiGetAlttitleByIdRequest
 */
-func (a *AlternativeTitleApiService) GetAlttitleById(ctx context.Context, id int32) ApiGetAlttitleByIdRequest {
+func (a *AlternativeTitleAPIService) GetAlttitleById(ctx context.Context, id int32) ApiGetAlttitleByIdRequest {
 	return ApiGetAlttitleByIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -49,7 +49,7 @@ func (a *AlternativeTitleApiService) GetAlttitleById(ctx context.Context, id int
 
 // Execute executes the request
 //  @return AlternativeTitleResource
-func (a *AlternativeTitleApiService) GetAlttitleByIdExecute(r ApiGetAlttitleByIdRequest) (*AlternativeTitleResource, *http.Response, error) {
+func (a *AlternativeTitleAPIService) GetAlttitleByIdExecute(r ApiGetAlttitleByIdRequest) (*AlternativeTitleResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -57,7 +57,7 @@ func (a *AlternativeTitleApiService) GetAlttitleByIdExecute(r ApiGetAlttitleById
 		localVarReturnValue  *AlternativeTitleResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlternativeTitleApiService.GetAlttitleById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlternativeTitleAPIService.GetAlttitleById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -152,7 +152,7 @@ func (a *AlternativeTitleApiService) GetAlttitleByIdExecute(r ApiGetAlttitleById
 }
 type ApiListAlttitleRequest struct {
 	ctx context.Context
-	ApiService *AlternativeTitleApiService
+	ApiService *AlternativeTitleAPIService
 	movieId *int32
 	movieMetadataId *int32
 }
@@ -177,7 +177,7 @@ ListAlttitle Method for ListAlttitle
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListAlttitleRequest
 */
-func (a *AlternativeTitleApiService) ListAlttitle(ctx context.Context) ApiListAlttitleRequest {
+func (a *AlternativeTitleAPIService) ListAlttitle(ctx context.Context) ApiListAlttitleRequest {
 	return ApiListAlttitleRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -186,7 +186,7 @@ func (a *AlternativeTitleApiService) ListAlttitle(ctx context.Context) ApiListAl
 
 // Execute executes the request
 //  @return []AlternativeTitleResource
-func (a *AlternativeTitleApiService) ListAlttitleExecute(r ApiListAlttitleRequest) ([]*AlternativeTitleResource, *http.Response, error) {
+func (a *AlternativeTitleAPIService) ListAlttitleExecute(r ApiListAlttitleRequest) ([]*AlternativeTitleResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -194,7 +194,7 @@ func (a *AlternativeTitleApiService) ListAlttitleExecute(r ApiListAlttitleReques
 		localVarReturnValue  []*AlternativeTitleResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlternativeTitleApiService.ListAlttitle")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlternativeTitleAPIService.ListAlttitle")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

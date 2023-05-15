@@ -19,11 +19,11 @@ import (
 )
 
 
-// CalendarFeedApiService CalendarFeedApi service
-type CalendarFeedApiService service
+// CalendarFeedAPIService CalendarFeedAPI service
+type CalendarFeedAPIService service
 type ApiGetFeedV3CalendarRadarrIcsRequest struct {
 	ctx context.Context
-	ApiService *CalendarFeedApiService
+	ApiService *CalendarFeedAPIService
 	pastDays *int32
 	futureDays *int32
 	tagList *string
@@ -60,7 +60,7 @@ GetFeedV3CalendarRadarrIcs Method for GetFeedV3CalendarRadarrIcs
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetFeedV3CalendarRadarrIcsRequest
 */
-func (a *CalendarFeedApiService) GetFeedV3CalendarRadarrIcs(ctx context.Context) ApiGetFeedV3CalendarRadarrIcsRequest {
+func (a *CalendarFeedAPIService) GetFeedV3CalendarRadarrIcs(ctx context.Context) ApiGetFeedV3CalendarRadarrIcsRequest {
 	return ApiGetFeedV3CalendarRadarrIcsRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -68,14 +68,14 @@ func (a *CalendarFeedApiService) GetFeedV3CalendarRadarrIcs(ctx context.Context)
 }
 
 // Execute executes the request
-func (a *CalendarFeedApiService) GetFeedV3CalendarRadarrIcsExecute(r ApiGetFeedV3CalendarRadarrIcsRequest) (*http.Response, error) {
+func (a *CalendarFeedAPIService) GetFeedV3CalendarRadarrIcsExecute(r ApiGetFeedV3CalendarRadarrIcsRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CalendarFeedApiService.GetFeedV3CalendarRadarrIcs")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CalendarFeedAPIService.GetFeedV3CalendarRadarrIcs")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
