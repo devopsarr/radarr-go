@@ -20,11 +20,11 @@ import (
 )
 
 
-// ImportListConfigApiService ImportListConfigApi service
-type ImportListConfigApiService service
+// ImportListConfigAPIService ImportListConfigAPI service
+type ImportListConfigAPIService service
 type ApiGetImportListConfigRequest struct {
 	ctx context.Context
-	ApiService *ImportListConfigApiService
+	ApiService *ImportListConfigAPIService
 }
 
 func (r ApiGetImportListConfigRequest) Execute() (*ImportListConfigResource, *http.Response, error) {
@@ -37,7 +37,7 @@ GetImportListConfig Method for GetImportListConfig
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetImportListConfigRequest
 */
-func (a *ImportListConfigApiService) GetImportListConfig(ctx context.Context) ApiGetImportListConfigRequest {
+func (a *ImportListConfigAPIService) GetImportListConfig(ctx context.Context) ApiGetImportListConfigRequest {
 	return ApiGetImportListConfigRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -46,7 +46,7 @@ func (a *ImportListConfigApiService) GetImportListConfig(ctx context.Context) Ap
 
 // Execute executes the request
 //  @return ImportListConfigResource
-func (a *ImportListConfigApiService) GetImportListConfigExecute(r ApiGetImportListConfigRequest) (*ImportListConfigResource, *http.Response, error) {
+func (a *ImportListConfigAPIService) GetImportListConfigExecute(r ApiGetImportListConfigRequest) (*ImportListConfigResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -54,7 +54,7 @@ func (a *ImportListConfigApiService) GetImportListConfigExecute(r ApiGetImportLi
 		localVarReturnValue  *ImportListConfigResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListConfigApiService.GetImportListConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListConfigAPIService.GetImportListConfig")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -148,7 +148,7 @@ func (a *ImportListConfigApiService) GetImportListConfigExecute(r ApiGetImportLi
 }
 type ApiGetImportListConfigByIdRequest struct {
 	ctx context.Context
-	ApiService *ImportListConfigApiService
+	ApiService *ImportListConfigAPIService
 	id int32
 }
 
@@ -163,7 +163,7 @@ GetImportListConfigById Method for GetImportListConfigById
  @param id
  @return ApiGetImportListConfigByIdRequest
 */
-func (a *ImportListConfigApiService) GetImportListConfigById(ctx context.Context, id int32) ApiGetImportListConfigByIdRequest {
+func (a *ImportListConfigAPIService) GetImportListConfigById(ctx context.Context, id int32) ApiGetImportListConfigByIdRequest {
 	return ApiGetImportListConfigByIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -173,7 +173,7 @@ func (a *ImportListConfigApiService) GetImportListConfigById(ctx context.Context
 
 // Execute executes the request
 //  @return ImportListConfigResource
-func (a *ImportListConfigApiService) GetImportListConfigByIdExecute(r ApiGetImportListConfigByIdRequest) (*ImportListConfigResource, *http.Response, error) {
+func (a *ImportListConfigAPIService) GetImportListConfigByIdExecute(r ApiGetImportListConfigByIdRequest) (*ImportListConfigResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -181,7 +181,7 @@ func (a *ImportListConfigApiService) GetImportListConfigByIdExecute(r ApiGetImpo
 		localVarReturnValue  *ImportListConfigResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListConfigApiService.GetImportListConfigById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListConfigAPIService.GetImportListConfigById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -276,7 +276,7 @@ func (a *ImportListConfigApiService) GetImportListConfigByIdExecute(r ApiGetImpo
 }
 type ApiUpdateImportListConfigRequest struct {
 	ctx context.Context
-	ApiService *ImportListConfigApiService
+	ApiService *ImportListConfigAPIService
 	id string
 	importListConfigResource *ImportListConfigResource
 }
@@ -297,7 +297,7 @@ UpdateImportListConfig Method for UpdateImportListConfig
  @param id
  @return ApiUpdateImportListConfigRequest
 */
-func (a *ImportListConfigApiService) UpdateImportListConfig(ctx context.Context, id string) ApiUpdateImportListConfigRequest {
+func (a *ImportListConfigAPIService) UpdateImportListConfig(ctx context.Context, id string) ApiUpdateImportListConfigRequest {
 	return ApiUpdateImportListConfigRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -307,7 +307,7 @@ func (a *ImportListConfigApiService) UpdateImportListConfig(ctx context.Context,
 
 // Execute executes the request
 //  @return ImportListConfigResource
-func (a *ImportListConfigApiService) UpdateImportListConfigExecute(r ApiUpdateImportListConfigRequest) (*ImportListConfigResource, *http.Response, error) {
+func (a *ImportListConfigAPIService) UpdateImportListConfigExecute(r ApiUpdateImportListConfigRequest) (*ImportListConfigResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -315,7 +315,7 @@ func (a *ImportListConfigApiService) UpdateImportListConfigExecute(r ApiUpdateIm
 		localVarReturnValue  *ImportListConfigResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListConfigApiService.UpdateImportListConfig")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListConfigAPIService.UpdateImportListConfig")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
