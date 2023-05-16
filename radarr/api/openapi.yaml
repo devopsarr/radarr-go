@@ -3172,6 +3172,22 @@ paths:
           format: int32
           type: integer
         style: simple
+      - explode: true
+        in: query
+        name: deleteFiles
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: addImportExclusion
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
       responses:
         "200":
           description: Success
@@ -3206,6 +3222,14 @@ paths:
     put:
       operationId: UpdateMovie
       parameters:
+      - explode: true
+        in: query
+        name: moveFiles
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
       - explode: false
         in: path
         name: id

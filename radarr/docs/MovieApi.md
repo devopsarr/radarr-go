@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 
 ## DeleteMovie
 
-> DeleteMovie(ctx, id).Execute()
+> DeleteMovie(ctx, id).DeleteFiles(deleteFiles).AddImportExclusion(addImportExclusion).Execute()
 
 
 
@@ -96,10 +96,12 @@ import (
 
 func main() {
     id := int32(56) // int32 | 
+    deleteFiles := true // bool |  (optional) (default to false)
+    addImportExclusion := true // bool |  (optional) (default to false)
 
     configuration := radarrClient.NewConfiguration()
     apiClient := radarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MovieApi.DeleteMovie(context.Background(), id).Execute()
+    resp, r, err := apiClient.MovieApi.DeleteMovie(context.Background(), id).DeleteFiles(deleteFiles).AddImportExclusion(addImportExclusion).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MovieApi.DeleteMovie``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -123,6 +125,8 @@ Other parameters are passed through a pointer to a apiDeleteMovieRequest struct 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **deleteFiles** | **bool** |  | [default to false]
+ **addImportExclusion** | **bool** |  | [default to false]
 
 ### Return type
 
@@ -276,7 +280,7 @@ Name | Type | Description  | Notes
 
 ## UpdateMovie
 
-> MovieResource UpdateMovie(ctx, id).MovieResource(movieResource).Execute()
+> MovieResource UpdateMovie(ctx, id).MoveFiles(moveFiles).MovieResource(movieResource).Execute()
 
 
 
@@ -294,11 +298,12 @@ import (
 
 func main() {
     id := "id_example" // string | 
+    moveFiles := true // bool |  (optional) (default to false)
     movieResource := *radarrClient.NewMovieResource() // MovieResource |  (optional)
 
     configuration := radarrClient.NewConfiguration()
     apiClient := radarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MovieApi.UpdateMovie(context.Background(), id).MovieResource(movieResource).Execute()
+    resp, r, err := apiClient.MovieApi.UpdateMovie(context.Background(), id).MoveFiles(moveFiles).MovieResource(movieResource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MovieApi.UpdateMovie``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -324,6 +329,7 @@ Other parameters are passed through a pointer to a apiUpdateMovieRequest struct 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **moveFiles** | **bool** |  | [default to false]
  **movieResource** | [**MovieResource**](MovieResource.md) |  | 
 
 ### Return type
