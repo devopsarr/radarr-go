@@ -158,6 +158,18 @@ type ApiDeleteMovieRequest struct {
 	ctx context.Context
 	ApiService *MovieApiService
 	id int32
+	deleteFiles *bool
+	addImportExclusion *bool
+}
+
+func (r ApiDeleteMovieRequest) DeleteFiles(deleteFiles bool) ApiDeleteMovieRequest {
+	r.deleteFiles = &deleteFiles
+	return r
+}
+
+func (r ApiDeleteMovieRequest) AddImportExclusion(addImportExclusion bool) ApiDeleteMovieRequest {
+	r.addImportExclusion = &addImportExclusion
+	return r
 }
 
 func (r ApiDeleteMovieRequest) Execute() (*http.Response, error) {
@@ -199,6 +211,12 @@ func (a *MovieApiService) DeleteMovieExecute(r ApiDeleteMovieRequest) (*http.Res
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.deleteFiles != nil {
+		localVarQueryParams.Add("deleteFiles", parameterToString(*r.deleteFiles, ""))
+	}
+	if r.addImportExclusion != nil {
+		localVarQueryParams.Add("addImportExclusion", parameterToString(*r.addImportExclusion, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -536,7 +554,13 @@ type ApiUpdateMovieRequest struct {
 	ctx context.Context
 	ApiService *MovieApiService
 	id string
+	moveFiles *bool
 	movieResource *MovieResource
+}
+
+func (r ApiUpdateMovieRequest) MoveFiles(moveFiles bool) ApiUpdateMovieRequest {
+	r.moveFiles = &moveFiles
+	return r
 }
 
 func (r ApiUpdateMovieRequest) MovieResource(movieResource MovieResource) ApiUpdateMovieRequest {
@@ -585,6 +609,9 @@ func (a *MovieApiService) UpdateMovieExecute(r ApiUpdateMovieRequest) (*MovieRes
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.moveFiles != nil {
+		localVarQueryParams.Add("moveFiles", parameterToString(*r.moveFiles, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/*+json"}
 
