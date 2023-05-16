@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/devopsarr/radarr-go/compare/v0.2.1...v0.3.0) (2023-05-16)
+
+
+### Features
+
+* pin openapi version and add version management ([da25243](https://github.com/devopsarr/radarr-go/commit/da25243f344fe503393c389584f0b4e1471250cc))
+
 ## [0.2.1](https://github.com/devopsarr/radarr-go/compare/v0.2.0...v0.2.1) (2023-03-27)
 
 
