@@ -14685,6 +14685,7 @@ components:
       - fanart
       - screenshot
       - headshot
+      - clearlogo
       type: string
     MediaInfoResource:
       additionalProperties: false
