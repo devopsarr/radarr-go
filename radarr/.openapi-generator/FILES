@@ -117,6 +117,7 @@ docs/DelayProfileResource.md
 docs/DiskSpaceApi.md
 docs/DiskSpaceResource.md
 docs/DownloadClientApi.md
+docs/DownloadClientBulkResource.md
 docs/DownloadClientConfigApi.md
 docs/DownloadClientConfigResource.md
 docs/DownloadClientResource.md
@@ -138,12 +139,14 @@ docs/HostConfigResource.md
 docs/ImportExclusionsApi.md
 docs/ImportExclusionsResource.md
 docs/ImportListApi.md
+docs/ImportListBulkResource.md
 docs/ImportListConfigApi.md
 docs/ImportListConfigResource.md
 docs/ImportListMoviesApi.md
 docs/ImportListResource.md
 docs/ImportListType.md
 docs/IndexerApi.md
+docs/IndexerBulkResource.md
 docs/IndexerConfigApi.md
 docs/IndexerConfigResource.md
 docs/IndexerFlagApi.md
@@ -169,6 +172,7 @@ docs/MediaInfoResource.md
 docs/MediaManagementConfigApi.md
 docs/MediaManagementConfigResource.md
 docs/MetadataApi.md
+docs/MetadataBulkResource.md
 docs/MetadataConfigApi.md
 docs/MetadataConfigResource.md
 docs/MetadataResource.md
@@ -192,6 +196,7 @@ docs/MovieTranslation.md
 docs/NamingConfigApi.md
 docs/NamingConfigResource.md
 docs/NotificationApi.md
+docs/NotificationBulkResource.md
 docs/NotificationResource.md
 docs/PagingResourceFilter.md
 docs/ParseApi.md
@@ -296,6 +301,7 @@ model_custom_format_specification_schema.go
 model_database_type.go
 model_delay_profile_resource.go
 model_disk_space_resource.go
+model_download_client_bulk_resource.go
 model_download_client_config_resource.go
 model_download_client_resource.go
 model_download_protocol.go
@@ -309,9 +315,11 @@ model_history_resource.go
 model_history_resource_paging_resource.go
 model_host_config_resource.go
 model_import_exclusions_resource.go
+model_import_list_bulk_resource.go
 model_import_list_config_resource.go
 model_import_list_resource.go
 model_import_list_type.go
+model_indexer_bulk_resource.go
 model_indexer_config_resource.go
 model_indexer_flag_resource.go
 model_indexer_resource.go
@@ -326,6 +334,7 @@ model_media_cover.go
 model_media_cover_types.go
 model_media_info_resource.go
 model_media_management_config_resource.go
+model_metadata_bulk_resource.go
 model_metadata_config_resource.go
 model_metadata_resource.go
 model_modifier.go
@@ -341,6 +350,7 @@ model_movie_runtime_format_type.go
 model_movie_status_type.go
 model_movie_translation.go
 model_naming_config_resource.go
+model_notification_bulk_resource.go
 model_notification_resource.go
 model_paging_resource_filter.go
 model_parse_resource.go

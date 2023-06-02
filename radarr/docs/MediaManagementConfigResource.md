@@ -21,6 +21,8 @@ Name | Type | Description | Notes
 **SkipFreeSpaceCheckWhenImporting** | Pointer to **bool** |  | [optional] 
 **MinimumFreeSpaceWhenImporting** | Pointer to **int32** |  | [optional] 
 **CopyUsingHardlinks** | Pointer to **bool** |  | [optional] 
+**UseScriptImport** | Pointer to **bool** |  | [optional] 
+**ScriptImportPath** | Pointer to **NullableString** |  | [optional] 
 **ImportExtraFiles** | Pointer to **bool** |  | [optional] 
 **ExtraFileExtensions** | Pointer to **NullableString** |  | [optional] 
 **EnableMediaInfo** | Pointer to **bool** |  | [optional] 
@@ -499,6 +501,66 @@ SetCopyUsingHardlinks sets CopyUsingHardlinks field to given value.
 
 HasCopyUsingHardlinks returns a boolean if a field has been set.
 
+### GetUseScriptImport
+
+`func (o *MediaManagementConfigResource) GetUseScriptImport() bool`
+
+GetUseScriptImport returns the UseScriptImport field if non-nil, zero value otherwise.
+
+### GetUseScriptImportOk
+
+`func (o *MediaManagementConfigResource) GetUseScriptImportOk() (*bool, bool)`
+
+GetUseScriptImportOk returns a tuple with the UseScriptImport field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUseScriptImport
+
+`func (o *MediaManagementConfigResource) SetUseScriptImport(v bool)`
+
+SetUseScriptImport sets UseScriptImport field to given value.
+
+### HasUseScriptImport
+
+`func (o *MediaManagementConfigResource) HasUseScriptImport() bool`
+
+HasUseScriptImport returns a boolean if a field has been set.
+
+### GetScriptImportPath
+
+`func (o *MediaManagementConfigResource) GetScriptImportPath() string`
+
+GetScriptImportPath returns the ScriptImportPath field if non-nil, zero value otherwise.
+
+### GetScriptImportPathOk
+
+`func (o *MediaManagementConfigResource) GetScriptImportPathOk() (*string, bool)`
+
+GetScriptImportPathOk returns a tuple with the ScriptImportPath field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetScriptImportPath
+
+`func (o *MediaManagementConfigResource) SetScriptImportPath(v string)`
+
+SetScriptImportPath sets ScriptImportPath field to given value.
+
+### HasScriptImportPath
+
+`func (o *MediaManagementConfigResource) HasScriptImportPath() bool`
+
+HasScriptImportPath returns a boolean if a field has been set.
+
+### SetScriptImportPathNil
+
+`func (o *MediaManagementConfigResource) SetScriptImportPathNil(b bool)`
+
+ SetScriptImportPathNil sets the value for ScriptImportPath to be an explicit nil
+
+### UnsetScriptImportPath
+`func (o *MediaManagementConfigResource) UnsetScriptImportPath()`
+
+UnsetScriptImportPath ensures that no value is present for ScriptImportPath, not even an explicit nil
 ### GetImportExtraFiles
 
 `func (o *MediaManagementConfigResource) GetImportExtraFiles() bool`
