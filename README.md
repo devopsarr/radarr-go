@@ -128,9 +128,11 @@ Class | Method | HTTP request | Description
 *DownloadClientApi* | [**CreateDownloadClient**](radarr/docs/DownloadClientApi.md#createdownloadclient) | **Post** /api/v3/downloadclient | 
 *DownloadClientApi* | [**CreateDownloadClientActionByName**](radarr/docs/DownloadClientApi.md#createdownloadclientactionbyname) | **Post** /api/v3/downloadclient/action/{name} | 
 *DownloadClientApi* | [**DeleteDownloadClient**](radarr/docs/DownloadClientApi.md#deletedownloadclient) | **Delete** /api/v3/downloadclient/{id} | 
+*DownloadClientApi* | [**DeleteDownloadClientBulk**](radarr/docs/DownloadClientApi.md#deletedownloadclientbulk) | **Delete** /api/v3/downloadclient/bulk | 
 *DownloadClientApi* | [**GetDownloadClientById**](radarr/docs/DownloadClientApi.md#getdownloadclientbyid) | **Get** /api/v3/downloadclient/{id} | 
 *DownloadClientApi* | [**ListDownloadClient**](radarr/docs/DownloadClientApi.md#listdownloadclient) | **Get** /api/v3/downloadclient | 
 *DownloadClientApi* | [**ListDownloadClientSchema**](radarr/docs/DownloadClientApi.md#listdownloadclientschema) | **Get** /api/v3/downloadclient/schema | 
+*DownloadClientApi* | [**PutDownloadClientBulk**](radarr/docs/DownloadClientApi.md#putdownloadclientbulk) | **Put** /api/v3/downloadclient/bulk | 
 *DownloadClientApi* | [**TestDownloadClient**](radarr/docs/DownloadClientApi.md#testdownloadclient) | **Post** /api/v3/downloadclient/test | 
 *DownloadClientApi* | [**TestallDownloadClient**](radarr/docs/DownloadClientApi.md#testalldownloadclient) | **Post** /api/v3/downloadclient/testall | 
 *DownloadClientApi* | [**UpdateDownloadClient**](radarr/docs/DownloadClientApi.md#updatedownloadclient) | **Put** /api/v3/downloadclient/{id} | 
@@ -159,9 +161,11 @@ Class | Method | HTTP request | Description
 *ImportListApi* | [**CreateImportList**](radarr/docs/ImportListApi.md#createimportlist) | **Post** /api/v3/importlist | 
 *ImportListApi* | [**CreateImportListActionByName**](radarr/docs/ImportListApi.md#createimportlistactionbyname) | **Post** /api/v3/importlist/action/{name} | 
 *ImportListApi* | [**DeleteImportList**](radarr/docs/ImportListApi.md#deleteimportlist) | **Delete** /api/v3/importlist/{id} | 
+*ImportListApi* | [**DeleteImportListBulk**](radarr/docs/ImportListApi.md#deleteimportlistbulk) | **Delete** /api/v3/importlist/bulk | 
 *ImportListApi* | [**GetImportListById**](radarr/docs/ImportListApi.md#getimportlistbyid) | **Get** /api/v3/importlist/{id} | 
 *ImportListApi* | [**ListImportList**](radarr/docs/ImportListApi.md#listimportlist) | **Get** /api/v3/importlist | 
 *ImportListApi* | [**ListImportListSchema**](radarr/docs/ImportListApi.md#listimportlistschema) | **Get** /api/v3/importlist/schema | 
+*ImportListApi* | [**PutImportListBulk**](radarr/docs/ImportListApi.md#putimportlistbulk) | **Put** /api/v3/importlist/bulk | 
 *ImportListApi* | [**TestImportList**](radarr/docs/ImportListApi.md#testimportlist) | **Post** /api/v3/importlist/test | 
 *ImportListApi* | [**TestallImportList**](radarr/docs/ImportListApi.md#testallimportlist) | **Post** /api/v3/importlist/testall | 
 *ImportListApi* | [**UpdateImportList**](radarr/docs/ImportListApi.md#updateimportlist) | **Put** /api/v3/importlist/{id} | 
@@ -173,9 +177,11 @@ Class | Method | HTTP request | Description
 *IndexerApi* | [**CreateIndexer**](radarr/docs/IndexerApi.md#createindexer) | **Post** /api/v3/indexer | 
 *IndexerApi* | [**CreateIndexerActionByName**](radarr/docs/IndexerApi.md#createindexeractionbyname) | **Post** /api/v3/indexer/action/{name} | 
 *IndexerApi* | [**DeleteIndexer**](radarr/docs/IndexerApi.md#deleteindexer) | **Delete** /api/v3/indexer/{id} | 
+*IndexerApi* | [**DeleteIndexerBulk**](radarr/docs/IndexerApi.md#deleteindexerbulk) | **Delete** /api/v3/indexer/bulk | 
 *IndexerApi* | [**GetIndexerById**](radarr/docs/IndexerApi.md#getindexerbyid) | **Get** /api/v3/indexer/{id} | 
 *IndexerApi* | [**ListIndexer**](radarr/docs/IndexerApi.md#listindexer) | **Get** /api/v3/indexer | 
 *IndexerApi* | [**ListIndexerSchema**](radarr/docs/IndexerApi.md#listindexerschema) | **Get** /api/v3/indexer/schema | 
+*IndexerApi* | [**PutIndexerBulk**](radarr/docs/IndexerApi.md#putindexerbulk) | **Put** /api/v3/indexer/bulk | 
 *IndexerApi* | [**TestIndexer**](radarr/docs/IndexerApi.md#testindexer) | **Post** /api/v3/indexer/test | 
 *IndexerApi* | [**TestallIndexer**](radarr/docs/IndexerApi.md#testallindexer) | **Post** /api/v3/indexer/testall | 
 *IndexerApi* | [**UpdateIndexer**](radarr/docs/IndexerApi.md#updateindexer) | **Put** /api/v3/indexer/{id} | 
@@ -199,9 +205,11 @@ Class | Method | HTTP request | Description
 *MetadataApi* | [**CreateMetadata**](radarr/docs/MetadataApi.md#createmetadata) | **Post** /api/v3/metadata | 
 *MetadataApi* | [**CreateMetadataActionByName**](radarr/docs/MetadataApi.md#createmetadataactionbyname) | **Post** /api/v3/metadata/action/{name} | 
 *MetadataApi* | [**DeleteMetadata**](radarr/docs/MetadataApi.md#deletemetadata) | **Delete** /api/v3/metadata/{id} | 
+*MetadataApi* | [**DeleteMetadataBulk**](radarr/docs/MetadataApi.md#deletemetadatabulk) | **Delete** /api/v3/metadata/bulk | 
 *MetadataApi* | [**GetMetadataById**](radarr/docs/MetadataApi.md#getmetadatabyid) | **Get** /api/v3/metadata/{id} | 
 *MetadataApi* | [**ListMetadata**](radarr/docs/MetadataApi.md#listmetadata) | **Get** /api/v3/metadata | 
 *MetadataApi* | [**ListMetadataSchema**](radarr/docs/MetadataApi.md#listmetadataschema) | **Get** /api/v3/metadata/schema | 
+*MetadataApi* | [**PutMetadataBulk**](radarr/docs/MetadataApi.md#putmetadatabulk) | **Put** /api/v3/metadata/bulk | 
 *MetadataApi* | [**TestMetadata**](radarr/docs/MetadataApi.md#testmetadata) | **Post** /api/v3/metadata/test | 
 *MetadataApi* | [**TestallMetadata**](radarr/docs/MetadataApi.md#testallmetadata) | **Post** /api/v3/metadata/testall | 
 *MetadataApi* | [**UpdateMetadata**](radarr/docs/MetadataApi.md#updatemetadata) | **Put** /api/v3/metadata/{id} | 
@@ -234,9 +242,11 @@ Class | Method | HTTP request | Description
 *NotificationApi* | [**CreateNotification**](radarr/docs/NotificationApi.md#createnotification) | **Post** /api/v3/notification | 
 *NotificationApi* | [**CreateNotificationActionByName**](radarr/docs/NotificationApi.md#createnotificationactionbyname) | **Post** /api/v3/notification/action/{name} | 
 *NotificationApi* | [**DeleteNotification**](radarr/docs/NotificationApi.md#deletenotification) | **Delete** /api/v3/notification/{id} | 
+*NotificationApi* | [**DeleteNotificationBulk**](radarr/docs/NotificationApi.md#deletenotificationbulk) | **Delete** /api/v3/notification/bulk | 
 *NotificationApi* | [**GetNotificationById**](radarr/docs/NotificationApi.md#getnotificationbyid) | **Get** /api/v3/notification/{id} | 
 *NotificationApi* | [**ListNotification**](radarr/docs/NotificationApi.md#listnotification) | **Get** /api/v3/notification | 
 *NotificationApi* | [**ListNotificationSchema**](radarr/docs/NotificationApi.md#listnotificationschema) | **Get** /api/v3/notification/schema | 
+*NotificationApi* | [**PutNotificationBulk**](radarr/docs/NotificationApi.md#putnotificationbulk) | **Put** /api/v3/notification/bulk | 
 *NotificationApi* | [**TestNotification**](radarr/docs/NotificationApi.md#testnotification) | **Post** /api/v3/notification/test | 
 *NotificationApi* | [**TestallNotification**](radarr/docs/NotificationApi.md#testallnotification) | **Post** /api/v3/notification/testall | 
 *NotificationApi* | [**UpdateNotification**](radarr/docs/NotificationApi.md#updatenotification) | **Put** /api/v3/notification/{id} | 
@@ -341,6 +351,7 @@ Class | Method | HTTP request | Description
  - [DatabaseType](docs/DatabaseType.md)
  - [DelayProfileResource](docs/DelayProfileResource.md)
  - [DiskSpaceResource](docs/DiskSpaceResource.md)
+ - [DownloadClientBulkResource](docs/DownloadClientBulkResource.md)
  - [DownloadClientConfigResource](docs/DownloadClientConfigResource.md)
  - [DownloadClientResource](docs/DownloadClientResource.md)
  - [DownloadProtocol](docs/DownloadProtocol.md)
@@ -354,9 +365,11 @@ Class | Method | HTTP request | Description
  - [HistoryResourcePagingResource](docs/HistoryResourcePagingResource.md)
  - [HostConfigResource](docs/HostConfigResource.md)
  - [ImportExclusionsResource](docs/ImportExclusionsResource.md)
+ - [ImportListBulkResource](docs/ImportListBulkResource.md)
  - [ImportListConfigResource](docs/ImportListConfigResource.md)
  - [ImportListResource](docs/ImportListResource.md)
  - [ImportListType](docs/ImportListType.md)
+ - [IndexerBulkResource](docs/IndexerBulkResource.md)
  - [IndexerConfigResource](docs/IndexerConfigResource.md)
  - [IndexerFlagResource](docs/IndexerFlagResource.md)
  - [IndexerResource](docs/IndexerResource.md)
@@ -371,6 +384,7 @@ Class | Method | HTTP request | Description
  - [MediaCoverTypes](docs/MediaCoverTypes.md)
  - [MediaInfoResource](docs/MediaInfoResource.md)
  - [MediaManagementConfigResource](docs/MediaManagementConfigResource.md)
+ - [MetadataBulkResource](docs/MetadataBulkResource.md)
  - [MetadataConfigResource](docs/MetadataConfigResource.md)
  - [MetadataResource](docs/MetadataResource.md)
  - [Modifier](docs/Modifier.md)
@@ -386,6 +400,7 @@ Class | Method | HTTP request | Description
  - [MovieStatusType](docs/MovieStatusType.md)
  - [MovieTranslation](docs/MovieTranslation.md)
  - [NamingConfigResource](docs/NamingConfigResource.md)
+ - [NotificationBulkResource](docs/NotificationBulkResource.md)
  - [NotificationResource](docs/NotificationResource.md)
  - [PagingResourceFilter](docs/PagingResourceFilter.md)
  - [ParseResource](docs/ParseResource.md)

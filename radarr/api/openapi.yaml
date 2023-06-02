@@ -1115,6 +1115,15 @@ paths:
       - DownloadClient
     post:
       operationId: CreateDownloadClient
+      parameters:
+      - explode: true
+        in: query
+        name: forceSave
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
       requestBody:
         content:
           application/json:
@@ -1213,6 +1222,41 @@ paths:
           application/*+json:
             schema:
               $ref: '#/components/schemas/DownloadClientResource'
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/DownloadClientResource'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DownloadClientResource'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/DownloadClientResource'
+          description: Success
+      tags:
+      - DownloadClient
+  /api/v3/downloadclient/bulk:
+    delete:
+      operationId: DeleteDownloadClientBulk
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DownloadClientBulkResource'
+      responses:
+        "200":
+          description: Success
+      tags:
+      - DownloadClient
+    put:
+      operationId: PutDownloadClientBulk
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DownloadClientBulkResource'
       responses:
         "200":
           content:
@@ -1925,6 +1969,15 @@ paths:
       - ImportList
     post:
       operationId: CreateImportList
+      parameters:
+      - explode: true
+        in: query
+        name: forceSave
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
       requestBody:
         content:
           application/json:
@@ -2023,6 +2076,41 @@ paths:
           application/*+json:
             schema:
               $ref: '#/components/schemas/ImportListResource'
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ImportListResource'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ImportListResource'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ImportListResource'
+          description: Success
+      tags:
+      - ImportList
+  /api/v3/importlist/bulk:
+    delete:
+      operationId: DeleteImportListBulk
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ImportListBulkResource'
+      responses:
+        "200":
+          description: Success
+      tags:
+      - ImportList
+    put:
+      operationId: PutImportListBulk
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ImportListBulkResource'
       responses:
         "200":
           content:
@@ -2252,6 +2340,15 @@ paths:
       - Indexer
     post:
       operationId: CreateIndexer
+      parameters:
+      - explode: true
+        in: query
+        name: forceSave
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
       requestBody:
         content:
           application/json:
@@ -2350,6 +2447,41 @@ paths:
           application/*+json:
             schema:
               $ref: '#/components/schemas/IndexerResource'
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/IndexerResource'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/IndexerResource'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/IndexerResource'
+          description: Success
+      tags:
+      - Indexer
+  /api/v3/indexer/bulk:
+    delete:
+      operationId: DeleteIndexerBulk
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IndexerBulkResource'
+      responses:
+        "200":
+          description: Success
+      tags:
+      - Indexer
+    put:
+      operationId: PutIndexerBulk
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/IndexerBulkResource'
       responses:
         "200":
           content:
@@ -2871,6 +3003,15 @@ paths:
       - Metadata
     post:
       operationId: CreateMetadata
+      parameters:
+      - explode: true
+        in: query
+        name: forceSave
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
       requestBody:
         content:
           application/json:
@@ -2969,6 +3110,41 @@ paths:
           application/*+json:
             schema:
               $ref: '#/components/schemas/MetadataResource'
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/MetadataResource'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MetadataResource'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/MetadataResource'
+          description: Success
+      tags:
+      - Metadata
+  /api/v3/metadata/bulk:
+    delete:
+      operationId: DeleteMetadataBulk
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MetadataBulkResource'
+      responses:
+        "200":
+          description: Success
+      tags:
+      - Metadata
+    put:
+      operationId: PutMetadataBulk
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MetadataBulkResource'
       responses:
         "200":
           content:
@@ -3814,6 +3990,15 @@ paths:
       - Notification
     post:
       operationId: CreateNotification
+      parameters:
+      - explode: true
+        in: query
+        name: forceSave
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
       requestBody:
         content:
           application/json:
@@ -3912,6 +4097,41 @@ paths:
           application/*+json:
             schema:
               $ref: '#/components/schemas/NotificationResource'
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/NotificationResource'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NotificationResource'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/NotificationResource'
+          description: Success
+      tags:
+      - Notification
+  /api/v3/notification/bulk:
+    delete:
+      operationId: DeleteNotificationBulk
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NotificationBulkResource'
+      responses:
+        "200":
+          description: Success
+      tags:
+      - Notification
+    put:
+      operationId: PutNotificationBulk
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NotificationBulkResource'
       responses:
         "200":
           content:
@@ -9297,6 +9517,49 @@ components:
           format: int64
           type: integer
       type: object
+    DownloadClientBulkResource:
+      additionalProperties: false
+      example:
+        applyTags: null
+        removeFailedDownloads: true
+        enable: true
+        removeCompletedDownloads: true
+        ids:
+        - 0
+        - 0
+        priority: 1
+        tags:
+        - 6
+        - 6
+      properties:
+        ids:
+          items:
+            format: int32
+            type: integer
+          nullable: true
+          type: array
+        tags:
+          items:
+            format: int32
+            type: integer
+          nullable: true
+          type: array
+        applyTags:
+          $ref: '#/components/schemas/ApplyTags'
+        enable:
+          nullable: true
+          type: boolean
+        priority:
+          format: int32
+          nullable: true
+          type: integer
+        removeCompletedDownloads:
+          nullable: true
+          type: boolean
+        removeFailedDownloads:
+          nullable: true
+          type: boolean
+      type: object
     DownloadClientConfigResource:
       additionalProperties: false
       example:
@@ -12559,6 +12822,45 @@ components:
           format: int32
           type: integer
       type: object
+    ImportListBulkResource:
+      additionalProperties: false
+      example:
+        applyTags: null
+        rootFolderPath: rootFolderPath
+        profileId: 1
+        ids:
+        - 0
+        - 0
+        enableAuto: true
+        tags:
+        - 6
+        - 6
+      properties:
+        ids:
+          items:
+            format: int32
+            type: integer
+          nullable: true
+          type: array
+        tags:
+          items:
+            format: int32
+            type: integer
+          nullable: true
+          type: array
+        applyTags:
+          $ref: '#/components/schemas/ApplyTags'
+        enableAuto:
+          nullable: true
+          type: boolean
+        rootFolderPath:
+          nullable: true
+          type: string
+        profileId:
+          format: int32
+          nullable: true
+          type: integer
+      type: object
     ImportListConfigResource:
       additionalProperties: false
       example:
@@ -12725,6 +13027,49 @@ components:
       - other
       - advanced
       type: string
+    IndexerBulkResource:
+      additionalProperties: false
+      example:
+        applyTags: null
+        enableAutomaticSearch: true
+        enableRss: true
+        ids:
+        - 0
+        - 0
+        enableInteractiveSearch: true
+        priority: 1
+        tags:
+        - 6
+        - 6
+      properties:
+        ids:
+          items:
+            format: int32
+            type: integer
+          nullable: true
+          type: array
+        tags:
+          items:
+            format: int32
+            type: integer
+          nullable: true
+          type: array
+        applyTags:
+          $ref: '#/components/schemas/ApplyTags'
+        enableRss:
+          nullable: true
+          type: boolean
+        enableAutomaticSearch:
+          nullable: true
+          type: boolean
+        enableInteractiveSearch:
+          nullable: true
+          type: boolean
+        priority:
+          format: int32
+          nullable: true
+          type: integer
+      type: object
     IndexerConfigResource:
       additionalProperties: false
       example:
@@ -14763,8 +15108,10 @@ components:
         fileDate: null
         rescanAfterRefresh: null
         minimumFreeSpaceWhenImporting: 1
+        scriptImportPath: scriptImportPath
         pathsDefaultStatic: true
         chownGroup: chownGroup
+        useScriptImport: true
         extraFileExtensions: extraFileExtensions
         createEmptyMovieFolders: true
         enableMediaInfo: true
@@ -14816,6 +15163,11 @@ components:
           type: integer
         copyUsingHardlinks:
           type: boolean
+        useScriptImport:
+          type: boolean
+        scriptImportPath:
+          nullable: true
+          type: string
         importExtraFiles:
           type: boolean
         extraFileExtensions:
@@ -14823,6 +15175,32 @@ components:
           type: string
         enableMediaInfo:
           type: boolean
+      type: object
+    MetadataBulkResource:
+      additionalProperties: false
+      example:
+        applyTags: null
+        ids:
+        - 0
+        - 0
+        tags:
+        - 6
+        - 6
+      properties:
+        ids:
+          items:
+            format: int32
+            type: integer
+          nullable: true
+          type: array
+        tags:
+          items:
+            format: int32
+            type: integer
+          nullable: true
+          type: array
+        applyTags:
+          $ref: '#/components/schemas/ApplyTags'
       type: object
     MetadataConfigResource:
       additionalProperties: false
@@ -16729,6 +17107,32 @@ components:
         numberStyle:
           nullable: true
           type: string
+      type: object
+    NotificationBulkResource:
+      additionalProperties: false
+      example:
+        applyTags: null
+        ids:
+        - 0
+        - 0
+        tags:
+        - 6
+        - 6
+      properties:
+        ids:
+          items:
+            format: int32
+            type: integer
+          nullable: true
+          type: array
+        tags:
+          items:
+            format: int32
+            type: integer
+          nullable: true
+          type: array
+        applyTags:
+          $ref: '#/components/schemas/ApplyTags'
       type: object
     NotificationResource:
       additionalProperties: false
