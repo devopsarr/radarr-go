@@ -1129,22 +1129,10 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/DownloadClientResource'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/DownloadClientResource'
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/DownloadClientResource'
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/DownloadClientResource'
             application/json:
-              schema:
-                $ref: '#/components/schemas/DownloadClientResource'
-            text/json:
               schema:
                 $ref: '#/components/schemas/DownloadClientResource'
           description: Success
@@ -1216,22 +1204,10 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/DownloadClientResource'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/DownloadClientResource'
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/DownloadClientResource'
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/DownloadClientResource'
             application/json:
-              schema:
-                $ref: '#/components/schemas/DownloadClientResource'
-            text/json:
               schema:
                 $ref: '#/components/schemas/DownloadClientResource'
           description: Success
@@ -1260,13 +1236,7 @@ paths:
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/DownloadClientResource'
             application/json:
-              schema:
-                $ref: '#/components/schemas/DownloadClientResource'
-            text/json:
               schema:
                 $ref: '#/components/schemas/DownloadClientResource'
           description: Success
@@ -1337,12 +1307,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/DownloadClientResource'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/DownloadClientResource'
-          application/*+json:
             schema:
               $ref: '#/components/schemas/DownloadClientResource'
       responses:
@@ -1983,22 +1947,10 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ImportListResource'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/ImportListResource'
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/ImportListResource'
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ImportListResource'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ImportListResource'
-            text/json:
               schema:
                 $ref: '#/components/schemas/ImportListResource'
           description: Success
@@ -2070,22 +2022,10 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/ImportListResource'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/ImportListResource'
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/ImportListResource'
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ImportListResource'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ImportListResource'
-            text/json:
               schema:
                 $ref: '#/components/schemas/ImportListResource'
           description: Success
@@ -2114,13 +2054,7 @@ paths:
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/ImportListResource'
             application/json:
-              schema:
-                $ref: '#/components/schemas/ImportListResource'
-            text/json:
               schema:
                 $ref: '#/components/schemas/ImportListResource'
           description: Success
@@ -2191,12 +2125,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/ImportListResource'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/ImportListResource'
-          application/*+json:
             schema:
               $ref: '#/components/schemas/ImportListResource'
       responses:
@@ -2354,22 +2282,10 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/IndexerResource'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/IndexerResource'
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/IndexerResource'
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/IndexerResource'
             application/json:
-              schema:
-                $ref: '#/components/schemas/IndexerResource'
-            text/json:
               schema:
                 $ref: '#/components/schemas/IndexerResource'
           description: Success
@@ -2441,22 +2357,10 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/IndexerResource'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/IndexerResource'
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/IndexerResource'
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/IndexerResource'
             application/json:
-              schema:
-                $ref: '#/components/schemas/IndexerResource'
-            text/json:
               schema:
                 $ref: '#/components/schemas/IndexerResource'
           description: Success
@@ -2485,13 +2389,7 @@ paths:
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/IndexerResource'
             application/json:
-              schema:
-                $ref: '#/components/schemas/IndexerResource'
-            text/json:
               schema:
                 $ref: '#/components/schemas/IndexerResource'
           description: Success
@@ -2562,12 +2460,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/IndexerResource'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/IndexerResource'
-          application/*+json:
             schema:
               $ref: '#/components/schemas/IndexerResource'
       responses:
@@ -3017,22 +2909,10 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/MetadataResource'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/MetadataResource'
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/MetadataResource'
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/MetadataResource'
             application/json:
-              schema:
-                $ref: '#/components/schemas/MetadataResource'
-            text/json:
               schema:
                 $ref: '#/components/schemas/MetadataResource'
           description: Success
@@ -3104,22 +2984,10 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/MetadataResource'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/MetadataResource'
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/MetadataResource'
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/MetadataResource'
             application/json:
-              schema:
-                $ref: '#/components/schemas/MetadataResource'
-            text/json:
               schema:
                 $ref: '#/components/schemas/MetadataResource'
           description: Success
@@ -3148,13 +3016,7 @@ paths:
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/MetadataResource'
             application/json:
-              schema:
-                $ref: '#/components/schemas/MetadataResource'
-            text/json:
               schema:
                 $ref: '#/components/schemas/MetadataResource'
           description: Success
@@ -3225,12 +3087,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/MetadataResource'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/MetadataResource'
-          application/*+json:
             schema:
               $ref: '#/components/schemas/MetadataResource'
       responses:
@@ -4004,22 +3860,10 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/NotificationResource'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/NotificationResource'
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/NotificationResource'
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/NotificationResource'
             application/json:
-              schema:
-                $ref: '#/components/schemas/NotificationResource'
-            text/json:
               schema:
                 $ref: '#/components/schemas/NotificationResource'
           description: Success
@@ -4091,22 +3935,10 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/NotificationResource'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/NotificationResource'
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/NotificationResource'
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/NotificationResource'
             application/json:
-              schema:
-                $ref: '#/components/schemas/NotificationResource'
-            text/json:
               schema:
                 $ref: '#/components/schemas/NotificationResource'
           description: Success
@@ -4135,13 +3967,7 @@ paths:
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/NotificationResource'
             application/json:
-              schema:
-                $ref: '#/components/schemas/NotificationResource'
-            text/json:
               schema:
                 $ref: '#/components/schemas/NotificationResource'
           description: Success
@@ -4212,12 +4038,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/NotificationResource'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/NotificationResource'
-          application/*+json:
             schema:
               $ref: '#/components/schemas/NotificationResource'
       responses:
