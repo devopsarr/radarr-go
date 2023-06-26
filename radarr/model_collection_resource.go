@@ -28,6 +28,7 @@ type CollectionResource struct {
 	SearchOnAdd *bool `json:"searchOnAdd,omitempty"`
 	MinimumAvailability *MovieStatusType `json:"minimumAvailability,omitempty"`
 	Movies []*CollectionMovieResource `json:"movies,omitempty"`
+	MissingMovies *int32 `json:"missingMovies,omitempty"`
 }
 
 // NewCollectionResource instantiates a new CollectionResource object
@@ -473,6 +474,38 @@ func (o *CollectionResource) SetMovies(v []*CollectionMovieResource) {
 	o.Movies = v
 }
 
+// GetMissingMovies returns the MissingMovies field value if set, zero value otherwise.
+func (o *CollectionResource) GetMissingMovies() int32 {
+	if o == nil || isNil(o.MissingMovies) {
+		var ret int32
+		return ret
+	}
+	return *o.MissingMovies
+}
+
+// GetMissingMoviesOk returns a tuple with the MissingMovies field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CollectionResource) GetMissingMoviesOk() (*int32, bool) {
+	if o == nil || isNil(o.MissingMovies) {
+    return nil, false
+	}
+	return o.MissingMovies, true
+}
+
+// HasMissingMovies returns a boolean if a field has been set.
+func (o *CollectionResource) HasMissingMovies() bool {
+	if o != nil && !isNil(o.MissingMovies) {
+		return true
+	}
+
+	return false
+}
+
+// SetMissingMovies gets a reference to the given int32 and assigns it to the MissingMovies field.
+func (o *CollectionResource) SetMissingMovies(v int32) {
+	o.MissingMovies = &v
+}
+
 func (o CollectionResource) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Id) {
@@ -510,6 +543,9 @@ func (o CollectionResource) MarshalJSON() ([]byte, error) {
 	}
 	if o.Movies != nil {
 		toSerialize["movies"] = o.Movies
+	}
+	if !isNil(o.MissingMovies) {
+		toSerialize["missingMovies"] = o.MissingMovies
 	}
 	return json.Marshal(toSerialize)
 }
