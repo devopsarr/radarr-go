@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **SearchOnAdd** | Pointer to **bool** |  | [optional] 
 **MinimumAvailability** | Pointer to [**MovieStatusType**](MovieStatusType.md) |  | [optional] 
 **Movies** | Pointer to [**[]CollectionMovieResource**](CollectionMovieResource.md) |  | [optional] 
+**MissingMovies** | Pointer to **int32** |  | [optional] 
 
 ## Methods
 
@@ -396,6 +397,31 @@ HasMovies returns a boolean if a field has been set.
 `func (o *CollectionResource) UnsetMovies()`
 
 UnsetMovies ensures that no value is present for Movies, not even an explicit nil
+### GetMissingMovies
+
+`func (o *CollectionResource) GetMissingMovies() int32`
+
+GetMissingMovies returns the MissingMovies field if non-nil, zero value otherwise.
+
+### GetMissingMoviesOk
+
+`func (o *CollectionResource) GetMissingMoviesOk() (*int32, bool)`
+
+GetMissingMoviesOk returns a tuple with the MissingMovies field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMissingMovies
+
+`func (o *CollectionResource) SetMissingMovies(v int32)`
+
+SetMissingMovies sets MissingMovies field to given value.
+
+### HasMissingMovies
+
+`func (o *CollectionResource) HasMissingMovies() bool`
+
+HasMissingMovies returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

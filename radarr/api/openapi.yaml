@@ -8645,6 +8645,20 @@ components:
     CollectionResource:
       additionalProperties: false
       example:
+        overview: overview
+        images:
+        - coverType: null
+          remoteUrl: remoteUrl
+          url: url
+        - coverType: null
+          remoteUrl: remoteUrl
+          url: url
+        missingMovies: 7
+        rootFolderPath: rootFolderPath
+        minimumAvailability: null
+        title: title
+        searchOnAdd: true
+        monitored: true
         sortTitle: sortTitle
         movies:
         - cleanTitle: cleanTitle
@@ -8719,22 +8733,9 @@ components:
           - genres
           runtime: 5
           title: title
-        overview: overview
-        images:
-        - coverType: null
-          remoteUrl: remoteUrl
-          url: url
-        - coverType: null
-          remoteUrl: remoteUrl
-          url: url
         tmdbId: 6
-        rootFolderPath: rootFolderPath
         qualityProfileId: 1
-        minimumAvailability: null
         id: 0
-        title: title
-        searchOnAdd: true
-        monitored: true
       properties:
         id:
           format: int32
@@ -8773,6 +8774,9 @@ components:
             $ref: '#/components/schemas/CollectionMovieResource'
           nullable: true
           type: array
+        missingMovies:
+          format: int32
+          type: integer
       type: object
     CollectionUpdateResource:
       additionalProperties: false
