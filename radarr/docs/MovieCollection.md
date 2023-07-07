@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **Images** | Pointer to [**[]MediaCover**](MediaCover.md) |  | [optional] 
 **Added** | Pointer to **time.Time** |  | [optional] 
 **Movies** | Pointer to [**[]MovieMetadata**](MovieMetadata.md) |  | [optional] 
+**Tags** | Pointer to **[]int32** |  | [optional] 
 
 ## Methods
 
@@ -494,6 +495,41 @@ HasMovies returns a boolean if a field has been set.
 `func (o *MovieCollection) UnsetMovies()`
 
 UnsetMovies ensures that no value is present for Movies, not even an explicit nil
+### GetTags
+
+`func (o *MovieCollection) GetTags() []int32`
+
+GetTags returns the Tags field if non-nil, zero value otherwise.
+
+### GetTagsOk
+
+`func (o *MovieCollection) GetTagsOk() (*[]int32, bool)`
+
+GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTags
+
+`func (o *MovieCollection) SetTags(v []int32)`
+
+SetTags sets Tags field to given value.
+
+### HasTags
+
+`func (o *MovieCollection) HasTags() bool`
+
+HasTags returns a boolean if a field has been set.
+
+### SetTagsNil
+
+`func (o *MovieCollection) SetTagsNil(b bool)`
+
+ SetTagsNil sets the value for Tags to be an explicit nil
+
+### UnsetTags
+`func (o *MovieCollection) UnsetTags()`
+
+UnsetTags ensures that no value is present for Tags, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -29,6 +29,7 @@ type CollectionResource struct {
 	MinimumAvailability *MovieStatusType `json:"minimumAvailability,omitempty"`
 	Movies []*CollectionMovieResource `json:"movies,omitempty"`
 	MissingMovies *int32 `json:"missingMovies,omitempty"`
+	Tags []*int32 `json:"tags,omitempty"`
 }
 
 // NewCollectionResource instantiates a new CollectionResource object
@@ -506,6 +507,39 @@ func (o *CollectionResource) SetMissingMovies(v int32) {
 	o.MissingMovies = &v
 }
 
+// GetTags returns the Tags field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *CollectionResource) GetTags() []*int32 {
+	if o == nil {
+		var ret []*int32
+		return ret
+	}
+	return o.Tags
+}
+
+// GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *CollectionResource) GetTagsOk() ([]*int32, bool) {
+	if o == nil || isNil(o.Tags) {
+    return nil, false
+	}
+	return o.Tags, true
+}
+
+// HasTags returns a boolean if a field has been set.
+func (o *CollectionResource) HasTags() bool {
+	if o != nil && isNil(o.Tags) {
+		return true
+	}
+
+	return false
+}
+
+// SetTags gets a reference to the given []int32 and assigns it to the Tags field.
+func (o *CollectionResource) SetTags(v []*int32) {
+	o.Tags = v
+}
+
 func (o CollectionResource) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Id) {
@@ -546,6 +580,9 @@ func (o CollectionResource) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.MissingMovies) {
 		toSerialize["missingMovies"] = o.MissingMovies
+	}
+	if o.Tags != nil {
+		toSerialize["tags"] = o.Tags
 	}
 	return json.Marshal(toSerialize)
 }
