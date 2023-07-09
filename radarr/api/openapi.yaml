@@ -6176,7 +6176,7 @@ components:
               votes: 8
               type: null
               value: 9.018348186070783
-          popularity: 4.678948
+          popularity: 7.2605214
           digitalRelease: 2000-01-23T04:56:07.000+00:00
           physicalReleaseNote: physicalReleaseNote
           id: 1
@@ -6208,6 +6208,9 @@ components:
             title: title
             searchOnAdd: true
             monitored: true
+            tags:
+            - 4
+            - 4
             cleanTitle: cleanTitle
             sortTitle: sortTitle
             movies:
@@ -7109,7 +7112,7 @@ components:
                 votes: 8
                 type: null
                 value: 9.018348186070783
-            popularity: 4.678948
+            popularity: 7.2605214
             digitalRelease: 2000-01-23T04:56:07.000+00:00
             physicalReleaseNote: physicalReleaseNote
             id: 1
@@ -7141,6 +7144,9 @@ components:
               title: title
               searchOnAdd: true
               monitored: true
+              tags:
+              - 4
+              - 4
               cleanTitle: cleanTitle
               sortTitle: sortTitle
               movies:
@@ -7999,7 +8005,7 @@ components:
                 votes: 8
                 type: null
                 value: 9.018348186070783
-            popularity: 4.678948
+            popularity: 7.2605214
             digitalRelease: 2000-01-23T04:56:07.000+00:00
             physicalReleaseNote: physicalReleaseNote
             id: 1
@@ -8031,6 +8037,9 @@ components:
               title: title
               searchOnAdd: true
               monitored: true
+              tags:
+              - 4
+              - 4
               cleanTitle: cleanTitle
               sortTitle: sortTitle
               movies:
@@ -8659,6 +8668,9 @@ components:
         title: title
         searchOnAdd: true
         monitored: true
+        tags:
+        - 9
+        - 9
         sortTitle: sortTitle
         movies:
         - cleanTitle: cleanTitle
@@ -8777,6 +8789,13 @@ components:
         missingMovies:
           format: int32
           type: integer
+        tags:
+          items:
+            format: int32
+            type: integer
+          nullable: true
+          type: array
+          uniqueItems: true
       type: object
     CollectionUpdateResource:
       additionalProperties: false
@@ -10107,7 +10126,7 @@ components:
               votes: 8
               type: null
               value: 9.018348186070783
-          popularity: 4.678948
+          popularity: 7.2605214
           digitalRelease: 2000-01-23T04:56:07.000+00:00
           physicalReleaseNote: physicalReleaseNote
           id: 1
@@ -10139,6 +10158,9 @@ components:
             title: title
             searchOnAdd: true
             monitored: true
+            tags:
+            - 4
+            - 4
             cleanTitle: cleanTitle
             sortTitle: sortTitle
             movies:
@@ -11051,7 +11073,7 @@ components:
                 votes: 8
                 type: null
                 value: 9.018348186070783
-            popularity: 4.678948
+            popularity: 7.2605214
             digitalRelease: 2000-01-23T04:56:07.000+00:00
             physicalReleaseNote: physicalReleaseNote
             id: 1
@@ -11083,6 +11105,9 @@ components:
               title: title
               searchOnAdd: true
               monitored: true
+              tags:
+              - 4
+              - 4
               cleanTitle: cleanTitle
               sortTitle: sortTitle
               movies:
@@ -11944,7 +11969,7 @@ components:
                 votes: 8
                 type: null
                 value: 9.018348186070783
-            popularity: 4.678948
+            popularity: 7.2605214
             digitalRelease: 2000-01-23T04:56:07.000+00:00
             physicalReleaseNote: physicalReleaseNote
             id: 1
@@ -11976,6 +12001,9 @@ components:
               title: title
               searchOnAdd: true
               monitored: true
+              tags:
+              - 4
+              - 4
               cleanTitle: cleanTitle
               sortTitle: sortTitle
               movies:
@@ -12798,15 +12826,11 @@ components:
     ImportListConfigResource:
       additionalProperties: false
       example:
-        importListSyncInterval: 6
         listSyncLevel: listSyncLevel
         id: 0
         importExclusions: importExclusions
       properties:
         id:
-          format: int32
-          type: integer
-        importListSyncInterval:
           format: int32
           type: integer
         listSyncLevel:
@@ -12819,6 +12843,7 @@ components:
     ImportListResource:
       additionalProperties: false
       example:
+        minRefreshInterval: minRefreshInterval
         implementationName: implementationName
         rootFolderPath: rootFolderPath
         implementation: implementation
@@ -12953,6 +12978,8 @@ components:
         listOrder:
           format: int32
           type: integer
+        minRefreshInterval:
+          type: string
       type: object
     ImportListType:
       enum:
@@ -13714,7 +13741,7 @@ components:
               votes: 8
               type: null
               value: 9.018348186070783
-          popularity: 4.678948
+          popularity: 7.2605214
           digitalRelease: 2000-01-23T04:56:07.000+00:00
           physicalReleaseNote: physicalReleaseNote
           id: 1
@@ -13746,6 +13773,9 @@ components:
             title: title
             searchOnAdd: true
             monitored: true
+            tags:
+            - 4
+            - 4
             cleanTitle: cleanTitle
             sortTitle: sortTitle
             movies:
@@ -14387,7 +14417,7 @@ components:
               votes: 8
               type: null
               value: 9.018348186070783
-          popularity: 4.678948
+          popularity: 7.2605214
           digitalRelease: 2000-01-23T04:56:07.000+00:00
           physicalReleaseNote: physicalReleaseNote
           id: 1
@@ -14419,6 +14449,9 @@ components:
             title: title
             searchOnAdd: true
             monitored: true
+            tags:
+            - 4
+            - 4
             cleanTitle: cleanTitle
             sortTitle: sortTitle
             movies:
@@ -15319,6 +15352,9 @@ components:
         title: title
         searchOnAdd: true
         monitored: true
+        tags:
+        - 4
+        - 4
         cleanTitle: cleanTitle
         sortTitle: sortTitle
         movies:
@@ -15570,6 +15606,13 @@ components:
             $ref: '#/components/schemas/MovieMetadata'
           nullable: true
           type: array
+        tags:
+          items:
+            format: int32
+            type: integer
+          nullable: true
+          type: array
+          uniqueItems: true
       type: object
     MovieEditorResource:
       additionalProperties: false
@@ -16611,7 +16654,7 @@ components:
             votes: 8
             type: null
             value: 9.018348186070783
-        popularity: 4.678948
+        popularity: 7.2605214
         digitalRelease: 2000-01-23T04:56:07.000+00:00
         physicalReleaseNote: physicalReleaseNote
         id: 1
@@ -16643,6 +16686,9 @@ components:
           title: title
           searchOnAdd: true
           monitored: true
+          tags:
+          - 4
+          - 4
           cleanTitle: cleanTitle
           sortTitle: sortTitle
           movies:
@@ -17712,7 +17758,7 @@ components:
               votes: 8
               type: null
               value: 9.018348186070783
-          popularity: 4.678948
+          popularity: 7.2605214
           digitalRelease: 2000-01-23T04:56:07.000+00:00
           physicalReleaseNote: physicalReleaseNote
           id: 1
@@ -17744,6 +17790,9 @@ components:
             title: title
             searchOnAdd: true
             monitored: true
+            tags:
+            - 4
+            - 4
             cleanTitle: cleanTitle
             sortTitle: sortTitle
             movies:
@@ -18694,7 +18743,7 @@ components:
               votes: 8
               type: null
               value: 9.018348186070783
-          popularity: 4.678948
+          popularity: 7.2605214
           digitalRelease: 2000-01-23T04:56:07.000+00:00
           physicalReleaseNote: physicalReleaseNote
           id: 1
@@ -18726,6 +18775,9 @@ components:
             title: title
             searchOnAdd: true
             monitored: true
+            tags:
+            - 4
+            - 4
             cleanTitle: cleanTitle
             sortTitle: sortTitle
             movies:
@@ -19676,7 +19728,7 @@ components:
                 votes: 8
                 type: null
                 value: 9.018348186070783
-            popularity: 4.678948
+            popularity: 7.2605214
             digitalRelease: 2000-01-23T04:56:07.000+00:00
             physicalReleaseNote: physicalReleaseNote
             id: 1
@@ -19708,6 +19760,9 @@ components:
               title: title
               searchOnAdd: true
               monitored: true
+              tags:
+              - 4
+              - 4
               cleanTitle: cleanTitle
               sortTitle: sortTitle
               movies:
@@ -20584,7 +20639,7 @@ components:
                 votes: 8
                 type: null
                 value: 9.018348186070783
-            popularity: 4.678948
+            popularity: 7.2605214
             digitalRelease: 2000-01-23T04:56:07.000+00:00
             physicalReleaseNote: physicalReleaseNote
             id: 1
@@ -20616,6 +20671,9 @@ components:
               title: title
               searchOnAdd: true
               monitored: true
+              tags:
+              - 4
+              - 4
               cleanTitle: cleanTitle
               sortTitle: sortTitle
               movies:

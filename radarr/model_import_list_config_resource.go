@@ -17,7 +17,6 @@ import (
 // ImportListConfigResource struct for ImportListConfigResource
 type ImportListConfigResource struct {
 	Id *int32 `json:"id,omitempty"`
-	ImportListSyncInterval *int32 `json:"importListSyncInterval,omitempty"`
 	ListSyncLevel NullableString `json:"listSyncLevel,omitempty"`
 	ImportExclusions NullableString `json:"importExclusions,omitempty"`
 }
@@ -69,38 +68,6 @@ func (o *ImportListConfigResource) HasId() bool {
 // SetId gets a reference to the given int32 and assigns it to the Id field.
 func (o *ImportListConfigResource) SetId(v int32) {
 	o.Id = &v
-}
-
-// GetImportListSyncInterval returns the ImportListSyncInterval field value if set, zero value otherwise.
-func (o *ImportListConfigResource) GetImportListSyncInterval() int32 {
-	if o == nil || isNil(o.ImportListSyncInterval) {
-		var ret int32
-		return ret
-	}
-	return *o.ImportListSyncInterval
-}
-
-// GetImportListSyncIntervalOk returns a tuple with the ImportListSyncInterval field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ImportListConfigResource) GetImportListSyncIntervalOk() (*int32, bool) {
-	if o == nil || isNil(o.ImportListSyncInterval) {
-    return nil, false
-	}
-	return o.ImportListSyncInterval, true
-}
-
-// HasImportListSyncInterval returns a boolean if a field has been set.
-func (o *ImportListConfigResource) HasImportListSyncInterval() bool {
-	if o != nil && !isNil(o.ImportListSyncInterval) {
-		return true
-	}
-
-	return false
-}
-
-// SetImportListSyncInterval gets a reference to the given int32 and assigns it to the ImportListSyncInterval field.
-func (o *ImportListConfigResource) SetImportListSyncInterval(v int32) {
-	o.ImportListSyncInterval = &v
 }
 
 // GetListSyncLevel returns the ListSyncLevel field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -191,9 +158,6 @@ func (o ImportListConfigResource) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Id) {
 		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.ImportListSyncInterval) {
-		toSerialize["importListSyncInterval"] = o.ImportListSyncInterval
 	}
 	if o.ListSyncLevel.IsSet() {
 		toSerialize["listSyncLevel"] = o.ListSyncLevel.Get()

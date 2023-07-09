@@ -5,7 +5,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int32** |  | [optional] 
-**ImportListSyncInterval** | Pointer to **int32** |  | [optional] 
 **ListSyncLevel** | Pointer to **NullableString** |  | [optional] 
 **ImportExclusions** | Pointer to **NullableString** |  | [optional] 
 
@@ -52,31 +51,6 @@ SetId sets Id field to given value.
 `func (o *ImportListConfigResource) HasId() bool`
 
 HasId returns a boolean if a field has been set.
-
-### GetImportListSyncInterval
-
-`func (o *ImportListConfigResource) GetImportListSyncInterval() int32`
-
-GetImportListSyncInterval returns the ImportListSyncInterval field if non-nil, zero value otherwise.
-
-### GetImportListSyncIntervalOk
-
-`func (o *ImportListConfigResource) GetImportListSyncIntervalOk() (*int32, bool)`
-
-GetImportListSyncIntervalOk returns a tuple with the ImportListSyncInterval field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetImportListSyncInterval
-
-`func (o *ImportListConfigResource) SetImportListSyncInterval(v int32)`
-
-SetImportListSyncInterval sets ImportListSyncInterval field to given value.
-
-### HasImportListSyncInterval
-
-`func (o *ImportListConfigResource) HasImportListSyncInterval() bool`
-
-HasImportListSyncInterval returns a boolean if a field has been set.
 
 ### GetListSyncLevel
 

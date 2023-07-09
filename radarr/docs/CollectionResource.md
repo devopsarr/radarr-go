@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **MinimumAvailability** | Pointer to [**MovieStatusType**](MovieStatusType.md) |  | [optional] 
 **Movies** | Pointer to [**[]CollectionMovieResource**](CollectionMovieResource.md) |  | [optional] 
 **MissingMovies** | Pointer to **int32** |  | [optional] 
+**Tags** | Pointer to **[]int32** |  | [optional] 
 
 ## Methods
 
@@ -422,6 +423,41 @@ SetMissingMovies sets MissingMovies field to given value.
 
 HasMissingMovies returns a boolean if a field has been set.
 
+### GetTags
+
+`func (o *CollectionResource) GetTags() []int32`
+
+GetTags returns the Tags field if non-nil, zero value otherwise.
+
+### GetTagsOk
+
+`func (o *CollectionResource) GetTagsOk() (*[]int32, bool)`
+
+GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTags
+
+`func (o *CollectionResource) SetTags(v []int32)`
+
+SetTags sets Tags field to given value.
+
+### HasTags
+
+`func (o *CollectionResource) HasTags() bool`
+
+HasTags returns a boolean if a field has been set.
+
+### SetTagsNil
+
+`func (o *CollectionResource) SetTagsNil(b bool)`
+
+ SetTagsNil sets the value for Tags to be an explicit nil
+
+### UnsetTags
+`func (o *CollectionResource) UnsetTags()`
+
+UnsetTags ensures that no value is present for Tags, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

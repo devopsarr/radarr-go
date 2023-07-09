@@ -32,6 +32,7 @@ type MovieCollection struct {
 	Images []*MediaCover `json:"images,omitempty"`
 	Added *time.Time `json:"added,omitempty"`
 	Movies []*MovieMetadata `json:"movies,omitempty"`
+	Tags []*int32 `json:"tags,omitempty"`
 }
 
 // NewMovieCollection instantiates a new MovieCollection object
@@ -593,6 +594,39 @@ func (o *MovieCollection) SetMovies(v []*MovieMetadata) {
 	o.Movies = v
 }
 
+// GetTags returns the Tags field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *MovieCollection) GetTags() []*int32 {
+	if o == nil {
+		var ret []*int32
+		return ret
+	}
+	return o.Tags
+}
+
+// GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *MovieCollection) GetTagsOk() ([]*int32, bool) {
+	if o == nil || isNil(o.Tags) {
+    return nil, false
+	}
+	return o.Tags, true
+}
+
+// HasTags returns a boolean if a field has been set.
+func (o *MovieCollection) HasTags() bool {
+	if o != nil && isNil(o.Tags) {
+		return true
+	}
+
+	return false
+}
+
+// SetTags gets a reference to the given []int32 and assigns it to the Tags field.
+func (o *MovieCollection) SetTags(v []*int32) {
+	o.Tags = v
+}
+
 func (o MovieCollection) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Id) {
@@ -639,6 +673,9 @@ func (o MovieCollection) MarshalJSON() ([]byte, error) {
 	}
 	if o.Movies != nil {
 		toSerialize["movies"] = o.Movies
+	}
+	if o.Tags != nil {
+		toSerialize["tags"] = o.Tags
 	}
 	return json.Marshal(toSerialize)
 }
