@@ -24,6 +24,7 @@ const (
 	IMPORTLISTTYPE_TMDB ImportListType = "tmdb"
 	IMPORTLISTTYPE_TRAKT ImportListType = "trakt"
 	IMPORTLISTTYPE_PLEX ImportListType = "plex"
+	IMPORTLISTTYPE_SIMKL ImportListType = "simkl"
 	IMPORTLISTTYPE_OTHER ImportListType = "other"
 	IMPORTLISTTYPE_ADVANCED ImportListType = "advanced"
 )
@@ -34,6 +35,7 @@ var AllowedImportListTypeEnumValues = []ImportListType{
 	"tmdb",
 	"trakt",
 	"plex",
+	"simkl",
 	"other",
 	"advanced",
 }

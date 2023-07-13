@@ -2993,35 +2993,6 @@ paths:
           description: Success
       tags:
       - Metadata
-  /api/v3/metadata/bulk:
-    delete:
-      operationId: DeleteMetadataBulk
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/MetadataBulkResource'
-      responses:
-        "200":
-          description: Success
-      tags:
-      - Metadata
-    put:
-      operationId: PutMetadataBulk
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/MetadataBulkResource'
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/MetadataResource'
-          description: Success
-      tags:
-      - Metadata
   /api/v3/metadata/schema:
     get:
       operationId: ListMetadataSchema
@@ -3935,35 +3906,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/NotificationResource'
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/NotificationResource'
-          description: Success
-      tags:
-      - Notification
-  /api/v3/notification/bulk:
-    delete:
-      operationId: DeleteNotificationBulk
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/NotificationBulkResource'
-      responses:
-        "200":
-          description: Success
-      tags:
-      - Notification
-    put:
-      operationId: PutNotificationBulk
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/NotificationBulkResource'
       responses:
         "200":
           content:
@@ -12987,6 +12929,7 @@ components:
       - tmdb
       - trakt
       - plex
+      - simkl
       - other
       - advanced
       type: string
@@ -15171,32 +15114,6 @@ components:
         enableMediaInfo:
           type: boolean
       type: object
-    MetadataBulkResource:
-      additionalProperties: false
-      example:
-        applyTags: null
-        ids:
-        - 0
-        - 0
-        tags:
-        - 6
-        - 6
-      properties:
-        ids:
-          items:
-            format: int32
-            type: integer
-          nullable: true
-          type: array
-        tags:
-          items:
-            format: int32
-            type: integer
-          nullable: true
-          type: array
-        applyTags:
-          $ref: '#/components/schemas/ApplyTags'
-      type: object
     MetadataConfigResource:
       additionalProperties: false
       example:
@@ -17133,32 +17050,6 @@ components:
         numberStyle:
           nullable: true
           type: string
-      type: object
-    NotificationBulkResource:
-      additionalProperties: false
-      example:
-        applyTags: null
-        ids:
-        - 0
-        - 0
-        tags:
-        - 6
-        - 6
-      properties:
-        ids:
-          items:
-            format: int32
-            type: integer
-          nullable: true
-          type: array
-        tags:
-          items:
-            format: int32
-            type: integer
-          nullable: true
-          type: array
-        applyTags:
-          $ref: '#/components/schemas/ApplyTags'
       type: object
     NotificationResource:
       additionalProperties: false
@@ -19267,8 +19158,9 @@ components:
         title: title
         timeleft: timeleft
         trackedDownloadState: null
+        customFormatScore: 1
         trackedDownloadStatus: null
-        sizeleft: 5.962133916683182
+        sizeleft: 5.637376656633329
         quality:
           quality:
             modifier: null
@@ -19290,7 +19182,7 @@ components:
           - messages
           title: title
         protocol: null
-        size: 1.4658129805029452
+        size: 5.962133916683182
         outputPath: outputPath
         id: 0
         status: status
@@ -19317,6 +19209,9 @@ components:
             $ref: '#/components/schemas/CustomFormatResource'
           nullable: true
           type: array
+        customFormatScore:
+          format: int32
+          type: integer
         size:
           format: double
           type: number
@@ -20252,8 +20147,9 @@ components:
           title: title
           timeleft: timeleft
           trackedDownloadState: null
+          customFormatScore: 1
           trackedDownloadStatus: null
-          sizeleft: 5.962133916683182
+          sizeleft: 5.637376656633329
           quality:
             quality:
               modifier: null
@@ -20275,7 +20171,7 @@ components:
             - messages
             title: title
           protocol: null
-          size: 1.4658129805029452
+          size: 5.962133916683182
           outputPath: outputPath
           id: 0
           status: status
@@ -21163,8 +21059,9 @@ components:
           title: title
           timeleft: timeleft
           trackedDownloadState: null
+          customFormatScore: 1
           trackedDownloadStatus: null
-          sizeleft: 5.962133916683182
+          sizeleft: 5.637376656633329
           quality:
             quality:
               modifier: null
@@ -21186,7 +21083,7 @@ components:
             - messages
             title: title
           protocol: null
-          size: 1.4658129805029452
+          size: 5.962133916683182
           outputPath: outputPath
           id: 0
           status: status
@@ -22091,6 +21988,9 @@ components:
         - 1
         id: 0
         label: label
+        downloadClientIds:
+        - 9
+        - 9
         importListIds:
         - 5
         - 5
@@ -22138,6 +22038,12 @@ components:
           nullable: true
           type: array
         indexerIds:
+          items:
+            format: int32
+            type: integer
+          nullable: true
+          type: array
+        downloadClientIds:
           items:
             format: int32
             type: integer

@@ -205,11 +205,9 @@ Class | Method | HTTP request | Description
 *MetadataApi* | [**CreateMetadata**](radarr/docs/MetadataApi.md#createmetadata) | **Post** /api/v3/metadata | 
 *MetadataApi* | [**CreateMetadataActionByName**](radarr/docs/MetadataApi.md#createmetadataactionbyname) | **Post** /api/v3/metadata/action/{name} | 
 *MetadataApi* | [**DeleteMetadata**](radarr/docs/MetadataApi.md#deletemetadata) | **Delete** /api/v3/metadata/{id} | 
-*MetadataApi* | [**DeleteMetadataBulk**](radarr/docs/MetadataApi.md#deletemetadatabulk) | **Delete** /api/v3/metadata/bulk | 
 *MetadataApi* | [**GetMetadataById**](radarr/docs/MetadataApi.md#getmetadatabyid) | **Get** /api/v3/metadata/{id} | 
 *MetadataApi* | [**ListMetadata**](radarr/docs/MetadataApi.md#listmetadata) | **Get** /api/v3/metadata | 
 *MetadataApi* | [**ListMetadataSchema**](radarr/docs/MetadataApi.md#listmetadataschema) | **Get** /api/v3/metadata/schema | 
-*MetadataApi* | [**PutMetadataBulk**](radarr/docs/MetadataApi.md#putmetadatabulk) | **Put** /api/v3/metadata/bulk | 
 *MetadataApi* | [**TestMetadata**](radarr/docs/MetadataApi.md#testmetadata) | **Post** /api/v3/metadata/test | 
 *MetadataApi* | [**TestallMetadata**](radarr/docs/MetadataApi.md#testallmetadata) | **Post** /api/v3/metadata/testall | 
 *MetadataApi* | [**UpdateMetadata**](radarr/docs/MetadataApi.md#updatemetadata) | **Put** /api/v3/metadata/{id} | 
@@ -242,11 +240,9 @@ Class | Method | HTTP request | Description
 *NotificationApi* | [**CreateNotification**](radarr/docs/NotificationApi.md#createnotification) | **Post** /api/v3/notification | 
 *NotificationApi* | [**CreateNotificationActionByName**](radarr/docs/NotificationApi.md#createnotificationactionbyname) | **Post** /api/v3/notification/action/{name} | 
 *NotificationApi* | [**DeleteNotification**](radarr/docs/NotificationApi.md#deletenotification) | **Delete** /api/v3/notification/{id} | 
-*NotificationApi* | [**DeleteNotificationBulk**](radarr/docs/NotificationApi.md#deletenotificationbulk) | **Delete** /api/v3/notification/bulk | 
 *NotificationApi* | [**GetNotificationById**](radarr/docs/NotificationApi.md#getnotificationbyid) | **Get** /api/v3/notification/{id} | 
 *NotificationApi* | [**ListNotification**](radarr/docs/NotificationApi.md#listnotification) | **Get** /api/v3/notification | 
 *NotificationApi* | [**ListNotificationSchema**](radarr/docs/NotificationApi.md#listnotificationschema) | **Get** /api/v3/notification/schema | 
-*NotificationApi* | [**PutNotificationBulk**](radarr/docs/NotificationApi.md#putnotificationbulk) | **Put** /api/v3/notification/bulk | 
 *NotificationApi* | [**TestNotification**](radarr/docs/NotificationApi.md#testnotification) | **Post** /api/v3/notification/test | 
 *NotificationApi* | [**TestallNotification**](radarr/docs/NotificationApi.md#testallnotification) | **Post** /api/v3/notification/testall | 
 *NotificationApi* | [**UpdateNotification**](radarr/docs/NotificationApi.md#updatenotification) | **Put** /api/v3/notification/{id} | 
@@ -384,7 +380,6 @@ Class | Method | HTTP request | Description
  - [MediaCoverTypes](docs/MediaCoverTypes.md)
  - [MediaInfoResource](docs/MediaInfoResource.md)
  - [MediaManagementConfigResource](docs/MediaManagementConfigResource.md)
- - [MetadataBulkResource](docs/MetadataBulkResource.md)
  - [MetadataConfigResource](docs/MetadataConfigResource.md)
  - [MetadataResource](docs/MetadataResource.md)
  - [Modifier](docs/Modifier.md)
@@ -400,7 +395,6 @@ Class | Method | HTTP request | Description
  - [MovieStatusType](docs/MovieStatusType.md)
  - [MovieTranslation](docs/MovieTranslation.md)
  - [NamingConfigResource](docs/NamingConfigResource.md)
- - [NotificationBulkResource](docs/NotificationBulkResource.md)
  - [NotificationResource](docs/NotificationResource.md)
  - [PagingResourceFilter](docs/PagingResourceFilter.md)
  - [ParseResource](docs/ParseResource.md)
