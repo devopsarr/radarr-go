@@ -11,6 +11,8 @@
 
 * `PLEX` (value: `"plex"`)
 
+* `SIMKL` (value: `"simkl"`)
+
 * `OTHER` (value: `"other"`)
 
 * `ADVANCED` (value: `"advanced"`)
