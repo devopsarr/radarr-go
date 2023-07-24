@@ -189,7 +189,6 @@ Class | Method | HTTP request | Description
 *IndexerConfigApi* | [**GetIndexerConfigById**](radarr/docs/IndexerConfigApi.md#getindexerconfigbyid) | **Get** /api/v3/config/indexer/{id} | 
 *IndexerConfigApi* | [**UpdateIndexerConfig**](radarr/docs/IndexerConfigApi.md#updateindexerconfig) | **Put** /api/v3/config/indexer/{id} | 
 *IndexerFlagApi* | [**ListIndexerFlag**](radarr/docs/IndexerFlagApi.md#listindexerflag) | **Get** /api/v3/indexerflag | 
-*InitializeJsApi* | [**GetInitializeJs**](radarr/docs/InitializeJsApi.md#getinitializejs) | **Get** /initialize.js | 
 *LanguageApi* | [**GetLanguageById**](radarr/docs/LanguageApi.md#getlanguagebyid) | **Get** /api/v3/language/{id} | 
 *LanguageApi* | [**ListLanguage**](radarr/docs/LanguageApi.md#listlanguage) | **Get** /api/v3/language | 
 *LocalizationApi* | [**GetLocalization**](radarr/docs/LocalizationApi.md#getlocalization) | **Get** /api/v3/localization | 

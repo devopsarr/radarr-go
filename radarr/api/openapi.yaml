@@ -2560,14 +2560,6 @@ paths:
           description: Success
       tags:
       - IndexerFlag
-  /initialize.js:
-    get:
-      operationId: GetInitialize.js
-      responses:
-        "200":
-          description: Success
-      tags:
-      - InitializeJs
   /api/v3/language:
     get:
       operationId: ListLanguage
@@ -4314,6 +4306,14 @@ paths:
           default: false
           type: boolean
         style: form
+      - explode: true
+        in: query
+        name: skipRedownload
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
       responses:
         "200":
           description: Success
@@ -4360,6 +4360,14 @@ paths:
       - explode: true
         in: query
         name: blocklist
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: skipRedownload
         required: false
         schema:
           default: false

@@ -29,7 +29,6 @@ api_import_list_movies.go
 api_indexer.go
 api_indexer_config.go
 api_indexer_flag.go
-api_initialize_js_.go
 api_language.go
 api_localization.go
 api_log.go
@@ -152,7 +151,6 @@ docs/IndexerConfigResource.md
 docs/IndexerFlagApi.md
 docs/IndexerFlagResource.md
 docs/IndexerResource.md
-docs/InitializeJsApi.md
 docs/Language.md
 docs/LanguageApi.md
 docs/LanguageResource.md
