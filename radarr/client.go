@@ -75,7 +75,6 @@ type APIClient struct {
 	IndexerApi *IndexerApiService
 	IndexerConfigApi *IndexerConfigApiService
 	IndexerFlagApi *IndexerFlagApiService
-	InitializeJsApi *InitializeJsApiService
 	LanguageApi *LanguageApiService
 	LocalizationApi *LocalizationApiService
 	LogApi *LogApiService
@@ -161,7 +160,6 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.IndexerApi = (*IndexerApiService)(&c.common)
 	c.IndexerConfigApi = (*IndexerConfigApiService)(&c.common)
 	c.IndexerFlagApi = (*IndexerFlagApiService)(&c.common)
-	c.InitializeJsApi = (*InitializeJsApiService)(&c.common)
 	c.LanguageApi = (*LanguageApiService)(&c.common)
 	c.LocalizationApi = (*LocalizationApiService)(&c.common)
 	c.LogApi = (*LogApiService)(&c.common)

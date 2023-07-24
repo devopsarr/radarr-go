@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## DeleteQueue
 
-> DeleteQueue(ctx, id).RemoveFromClient(removeFromClient).Blocklist(blocklist).Execute()
+> DeleteQueue(ctx, id).RemoveFromClient(removeFromClient).Blocklist(blocklist).SkipRedownload(skipRedownload).Execute()
 
 
 
@@ -33,10 +33,11 @@ func main() {
     id := int32(56) // int32 | 
     removeFromClient := true // bool |  (optional) (default to true)
     blocklist := true // bool |  (optional) (default to false)
+    skipRedownload := true // bool |  (optional) (default to false)
 
     configuration := radarrClient.NewConfiguration()
     apiClient := radarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QueueApi.DeleteQueue(context.Background(), id).RemoveFromClient(removeFromClient).Blocklist(blocklist).Execute()
+    resp, r, err := apiClient.QueueApi.DeleteQueue(context.Background(), id).RemoveFromClient(removeFromClient).Blocklist(blocklist).SkipRedownload(skipRedownload).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `QueueApi.DeleteQueue``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -62,6 +63,7 @@ Name | Type | Description  | Notes
 
  **removeFromClient** | **bool** |  | [default to true]
  **blocklist** | **bool** |  | [default to false]
+ **skipRedownload** | **bool** |  | [default to false]
 
 ### Return type
 
@@ -83,7 +85,7 @@ Name | Type | Description  | Notes
 
 ## DeleteQueueBulk
 
-> DeleteQueueBulk(ctx).RemoveFromClient(removeFromClient).Blocklist(blocklist).QueueBulkResource(queueBulkResource).Execute()
+> DeleteQueueBulk(ctx).RemoveFromClient(removeFromClient).Blocklist(blocklist).SkipRedownload(skipRedownload).QueueBulkResource(queueBulkResource).Execute()
 
 
 
@@ -102,11 +104,12 @@ import (
 func main() {
     removeFromClient := true // bool |  (optional) (default to true)
     blocklist := true // bool |  (optional) (default to false)
+    skipRedownload := true // bool |  (optional) (default to false)
     queueBulkResource := *radarrClient.NewQueueBulkResource() // QueueBulkResource |  (optional)
 
     configuration := radarrClient.NewConfiguration()
     apiClient := radarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QueueApi.DeleteQueueBulk(context.Background()).RemoveFromClient(removeFromClient).Blocklist(blocklist).QueueBulkResource(queueBulkResource).Execute()
+    resp, r, err := apiClient.QueueApi.DeleteQueueBulk(context.Background()).RemoveFromClient(removeFromClient).Blocklist(blocklist).SkipRedownload(skipRedownload).QueueBulkResource(queueBulkResource).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `QueueApi.DeleteQueueBulk``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -127,6 +130,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **removeFromClient** | **bool** |  | [default to true]
  **blocklist** | **bool** |  | [default to false]
+ **skipRedownload** | **bool** |  | [default to false]
  **queueBulkResource** | [**QueueBulkResource**](QueueBulkResource.md) |  | 
 
 ### Return type
