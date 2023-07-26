@@ -13955,9 +13955,263 @@ components:
           id: 2
         - name: name
           id: 2
+        customFormats:
+        - name: name
+          includeCustomFormatWhenRenaming: true
+          id: 2
+          specifications:
+          - presets:
+            - null
+            - null
+            implementationName: implementationName
+            negate: true
+            implementation: implementation
+            name: name
+            id: 4
+            fields:
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - dividerAfter: true
+                hint: hint
+                name: name
+                value: 1
+                order: 1
+              - dividerAfter: true
+                hint: hint
+                name: name
+                value: 1
+                order: 1
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 7
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - dividerAfter: true
+                hint: hint
+                name: name
+                value: 1
+                order: 1
+              - dividerAfter: true
+                hint: hint
+                name: name
+                value: 1
+                order: 1
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 7
+            required: true
+            infoLink: infoLink
+          - presets:
+            - null
+            - null
+            implementationName: implementationName
+            negate: true
+            implementation: implementation
+            name: name
+            id: 4
+            fields:
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - dividerAfter: true
+                hint: hint
+                name: name
+                value: 1
+                order: 1
+              - dividerAfter: true
+                hint: hint
+                name: name
+                value: 1
+                order: 1
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 7
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - dividerAfter: true
+                hint: hint
+                name: name
+                value: 1
+                order: 1
+              - dividerAfter: true
+                hint: hint
+                name: name
+                value: 1
+                order: 1
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 7
+            required: true
+            infoLink: infoLink
+        - name: name
+          includeCustomFormatWhenRenaming: true
+          id: 2
+          specifications:
+          - presets:
+            - null
+            - null
+            implementationName: implementationName
+            negate: true
+            implementation: implementation
+            name: name
+            id: 4
+            fields:
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - dividerAfter: true
+                hint: hint
+                name: name
+                value: 1
+                order: 1
+              - dividerAfter: true
+                hint: hint
+                name: name
+                value: 1
+                order: 1
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 7
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - dividerAfter: true
+                hint: hint
+                name: name
+                value: 1
+                order: 1
+              - dividerAfter: true
+                hint: hint
+                name: name
+                value: 1
+                order: 1
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 7
+            required: true
+            infoLink: infoLink
+          - presets:
+            - null
+            - null
+            implementationName: implementationName
+            negate: true
+            implementation: implementation
+            name: name
+            id: 4
+            fields:
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - dividerAfter: true
+                hint: hint
+                name: name
+                value: 1
+                order: 1
+              - dividerAfter: true
+                hint: hint
+                name: name
+                value: 1
+                order: 1
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 7
+            - helpText: helpText
+              hidden: hidden
+              advanced: true
+              selectOptions:
+              - dividerAfter: true
+                hint: hint
+                name: name
+                value: 1
+                order: 1
+              - dividerAfter: true
+                hint: hint
+                name: name
+                value: 1
+                order: 1
+              selectOptionsProviderAction: selectOptionsProviderAction
+              section: section
+              label: label
+              type: type
+              helpTextWarning: helpTextWarning
+              unit: unit
+              helpLink: helpLink
+              name: name
+              placeholder: placeholder
+              value: ""
+              order: 7
+            required: true
+            infoLink: infoLink
         downloadId: downloadId
         movieId: 6
         id: 0
+        customFormatScore: 1
         quality:
           quality:
             modifier: null
@@ -13995,6 +14249,14 @@ components:
         downloadId:
           nullable: true
           type: string
+        customFormats:
+          items:
+            $ref: '#/components/schemas/CustomFormatResource'
+          nullable: true
+          type: array
+        customFormatScore:
+          format: int32
+          type: integer
         rejections:
           items:
             $ref: '#/components/schemas/Rejection'
@@ -14885,6 +15147,7 @@ components:
             required: true
             infoLink: infoLink
         downloadId: downloadId
+        customFormatScore: 5
         quality:
           quality:
             modifier: null
@@ -14946,6 +15209,9 @@ components:
             $ref: '#/components/schemas/CustomFormatResource'
           nullable: true
           type: array
+        customFormatScore:
+          format: int32
+          type: integer
         rejections:
           items:
             $ref: '#/components/schemas/Rejection'
