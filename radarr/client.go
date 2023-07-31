@@ -50,6 +50,7 @@ type APIClient struct {
 	AlternativeTitleApi *AlternativeTitleApiService
 	ApiInfoApi *ApiInfoApiService
 	AuthenticationApi *AuthenticationApiService
+	AutoTaggingApi *AutoTaggingApiService
 	BackupApi *BackupApiService
 	BlocklistApi *BlocklistApiService
 	CalendarApi *CalendarApiService
@@ -135,6 +136,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.AlternativeTitleApi = (*AlternativeTitleApiService)(&c.common)
 	c.ApiInfoApi = (*ApiInfoApiService)(&c.common)
 	c.AuthenticationApi = (*AuthenticationApiService)(&c.common)
+	c.AutoTaggingApi = (*AutoTaggingApiService)(&c.common)
 	c.BackupApi = (*BackupApiService)(&c.common)
 	c.BlocklistApi = (*BlocklistApiService)(&c.common)
 	c.CalendarApi = (*CalendarApiService)(&c.common)
