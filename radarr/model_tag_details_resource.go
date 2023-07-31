@@ -19,12 +19,13 @@ type TagDetailsResource struct {
 	Id *int32 `json:"id,omitempty"`
 	Label NullableString `json:"label,omitempty"`
 	DelayProfileIds []*int32 `json:"delayProfileIds,omitempty"`
+	ImportListIds []*int32 `json:"importListIds,omitempty"`
 	NotificationIds []*int32 `json:"notificationIds,omitempty"`
 	RestrictionIds []*int32 `json:"restrictionIds,omitempty"`
-	ImportListIds []*int32 `json:"importListIds,omitempty"`
-	MovieIds []*int32 `json:"movieIds,omitempty"`
 	IndexerIds []*int32 `json:"indexerIds,omitempty"`
 	DownloadClientIds []*int32 `json:"downloadClientIds,omitempty"`
+	AutoTagIds []*int32 `json:"autoTagIds,omitempty"`
+	MovieIds []*int32 `json:"movieIds,omitempty"`
 }
 
 // NewTagDetailsResource instantiates a new TagDetailsResource object
@@ -151,6 +152,39 @@ func (o *TagDetailsResource) SetDelayProfileIds(v []*int32) {
 	o.DelayProfileIds = v
 }
 
+// GetImportListIds returns the ImportListIds field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TagDetailsResource) GetImportListIds() []*int32 {
+	if o == nil {
+		var ret []*int32
+		return ret
+	}
+	return o.ImportListIds
+}
+
+// GetImportListIdsOk returns a tuple with the ImportListIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TagDetailsResource) GetImportListIdsOk() ([]*int32, bool) {
+	if o == nil || isNil(o.ImportListIds) {
+    return nil, false
+	}
+	return o.ImportListIds, true
+}
+
+// HasImportListIds returns a boolean if a field has been set.
+func (o *TagDetailsResource) HasImportListIds() bool {
+	if o != nil && isNil(o.ImportListIds) {
+		return true
+	}
+
+	return false
+}
+
+// SetImportListIds gets a reference to the given []int32 and assigns it to the ImportListIds field.
+func (o *TagDetailsResource) SetImportListIds(v []*int32) {
+	o.ImportListIds = v
+}
+
 // GetNotificationIds returns the NotificationIds field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *TagDetailsResource) GetNotificationIds() []*int32 {
 	if o == nil {
@@ -215,72 +249,6 @@ func (o *TagDetailsResource) HasRestrictionIds() bool {
 // SetRestrictionIds gets a reference to the given []int32 and assigns it to the RestrictionIds field.
 func (o *TagDetailsResource) SetRestrictionIds(v []*int32) {
 	o.RestrictionIds = v
-}
-
-// GetImportListIds returns the ImportListIds field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TagDetailsResource) GetImportListIds() []*int32 {
-	if o == nil {
-		var ret []*int32
-		return ret
-	}
-	return o.ImportListIds
-}
-
-// GetImportListIdsOk returns a tuple with the ImportListIds field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TagDetailsResource) GetImportListIdsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.ImportListIds) {
-    return nil, false
-	}
-	return o.ImportListIds, true
-}
-
-// HasImportListIds returns a boolean if a field has been set.
-func (o *TagDetailsResource) HasImportListIds() bool {
-	if o != nil && isNil(o.ImportListIds) {
-		return true
-	}
-
-	return false
-}
-
-// SetImportListIds gets a reference to the given []int32 and assigns it to the ImportListIds field.
-func (o *TagDetailsResource) SetImportListIds(v []*int32) {
-	o.ImportListIds = v
-}
-
-// GetMovieIds returns the MovieIds field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TagDetailsResource) GetMovieIds() []*int32 {
-	if o == nil {
-		var ret []*int32
-		return ret
-	}
-	return o.MovieIds
-}
-
-// GetMovieIdsOk returns a tuple with the MovieIds field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TagDetailsResource) GetMovieIdsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.MovieIds) {
-    return nil, false
-	}
-	return o.MovieIds, true
-}
-
-// HasMovieIds returns a boolean if a field has been set.
-func (o *TagDetailsResource) HasMovieIds() bool {
-	if o != nil && isNil(o.MovieIds) {
-		return true
-	}
-
-	return false
-}
-
-// SetMovieIds gets a reference to the given []int32 and assigns it to the MovieIds field.
-func (o *TagDetailsResource) SetMovieIds(v []*int32) {
-	o.MovieIds = v
 }
 
 // GetIndexerIds returns the IndexerIds field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -349,6 +317,72 @@ func (o *TagDetailsResource) SetDownloadClientIds(v []*int32) {
 	o.DownloadClientIds = v
 }
 
+// GetAutoTagIds returns the AutoTagIds field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TagDetailsResource) GetAutoTagIds() []*int32 {
+	if o == nil {
+		var ret []*int32
+		return ret
+	}
+	return o.AutoTagIds
+}
+
+// GetAutoTagIdsOk returns a tuple with the AutoTagIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TagDetailsResource) GetAutoTagIdsOk() ([]*int32, bool) {
+	if o == nil || isNil(o.AutoTagIds) {
+    return nil, false
+	}
+	return o.AutoTagIds, true
+}
+
+// HasAutoTagIds returns a boolean if a field has been set.
+func (o *TagDetailsResource) HasAutoTagIds() bool {
+	if o != nil && isNil(o.AutoTagIds) {
+		return true
+	}
+
+	return false
+}
+
+// SetAutoTagIds gets a reference to the given []int32 and assigns it to the AutoTagIds field.
+func (o *TagDetailsResource) SetAutoTagIds(v []*int32) {
+	o.AutoTagIds = v
+}
+
+// GetMovieIds returns the MovieIds field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TagDetailsResource) GetMovieIds() []*int32 {
+	if o == nil {
+		var ret []*int32
+		return ret
+	}
+	return o.MovieIds
+}
+
+// GetMovieIdsOk returns a tuple with the MovieIds field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TagDetailsResource) GetMovieIdsOk() ([]*int32, bool) {
+	if o == nil || isNil(o.MovieIds) {
+    return nil, false
+	}
+	return o.MovieIds, true
+}
+
+// HasMovieIds returns a boolean if a field has been set.
+func (o *TagDetailsResource) HasMovieIds() bool {
+	if o != nil && isNil(o.MovieIds) {
+		return true
+	}
+
+	return false
+}
+
+// SetMovieIds gets a reference to the given []int32 and assigns it to the MovieIds field.
+func (o *TagDetailsResource) SetMovieIds(v []*int32) {
+	o.MovieIds = v
+}
+
 func (o TagDetailsResource) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Id) {
@@ -360,23 +394,26 @@ func (o TagDetailsResource) MarshalJSON() ([]byte, error) {
 	if o.DelayProfileIds != nil {
 		toSerialize["delayProfileIds"] = o.DelayProfileIds
 	}
+	if o.ImportListIds != nil {
+		toSerialize["importListIds"] = o.ImportListIds
+	}
 	if o.NotificationIds != nil {
 		toSerialize["notificationIds"] = o.NotificationIds
 	}
 	if o.RestrictionIds != nil {
 		toSerialize["restrictionIds"] = o.RestrictionIds
 	}
-	if o.ImportListIds != nil {
-		toSerialize["importListIds"] = o.ImportListIds
-	}
-	if o.MovieIds != nil {
-		toSerialize["movieIds"] = o.MovieIds
-	}
 	if o.IndexerIds != nil {
 		toSerialize["indexerIds"] = o.IndexerIds
 	}
 	if o.DownloadClientIds != nil {
 		toSerialize["downloadClientIds"] = o.DownloadClientIds
+	}
+	if o.AutoTagIds != nil {
+		toSerialize["autoTagIds"] = o.AutoTagIds
+	}
+	if o.MovieIds != nil {
+		toSerialize["movieIds"] = o.MovieIds
 	}
 	return json.Marshal(toSerialize)
 }

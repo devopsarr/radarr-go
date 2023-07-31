@@ -7,12 +7,13 @@ Name | Type | Description | Notes
 **Id** | Pointer to **int32** |  | [optional] 
 **Label** | Pointer to **NullableString** |  | [optional] 
 **DelayProfileIds** | Pointer to **[]int32** |  | [optional] 
+**ImportListIds** | Pointer to **[]int32** |  | [optional] 
 **NotificationIds** | Pointer to **[]int32** |  | [optional] 
 **RestrictionIds** | Pointer to **[]int32** |  | [optional] 
-**ImportListIds** | Pointer to **[]int32** |  | [optional] 
-**MovieIds** | Pointer to **[]int32** |  | [optional] 
 **IndexerIds** | Pointer to **[]int32** |  | [optional] 
 **DownloadClientIds** | Pointer to **[]int32** |  | [optional] 
+**AutoTagIds** | Pointer to **[]int32** |  | [optional] 
+**MovieIds** | Pointer to **[]int32** |  | [optional] 
 
 ## Methods
 
@@ -128,6 +129,41 @@ HasDelayProfileIds returns a boolean if a field has been set.
 `func (o *TagDetailsResource) UnsetDelayProfileIds()`
 
 UnsetDelayProfileIds ensures that no value is present for DelayProfileIds, not even an explicit nil
+### GetImportListIds
+
+`func (o *TagDetailsResource) GetImportListIds() []int32`
+
+GetImportListIds returns the ImportListIds field if non-nil, zero value otherwise.
+
+### GetImportListIdsOk
+
+`func (o *TagDetailsResource) GetImportListIdsOk() (*[]int32, bool)`
+
+GetImportListIdsOk returns a tuple with the ImportListIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetImportListIds
+
+`func (o *TagDetailsResource) SetImportListIds(v []int32)`
+
+SetImportListIds sets ImportListIds field to given value.
+
+### HasImportListIds
+
+`func (o *TagDetailsResource) HasImportListIds() bool`
+
+HasImportListIds returns a boolean if a field has been set.
+
+### SetImportListIdsNil
+
+`func (o *TagDetailsResource) SetImportListIdsNil(b bool)`
+
+ SetImportListIdsNil sets the value for ImportListIds to be an explicit nil
+
+### UnsetImportListIds
+`func (o *TagDetailsResource) UnsetImportListIds()`
+
+UnsetImportListIds ensures that no value is present for ImportListIds, not even an explicit nil
 ### GetNotificationIds
 
 `func (o *TagDetailsResource) GetNotificationIds() []int32`
@@ -198,76 +234,6 @@ HasRestrictionIds returns a boolean if a field has been set.
 `func (o *TagDetailsResource) UnsetRestrictionIds()`
 
 UnsetRestrictionIds ensures that no value is present for RestrictionIds, not even an explicit nil
-### GetImportListIds
-
-`func (o *TagDetailsResource) GetImportListIds() []int32`
-
-GetImportListIds returns the ImportListIds field if non-nil, zero value otherwise.
-
-### GetImportListIdsOk
-
-`func (o *TagDetailsResource) GetImportListIdsOk() (*[]int32, bool)`
-
-GetImportListIdsOk returns a tuple with the ImportListIds field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetImportListIds
-
-`func (o *TagDetailsResource) SetImportListIds(v []int32)`
-
-SetImportListIds sets ImportListIds field to given value.
-
-### HasImportListIds
-
-`func (o *TagDetailsResource) HasImportListIds() bool`
-
-HasImportListIds returns a boolean if a field has been set.
-
-### SetImportListIdsNil
-
-`func (o *TagDetailsResource) SetImportListIdsNil(b bool)`
-
- SetImportListIdsNil sets the value for ImportListIds to be an explicit nil
-
-### UnsetImportListIds
-`func (o *TagDetailsResource) UnsetImportListIds()`
-
-UnsetImportListIds ensures that no value is present for ImportListIds, not even an explicit nil
-### GetMovieIds
-
-`func (o *TagDetailsResource) GetMovieIds() []int32`
-
-GetMovieIds returns the MovieIds field if non-nil, zero value otherwise.
-
-### GetMovieIdsOk
-
-`func (o *TagDetailsResource) GetMovieIdsOk() (*[]int32, bool)`
-
-GetMovieIdsOk returns a tuple with the MovieIds field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMovieIds
-
-`func (o *TagDetailsResource) SetMovieIds(v []int32)`
-
-SetMovieIds sets MovieIds field to given value.
-
-### HasMovieIds
-
-`func (o *TagDetailsResource) HasMovieIds() bool`
-
-HasMovieIds returns a boolean if a field has been set.
-
-### SetMovieIdsNil
-
-`func (o *TagDetailsResource) SetMovieIdsNil(b bool)`
-
- SetMovieIdsNil sets the value for MovieIds to be an explicit nil
-
-### UnsetMovieIds
-`func (o *TagDetailsResource) UnsetMovieIds()`
-
-UnsetMovieIds ensures that no value is present for MovieIds, not even an explicit nil
 ### GetIndexerIds
 
 `func (o *TagDetailsResource) GetIndexerIds() []int32`
@@ -338,6 +304,76 @@ HasDownloadClientIds returns a boolean if a field has been set.
 `func (o *TagDetailsResource) UnsetDownloadClientIds()`
 
 UnsetDownloadClientIds ensures that no value is present for DownloadClientIds, not even an explicit nil
+### GetAutoTagIds
+
+`func (o *TagDetailsResource) GetAutoTagIds() []int32`
+
+GetAutoTagIds returns the AutoTagIds field if non-nil, zero value otherwise.
+
+### GetAutoTagIdsOk
+
+`func (o *TagDetailsResource) GetAutoTagIdsOk() (*[]int32, bool)`
+
+GetAutoTagIdsOk returns a tuple with the AutoTagIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAutoTagIds
+
+`func (o *TagDetailsResource) SetAutoTagIds(v []int32)`
+
+SetAutoTagIds sets AutoTagIds field to given value.
+
+### HasAutoTagIds
+
+`func (o *TagDetailsResource) HasAutoTagIds() bool`
+
+HasAutoTagIds returns a boolean if a field has been set.
+
+### SetAutoTagIdsNil
+
+`func (o *TagDetailsResource) SetAutoTagIdsNil(b bool)`
+
+ SetAutoTagIdsNil sets the value for AutoTagIds to be an explicit nil
+
+### UnsetAutoTagIds
+`func (o *TagDetailsResource) UnsetAutoTagIds()`
+
+UnsetAutoTagIds ensures that no value is present for AutoTagIds, not even an explicit nil
+### GetMovieIds
+
+`func (o *TagDetailsResource) GetMovieIds() []int32`
+
+GetMovieIds returns the MovieIds field if non-nil, zero value otherwise.
+
+### GetMovieIdsOk
+
+`func (o *TagDetailsResource) GetMovieIdsOk() (*[]int32, bool)`
+
+GetMovieIdsOk returns a tuple with the MovieIds field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMovieIds
+
+`func (o *TagDetailsResource) SetMovieIds(v []int32)`
+
+SetMovieIds sets MovieIds field to given value.
+
+### HasMovieIds
+
+`func (o *TagDetailsResource) HasMovieIds() bool`
+
+HasMovieIds returns a boolean if a field has been set.
+
+### SetMovieIdsNil
+
+`func (o *TagDetailsResource) SetMovieIdsNil(b bool)`
+
+ SetMovieIdsNil sets the value for MovieIds to be an explicit nil
+
+### UnsetMovieIds
+`func (o *TagDetailsResource) UnsetMovieIds()`
+
+UnsetMovieIds ensures that no value is present for MovieIds, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

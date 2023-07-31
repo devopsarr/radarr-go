@@ -87,6 +87,12 @@ Class | Method | HTTP request | Description
 *ApiInfoApi* | [**GetApi**](radarr/docs/ApiInfoApi.md#getapi) | **Get** /api | 
 *AuthenticationApi* | [**CreateLogin**](radarr/docs/AuthenticationApi.md#createlogin) | **Post** /login | 
 *AuthenticationApi* | [**GetLogout**](radarr/docs/AuthenticationApi.md#getlogout) | **Get** /logout | 
+*AutoTaggingApi* | [**CreateAutoTagging**](radarr/docs/AutoTaggingApi.md#createautotagging) | **Post** /api/v3/autotagging | 
+*AutoTaggingApi* | [**DeleteAutoTagging**](radarr/docs/AutoTaggingApi.md#deleteautotagging) | **Delete** /api/v3/autotagging/{id} | 
+*AutoTaggingApi* | [**GetAutoTaggingById**](radarr/docs/AutoTaggingApi.md#getautotaggingbyid) | **Get** /api/v3/autotagging/{id} | 
+*AutoTaggingApi* | [**GetAutoTaggingSchema**](radarr/docs/AutoTaggingApi.md#getautotaggingschema) | **Get** /api/v3/autotagging/schema | 
+*AutoTaggingApi* | [**ListAutoTagging**](radarr/docs/AutoTaggingApi.md#listautotagging) | **Get** /api/v3/autotagging | 
+*AutoTaggingApi* | [**UpdateAutoTagging**](radarr/docs/AutoTaggingApi.md#updateautotagging) | **Put** /api/v3/autotagging/{id} | 
 *BackupApi* | [**CreateSystemBackupRestoreById**](radarr/docs/BackupApi.md#createsystembackuprestorebyid) | **Post** /api/v3/system/backup/restore/{id} | 
 *BackupApi* | [**CreateSystemBackupRestoreUpload**](radarr/docs/BackupApi.md#createsystembackuprestoreupload) | **Post** /api/v3/system/backup/restore/upload | 
 *BackupApi* | [**DeleteSystemBackup**](radarr/docs/BackupApi.md#deletesystembackup) | **Delete** /api/v3/system/backup/{id} | 
@@ -322,6 +328,8 @@ Class | Method | HTTP request | Description
  - [ApiInfoResource](docs/ApiInfoResource.md)
  - [ApplyTags](docs/ApplyTags.md)
  - [AuthenticationType](docs/AuthenticationType.md)
+ - [AutoTaggingResource](docs/AutoTaggingResource.md)
+ - [AutoTaggingSpecificationSchema](docs/AutoTaggingSpecificationSchema.md)
  - [BackupResource](docs/BackupResource.md)
  - [BackupType](docs/BackupType.md)
  - [BlocklistBulkResource](docs/BlocklistBulkResource.md)

@@ -4,6 +4,7 @@ api/openapi.yaml
 api_alternative_title.go
 api_api_info.go
 api_authentication.go
+api_auto_tagging.go
 api_backup.go
 api_blocklist.go
 api_calendar.go
@@ -80,6 +81,9 @@ docs/ApiInfoResource.md
 docs/ApplyTags.md
 docs/AuthenticationApi.md
 docs/AuthenticationType.md
+docs/AutoTaggingApi.md
+docs/AutoTaggingResource.md
+docs/AutoTaggingSpecificationSchema.md
 docs/BackupApi.md
 docs/BackupResource.md
 docs/BackupType.md
@@ -273,6 +277,8 @@ model_alternative_title_resource.go
 model_api_info_resource.go
 model_apply_tags.go
 model_authentication_type.go
+model_auto_tagging_resource.go
+model_auto_tagging_specification_schema.go
 model_backup_resource.go
 model_backup_type.go
 model_blocklist_bulk_resource.go
