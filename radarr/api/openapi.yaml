@@ -4566,12 +4566,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/QueueBulkResource'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/QueueBulkResource'
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/QueueBulkResource'
       responses:
         "200":
           description: Success
@@ -5719,15 +5713,15 @@ components:
       additionalProperties: false
       example:
         cleanTitle: cleanTitle
-        sourceId: 7
+        sourceId: 3
         sourceType: null
-        movieMetadataId: 8
+        movieMetadataId: 7
         votes: 3
         language:
           name: name
           id: 2
-        id: 4
-        voteCount: 3
+        id: 8
+        voteCount: 7
         title: title
       properties:
         id:
@@ -6412,6 +6406,7 @@ components:
             edition: edition
             movieId: 8
             originalFilePath: originalFilePath
+            customFormatScore: 3
             dateAdded: 2000-01-23T04:56:07.000+00:00
             quality:
               quality:
@@ -6432,14 +6427,14 @@ components:
               subtitles: subtitles
               audioLanguages: audioLanguages
               videoBitDepth: 6
-              audioStreamCount: 2
+              audioStreamCount: 6
               audioCodec: audioCodec
               resolution: resolution
-              audioBitrate: 6
-              videoFps: 5.944895607614016
-              videoBitrate: 6
-              audioChannels: 1.284659006116532
-              id: 3
+              audioBitrate: 1
+              videoFps: 6.704019297950036
+              videoBitrate: 5
+              audioChannels: 2.8841621266687802
+              id: 6
               videoDynamicRangeType: videoDynamicRangeType
               runTime: runTime
               scanType: scanType
@@ -6472,7 +6467,7 @@ components:
               votes: 9
               type: null
               value: 9.369310271410669
-          popularity: 4.2587733
+          popularity: 1.0414449
           digitalRelease: 2000-01-23T04:56:07.000+00:00
           physicalReleaseNote: physicalReleaseNote
           id: 7
@@ -6505,24 +6500,24 @@ components:
             searchOnAdd: true
             monitored: true
             tags:
-            - 6
-            - 6
+            - 4
+            - 4
             cleanTitle: cleanTitle
             sortTitle: sortTitle
             movies:
             - studio: studio
               inCinemas: 2000-01-23T04:56:07.000+00:00
-              year: 7
+              year: 6
               imdbId: imdbId
               youTubeTrailerId: youTubeTrailerId
               title: title
               recommendations:
-              - 4
-              - 4
+              - 0
+              - 0
               collectionTitle: collectionTitle
               cleanTitle: cleanTitle
               lastInfoSync: 2000-01-23T04:56:07.000+00:00
-              tmdbId: 0
+              tmdbId: 7
               genres:
               - genres
               - genres
@@ -6546,50 +6541,50 @@ components:
               translations:
               - cleanTitle: cleanTitle
                 overview: overview
-                movieMetadataId: 5
+                movieMetadataId: 3
                 language:
                   name: name
                   id: 2
-                id: 7
+                id: 5
                 title: title
               - cleanTitle: cleanTitle
                 overview: overview
-                movieMetadataId: 5
+                movieMetadataId: 3
                 language:
                   name: name
                   id: 2
-                id: 7
+                id: 5
                 title: title
-              popularity: 0.20253241
+              popularity: 6.628464
               digitalRelease: 2000-01-23T04:56:07.000+00:00
-              id: 7
+              id: 0
               physicalRelease: 2000-01-23T04:56:07.000+00:00
               cleanOriginalTitle: cleanOriginalTitle
               alternativeTitles:
               - cleanTitle: cleanTitle
-                sourceId: 7
+                sourceId: 3
                 sourceType: null
-                movieMetadataId: 8
+                movieMetadataId: 7
                 votes: 3
                 language:
                   name: name
                   id: 2
-                id: 4
-                voteCount: 3
+                id: 8
+                voteCount: 7
                 title: title
               - cleanTitle: cleanTitle
-                sourceId: 7
+                sourceId: 3
                 sourceType: null
-                movieMetadataId: 8
+                movieMetadataId: 7
                 votes: 3
                 language:
                   name: name
                   id: 2
-                id: 4
-                voteCount: 3
+                id: 8
+                voteCount: 7
                 title: title
               overview: overview
-              secondaryYear: 3
+              secondaryYear: 4
               images:
               - coverType: null
                 remoteUrl: remoteUrl
@@ -6598,8 +6593,8 @@ components:
                 remoteUrl: remoteUrl
                 url: url
               website: website
-              collectionTmdbId: 6
-              runtime: 0
+              collectionTmdbId: 0
+              runtime: 4
               originalLanguage:
                 name: name
                 id: 2
@@ -6610,17 +6605,17 @@ components:
               status: null
             - studio: studio
               inCinemas: 2000-01-23T04:56:07.000+00:00
-              year: 7
+              year: 6
               imdbId: imdbId
               youTubeTrailerId: youTubeTrailerId
               title: title
               recommendations:
-              - 4
-              - 4
+              - 0
+              - 0
               collectionTitle: collectionTitle
               cleanTitle: cleanTitle
               lastInfoSync: 2000-01-23T04:56:07.000+00:00
-              tmdbId: 0
+              tmdbId: 7
               genres:
               - genres
               - genres
@@ -6644,50 +6639,50 @@ components:
               translations:
               - cleanTitle: cleanTitle
                 overview: overview
-                movieMetadataId: 5
+                movieMetadataId: 3
                 language:
                   name: name
                   id: 2
-                id: 7
+                id: 5
                 title: title
               - cleanTitle: cleanTitle
                 overview: overview
-                movieMetadataId: 5
+                movieMetadataId: 3
                 language:
                   name: name
                   id: 2
-                id: 7
+                id: 5
                 title: title
-              popularity: 0.20253241
+              popularity: 6.628464
               digitalRelease: 2000-01-23T04:56:07.000+00:00
-              id: 7
+              id: 0
               physicalRelease: 2000-01-23T04:56:07.000+00:00
               cleanOriginalTitle: cleanOriginalTitle
               alternativeTitles:
               - cleanTitle: cleanTitle
-                sourceId: 7
+                sourceId: 3
                 sourceType: null
-                movieMetadataId: 8
+                movieMetadataId: 7
                 votes: 3
                 language:
                   name: name
                   id: 2
-                id: 4
-                voteCount: 3
+                id: 8
+                voteCount: 7
                 title: title
               - cleanTitle: cleanTitle
-                sourceId: 7
+                sourceId: 3
                 sourceType: null
-                movieMetadataId: 8
+                movieMetadataId: 7
                 votes: 3
                 language:
                   name: name
                   id: 2
-                id: 4
-                voteCount: 3
+                id: 8
+                voteCount: 7
                 title: title
               overview: overview
-              secondaryYear: 3
+              secondaryYear: 4
               images:
               - coverType: null
                 remoteUrl: remoteUrl
@@ -6696,8 +6691,8 @@ components:
                 remoteUrl: remoteUrl
                 url: url
               website: website
-              collectionTmdbId: 6
-              runtime: 0
+              collectionTmdbId: 0
+              runtime: 4
               originalLanguage:
                 name: name
                 id: 2
@@ -6708,8 +6703,8 @@ components:
               status: null
             lastInfoSync: 2000-01-23T04:56:07.000+00:00
             tmdbId: 3
-            qualityProfileId: 3
-            id: 6
+            qualityProfileId: 7
+            id: 3
           originalLanguage:
             name: name
             id: 2
@@ -7348,6 +7343,7 @@ components:
               edition: edition
               movieId: 8
               originalFilePath: originalFilePath
+              customFormatScore: 3
               dateAdded: 2000-01-23T04:56:07.000+00:00
               quality:
                 quality:
@@ -7368,14 +7364,14 @@ components:
                 subtitles: subtitles
                 audioLanguages: audioLanguages
                 videoBitDepth: 6
-                audioStreamCount: 2
+                audioStreamCount: 6
                 audioCodec: audioCodec
                 resolution: resolution
-                audioBitrate: 6
-                videoFps: 5.944895607614016
-                videoBitrate: 6
-                audioChannels: 1.284659006116532
-                id: 3
+                audioBitrate: 1
+                videoFps: 6.704019297950036
+                videoBitrate: 5
+                audioChannels: 2.8841621266687802
+                id: 6
                 videoDynamicRangeType: videoDynamicRangeType
                 runTime: runTime
                 scanType: scanType
@@ -7408,7 +7404,7 @@ components:
                 votes: 9
                 type: null
                 value: 9.369310271410669
-            popularity: 4.2587733
+            popularity: 1.0414449
             digitalRelease: 2000-01-23T04:56:07.000+00:00
             physicalReleaseNote: physicalReleaseNote
             id: 7
@@ -7441,24 +7437,24 @@ components:
               searchOnAdd: true
               monitored: true
               tags:
-              - 6
-              - 6
+              - 4
+              - 4
               cleanTitle: cleanTitle
               sortTitle: sortTitle
               movies:
               - studio: studio
                 inCinemas: 2000-01-23T04:56:07.000+00:00
-                year: 7
+                year: 6
                 imdbId: imdbId
                 youTubeTrailerId: youTubeTrailerId
                 title: title
                 recommendations:
-                - 4
-                - 4
+                - 0
+                - 0
                 collectionTitle: collectionTitle
                 cleanTitle: cleanTitle
                 lastInfoSync: 2000-01-23T04:56:07.000+00:00
-                tmdbId: 0
+                tmdbId: 7
                 genres:
                 - genres
                 - genres
@@ -7482,50 +7478,50 @@ components:
                 translations:
                 - cleanTitle: cleanTitle
                   overview: overview
-                  movieMetadataId: 5
+                  movieMetadataId: 3
                   language:
                     name: name
                     id: 2
-                  id: 7
+                  id: 5
                   title: title
                 - cleanTitle: cleanTitle
                   overview: overview
-                  movieMetadataId: 5
+                  movieMetadataId: 3
                   language:
                     name: name
                     id: 2
-                  id: 7
+                  id: 5
                   title: title
-                popularity: 0.20253241
+                popularity: 6.628464
                 digitalRelease: 2000-01-23T04:56:07.000+00:00
-                id: 7
+                id: 0
                 physicalRelease: 2000-01-23T04:56:07.000+00:00
                 cleanOriginalTitle: cleanOriginalTitle
                 alternativeTitles:
                 - cleanTitle: cleanTitle
-                  sourceId: 7
+                  sourceId: 3
                   sourceType: null
-                  movieMetadataId: 8
+                  movieMetadataId: 7
                   votes: 3
                   language:
                     name: name
                     id: 2
-                  id: 4
-                  voteCount: 3
+                  id: 8
+                  voteCount: 7
                   title: title
                 - cleanTitle: cleanTitle
-                  sourceId: 7
+                  sourceId: 3
                   sourceType: null
-                  movieMetadataId: 8
+                  movieMetadataId: 7
                   votes: 3
                   language:
                     name: name
                     id: 2
-                  id: 4
-                  voteCount: 3
+                  id: 8
+                  voteCount: 7
                   title: title
                 overview: overview
-                secondaryYear: 3
+                secondaryYear: 4
                 images:
                 - coverType: null
                   remoteUrl: remoteUrl
@@ -7534,8 +7530,8 @@ components:
                   remoteUrl: remoteUrl
                   url: url
                 website: website
-                collectionTmdbId: 6
-                runtime: 0
+                collectionTmdbId: 0
+                runtime: 4
                 originalLanguage:
                   name: name
                   id: 2
@@ -7546,17 +7542,17 @@ components:
                 status: null
               - studio: studio
                 inCinemas: 2000-01-23T04:56:07.000+00:00
-                year: 7
+                year: 6
                 imdbId: imdbId
                 youTubeTrailerId: youTubeTrailerId
                 title: title
                 recommendations:
-                - 4
-                - 4
+                - 0
+                - 0
                 collectionTitle: collectionTitle
                 cleanTitle: cleanTitle
                 lastInfoSync: 2000-01-23T04:56:07.000+00:00
-                tmdbId: 0
+                tmdbId: 7
                 genres:
                 - genres
                 - genres
@@ -7580,50 +7576,50 @@ components:
                 translations:
                 - cleanTitle: cleanTitle
                   overview: overview
-                  movieMetadataId: 5
+                  movieMetadataId: 3
                   language:
                     name: name
                     id: 2
-                  id: 7
+                  id: 5
                   title: title
                 - cleanTitle: cleanTitle
                   overview: overview
-                  movieMetadataId: 5
+                  movieMetadataId: 3
                   language:
                     name: name
                     id: 2
-                  id: 7
+                  id: 5
                   title: title
-                popularity: 0.20253241
+                popularity: 6.628464
                 digitalRelease: 2000-01-23T04:56:07.000+00:00
-                id: 7
+                id: 0
                 physicalRelease: 2000-01-23T04:56:07.000+00:00
                 cleanOriginalTitle: cleanOriginalTitle
                 alternativeTitles:
                 - cleanTitle: cleanTitle
-                  sourceId: 7
+                  sourceId: 3
                   sourceType: null
-                  movieMetadataId: 8
+                  movieMetadataId: 7
                   votes: 3
                   language:
                     name: name
                     id: 2
-                  id: 4
-                  voteCount: 3
+                  id: 8
+                  voteCount: 7
                   title: title
                 - cleanTitle: cleanTitle
-                  sourceId: 7
+                  sourceId: 3
                   sourceType: null
-                  movieMetadataId: 8
+                  movieMetadataId: 7
                   votes: 3
                   language:
                     name: name
                     id: 2
-                  id: 4
-                  voteCount: 3
+                  id: 8
+                  voteCount: 7
                   title: title
                 overview: overview
-                secondaryYear: 3
+                secondaryYear: 4
                 images:
                 - coverType: null
                   remoteUrl: remoteUrl
@@ -7632,8 +7628,8 @@ components:
                   remoteUrl: remoteUrl
                   url: url
                 website: website
-                collectionTmdbId: 6
-                runtime: 0
+                collectionTmdbId: 0
+                runtime: 4
                 originalLanguage:
                   name: name
                   id: 2
@@ -7644,8 +7640,8 @@ components:
                 status: null
               lastInfoSync: 2000-01-23T04:56:07.000+00:00
               tmdbId: 3
-              qualityProfileId: 3
-              id: 6
+              qualityProfileId: 7
+              id: 3
             originalLanguage:
               name: name
               id: 2
@@ -8241,6 +8237,7 @@ components:
               edition: edition
               movieId: 8
               originalFilePath: originalFilePath
+              customFormatScore: 3
               dateAdded: 2000-01-23T04:56:07.000+00:00
               quality:
                 quality:
@@ -8261,14 +8258,14 @@ components:
                 subtitles: subtitles
                 audioLanguages: audioLanguages
                 videoBitDepth: 6
-                audioStreamCount: 2
+                audioStreamCount: 6
                 audioCodec: audioCodec
                 resolution: resolution
-                audioBitrate: 6
-                videoFps: 5.944895607614016
-                videoBitrate: 6
-                audioChannels: 1.284659006116532
-                id: 3
+                audioBitrate: 1
+                videoFps: 6.704019297950036
+                videoBitrate: 5
+                audioChannels: 2.8841621266687802
+                id: 6
                 videoDynamicRangeType: videoDynamicRangeType
                 runTime: runTime
                 scanType: scanType
@@ -8301,7 +8298,7 @@ components:
                 votes: 9
                 type: null
                 value: 9.369310271410669
-            popularity: 4.2587733
+            popularity: 1.0414449
             digitalRelease: 2000-01-23T04:56:07.000+00:00
             physicalReleaseNote: physicalReleaseNote
             id: 7
@@ -8334,24 +8331,24 @@ components:
               searchOnAdd: true
               monitored: true
               tags:
-              - 6
-              - 6
+              - 4
+              - 4
               cleanTitle: cleanTitle
               sortTitle: sortTitle
               movies:
               - studio: studio
                 inCinemas: 2000-01-23T04:56:07.000+00:00
-                year: 7
+                year: 6
                 imdbId: imdbId
                 youTubeTrailerId: youTubeTrailerId
                 title: title
                 recommendations:
-                - 4
-                - 4
+                - 0
+                - 0
                 collectionTitle: collectionTitle
                 cleanTitle: cleanTitle
                 lastInfoSync: 2000-01-23T04:56:07.000+00:00
-                tmdbId: 0
+                tmdbId: 7
                 genres:
                 - genres
                 - genres
@@ -8375,50 +8372,50 @@ components:
                 translations:
                 - cleanTitle: cleanTitle
                   overview: overview
-                  movieMetadataId: 5
+                  movieMetadataId: 3
                   language:
                     name: name
                     id: 2
-                  id: 7
+                  id: 5
                   title: title
                 - cleanTitle: cleanTitle
                   overview: overview
-                  movieMetadataId: 5
+                  movieMetadataId: 3
                   language:
                     name: name
                     id: 2
-                  id: 7
+                  id: 5
                   title: title
-                popularity: 0.20253241
+                popularity: 6.628464
                 digitalRelease: 2000-01-23T04:56:07.000+00:00
-                id: 7
+                id: 0
                 physicalRelease: 2000-01-23T04:56:07.000+00:00
                 cleanOriginalTitle: cleanOriginalTitle
                 alternativeTitles:
                 - cleanTitle: cleanTitle
-                  sourceId: 7
+                  sourceId: 3
                   sourceType: null
-                  movieMetadataId: 8
+                  movieMetadataId: 7
                   votes: 3
                   language:
                     name: name
                     id: 2
-                  id: 4
-                  voteCount: 3
+                  id: 8
+                  voteCount: 7
                   title: title
                 - cleanTitle: cleanTitle
-                  sourceId: 7
+                  sourceId: 3
                   sourceType: null
-                  movieMetadataId: 8
+                  movieMetadataId: 7
                   votes: 3
                   language:
                     name: name
                     id: 2
-                  id: 4
-                  voteCount: 3
+                  id: 8
+                  voteCount: 7
                   title: title
                 overview: overview
-                secondaryYear: 3
+                secondaryYear: 4
                 images:
                 - coverType: null
                   remoteUrl: remoteUrl
@@ -8427,8 +8424,8 @@ components:
                   remoteUrl: remoteUrl
                   url: url
                 website: website
-                collectionTmdbId: 6
-                runtime: 0
+                collectionTmdbId: 0
+                runtime: 4
                 originalLanguage:
                   name: name
                   id: 2
@@ -8439,17 +8436,17 @@ components:
                 status: null
               - studio: studio
                 inCinemas: 2000-01-23T04:56:07.000+00:00
-                year: 7
+                year: 6
                 imdbId: imdbId
                 youTubeTrailerId: youTubeTrailerId
                 title: title
                 recommendations:
-                - 4
-                - 4
+                - 0
+                - 0
                 collectionTitle: collectionTitle
                 cleanTitle: cleanTitle
                 lastInfoSync: 2000-01-23T04:56:07.000+00:00
-                tmdbId: 0
+                tmdbId: 7
                 genres:
                 - genres
                 - genres
@@ -8473,50 +8470,50 @@ components:
                 translations:
                 - cleanTitle: cleanTitle
                   overview: overview
-                  movieMetadataId: 5
+                  movieMetadataId: 3
                   language:
                     name: name
                     id: 2
-                  id: 7
+                  id: 5
                   title: title
                 - cleanTitle: cleanTitle
                   overview: overview
-                  movieMetadataId: 5
+                  movieMetadataId: 3
                   language:
                     name: name
                     id: 2
-                  id: 7
+                  id: 5
                   title: title
-                popularity: 0.20253241
+                popularity: 6.628464
                 digitalRelease: 2000-01-23T04:56:07.000+00:00
-                id: 7
+                id: 0
                 physicalRelease: 2000-01-23T04:56:07.000+00:00
                 cleanOriginalTitle: cleanOriginalTitle
                 alternativeTitles:
                 - cleanTitle: cleanTitle
-                  sourceId: 7
+                  sourceId: 3
                   sourceType: null
-                  movieMetadataId: 8
+                  movieMetadataId: 7
                   votes: 3
                   language:
                     name: name
                     id: 2
-                  id: 4
-                  voteCount: 3
+                  id: 8
+                  voteCount: 7
                   title: title
                 - cleanTitle: cleanTitle
-                  sourceId: 7
+                  sourceId: 3
                   sourceType: null
-                  movieMetadataId: 8
+                  movieMetadataId: 7
                   votes: 3
                   language:
                     name: name
                     id: 2
-                  id: 4
-                  voteCount: 3
+                  id: 8
+                  voteCount: 7
                   title: title
                 overview: overview
-                secondaryYear: 3
+                secondaryYear: 4
                 images:
                 - coverType: null
                   remoteUrl: remoteUrl
@@ -8525,8 +8522,8 @@ components:
                   remoteUrl: remoteUrl
                   url: url
                 website: website
-                collectionTmdbId: 6
-                runtime: 0
+                collectionTmdbId: 0
+                runtime: 4
                 originalLanguage:
                   name: name
                   id: 2
@@ -8537,8 +8534,8 @@ components:
                 status: null
               lastInfoSync: 2000-01-23T04:56:07.000+00:00
               tmdbId: 3
-              qualityProfileId: 3
-              id: 6
+              qualityProfileId: 7
+              id: 3
             originalLanguage:
               name: name
               id: 2
@@ -10362,6 +10359,7 @@ components:
             edition: edition
             movieId: 8
             originalFilePath: originalFilePath
+            customFormatScore: 3
             dateAdded: 2000-01-23T04:56:07.000+00:00
             quality:
               quality:
@@ -10382,14 +10380,14 @@ components:
               subtitles: subtitles
               audioLanguages: audioLanguages
               videoBitDepth: 6
-              audioStreamCount: 2
+              audioStreamCount: 6
               audioCodec: audioCodec
               resolution: resolution
-              audioBitrate: 6
-              videoFps: 5.944895607614016
-              videoBitrate: 6
-              audioChannels: 1.284659006116532
-              id: 3
+              audioBitrate: 1
+              videoFps: 6.704019297950036
+              videoBitrate: 5
+              audioChannels: 2.8841621266687802
+              id: 6
               videoDynamicRangeType: videoDynamicRangeType
               runTime: runTime
               scanType: scanType
@@ -10422,7 +10420,7 @@ components:
               votes: 9
               type: null
               value: 9.369310271410669
-          popularity: 4.2587733
+          popularity: 1.0414449
           digitalRelease: 2000-01-23T04:56:07.000+00:00
           physicalReleaseNote: physicalReleaseNote
           id: 7
@@ -10455,24 +10453,24 @@ components:
             searchOnAdd: true
             monitored: true
             tags:
-            - 6
-            - 6
+            - 4
+            - 4
             cleanTitle: cleanTitle
             sortTitle: sortTitle
             movies:
             - studio: studio
               inCinemas: 2000-01-23T04:56:07.000+00:00
-              year: 7
+              year: 6
               imdbId: imdbId
               youTubeTrailerId: youTubeTrailerId
               title: title
               recommendations:
-              - 4
-              - 4
+              - 0
+              - 0
               collectionTitle: collectionTitle
               cleanTitle: cleanTitle
               lastInfoSync: 2000-01-23T04:56:07.000+00:00
-              tmdbId: 0
+              tmdbId: 7
               genres:
               - genres
               - genres
@@ -10496,50 +10494,50 @@ components:
               translations:
               - cleanTitle: cleanTitle
                 overview: overview
-                movieMetadataId: 5
+                movieMetadataId: 3
                 language:
                   name: name
                   id: 2
-                id: 7
+                id: 5
                 title: title
               - cleanTitle: cleanTitle
                 overview: overview
-                movieMetadataId: 5
+                movieMetadataId: 3
                 language:
                   name: name
                   id: 2
-                id: 7
+                id: 5
                 title: title
-              popularity: 0.20253241
+              popularity: 6.628464
               digitalRelease: 2000-01-23T04:56:07.000+00:00
-              id: 7
+              id: 0
               physicalRelease: 2000-01-23T04:56:07.000+00:00
               cleanOriginalTitle: cleanOriginalTitle
               alternativeTitles:
               - cleanTitle: cleanTitle
-                sourceId: 7
+                sourceId: 3
                 sourceType: null
-                movieMetadataId: 8
+                movieMetadataId: 7
                 votes: 3
                 language:
                   name: name
                   id: 2
-                id: 4
-                voteCount: 3
+                id: 8
+                voteCount: 7
                 title: title
               - cleanTitle: cleanTitle
-                sourceId: 7
+                sourceId: 3
                 sourceType: null
-                movieMetadataId: 8
+                movieMetadataId: 7
                 votes: 3
                 language:
                   name: name
                   id: 2
-                id: 4
-                voteCount: 3
+                id: 8
+                voteCount: 7
                 title: title
               overview: overview
-              secondaryYear: 3
+              secondaryYear: 4
               images:
               - coverType: null
                 remoteUrl: remoteUrl
@@ -10548,8 +10546,8 @@ components:
                 remoteUrl: remoteUrl
                 url: url
               website: website
-              collectionTmdbId: 6
-              runtime: 0
+              collectionTmdbId: 0
+              runtime: 4
               originalLanguage:
                 name: name
                 id: 2
@@ -10560,17 +10558,17 @@ components:
               status: null
             - studio: studio
               inCinemas: 2000-01-23T04:56:07.000+00:00
-              year: 7
+              year: 6
               imdbId: imdbId
               youTubeTrailerId: youTubeTrailerId
               title: title
               recommendations:
-              - 4
-              - 4
+              - 0
+              - 0
               collectionTitle: collectionTitle
               cleanTitle: cleanTitle
               lastInfoSync: 2000-01-23T04:56:07.000+00:00
-              tmdbId: 0
+              tmdbId: 7
               genres:
               - genres
               - genres
@@ -10594,50 +10592,50 @@ components:
               translations:
               - cleanTitle: cleanTitle
                 overview: overview
-                movieMetadataId: 5
+                movieMetadataId: 3
                 language:
                   name: name
                   id: 2
-                id: 7
+                id: 5
                 title: title
               - cleanTitle: cleanTitle
                 overview: overview
-                movieMetadataId: 5
+                movieMetadataId: 3
                 language:
                   name: name
                   id: 2
-                id: 7
+                id: 5
                 title: title
-              popularity: 0.20253241
+              popularity: 6.628464
               digitalRelease: 2000-01-23T04:56:07.000+00:00
-              id: 7
+              id: 0
               physicalRelease: 2000-01-23T04:56:07.000+00:00
               cleanOriginalTitle: cleanOriginalTitle
               alternativeTitles:
               - cleanTitle: cleanTitle
-                sourceId: 7
+                sourceId: 3
                 sourceType: null
-                movieMetadataId: 8
+                movieMetadataId: 7
                 votes: 3
                 language:
                   name: name
                   id: 2
-                id: 4
-                voteCount: 3
+                id: 8
+                voteCount: 7
                 title: title
               - cleanTitle: cleanTitle
-                sourceId: 7
+                sourceId: 3
                 sourceType: null
-                movieMetadataId: 8
+                movieMetadataId: 7
                 votes: 3
                 language:
                   name: name
                   id: 2
-                id: 4
-                voteCount: 3
+                id: 8
+                voteCount: 7
                 title: title
               overview: overview
-              secondaryYear: 3
+              secondaryYear: 4
               images:
               - coverType: null
                 remoteUrl: remoteUrl
@@ -10646,8 +10644,8 @@ components:
                 remoteUrl: remoteUrl
                 url: url
               website: website
-              collectionTmdbId: 6
-              runtime: 0
+              collectionTmdbId: 0
+              runtime: 4
               originalLanguage:
                 name: name
                 id: 2
@@ -10658,8 +10656,8 @@ components:
               status: null
             lastInfoSync: 2000-01-23T04:56:07.000+00:00
             tmdbId: 3
-            qualityProfileId: 3
-            id: 6
+            qualityProfileId: 7
+            id: 3
           originalLanguage:
             name: name
             id: 2
@@ -11309,6 +11307,7 @@ components:
               edition: edition
               movieId: 8
               originalFilePath: originalFilePath
+              customFormatScore: 3
               dateAdded: 2000-01-23T04:56:07.000+00:00
               quality:
                 quality:
@@ -11329,14 +11328,14 @@ components:
                 subtitles: subtitles
                 audioLanguages: audioLanguages
                 videoBitDepth: 6
-                audioStreamCount: 2
+                audioStreamCount: 6
                 audioCodec: audioCodec
                 resolution: resolution
-                audioBitrate: 6
-                videoFps: 5.944895607614016
-                videoBitrate: 6
-                audioChannels: 1.284659006116532
-                id: 3
+                audioBitrate: 1
+                videoFps: 6.704019297950036
+                videoBitrate: 5
+                audioChannels: 2.8841621266687802
+                id: 6
                 videoDynamicRangeType: videoDynamicRangeType
                 runTime: runTime
                 scanType: scanType
@@ -11369,7 +11368,7 @@ components:
                 votes: 9
                 type: null
                 value: 9.369310271410669
-            popularity: 4.2587733
+            popularity: 1.0414449
             digitalRelease: 2000-01-23T04:56:07.000+00:00
             physicalReleaseNote: physicalReleaseNote
             id: 7
@@ -11402,24 +11401,24 @@ components:
               searchOnAdd: true
               monitored: true
               tags:
-              - 6
-              - 6
+              - 4
+              - 4
               cleanTitle: cleanTitle
               sortTitle: sortTitle
               movies:
               - studio: studio
                 inCinemas: 2000-01-23T04:56:07.000+00:00
-                year: 7
+                year: 6
                 imdbId: imdbId
                 youTubeTrailerId: youTubeTrailerId
                 title: title
                 recommendations:
-                - 4
-                - 4
+                - 0
+                - 0
                 collectionTitle: collectionTitle
                 cleanTitle: cleanTitle
                 lastInfoSync: 2000-01-23T04:56:07.000+00:00
-                tmdbId: 0
+                tmdbId: 7
                 genres:
                 - genres
                 - genres
@@ -11443,50 +11442,50 @@ components:
                 translations:
                 - cleanTitle: cleanTitle
                   overview: overview
-                  movieMetadataId: 5
+                  movieMetadataId: 3
                   language:
                     name: name
                     id: 2
-                  id: 7
+                  id: 5
                   title: title
                 - cleanTitle: cleanTitle
                   overview: overview
-                  movieMetadataId: 5
+                  movieMetadataId: 3
                   language:
                     name: name
                     id: 2
-                  id: 7
+                  id: 5
                   title: title
-                popularity: 0.20253241
+                popularity: 6.628464
                 digitalRelease: 2000-01-23T04:56:07.000+00:00
-                id: 7
+                id: 0
                 physicalRelease: 2000-01-23T04:56:07.000+00:00
                 cleanOriginalTitle: cleanOriginalTitle
                 alternativeTitles:
                 - cleanTitle: cleanTitle
-                  sourceId: 7
+                  sourceId: 3
                   sourceType: null
-                  movieMetadataId: 8
+                  movieMetadataId: 7
                   votes: 3
                   language:
                     name: name
                     id: 2
-                  id: 4
-                  voteCount: 3
+                  id: 8
+                  voteCount: 7
                   title: title
                 - cleanTitle: cleanTitle
-                  sourceId: 7
+                  sourceId: 3
                   sourceType: null
-                  movieMetadataId: 8
+                  movieMetadataId: 7
                   votes: 3
                   language:
                     name: name
                     id: 2
-                  id: 4
-                  voteCount: 3
+                  id: 8
+                  voteCount: 7
                   title: title
                 overview: overview
-                secondaryYear: 3
+                secondaryYear: 4
                 images:
                 - coverType: null
                   remoteUrl: remoteUrl
@@ -11495,8 +11494,8 @@ components:
                   remoteUrl: remoteUrl
                   url: url
                 website: website
-                collectionTmdbId: 6
-                runtime: 0
+                collectionTmdbId: 0
+                runtime: 4
                 originalLanguage:
                   name: name
                   id: 2
@@ -11507,17 +11506,17 @@ components:
                 status: null
               - studio: studio
                 inCinemas: 2000-01-23T04:56:07.000+00:00
-                year: 7
+                year: 6
                 imdbId: imdbId
                 youTubeTrailerId: youTubeTrailerId
                 title: title
                 recommendations:
-                - 4
-                - 4
+                - 0
+                - 0
                 collectionTitle: collectionTitle
                 cleanTitle: cleanTitle
                 lastInfoSync: 2000-01-23T04:56:07.000+00:00
-                tmdbId: 0
+                tmdbId: 7
                 genres:
                 - genres
                 - genres
@@ -11541,50 +11540,50 @@ components:
                 translations:
                 - cleanTitle: cleanTitle
                   overview: overview
-                  movieMetadataId: 5
+                  movieMetadataId: 3
                   language:
                     name: name
                     id: 2
-                  id: 7
+                  id: 5
                   title: title
                 - cleanTitle: cleanTitle
                   overview: overview
-                  movieMetadataId: 5
+                  movieMetadataId: 3
                   language:
                     name: name
                     id: 2
-                  id: 7
+                  id: 5
                   title: title
-                popularity: 0.20253241
+                popularity: 6.628464
                 digitalRelease: 2000-01-23T04:56:07.000+00:00
-                id: 7
+                id: 0
                 physicalRelease: 2000-01-23T04:56:07.000+00:00
                 cleanOriginalTitle: cleanOriginalTitle
                 alternativeTitles:
                 - cleanTitle: cleanTitle
-                  sourceId: 7
+                  sourceId: 3
                   sourceType: null
-                  movieMetadataId: 8
+                  movieMetadataId: 7
                   votes: 3
                   language:
                     name: name
                     id: 2
-                  id: 4
-                  voteCount: 3
+                  id: 8
+                  voteCount: 7
                   title: title
                 - cleanTitle: cleanTitle
-                  sourceId: 7
+                  sourceId: 3
                   sourceType: null
-                  movieMetadataId: 8
+                  movieMetadataId: 7
                   votes: 3
                   language:
                     name: name
                     id: 2
-                  id: 4
-                  voteCount: 3
+                  id: 8
+                  voteCount: 7
                   title: title
                 overview: overview
-                secondaryYear: 3
+                secondaryYear: 4
                 images:
                 - coverType: null
                   remoteUrl: remoteUrl
@@ -11593,8 +11592,8 @@ components:
                   remoteUrl: remoteUrl
                   url: url
                 website: website
-                collectionTmdbId: 6
-                runtime: 0
+                collectionTmdbId: 0
+                runtime: 4
                 originalLanguage:
                   name: name
                   id: 2
@@ -11605,8 +11604,8 @@ components:
                 status: null
               lastInfoSync: 2000-01-23T04:56:07.000+00:00
               tmdbId: 3
-              qualityProfileId: 3
-              id: 6
+              qualityProfileId: 7
+              id: 3
             originalLanguage:
               name: name
               id: 2
@@ -12205,6 +12204,7 @@ components:
               edition: edition
               movieId: 8
               originalFilePath: originalFilePath
+              customFormatScore: 3
               dateAdded: 2000-01-23T04:56:07.000+00:00
               quality:
                 quality:
@@ -12225,14 +12225,14 @@ components:
                 subtitles: subtitles
                 audioLanguages: audioLanguages
                 videoBitDepth: 6
-                audioStreamCount: 2
+                audioStreamCount: 6
                 audioCodec: audioCodec
                 resolution: resolution
-                audioBitrate: 6
-                videoFps: 5.944895607614016
-                videoBitrate: 6
-                audioChannels: 1.284659006116532
-                id: 3
+                audioBitrate: 1
+                videoFps: 6.704019297950036
+                videoBitrate: 5
+                audioChannels: 2.8841621266687802
+                id: 6
                 videoDynamicRangeType: videoDynamicRangeType
                 runTime: runTime
                 scanType: scanType
@@ -12265,7 +12265,7 @@ components:
                 votes: 9
                 type: null
                 value: 9.369310271410669
-            popularity: 4.2587733
+            popularity: 1.0414449
             digitalRelease: 2000-01-23T04:56:07.000+00:00
             physicalReleaseNote: physicalReleaseNote
             id: 7
@@ -12298,24 +12298,24 @@ components:
               searchOnAdd: true
               monitored: true
               tags:
-              - 6
-              - 6
+              - 4
+              - 4
               cleanTitle: cleanTitle
               sortTitle: sortTitle
               movies:
               - studio: studio
                 inCinemas: 2000-01-23T04:56:07.000+00:00
-                year: 7
+                year: 6
                 imdbId: imdbId
                 youTubeTrailerId: youTubeTrailerId
                 title: title
                 recommendations:
-                - 4
-                - 4
+                - 0
+                - 0
                 collectionTitle: collectionTitle
                 cleanTitle: cleanTitle
                 lastInfoSync: 2000-01-23T04:56:07.000+00:00
-                tmdbId: 0
+                tmdbId: 7
                 genres:
                 - genres
                 - genres
@@ -12339,50 +12339,50 @@ components:
                 translations:
                 - cleanTitle: cleanTitle
                   overview: overview
-                  movieMetadataId: 5
+                  movieMetadataId: 3
                   language:
                     name: name
                     id: 2
-                  id: 7
+                  id: 5
                   title: title
                 - cleanTitle: cleanTitle
                   overview: overview
-                  movieMetadataId: 5
+                  movieMetadataId: 3
                   language:
                     name: name
                     id: 2
-                  id: 7
+                  id: 5
                   title: title
-                popularity: 0.20253241
+                popularity: 6.628464
                 digitalRelease: 2000-01-23T04:56:07.000+00:00
-                id: 7
+                id: 0
                 physicalRelease: 2000-01-23T04:56:07.000+00:00
                 cleanOriginalTitle: cleanOriginalTitle
                 alternativeTitles:
                 - cleanTitle: cleanTitle
-                  sourceId: 7
+                  sourceId: 3
                   sourceType: null
-                  movieMetadataId: 8
+                  movieMetadataId: 7
                   votes: 3
                   language:
                     name: name
                     id: 2
-                  id: 4
-                  voteCount: 3
+                  id: 8
+                  voteCount: 7
                   title: title
                 - cleanTitle: cleanTitle
-                  sourceId: 7
+                  sourceId: 3
                   sourceType: null
-                  movieMetadataId: 8
+                  movieMetadataId: 7
                   votes: 3
                   language:
                     name: name
                     id: 2
-                  id: 4
-                  voteCount: 3
+                  id: 8
+                  voteCount: 7
                   title: title
                 overview: overview
-                secondaryYear: 3
+                secondaryYear: 4
                 images:
                 - coverType: null
                   remoteUrl: remoteUrl
@@ -12391,8 +12391,8 @@ components:
                   remoteUrl: remoteUrl
                   url: url
                 website: website
-                collectionTmdbId: 6
-                runtime: 0
+                collectionTmdbId: 0
+                runtime: 4
                 originalLanguage:
                   name: name
                   id: 2
@@ -12403,17 +12403,17 @@ components:
                 status: null
               - studio: studio
                 inCinemas: 2000-01-23T04:56:07.000+00:00
-                year: 7
+                year: 6
                 imdbId: imdbId
                 youTubeTrailerId: youTubeTrailerId
                 title: title
                 recommendations:
-                - 4
-                - 4
+                - 0
+                - 0
                 collectionTitle: collectionTitle
                 cleanTitle: cleanTitle
                 lastInfoSync: 2000-01-23T04:56:07.000+00:00
-                tmdbId: 0
+                tmdbId: 7
                 genres:
                 - genres
                 - genres
@@ -12437,50 +12437,50 @@ components:
                 translations:
                 - cleanTitle: cleanTitle
                   overview: overview
-                  movieMetadataId: 5
+                  movieMetadataId: 3
                   language:
                     name: name
                     id: 2
-                  id: 7
+                  id: 5
                   title: title
                 - cleanTitle: cleanTitle
                   overview: overview
-                  movieMetadataId: 5
+                  movieMetadataId: 3
                   language:
                     name: name
                     id: 2
-                  id: 7
+                  id: 5
                   title: title
-                popularity: 0.20253241
+                popularity: 6.628464
                 digitalRelease: 2000-01-23T04:56:07.000+00:00
-                id: 7
+                id: 0
                 physicalRelease: 2000-01-23T04:56:07.000+00:00
                 cleanOriginalTitle: cleanOriginalTitle
                 alternativeTitles:
                 - cleanTitle: cleanTitle
-                  sourceId: 7
+                  sourceId: 3
                   sourceType: null
-                  movieMetadataId: 8
+                  movieMetadataId: 7
                   votes: 3
                   language:
                     name: name
                     id: 2
-                  id: 4
-                  voteCount: 3
+                  id: 8
+                  voteCount: 7
                   title: title
                 - cleanTitle: cleanTitle
-                  sourceId: 7
+                  sourceId: 3
                   sourceType: null
-                  movieMetadataId: 8
+                  movieMetadataId: 7
                   votes: 3
                   language:
                     name: name
                     id: 2
-                  id: 4
-                  voteCount: 3
+                  id: 8
+                  voteCount: 7
                   title: title
                 overview: overview
-                secondaryYear: 3
+                secondaryYear: 4
                 images:
                 - coverType: null
                   remoteUrl: remoteUrl
@@ -12489,8 +12489,8 @@ components:
                   remoteUrl: remoteUrl
                   url: url
                 website: website
-                collectionTmdbId: 6
-                runtime: 0
+                collectionTmdbId: 0
+                runtime: 4
                 originalLanguage:
                   name: name
                   id: 2
@@ -12501,8 +12501,8 @@ components:
                 status: null
               lastInfoSync: 2000-01-23T04:56:07.000+00:00
               tmdbId: 3
-              qualityProfileId: 3
-              id: 6
+              qualityProfileId: 7
+              id: 3
             originalLanguage:
               name: name
               id: 2
@@ -13978,6 +13978,7 @@ components:
             edition: edition
             movieId: 8
             originalFilePath: originalFilePath
+            customFormatScore: 3
             dateAdded: 2000-01-23T04:56:07.000+00:00
             quality:
               quality:
@@ -13998,14 +13999,14 @@ components:
               subtitles: subtitles
               audioLanguages: audioLanguages
               videoBitDepth: 6
-              audioStreamCount: 2
+              audioStreamCount: 6
               audioCodec: audioCodec
               resolution: resolution
-              audioBitrate: 6
-              videoFps: 5.944895607614016
-              videoBitrate: 6
-              audioChannels: 1.284659006116532
-              id: 3
+              audioBitrate: 1
+              videoFps: 6.704019297950036
+              videoBitrate: 5
+              audioChannels: 2.8841621266687802
+              id: 6
               videoDynamicRangeType: videoDynamicRangeType
               runTime: runTime
               scanType: scanType
@@ -14038,7 +14039,7 @@ components:
               votes: 9
               type: null
               value: 9.369310271410669
-          popularity: 4.2587733
+          popularity: 1.0414449
           digitalRelease: 2000-01-23T04:56:07.000+00:00
           physicalReleaseNote: physicalReleaseNote
           id: 7
@@ -14071,24 +14072,24 @@ components:
             searchOnAdd: true
             monitored: true
             tags:
-            - 6
-            - 6
+            - 4
+            - 4
             cleanTitle: cleanTitle
             sortTitle: sortTitle
             movies:
             - studio: studio
               inCinemas: 2000-01-23T04:56:07.000+00:00
-              year: 7
+              year: 6
               imdbId: imdbId
               youTubeTrailerId: youTubeTrailerId
               title: title
               recommendations:
-              - 4
-              - 4
+              - 0
+              - 0
               collectionTitle: collectionTitle
               cleanTitle: cleanTitle
               lastInfoSync: 2000-01-23T04:56:07.000+00:00
-              tmdbId: 0
+              tmdbId: 7
               genres:
               - genres
               - genres
@@ -14112,50 +14113,50 @@ components:
               translations:
               - cleanTitle: cleanTitle
                 overview: overview
-                movieMetadataId: 5
+                movieMetadataId: 3
                 language:
                   name: name
                   id: 2
-                id: 7
+                id: 5
                 title: title
               - cleanTitle: cleanTitle
                 overview: overview
-                movieMetadataId: 5
+                movieMetadataId: 3
                 language:
                   name: name
                   id: 2
-                id: 7
+                id: 5
                 title: title
-              popularity: 0.20253241
+              popularity: 6.628464
               digitalRelease: 2000-01-23T04:56:07.000+00:00
-              id: 7
+              id: 0
               physicalRelease: 2000-01-23T04:56:07.000+00:00
               cleanOriginalTitle: cleanOriginalTitle
               alternativeTitles:
               - cleanTitle: cleanTitle
-                sourceId: 7
+                sourceId: 3
                 sourceType: null
-                movieMetadataId: 8
+                movieMetadataId: 7
                 votes: 3
                 language:
                   name: name
                   id: 2
-                id: 4
-                voteCount: 3
+                id: 8
+                voteCount: 7
                 title: title
               - cleanTitle: cleanTitle
-                sourceId: 7
+                sourceId: 3
                 sourceType: null
-                movieMetadataId: 8
+                movieMetadataId: 7
                 votes: 3
                 language:
                   name: name
                   id: 2
-                id: 4
-                voteCount: 3
+                id: 8
+                voteCount: 7
                 title: title
               overview: overview
-              secondaryYear: 3
+              secondaryYear: 4
               images:
               - coverType: null
                 remoteUrl: remoteUrl
@@ -14164,8 +14165,8 @@ components:
                 remoteUrl: remoteUrl
                 url: url
               website: website
-              collectionTmdbId: 6
-              runtime: 0
+              collectionTmdbId: 0
+              runtime: 4
               originalLanguage:
                 name: name
                 id: 2
@@ -14176,17 +14177,17 @@ components:
               status: null
             - studio: studio
               inCinemas: 2000-01-23T04:56:07.000+00:00
-              year: 7
+              year: 6
               imdbId: imdbId
               youTubeTrailerId: youTubeTrailerId
               title: title
               recommendations:
-              - 4
-              - 4
+              - 0
+              - 0
               collectionTitle: collectionTitle
               cleanTitle: cleanTitle
               lastInfoSync: 2000-01-23T04:56:07.000+00:00
-              tmdbId: 0
+              tmdbId: 7
               genres:
               - genres
               - genres
@@ -14210,50 +14211,50 @@ components:
               translations:
               - cleanTitle: cleanTitle
                 overview: overview
-                movieMetadataId: 5
+                movieMetadataId: 3
                 language:
                   name: name
                   id: 2
-                id: 7
+                id: 5
                 title: title
               - cleanTitle: cleanTitle
                 overview: overview
-                movieMetadataId: 5
+                movieMetadataId: 3
                 language:
                   name: name
                   id: 2
-                id: 7
+                id: 5
                 title: title
-              popularity: 0.20253241
+              popularity: 6.628464
               digitalRelease: 2000-01-23T04:56:07.000+00:00
-              id: 7
+              id: 0
               physicalRelease: 2000-01-23T04:56:07.000+00:00
               cleanOriginalTitle: cleanOriginalTitle
               alternativeTitles:
               - cleanTitle: cleanTitle
-                sourceId: 7
+                sourceId: 3
                 sourceType: null
-                movieMetadataId: 8
+                movieMetadataId: 7
                 votes: 3
                 language:
                   name: name
                   id: 2
-                id: 4
-                voteCount: 3
+                id: 8
+                voteCount: 7
                 title: title
               - cleanTitle: cleanTitle
-                sourceId: 7
+                sourceId: 3
                 sourceType: null
-                movieMetadataId: 8
+                movieMetadataId: 7
                 votes: 3
                 language:
                   name: name
                   id: 2
-                id: 4
-                voteCount: 3
+                id: 8
+                voteCount: 7
                 title: title
               overview: overview
-              secondaryYear: 3
+              secondaryYear: 4
               images:
               - coverType: null
                 remoteUrl: remoteUrl
@@ -14262,8 +14263,8 @@ components:
                 remoteUrl: remoteUrl
                 url: url
               website: website
-              collectionTmdbId: 6
-              runtime: 0
+              collectionTmdbId: 0
+              runtime: 4
               originalLanguage:
                 name: name
                 id: 2
@@ -14274,8 +14275,8 @@ components:
               status: null
             lastInfoSync: 2000-01-23T04:56:07.000+00:00
             tmdbId: 3
-            qualityProfileId: 3
-            id: 6
+            qualityProfileId: 7
+            id: 3
           originalLanguage:
             name: name
             id: 2
@@ -14916,6 +14917,7 @@ components:
             edition: edition
             movieId: 8
             originalFilePath: originalFilePath
+            customFormatScore: 3
             dateAdded: 2000-01-23T04:56:07.000+00:00
             quality:
               quality:
@@ -14936,14 +14938,14 @@ components:
               subtitles: subtitles
               audioLanguages: audioLanguages
               videoBitDepth: 6
-              audioStreamCount: 2
+              audioStreamCount: 6
               audioCodec: audioCodec
               resolution: resolution
-              audioBitrate: 6
-              videoFps: 5.944895607614016
-              videoBitrate: 6
-              audioChannels: 1.284659006116532
-              id: 3
+              audioBitrate: 1
+              videoFps: 6.704019297950036
+              videoBitrate: 5
+              audioChannels: 2.8841621266687802
+              id: 6
               videoDynamicRangeType: videoDynamicRangeType
               runTime: runTime
               scanType: scanType
@@ -14976,7 +14978,7 @@ components:
               votes: 9
               type: null
               value: 9.369310271410669
-          popularity: 4.2587733
+          popularity: 1.0414449
           digitalRelease: 2000-01-23T04:56:07.000+00:00
           physicalReleaseNote: physicalReleaseNote
           id: 7
@@ -15009,24 +15011,24 @@ components:
             searchOnAdd: true
             monitored: true
             tags:
-            - 6
-            - 6
+            - 4
+            - 4
             cleanTitle: cleanTitle
             sortTitle: sortTitle
             movies:
             - studio: studio
               inCinemas: 2000-01-23T04:56:07.000+00:00
-              year: 7
+              year: 6
               imdbId: imdbId
               youTubeTrailerId: youTubeTrailerId
               title: title
               recommendations:
-              - 4
-              - 4
+              - 0
+              - 0
               collectionTitle: collectionTitle
               cleanTitle: cleanTitle
               lastInfoSync: 2000-01-23T04:56:07.000+00:00
-              tmdbId: 0
+              tmdbId: 7
               genres:
               - genres
               - genres
@@ -15050,50 +15052,50 @@ components:
               translations:
               - cleanTitle: cleanTitle
                 overview: overview
-                movieMetadataId: 5
+                movieMetadataId: 3
                 language:
                   name: name
                   id: 2
-                id: 7
+                id: 5
                 title: title
               - cleanTitle: cleanTitle
                 overview: overview
-                movieMetadataId: 5
+                movieMetadataId: 3
                 language:
                   name: name
                   id: 2
-                id: 7
+                id: 5
                 title: title
-              popularity: 0.20253241
+              popularity: 6.628464
               digitalRelease: 2000-01-23T04:56:07.000+00:00
-              id: 7
+              id: 0
               physicalRelease: 2000-01-23T04:56:07.000+00:00
               cleanOriginalTitle: cleanOriginalTitle
               alternativeTitles:
               - cleanTitle: cleanTitle
-                sourceId: 7
+                sourceId: 3
                 sourceType: null
-                movieMetadataId: 8
+                movieMetadataId: 7
                 votes: 3
                 language:
                   name: name
                   id: 2
-                id: 4
-                voteCount: 3
+                id: 8
+                voteCount: 7
                 title: title
               - cleanTitle: cleanTitle
-                sourceId: 7
+                sourceId: 3
                 sourceType: null
-                movieMetadataId: 8
+                movieMetadataId: 7
                 votes: 3
                 language:
                   name: name
                   id: 2
-                id: 4
-                voteCount: 3
+                id: 8
+                voteCount: 7
                 title: title
               overview: overview
-              secondaryYear: 3
+              secondaryYear: 4
               images:
               - coverType: null
                 remoteUrl: remoteUrl
@@ -15102,8 +15104,8 @@ components:
                 remoteUrl: remoteUrl
                 url: url
               website: website
-              collectionTmdbId: 6
-              runtime: 0
+              collectionTmdbId: 0
+              runtime: 4
               originalLanguage:
                 name: name
                 id: 2
@@ -15114,17 +15116,17 @@ components:
               status: null
             - studio: studio
               inCinemas: 2000-01-23T04:56:07.000+00:00
-              year: 7
+              year: 6
               imdbId: imdbId
               youTubeTrailerId: youTubeTrailerId
               title: title
               recommendations:
-              - 4
-              - 4
+              - 0
+              - 0
               collectionTitle: collectionTitle
               cleanTitle: cleanTitle
               lastInfoSync: 2000-01-23T04:56:07.000+00:00
-              tmdbId: 0
+              tmdbId: 7
               genres:
               - genres
               - genres
@@ -15148,50 +15150,50 @@ components:
               translations:
               - cleanTitle: cleanTitle
                 overview: overview
-                movieMetadataId: 5
+                movieMetadataId: 3
                 language:
                   name: name
                   id: 2
-                id: 7
+                id: 5
                 title: title
               - cleanTitle: cleanTitle
                 overview: overview
-                movieMetadataId: 5
+                movieMetadataId: 3
                 language:
                   name: name
                   id: 2
-                id: 7
+                id: 5
                 title: title
-              popularity: 0.20253241
+              popularity: 6.628464
               digitalRelease: 2000-01-23T04:56:07.000+00:00
-              id: 7
+              id: 0
               physicalRelease: 2000-01-23T04:56:07.000+00:00
               cleanOriginalTitle: cleanOriginalTitle
               alternativeTitles:
               - cleanTitle: cleanTitle
-                sourceId: 7
+                sourceId: 3
                 sourceType: null
-                movieMetadataId: 8
+                movieMetadataId: 7
                 votes: 3
                 language:
                   name: name
                   id: 2
-                id: 4
-                voteCount: 3
+                id: 8
+                voteCount: 7
                 title: title
               - cleanTitle: cleanTitle
-                sourceId: 7
+                sourceId: 3
                 sourceType: null
-                movieMetadataId: 8
+                movieMetadataId: 7
                 votes: 3
                 language:
                   name: name
                   id: 2
-                id: 4
-                voteCount: 3
+                id: 8
+                voteCount: 7
                 title: title
               overview: overview
-              secondaryYear: 3
+              secondaryYear: 4
               images:
               - coverType: null
                 remoteUrl: remoteUrl
@@ -15200,8 +15202,8 @@ components:
                 remoteUrl: remoteUrl
                 url: url
               website: website
-              collectionTmdbId: 6
-              runtime: 0
+              collectionTmdbId: 0
+              runtime: 4
               originalLanguage:
                 name: name
                 id: 2
@@ -15212,8 +15214,8 @@ components:
               status: null
             lastInfoSync: 2000-01-23T04:56:07.000+00:00
             tmdbId: 3
-            qualityProfileId: 3
-            id: 6
+            qualityProfileId: 7
+            id: 3
           originalLanguage:
             name: name
             id: 2
@@ -15596,14 +15598,14 @@ components:
         subtitles: subtitles
         audioLanguages: audioLanguages
         videoBitDepth: 6
-        audioStreamCount: 2
+        audioStreamCount: 6
         audioCodec: audioCodec
         resolution: resolution
-        audioBitrate: 6
-        videoFps: 5.944895607614016
-        videoBitrate: 6
-        audioChannels: 1.284659006116532
-        id: 3
+        audioBitrate: 1
+        videoFps: 6.704019297950036
+        videoBitrate: 5
+        audioChannels: 2.8841621266687802
+        id: 6
         videoDynamicRangeType: videoDynamicRangeType
         runTime: runTime
         scanType: scanType
@@ -15890,24 +15892,24 @@ components:
         searchOnAdd: true
         monitored: true
         tags:
-        - 6
-        - 6
+        - 4
+        - 4
         cleanTitle: cleanTitle
         sortTitle: sortTitle
         movies:
         - studio: studio
           inCinemas: 2000-01-23T04:56:07.000+00:00
-          year: 7
+          year: 6
           imdbId: imdbId
           youTubeTrailerId: youTubeTrailerId
           title: title
           recommendations:
-          - 4
-          - 4
+          - 0
+          - 0
           collectionTitle: collectionTitle
           cleanTitle: cleanTitle
           lastInfoSync: 2000-01-23T04:56:07.000+00:00
-          tmdbId: 0
+          tmdbId: 7
           genres:
           - genres
           - genres
@@ -15931,50 +15933,50 @@ components:
           translations:
           - cleanTitle: cleanTitle
             overview: overview
-            movieMetadataId: 5
+            movieMetadataId: 3
             language:
               name: name
               id: 2
-            id: 7
+            id: 5
             title: title
           - cleanTitle: cleanTitle
             overview: overview
-            movieMetadataId: 5
+            movieMetadataId: 3
             language:
               name: name
               id: 2
-            id: 7
+            id: 5
             title: title
-          popularity: 0.20253241
+          popularity: 6.628464
           digitalRelease: 2000-01-23T04:56:07.000+00:00
-          id: 7
+          id: 0
           physicalRelease: 2000-01-23T04:56:07.000+00:00
           cleanOriginalTitle: cleanOriginalTitle
           alternativeTitles:
           - cleanTitle: cleanTitle
-            sourceId: 7
+            sourceId: 3
             sourceType: null
-            movieMetadataId: 8
+            movieMetadataId: 7
             votes: 3
             language:
               name: name
               id: 2
-            id: 4
-            voteCount: 3
+            id: 8
+            voteCount: 7
             title: title
           - cleanTitle: cleanTitle
-            sourceId: 7
+            sourceId: 3
             sourceType: null
-            movieMetadataId: 8
+            movieMetadataId: 7
             votes: 3
             language:
               name: name
               id: 2
-            id: 4
-            voteCount: 3
+            id: 8
+            voteCount: 7
             title: title
           overview: overview
-          secondaryYear: 3
+          secondaryYear: 4
           images:
           - coverType: null
             remoteUrl: remoteUrl
@@ -15983,8 +15985,8 @@ components:
             remoteUrl: remoteUrl
             url: url
           website: website
-          collectionTmdbId: 6
-          runtime: 0
+          collectionTmdbId: 0
+          runtime: 4
           originalLanguage:
             name: name
             id: 2
@@ -15995,17 +15997,17 @@ components:
           status: null
         - studio: studio
           inCinemas: 2000-01-23T04:56:07.000+00:00
-          year: 7
+          year: 6
           imdbId: imdbId
           youTubeTrailerId: youTubeTrailerId
           title: title
           recommendations:
-          - 4
-          - 4
+          - 0
+          - 0
           collectionTitle: collectionTitle
           cleanTitle: cleanTitle
           lastInfoSync: 2000-01-23T04:56:07.000+00:00
-          tmdbId: 0
+          tmdbId: 7
           genres:
           - genres
           - genres
@@ -16029,50 +16031,50 @@ components:
           translations:
           - cleanTitle: cleanTitle
             overview: overview
-            movieMetadataId: 5
+            movieMetadataId: 3
             language:
               name: name
               id: 2
-            id: 7
+            id: 5
             title: title
           - cleanTitle: cleanTitle
             overview: overview
-            movieMetadataId: 5
+            movieMetadataId: 3
             language:
               name: name
               id: 2
-            id: 7
+            id: 5
             title: title
-          popularity: 0.20253241
+          popularity: 6.628464
           digitalRelease: 2000-01-23T04:56:07.000+00:00
-          id: 7
+          id: 0
           physicalRelease: 2000-01-23T04:56:07.000+00:00
           cleanOriginalTitle: cleanOriginalTitle
           alternativeTitles:
           - cleanTitle: cleanTitle
-            sourceId: 7
+            sourceId: 3
             sourceType: null
-            movieMetadataId: 8
+            movieMetadataId: 7
             votes: 3
             language:
               name: name
               id: 2
-            id: 4
-            voteCount: 3
+            id: 8
+            voteCount: 7
             title: title
           - cleanTitle: cleanTitle
-            sourceId: 7
+            sourceId: 3
             sourceType: null
-            movieMetadataId: 8
+            movieMetadataId: 7
             votes: 3
             language:
               name: name
               id: 2
-            id: 4
-            voteCount: 3
+            id: 8
+            voteCount: 7
             title: title
           overview: overview
-          secondaryYear: 3
+          secondaryYear: 4
           images:
           - coverType: null
             remoteUrl: remoteUrl
@@ -16081,8 +16083,8 @@ components:
             remoteUrl: remoteUrl
             url: url
           website: website
-          collectionTmdbId: 6
-          runtime: 0
+          collectionTmdbId: 0
+          runtime: 4
           originalLanguage:
             name: name
             id: 2
@@ -16093,8 +16095,8 @@ components:
           status: null
         lastInfoSync: 2000-01-23T04:56:07.000+00:00
         tmdbId: 3
-        qualityProfileId: 3
-        id: 6
+        qualityProfileId: 7
+        id: 3
       properties:
         id:
           format: int32
@@ -16522,6 +16524,7 @@ components:
         edition: edition
         movieId: 8
         originalFilePath: originalFilePath
+        customFormatScore: 3
         dateAdded: 2000-01-23T04:56:07.000+00:00
         quality:
           quality:
@@ -16542,14 +16545,14 @@ components:
           subtitles: subtitles
           audioLanguages: audioLanguages
           videoBitDepth: 6
-          audioStreamCount: 2
+          audioStreamCount: 6
           audioCodec: audioCodec
           resolution: resolution
-          audioBitrate: 6
-          videoFps: 5.944895607614016
-          videoBitrate: 6
-          audioChannels: 1.284659006116532
-          id: 3
+          audioBitrate: 1
+          videoFps: 6.704019297950036
+          videoBitrate: 5
+          audioChannels: 2.8841621266687802
+          id: 6
           videoDynamicRangeType: videoDynamicRangeType
           runTime: runTime
           scanType: scanType
@@ -16588,6 +16591,9 @@ components:
             $ref: '#/components/schemas/CustomFormatResource'
           nullable: true
           type: array
+        customFormatScore:
+          format: int32
+          type: integer
         mediaInfo:
           $ref: '#/components/schemas/MediaInfoResource'
         originalFilePath:
@@ -16623,17 +16629,17 @@ components:
       example:
         studio: studio
         inCinemas: 2000-01-23T04:56:07.000+00:00
-        year: 7
+        year: 6
         imdbId: imdbId
         youTubeTrailerId: youTubeTrailerId
         title: title
         recommendations:
-        - 4
-        - 4
+        - 0
+        - 0
         collectionTitle: collectionTitle
         cleanTitle: cleanTitle
         lastInfoSync: 2000-01-23T04:56:07.000+00:00
-        tmdbId: 0
+        tmdbId: 7
         genres:
         - genres
         - genres
@@ -16657,50 +16663,50 @@ components:
         translations:
         - cleanTitle: cleanTitle
           overview: overview
-          movieMetadataId: 5
+          movieMetadataId: 3
           language:
             name: name
             id: 2
-          id: 7
+          id: 5
           title: title
         - cleanTitle: cleanTitle
           overview: overview
-          movieMetadataId: 5
+          movieMetadataId: 3
           language:
             name: name
             id: 2
-          id: 7
+          id: 5
           title: title
-        popularity: 0.20253241
+        popularity: 6.628464
         digitalRelease: 2000-01-23T04:56:07.000+00:00
-        id: 7
+        id: 0
         physicalRelease: 2000-01-23T04:56:07.000+00:00
         cleanOriginalTitle: cleanOriginalTitle
         alternativeTitles:
         - cleanTitle: cleanTitle
-          sourceId: 7
+          sourceId: 3
           sourceType: null
-          movieMetadataId: 8
+          movieMetadataId: 7
           votes: 3
           language:
             name: name
             id: 2
-          id: 4
-          voteCount: 3
+          id: 8
+          voteCount: 7
           title: title
         - cleanTitle: cleanTitle
-          sourceId: 7
+          sourceId: 3
           sourceType: null
-          movieMetadataId: 8
+          movieMetadataId: 7
           votes: 3
           language:
             name: name
             id: 2
-          id: 4
-          voteCount: 3
+          id: 8
+          voteCount: 7
           title: title
         overview: overview
-        secondaryYear: 3
+        secondaryYear: 4
         images:
         - coverType: null
           remoteUrl: remoteUrl
@@ -16709,8 +16715,8 @@ components:
           remoteUrl: remoteUrl
           url: url
         website: website
-        collectionTmdbId: 6
-        runtime: 0
+        collectionTmdbId: 0
+        runtime: 4
         originalLanguage:
           name: name
           id: 2
@@ -17131,6 +17137,7 @@ components:
           edition: edition
           movieId: 8
           originalFilePath: originalFilePath
+          customFormatScore: 3
           dateAdded: 2000-01-23T04:56:07.000+00:00
           quality:
             quality:
@@ -17151,14 +17158,14 @@ components:
             subtitles: subtitles
             audioLanguages: audioLanguages
             videoBitDepth: 6
-            audioStreamCount: 2
+            audioStreamCount: 6
             audioCodec: audioCodec
             resolution: resolution
-            audioBitrate: 6
-            videoFps: 5.944895607614016
-            videoBitrate: 6
-            audioChannels: 1.284659006116532
-            id: 3
+            audioBitrate: 1
+            videoFps: 6.704019297950036
+            videoBitrate: 5
+            audioChannels: 2.8841621266687802
+            id: 6
             videoDynamicRangeType: videoDynamicRangeType
             runTime: runTime
             scanType: scanType
@@ -17191,7 +17198,7 @@ components:
             votes: 9
             type: null
             value: 9.369310271410669
-        popularity: 4.2587733
+        popularity: 1.0414449
         digitalRelease: 2000-01-23T04:56:07.000+00:00
         physicalReleaseNote: physicalReleaseNote
         id: 7
@@ -17224,24 +17231,24 @@ components:
           searchOnAdd: true
           monitored: true
           tags:
-          - 6
-          - 6
+          - 4
+          - 4
           cleanTitle: cleanTitle
           sortTitle: sortTitle
           movies:
           - studio: studio
             inCinemas: 2000-01-23T04:56:07.000+00:00
-            year: 7
+            year: 6
             imdbId: imdbId
             youTubeTrailerId: youTubeTrailerId
             title: title
             recommendations:
-            - 4
-            - 4
+            - 0
+            - 0
             collectionTitle: collectionTitle
             cleanTitle: cleanTitle
             lastInfoSync: 2000-01-23T04:56:07.000+00:00
-            tmdbId: 0
+            tmdbId: 7
             genres:
             - genres
             - genres
@@ -17265,50 +17272,50 @@ components:
             translations:
             - cleanTitle: cleanTitle
               overview: overview
-              movieMetadataId: 5
+              movieMetadataId: 3
               language:
                 name: name
                 id: 2
-              id: 7
+              id: 5
               title: title
             - cleanTitle: cleanTitle
               overview: overview
-              movieMetadataId: 5
+              movieMetadataId: 3
               language:
                 name: name
                 id: 2
-              id: 7
+              id: 5
               title: title
-            popularity: 0.20253241
+            popularity: 6.628464
             digitalRelease: 2000-01-23T04:56:07.000+00:00
-            id: 7
+            id: 0
             physicalRelease: 2000-01-23T04:56:07.000+00:00
             cleanOriginalTitle: cleanOriginalTitle
             alternativeTitles:
             - cleanTitle: cleanTitle
-              sourceId: 7
+              sourceId: 3
               sourceType: null
-              movieMetadataId: 8
+              movieMetadataId: 7
               votes: 3
               language:
                 name: name
                 id: 2
-              id: 4
-              voteCount: 3
+              id: 8
+              voteCount: 7
               title: title
             - cleanTitle: cleanTitle
-              sourceId: 7
+              sourceId: 3
               sourceType: null
-              movieMetadataId: 8
+              movieMetadataId: 7
               votes: 3
               language:
                 name: name
                 id: 2
-              id: 4
-              voteCount: 3
+              id: 8
+              voteCount: 7
               title: title
             overview: overview
-            secondaryYear: 3
+            secondaryYear: 4
             images:
             - coverType: null
               remoteUrl: remoteUrl
@@ -17317,8 +17324,8 @@ components:
               remoteUrl: remoteUrl
               url: url
             website: website
-            collectionTmdbId: 6
-            runtime: 0
+            collectionTmdbId: 0
+            runtime: 4
             originalLanguage:
               name: name
               id: 2
@@ -17329,17 +17336,17 @@ components:
             status: null
           - studio: studio
             inCinemas: 2000-01-23T04:56:07.000+00:00
-            year: 7
+            year: 6
             imdbId: imdbId
             youTubeTrailerId: youTubeTrailerId
             title: title
             recommendations:
-            - 4
-            - 4
+            - 0
+            - 0
             collectionTitle: collectionTitle
             cleanTitle: cleanTitle
             lastInfoSync: 2000-01-23T04:56:07.000+00:00
-            tmdbId: 0
+            tmdbId: 7
             genres:
             - genres
             - genres
@@ -17363,50 +17370,50 @@ components:
             translations:
             - cleanTitle: cleanTitle
               overview: overview
-              movieMetadataId: 5
+              movieMetadataId: 3
               language:
                 name: name
                 id: 2
-              id: 7
+              id: 5
               title: title
             - cleanTitle: cleanTitle
               overview: overview
-              movieMetadataId: 5
+              movieMetadataId: 3
               language:
                 name: name
                 id: 2
-              id: 7
+              id: 5
               title: title
-            popularity: 0.20253241
+            popularity: 6.628464
             digitalRelease: 2000-01-23T04:56:07.000+00:00
-            id: 7
+            id: 0
             physicalRelease: 2000-01-23T04:56:07.000+00:00
             cleanOriginalTitle: cleanOriginalTitle
             alternativeTitles:
             - cleanTitle: cleanTitle
-              sourceId: 7
+              sourceId: 3
               sourceType: null
-              movieMetadataId: 8
+              movieMetadataId: 7
               votes: 3
               language:
                 name: name
                 id: 2
-              id: 4
-              voteCount: 3
+              id: 8
+              voteCount: 7
               title: title
             - cleanTitle: cleanTitle
-              sourceId: 7
+              sourceId: 3
               sourceType: null
-              movieMetadataId: 8
+              movieMetadataId: 7
               votes: 3
               language:
                 name: name
                 id: 2
-              id: 4
-              voteCount: 3
+              id: 8
+              voteCount: 7
               title: title
             overview: overview
-            secondaryYear: 3
+            secondaryYear: 4
             images:
             - coverType: null
               remoteUrl: remoteUrl
@@ -17415,8 +17422,8 @@ components:
               remoteUrl: remoteUrl
               url: url
             website: website
-            collectionTmdbId: 6
-            runtime: 0
+            collectionTmdbId: 0
+            runtime: 4
             originalLanguage:
               name: name
               id: 2
@@ -17427,8 +17434,8 @@ components:
             status: null
           lastInfoSync: 2000-01-23T04:56:07.000+00:00
           tmdbId: 3
-          qualityProfileId: 3
-          id: 6
+          qualityProfileId: 7
+          id: 3
         originalLanguage:
           name: name
           id: 2
@@ -17606,11 +17613,11 @@ components:
       example:
         cleanTitle: cleanTitle
         overview: overview
-        movieMetadataId: 5
+        movieMetadataId: 3
         language:
           name: name
           id: 2
-        id: 7
+        id: 5
         title: title
       properties:
         id:
@@ -18209,6 +18216,7 @@ components:
             edition: edition
             movieId: 8
             originalFilePath: originalFilePath
+            customFormatScore: 3
             dateAdded: 2000-01-23T04:56:07.000+00:00
             quality:
               quality:
@@ -18229,14 +18237,14 @@ components:
               subtitles: subtitles
               audioLanguages: audioLanguages
               videoBitDepth: 6
-              audioStreamCount: 2
+              audioStreamCount: 6
               audioCodec: audioCodec
               resolution: resolution
-              audioBitrate: 6
-              videoFps: 5.944895607614016
-              videoBitrate: 6
-              audioChannels: 1.284659006116532
-              id: 3
+              audioBitrate: 1
+              videoFps: 6.704019297950036
+              videoBitrate: 5
+              audioChannels: 2.8841621266687802
+              id: 6
               videoDynamicRangeType: videoDynamicRangeType
               runTime: runTime
               scanType: scanType
@@ -18269,7 +18277,7 @@ components:
               votes: 9
               type: null
               value: 9.369310271410669
-          popularity: 4.2587733
+          popularity: 1.0414449
           digitalRelease: 2000-01-23T04:56:07.000+00:00
           physicalReleaseNote: physicalReleaseNote
           id: 7
@@ -18302,24 +18310,24 @@ components:
             searchOnAdd: true
             monitored: true
             tags:
-            - 6
-            - 6
+            - 4
+            - 4
             cleanTitle: cleanTitle
             sortTitle: sortTitle
             movies:
             - studio: studio
               inCinemas: 2000-01-23T04:56:07.000+00:00
-              year: 7
+              year: 6
               imdbId: imdbId
               youTubeTrailerId: youTubeTrailerId
               title: title
               recommendations:
-              - 4
-              - 4
+              - 0
+              - 0
               collectionTitle: collectionTitle
               cleanTitle: cleanTitle
               lastInfoSync: 2000-01-23T04:56:07.000+00:00
-              tmdbId: 0
+              tmdbId: 7
               genres:
               - genres
               - genres
@@ -18343,50 +18351,50 @@ components:
               translations:
               - cleanTitle: cleanTitle
                 overview: overview
-                movieMetadataId: 5
+                movieMetadataId: 3
                 language:
                   name: name
                   id: 2
-                id: 7
+                id: 5
                 title: title
               - cleanTitle: cleanTitle
                 overview: overview
-                movieMetadataId: 5
+                movieMetadataId: 3
                 language:
                   name: name
                   id: 2
-                id: 7
+                id: 5
                 title: title
-              popularity: 0.20253241
+              popularity: 6.628464
               digitalRelease: 2000-01-23T04:56:07.000+00:00
-              id: 7
+              id: 0
               physicalRelease: 2000-01-23T04:56:07.000+00:00
               cleanOriginalTitle: cleanOriginalTitle
               alternativeTitles:
               - cleanTitle: cleanTitle
-                sourceId: 7
+                sourceId: 3
                 sourceType: null
-                movieMetadataId: 8
+                movieMetadataId: 7
                 votes: 3
                 language:
                   name: name
                   id: 2
-                id: 4
-                voteCount: 3
+                id: 8
+                voteCount: 7
                 title: title
               - cleanTitle: cleanTitle
-                sourceId: 7
+                sourceId: 3
                 sourceType: null
-                movieMetadataId: 8
+                movieMetadataId: 7
                 votes: 3
                 language:
                   name: name
                   id: 2
-                id: 4
-                voteCount: 3
+                id: 8
+                voteCount: 7
                 title: title
               overview: overview
-              secondaryYear: 3
+              secondaryYear: 4
               images:
               - coverType: null
                 remoteUrl: remoteUrl
@@ -18395,8 +18403,8 @@ components:
                 remoteUrl: remoteUrl
                 url: url
               website: website
-              collectionTmdbId: 6
-              runtime: 0
+              collectionTmdbId: 0
+              runtime: 4
               originalLanguage:
                 name: name
                 id: 2
@@ -18407,17 +18415,17 @@ components:
               status: null
             - studio: studio
               inCinemas: 2000-01-23T04:56:07.000+00:00
-              year: 7
+              year: 6
               imdbId: imdbId
               youTubeTrailerId: youTubeTrailerId
               title: title
               recommendations:
-              - 4
-              - 4
+              - 0
+              - 0
               collectionTitle: collectionTitle
               cleanTitle: cleanTitle
               lastInfoSync: 2000-01-23T04:56:07.000+00:00
-              tmdbId: 0
+              tmdbId: 7
               genres:
               - genres
               - genres
@@ -18441,50 +18449,50 @@ components:
               translations:
               - cleanTitle: cleanTitle
                 overview: overview
-                movieMetadataId: 5
+                movieMetadataId: 3
                 language:
                   name: name
                   id: 2
-                id: 7
+                id: 5
                 title: title
               - cleanTitle: cleanTitle
                 overview: overview
-                movieMetadataId: 5
+                movieMetadataId: 3
                 language:
                   name: name
                   id: 2
-                id: 7
+                id: 5
                 title: title
-              popularity: 0.20253241
+              popularity: 6.628464
               digitalRelease: 2000-01-23T04:56:07.000+00:00
-              id: 7
+              id: 0
               physicalRelease: 2000-01-23T04:56:07.000+00:00
               cleanOriginalTitle: cleanOriginalTitle
               alternativeTitles:
               - cleanTitle: cleanTitle
-                sourceId: 7
+                sourceId: 3
                 sourceType: null
-                movieMetadataId: 8
+                movieMetadataId: 7
                 votes: 3
                 language:
                   name: name
                   id: 2
-                id: 4
-                voteCount: 3
+                id: 8
+                voteCount: 7
                 title: title
               - cleanTitle: cleanTitle
-                sourceId: 7
+                sourceId: 3
                 sourceType: null
-                movieMetadataId: 8
+                movieMetadataId: 7
                 votes: 3
                 language:
                   name: name
                   id: 2
-                id: 4
-                voteCount: 3
+                id: 8
+                voteCount: 7
                 title: title
               overview: overview
-              secondaryYear: 3
+              secondaryYear: 4
               images:
               - coverType: null
                 remoteUrl: remoteUrl
@@ -18493,8 +18501,8 @@ components:
                 remoteUrl: remoteUrl
                 url: url
               website: website
-              collectionTmdbId: 6
-              runtime: 0
+              collectionTmdbId: 0
+              runtime: 4
               originalLanguage:
                 name: name
                 id: 2
@@ -18505,8 +18513,8 @@ components:
               status: null
             lastInfoSync: 2000-01-23T04:56:07.000+00:00
             tmdbId: 3
-            qualityProfileId: 3
-            id: 6
+            qualityProfileId: 7
+            id: 3
           originalLanguage:
             name: name
             id: 2
@@ -19466,6 +19474,7 @@ components:
             edition: edition
             movieId: 8
             originalFilePath: originalFilePath
+            customFormatScore: 3
             dateAdded: 2000-01-23T04:56:07.000+00:00
             quality:
               quality:
@@ -19486,14 +19495,14 @@ components:
               subtitles: subtitles
               audioLanguages: audioLanguages
               videoBitDepth: 6
-              audioStreamCount: 2
+              audioStreamCount: 6
               audioCodec: audioCodec
               resolution: resolution
-              audioBitrate: 6
-              videoFps: 5.944895607614016
-              videoBitrate: 6
-              audioChannels: 1.284659006116532
-              id: 3
+              audioBitrate: 1
+              videoFps: 6.704019297950036
+              videoBitrate: 5
+              audioChannels: 2.8841621266687802
+              id: 6
               videoDynamicRangeType: videoDynamicRangeType
               runTime: runTime
               scanType: scanType
@@ -19526,7 +19535,7 @@ components:
               votes: 9
               type: null
               value: 9.369310271410669
-          popularity: 4.2587733
+          popularity: 1.0414449
           digitalRelease: 2000-01-23T04:56:07.000+00:00
           physicalReleaseNote: physicalReleaseNote
           id: 7
@@ -19559,24 +19568,24 @@ components:
             searchOnAdd: true
             monitored: true
             tags:
-            - 6
-            - 6
+            - 4
+            - 4
             cleanTitle: cleanTitle
             sortTitle: sortTitle
             movies:
             - studio: studio
               inCinemas: 2000-01-23T04:56:07.000+00:00
-              year: 7
+              year: 6
               imdbId: imdbId
               youTubeTrailerId: youTubeTrailerId
               title: title
               recommendations:
-              - 4
-              - 4
+              - 0
+              - 0
               collectionTitle: collectionTitle
               cleanTitle: cleanTitle
               lastInfoSync: 2000-01-23T04:56:07.000+00:00
-              tmdbId: 0
+              tmdbId: 7
               genres:
               - genres
               - genres
@@ -19600,50 +19609,50 @@ components:
               translations:
               - cleanTitle: cleanTitle
                 overview: overview
-                movieMetadataId: 5
+                movieMetadataId: 3
                 language:
                   name: name
                   id: 2
-                id: 7
+                id: 5
                 title: title
               - cleanTitle: cleanTitle
                 overview: overview
-                movieMetadataId: 5
+                movieMetadataId: 3
                 language:
                   name: name
                   id: 2
-                id: 7
+                id: 5
                 title: title
-              popularity: 0.20253241
+              popularity: 6.628464
               digitalRelease: 2000-01-23T04:56:07.000+00:00
-              id: 7
+              id: 0
               physicalRelease: 2000-01-23T04:56:07.000+00:00
               cleanOriginalTitle: cleanOriginalTitle
               alternativeTitles:
               - cleanTitle: cleanTitle
-                sourceId: 7
+                sourceId: 3
                 sourceType: null
-                movieMetadataId: 8
+                movieMetadataId: 7
                 votes: 3
                 language:
                   name: name
                   id: 2
-                id: 4
-                voteCount: 3
+                id: 8
+                voteCount: 7
                 title: title
               - cleanTitle: cleanTitle
-                sourceId: 7
+                sourceId: 3
                 sourceType: null
-                movieMetadataId: 8
+                movieMetadataId: 7
                 votes: 3
                 language:
                   name: name
                   id: 2
-                id: 4
-                voteCount: 3
+                id: 8
+                voteCount: 7
                 title: title
               overview: overview
-              secondaryYear: 3
+              secondaryYear: 4
               images:
               - coverType: null
                 remoteUrl: remoteUrl
@@ -19652,8 +19661,8 @@ components:
                 remoteUrl: remoteUrl
                 url: url
               website: website
-              collectionTmdbId: 6
-              runtime: 0
+              collectionTmdbId: 0
+              runtime: 4
               originalLanguage:
                 name: name
                 id: 2
@@ -19664,17 +19673,17 @@ components:
               status: null
             - studio: studio
               inCinemas: 2000-01-23T04:56:07.000+00:00
-              year: 7
+              year: 6
               imdbId: imdbId
               youTubeTrailerId: youTubeTrailerId
               title: title
               recommendations:
-              - 4
-              - 4
+              - 0
+              - 0
               collectionTitle: collectionTitle
               cleanTitle: cleanTitle
               lastInfoSync: 2000-01-23T04:56:07.000+00:00
-              tmdbId: 0
+              tmdbId: 7
               genres:
               - genres
               - genres
@@ -19698,50 +19707,50 @@ components:
               translations:
               - cleanTitle: cleanTitle
                 overview: overview
-                movieMetadataId: 5
+                movieMetadataId: 3
                 language:
                   name: name
                   id: 2
-                id: 7
+                id: 5
                 title: title
               - cleanTitle: cleanTitle
                 overview: overview
-                movieMetadataId: 5
+                movieMetadataId: 3
                 language:
                   name: name
                   id: 2
-                id: 7
+                id: 5
                 title: title
-              popularity: 0.20253241
+              popularity: 6.628464
               digitalRelease: 2000-01-23T04:56:07.000+00:00
-              id: 7
+              id: 0
               physicalRelease: 2000-01-23T04:56:07.000+00:00
               cleanOriginalTitle: cleanOriginalTitle
               alternativeTitles:
               - cleanTitle: cleanTitle
-                sourceId: 7
+                sourceId: 3
                 sourceType: null
-                movieMetadataId: 8
+                movieMetadataId: 7
                 votes: 3
                 language:
                   name: name
                   id: 2
-                id: 4
-                voteCount: 3
+                id: 8
+                voteCount: 7
                 title: title
               - cleanTitle: cleanTitle
-                sourceId: 7
+                sourceId: 3
                 sourceType: null
-                movieMetadataId: 8
+                movieMetadataId: 7
                 votes: 3
                 language:
                   name: name
                   id: 2
-                id: 4
-                voteCount: 3
+                id: 8
+                voteCount: 7
                 title: title
               overview: overview
-              secondaryYear: 3
+              secondaryYear: 4
               images:
               - coverType: null
                 remoteUrl: remoteUrl
@@ -19750,8 +19759,8 @@ components:
                 remoteUrl: remoteUrl
                 url: url
               website: website
-              collectionTmdbId: 6
-              runtime: 0
+              collectionTmdbId: 0
+              runtime: 4
               originalLanguage:
                 name: name
                 id: 2
@@ -19762,8 +19771,8 @@ components:
               status: null
             lastInfoSync: 2000-01-23T04:56:07.000+00:00
             tmdbId: 3
-            qualityProfileId: 3
-            id: 6
+            qualityProfileId: 7
+            id: 3
           originalLanguage:
             name: name
             id: 2
@@ -20455,6 +20464,7 @@ components:
               edition: edition
               movieId: 8
               originalFilePath: originalFilePath
+              customFormatScore: 3
               dateAdded: 2000-01-23T04:56:07.000+00:00
               quality:
                 quality:
@@ -20475,14 +20485,14 @@ components:
                 subtitles: subtitles
                 audioLanguages: audioLanguages
                 videoBitDepth: 6
-                audioStreamCount: 2
+                audioStreamCount: 6
                 audioCodec: audioCodec
                 resolution: resolution
-                audioBitrate: 6
-                videoFps: 5.944895607614016
-                videoBitrate: 6
-                audioChannels: 1.284659006116532
-                id: 3
+                audioBitrate: 1
+                videoFps: 6.704019297950036
+                videoBitrate: 5
+                audioChannels: 2.8841621266687802
+                id: 6
                 videoDynamicRangeType: videoDynamicRangeType
                 runTime: runTime
                 scanType: scanType
@@ -20515,7 +20525,7 @@ components:
                 votes: 9
                 type: null
                 value: 9.369310271410669
-            popularity: 4.2587733
+            popularity: 1.0414449
             digitalRelease: 2000-01-23T04:56:07.000+00:00
             physicalReleaseNote: physicalReleaseNote
             id: 7
@@ -20548,24 +20558,24 @@ components:
               searchOnAdd: true
               monitored: true
               tags:
-              - 6
-              - 6
+              - 4
+              - 4
               cleanTitle: cleanTitle
               sortTitle: sortTitle
               movies:
               - studio: studio
                 inCinemas: 2000-01-23T04:56:07.000+00:00
-                year: 7
+                year: 6
                 imdbId: imdbId
                 youTubeTrailerId: youTubeTrailerId
                 title: title
                 recommendations:
-                - 4
-                - 4
+                - 0
+                - 0
                 collectionTitle: collectionTitle
                 cleanTitle: cleanTitle
                 lastInfoSync: 2000-01-23T04:56:07.000+00:00
-                tmdbId: 0
+                tmdbId: 7
                 genres:
                 - genres
                 - genres
@@ -20589,50 +20599,50 @@ components:
                 translations:
                 - cleanTitle: cleanTitle
                   overview: overview
-                  movieMetadataId: 5
+                  movieMetadataId: 3
                   language:
                     name: name
                     id: 2
-                  id: 7
+                  id: 5
                   title: title
                 - cleanTitle: cleanTitle
                   overview: overview
-                  movieMetadataId: 5
+                  movieMetadataId: 3
                   language:
                     name: name
                     id: 2
-                  id: 7
+                  id: 5
                   title: title
-                popularity: 0.20253241
+                popularity: 6.628464
                 digitalRelease: 2000-01-23T04:56:07.000+00:00
-                id: 7
+                id: 0
                 physicalRelease: 2000-01-23T04:56:07.000+00:00
                 cleanOriginalTitle: cleanOriginalTitle
                 alternativeTitles:
                 - cleanTitle: cleanTitle
-                  sourceId: 7
+                  sourceId: 3
                   sourceType: null
-                  movieMetadataId: 8
+                  movieMetadataId: 7
                   votes: 3
                   language:
                     name: name
                     id: 2
-                  id: 4
-                  voteCount: 3
+                  id: 8
+                  voteCount: 7
                   title: title
                 - cleanTitle: cleanTitle
-                  sourceId: 7
+                  sourceId: 3
                   sourceType: null
-                  movieMetadataId: 8
+                  movieMetadataId: 7
                   votes: 3
                   language:
                     name: name
                     id: 2
-                  id: 4
-                  voteCount: 3
+                  id: 8
+                  voteCount: 7
                   title: title
                 overview: overview
-                secondaryYear: 3
+                secondaryYear: 4
                 images:
                 - coverType: null
                   remoteUrl: remoteUrl
@@ -20641,8 +20651,8 @@ components:
                   remoteUrl: remoteUrl
                   url: url
                 website: website
-                collectionTmdbId: 6
-                runtime: 0
+                collectionTmdbId: 0
+                runtime: 4
                 originalLanguage:
                   name: name
                   id: 2
@@ -20653,17 +20663,17 @@ components:
                 status: null
               - studio: studio
                 inCinemas: 2000-01-23T04:56:07.000+00:00
-                year: 7
+                year: 6
                 imdbId: imdbId
                 youTubeTrailerId: youTubeTrailerId
                 title: title
                 recommendations:
-                - 4
-                - 4
+                - 0
+                - 0
                 collectionTitle: collectionTitle
                 cleanTitle: cleanTitle
                 lastInfoSync: 2000-01-23T04:56:07.000+00:00
-                tmdbId: 0
+                tmdbId: 7
                 genres:
                 - genres
                 - genres
@@ -20687,50 +20697,50 @@ components:
                 translations:
                 - cleanTitle: cleanTitle
                   overview: overview
-                  movieMetadataId: 5
+                  movieMetadataId: 3
                   language:
                     name: name
                     id: 2
-                  id: 7
+                  id: 5
                   title: title
                 - cleanTitle: cleanTitle
                   overview: overview
-                  movieMetadataId: 5
+                  movieMetadataId: 3
                   language:
                     name: name
                     id: 2
-                  id: 7
+                  id: 5
                   title: title
-                popularity: 0.20253241
+                popularity: 6.628464
                 digitalRelease: 2000-01-23T04:56:07.000+00:00
-                id: 7
+                id: 0
                 physicalRelease: 2000-01-23T04:56:07.000+00:00
                 cleanOriginalTitle: cleanOriginalTitle
                 alternativeTitles:
                 - cleanTitle: cleanTitle
-                  sourceId: 7
+                  sourceId: 3
                   sourceType: null
-                  movieMetadataId: 8
+                  movieMetadataId: 7
                   votes: 3
                   language:
                     name: name
                     id: 2
-                  id: 4
-                  voteCount: 3
+                  id: 8
+                  voteCount: 7
                   title: title
                 - cleanTitle: cleanTitle
-                  sourceId: 7
+                  sourceId: 3
                   sourceType: null
-                  movieMetadataId: 8
+                  movieMetadataId: 7
                   votes: 3
                   language:
                     name: name
                     id: 2
-                  id: 4
-                  voteCount: 3
+                  id: 8
+                  voteCount: 7
                   title: title
                 overview: overview
-                secondaryYear: 3
+                secondaryYear: 4
                 images:
                 - coverType: null
                   remoteUrl: remoteUrl
@@ -20739,8 +20749,8 @@ components:
                   remoteUrl: remoteUrl
                   url: url
                 website: website
-                collectionTmdbId: 6
-                runtime: 0
+                collectionTmdbId: 0
+                runtime: 4
                 originalLanguage:
                   name: name
                   id: 2
@@ -20751,8 +20761,8 @@ components:
                 status: null
               lastInfoSync: 2000-01-23T04:56:07.000+00:00
               tmdbId: 3
-              qualityProfileId: 3
-              id: 6
+              qualityProfileId: 7
+              id: 3
             originalLanguage:
               name: name
               id: 2
@@ -21367,6 +21377,7 @@ components:
               edition: edition
               movieId: 8
               originalFilePath: originalFilePath
+              customFormatScore: 3
               dateAdded: 2000-01-23T04:56:07.000+00:00
               quality:
                 quality:
@@ -21387,14 +21398,14 @@ components:
                 subtitles: subtitles
                 audioLanguages: audioLanguages
                 videoBitDepth: 6
-                audioStreamCount: 2
+                audioStreamCount: 6
                 audioCodec: audioCodec
                 resolution: resolution
-                audioBitrate: 6
-                videoFps: 5.944895607614016
-                videoBitrate: 6
-                audioChannels: 1.284659006116532
-                id: 3
+                audioBitrate: 1
+                videoFps: 6.704019297950036
+                videoBitrate: 5
+                audioChannels: 2.8841621266687802
+                id: 6
                 videoDynamicRangeType: videoDynamicRangeType
                 runTime: runTime
                 scanType: scanType
@@ -21427,7 +21438,7 @@ components:
                 votes: 9
                 type: null
                 value: 9.369310271410669
-            popularity: 4.2587733
+            popularity: 1.0414449
             digitalRelease: 2000-01-23T04:56:07.000+00:00
             physicalReleaseNote: physicalReleaseNote
             id: 7
@@ -21460,24 +21471,24 @@ components:
               searchOnAdd: true
               monitored: true
               tags:
-              - 6
-              - 6
+              - 4
+              - 4
               cleanTitle: cleanTitle
               sortTitle: sortTitle
               movies:
               - studio: studio
                 inCinemas: 2000-01-23T04:56:07.000+00:00
-                year: 7
+                year: 6
                 imdbId: imdbId
                 youTubeTrailerId: youTubeTrailerId
                 title: title
                 recommendations:
-                - 4
-                - 4
+                - 0
+                - 0
                 collectionTitle: collectionTitle
                 cleanTitle: cleanTitle
                 lastInfoSync: 2000-01-23T04:56:07.000+00:00
-                tmdbId: 0
+                tmdbId: 7
                 genres:
                 - genres
                 - genres
@@ -21501,50 +21512,50 @@ components:
                 translations:
                 - cleanTitle: cleanTitle
                   overview: overview
-                  movieMetadataId: 5
+                  movieMetadataId: 3
                   language:
                     name: name
                     id: 2
-                  id: 7
+                  id: 5
                   title: title
                 - cleanTitle: cleanTitle
                   overview: overview
-                  movieMetadataId: 5
+                  movieMetadataId: 3
                   language:
                     name: name
                     id: 2
-                  id: 7
+                  id: 5
                   title: title
-                popularity: 0.20253241
+                popularity: 6.628464
                 digitalRelease: 2000-01-23T04:56:07.000+00:00
-                id: 7
+                id: 0
                 physicalRelease: 2000-01-23T04:56:07.000+00:00
                 cleanOriginalTitle: cleanOriginalTitle
                 alternativeTitles:
                 - cleanTitle: cleanTitle
-                  sourceId: 7
+                  sourceId: 3
                   sourceType: null
-                  movieMetadataId: 8
+                  movieMetadataId: 7
                   votes: 3
                   language:
                     name: name
                     id: 2
-                  id: 4
-                  voteCount: 3
+                  id: 8
+                  voteCount: 7
                   title: title
                 - cleanTitle: cleanTitle
-                  sourceId: 7
+                  sourceId: 3
                   sourceType: null
-                  movieMetadataId: 8
+                  movieMetadataId: 7
                   votes: 3
                   language:
                     name: name
                     id: 2
-                  id: 4
-                  voteCount: 3
+                  id: 8
+                  voteCount: 7
                   title: title
                 overview: overview
-                secondaryYear: 3
+                secondaryYear: 4
                 images:
                 - coverType: null
                   remoteUrl: remoteUrl
@@ -21553,8 +21564,8 @@ components:
                   remoteUrl: remoteUrl
                   url: url
                 website: website
-                collectionTmdbId: 6
-                runtime: 0
+                collectionTmdbId: 0
+                runtime: 4
                 originalLanguage:
                   name: name
                   id: 2
@@ -21565,17 +21576,17 @@ components:
                 status: null
               - studio: studio
                 inCinemas: 2000-01-23T04:56:07.000+00:00
-                year: 7
+                year: 6
                 imdbId: imdbId
                 youTubeTrailerId: youTubeTrailerId
                 title: title
                 recommendations:
-                - 4
-                - 4
+                - 0
+                - 0
                 collectionTitle: collectionTitle
                 cleanTitle: cleanTitle
                 lastInfoSync: 2000-01-23T04:56:07.000+00:00
-                tmdbId: 0
+                tmdbId: 7
                 genres:
                 - genres
                 - genres
@@ -21599,50 +21610,50 @@ components:
                 translations:
                 - cleanTitle: cleanTitle
                   overview: overview
-                  movieMetadataId: 5
+                  movieMetadataId: 3
                   language:
                     name: name
                     id: 2
-                  id: 7
+                  id: 5
                   title: title
                 - cleanTitle: cleanTitle
                   overview: overview
-                  movieMetadataId: 5
+                  movieMetadataId: 3
                   language:
                     name: name
                     id: 2
-                  id: 7
+                  id: 5
                   title: title
-                popularity: 0.20253241
+                popularity: 6.628464
                 digitalRelease: 2000-01-23T04:56:07.000+00:00
-                id: 7
+                id: 0
                 physicalRelease: 2000-01-23T04:56:07.000+00:00
                 cleanOriginalTitle: cleanOriginalTitle
                 alternativeTitles:
                 - cleanTitle: cleanTitle
-                  sourceId: 7
+                  sourceId: 3
                   sourceType: null
-                  movieMetadataId: 8
+                  movieMetadataId: 7
                   votes: 3
                   language:
                     name: name
                     id: 2
-                  id: 4
-                  voteCount: 3
+                  id: 8
+                  voteCount: 7
                   title: title
                 - cleanTitle: cleanTitle
-                  sourceId: 7
+                  sourceId: 3
                   sourceType: null
-                  movieMetadataId: 8
+                  movieMetadataId: 7
                   votes: 3
                   language:
                     name: name
                     id: 2
-                  id: 4
-                  voteCount: 3
+                  id: 8
+                  voteCount: 7
                   title: title
                 overview: overview
-                secondaryYear: 3
+                secondaryYear: 4
                 images:
                 - coverType: null
                   remoteUrl: remoteUrl
@@ -21651,8 +21662,8 @@ components:
                   remoteUrl: remoteUrl
                   url: url
                 website: website
-                collectionTmdbId: 6
-                runtime: 0
+                collectionTmdbId: 0
+                runtime: 4
                 originalLanguage:
                   name: name
                   id: 2
@@ -21663,8 +21674,8 @@ components:
                 status: null
               lastInfoSync: 2000-01-23T04:56:07.000+00:00
               tmdbId: 3
-              qualityProfileId: 3
-              id: 6
+              qualityProfileId: 7
+              id: 3
             originalLanguage:
               name: name
               id: 2
