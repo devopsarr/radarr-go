@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **IndexerFlags** | Pointer to **int32** |  | [optional] 
 **Quality** | Pointer to [**QualityModel**](QualityModel.md) |  | [optional] 
 **CustomFormats** | Pointer to [**[]CustomFormatResource**](CustomFormatResource.md) |  | [optional] 
+**CustomFormatScore** | Pointer to **int32** |  | [optional] 
 **MediaInfo** | Pointer to [**MediaInfoResource**](MediaInfoResource.md) |  | [optional] 
 **OriginalFilePath** | Pointer to **NullableString** |  | [optional] 
 **QualityCutoffNotMet** | Pointer to **bool** |  | [optional] 
@@ -330,6 +331,31 @@ HasCustomFormats returns a boolean if a field has been set.
 `func (o *MovieFileResource) UnsetCustomFormats()`
 
 UnsetCustomFormats ensures that no value is present for CustomFormats, not even an explicit nil
+### GetCustomFormatScore
+
+`func (o *MovieFileResource) GetCustomFormatScore() int32`
+
+GetCustomFormatScore returns the CustomFormatScore field if non-nil, zero value otherwise.
+
+### GetCustomFormatScoreOk
+
+`func (o *MovieFileResource) GetCustomFormatScoreOk() (*int32, bool)`
+
+GetCustomFormatScoreOk returns a tuple with the CustomFormatScore field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCustomFormatScore
+
+`func (o *MovieFileResource) SetCustomFormatScore(v int32)`
+
+SetCustomFormatScore sets CustomFormatScore field to given value.
+
+### HasCustomFormatScore
+
+`func (o *MovieFileResource) HasCustomFormatScore() bool`
+
+HasCustomFormatScore returns a boolean if a field has been set.
+
 ### GetMediaInfo
 
 `func (o *MovieFileResource) GetMediaInfo() MediaInfoResource`

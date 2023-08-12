@@ -27,6 +27,7 @@ type MovieFileResource struct {
 	IndexerFlags *int32 `json:"indexerFlags,omitempty"`
 	Quality *QualityModel `json:"quality,omitempty"`
 	CustomFormats []*CustomFormatResource `json:"customFormats,omitempty"`
+	CustomFormatScore *int32 `json:"customFormatScore,omitempty"`
 	MediaInfo *MediaInfoResource `json:"mediaInfo,omitempty"`
 	OriginalFilePath NullableString `json:"originalFilePath,omitempty"`
 	QualityCutoffNotMet *bool `json:"qualityCutoffNotMet,omitempty"`
@@ -403,6 +404,38 @@ func (o *MovieFileResource) SetCustomFormats(v []*CustomFormatResource) {
 	o.CustomFormats = v
 }
 
+// GetCustomFormatScore returns the CustomFormatScore field value if set, zero value otherwise.
+func (o *MovieFileResource) GetCustomFormatScore() int32 {
+	if o == nil || isNil(o.CustomFormatScore) {
+		var ret int32
+		return ret
+	}
+	return *o.CustomFormatScore
+}
+
+// GetCustomFormatScoreOk returns a tuple with the CustomFormatScore field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MovieFileResource) GetCustomFormatScoreOk() (*int32, bool) {
+	if o == nil || isNil(o.CustomFormatScore) {
+    return nil, false
+	}
+	return o.CustomFormatScore, true
+}
+
+// HasCustomFormatScore returns a boolean if a field has been set.
+func (o *MovieFileResource) HasCustomFormatScore() bool {
+	if o != nil && !isNil(o.CustomFormatScore) {
+		return true
+	}
+
+	return false
+}
+
+// SetCustomFormatScore gets a reference to the given int32 and assigns it to the CustomFormatScore field.
+func (o *MovieFileResource) SetCustomFormatScore(v int32) {
+	o.CustomFormatScore = &v
+}
+
 // GetMediaInfo returns the MediaInfo field value if set, zero value otherwise.
 func (o *MovieFileResource) GetMediaInfo() MediaInfoResource {
 	if o == nil || isNil(o.MediaInfo) {
@@ -657,6 +690,9 @@ func (o MovieFileResource) MarshalJSON() ([]byte, error) {
 	}
 	if o.CustomFormats != nil {
 		toSerialize["customFormats"] = o.CustomFormats
+	}
+	if !isNil(o.CustomFormatScore) {
+		toSerialize["customFormatScore"] = o.CustomFormatScore
 	}
 	if !isNil(o.MediaInfo) {
 		toSerialize["mediaInfo"] = o.MediaInfo
