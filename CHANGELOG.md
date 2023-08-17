@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.0](https://github.com/devopsarr/radarr-go/compare/v0.3.0...v0.4.0) (2023-08-17)
+
+
+### Miscellaneous Chores
+
+* release 0.4.0 ([d3abd4c](https://github.com/devopsarr/radarr-go/commit/d3abd4c16c13a7ce2f86f8f178fd4bc6329514fa))
+
 ## [0.3.0](https://github.com/devopsarr/radarr-go/compare/v0.2.1...v0.3.0) (2023-05-16)
 
 
