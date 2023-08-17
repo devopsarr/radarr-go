@@ -23,6 +23,7 @@ const (
 	AUTHENTICATIONTYPE_NONE AuthenticationType = "none"
 	AUTHENTICATIONTYPE_BASIC AuthenticationType = "basic"
 	AUTHENTICATIONTYPE_FORMS AuthenticationType = "forms"
+	AUTHENTICATIONTYPE_EXTERNAL AuthenticationType = "external"
 )
 
 // All allowed values of AuthenticationType enum
@@ -30,6 +31,7 @@ var AllowedAuthenticationTypeEnumValues = []AuthenticationType{
 	"none",
 	"basic",
 	"forms",
+	"external",
 }
 
 func (v *AuthenticationType) UnmarshalJSON(src []byte) error {

@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **EnableSsl** | Pointer to **bool** |  | [optional] 
 **LaunchBrowser** | Pointer to **bool** |  | [optional] 
 **AuthenticationMethod** | Pointer to [**AuthenticationType**](AuthenticationType.md) |  | [optional] 
+**AuthenticationRequired** | Pointer to [**AuthenticationRequiredType**](AuthenticationRequiredType.md) |  | [optional] 
 **AnalyticsEnabled** | Pointer to **bool** |  | [optional] 
 **Username** | Pointer to **NullableString** |  | [optional] 
 **Password** | Pointer to **NullableString** |  | [optional] 
@@ -242,6 +243,31 @@ SetAuthenticationMethod sets AuthenticationMethod field to given value.
 `func (o *HostConfigResource) HasAuthenticationMethod() bool`
 
 HasAuthenticationMethod returns a boolean if a field has been set.
+
+### GetAuthenticationRequired
+
+`func (o *HostConfigResource) GetAuthenticationRequired() AuthenticationRequiredType`
+
+GetAuthenticationRequired returns the AuthenticationRequired field if non-nil, zero value otherwise.
+
+### GetAuthenticationRequiredOk
+
+`func (o *HostConfigResource) GetAuthenticationRequiredOk() (*AuthenticationRequiredType, bool)`
+
+GetAuthenticationRequiredOk returns a tuple with the AuthenticationRequired field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAuthenticationRequired
+
+`func (o *HostConfigResource) SetAuthenticationRequired(v AuthenticationRequiredType)`
+
+SetAuthenticationRequired sets AuthenticationRequired field to given value.
+
+### HasAuthenticationRequired
+
+`func (o *HostConfigResource) HasAuthenticationRequired() bool`
+
+HasAuthenticationRequired returns a boolean if a field has been set.
 
 ### GetAnalyticsEnabled
 

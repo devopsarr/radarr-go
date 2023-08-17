@@ -102,10 +102,10 @@ type APIClient struct {
 	QueueDetailsApi *QueueDetailsApiService
 	QueueStatusApi *QueueStatusApiService
 	ReleaseApi *ReleaseApiService
+	ReleaseProfileApi *ReleaseProfileApiService
 	ReleasePushApi *ReleasePushApiService
 	RemotePathMappingApi *RemotePathMappingApiService
 	RenameMovieApi *RenameMovieApiService
-	RestrictionApi *RestrictionApiService
 	RootFolderApi *RootFolderApiService
 	StaticResourceApi *StaticResourceApiService
 	SystemApi *SystemApiService
@@ -188,10 +188,10 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.QueueDetailsApi = (*QueueDetailsApiService)(&c.common)
 	c.QueueStatusApi = (*QueueStatusApiService)(&c.common)
 	c.ReleaseApi = (*ReleaseApiService)(&c.common)
+	c.ReleaseProfileApi = (*ReleaseProfileApiService)(&c.common)
 	c.ReleasePushApi = (*ReleasePushApiService)(&c.common)
 	c.RemotePathMappingApi = (*RemotePathMappingApiService)(&c.common)
 	c.RenameMovieApi = (*RenameMovieApiService)(&c.common)
-	c.RestrictionApi = (*RestrictionApiService)(&c.common)
 	c.RootFolderApi = (*RootFolderApiService)(&c.common)
 	c.StaticResourceApi = (*StaticResourceApiService)(&c.common)
 	c.SystemApi = (*SystemApiService)(&c.common)

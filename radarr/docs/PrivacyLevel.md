@@ -1,15 +1,15 @@
-# AuthenticationType
+# PrivacyLevel
 
 ## Enum
 
 
-* `NONE` (value: `"none"`)
+* `NORMAL` (value: `"normal"`)
 
-* `BASIC` (value: `"basic"`)
+* `PASSWORD` (value: `"password"`)
 
-* `FORMS` (value: `"forms"`)
+* `API_KEY` (value: `"apiKey"`)
 
-* `EXTERNAL` (value: `"external"`)
+* `USER_NAME` (value: `"userName"`)
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

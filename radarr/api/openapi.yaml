@@ -4762,6 +4762,137 @@ paths:
           description: Success
       tags:
       - Release
+  /api/v3/releaseprofile:
+    get:
+      operationId: ListReleaseProfile
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ReleaseProfileResource'
+                type: array
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ReleaseProfileResource'
+                type: array
+            text/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ReleaseProfileResource'
+                type: array
+          description: Success
+      tags:
+      - ReleaseProfile
+    post:
+      operationId: CreateReleaseProfile
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReleaseProfileResource'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ReleaseProfileResource'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ReleaseProfileResource'
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ReleaseProfileResource'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReleaseProfileResource'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ReleaseProfileResource'
+          description: Success
+      tags:
+      - ReleaseProfile
+  /api/v3/releaseprofile/{id}:
+    delete:
+      operationId: DeleteReleaseProfile
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      responses:
+        "200":
+          description: Success
+      tags:
+      - ReleaseProfile
+    get:
+      operationId: GetReleaseProfileById
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ReleaseProfileResource'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReleaseProfileResource'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ReleaseProfileResource'
+          description: Success
+      tags:
+      - ReleaseProfile
+    put:
+      operationId: UpdateReleaseProfile
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ReleaseProfileResource'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ReleaseProfileResource'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ReleaseProfileResource'
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ReleaseProfileResource'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReleaseProfileResource'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ReleaseProfileResource'
+          description: Success
+      tags:
+      - ReleaseProfile
   /api/v3/release/push:
     post:
       operationId: CreateReleasePush
@@ -4988,137 +5119,6 @@ paths:
           description: Success
       tags:
       - RenameMovie
-  /api/v3/restriction:
-    get:
-      operationId: ListRestriction
-      responses:
-        "200":
-          content:
-            text/plain:
-              schema:
-                items:
-                  $ref: '#/components/schemas/RestrictionResource'
-                type: array
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/RestrictionResource'
-                type: array
-            text/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/RestrictionResource'
-                type: array
-          description: Success
-      tags:
-      - Restriction
-    post:
-      operationId: CreateRestriction
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/RestrictionResource'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/RestrictionResource'
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/RestrictionResource'
-      responses:
-        "200":
-          content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/RestrictionResource'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/RestrictionResource'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/RestrictionResource'
-          description: Success
-      tags:
-      - Restriction
-  /api/v3/restriction/{id}:
-    delete:
-      operationId: DeleteRestriction
-      parameters:
-      - explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          format: int32
-          type: integer
-        style: simple
-      responses:
-        "200":
-          description: Success
-      tags:
-      - Restriction
-    get:
-      operationId: GetRestrictionById
-      parameters:
-      - explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          format: int32
-          type: integer
-        style: simple
-      responses:
-        "200":
-          content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/RestrictionResource'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/RestrictionResource'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/RestrictionResource'
-          description: Success
-      tags:
-      - Restriction
-    put:
-      operationId: UpdateRestriction
-      parameters:
-      - explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/RestrictionResource'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/RestrictionResource'
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/RestrictionResource'
-      responses:
-        "200":
-          content:
-            text/plain:
-              schema:
-                $ref: '#/components/schemas/RestrictionResource'
-            application/json:
-              schema:
-                $ref: '#/components/schemas/RestrictionResource'
-            text/json:
-              schema:
-                $ref: '#/components/schemas/RestrictionResource'
-          description: Success
-      tags:
-      - Restriction
   /api/v3/rootfolder:
     get:
       operationId: ListRootFolder
@@ -5814,11 +5814,17 @@ components:
       - remove
       - replace
       type: string
+    AuthenticationRequiredType:
+      enum:
+      - enabled
+      - disabledForLocalAddresses
+      type: string
     AuthenticationType:
       enum:
       - none
       - basic
       - forms
+      - external
       type: string
     AutoTaggingResource:
       additionalProperties: false
@@ -5847,6 +5853,7 @@ components:
               name: name
               value: 5
               order: 2
+            privacy: null
             selectOptionsProviderAction: selectOptionsProviderAction
             section: section
             label: label
@@ -5872,6 +5879,7 @@ components:
               name: name
               value: 5
               order: 2
+            privacy: null
             selectOptionsProviderAction: selectOptionsProviderAction
             section: section
             label: label
@@ -5904,6 +5912,7 @@ components:
               name: name
               value: 5
               order: 2
+            privacy: null
             selectOptionsProviderAction: selectOptionsProviderAction
             section: section
             label: label
@@ -5929,6 +5938,7 @@ components:
               name: name
               value: 5
               order: 2
+            privacy: null
             selectOptionsProviderAction: selectOptionsProviderAction
             section: section
             label: label
@@ -5989,6 +5999,7 @@ components:
             name: name
             value: 5
             order: 2
+          privacy: null
           selectOptionsProviderAction: selectOptionsProviderAction
           section: section
           label: label
@@ -6014,6 +6025,7 @@ components:
             name: name
             value: 5
             order: 2
+          privacy: null
           selectOptionsProviderAction: selectOptionsProviderAction
           section: section
           label: label
@@ -6178,6 +6190,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -6203,6 +6216,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -6239,6 +6253,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -6264,6 +6279,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -6304,6 +6320,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -6329,6 +6346,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -6365,6 +6383,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -6390,6 +6409,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -6753,6 +6773,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -6778,6 +6799,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -6814,6 +6836,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -6839,6 +6862,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -6879,6 +6903,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -6904,6 +6929,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -6940,6 +6966,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -6965,6 +6992,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -7115,6 +7143,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -7140,6 +7169,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -7176,6 +7206,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -7201,6 +7232,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -7241,6 +7273,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -7266,6 +7299,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -7302,6 +7336,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -7327,6 +7362,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -7690,6 +7726,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -7715,6 +7752,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -7751,6 +7789,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -7776,6 +7815,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -7816,6 +7856,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -7841,6 +7882,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -7877,6 +7919,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -7902,6 +7945,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -8009,6 +8053,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -8034,6 +8079,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -8070,6 +8116,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -8095,6 +8142,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -8135,6 +8183,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -8160,6 +8209,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -8196,6 +8246,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -8221,6 +8272,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -8584,6 +8636,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -8609,6 +8662,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -8645,6 +8699,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -8670,6 +8725,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -8710,6 +8766,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -8735,6 +8792,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -8771,6 +8829,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -8796,6 +8855,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -9424,6 +9484,7 @@ components:
               name: name
               value: 5
               order: 2
+            privacy: null
             selectOptionsProviderAction: selectOptionsProviderAction
             section: section
             label: label
@@ -9449,6 +9510,7 @@ components:
               name: name
               value: 5
               order: 2
+            privacy: null
             selectOptionsProviderAction: selectOptionsProviderAction
             section: section
             label: label
@@ -9485,6 +9547,7 @@ components:
               name: name
               value: 5
               order: 2
+            privacy: null
             selectOptionsProviderAction: selectOptionsProviderAction
             section: section
             label: label
@@ -9510,6 +9573,7 @@ components:
               name: name
               value: 5
               order: 2
+            privacy: null
             selectOptionsProviderAction: selectOptionsProviderAction
             section: section
             label: label
@@ -9565,6 +9629,7 @@ components:
             name: name
             value: 5
             order: 2
+          privacy: null
           selectOptionsProviderAction: selectOptionsProviderAction
           section: section
           label: label
@@ -9590,6 +9655,7 @@ components:
             name: name
             value: 5
             order: 2
+          privacy: null
           selectOptionsProviderAction: selectOptionsProviderAction
           section: section
           label: label
@@ -9642,8 +9708,10 @@ components:
     DelayProfileResource:
       additionalProperties: false
       example:
+        bypassIfAboveCustomFormatScore: true
         usenetDelay: 6
         torrentDelay: 1
+        minimumCustomFormatScore: 5
         preferredProtocol: null
         id: 0
         enableUsenet: true
@@ -9651,8 +9719,8 @@ components:
         bypassIfHighestQuality: true
         order: 5
         tags:
-        - 5
-        - 5
+        - 2
+        - 2
       properties:
         id:
           format: int32
@@ -9671,6 +9739,11 @@ components:
           type: integer
         bypassIfHighestQuality:
           type: boolean
+        bypassIfAboveCustomFormatScore:
+          type: boolean
+        minimumCustomFormatScore:
+          format: int32
+          type: integer
         order:
           format: int32
           type: integer
@@ -9810,6 +9883,7 @@ components:
             name: name
             value: 5
             order: 2
+          privacy: null
           selectOptionsProviderAction: selectOptionsProviderAction
           section: section
           label: label
@@ -9835,6 +9909,7 @@ components:
             name: name
             value: 5
             order: 2
+          privacy: null
           selectOptionsProviderAction: selectOptionsProviderAction
           section: section
           label: label
@@ -9955,6 +10030,7 @@ components:
           name: name
           value: 5
           order: 2
+        privacy: null
         selectOptionsProviderAction: selectOptionsProviderAction
         section: section
         label: label
@@ -10009,6 +10085,8 @@ components:
         hidden:
           nullable: true
           type: string
+        privacy:
+          $ref: '#/components/schemas/PrivacyLevel'
         placeholder:
           nullable: true
           type: string
@@ -10131,6 +10209,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -10156,6 +10235,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -10192,6 +10272,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -10217,6 +10298,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -10257,6 +10339,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -10282,6 +10365,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -10318,6 +10402,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -10343,6 +10428,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -10706,6 +10792,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -10731,6 +10818,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -10767,6 +10855,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -10792,6 +10881,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -10832,6 +10922,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -10857,6 +10948,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -10893,6 +10985,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -10918,6 +11011,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -11079,6 +11173,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -11104,6 +11199,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -11140,6 +11236,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -11165,6 +11262,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -11205,6 +11303,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -11230,6 +11329,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -11266,6 +11366,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -11291,6 +11392,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -11654,6 +11756,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -11679,6 +11782,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -11715,6 +11819,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -11740,6 +11845,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -11780,6 +11886,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -11805,6 +11912,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -11841,6 +11949,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -11866,6 +11975,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -11976,6 +12086,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -12001,6 +12112,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -12037,6 +12149,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -12062,6 +12175,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -12102,6 +12216,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -12127,6 +12242,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -12163,6 +12279,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -12188,6 +12305,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -12551,6 +12669,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -12576,6 +12695,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -12612,6 +12732,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -12637,6 +12758,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -12677,6 +12799,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -12702,6 +12825,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -12738,6 +12862,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -12763,6 +12888,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -12841,6 +12967,7 @@ components:
         enableSsl: true
         certificateValidation: null
         proxyPort: 5
+        authenticationRequired: null
         password: password
         logLevel: logLevel
         backupInterval: 5
@@ -12883,6 +13010,8 @@ components:
           type: boolean
         authenticationMethod:
           $ref: '#/components/schemas/AuthenticationType'
+        authenticationRequired:
+          $ref: '#/components/schemas/AuthenticationRequiredType'
         analyticsEnabled:
           type: boolean
         username:
@@ -12994,6 +13123,7 @@ components:
             name: name
             value: 5
             order: 2
+          privacy: null
           selectOptionsProviderAction: selectOptionsProviderAction
           section: section
           label: label
@@ -13019,6 +13149,7 @@ components:
             name: name
             value: 5
             order: 2
+          privacy: null
           selectOptionsProviderAction: selectOptionsProviderAction
           section: section
           label: label
@@ -13085,7 +13216,7 @@ components:
       example:
         applyTags: null
         rootFolderPath: rootFolderPath
-        profileId: 1
+        qualityProfileId: 1
         ids:
         - 0
         - 0
@@ -13114,7 +13245,7 @@ components:
         rootFolderPath:
           nullable: true
           type: string
-        profileId:
+        qualityProfileId:
           format: int32
           nullable: true
           type: integer
@@ -13177,6 +13308,7 @@ components:
             name: name
             value: 5
             order: 2
+          privacy: null
           selectOptionsProviderAction: selectOptionsProviderAction
           section: section
           label: label
@@ -13202,6 +13334,7 @@ components:
             name: name
             value: 5
             order: 2
+          privacy: null
           selectOptionsProviderAction: selectOptionsProviderAction
           section: section
           label: label
@@ -13427,6 +13560,7 @@ components:
             name: name
             value: 5
             order: 2
+          privacy: null
           selectOptionsProviderAction: selectOptionsProviderAction
           section: section
           label: label
@@ -13452,6 +13586,7 @@ components:
             name: name
             value: 5
             order: 2
+          privacy: null
           selectOptionsProviderAction: selectOptionsProviderAction
           section: section
           label: label
@@ -13750,6 +13885,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -13775,6 +13911,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -13811,6 +13948,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -13836,6 +13974,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -13876,6 +14015,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -13901,6 +14041,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -13937,6 +14078,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -13962,6 +14104,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -14330,6 +14473,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -14355,6 +14499,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -14391,6 +14536,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -14416,6 +14562,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -14456,6 +14603,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -14481,6 +14629,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -14517,6 +14666,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -14542,6 +14692,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -14689,6 +14840,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -14714,6 +14866,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -14750,6 +14903,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -14775,6 +14929,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -14815,6 +14970,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -14840,6 +14996,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -14876,6 +15033,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -14901,6 +15059,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -15269,6 +15428,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -15294,6 +15454,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -15330,6 +15491,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -15355,6 +15517,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -15395,6 +15558,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -15420,6 +15584,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -15456,6 +15621,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -15481,6 +15647,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -15775,6 +15942,7 @@ components:
             name: name
             value: 5
             order: 2
+          privacy: null
           selectOptionsProviderAction: selectOptionsProviderAction
           section: section
           label: label
@@ -15800,6 +15968,7 @@ components:
             name: name
             value: 5
             order: 2
+          privacy: null
           selectOptionsProviderAction: selectOptionsProviderAction
           section: section
           label: label
@@ -16296,6 +16465,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -16321,6 +16491,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -16357,6 +16528,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -16382,6 +16554,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -16422,6 +16595,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -16447,6 +16621,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -16483,6 +16658,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -16508,6 +16684,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -16909,6 +17086,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -16934,6 +17112,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -16970,6 +17149,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -16995,6 +17175,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -17035,6 +17216,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -17060,6 +17242,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -17096,6 +17279,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -17121,6 +17305,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -17736,6 +17921,7 @@ components:
             name: name
             value: 5
             order: 2
+          privacy: null
           selectOptionsProviderAction: selectOptionsProviderAction
           section: section
           label: label
@@ -17761,6 +17947,7 @@ components:
             name: name
             value: 5
             order: 2
+          privacy: null
           selectOptionsProviderAction: selectOptionsProviderAction
           section: section
           label: label
@@ -17988,6 +18175,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -18013,6 +18201,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -18049,6 +18238,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -18074,6 +18264,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -18114,6 +18305,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -18139,6 +18331,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -18175,6 +18368,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -18200,6 +18394,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -18568,6 +18763,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -18593,6 +18789,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -18629,6 +18826,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -18654,6 +18852,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -18694,6 +18893,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -18719,6 +18919,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -18755,6 +18956,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -18780,6 +18982,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -18916,6 +19119,13 @@ components:
           nullable: true
           type: string
       type: object
+    PrivacyLevel:
+      enum:
+      - normal
+      - password
+      - apiKey
+      - userName
+      type: string
     ProfileFormatItemResource:
       additionalProperties: false
       example:
@@ -19246,6 +19456,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -19271,6 +19482,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -19307,6 +19519,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -19332,6 +19545,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -19372,6 +19586,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -19397,6 +19612,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -19433,6 +19649,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -19458,6 +19675,7 @@ components:
                     name: name
                     value: 5
                     order: 2
+                  privacy: null
                   selectOptionsProviderAction: selectOptionsProviderAction
                   section: section
                   label: label
@@ -19827,6 +20045,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -19852,6 +20071,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -19888,6 +20108,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -19913,6 +20134,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -19953,6 +20175,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -19978,6 +20201,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -20014,6 +20238,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -20039,6 +20264,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -20236,6 +20462,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -20261,6 +20488,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -20297,6 +20525,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -20322,6 +20551,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -20362,6 +20592,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -20387,6 +20618,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -20423,6 +20655,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -20448,6 +20681,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -20817,6 +21051,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -20842,6 +21077,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -20878,6 +21114,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -20903,6 +21140,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -20943,6 +21181,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -20968,6 +21207,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -21004,6 +21244,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -21029,6 +21270,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -21149,6 +21391,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -21174,6 +21417,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -21210,6 +21454,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -21235,6 +21480,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -21275,6 +21521,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -21300,6 +21547,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -21336,6 +21584,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -21361,6 +21610,7 @@ components:
                       name: name
                       value: 5
                       order: 2
+                    privacy: null
                     selectOptionsProviderAction: selectOptionsProviderAction
                     section: section
                     label: label
@@ -21730,6 +21980,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -21755,6 +22006,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -21791,6 +22043,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -21816,6 +22069,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -21856,6 +22110,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -21881,6 +22136,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -21917,6 +22173,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -21942,6 +22199,7 @@ components:
                   name: name
                   value: 5
                   order: 2
+                privacy: null
                 selectOptionsProviderAction: selectOptionsProviderAction
                 section: section
                 label: label
@@ -22124,6 +22382,42 @@ components:
       - permanent
       - temporary
       type: string
+    ReleaseProfileResource:
+      additionalProperties: false
+      example:
+        ignored: ""
+        name: name
+        id: 0
+        indexerId: 6
+        enabled: true
+        required: ""
+        tags:
+        - 1
+        - 1
+      properties:
+        id:
+          format: int32
+          type: integer
+        name:
+          nullable: true
+          type: string
+        enabled:
+          type: boolean
+        required:
+          nullable: true
+        ignored:
+          nullable: true
+        indexerId:
+          format: int32
+          type: integer
+        tags:
+          items:
+            format: int32
+            type: integer
+          nullable: true
+          type: array
+          uniqueItems: true
+      type: object
     ReleaseResource:
       additionalProperties: false
       example:
@@ -22191,6 +22485,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -22216,6 +22511,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -22252,6 +22548,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -22277,6 +22574,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -22317,6 +22615,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -22342,6 +22641,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -22378,6 +22678,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -22403,6 +22704,7 @@ components:
                 name: name
                 value: 5
                 order: 2
+              privacy: null
               selectOptionsProviderAction: selectOptionsProviderAction
               section: section
               label: label
@@ -22615,37 +22917,6 @@ components:
       - afterManual
       - never
       type: string
-    RestrictionResource:
-      additionalProperties: false
-      example:
-        ignored: ignored
-        id: 0
-        required: required
-        preferred: preferred
-        tags:
-        - 6
-        - 6
-      properties:
-        id:
-          format: int32
-          type: integer
-        required:
-          nullable: true
-          type: string
-        preferred:
-          nullable: true
-          type: string
-        ignored:
-          nullable: true
-          type: string
-        tags:
-          items:
-            format: int32
-            type: integer
-          nullable: true
-          type: array
-          uniqueItems: true
-      type: object
     Revision:
       additionalProperties: false
       example:
@@ -22880,9 +23151,6 @@ components:
     TagDetailsResource:
       additionalProperties: false
       example:
-        restrictionIds:
-        - 5
-        - 5
         indexerIds:
         - 2
         - 2
@@ -22900,6 +23168,9 @@ components:
         importListIds:
         - 1
         - 1
+        releaseProfileIds:
+        - 5
+        - 5
         movieIds:
         - 3
         - 3
@@ -22931,7 +23202,7 @@ components:
             type: integer
           nullable: true
           type: array
-        restrictionIds:
+        releaseProfileIds:
           items:
             format: int32
             type: integer

@@ -21,7 +21,7 @@ type TagDetailsResource struct {
 	DelayProfileIds []*int32 `json:"delayProfileIds,omitempty"`
 	ImportListIds []*int32 `json:"importListIds,omitempty"`
 	NotificationIds []*int32 `json:"notificationIds,omitempty"`
-	RestrictionIds []*int32 `json:"restrictionIds,omitempty"`
+	ReleaseProfileIds []*int32 `json:"releaseProfileIds,omitempty"`
 	IndexerIds []*int32 `json:"indexerIds,omitempty"`
 	DownloadClientIds []*int32 `json:"downloadClientIds,omitempty"`
 	AutoTagIds []*int32 `json:"autoTagIds,omitempty"`
@@ -218,37 +218,37 @@ func (o *TagDetailsResource) SetNotificationIds(v []*int32) {
 	o.NotificationIds = v
 }
 
-// GetRestrictionIds returns the RestrictionIds field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *TagDetailsResource) GetRestrictionIds() []*int32 {
+// GetReleaseProfileIds returns the ReleaseProfileIds field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *TagDetailsResource) GetReleaseProfileIds() []*int32 {
 	if o == nil {
 		var ret []*int32
 		return ret
 	}
-	return o.RestrictionIds
+	return o.ReleaseProfileIds
 }
 
-// GetRestrictionIdsOk returns a tuple with the RestrictionIds field value if set, nil otherwise
+// GetReleaseProfileIdsOk returns a tuple with the ReleaseProfileIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *TagDetailsResource) GetRestrictionIdsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.RestrictionIds) {
+func (o *TagDetailsResource) GetReleaseProfileIdsOk() ([]*int32, bool) {
+	if o == nil || isNil(o.ReleaseProfileIds) {
     return nil, false
 	}
-	return o.RestrictionIds, true
+	return o.ReleaseProfileIds, true
 }
 
-// HasRestrictionIds returns a boolean if a field has been set.
-func (o *TagDetailsResource) HasRestrictionIds() bool {
-	if o != nil && isNil(o.RestrictionIds) {
+// HasReleaseProfileIds returns a boolean if a field has been set.
+func (o *TagDetailsResource) HasReleaseProfileIds() bool {
+	if o != nil && isNil(o.ReleaseProfileIds) {
 		return true
 	}
 
 	return false
 }
 
-// SetRestrictionIds gets a reference to the given []int32 and assigns it to the RestrictionIds field.
-func (o *TagDetailsResource) SetRestrictionIds(v []*int32) {
-	o.RestrictionIds = v
+// SetReleaseProfileIds gets a reference to the given []int32 and assigns it to the ReleaseProfileIds field.
+func (o *TagDetailsResource) SetReleaseProfileIds(v []*int32) {
+	o.ReleaseProfileIds = v
 }
 
 // GetIndexerIds returns the IndexerIds field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -400,8 +400,8 @@ func (o TagDetailsResource) MarshalJSON() ([]byte, error) {
 	if o.NotificationIds != nil {
 		toSerialize["notificationIds"] = o.NotificationIds
 	}
-	if o.RestrictionIds != nil {
-		toSerialize["restrictionIds"] = o.RestrictionIds
+	if o.ReleaseProfileIds != nil {
+		toSerialize["releaseProfileIds"] = o.ReleaseProfileIds
 	}
 	if o.IndexerIds != nil {
 		toSerialize["indexerIds"] = o.IndexerIds

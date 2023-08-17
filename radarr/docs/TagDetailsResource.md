@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **DelayProfileIds** | Pointer to **[]int32** |  | [optional] 
 **ImportListIds** | Pointer to **[]int32** |  | [optional] 
 **NotificationIds** | Pointer to **[]int32** |  | [optional] 
-**RestrictionIds** | Pointer to **[]int32** |  | [optional] 
+**ReleaseProfileIds** | Pointer to **[]int32** |  | [optional] 
 **IndexerIds** | Pointer to **[]int32** |  | [optional] 
 **DownloadClientIds** | Pointer to **[]int32** |  | [optional] 
 **AutoTagIds** | Pointer to **[]int32** |  | [optional] 
@@ -199,41 +199,41 @@ HasNotificationIds returns a boolean if a field has been set.
 `func (o *TagDetailsResource) UnsetNotificationIds()`
 
 UnsetNotificationIds ensures that no value is present for NotificationIds, not even an explicit nil
-### GetRestrictionIds
+### GetReleaseProfileIds
 
-`func (o *TagDetailsResource) GetRestrictionIds() []int32`
+`func (o *TagDetailsResource) GetReleaseProfileIds() []int32`
 
-GetRestrictionIds returns the RestrictionIds field if non-nil, zero value otherwise.
+GetReleaseProfileIds returns the ReleaseProfileIds field if non-nil, zero value otherwise.
 
-### GetRestrictionIdsOk
+### GetReleaseProfileIdsOk
 
-`func (o *TagDetailsResource) GetRestrictionIdsOk() (*[]int32, bool)`
+`func (o *TagDetailsResource) GetReleaseProfileIdsOk() (*[]int32, bool)`
 
-GetRestrictionIdsOk returns a tuple with the RestrictionIds field if it's non-nil, zero value otherwise
+GetReleaseProfileIdsOk returns a tuple with the ReleaseProfileIds field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRestrictionIds
+### SetReleaseProfileIds
 
-`func (o *TagDetailsResource) SetRestrictionIds(v []int32)`
+`func (o *TagDetailsResource) SetReleaseProfileIds(v []int32)`
 
-SetRestrictionIds sets RestrictionIds field to given value.
+SetReleaseProfileIds sets ReleaseProfileIds field to given value.
 
-### HasRestrictionIds
+### HasReleaseProfileIds
 
-`func (o *TagDetailsResource) HasRestrictionIds() bool`
+`func (o *TagDetailsResource) HasReleaseProfileIds() bool`
 
-HasRestrictionIds returns a boolean if a field has been set.
+HasReleaseProfileIds returns a boolean if a field has been set.
 
-### SetRestrictionIdsNil
+### SetReleaseProfileIdsNil
 
-`func (o *TagDetailsResource) SetRestrictionIdsNil(b bool)`
+`func (o *TagDetailsResource) SetReleaseProfileIdsNil(b bool)`
 
- SetRestrictionIdsNil sets the value for RestrictionIds to be an explicit nil
+ SetReleaseProfileIdsNil sets the value for ReleaseProfileIds to be an explicit nil
 
-### UnsetRestrictionIds
-`func (o *TagDetailsResource) UnsetRestrictionIds()`
+### UnsetReleaseProfileIds
+`func (o *TagDetailsResource) UnsetReleaseProfileIds()`
 
-UnsetRestrictionIds ensures that no value is present for RestrictionIds, not even an explicit nil
+UnsetReleaseProfileIds ensures that no value is present for ReleaseProfileIds, not even an explicit nil
 ### GetIndexerIds
 
 `func (o *TagDetailsResource) GetIndexerIds() []int32`
