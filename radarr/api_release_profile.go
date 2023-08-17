@@ -20,52 +20,52 @@ import (
 )
 
 
-// RestrictionApiService RestrictionApi service
-type RestrictionApiService service
-type ApiCreateRestrictionRequest struct {
+// ReleaseProfileApiService ReleaseProfileApi service
+type ReleaseProfileApiService service
+type ApiCreateReleaseProfileRequest struct {
 	ctx context.Context
-	ApiService *RestrictionApiService
-	restrictionResource *RestrictionResource
+	ApiService *ReleaseProfileApiService
+	releaseProfileResource *ReleaseProfileResource
 }
 
-func (r ApiCreateRestrictionRequest) RestrictionResource(restrictionResource RestrictionResource) ApiCreateRestrictionRequest {
-	r.restrictionResource = &restrictionResource
+func (r ApiCreateReleaseProfileRequest) ReleaseProfileResource(releaseProfileResource ReleaseProfileResource) ApiCreateReleaseProfileRequest {
+	r.releaseProfileResource = &releaseProfileResource
 	return r
 }
 
-func (r ApiCreateRestrictionRequest) Execute() (*RestrictionResource, *http.Response, error) {
-	return r.ApiService.CreateRestrictionExecute(r)
+func (r ApiCreateReleaseProfileRequest) Execute() (*ReleaseProfileResource, *http.Response, error) {
+	return r.ApiService.CreateReleaseProfileExecute(r)
 }
 
 /*
-CreateRestriction Method for CreateRestriction
+CreateReleaseProfile Method for CreateReleaseProfile
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreateRestrictionRequest
+ @return ApiCreateReleaseProfileRequest
 */
-func (a *RestrictionApiService) CreateRestriction(ctx context.Context) ApiCreateRestrictionRequest {
-	return ApiCreateRestrictionRequest{
+func (a *ReleaseProfileApiService) CreateReleaseProfile(ctx context.Context) ApiCreateReleaseProfileRequest {
+	return ApiCreateReleaseProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return RestrictionResource
-func (a *RestrictionApiService) CreateRestrictionExecute(r ApiCreateRestrictionRequest) (*RestrictionResource, *http.Response, error) {
+//  @return ReleaseProfileResource
+func (a *ReleaseProfileApiService) CreateReleaseProfileExecute(r ApiCreateReleaseProfileRequest) (*ReleaseProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *RestrictionResource
+		localVarReturnValue  *ReleaseProfileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestrictionApiService.CreateRestriction")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleaseProfileApiService.CreateReleaseProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/api/v3/restriction"
+	localVarPath := localBasePath + "/api/v3/releaseprofile"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -89,7 +89,7 @@ func (a *RestrictionApiService) CreateRestrictionExecute(r ApiCreateRestrictionR
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.restrictionResource
+	localVarPostBody = r.releaseProfileResource
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
@@ -154,25 +154,25 @@ func (a *RestrictionApiService) CreateRestrictionExecute(r ApiCreateRestrictionR
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiDeleteRestrictionRequest struct {
+type ApiDeleteReleaseProfileRequest struct {
 	ctx context.Context
-	ApiService *RestrictionApiService
+	ApiService *ReleaseProfileApiService
 	id int32
 }
 
-func (r ApiDeleteRestrictionRequest) Execute() (*http.Response, error) {
-	return r.ApiService.DeleteRestrictionExecute(r)
+func (r ApiDeleteReleaseProfileRequest) Execute() (*http.Response, error) {
+	return r.ApiService.DeleteReleaseProfileExecute(r)
 }
 
 /*
-DeleteRestriction Method for DeleteRestriction
+DeleteReleaseProfile Method for DeleteReleaseProfile
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiDeleteRestrictionRequest
+ @return ApiDeleteReleaseProfileRequest
 */
-func (a *RestrictionApiService) DeleteRestriction(ctx context.Context, id int32) ApiDeleteRestrictionRequest {
-	return ApiDeleteRestrictionRequest{
+func (a *ReleaseProfileApiService) DeleteReleaseProfile(ctx context.Context, id int32) ApiDeleteReleaseProfileRequest {
+	return ApiDeleteReleaseProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -180,19 +180,19 @@ func (a *RestrictionApiService) DeleteRestriction(ctx context.Context, id int32)
 }
 
 // Execute executes the request
-func (a *RestrictionApiService) DeleteRestrictionExecute(r ApiDeleteRestrictionRequest) (*http.Response, error) {
+func (a *ReleaseProfileApiService) DeleteReleaseProfileExecute(r ApiDeleteReleaseProfileRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestrictionApiService.DeleteRestriction")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleaseProfileApiService.DeleteReleaseProfile")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/api/v3/restriction/{id}"
+	localVarPath := localBasePath + "/api/v3/releaseprofile/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -271,25 +271,25 @@ func (a *RestrictionApiService) DeleteRestrictionExecute(r ApiDeleteRestrictionR
 
 	return localVarHTTPResponse, nil
 }
-type ApiGetRestrictionByIdRequest struct {
+type ApiGetReleaseProfileByIdRequest struct {
 	ctx context.Context
-	ApiService *RestrictionApiService
+	ApiService *ReleaseProfileApiService
 	id int32
 }
 
-func (r ApiGetRestrictionByIdRequest) Execute() (*RestrictionResource, *http.Response, error) {
-	return r.ApiService.GetRestrictionByIdExecute(r)
+func (r ApiGetReleaseProfileByIdRequest) Execute() (*ReleaseProfileResource, *http.Response, error) {
+	return r.ApiService.GetReleaseProfileByIdExecute(r)
 }
 
 /*
-GetRestrictionById Method for GetRestrictionById
+GetReleaseProfileById Method for GetReleaseProfileById
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiGetRestrictionByIdRequest
+ @return ApiGetReleaseProfileByIdRequest
 */
-func (a *RestrictionApiService) GetRestrictionById(ctx context.Context, id int32) ApiGetRestrictionByIdRequest {
-	return ApiGetRestrictionByIdRequest{
+func (a *ReleaseProfileApiService) GetReleaseProfileById(ctx context.Context, id int32) ApiGetReleaseProfileByIdRequest {
+	return ApiGetReleaseProfileByIdRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -297,21 +297,21 @@ func (a *RestrictionApiService) GetRestrictionById(ctx context.Context, id int32
 }
 
 // Execute executes the request
-//  @return RestrictionResource
-func (a *RestrictionApiService) GetRestrictionByIdExecute(r ApiGetRestrictionByIdRequest) (*RestrictionResource, *http.Response, error) {
+//  @return ReleaseProfileResource
+func (a *ReleaseProfileApiService) GetReleaseProfileByIdExecute(r ApiGetReleaseProfileByIdRequest) (*ReleaseProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *RestrictionResource
+		localVarReturnValue  *ReleaseProfileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestrictionApiService.GetRestrictionById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleaseProfileApiService.GetReleaseProfileById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/api/v3/restriction/{id}"
+	localVarPath := localBasePath + "/api/v3/releaseprofile/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -399,44 +399,44 @@ func (a *RestrictionApiService) GetRestrictionByIdExecute(r ApiGetRestrictionByI
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiListRestrictionRequest struct {
+type ApiListReleaseProfileRequest struct {
 	ctx context.Context
-	ApiService *RestrictionApiService
+	ApiService *ReleaseProfileApiService
 }
 
-func (r ApiListRestrictionRequest) Execute() ([]*RestrictionResource, *http.Response, error) {
-	return r.ApiService.ListRestrictionExecute(r)
+func (r ApiListReleaseProfileRequest) Execute() ([]*ReleaseProfileResource, *http.Response, error) {
+	return r.ApiService.ListReleaseProfileExecute(r)
 }
 
 /*
-ListRestriction Method for ListRestriction
+ListReleaseProfile Method for ListReleaseProfile
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiListRestrictionRequest
+ @return ApiListReleaseProfileRequest
 */
-func (a *RestrictionApiService) ListRestriction(ctx context.Context) ApiListRestrictionRequest {
-	return ApiListRestrictionRequest{
+func (a *ReleaseProfileApiService) ListReleaseProfile(ctx context.Context) ApiListReleaseProfileRequest {
+	return ApiListReleaseProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-//  @return []RestrictionResource
-func (a *RestrictionApiService) ListRestrictionExecute(r ApiListRestrictionRequest) ([]*RestrictionResource, *http.Response, error) {
+//  @return []ReleaseProfileResource
+func (a *ReleaseProfileApiService) ListReleaseProfileExecute(r ApiListReleaseProfileRequest) ([]*ReleaseProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*RestrictionResource
+		localVarReturnValue  []*ReleaseProfileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestrictionApiService.ListRestriction")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleaseProfileApiService.ListReleaseProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/api/v3/restriction"
+	localVarPath := localBasePath + "/api/v3/releaseprofile"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -523,31 +523,31 @@ func (a *RestrictionApiService) ListRestrictionExecute(r ApiListRestrictionReque
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
-type ApiUpdateRestrictionRequest struct {
+type ApiUpdateReleaseProfileRequest struct {
 	ctx context.Context
-	ApiService *RestrictionApiService
+	ApiService *ReleaseProfileApiService
 	id string
-	restrictionResource *RestrictionResource
+	releaseProfileResource *ReleaseProfileResource
 }
 
-func (r ApiUpdateRestrictionRequest) RestrictionResource(restrictionResource RestrictionResource) ApiUpdateRestrictionRequest {
-	r.restrictionResource = &restrictionResource
+func (r ApiUpdateReleaseProfileRequest) ReleaseProfileResource(releaseProfileResource ReleaseProfileResource) ApiUpdateReleaseProfileRequest {
+	r.releaseProfileResource = &releaseProfileResource
 	return r
 }
 
-func (r ApiUpdateRestrictionRequest) Execute() (*RestrictionResource, *http.Response, error) {
-	return r.ApiService.UpdateRestrictionExecute(r)
+func (r ApiUpdateReleaseProfileRequest) Execute() (*ReleaseProfileResource, *http.Response, error) {
+	return r.ApiService.UpdateReleaseProfileExecute(r)
 }
 
 /*
-UpdateRestriction Method for UpdateRestriction
+UpdateReleaseProfile Method for UpdateReleaseProfile
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param id
- @return ApiUpdateRestrictionRequest
+ @return ApiUpdateReleaseProfileRequest
 */
-func (a *RestrictionApiService) UpdateRestriction(ctx context.Context, id string) ApiUpdateRestrictionRequest {
-	return ApiUpdateRestrictionRequest{
+func (a *ReleaseProfileApiService) UpdateReleaseProfile(ctx context.Context, id string) ApiUpdateReleaseProfileRequest {
+	return ApiUpdateReleaseProfileRequest{
 		ApiService: a,
 		ctx: ctx,
 		id: id,
@@ -555,21 +555,21 @@ func (a *RestrictionApiService) UpdateRestriction(ctx context.Context, id string
 }
 
 // Execute executes the request
-//  @return RestrictionResource
-func (a *RestrictionApiService) UpdateRestrictionExecute(r ApiUpdateRestrictionRequest) (*RestrictionResource, *http.Response, error) {
+//  @return ReleaseProfileResource
+func (a *ReleaseProfileApiService) UpdateReleaseProfileExecute(r ApiUpdateReleaseProfileRequest) (*ReleaseProfileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *RestrictionResource
+		localVarReturnValue  *ReleaseProfileResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RestrictionApiService.UpdateRestriction")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleaseProfileApiService.UpdateReleaseProfile")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/api/v3/restriction/{id}"
+	localVarPath := localBasePath + "/api/v3/releaseprofile/{id}"
 	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -594,7 +594,7 @@ func (a *RestrictionApiService) UpdateRestrictionExecute(r ApiUpdateRestrictionR
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.restrictionResource
+	localVarPostBody = r.releaseProfileResource
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

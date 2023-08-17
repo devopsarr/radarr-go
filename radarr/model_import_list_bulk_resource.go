@@ -21,7 +21,7 @@ type ImportListBulkResource struct {
 	ApplyTags *ApplyTags `json:"applyTags,omitempty"`
 	EnableAuto NullableBool `json:"enableAuto,omitempty"`
 	RootFolderPath NullableString `json:"rootFolderPath,omitempty"`
-	ProfileId NullableInt32 `json:"profileId,omitempty"`
+	QualityProfileId NullableInt32 `json:"qualityProfileId,omitempty"`
 }
 
 // NewImportListBulkResource instantiates a new ImportListBulkResource object
@@ -223,46 +223,46 @@ func (o *ImportListBulkResource) UnsetRootFolderPath() {
 	o.RootFolderPath.Unset()
 }
 
-// GetProfileId returns the ProfileId field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ImportListBulkResource) GetProfileId() int32 {
-	if o == nil || isNil(o.ProfileId.Get()) {
+// GetQualityProfileId returns the QualityProfileId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ImportListBulkResource) GetQualityProfileId() int32 {
+	if o == nil || isNil(o.QualityProfileId.Get()) {
 		var ret int32
 		return ret
 	}
-	return *o.ProfileId.Get()
+	return *o.QualityProfileId.Get()
 }
 
-// GetProfileIdOk returns a tuple with the ProfileId field value if set, nil otherwise
+// GetQualityProfileIdOk returns a tuple with the QualityProfileId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ImportListBulkResource) GetProfileIdOk() (*int32, bool) {
+func (o *ImportListBulkResource) GetQualityProfileIdOk() (*int32, bool) {
 	if o == nil {
     return nil, false
 	}
-	return o.ProfileId.Get(), o.ProfileId.IsSet()
+	return o.QualityProfileId.Get(), o.QualityProfileId.IsSet()
 }
 
-// HasProfileId returns a boolean if a field has been set.
-func (o *ImportListBulkResource) HasProfileId() bool {
-	if o != nil && o.ProfileId.IsSet() {
+// HasQualityProfileId returns a boolean if a field has been set.
+func (o *ImportListBulkResource) HasQualityProfileId() bool {
+	if o != nil && o.QualityProfileId.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetProfileId gets a reference to the given NullableInt32 and assigns it to the ProfileId field.
-func (o *ImportListBulkResource) SetProfileId(v int32) {
-	o.ProfileId.Set(&v)
+// SetQualityProfileId gets a reference to the given NullableInt32 and assigns it to the QualityProfileId field.
+func (o *ImportListBulkResource) SetQualityProfileId(v int32) {
+	o.QualityProfileId.Set(&v)
 }
-// SetProfileIdNil sets the value for ProfileId to be an explicit nil
-func (o *ImportListBulkResource) SetProfileIdNil() {
-	o.ProfileId.Set(nil)
+// SetQualityProfileIdNil sets the value for QualityProfileId to be an explicit nil
+func (o *ImportListBulkResource) SetQualityProfileIdNil() {
+	o.QualityProfileId.Set(nil)
 }
 
-// UnsetProfileId ensures that no value is present for ProfileId, not even an explicit nil
-func (o *ImportListBulkResource) UnsetProfileId() {
-	o.ProfileId.Unset()
+// UnsetQualityProfileId ensures that no value is present for QualityProfileId, not even an explicit nil
+func (o *ImportListBulkResource) UnsetQualityProfileId() {
+	o.QualityProfileId.Unset()
 }
 
 func (o ImportListBulkResource) MarshalJSON() ([]byte, error) {
@@ -282,8 +282,8 @@ func (o ImportListBulkResource) MarshalJSON() ([]byte, error) {
 	if o.RootFolderPath.IsSet() {
 		toSerialize["rootFolderPath"] = o.RootFolderPath.Get()
 	}
-	if o.ProfileId.IsSet() {
-		toSerialize["profileId"] = o.ProfileId.Get()
+	if o.QualityProfileId.IsSet() {
+		toSerialize["qualityProfileId"] = o.QualityProfileId.Get()
 	}
 	return json.Marshal(toSerialize)
 }

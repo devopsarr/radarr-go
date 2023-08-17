@@ -1,15 +1,11 @@
-# AuthenticationType
+# AuthenticationRequiredType
 
 ## Enum
 
 
-* `NONE` (value: `"none"`)
+* `ENABLED` (value: `"enabled"`)
 
-* `BASIC` (value: `"basic"`)
-
-* `FORMS` (value: `"forms"`)
-
-* `EXTERNAL` (value: `"external"`)
+* `DISABLED_FOR_LOCAL_ADDRESSES` (value: `"disabledForLocalAddresses"`)
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

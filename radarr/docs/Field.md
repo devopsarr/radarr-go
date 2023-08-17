@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **SelectOptionsProviderAction** | Pointer to **NullableString** |  | [optional] 
 **Section** | Pointer to **NullableString** |  | [optional] 
 **Hidden** | Pointer to **NullableString** |  | [optional] 
+**Privacy** | Pointer to [**PrivacyLevel**](PrivacyLevel.md) |  | [optional] 
 **Placeholder** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
@@ -509,6 +510,31 @@ HasHidden returns a boolean if a field has been set.
 `func (o *Field) UnsetHidden()`
 
 UnsetHidden ensures that no value is present for Hidden, not even an explicit nil
+### GetPrivacy
+
+`func (o *Field) GetPrivacy() PrivacyLevel`
+
+GetPrivacy returns the Privacy field if non-nil, zero value otherwise.
+
+### GetPrivacyOk
+
+`func (o *Field) GetPrivacyOk() (*PrivacyLevel, bool)`
+
+GetPrivacyOk returns a tuple with the Privacy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPrivacy
+
+`func (o *Field) SetPrivacy(v PrivacyLevel)`
+
+SetPrivacy sets Privacy field to given value.
+
+### HasPrivacy
+
+`func (o *Field) HasPrivacy() bool`
+
+HasPrivacy returns a boolean if a field has been set.
+
 ### GetPlaceholder
 
 `func (o *Field) GetPlaceholder() string`

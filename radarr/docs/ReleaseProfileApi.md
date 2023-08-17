@@ -1,20 +1,20 @@
-# \RestrictionApi
+# \ReleaseProfileApi
 
 All URIs are relative to *http://localhost:7878*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateRestriction**](RestrictionApi.md#CreateRestriction) | **Post** /api/v3/restriction | 
-[**DeleteRestriction**](RestrictionApi.md#DeleteRestriction) | **Delete** /api/v3/restriction/{id} | 
-[**GetRestrictionById**](RestrictionApi.md#GetRestrictionById) | **Get** /api/v3/restriction/{id} | 
-[**ListRestriction**](RestrictionApi.md#ListRestriction) | **Get** /api/v3/restriction | 
-[**UpdateRestriction**](RestrictionApi.md#UpdateRestriction) | **Put** /api/v3/restriction/{id} | 
+[**CreateReleaseProfile**](ReleaseProfileApi.md#CreateReleaseProfile) | **Post** /api/v3/releaseprofile | 
+[**DeleteReleaseProfile**](ReleaseProfileApi.md#DeleteReleaseProfile) | **Delete** /api/v3/releaseprofile/{id} | 
+[**GetReleaseProfileById**](ReleaseProfileApi.md#GetReleaseProfileById) | **Get** /api/v3/releaseprofile/{id} | 
+[**ListReleaseProfile**](ReleaseProfileApi.md#ListReleaseProfile) | **Get** /api/v3/releaseprofile | 
+[**UpdateReleaseProfile**](ReleaseProfileApi.md#UpdateReleaseProfile) | **Put** /api/v3/releaseprofile/{id} | 
 
 
 
-## CreateRestriction
+## CreateReleaseProfile
 
-> RestrictionResource CreateRestriction(ctx).RestrictionResource(restrictionResource).Execute()
+> ReleaseProfileResource CreateReleaseProfile(ctx).ReleaseProfileResource(releaseProfileResource).Execute()
 
 
 
@@ -31,17 +31,17 @@ import (
 )
 
 func main() {
-    restrictionResource := *radarrClient.NewRestrictionResource() // RestrictionResource |  (optional)
+    releaseProfileResource := *radarrClient.NewReleaseProfileResource() // ReleaseProfileResource |  (optional)
 
     configuration := radarrClient.NewConfiguration()
     apiClient := radarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RestrictionApi.CreateRestriction(context.Background()).RestrictionResource(restrictionResource).Execute()
+    resp, r, err := apiClient.ReleaseProfileApi.CreateReleaseProfile(context.Background()).ReleaseProfileResource(releaseProfileResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RestrictionApi.CreateRestriction``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReleaseProfileApi.CreateReleaseProfile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `CreateRestriction`: RestrictionResource
-    fmt.Fprintf(os.Stdout, "Response from `RestrictionApi.CreateRestriction`: %v\n", resp)
+    // response from `CreateReleaseProfile`: ReleaseProfileResource
+    fmt.Fprintf(os.Stdout, "Response from `ReleaseProfileApi.CreateReleaseProfile`: %v\n", resp)
 }
 ```
 
@@ -51,16 +51,16 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateRestrictionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateReleaseProfileRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **restrictionResource** | [**RestrictionResource**](RestrictionResource.md) |  | 
+ **releaseProfileResource** | [**ReleaseProfileResource**](ReleaseProfileResource.md) |  | 
 
 ### Return type
 
-[**RestrictionResource**](RestrictionResource.md)
+[**ReleaseProfileResource**](ReleaseProfileResource.md)
 
 ### Authorization
 
@@ -76,9 +76,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteRestriction
+## DeleteReleaseProfile
 
-> DeleteRestriction(ctx, id).Execute()
+> DeleteReleaseProfile(ctx, id).Execute()
 
 
 
@@ -99,9 +99,9 @@ func main() {
 
     configuration := radarrClient.NewConfiguration()
     apiClient := radarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RestrictionApi.DeleteRestriction(context.Background(), id).Execute()
+    resp, r, err := apiClient.ReleaseProfileApi.DeleteReleaseProfile(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RestrictionApi.DeleteRestriction``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReleaseProfileApi.DeleteReleaseProfile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteRestrictionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteReleaseProfileRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -142,9 +142,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetRestrictionById
+## GetReleaseProfileById
 
-> RestrictionResource GetRestrictionById(ctx, id).Execute()
+> ReleaseProfileResource GetReleaseProfileById(ctx, id).Execute()
 
 
 
@@ -165,13 +165,13 @@ func main() {
 
     configuration := radarrClient.NewConfiguration()
     apiClient := radarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RestrictionApi.GetRestrictionById(context.Background(), id).Execute()
+    resp, r, err := apiClient.ReleaseProfileApi.GetReleaseProfileById(context.Background(), id).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RestrictionApi.GetRestrictionById``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReleaseProfileApi.GetReleaseProfileById``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `GetRestrictionById`: RestrictionResource
-    fmt.Fprintf(os.Stdout, "Response from `RestrictionApi.GetRestrictionById`: %v\n", resp)
+    // response from `GetReleaseProfileById`: ReleaseProfileResource
+    fmt.Fprintf(os.Stdout, "Response from `ReleaseProfileApi.GetReleaseProfileById`: %v\n", resp)
 }
 ```
 
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetRestrictionByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetReleaseProfileByIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RestrictionResource**](RestrictionResource.md)
+[**ReleaseProfileResource**](ReleaseProfileResource.md)
 
 ### Authorization
 
@@ -210,9 +210,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ListRestriction
+## ListReleaseProfile
 
-> []RestrictionResource ListRestriction(ctx).Execute()
+> []ReleaseProfileResource ListReleaseProfile(ctx).Execute()
 
 
 
@@ -232,13 +232,13 @@ func main() {
 
     configuration := radarrClient.NewConfiguration()
     apiClient := radarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RestrictionApi.ListRestriction(context.Background()).Execute()
+    resp, r, err := apiClient.ReleaseProfileApi.ListReleaseProfile(context.Background()).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RestrictionApi.ListRestriction``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReleaseProfileApi.ListReleaseProfile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `ListRestriction`: []RestrictionResource
-    fmt.Fprintf(os.Stdout, "Response from `RestrictionApi.ListRestriction`: %v\n", resp)
+    // response from `ListReleaseProfile`: []ReleaseProfileResource
+    fmt.Fprintf(os.Stdout, "Response from `ReleaseProfileApi.ListReleaseProfile`: %v\n", resp)
 }
 ```
 
@@ -248,12 +248,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListRestrictionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListReleaseProfileRequest struct via the builder pattern
 
 
 ### Return type
 
-[**[]RestrictionResource**](RestrictionResource.md)
+[**[]ReleaseProfileResource**](ReleaseProfileResource.md)
 
 ### Authorization
 
@@ -269,9 +269,9 @@ Other parameters are passed through a pointer to a apiListRestrictionRequest str
 [[Back to README]](../README.md)
 
 
-## UpdateRestriction
+## UpdateReleaseProfile
 
-> RestrictionResource UpdateRestriction(ctx, id).RestrictionResource(restrictionResource).Execute()
+> ReleaseProfileResource UpdateReleaseProfile(ctx, id).ReleaseProfileResource(releaseProfileResource).Execute()
 
 
 
@@ -289,17 +289,17 @@ import (
 
 func main() {
     id := "id_example" // string | 
-    restrictionResource := *radarrClient.NewRestrictionResource() // RestrictionResource |  (optional)
+    releaseProfileResource := *radarrClient.NewReleaseProfileResource() // ReleaseProfileResource |  (optional)
 
     configuration := radarrClient.NewConfiguration()
     apiClient := radarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RestrictionApi.UpdateRestriction(context.Background(), id).RestrictionResource(restrictionResource).Execute()
+    resp, r, err := apiClient.ReleaseProfileApi.UpdateReleaseProfile(context.Background(), id).ReleaseProfileResource(releaseProfileResource).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `RestrictionApi.UpdateRestriction``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `ReleaseProfileApi.UpdateReleaseProfile``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `UpdateRestriction`: RestrictionResource
-    fmt.Fprintf(os.Stdout, "Response from `RestrictionApi.UpdateRestriction`: %v\n", resp)
+    // response from `UpdateReleaseProfile`: ReleaseProfileResource
+    fmt.Fprintf(os.Stdout, "Response from `ReleaseProfileApi.UpdateReleaseProfile`: %v\n", resp)
 }
 ```
 
@@ -313,17 +313,17 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateRestrictionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateReleaseProfileRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **restrictionResource** | [**RestrictionResource**](RestrictionResource.md) |  | 
+ **releaseProfileResource** | [**ReleaseProfileResource**](ReleaseProfileResource.md) |  | 
 
 ### Return type
 
-[**RestrictionResource**](RestrictionResource.md)
+[**ReleaseProfileResource**](ReleaseProfileResource.md)
 
 ### Authorization
 

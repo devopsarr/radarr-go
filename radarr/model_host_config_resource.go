@@ -23,6 +23,7 @@ type HostConfigResource struct {
 	EnableSsl *bool `json:"enableSsl,omitempty"`
 	LaunchBrowser *bool `json:"launchBrowser,omitempty"`
 	AuthenticationMethod *AuthenticationType `json:"authenticationMethod,omitempty"`
+	AuthenticationRequired *AuthenticationRequiredType `json:"authenticationRequired,omitempty"`
 	AnalyticsEnabled *bool `json:"analyticsEnabled,omitempty"`
 	Username NullableString `json:"username,omitempty"`
 	Password NullableString `json:"password,omitempty"`
@@ -301,6 +302,38 @@ func (o *HostConfigResource) HasAuthenticationMethod() bool {
 // SetAuthenticationMethod gets a reference to the given AuthenticationType and assigns it to the AuthenticationMethod field.
 func (o *HostConfigResource) SetAuthenticationMethod(v AuthenticationType) {
 	o.AuthenticationMethod = &v
+}
+
+// GetAuthenticationRequired returns the AuthenticationRequired field value if set, zero value otherwise.
+func (o *HostConfigResource) GetAuthenticationRequired() AuthenticationRequiredType {
+	if o == nil || isNil(o.AuthenticationRequired) {
+		var ret AuthenticationRequiredType
+		return ret
+	}
+	return *o.AuthenticationRequired
+}
+
+// GetAuthenticationRequiredOk returns a tuple with the AuthenticationRequired field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *HostConfigResource) GetAuthenticationRequiredOk() (*AuthenticationRequiredType, bool) {
+	if o == nil || isNil(o.AuthenticationRequired) {
+    return nil, false
+	}
+	return o.AuthenticationRequired, true
+}
+
+// HasAuthenticationRequired returns a boolean if a field has been set.
+func (o *HostConfigResource) HasAuthenticationRequired() bool {
+	if o != nil && !isNil(o.AuthenticationRequired) {
+		return true
+	}
+
+	return false
+}
+
+// SetAuthenticationRequired gets a reference to the given AuthenticationRequiredType and assigns it to the AuthenticationRequired field.
+func (o *HostConfigResource) SetAuthenticationRequired(v AuthenticationRequiredType) {
+	o.AuthenticationRequired = &v
 }
 
 // GetAnalyticsEnabled returns the AnalyticsEnabled field value if set, zero value otherwise.
@@ -1359,6 +1392,9 @@ func (o HostConfigResource) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.AuthenticationMethod) {
 		toSerialize["authenticationMethod"] = o.AuthenticationMethod
+	}
+	if !isNil(o.AuthenticationRequired) {
+		toSerialize["authenticationRequired"] = o.AuthenticationRequired
 	}
 	if !isNil(o.AnalyticsEnabled) {
 		toSerialize["analyticsEnabled"] = o.AnalyticsEnabled

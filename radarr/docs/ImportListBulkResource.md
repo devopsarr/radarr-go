@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **ApplyTags** | Pointer to [**ApplyTags**](ApplyTags.md) |  | [optional] 
 **EnableAuto** | Pointer to **NullableBool** |  | [optional] 
 **RootFolderPath** | Pointer to **NullableString** |  | [optional] 
-**ProfileId** | Pointer to **NullableInt32** |  | [optional] 
+**QualityProfileId** | Pointer to **NullableInt32** |  | [optional] 
 
 ## Methods
 
@@ -195,41 +195,41 @@ HasRootFolderPath returns a boolean if a field has been set.
 `func (o *ImportListBulkResource) UnsetRootFolderPath()`
 
 UnsetRootFolderPath ensures that no value is present for RootFolderPath, not even an explicit nil
-### GetProfileId
+### GetQualityProfileId
 
-`func (o *ImportListBulkResource) GetProfileId() int32`
+`func (o *ImportListBulkResource) GetQualityProfileId() int32`
 
-GetProfileId returns the ProfileId field if non-nil, zero value otherwise.
+GetQualityProfileId returns the QualityProfileId field if non-nil, zero value otherwise.
 
-### GetProfileIdOk
+### GetQualityProfileIdOk
 
-`func (o *ImportListBulkResource) GetProfileIdOk() (*int32, bool)`
+`func (o *ImportListBulkResource) GetQualityProfileIdOk() (*int32, bool)`
 
-GetProfileIdOk returns a tuple with the ProfileId field if it's non-nil, zero value otherwise
+GetQualityProfileIdOk returns a tuple with the QualityProfileId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetProfileId
+### SetQualityProfileId
 
-`func (o *ImportListBulkResource) SetProfileId(v int32)`
+`func (o *ImportListBulkResource) SetQualityProfileId(v int32)`
 
-SetProfileId sets ProfileId field to given value.
+SetQualityProfileId sets QualityProfileId field to given value.
 
-### HasProfileId
+### HasQualityProfileId
 
-`func (o *ImportListBulkResource) HasProfileId() bool`
+`func (o *ImportListBulkResource) HasQualityProfileId() bool`
 
-HasProfileId returns a boolean if a field has been set.
+HasQualityProfileId returns a boolean if a field has been set.
 
-### SetProfileIdNil
+### SetQualityProfileIdNil
 
-`func (o *ImportListBulkResource) SetProfileIdNil(b bool)`
+`func (o *ImportListBulkResource) SetQualityProfileIdNil(b bool)`
 
- SetProfileIdNil sets the value for ProfileId to be an explicit nil
+ SetQualityProfileIdNil sets the value for QualityProfileId to be an explicit nil
 
-### UnsetProfileId
-`func (o *ImportListBulkResource) UnsetProfileId()`
+### UnsetQualityProfileId
+`func (o *ImportListBulkResource) UnsetQualityProfileId()`
 
-UnsetProfileId ensures that no value is present for ProfileId, not even an explicit nil
+UnsetQualityProfileId ensures that no value is present for QualityProfileId, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

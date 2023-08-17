@@ -56,10 +56,10 @@ api_queue_action.go
 api_queue_details.go
 api_queue_status.go
 api_release.go
+api_release_profile.go
 api_release_push.go
 api_remote_path_mapping.go
 api_rename_movie.go
-api_restriction.go
 api_root_folder.go
 api_static_resource.go
 api_system.go
@@ -80,6 +80,7 @@ docs/ApiInfoApi.md
 docs/ApiInfoResource.md
 docs/ApplyTags.md
 docs/AuthenticationApi.md
+docs/AuthenticationRequiredType.md
 docs/AuthenticationType.md
 docs/AutoTaggingApi.md
 docs/AutoTaggingResource.md
@@ -204,6 +205,7 @@ docs/ParseResource.md
 docs/ParsedMovieInfo.md
 docs/PingApi.md
 docs/PingResource.md
+docs/PrivacyLevel.md
 docs/ProfileFormatItemResource.md
 docs/ProperDownloadTypes.md
 docs/ProviderMessage.md
@@ -231,6 +233,8 @@ docs/Ratings.md
 docs/Rejection.md
 docs/RejectionType.md
 docs/ReleaseApi.md
+docs/ReleaseProfileApi.md
+docs/ReleaseProfileResource.md
 docs/ReleasePushApi.md
 docs/ReleaseResource.md
 docs/RemotePathMappingApi.md
@@ -238,8 +242,6 @@ docs/RemotePathMappingResource.md
 docs/RenameMovieApi.md
 docs/RenameMovieResource.md
 docs/RescanAfterRefreshType.md
-docs/RestrictionApi.md
-docs/RestrictionResource.md
 docs/Revision.md
 docs/RootFolderApi.md
 docs/RootFolderResource.md
@@ -276,6 +278,7 @@ model_alternative_title.go
 model_alternative_title_resource.go
 model_api_info_resource.go
 model_apply_tags.go
+model_authentication_required_type.go
 model_authentication_type.go
 model_auto_tagging_resource.go
 model_auto_tagging_specification_schema.go
@@ -356,6 +359,7 @@ model_paging_resource_filter.go
 model_parse_resource.go
 model_parsed_movie_info.go
 model_ping_resource.go
+model_privacy_level.go
 model_profile_format_item_resource.go
 model_proper_download_types.go
 model_provider_message.go
@@ -375,11 +379,11 @@ model_rating_type.go
 model_ratings.go
 model_rejection.go
 model_rejection_type.go
+model_release_profile_resource.go
 model_release_resource.go
 model_remote_path_mapping_resource.go
 model_rename_movie_resource.go
 model_rescan_after_refresh_type.go
-model_restriction_resource.go
 model_revision.go
 model_root_folder_resource.go
 model_runtime_mode.go
