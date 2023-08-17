@@ -102,7 +102,7 @@ func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader:    make(map[string]string),
 		// x-release-please-start-version
-		UserAgent:        "radarr-go/v0.3.0",
+		UserAgent:        "radarr-go/v0.4.0",
 		// x-release-please-end
 		Debug:            false,
 		Servers:          ServerConfigurations{
