@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 ## ListCalendar
 
-> []MovieResource ListCalendar(ctx).Start(start).End(end).Unmonitored(unmonitored).Execute()
+> []MovieResource ListCalendar(ctx).Start(start).End(end).Unmonitored(unmonitored).Tags(tags).Execute()
 
 
 
@@ -100,10 +100,11 @@ func main() {
     start := time.Now() // time.Time |  (optional)
     end := time.Now() // time.Time |  (optional)
     unmonitored := true // bool |  (optional) (default to false)
+    tags := "tags_example" // string |  (optional) (default to "")
 
     configuration := radarrClient.NewConfiguration()
     apiClient := radarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CalendarApi.ListCalendar(context.Background()).Start(start).End(end).Unmonitored(unmonitored).Execute()
+    resp, r, err := apiClient.CalendarApi.ListCalendar(context.Background()).Start(start).End(end).Unmonitored(unmonitored).Tags(tags).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CalendarApi.ListCalendar``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -127,6 +128,7 @@ Name | Type | Description  | Notes
  **start** | **time.Time** |  | 
  **end** | **time.Time** |  | 
  **unmonitored** | **bool** |  | [default to false]
+ **tags** | **string** |  | [default to &quot;&quot;]
 
 ### Return type
 
@@ -139,7 +141,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

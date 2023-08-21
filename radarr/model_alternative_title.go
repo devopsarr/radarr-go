@@ -21,10 +21,6 @@ type AlternativeTitle struct {
 	MovieMetadataId *int32 `json:"movieMetadataId,omitempty"`
 	Title NullableString `json:"title,omitempty"`
 	CleanTitle NullableString `json:"cleanTitle,omitempty"`
-	SourceId *int32 `json:"sourceId,omitempty"`
-	Votes *int32 `json:"votes,omitempty"`
-	VoteCount *int32 `json:"voteCount,omitempty"`
-	Language *Language `json:"language,omitempty"`
 }
 
 // NewAlternativeTitle instantiates a new AlternativeTitle object
@@ -224,134 +220,6 @@ func (o *AlternativeTitle) UnsetCleanTitle() {
 	o.CleanTitle.Unset()
 }
 
-// GetSourceId returns the SourceId field value if set, zero value otherwise.
-func (o *AlternativeTitle) GetSourceId() int32 {
-	if o == nil || isNil(o.SourceId) {
-		var ret int32
-		return ret
-	}
-	return *o.SourceId
-}
-
-// GetSourceIdOk returns a tuple with the SourceId field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AlternativeTitle) GetSourceIdOk() (*int32, bool) {
-	if o == nil || isNil(o.SourceId) {
-    return nil, false
-	}
-	return o.SourceId, true
-}
-
-// HasSourceId returns a boolean if a field has been set.
-func (o *AlternativeTitle) HasSourceId() bool {
-	if o != nil && !isNil(o.SourceId) {
-		return true
-	}
-
-	return false
-}
-
-// SetSourceId gets a reference to the given int32 and assigns it to the SourceId field.
-func (o *AlternativeTitle) SetSourceId(v int32) {
-	o.SourceId = &v
-}
-
-// GetVotes returns the Votes field value if set, zero value otherwise.
-func (o *AlternativeTitle) GetVotes() int32 {
-	if o == nil || isNil(o.Votes) {
-		var ret int32
-		return ret
-	}
-	return *o.Votes
-}
-
-// GetVotesOk returns a tuple with the Votes field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AlternativeTitle) GetVotesOk() (*int32, bool) {
-	if o == nil || isNil(o.Votes) {
-    return nil, false
-	}
-	return o.Votes, true
-}
-
-// HasVotes returns a boolean if a field has been set.
-func (o *AlternativeTitle) HasVotes() bool {
-	if o != nil && !isNil(o.Votes) {
-		return true
-	}
-
-	return false
-}
-
-// SetVotes gets a reference to the given int32 and assigns it to the Votes field.
-func (o *AlternativeTitle) SetVotes(v int32) {
-	o.Votes = &v
-}
-
-// GetVoteCount returns the VoteCount field value if set, zero value otherwise.
-func (o *AlternativeTitle) GetVoteCount() int32 {
-	if o == nil || isNil(o.VoteCount) {
-		var ret int32
-		return ret
-	}
-	return *o.VoteCount
-}
-
-// GetVoteCountOk returns a tuple with the VoteCount field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AlternativeTitle) GetVoteCountOk() (*int32, bool) {
-	if o == nil || isNil(o.VoteCount) {
-    return nil, false
-	}
-	return o.VoteCount, true
-}
-
-// HasVoteCount returns a boolean if a field has been set.
-func (o *AlternativeTitle) HasVoteCount() bool {
-	if o != nil && !isNil(o.VoteCount) {
-		return true
-	}
-
-	return false
-}
-
-// SetVoteCount gets a reference to the given int32 and assigns it to the VoteCount field.
-func (o *AlternativeTitle) SetVoteCount(v int32) {
-	o.VoteCount = &v
-}
-
-// GetLanguage returns the Language field value if set, zero value otherwise.
-func (o *AlternativeTitle) GetLanguage() Language {
-	if o == nil || isNil(o.Language) {
-		var ret Language
-		return ret
-	}
-	return *o.Language
-}
-
-// GetLanguageOk returns a tuple with the Language field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *AlternativeTitle) GetLanguageOk() (*Language, bool) {
-	if o == nil || isNil(o.Language) {
-    return nil, false
-	}
-	return o.Language, true
-}
-
-// HasLanguage returns a boolean if a field has been set.
-func (o *AlternativeTitle) HasLanguage() bool {
-	if o != nil && !isNil(o.Language) {
-		return true
-	}
-
-	return false
-}
-
-// SetLanguage gets a reference to the given Language and assigns it to the Language field.
-func (o *AlternativeTitle) SetLanguage(v Language) {
-	o.Language = &v
-}
-
 func (o AlternativeTitle) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Id) {
@@ -368,18 +236,6 @@ func (o AlternativeTitle) MarshalJSON() ([]byte, error) {
 	}
 	if o.CleanTitle.IsSet() {
 		toSerialize["cleanTitle"] = o.CleanTitle.Get()
-	}
-	if !isNil(o.SourceId) {
-		toSerialize["sourceId"] = o.SourceId
-	}
-	if !isNil(o.Votes) {
-		toSerialize["votes"] = o.Votes
-	}
-	if !isNil(o.VoteCount) {
-		toSerialize["voteCount"] = o.VoteCount
-	}
-	if !isNil(o.Language) {
-		toSerialize["language"] = o.Language
 	}
 	return json.Marshal(toSerialize)
 }

@@ -160,6 +160,7 @@ docs/Language.md
 docs/LanguageApi.md
 docs/LanguageResource.md
 docs/LocalizationApi.md
+docs/LocalizationLanguageResource.md
 docs/LogApi.md
 docs/LogFileApi.md
 docs/LogFileResource.md
@@ -330,6 +331,7 @@ model_indexer_flag_resource.go
 model_indexer_resource.go
 model_language.go
 model_language_resource.go
+model_localization_language_resource.go
 model_log_file_resource.go
 model_log_resource.go
 model_log_resource_paging_resource.go

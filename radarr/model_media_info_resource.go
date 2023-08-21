@@ -25,8 +25,9 @@ type MediaInfoResource struct {
 	VideoBitDepth *int32 `json:"videoBitDepth,omitempty"`
 	VideoBitrate *int64 `json:"videoBitrate,omitempty"`
 	VideoCodec NullableString `json:"videoCodec,omitempty"`
-	VideoDynamicRangeType NullableString `json:"videoDynamicRangeType,omitempty"`
 	VideoFps *float64 `json:"videoFps,omitempty"`
+	VideoDynamicRange NullableString `json:"videoDynamicRange,omitempty"`
+	VideoDynamicRangeType NullableString `json:"videoDynamicRangeType,omitempty"`
 	Resolution NullableString `json:"resolution,omitempty"`
 	RunTime NullableString `json:"runTime,omitempty"`
 	ScanType NullableString `json:"scanType,omitempty"`
@@ -368,6 +369,80 @@ func (o *MediaInfoResource) UnsetVideoCodec() {
 	o.VideoCodec.Unset()
 }
 
+// GetVideoFps returns the VideoFps field value if set, zero value otherwise.
+func (o *MediaInfoResource) GetVideoFps() float64 {
+	if o == nil || isNil(o.VideoFps) {
+		var ret float64
+		return ret
+	}
+	return *o.VideoFps
+}
+
+// GetVideoFpsOk returns a tuple with the VideoFps field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MediaInfoResource) GetVideoFpsOk() (*float64, bool) {
+	if o == nil || isNil(o.VideoFps) {
+    return nil, false
+	}
+	return o.VideoFps, true
+}
+
+// HasVideoFps returns a boolean if a field has been set.
+func (o *MediaInfoResource) HasVideoFps() bool {
+	if o != nil && !isNil(o.VideoFps) {
+		return true
+	}
+
+	return false
+}
+
+// SetVideoFps gets a reference to the given float64 and assigns it to the VideoFps field.
+func (o *MediaInfoResource) SetVideoFps(v float64) {
+	o.VideoFps = &v
+}
+
+// GetVideoDynamicRange returns the VideoDynamicRange field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *MediaInfoResource) GetVideoDynamicRange() string {
+	if o == nil || isNil(o.VideoDynamicRange.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.VideoDynamicRange.Get()
+}
+
+// GetVideoDynamicRangeOk returns a tuple with the VideoDynamicRange field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *MediaInfoResource) GetVideoDynamicRangeOk() (*string, bool) {
+	if o == nil {
+    return nil, false
+	}
+	return o.VideoDynamicRange.Get(), o.VideoDynamicRange.IsSet()
+}
+
+// HasVideoDynamicRange returns a boolean if a field has been set.
+func (o *MediaInfoResource) HasVideoDynamicRange() bool {
+	if o != nil && o.VideoDynamicRange.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetVideoDynamicRange gets a reference to the given NullableString and assigns it to the VideoDynamicRange field.
+func (o *MediaInfoResource) SetVideoDynamicRange(v string) {
+	o.VideoDynamicRange.Set(&v)
+}
+// SetVideoDynamicRangeNil sets the value for VideoDynamicRange to be an explicit nil
+func (o *MediaInfoResource) SetVideoDynamicRangeNil() {
+	o.VideoDynamicRange.Set(nil)
+}
+
+// UnsetVideoDynamicRange ensures that no value is present for VideoDynamicRange, not even an explicit nil
+func (o *MediaInfoResource) UnsetVideoDynamicRange() {
+	o.VideoDynamicRange.Unset()
+}
+
 // GetVideoDynamicRangeType returns the VideoDynamicRangeType field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MediaInfoResource) GetVideoDynamicRangeType() string {
 	if o == nil || isNil(o.VideoDynamicRangeType.Get()) {
@@ -408,38 +483,6 @@ func (o *MediaInfoResource) SetVideoDynamicRangeTypeNil() {
 // UnsetVideoDynamicRangeType ensures that no value is present for VideoDynamicRangeType, not even an explicit nil
 func (o *MediaInfoResource) UnsetVideoDynamicRangeType() {
 	o.VideoDynamicRangeType.Unset()
-}
-
-// GetVideoFps returns the VideoFps field value if set, zero value otherwise.
-func (o *MediaInfoResource) GetVideoFps() float64 {
-	if o == nil || isNil(o.VideoFps) {
-		var ret float64
-		return ret
-	}
-	return *o.VideoFps
-}
-
-// GetVideoFpsOk returns a tuple with the VideoFps field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *MediaInfoResource) GetVideoFpsOk() (*float64, bool) {
-	if o == nil || isNil(o.VideoFps) {
-    return nil, false
-	}
-	return o.VideoFps, true
-}
-
-// HasVideoFps returns a boolean if a field has been set.
-func (o *MediaInfoResource) HasVideoFps() bool {
-	if o != nil && !isNil(o.VideoFps) {
-		return true
-	}
-
-	return false
-}
-
-// SetVideoFps gets a reference to the given float64 and assigns it to the VideoFps field.
-func (o *MediaInfoResource) SetVideoFps(v float64) {
-	o.VideoFps = &v
 }
 
 // GetResolution returns the Resolution field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -639,11 +682,14 @@ func (o MediaInfoResource) MarshalJSON() ([]byte, error) {
 	if o.VideoCodec.IsSet() {
 		toSerialize["videoCodec"] = o.VideoCodec.Get()
 	}
-	if o.VideoDynamicRangeType.IsSet() {
-		toSerialize["videoDynamicRangeType"] = o.VideoDynamicRangeType.Get()
-	}
 	if !isNil(o.VideoFps) {
 		toSerialize["videoFps"] = o.VideoFps
+	}
+	if o.VideoDynamicRange.IsSet() {
+		toSerialize["videoDynamicRange"] = o.VideoDynamicRange.Get()
+	}
+	if o.VideoDynamicRangeType.IsSet() {
+		toSerialize["videoDynamicRangeType"] = o.VideoDynamicRangeType.Get()
 	}
 	if o.Resolution.IsSet() {
 		toSerialize["resolution"] = o.Resolution.Get()
