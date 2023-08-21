@@ -9,10 +9,6 @@ Name | Type | Description | Notes
 **MovieMetadataId** | Pointer to **int32** |  | [optional] 
 **Title** | Pointer to **NullableString** |  | [optional] 
 **CleanTitle** | Pointer to **NullableString** |  | [optional] 
-**SourceId** | Pointer to **int32** |  | [optional] 
-**Votes** | Pointer to **int32** |  | [optional] 
-**VoteCount** | Pointer to **int32** |  | [optional] 
-**Language** | Pointer to [**Language**](Language.md) |  | [optional] 
 
 ## Methods
 
@@ -178,106 +174,6 @@ HasCleanTitle returns a boolean if a field has been set.
 `func (o *AlternativeTitleResource) UnsetCleanTitle()`
 
 UnsetCleanTitle ensures that no value is present for CleanTitle, not even an explicit nil
-### GetSourceId
-
-`func (o *AlternativeTitleResource) GetSourceId() int32`
-
-GetSourceId returns the SourceId field if non-nil, zero value otherwise.
-
-### GetSourceIdOk
-
-`func (o *AlternativeTitleResource) GetSourceIdOk() (*int32, bool)`
-
-GetSourceIdOk returns a tuple with the SourceId field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSourceId
-
-`func (o *AlternativeTitleResource) SetSourceId(v int32)`
-
-SetSourceId sets SourceId field to given value.
-
-### HasSourceId
-
-`func (o *AlternativeTitleResource) HasSourceId() bool`
-
-HasSourceId returns a boolean if a field has been set.
-
-### GetVotes
-
-`func (o *AlternativeTitleResource) GetVotes() int32`
-
-GetVotes returns the Votes field if non-nil, zero value otherwise.
-
-### GetVotesOk
-
-`func (o *AlternativeTitleResource) GetVotesOk() (*int32, bool)`
-
-GetVotesOk returns a tuple with the Votes field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVotes
-
-`func (o *AlternativeTitleResource) SetVotes(v int32)`
-
-SetVotes sets Votes field to given value.
-
-### HasVotes
-
-`func (o *AlternativeTitleResource) HasVotes() bool`
-
-HasVotes returns a boolean if a field has been set.
-
-### GetVoteCount
-
-`func (o *AlternativeTitleResource) GetVoteCount() int32`
-
-GetVoteCount returns the VoteCount field if non-nil, zero value otherwise.
-
-### GetVoteCountOk
-
-`func (o *AlternativeTitleResource) GetVoteCountOk() (*int32, bool)`
-
-GetVoteCountOk returns a tuple with the VoteCount field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVoteCount
-
-`func (o *AlternativeTitleResource) SetVoteCount(v int32)`
-
-SetVoteCount sets VoteCount field to given value.
-
-### HasVoteCount
-
-`func (o *AlternativeTitleResource) HasVoteCount() bool`
-
-HasVoteCount returns a boolean if a field has been set.
-
-### GetLanguage
-
-`func (o *AlternativeTitleResource) GetLanguage() Language`
-
-GetLanguage returns the Language field if non-nil, zero value otherwise.
-
-### GetLanguageOk
-
-`func (o *AlternativeTitleResource) GetLanguageOk() (*Language, bool)`
-
-GetLanguageOk returns a tuple with the Language field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLanguage
-
-`func (o *AlternativeTitleResource) SetLanguage(v Language)`
-
-SetLanguage sets Language field to given value.
-
-### HasLanguage
-
-`func (o *AlternativeTitleResource) HasLanguage() bool`
-
-HasLanguage returns a boolean if a field has been set.
-
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

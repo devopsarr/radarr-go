@@ -198,6 +198,7 @@ Class | Method | HTTP request | Description
 *LanguageApi* | [**GetLanguageById**](radarr/docs/LanguageApi.md#getlanguagebyid) | **Get** /api/v3/language/{id} | 
 *LanguageApi* | [**ListLanguage**](radarr/docs/LanguageApi.md#listlanguage) | **Get** /api/v3/language | 
 *LocalizationApi* | [**GetLocalization**](radarr/docs/LocalizationApi.md#getlocalization) | **Get** /api/v3/localization | 
+*LocalizationApi* | [**GetLocalizationLanguage**](radarr/docs/LocalizationApi.md#getlocalizationlanguage) | **Get** /api/v3/localization/language | 
 *LogApi* | [**GetLog**](radarr/docs/LogApi.md#getlog) | **Get** /api/v3/log | 
 *LogFileApi* | [**GetLogFileByFilename**](radarr/docs/LogFileApi.md#getlogfilebyfilename) | **Get** /api/v3/log/file/{filename} | 
 *LogFileApi* | [**ListLogFile**](radarr/docs/LogFileApi.md#listlogfile) | **Get** /api/v3/log/file | 
@@ -379,6 +380,7 @@ Class | Method | HTTP request | Description
  - [IndexerResource](docs/IndexerResource.md)
  - [Language](docs/Language.md)
  - [LanguageResource](docs/LanguageResource.md)
+ - [LocalizationLanguageResource](docs/LocalizationLanguageResource.md)
  - [LogFileResource](docs/LogFileResource.md)
  - [LogResource](docs/LogResource.md)
  - [LogResourcePagingResource](docs/LogResourcePagingResource.md)

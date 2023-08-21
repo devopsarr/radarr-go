@@ -13,8 +13,9 @@ Name | Type | Description | Notes
 **VideoBitDepth** | Pointer to **int32** |  | [optional] 
 **VideoBitrate** | Pointer to **int64** |  | [optional] 
 **VideoCodec** | Pointer to **NullableString** |  | [optional] 
-**VideoDynamicRangeType** | Pointer to **NullableString** |  | [optional] 
 **VideoFps** | Pointer to **float64** |  | [optional] 
+**VideoDynamicRange** | Pointer to **NullableString** |  | [optional] 
+**VideoDynamicRangeType** | Pointer to **NullableString** |  | [optional] 
 **Resolution** | Pointer to **NullableString** |  | [optional] 
 **RunTime** | Pointer to **NullableString** |  | [optional] 
 **ScanType** | Pointer to **NullableString** |  | [optional] 
@@ -294,6 +295,66 @@ HasVideoCodec returns a boolean if a field has been set.
 `func (o *MediaInfoResource) UnsetVideoCodec()`
 
 UnsetVideoCodec ensures that no value is present for VideoCodec, not even an explicit nil
+### GetVideoFps
+
+`func (o *MediaInfoResource) GetVideoFps() float64`
+
+GetVideoFps returns the VideoFps field if non-nil, zero value otherwise.
+
+### GetVideoFpsOk
+
+`func (o *MediaInfoResource) GetVideoFpsOk() (*float64, bool)`
+
+GetVideoFpsOk returns a tuple with the VideoFps field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVideoFps
+
+`func (o *MediaInfoResource) SetVideoFps(v float64)`
+
+SetVideoFps sets VideoFps field to given value.
+
+### HasVideoFps
+
+`func (o *MediaInfoResource) HasVideoFps() bool`
+
+HasVideoFps returns a boolean if a field has been set.
+
+### GetVideoDynamicRange
+
+`func (o *MediaInfoResource) GetVideoDynamicRange() string`
+
+GetVideoDynamicRange returns the VideoDynamicRange field if non-nil, zero value otherwise.
+
+### GetVideoDynamicRangeOk
+
+`func (o *MediaInfoResource) GetVideoDynamicRangeOk() (*string, bool)`
+
+GetVideoDynamicRangeOk returns a tuple with the VideoDynamicRange field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetVideoDynamicRange
+
+`func (o *MediaInfoResource) SetVideoDynamicRange(v string)`
+
+SetVideoDynamicRange sets VideoDynamicRange field to given value.
+
+### HasVideoDynamicRange
+
+`func (o *MediaInfoResource) HasVideoDynamicRange() bool`
+
+HasVideoDynamicRange returns a boolean if a field has been set.
+
+### SetVideoDynamicRangeNil
+
+`func (o *MediaInfoResource) SetVideoDynamicRangeNil(b bool)`
+
+ SetVideoDynamicRangeNil sets the value for VideoDynamicRange to be an explicit nil
+
+### UnsetVideoDynamicRange
+`func (o *MediaInfoResource) UnsetVideoDynamicRange()`
+
+UnsetVideoDynamicRange ensures that no value is present for VideoDynamicRange, not even an explicit nil
 ### GetVideoDynamicRangeType
 
 `func (o *MediaInfoResource) GetVideoDynamicRangeType() string`
@@ -329,31 +390,6 @@ HasVideoDynamicRangeType returns a boolean if a field has been set.
 `func (o *MediaInfoResource) UnsetVideoDynamicRangeType()`
 
 UnsetVideoDynamicRangeType ensures that no value is present for VideoDynamicRangeType, not even an explicit nil
-### GetVideoFps
-
-`func (o *MediaInfoResource) GetVideoFps() float64`
-
-GetVideoFps returns the VideoFps field if non-nil, zero value otherwise.
-
-### GetVideoFpsOk
-
-`func (o *MediaInfoResource) GetVideoFpsOk() (*float64, bool)`
-
-GetVideoFpsOk returns a tuple with the VideoFps field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetVideoFps
-
-`func (o *MediaInfoResource) SetVideoFps(v float64)`
-
-SetVideoFps sets VideoFps field to given value.
-
-### HasVideoFps
-
-`func (o *MediaInfoResource) HasVideoFps() bool`
-
-HasVideoFps returns a boolean if a field has been set.
-
 ### GetResolution
 
 `func (o *MediaInfoResource) GetResolution() string`

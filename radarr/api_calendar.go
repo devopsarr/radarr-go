@@ -157,6 +157,7 @@ type ApiListCalendarRequest struct {
 	start *time.Time
 	end *time.Time
 	unmonitored *bool
+	tags *string
 }
 
 func (r ApiListCalendarRequest) Start(start time.Time) ApiListCalendarRequest {
@@ -171,6 +172,11 @@ func (r ApiListCalendarRequest) End(end time.Time) ApiListCalendarRequest {
 
 func (r ApiListCalendarRequest) Unmonitored(unmonitored bool) ApiListCalendarRequest {
 	r.unmonitored = &unmonitored
+	return r
+}
+
+func (r ApiListCalendarRequest) Tags(tags string) ApiListCalendarRequest {
+	r.tags = &tags
 	return r
 }
 
@@ -221,6 +227,9 @@ func (a *CalendarApiService) ListCalendarExecute(r ApiListCalendarRequest) ([]*M
 	if r.unmonitored != nil {
 		localVarQueryParams.Add("unmonitored", parameterToString(*r.unmonitored, ""))
 	}
+	if r.tags != nil {
+		localVarQueryParams.Add("tags", parameterToString(*r.tags, ""))
+	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -231,7 +240,7 @@ func (a *CalendarApiService) ListCalendarExecute(r ApiListCalendarRequest) ([]*M
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain", "application/json", "text/json"}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
