@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int32** |  | [optional] 
 **Name** | Pointer to **NullableString** |  | [optional] 
-**Source** | Pointer to [**Source**](Source.md) |  | [optional] 
+**Source** | Pointer to [**QualitySource**](QualitySource.md) |  | [optional] 
 **Resolution** | Pointer to **int32** |  | [optional] 
 **Modifier** | Pointer to [**Modifier**](Modifier.md) |  | [optional] 
 
@@ -91,20 +91,20 @@ HasName returns a boolean if a field has been set.
 UnsetName ensures that no value is present for Name, not even an explicit nil
 ### GetSource
 
-`func (o *Quality) GetSource() Source`
+`func (o *Quality) GetSource() QualitySource`
 
 GetSource returns the Source field if non-nil, zero value otherwise.
 
 ### GetSourceOk
 
-`func (o *Quality) GetSourceOk() (*Source, bool)`
+`func (o *Quality) GetSourceOk() (*QualitySource, bool)`
 
 GetSourceOk returns a tuple with the Source field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSource
 
-`func (o *Quality) SetSource(v Source)`
+`func (o *Quality) SetSource(v QualitySource)`
 
 SetSource sets Source field to given value.
 

@@ -220,6 +220,7 @@ docs/QualityProfileApi.md
 docs/QualityProfileQualityItemResource.md
 docs/QualityProfileResource.md
 docs/QualityProfileSchemaApi.md
+docs/QualitySource.md
 docs/QueueActionApi.md
 docs/QueueApi.md
 docs/QueueBulkResource.md
@@ -249,7 +250,6 @@ docs/RootFolderResource.md
 docs/RuntimeMode.md
 docs/SelectOption.md
 docs/SortDirection.md
-docs/Source.md
 docs/SourceType.md
 docs/StaticResourceApi.md
 docs/SystemApi.md
@@ -372,6 +372,7 @@ model_quality_definition_resource.go
 model_quality_model.go
 model_quality_profile_quality_item_resource.go
 model_quality_profile_resource.go
+model_quality_source.go
 model_queue_bulk_resource.go
 model_queue_resource.go
 model_queue_resource_paging_resource.go
@@ -391,7 +392,6 @@ model_root_folder_resource.go
 model_runtime_mode.go
 model_select_option.go
 model_sort_direction.go
-model_source.go
 model_source_type.go
 model_system_resource.go
 model_tag_details_resource.go
