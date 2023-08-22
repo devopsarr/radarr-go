@@ -18984,7 +18984,7 @@ components:
           nullable: true
           type: string
         source:
-          $ref: '#/components/schemas/Source'
+          $ref: '#/components/schemas/QualitySource'
         resolution:
           format: int32
           type: integer
@@ -19159,6 +19159,19 @@ components:
         language:
           $ref: '#/components/schemas/Language'
       type: object
+    QualitySource:
+      enum:
+      - unknown
+      - cam
+      - telesync
+      - telecine
+      - workprint
+      - dvd
+      - tv
+      - webdl
+      - webrip
+      - bluray
+      type: string
     QueueBulkResource:
       additionalProperties: false
       example:
@@ -22741,19 +22754,6 @@ components:
       - default
       - ascending
       - descending
-      type: string
-    Source:
-      enum:
-      - unknown
-      - cam
-      - telesync
-      - telecine
-      - workprint
-      - dvd
-      - tv
-      - webdl
-      - webrip
-      - bluray
       type: string
     SourceType:
       enum:
