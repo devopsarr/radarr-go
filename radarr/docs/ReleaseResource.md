@@ -23,6 +23,7 @@ Name | Type | Description | Notes
 **SceneSource** | Pointer to **bool** |  | [optional] 
 **MovieTitles** | Pointer to **[]string** |  | [optional] 
 **Languages** | Pointer to [**[]Language**](Language.md) |  | [optional] 
+**MappedMovieId** | Pointer to **NullableInt32** |  | [optional] 
 **Approved** | Pointer to **bool** |  | [optional] 
 **TemporarilyRejected** | Pointer to **bool** |  | [optional] 
 **Rejected** | Pointer to **bool** |  | [optional] 
@@ -43,6 +44,8 @@ Name | Type | Description | Notes
 **Leechers** | Pointer to **NullableInt32** |  | [optional] 
 **Protocol** | Pointer to [**DownloadProtocol**](DownloadProtocol.md) |  | [optional] 
 **MovieId** | Pointer to **NullableInt32** |  | [optional] 
+**DownloadClientId** | Pointer to **NullableInt32** |  | [optional] 
+**ShouldOverride** | Pointer to **NullableBool** |  | [optional] 
 
 ## Methods
 
@@ -628,6 +631,41 @@ HasLanguages returns a boolean if a field has been set.
 `func (o *ReleaseResource) UnsetLanguages()`
 
 UnsetLanguages ensures that no value is present for Languages, not even an explicit nil
+### GetMappedMovieId
+
+`func (o *ReleaseResource) GetMappedMovieId() int32`
+
+GetMappedMovieId returns the MappedMovieId field if non-nil, zero value otherwise.
+
+### GetMappedMovieIdOk
+
+`func (o *ReleaseResource) GetMappedMovieIdOk() (*int32, bool)`
+
+GetMappedMovieIdOk returns a tuple with the MappedMovieId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMappedMovieId
+
+`func (o *ReleaseResource) SetMappedMovieId(v int32)`
+
+SetMappedMovieId sets MappedMovieId field to given value.
+
+### HasMappedMovieId
+
+`func (o *ReleaseResource) HasMappedMovieId() bool`
+
+HasMappedMovieId returns a boolean if a field has been set.
+
+### SetMappedMovieIdNil
+
+`func (o *ReleaseResource) SetMappedMovieIdNil(b bool)`
+
+ SetMappedMovieIdNil sets the value for MappedMovieId to be an explicit nil
+
+### UnsetMappedMovieId
+`func (o *ReleaseResource) UnsetMappedMovieId()`
+
+UnsetMappedMovieId ensures that no value is present for MappedMovieId, not even an explicit nil
 ### GetApproved
 
 `func (o *ReleaseResource) GetApproved() bool`
@@ -1238,6 +1276,76 @@ HasMovieId returns a boolean if a field has been set.
 `func (o *ReleaseResource) UnsetMovieId()`
 
 UnsetMovieId ensures that no value is present for MovieId, not even an explicit nil
+### GetDownloadClientId
+
+`func (o *ReleaseResource) GetDownloadClientId() int32`
+
+GetDownloadClientId returns the DownloadClientId field if non-nil, zero value otherwise.
+
+### GetDownloadClientIdOk
+
+`func (o *ReleaseResource) GetDownloadClientIdOk() (*int32, bool)`
+
+GetDownloadClientIdOk returns a tuple with the DownloadClientId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDownloadClientId
+
+`func (o *ReleaseResource) SetDownloadClientId(v int32)`
+
+SetDownloadClientId sets DownloadClientId field to given value.
+
+### HasDownloadClientId
+
+`func (o *ReleaseResource) HasDownloadClientId() bool`
+
+HasDownloadClientId returns a boolean if a field has been set.
+
+### SetDownloadClientIdNil
+
+`func (o *ReleaseResource) SetDownloadClientIdNil(b bool)`
+
+ SetDownloadClientIdNil sets the value for DownloadClientId to be an explicit nil
+
+### UnsetDownloadClientId
+`func (o *ReleaseResource) UnsetDownloadClientId()`
+
+UnsetDownloadClientId ensures that no value is present for DownloadClientId, not even an explicit nil
+### GetShouldOverride
+
+`func (o *ReleaseResource) GetShouldOverride() bool`
+
+GetShouldOverride returns the ShouldOverride field if non-nil, zero value otherwise.
+
+### GetShouldOverrideOk
+
+`func (o *ReleaseResource) GetShouldOverrideOk() (*bool, bool)`
+
+GetShouldOverrideOk returns a tuple with the ShouldOverride field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetShouldOverride
+
+`func (o *ReleaseResource) SetShouldOverride(v bool)`
+
+SetShouldOverride sets ShouldOverride field to given value.
+
+### HasShouldOverride
+
+`func (o *ReleaseResource) HasShouldOverride() bool`
+
+HasShouldOverride returns a boolean if a field has been set.
+
+### SetShouldOverrideNil
+
+`func (o *ReleaseResource) SetShouldOverrideNil(b bool)`
+
+ SetShouldOverrideNil sets the value for ShouldOverride to be an explicit nil
+
+### UnsetShouldOverride
+`func (o *ReleaseResource) UnsetShouldOverride()`
+
+UnsetShouldOverride ensures that no value is present for ShouldOverride, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

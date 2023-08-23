@@ -4709,17 +4709,7 @@ paths:
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                items:
-                  $ref: '#/components/schemas/ReleaseResource'
-                type: array
             application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/ReleaseResource'
-                type: array
-            text/json:
               schema:
                 items:
                   $ref: '#/components/schemas/ReleaseResource'
@@ -4732,12 +4722,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/ReleaseResource'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/ReleaseResource'
-          application/*+json:
             schema:
               $ref: '#/components/schemas/ReleaseResource'
       responses:
@@ -22174,10 +22158,11 @@ components:
         rejections:
         - rejections
         - rejections
+        downloadClientId: 6
         ageMinutes: 2.3021358869347655
         leechers: 1
         rejected: true
-        imdbId: 2
+        imdbId: 4
         releaseHash: releaseHash
         commentUrl: commentUrl
         publishDate: 2000-01-23T04:56:07.000+00:00
@@ -22186,15 +22171,17 @@ components:
         infoHash: infoHash
         movieId: 1
         title: title
-        seeders: 7
+        shouldOverride: true
+        seeders: 1
         approved: true
         protocol: null
-        tmdbId: 3
+        tmdbId: 2
         infoUrl: infoUrl
         id: 0
-        releaseWeight: 4
+        releaseWeight: 7
         qualityWeight: 1
         indexerId: 9
+        mappedMovieId: 3
         movieTitles:
         - movieTitles
         - movieTitles
@@ -22557,6 +22544,10 @@ components:
             $ref: '#/components/schemas/Language'
           nullable: true
           type: array
+        mappedMovieId:
+          format: int32
+          nullable: true
+          type: integer
         approved:
           type: boolean
         temporarilyRejected:
@@ -22619,6 +22610,13 @@ components:
           format: int32
           nullable: true
           type: integer
+        downloadClientId:
+          format: int32
+          nullable: true
+          type: integer
+        shouldOverride:
+          nullable: true
+          type: boolean
       type: object
     RemotePathMappingResource:
       additionalProperties: false

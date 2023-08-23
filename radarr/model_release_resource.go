@@ -36,6 +36,7 @@ type ReleaseResource struct {
 	SceneSource *bool `json:"sceneSource,omitempty"`
 	MovieTitles []*string `json:"movieTitles,omitempty"`
 	Languages []*Language `json:"languages,omitempty"`
+	MappedMovieId NullableInt32 `json:"mappedMovieId,omitempty"`
 	Approved *bool `json:"approved,omitempty"`
 	TemporarilyRejected *bool `json:"temporarilyRejected,omitempty"`
 	Rejected *bool `json:"rejected,omitempty"`
@@ -56,6 +57,8 @@ type ReleaseResource struct {
 	Leechers NullableInt32 `json:"leechers,omitempty"`
 	Protocol *DownloadProtocol `json:"protocol,omitempty"`
 	MovieId NullableInt32 `json:"movieId,omitempty"`
+	DownloadClientId NullableInt32 `json:"downloadClientId,omitempty"`
+	ShouldOverride NullableBool `json:"shouldOverride,omitempty"`
 }
 
 // NewReleaseResource instantiates a new ReleaseResource object
@@ -744,6 +747,48 @@ func (o *ReleaseResource) HasLanguages() bool {
 // SetLanguages gets a reference to the given []Language and assigns it to the Languages field.
 func (o *ReleaseResource) SetLanguages(v []*Language) {
 	o.Languages = v
+}
+
+// GetMappedMovieId returns the MappedMovieId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ReleaseResource) GetMappedMovieId() int32 {
+	if o == nil || isNil(o.MappedMovieId.Get()) {
+		var ret int32
+		return ret
+	}
+	return *o.MappedMovieId.Get()
+}
+
+// GetMappedMovieIdOk returns a tuple with the MappedMovieId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ReleaseResource) GetMappedMovieIdOk() (*int32, bool) {
+	if o == nil {
+    return nil, false
+	}
+	return o.MappedMovieId.Get(), o.MappedMovieId.IsSet()
+}
+
+// HasMappedMovieId returns a boolean if a field has been set.
+func (o *ReleaseResource) HasMappedMovieId() bool {
+	if o != nil && o.MappedMovieId.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetMappedMovieId gets a reference to the given NullableInt32 and assigns it to the MappedMovieId field.
+func (o *ReleaseResource) SetMappedMovieId(v int32) {
+	o.MappedMovieId.Set(&v)
+}
+// SetMappedMovieIdNil sets the value for MappedMovieId to be an explicit nil
+func (o *ReleaseResource) SetMappedMovieIdNil() {
+	o.MappedMovieId.Set(nil)
+}
+
+// UnsetMappedMovieId ensures that no value is present for MappedMovieId, not even an explicit nil
+func (o *ReleaseResource) UnsetMappedMovieId() {
+	o.MappedMovieId.Unset()
 }
 
 // GetApproved returns the Approved field value if set, zero value otherwise.
@@ -1478,6 +1523,90 @@ func (o *ReleaseResource) UnsetMovieId() {
 	o.MovieId.Unset()
 }
 
+// GetDownloadClientId returns the DownloadClientId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ReleaseResource) GetDownloadClientId() int32 {
+	if o == nil || isNil(o.DownloadClientId.Get()) {
+		var ret int32
+		return ret
+	}
+	return *o.DownloadClientId.Get()
+}
+
+// GetDownloadClientIdOk returns a tuple with the DownloadClientId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ReleaseResource) GetDownloadClientIdOk() (*int32, bool) {
+	if o == nil {
+    return nil, false
+	}
+	return o.DownloadClientId.Get(), o.DownloadClientId.IsSet()
+}
+
+// HasDownloadClientId returns a boolean if a field has been set.
+func (o *ReleaseResource) HasDownloadClientId() bool {
+	if o != nil && o.DownloadClientId.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetDownloadClientId gets a reference to the given NullableInt32 and assigns it to the DownloadClientId field.
+func (o *ReleaseResource) SetDownloadClientId(v int32) {
+	o.DownloadClientId.Set(&v)
+}
+// SetDownloadClientIdNil sets the value for DownloadClientId to be an explicit nil
+func (o *ReleaseResource) SetDownloadClientIdNil() {
+	o.DownloadClientId.Set(nil)
+}
+
+// UnsetDownloadClientId ensures that no value is present for DownloadClientId, not even an explicit nil
+func (o *ReleaseResource) UnsetDownloadClientId() {
+	o.DownloadClientId.Unset()
+}
+
+// GetShouldOverride returns the ShouldOverride field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ReleaseResource) GetShouldOverride() bool {
+	if o == nil || isNil(o.ShouldOverride.Get()) {
+		var ret bool
+		return ret
+	}
+	return *o.ShouldOverride.Get()
+}
+
+// GetShouldOverrideOk returns a tuple with the ShouldOverride field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ReleaseResource) GetShouldOverrideOk() (*bool, bool) {
+	if o == nil {
+    return nil, false
+	}
+	return o.ShouldOverride.Get(), o.ShouldOverride.IsSet()
+}
+
+// HasShouldOverride returns a boolean if a field has been set.
+func (o *ReleaseResource) HasShouldOverride() bool {
+	if o != nil && o.ShouldOverride.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetShouldOverride gets a reference to the given NullableBool and assigns it to the ShouldOverride field.
+func (o *ReleaseResource) SetShouldOverride(v bool) {
+	o.ShouldOverride.Set(&v)
+}
+// SetShouldOverrideNil sets the value for ShouldOverride to be an explicit nil
+func (o *ReleaseResource) SetShouldOverrideNil() {
+	o.ShouldOverride.Set(nil)
+}
+
+// UnsetShouldOverride ensures that no value is present for ShouldOverride, not even an explicit nil
+func (o *ReleaseResource) UnsetShouldOverride() {
+	o.ShouldOverride.Unset()
+}
+
 func (o ReleaseResource) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Id) {
@@ -1536,6 +1665,9 @@ func (o ReleaseResource) MarshalJSON() ([]byte, error) {
 	}
 	if o.Languages != nil {
 		toSerialize["languages"] = o.Languages
+	}
+	if o.MappedMovieId.IsSet() {
+		toSerialize["mappedMovieId"] = o.MappedMovieId.Get()
 	}
 	if !isNil(o.Approved) {
 		toSerialize["approved"] = o.Approved
@@ -1596,6 +1728,12 @@ func (o ReleaseResource) MarshalJSON() ([]byte, error) {
 	}
 	if o.MovieId.IsSet() {
 		toSerialize["movieId"] = o.MovieId.Get()
+	}
+	if o.DownloadClientId.IsSet() {
+		toSerialize["downloadClientId"] = o.DownloadClientId.Get()
+	}
+	if o.ShouldOverride.IsSet() {
+		toSerialize["shouldOverride"] = o.ShouldOverride.Get()
 	}
 	return json.Marshal(toSerialize)
 }
