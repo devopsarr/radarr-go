@@ -90,8 +90,8 @@ Class | Method | HTTP request | Description
 *AutoTaggingApi* | [**CreateAutoTagging**](radarr/docs/AutoTaggingApi.md#createautotagging) | **Post** /api/v3/autotagging | 
 *AutoTaggingApi* | [**DeleteAutoTagging**](radarr/docs/AutoTaggingApi.md#deleteautotagging) | **Delete** /api/v3/autotagging/{id} | 
 *AutoTaggingApi* | [**GetAutoTaggingById**](radarr/docs/AutoTaggingApi.md#getautotaggingbyid) | **Get** /api/v3/autotagging/{id} | 
-*AutoTaggingApi* | [**GetAutoTaggingSchema**](radarr/docs/AutoTaggingApi.md#getautotaggingschema) | **Get** /api/v3/autotagging/schema | 
 *AutoTaggingApi* | [**ListAutoTagging**](radarr/docs/AutoTaggingApi.md#listautotagging) | **Get** /api/v3/autotagging | 
+*AutoTaggingApi* | [**ListAutoTaggingSchema**](radarr/docs/AutoTaggingApi.md#listautotaggingschema) | **Get** /api/v3/autotagging/schema | 
 *AutoTaggingApi* | [**UpdateAutoTagging**](radarr/docs/AutoTaggingApi.md#updateautotagging) | **Put** /api/v3/autotagging/{id} | 
 *BackupApi* | [**CreateSystemBackupRestoreById**](radarr/docs/BackupApi.md#createsystembackuprestorebyid) | **Post** /api/v3/system/backup/restore/{id} | 
 *BackupApi* | [**CreateSystemBackupRestoreUpload**](radarr/docs/BackupApi.md#createsystembackuprestoreupload) | **Post** /api/v3/system/backup/restore/upload | 
@@ -122,8 +122,8 @@ Class | Method | HTTP request | Description
 *CustomFormatApi* | [**CreateCustomFormat**](radarr/docs/CustomFormatApi.md#createcustomformat) | **Post** /api/v3/customformat | 
 *CustomFormatApi* | [**DeleteCustomFormat**](radarr/docs/CustomFormatApi.md#deletecustomformat) | **Delete** /api/v3/customformat/{id} | 
 *CustomFormatApi* | [**GetCustomFormatById**](radarr/docs/CustomFormatApi.md#getcustomformatbyid) | **Get** /api/v3/customformat/{id} | 
-*CustomFormatApi* | [**GetCustomFormatSchema**](radarr/docs/CustomFormatApi.md#getcustomformatschema) | **Get** /api/v3/customformat/schema | 
 *CustomFormatApi* | [**ListCustomFormat**](radarr/docs/CustomFormatApi.md#listcustomformat) | **Get** /api/v3/customformat | 
+*CustomFormatApi* | [**ListCustomFormatSchema**](radarr/docs/CustomFormatApi.md#listcustomformatschema) | **Get** /api/v3/customformat/schema | 
 *CustomFormatApi* | [**UpdateCustomFormat**](radarr/docs/CustomFormatApi.md#updatecustomformat) | **Put** /api/v3/customformat/{id} | 
 *DelayProfileApi* | [**CreateDelayProfile**](radarr/docs/DelayProfileApi.md#createdelayprofile) | **Post** /api/v3/delayprofile | 
 *DelayProfileApi* | [**DeleteDelayProfile**](radarr/docs/DelayProfileApi.md#deletedelayprofile) | **Delete** /api/v3/delayprofile/{id} | 
