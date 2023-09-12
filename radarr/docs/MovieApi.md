@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 
 ## ListMovie
 
-> []MovieResource ListMovie(ctx).TmdbId(tmdbId).Execute()
+> []MovieResource ListMovie(ctx).TmdbId(tmdbId).ExcludeLocalCovers(excludeLocalCovers).Execute()
 
 
 
@@ -234,10 +234,11 @@ import (
 
 func main() {
     tmdbId := int32(56) // int32 |  (optional)
+    excludeLocalCovers := true // bool |  (optional) (default to false)
 
     configuration := radarrClient.NewConfiguration()
     apiClient := radarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MovieApi.ListMovie(context.Background()).TmdbId(tmdbId).Execute()
+    resp, r, err := apiClient.MovieApi.ListMovie(context.Background()).TmdbId(tmdbId).ExcludeLocalCovers(excludeLocalCovers).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MovieApi.ListMovie``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -259,6 +260,7 @@ Other parameters are passed through a pointer to a apiListMovieRequest struct vi
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tmdbId** | **int32** |  | 
+ **excludeLocalCovers** | **bool** |  | [default to false]
 
 ### Return type
 

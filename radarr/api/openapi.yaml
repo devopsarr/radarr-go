@@ -735,7 +735,7 @@ paths:
       - Command
   /api/v3/credit:
     get:
-      operationId: ListCredit
+      operationId: GetCredit
       parameters:
       - explode: true
         in: query
@@ -755,22 +755,6 @@ paths:
         style: form
       responses:
         "200":
-          content:
-            text/plain:
-              schema:
-                items:
-                  $ref: '#/components/schemas/CreditResource'
-                type: array
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/CreditResource'
-                type: array
-            text/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/CreditResource'
-                type: array
           description: Success
       tags:
       - Credit
@@ -3265,6 +3249,14 @@ paths:
           format: int32
           type: integer
         style: form
+      - explode: true
+        in: query
+        name: excludeLocalCovers
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
       responses:
         "200":
           content:
@@ -3479,17 +3471,7 @@ paths:
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                items:
-                  $ref: '#/components/schemas/MovieFileResource'
-                type: array
             application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/MovieFileResource'
-                type: array
-            text/json:
               schema:
                 items:
                   $ref: '#/components/schemas/MovieFileResource'
@@ -3555,12 +3537,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/MovieFileResource'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/MovieFileResource'
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/MovieFileResource'
       responses:
         "200":
           content:
@@ -3584,12 +3560,6 @@ paths:
           application/json:
             schema:
               $ref: '#/components/schemas/MovieFileListResource'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/MovieFileListResource'
-          application/*+json:
-            schema:
-              $ref: '#/components/schemas/MovieFileListResource'
       responses:
         "200":
           description: Success
@@ -3601,12 +3571,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              $ref: '#/components/schemas/MovieFileListResource'
-          text/json:
-            schema:
-              $ref: '#/components/schemas/MovieFileListResource'
-          application/*+json:
             schema:
               $ref: '#/components/schemas/MovieFileListResource'
       responses:
