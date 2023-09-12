@@ -421,10 +421,16 @@ type ApiListMovieRequest struct {
 	ctx context.Context
 	ApiService *MovieApiService
 	tmdbId *int32
+	excludeLocalCovers *bool
 }
 
 func (r ApiListMovieRequest) TmdbId(tmdbId int32) ApiListMovieRequest {
 	r.tmdbId = &tmdbId
+	return r
+}
+
+func (r ApiListMovieRequest) ExcludeLocalCovers(excludeLocalCovers bool) ApiListMovieRequest {
+	r.excludeLocalCovers = &excludeLocalCovers
 	return r
 }
 
@@ -468,6 +474,9 @@ func (a *MovieApiService) ListMovieExecute(r ApiListMovieRequest) ([]*MovieResou
 
 	if r.tmdbId != nil {
 		localVarQueryParams.Add("tmdbId", parameterToString(*r.tmdbId, ""))
+	}
+	if r.excludeLocalCovers != nil {
+		localVarQueryParams.Add("excludeLocalCovers", parameterToString(*r.excludeLocalCovers, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

@@ -112,8 +112,8 @@ Class | Method | HTTP request | Description
 *CommandApi* | [**DeleteCommand**](radarr/docs/CommandApi.md#deletecommand) | **Delete** /api/v3/command/{id} | 
 *CommandApi* | [**GetCommandById**](radarr/docs/CommandApi.md#getcommandbyid) | **Get** /api/v3/command/{id} | 
 *CommandApi* | [**ListCommand**](radarr/docs/CommandApi.md#listcommand) | **Get** /api/v3/command | 
+*CreditApi* | [**GetCredit**](radarr/docs/CreditApi.md#getcredit) | **Get** /api/v3/credit | 
 *CreditApi* | [**GetCreditById**](radarr/docs/CreditApi.md#getcreditbyid) | **Get** /api/v3/credit/{id} | 
-*CreditApi* | [**ListCredit**](radarr/docs/CreditApi.md#listcredit) | **Get** /api/v3/credit | 
 *CustomFilterApi* | [**CreateCustomFilter**](radarr/docs/CustomFilterApi.md#createcustomfilter) | **Post** /api/v3/customfilter | 
 *CustomFilterApi* | [**DeleteCustomFilter**](radarr/docs/CustomFilterApi.md#deletecustomfilter) | **Delete** /api/v3/customfilter/{id} | 
 *CustomFilterApi* | [**GetCustomFilterById**](radarr/docs/CustomFilterApi.md#getcustomfilterbyid) | **Get** /api/v3/customfilter/{id} | 
