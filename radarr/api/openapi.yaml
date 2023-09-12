@@ -254,9 +254,15 @@ paths:
       - AutoTagging
   /api/v3/autotagging/schema:
     get:
-      operationId: GetAutoTaggingSchema
+      operationId: ListAutoTaggingSchema
       responses:
         "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/AutoTaggingSpecificationSchema'
+                type: array
           description: Success
       tags:
       - AutoTagging
@@ -1027,9 +1033,15 @@ paths:
       - CustomFormat
   /api/v3/customformat/schema:
     get:
-      operationId: GetCustomFormatSchema
+      operationId: ListCustomFormatSchema
       responses:
         "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/CustomFormatSpecificationSchema'
+                type: array
           description: Success
       tags:
       - CustomFormat
