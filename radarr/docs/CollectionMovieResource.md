@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Title** | Pointer to **NullableString** |  | [optional] 
 **CleanTitle** | Pointer to **NullableString** |  | [optional] 
 **SortTitle** | Pointer to **NullableString** |  | [optional] 
+**Status** | Pointer to [**MovieStatusType**](MovieStatusType.md) |  | [optional] 
 **Overview** | Pointer to **NullableString** |  | [optional] 
 **Runtime** | Pointer to **int32** |  | [optional] 
 **Images** | Pointer to [**[]MediaCover**](MediaCover.md) |  | [optional] 
@@ -201,6 +202,31 @@ HasSortTitle returns a boolean if a field has been set.
 `func (o *CollectionMovieResource) UnsetSortTitle()`
 
 UnsetSortTitle ensures that no value is present for SortTitle, not even an explicit nil
+### GetStatus
+
+`func (o *CollectionMovieResource) GetStatus() MovieStatusType`
+
+GetStatus returns the Status field if non-nil, zero value otherwise.
+
+### GetStatusOk
+
+`func (o *CollectionMovieResource) GetStatusOk() (*MovieStatusType, bool)`
+
+GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatus
+
+`func (o *CollectionMovieResource) SetStatus(v MovieStatusType)`
+
+SetStatus sets Status field to given value.
+
+### HasStatus
+
+`func (o *CollectionMovieResource) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
+
 ### GetOverview
 
 `func (o *CollectionMovieResource) GetOverview() string`
