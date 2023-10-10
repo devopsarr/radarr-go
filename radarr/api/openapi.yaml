@@ -8806,8 +8806,6 @@ components:
     CollectionMovieResource:
       additionalProperties: false
       example:
-        cleanTitle: cleanTitle
-        sortTitle: sortTitle
         overview: overview
         images:
         - coverType: null
@@ -8816,10 +8814,14 @@ components:
         - coverType: null
           remoteUrl: remoteUrl
           url: url
-        tmdbId: 5
-        folder: folder
         year: 2
         imdbId: imdbId
+        runtime: 5
+        title: title
+        cleanTitle: cleanTitle
+        sortTitle: sortTitle
+        tmdbId: 5
+        folder: folder
         ratings:
           tmdb:
             votes: 9
@@ -8840,8 +8842,7 @@ components:
         genres:
         - genres
         - genres
-        runtime: 5
-        title: title
+        status: null
       properties:
         tmdbId:
           format: int32
@@ -8858,6 +8859,8 @@ components:
         sortTitle:
           nullable: true
           type: string
+        status:
+          $ref: '#/components/schemas/MovieStatusType'
         overview:
           nullable: true
           type: string
@@ -8905,9 +8908,7 @@ components:
         - 9
         sortTitle: sortTitle
         movies:
-        - cleanTitle: cleanTitle
-          sortTitle: sortTitle
-          overview: overview
+        - overview: overview
           images:
           - coverType: null
             remoteUrl: remoteUrl
@@ -8915,10 +8916,14 @@ components:
           - coverType: null
             remoteUrl: remoteUrl
             url: url
-          tmdbId: 5
-          folder: folder
           year: 2
           imdbId: imdbId
+          runtime: 5
+          title: title
+          cleanTitle: cleanTitle
+          sortTitle: sortTitle
+          tmdbId: 5
+          folder: folder
           ratings:
             tmdb:
               votes: 9
@@ -8939,11 +8944,8 @@ components:
           genres:
           - genres
           - genres
-          runtime: 5
-          title: title
-        - cleanTitle: cleanTitle
-          sortTitle: sortTitle
-          overview: overview
+          status: null
+        - overview: overview
           images:
           - coverType: null
             remoteUrl: remoteUrl
@@ -8951,10 +8953,14 @@ components:
           - coverType: null
             remoteUrl: remoteUrl
             url: url
-          tmdbId: 5
-          folder: folder
           year: 2
           imdbId: imdbId
+          runtime: 5
+          title: title
+          cleanTitle: cleanTitle
+          sortTitle: sortTitle
+          tmdbId: 5
+          folder: folder
           ratings:
             tmdb:
               votes: 9
@@ -8975,8 +8981,7 @@ components:
           genres:
           - genres
           - genres
-          runtime: 5
-          title: title
+          status: null
         tmdbId: 6
         qualityProfileId: 1
         id: 0

@@ -21,6 +21,7 @@ type CollectionMovieResource struct {
 	Title NullableString `json:"title,omitempty"`
 	CleanTitle NullableString `json:"cleanTitle,omitempty"`
 	SortTitle NullableString `json:"sortTitle,omitempty"`
+	Status *MovieStatusType `json:"status,omitempty"`
 	Overview NullableString `json:"overview,omitempty"`
 	Runtime *int32 `json:"runtime,omitempty"`
 	Images []*MediaCover `json:"images,omitempty"`
@@ -245,6 +246,38 @@ func (o *CollectionMovieResource) SetSortTitleNil() {
 // UnsetSortTitle ensures that no value is present for SortTitle, not even an explicit nil
 func (o *CollectionMovieResource) UnsetSortTitle() {
 	o.SortTitle.Unset()
+}
+
+// GetStatus returns the Status field value if set, zero value otherwise.
+func (o *CollectionMovieResource) GetStatus() MovieStatusType {
+	if o == nil || isNil(o.Status) {
+		var ret MovieStatusType
+		return ret
+	}
+	return *o.Status
+}
+
+// GetStatusOk returns a tuple with the Status field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CollectionMovieResource) GetStatusOk() (*MovieStatusType, bool) {
+	if o == nil || isNil(o.Status) {
+    return nil, false
+	}
+	return o.Status, true
+}
+
+// HasStatus returns a boolean if a field has been set.
+func (o *CollectionMovieResource) HasStatus() bool {
+	if o != nil && !isNil(o.Status) {
+		return true
+	}
+
+	return false
+}
+
+// SetStatus gets a reference to the given MovieStatusType and assigns it to the Status field.
+func (o *CollectionMovieResource) SetStatus(v MovieStatusType) {
+	o.Status = &v
 }
 
 // GetOverview returns the Overview field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -509,6 +542,9 @@ func (o CollectionMovieResource) MarshalJSON() ([]byte, error) {
 	}
 	if o.SortTitle.IsSet() {
 		toSerialize["sortTitle"] = o.SortTitle.Get()
+	}
+	if !isNil(o.Status) {
+		toSerialize["status"] = o.Status
 	}
 	if o.Overview.IsSet() {
 		toSerialize["overview"] = o.Overview.Get()
