@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ## GetQueue
 
-> QueueResourcePagingResource GetQueue(ctx).IncludeUnknownMovieItems(includeUnknownMovieItems).IncludeMovie(includeMovie).Execute()
+> QueueResourcePagingResource GetQueue(ctx).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeUnknownMovieItems(includeUnknownMovieItems).IncludeMovie(includeMovie).Execute()
 
 
 
@@ -170,12 +170,16 @@ import (
 )
 
 func main() {
+    page := int32(56) // int32 |  (optional) (default to 1)
+    pageSize := int32(56) // int32 |  (optional) (default to 10)
+    sortKey := "sortKey_example" // string |  (optional)
+    sortDirection := radarrClient.SortDirection("default") // SortDirection |  (optional)
     includeUnknownMovieItems := true // bool |  (optional) (default to false)
     includeMovie := true // bool |  (optional) (default to false)
 
     configuration := radarrClient.NewConfiguration()
     apiClient := radarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QueueApi.GetQueue(context.Background()).IncludeUnknownMovieItems(includeUnknownMovieItems).IncludeMovie(includeMovie).Execute()
+    resp, r, err := apiClient.QueueApi.GetQueue(context.Background()).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeUnknownMovieItems(includeUnknownMovieItems).IncludeMovie(includeMovie).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `QueueApi.GetQueue``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -196,6 +200,10 @@ Other parameters are passed through a pointer to a apiGetQueueRequest struct via
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **page** | **int32** |  | [default to 1]
+ **pageSize** | **int32** |  | [default to 10]
+ **sortKey** | **string** |  | 
+ **sortDirection** | [**SortDirection**](SortDirection.md) |  | 
  **includeUnknownMovieItems** | **bool** |  | [default to false]
  **includeMovie** | **bool** |  | [default to false]
 
@@ -210,7 +218,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
