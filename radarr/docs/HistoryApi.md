@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 ## GetHistory
 
-> HistoryResourcePagingResource GetHistory(ctx).IncludeMovie(includeMovie).Execute()
+> HistoryResourcePagingResource GetHistory(ctx).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeMovie(includeMovie).EventType(eventType).DownloadId(downloadId).Execute()
 
 
 
@@ -96,11 +96,17 @@ import (
 )
 
 func main() {
+    page := int32(56) // int32 |  (optional) (default to 1)
+    pageSize := int32(56) // int32 |  (optional) (default to 10)
+    sortKey := "sortKey_example" // string |  (optional)
+    sortDirection := radarrClient.SortDirection("default") // SortDirection |  (optional)
     includeMovie := true // bool |  (optional)
+    eventType := int32(56) // int32 |  (optional)
+    downloadId := "downloadId_example" // string |  (optional)
 
     configuration := radarrClient.NewConfiguration()
     apiClient := radarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HistoryApi.GetHistory(context.Background()).IncludeMovie(includeMovie).Execute()
+    resp, r, err := apiClient.HistoryApi.GetHistory(context.Background()).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeMovie(includeMovie).EventType(eventType).DownloadId(downloadId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HistoryApi.GetHistory``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -121,7 +127,13 @@ Other parameters are passed through a pointer to a apiGetHistoryRequest struct v
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **page** | **int32** |  | [default to 1]
+ **pageSize** | **int32** |  | [default to 10]
+ **sortKey** | **string** |  | 
+ **sortDirection** | [**SortDirection**](SortDirection.md) |  | 
  **includeMovie** | **bool** |  | 
+ **eventType** | **int32** |  | 
+ **downloadId** | **string** |  | 
 
 ### Return type
 
@@ -134,7 +146,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

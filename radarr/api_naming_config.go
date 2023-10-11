@@ -382,37 +382,37 @@ func (a *NamingConfigApiService) GetNamingConfigExamplesExecute(r ApiGetNamingCo
 	localVarFormParams := url.Values{}
 
 	if r.renameMovies != nil {
-		localVarQueryParams.Add("RenameMovies", parameterToString(*r.renameMovies, ""))
+		localVarQueryParams.Add("renameMovies", parameterToString(*r.renameMovies, ""))
 	}
 	if r.replaceIllegalCharacters != nil {
-		localVarQueryParams.Add("ReplaceIllegalCharacters", parameterToString(*r.replaceIllegalCharacters, ""))
+		localVarQueryParams.Add("replaceIllegalCharacters", parameterToString(*r.replaceIllegalCharacters, ""))
 	}
 	if r.colonReplacementFormat != nil {
-		localVarQueryParams.Add("ColonReplacementFormat", parameterToString(*r.colonReplacementFormat, ""))
+		localVarQueryParams.Add("colonReplacementFormat", parameterToString(*r.colonReplacementFormat, ""))
 	}
 	if r.standardMovieFormat != nil {
-		localVarQueryParams.Add("StandardMovieFormat", parameterToString(*r.standardMovieFormat, ""))
+		localVarQueryParams.Add("standardMovieFormat", parameterToString(*r.standardMovieFormat, ""))
 	}
 	if r.movieFolderFormat != nil {
-		localVarQueryParams.Add("MovieFolderFormat", parameterToString(*r.movieFolderFormat, ""))
+		localVarQueryParams.Add("movieFolderFormat", parameterToString(*r.movieFolderFormat, ""))
 	}
 	if r.includeQuality != nil {
-		localVarQueryParams.Add("IncludeQuality", parameterToString(*r.includeQuality, ""))
+		localVarQueryParams.Add("includeQuality", parameterToString(*r.includeQuality, ""))
 	}
 	if r.replaceSpaces != nil {
-		localVarQueryParams.Add("ReplaceSpaces", parameterToString(*r.replaceSpaces, ""))
+		localVarQueryParams.Add("replaceSpaces", parameterToString(*r.replaceSpaces, ""))
 	}
 	if r.separator != nil {
-		localVarQueryParams.Add("Separator", parameterToString(*r.separator, ""))
+		localVarQueryParams.Add("separator", parameterToString(*r.separator, ""))
 	}
 	if r.numberStyle != nil {
-		localVarQueryParams.Add("NumberStyle", parameterToString(*r.numberStyle, ""))
+		localVarQueryParams.Add("numberStyle", parameterToString(*r.numberStyle, ""))
 	}
 	if r.id != nil {
-		localVarQueryParams.Add("Id", parameterToString(*r.id, ""))
+		localVarQueryParams.Add("id", parameterToString(*r.id, ""))
 	}
 	if r.resourceName != nil {
-		localVarQueryParams.Add("ResourceName", parameterToString(*r.resourceName, ""))
+		localVarQueryParams.Add("resourceName", parameterToString(*r.resourceName, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

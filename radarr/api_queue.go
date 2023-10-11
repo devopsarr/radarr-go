@@ -317,8 +317,32 @@ func (a *QueueApiService) DeleteQueueBulkExecute(r ApiDeleteQueueBulkRequest) (*
 type ApiGetQueueRequest struct {
 	ctx context.Context
 	ApiService *QueueApiService
+	page *int32
+	pageSize *int32
+	sortKey *string
+	sortDirection *SortDirection
 	includeUnknownMovieItems *bool
 	includeMovie *bool
+}
+
+func (r ApiGetQueueRequest) Page(page int32) ApiGetQueueRequest {
+	r.page = &page
+	return r
+}
+
+func (r ApiGetQueueRequest) PageSize(pageSize int32) ApiGetQueueRequest {
+	r.pageSize = &pageSize
+	return r
+}
+
+func (r ApiGetQueueRequest) SortKey(sortKey string) ApiGetQueueRequest {
+	r.sortKey = &sortKey
+	return r
+}
+
+func (r ApiGetQueueRequest) SortDirection(sortDirection SortDirection) ApiGetQueueRequest {
+	r.sortDirection = &sortDirection
+	return r
 }
 
 func (r ApiGetQueueRequest) IncludeUnknownMovieItems(includeUnknownMovieItems bool) ApiGetQueueRequest {
@@ -369,6 +393,18 @@ func (a *QueueApiService) GetQueueExecute(r ApiGetQueueRequest) (*QueueResourceP
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
+	if r.page != nil {
+		localVarQueryParams.Add("page", parameterToString(*r.page, ""))
+	}
+	if r.pageSize != nil {
+		localVarQueryParams.Add("pageSize", parameterToString(*r.pageSize, ""))
+	}
+	if r.sortKey != nil {
+		localVarQueryParams.Add("sortKey", parameterToString(*r.sortKey, ""))
+	}
+	if r.sortDirection != nil {
+		localVarQueryParams.Add("sortDirection", parameterToString(*r.sortDirection, ""))
+	}
 	if r.includeUnknownMovieItems != nil {
 		localVarQueryParams.Add("includeUnknownMovieItems", parameterToString(*r.includeUnknownMovieItems, ""))
 	}
@@ -385,7 +421,7 @@ func (a *QueueApiService) GetQueueExecute(r ApiGetQueueRequest) (*QueueResourceP
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain", "application/json", "text/json"}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)

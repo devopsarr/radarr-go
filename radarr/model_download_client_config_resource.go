@@ -21,6 +21,7 @@ type DownloadClientConfigResource struct {
 	EnableCompletedDownloadHandling *bool `json:"enableCompletedDownloadHandling,omitempty"`
 	CheckForFinishedDownloadInterval *int32 `json:"checkForFinishedDownloadInterval,omitempty"`
 	AutoRedownloadFailed *bool `json:"autoRedownloadFailed,omitempty"`
+	AutoRedownloadFailedFromInteractiveSearch *bool `json:"autoRedownloadFailedFromInteractiveSearch,omitempty"`
 }
 
 // NewDownloadClientConfigResource instantiates a new DownloadClientConfigResource object
@@ -210,6 +211,38 @@ func (o *DownloadClientConfigResource) SetAutoRedownloadFailed(v bool) {
 	o.AutoRedownloadFailed = &v
 }
 
+// GetAutoRedownloadFailedFromInteractiveSearch returns the AutoRedownloadFailedFromInteractiveSearch field value if set, zero value otherwise.
+func (o *DownloadClientConfigResource) GetAutoRedownloadFailedFromInteractiveSearch() bool {
+	if o == nil || isNil(o.AutoRedownloadFailedFromInteractiveSearch) {
+		var ret bool
+		return ret
+	}
+	return *o.AutoRedownloadFailedFromInteractiveSearch
+}
+
+// GetAutoRedownloadFailedFromInteractiveSearchOk returns a tuple with the AutoRedownloadFailedFromInteractiveSearch field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DownloadClientConfigResource) GetAutoRedownloadFailedFromInteractiveSearchOk() (*bool, bool) {
+	if o == nil || isNil(o.AutoRedownloadFailedFromInteractiveSearch) {
+    return nil, false
+	}
+	return o.AutoRedownloadFailedFromInteractiveSearch, true
+}
+
+// HasAutoRedownloadFailedFromInteractiveSearch returns a boolean if a field has been set.
+func (o *DownloadClientConfigResource) HasAutoRedownloadFailedFromInteractiveSearch() bool {
+	if o != nil && !isNil(o.AutoRedownloadFailedFromInteractiveSearch) {
+		return true
+	}
+
+	return false
+}
+
+// SetAutoRedownloadFailedFromInteractiveSearch gets a reference to the given bool and assigns it to the AutoRedownloadFailedFromInteractiveSearch field.
+func (o *DownloadClientConfigResource) SetAutoRedownloadFailedFromInteractiveSearch(v bool) {
+	o.AutoRedownloadFailedFromInteractiveSearch = &v
+}
+
 func (o DownloadClientConfigResource) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if !isNil(o.Id) {
@@ -226,6 +259,9 @@ func (o DownloadClientConfigResource) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.AutoRedownloadFailed) {
 		toSerialize["autoRedownloadFailed"] = o.AutoRedownloadFailed
+	}
+	if !isNil(o.AutoRedownloadFailedFromInteractiveSearch) {
+		toSerialize["autoRedownloadFailedFromInteractiveSearch"] = o.AutoRedownloadFailedFromInteractiveSearch
 	}
 	return json.Marshal(toSerialize)
 }
