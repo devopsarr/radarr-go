@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost:7878*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetMediaCovermovieIdByFilename**](MediaCoverApi.md#GetMediaCovermovieIdByFilename) | **Get** /api/v3/mediacover/{movieId}/{filename} | 
+[**GetMediaCoverByFilename**](MediaCoverApi.md#GetMediaCoverByFilename) | **Get** /api/v3/mediacover/{movieId}/{filename} | 
 
 
 
-## GetMediaCovermovieIdByFilename
+## GetMediaCoverByFilename
 
-> GetMediaCovermovieIdByFilename(ctx, movieId, filename).Execute()
+> GetMediaCoverByFilename(ctx, movieId, filename).Execute()
 
 
 
@@ -32,9 +32,9 @@ func main() {
 
     configuration := radarrClient.NewConfiguration()
     apiClient := radarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MediaCoverApi.GetMediaCovermovieIdByFilename(context.Background(), movieId, filename).Execute()
+    resp, r, err := apiClient.MediaCoverApi.GetMediaCoverByFilename(context.Background(), movieId, filename).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `MediaCoverApi.GetMediaCovermovieIdByFilename``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `MediaCoverApi.GetMediaCoverByFilename``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
 }
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetMediaCovermovieIdByFilenameRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetMediaCoverByFilenameRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
