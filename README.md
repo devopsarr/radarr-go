@@ -204,7 +204,7 @@ Class | Method | HTTP request | Description
 *LogFileApi* | [**ListLogFile**](radarr/docs/LogFileApi.md#listlogfile) | **Get** /api/v3/log/file | 
 *ManualImportApi* | [**CreateManualImport**](radarr/docs/ManualImportApi.md#createmanualimport) | **Post** /api/v3/manualimport | 
 *ManualImportApi* | [**ListManualImport**](radarr/docs/ManualImportApi.md#listmanualimport) | **Get** /api/v3/manualimport | 
-*MediaCoverApi* | [**GetMediaCovermovieIdByFilename**](radarr/docs/MediaCoverApi.md#getmediacovermovieidbyfilename) | **Get** /api/v3/mediacover/{movieId}/{filename} | 
+*MediaCoverApi* | [**GetMediaCoverByFilename**](radarr/docs/MediaCoverApi.md#getmediacoverbyfilename) | **Get** /api/v3/mediacover/{movieId}/{filename} | 
 *MediaManagementConfigApi* | [**GetMediaManagementConfig**](radarr/docs/MediaManagementConfigApi.md#getmediamanagementconfig) | **Get** /api/v3/config/mediamanagement | 
 *MediaManagementConfigApi* | [**GetMediaManagementConfigById**](radarr/docs/MediaManagementConfigApi.md#getmediamanagementconfigbyid) | **Get** /api/v3/config/mediamanagement/{id} | 
 *MediaManagementConfigApi* | [**UpdateMediaManagementConfig**](radarr/docs/MediaManagementConfigApi.md#updatemediamanagementconfig) | **Put** /api/v3/config/mediamanagement/{id} | 
