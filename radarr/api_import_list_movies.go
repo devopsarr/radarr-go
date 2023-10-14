@@ -19,11 +19,11 @@ import (
 )
 
 
-// ImportListMoviesApiService ImportListMoviesApi service
-type ImportListMoviesApiService service
+// ImportListMoviesAPIService ImportListMoviesAPI service
+type ImportListMoviesAPIService service
 type ApiCreateImportlistMovieRequest struct {
 	ctx context.Context
-	ApiService *ImportListMoviesApiService
+	ApiService *ImportListMoviesAPIService
 	movieResource *[]MovieResource
 }
 
@@ -42,7 +42,7 @@ CreateImportlistMovie Method for CreateImportlistMovie
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateImportlistMovieRequest
 */
-func (a *ImportListMoviesApiService) CreateImportlistMovie(ctx context.Context) ApiCreateImportlistMovieRequest {
+func (a *ImportListMoviesAPIService) CreateImportlistMovie(ctx context.Context) ApiCreateImportlistMovieRequest {
 	return ApiCreateImportlistMovieRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -50,14 +50,14 @@ func (a *ImportListMoviesApiService) CreateImportlistMovie(ctx context.Context) 
 }
 
 // Execute executes the request
-func (a *ImportListMoviesApiService) CreateImportlistMovieExecute(r ApiCreateImportlistMovieRequest) (*http.Response, error) {
+func (a *ImportListMoviesAPIService) CreateImportlistMovieExecute(r ApiCreateImportlistMovieRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListMoviesApiService.CreateImportlistMovie")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListMoviesAPIService.CreateImportlistMovie")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -144,7 +144,7 @@ func (a *ImportListMoviesApiService) CreateImportlistMovieExecute(r ApiCreateImp
 }
 type ApiGetImportlistMovieRequest struct {
 	ctx context.Context
-	ApiService *ImportListMoviesApiService
+	ApiService *ImportListMoviesAPIService
 	includeRecommendations *bool
 }
 
@@ -163,7 +163,7 @@ GetImportlistMovie Method for GetImportlistMovie
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetImportlistMovieRequest
 */
-func (a *ImportListMoviesApiService) GetImportlistMovie(ctx context.Context) ApiGetImportlistMovieRequest {
+func (a *ImportListMoviesAPIService) GetImportlistMovie(ctx context.Context) ApiGetImportlistMovieRequest {
 	return ApiGetImportlistMovieRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -171,14 +171,14 @@ func (a *ImportListMoviesApiService) GetImportlistMovie(ctx context.Context) Api
 }
 
 // Execute executes the request
-func (a *ImportListMoviesApiService) GetImportlistMovieExecute(r ApiGetImportlistMovieRequest) (*http.Response, error) {
+func (a *ImportListMoviesAPIService) GetImportlistMovieExecute(r ApiGetImportlistMovieRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListMoviesApiService.GetImportlistMovie")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ImportListMoviesAPIService.GetImportlistMovie")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}

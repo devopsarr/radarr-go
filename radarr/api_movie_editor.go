@@ -19,11 +19,11 @@ import (
 )
 
 
-// MovieEditorApiService MovieEditorApi service
-type MovieEditorApiService service
+// MovieEditorAPIService MovieEditorAPI service
+type MovieEditorAPIService service
 type ApiDeleteMovieEditorRequest struct {
 	ctx context.Context
-	ApiService *MovieEditorApiService
+	ApiService *MovieEditorAPIService
 	movieEditorResource *MovieEditorResource
 }
 
@@ -42,7 +42,7 @@ DeleteMovieEditor Method for DeleteMovieEditor
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiDeleteMovieEditorRequest
 */
-func (a *MovieEditorApiService) DeleteMovieEditor(ctx context.Context) ApiDeleteMovieEditorRequest {
+func (a *MovieEditorAPIService) DeleteMovieEditor(ctx context.Context) ApiDeleteMovieEditorRequest {
 	return ApiDeleteMovieEditorRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -50,14 +50,14 @@ func (a *MovieEditorApiService) DeleteMovieEditor(ctx context.Context) ApiDelete
 }
 
 // Execute executes the request
-func (a *MovieEditorApiService) DeleteMovieEditorExecute(r ApiDeleteMovieEditorRequest) (*http.Response, error) {
+func (a *MovieEditorAPIService) DeleteMovieEditorExecute(r ApiDeleteMovieEditorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieEditorApiService.DeleteMovieEditor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieEditorAPIService.DeleteMovieEditor")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -144,7 +144,7 @@ func (a *MovieEditorApiService) DeleteMovieEditorExecute(r ApiDeleteMovieEditorR
 }
 type ApiPutMovieEditorRequest struct {
 	ctx context.Context
-	ApiService *MovieEditorApiService
+	ApiService *MovieEditorAPIService
 	movieEditorResource *MovieEditorResource
 }
 
@@ -163,7 +163,7 @@ PutMovieEditor Method for PutMovieEditor
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPutMovieEditorRequest
 */
-func (a *MovieEditorApiService) PutMovieEditor(ctx context.Context) ApiPutMovieEditorRequest {
+func (a *MovieEditorAPIService) PutMovieEditor(ctx context.Context) ApiPutMovieEditorRequest {
 	return ApiPutMovieEditorRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -171,14 +171,14 @@ func (a *MovieEditorApiService) PutMovieEditor(ctx context.Context) ApiPutMovieE
 }
 
 // Execute executes the request
-func (a *MovieEditorApiService) PutMovieEditorExecute(r ApiPutMovieEditorRequest) (*http.Response, error) {
+func (a *MovieEditorAPIService) PutMovieEditorExecute(r ApiPutMovieEditorRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieEditorApiService.PutMovieEditor")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieEditorAPIService.PutMovieEditor")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
