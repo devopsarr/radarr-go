@@ -20,11 +20,11 @@ import (
 )
 
 
-// MovieApiService MovieApi service
-type MovieApiService service
+// MovieAPIService MovieAPI service
+type MovieAPIService service
 type ApiCreateMovieRequest struct {
 	ctx context.Context
-	ApiService *MovieApiService
+	ApiService *MovieAPIService
 	movieResource *MovieResource
 }
 
@@ -43,7 +43,7 @@ CreateMovie Method for CreateMovie
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreateMovieRequest
 */
-func (a *MovieApiService) CreateMovie(ctx context.Context) ApiCreateMovieRequest {
+func (a *MovieAPIService) CreateMovie(ctx context.Context) ApiCreateMovieRequest {
 	return ApiCreateMovieRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -52,7 +52,7 @@ func (a *MovieApiService) CreateMovie(ctx context.Context) ApiCreateMovieRequest
 
 // Execute executes the request
 //  @return MovieResource
-func (a *MovieApiService) CreateMovieExecute(r ApiCreateMovieRequest) (*MovieResource, *http.Response, error) {
+func (a *MovieAPIService) CreateMovieExecute(r ApiCreateMovieRequest) (*MovieResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
@@ -60,7 +60,7 @@ func (a *MovieApiService) CreateMovieExecute(r ApiCreateMovieRequest) (*MovieRes
 		localVarReturnValue  *MovieResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieApiService.CreateMovie")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieAPIService.CreateMovie")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -156,7 +156,7 @@ func (a *MovieApiService) CreateMovieExecute(r ApiCreateMovieRequest) (*MovieRes
 }
 type ApiDeleteMovieRequest struct {
 	ctx context.Context
-	ApiService *MovieApiService
+	ApiService *MovieAPIService
 	id int32
 	deleteFiles *bool
 	addImportExclusion *bool
@@ -183,7 +183,7 @@ DeleteMovie Method for DeleteMovie
  @param id
  @return ApiDeleteMovieRequest
 */
-func (a *MovieApiService) DeleteMovie(ctx context.Context, id int32) ApiDeleteMovieRequest {
+func (a *MovieAPIService) DeleteMovie(ctx context.Context, id int32) ApiDeleteMovieRequest {
 	return ApiDeleteMovieRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -192,14 +192,14 @@ func (a *MovieApiService) DeleteMovie(ctx context.Context, id int32) ApiDeleteMo
 }
 
 // Execute executes the request
-func (a *MovieApiService) DeleteMovieExecute(r ApiDeleteMovieRequest) (*http.Response, error) {
+func (a *MovieAPIService) DeleteMovieExecute(r ApiDeleteMovieRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodDelete
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieApiService.DeleteMovie")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieAPIService.DeleteMovie")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -291,7 +291,7 @@ func (a *MovieApiService) DeleteMovieExecute(r ApiDeleteMovieRequest) (*http.Res
 }
 type ApiGetMovieByIdRequest struct {
 	ctx context.Context
-	ApiService *MovieApiService
+	ApiService *MovieAPIService
 	id int32
 }
 
@@ -306,7 +306,7 @@ GetMovieById Method for GetMovieById
  @param id
  @return ApiGetMovieByIdRequest
 */
-func (a *MovieApiService) GetMovieById(ctx context.Context, id int32) ApiGetMovieByIdRequest {
+func (a *MovieAPIService) GetMovieById(ctx context.Context, id int32) ApiGetMovieByIdRequest {
 	return ApiGetMovieByIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -316,7 +316,7 @@ func (a *MovieApiService) GetMovieById(ctx context.Context, id int32) ApiGetMovi
 
 // Execute executes the request
 //  @return MovieResource
-func (a *MovieApiService) GetMovieByIdExecute(r ApiGetMovieByIdRequest) (*MovieResource, *http.Response, error) {
+func (a *MovieAPIService) GetMovieByIdExecute(r ApiGetMovieByIdRequest) (*MovieResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -324,7 +324,7 @@ func (a *MovieApiService) GetMovieByIdExecute(r ApiGetMovieByIdRequest) (*MovieR
 		localVarReturnValue  *MovieResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieApiService.GetMovieById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieAPIService.GetMovieById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -419,7 +419,7 @@ func (a *MovieApiService) GetMovieByIdExecute(r ApiGetMovieByIdRequest) (*MovieR
 }
 type ApiListMovieRequest struct {
 	ctx context.Context
-	ApiService *MovieApiService
+	ApiService *MovieAPIService
 	tmdbId *int32
 	excludeLocalCovers *bool
 }
@@ -444,7 +444,7 @@ ListMovie Method for ListMovie
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListMovieRequest
 */
-func (a *MovieApiService) ListMovie(ctx context.Context) ApiListMovieRequest {
+func (a *MovieAPIService) ListMovie(ctx context.Context) ApiListMovieRequest {
 	return ApiListMovieRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -453,7 +453,7 @@ func (a *MovieApiService) ListMovie(ctx context.Context) ApiListMovieRequest {
 
 // Execute executes the request
 //  @return []MovieResource
-func (a *MovieApiService) ListMovieExecute(r ApiListMovieRequest) ([]*MovieResource, *http.Response, error) {
+func (a *MovieAPIService) ListMovieExecute(r ApiListMovieRequest) ([]*MovieResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -461,7 +461,7 @@ func (a *MovieApiService) ListMovieExecute(r ApiListMovieRequest) ([]*MovieResou
 		localVarReturnValue  []*MovieResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieApiService.ListMovie")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieAPIService.ListMovie")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -561,7 +561,7 @@ func (a *MovieApiService) ListMovieExecute(r ApiListMovieRequest) ([]*MovieResou
 }
 type ApiUpdateMovieRequest struct {
 	ctx context.Context
-	ApiService *MovieApiService
+	ApiService *MovieAPIService
 	id string
 	moveFiles *bool
 	movieResource *MovieResource
@@ -588,7 +588,7 @@ UpdateMovie Method for UpdateMovie
  @param id
  @return ApiUpdateMovieRequest
 */
-func (a *MovieApiService) UpdateMovie(ctx context.Context, id string) ApiUpdateMovieRequest {
+func (a *MovieAPIService) UpdateMovie(ctx context.Context, id string) ApiUpdateMovieRequest {
 	return ApiUpdateMovieRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -598,7 +598,7 @@ func (a *MovieApiService) UpdateMovie(ctx context.Context, id string) ApiUpdateM
 
 // Execute executes the request
 //  @return MovieResource
-func (a *MovieApiService) UpdateMovieExecute(r ApiUpdateMovieRequest) (*MovieResource, *http.Response, error) {
+func (a *MovieAPIService) UpdateMovieExecute(r ApiUpdateMovieRequest) (*MovieResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -606,7 +606,7 @@ func (a *MovieApiService) UpdateMovieExecute(r ApiUpdateMovieRequest) (*MovieRes
 		localVarReturnValue  *MovieResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieApiService.UpdateMovie")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieAPIService.UpdateMovie")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

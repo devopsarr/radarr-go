@@ -20,11 +20,11 @@ import (
 )
 
 
-// CreditApiService CreditApi service
-type CreditApiService service
+// CreditAPIService CreditAPI service
+type CreditAPIService service
 type ApiGetCreditRequest struct {
 	ctx context.Context
-	ApiService *CreditApiService
+	ApiService *CreditAPIService
 	movieId *int32
 	movieMetadataId *int32
 }
@@ -49,7 +49,7 @@ GetCredit Method for GetCredit
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiGetCreditRequest
 */
-func (a *CreditApiService) GetCredit(ctx context.Context) ApiGetCreditRequest {
+func (a *CreditAPIService) GetCredit(ctx context.Context) ApiGetCreditRequest {
 	return ApiGetCreditRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -57,14 +57,14 @@ func (a *CreditApiService) GetCredit(ctx context.Context) ApiGetCreditRequest {
 }
 
 // Execute executes the request
-func (a *CreditApiService) GetCreditExecute(r ApiGetCreditRequest) (*http.Response, error) {
+func (a *CreditAPIService) GetCreditExecute(r ApiGetCreditRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CreditApiService.GetCredit")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CreditAPIService.GetCredit")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -155,7 +155,7 @@ func (a *CreditApiService) GetCreditExecute(r ApiGetCreditRequest) (*http.Respon
 }
 type ApiGetCreditByIdRequest struct {
 	ctx context.Context
-	ApiService *CreditApiService
+	ApiService *CreditAPIService
 	id int32
 }
 
@@ -170,7 +170,7 @@ GetCreditById Method for GetCreditById
  @param id
  @return ApiGetCreditByIdRequest
 */
-func (a *CreditApiService) GetCreditById(ctx context.Context, id int32) ApiGetCreditByIdRequest {
+func (a *CreditAPIService) GetCreditById(ctx context.Context, id int32) ApiGetCreditByIdRequest {
 	return ApiGetCreditByIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -180,7 +180,7 @@ func (a *CreditApiService) GetCreditById(ctx context.Context, id int32) ApiGetCr
 
 // Execute executes the request
 //  @return CreditResource
-func (a *CreditApiService) GetCreditByIdExecute(r ApiGetCreditByIdRequest) (*CreditResource, *http.Response, error) {
+func (a *CreditAPIService) GetCreditByIdExecute(r ApiGetCreditByIdRequest) (*CreditResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -188,7 +188,7 @@ func (a *CreditApiService) GetCreditByIdExecute(r ApiGetCreditByIdRequest) (*Cre
 		localVarReturnValue  *CreditResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CreditApiService.GetCreditById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CreditAPIService.GetCreditById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}

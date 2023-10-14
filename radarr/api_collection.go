@@ -20,11 +20,11 @@ import (
 )
 
 
-// CollectionApiService CollectionApi service
-type CollectionApiService service
+// CollectionAPIService CollectionAPI service
+type CollectionAPIService service
 type ApiGetCollectionByIdRequest struct {
 	ctx context.Context
-	ApiService *CollectionApiService
+	ApiService *CollectionAPIService
 	id int32
 }
 
@@ -39,7 +39,7 @@ GetCollectionById Method for GetCollectionById
  @param id
  @return ApiGetCollectionByIdRequest
 */
-func (a *CollectionApiService) GetCollectionById(ctx context.Context, id int32) ApiGetCollectionByIdRequest {
+func (a *CollectionAPIService) GetCollectionById(ctx context.Context, id int32) ApiGetCollectionByIdRequest {
 	return ApiGetCollectionByIdRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -49,7 +49,7 @@ func (a *CollectionApiService) GetCollectionById(ctx context.Context, id int32) 
 
 // Execute executes the request
 //  @return CollectionResource
-func (a *CollectionApiService) GetCollectionByIdExecute(r ApiGetCollectionByIdRequest) (*CollectionResource, *http.Response, error) {
+func (a *CollectionAPIService) GetCollectionByIdExecute(r ApiGetCollectionByIdRequest) (*CollectionResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -57,7 +57,7 @@ func (a *CollectionApiService) GetCollectionByIdExecute(r ApiGetCollectionByIdRe
 		localVarReturnValue  *CollectionResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CollectionApiService.GetCollectionById")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CollectionAPIService.GetCollectionById")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -152,7 +152,7 @@ func (a *CollectionApiService) GetCollectionByIdExecute(r ApiGetCollectionByIdRe
 }
 type ApiListCollectionRequest struct {
 	ctx context.Context
-	ApiService *CollectionApiService
+	ApiService *CollectionAPIService
 	tmdbId *int32
 }
 
@@ -171,7 +171,7 @@ ListCollection Method for ListCollection
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiListCollectionRequest
 */
-func (a *CollectionApiService) ListCollection(ctx context.Context) ApiListCollectionRequest {
+func (a *CollectionAPIService) ListCollection(ctx context.Context) ApiListCollectionRequest {
 	return ApiListCollectionRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -180,7 +180,7 @@ func (a *CollectionApiService) ListCollection(ctx context.Context) ApiListCollec
 
 // Execute executes the request
 //  @return []CollectionResource
-func (a *CollectionApiService) ListCollectionExecute(r ApiListCollectionRequest) ([]*CollectionResource, *http.Response, error) {
+func (a *CollectionAPIService) ListCollectionExecute(r ApiListCollectionRequest) ([]*CollectionResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
@@ -188,7 +188,7 @@ func (a *CollectionApiService) ListCollectionExecute(r ApiListCollectionRequest)
 		localVarReturnValue  []*CollectionResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CollectionApiService.ListCollection")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CollectionAPIService.ListCollection")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -285,7 +285,7 @@ func (a *CollectionApiService) ListCollectionExecute(r ApiListCollectionRequest)
 }
 type ApiPutCollectionRequest struct {
 	ctx context.Context
-	ApiService *CollectionApiService
+	ApiService *CollectionAPIService
 	collectionUpdateResource *CollectionUpdateResource
 }
 
@@ -304,7 +304,7 @@ PutCollection Method for PutCollection
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiPutCollectionRequest
 */
-func (a *CollectionApiService) PutCollection(ctx context.Context) ApiPutCollectionRequest {
+func (a *CollectionAPIService) PutCollection(ctx context.Context) ApiPutCollectionRequest {
 	return ApiPutCollectionRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -312,14 +312,14 @@ func (a *CollectionApiService) PutCollection(ctx context.Context) ApiPutCollecti
 }
 
 // Execute executes the request
-func (a *CollectionApiService) PutCollectionExecute(r ApiPutCollectionRequest) (*http.Response, error) {
+func (a *CollectionAPIService) PutCollectionExecute(r ApiPutCollectionRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CollectionApiService.PutCollection")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CollectionAPIService.PutCollection")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -406,7 +406,7 @@ func (a *CollectionApiService) PutCollectionExecute(r ApiPutCollectionRequest) (
 }
 type ApiUpdateCollectionRequest struct {
 	ctx context.Context
-	ApiService *CollectionApiService
+	ApiService *CollectionAPIService
 	id string
 	collectionResource *CollectionResource
 }
@@ -427,7 +427,7 @@ UpdateCollection Method for UpdateCollection
  @param id
  @return ApiUpdateCollectionRequest
 */
-func (a *CollectionApiService) UpdateCollection(ctx context.Context, id string) ApiUpdateCollectionRequest {
+func (a *CollectionAPIService) UpdateCollection(ctx context.Context, id string) ApiUpdateCollectionRequest {
 	return ApiUpdateCollectionRequest{
 		ApiService: a,
 		ctx: ctx,
@@ -437,7 +437,7 @@ func (a *CollectionApiService) UpdateCollection(ctx context.Context, id string) 
 
 // Execute executes the request
 //  @return CollectionResource
-func (a *CollectionApiService) UpdateCollectionExecute(r ApiUpdateCollectionRequest) (*CollectionResource, *http.Response, error) {
+func (a *CollectionAPIService) UpdateCollectionExecute(r ApiUpdateCollectionRequest) (*CollectionResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
@@ -445,7 +445,7 @@ func (a *CollectionApiService) UpdateCollectionExecute(r ApiUpdateCollectionRequ
 		localVarReturnValue  *CollectionResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CollectionApiService.UpdateCollection")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CollectionAPIService.UpdateCollection")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
