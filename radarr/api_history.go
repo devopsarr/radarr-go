@@ -17,6 +17,7 @@ import (
 	"net/http"
 	"net/url"
 	"strings"
+	"reflect"
 	"time"
 )
 
@@ -150,6 +151,9 @@ type ApiGetHistoryRequest struct {
 	includeMovie *bool
 	eventType *int32
 	downloadId *string
+	movieIds *[]int32
+	languages *[]int32
+	quality *[]int32
 }
 
 func (r ApiGetHistoryRequest) Page(page int32) ApiGetHistoryRequest {
@@ -184,6 +188,21 @@ func (r ApiGetHistoryRequest) EventType(eventType int32) ApiGetHistoryRequest {
 
 func (r ApiGetHistoryRequest) DownloadId(downloadId string) ApiGetHistoryRequest {
 	r.downloadId = &downloadId
+	return r
+}
+
+func (r ApiGetHistoryRequest) MovieIds(movieIds []int32) ApiGetHistoryRequest {
+	r.movieIds = &movieIds
+	return r
+}
+
+func (r ApiGetHistoryRequest) Languages(languages []int32) ApiGetHistoryRequest {
+	r.languages = &languages
+	return r
+}
+
+func (r ApiGetHistoryRequest) Quality(quality []int32) ApiGetHistoryRequest {
+	r.quality = &quality
 	return r
 }
 
@@ -245,6 +264,39 @@ func (a *HistoryAPIService) GetHistoryExecute(r ApiGetHistoryRequest) (*HistoryR
 	}
 	if r.downloadId != nil {
 		localVarQueryParams.Add("downloadId", parameterToString(*r.downloadId, ""))
+	}
+	if r.movieIds != nil {
+		t := *r.movieIds
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				localVarQueryParams.Add("movieIds", parameterToString(s.Index(i), "multi"))
+			}
+		} else {
+			localVarQueryParams.Add("movieIds", parameterToString(t, "multi"))
+		}
+	}
+	if r.languages != nil {
+		t := *r.languages
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				localVarQueryParams.Add("languages", parameterToString(s.Index(i), "multi"))
+			}
+		} else {
+			localVarQueryParams.Add("languages", parameterToString(t, "multi"))
+		}
+	}
+	if r.quality != nil {
+		t := *r.quality
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				localVarQueryParams.Add("quality", parameterToString(s.Index(i), "multi"))
+			}
+		} else {
+			localVarQueryParams.Add("quality", parameterToString(t, "multi"))
+		}
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -407,7 +459,7 @@ func (a *HistoryAPIService) ListHistoryMovieExecute(r ApiListHistoryMovieRequest
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain", "application/json", "text/json"}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -558,7 +610,7 @@ func (a *HistoryAPIService) ListHistorySinceExecute(r ApiListHistorySinceRequest
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{"text/plain", "application/json", "text/json"}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
