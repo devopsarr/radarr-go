@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ## GetQueue
 
-> QueueResourcePagingResource GetQueue(ctx).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeUnknownMovieItems(includeUnknownMovieItems).IncludeMovie(includeMovie).Execute()
+> QueueResourcePagingResource GetQueue(ctx).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeUnknownMovieItems(includeUnknownMovieItems).IncludeMovie(includeMovie).MovieIds(movieIds).Protocol(protocol).Languages(languages).Quality(quality).Execute()
 
 
 
@@ -176,10 +176,14 @@ func main() {
     sortDirection := radarrClient.SortDirection("default") // SortDirection |  (optional)
     includeUnknownMovieItems := true // bool |  (optional) (default to false)
     includeMovie := true // bool |  (optional) (default to false)
+    movieIds := []int32{int32(123)} // []int32 |  (optional)
+    protocol := radarrClient.DownloadProtocol("unknown") // DownloadProtocol |  (optional)
+    languages := []int32{int32(123)} // []int32 |  (optional)
+    quality := int32(56) // int32 |  (optional)
 
     configuration := radarrClient.NewConfiguration()
     apiClient := radarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.QueueAPI.GetQueue(context.Background()).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeUnknownMovieItems(includeUnknownMovieItems).IncludeMovie(includeMovie).Execute()
+    resp, r, err := apiClient.QueueAPI.GetQueue(context.Background()).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeUnknownMovieItems(includeUnknownMovieItems).IncludeMovie(includeMovie).MovieIds(movieIds).Protocol(protocol).Languages(languages).Quality(quality).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `QueueAPI.GetQueue``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -206,6 +210,10 @@ Name | Type | Description  | Notes
  **sortDirection** | [**SortDirection**](SortDirection.md) |  | 
  **includeUnknownMovieItems** | **bool** |  | [default to false]
  **includeMovie** | **bool** |  | [default to false]
+ **movieIds** | **[]int32** |  | 
+ **protocol** | [**DownloadProtocol**](DownloadProtocol.md) |  | 
+ **languages** | **[]int32** |  | 
+ **quality** | **int32** |  | 
 
 ### Return type
 

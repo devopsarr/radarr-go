@@ -1733,6 +1733,36 @@ paths:
         schema:
           type: string
         style: form
+      - explode: true
+        in: query
+        name: movieIds
+        required: false
+        schema:
+          items:
+            format: int32
+            type: integer
+          type: array
+        style: form
+      - explode: true
+        in: query
+        name: languages
+        required: false
+        schema:
+          items:
+            format: int32
+            type: integer
+          type: array
+        style: form
+      - explode: true
+        in: query
+        name: quality
+        required: false
+        schema:
+          items:
+            format: int32
+            type: integer
+          type: array
+        style: form
       responses:
         "200":
           content:
@@ -1772,17 +1802,7 @@ paths:
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                items:
-                  $ref: '#/components/schemas/HistoryResource'
-                type: array
             application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/HistoryResource'
-                type: array
-            text/json:
               schema:
                 items:
                   $ref: '#/components/schemas/HistoryResource'
@@ -1820,17 +1840,7 @@ paths:
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                items:
-                  $ref: '#/components/schemas/HistoryResource'
-                type: array
             application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/HistoryResource'
-                type: array
-            text/json:
               schema:
                 items:
                   $ref: '#/components/schemas/HistoryResource'
@@ -4651,6 +4661,41 @@ paths:
         schema:
           default: false
           type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: movieIds
+        required: false
+        schema:
+          items:
+            format: int32
+            type: integer
+          type: array
+        style: form
+      - explode: true
+        in: query
+        name: protocol
+        required: false
+        schema:
+          $ref: '#/components/schemas/DownloadProtocol'
+        style: form
+      - explode: true
+        in: query
+        name: languages
+        required: false
+        schema:
+          items:
+            format: int32
+            type: integer
+          type: array
+        style: form
+      - explode: true
+        in: query
+        name: quality
+        required: false
+        schema:
+          format: int32
+          type: integer
         style: form
       responses:
         "200":

@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 ## GetHistory
 
-> HistoryResourcePagingResource GetHistory(ctx).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeMovie(includeMovie).EventType(eventType).DownloadId(downloadId).Execute()
+> HistoryResourcePagingResource GetHistory(ctx).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeMovie(includeMovie).EventType(eventType).DownloadId(downloadId).MovieIds(movieIds).Languages(languages).Quality(quality).Execute()
 
 
 
@@ -103,10 +103,13 @@ func main() {
     includeMovie := true // bool |  (optional)
     eventType := int32(56) // int32 |  (optional)
     downloadId := "downloadId_example" // string |  (optional)
+    movieIds := []int32{int32(123)} // []int32 |  (optional)
+    languages := []int32{int32(123)} // []int32 |  (optional)
+    quality := []int32{int32(123)} // []int32 |  (optional)
 
     configuration := radarrClient.NewConfiguration()
     apiClient := radarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HistoryAPI.GetHistory(context.Background()).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeMovie(includeMovie).EventType(eventType).DownloadId(downloadId).Execute()
+    resp, r, err := apiClient.HistoryAPI.GetHistory(context.Background()).Page(page).PageSize(pageSize).SortKey(sortKey).SortDirection(sortDirection).IncludeMovie(includeMovie).EventType(eventType).DownloadId(downloadId).MovieIds(movieIds).Languages(languages).Quality(quality).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HistoryAPI.GetHistory``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -134,6 +137,9 @@ Name | Type | Description  | Notes
  **includeMovie** | **bool** |  | 
  **eventType** | **int32** |  | 
  **downloadId** | **string** |  | 
+ **movieIds** | **[]int32** |  | 
+ **languages** | **[]int32** |  | 
+ **quality** | **[]int32** |  | 
 
 ### Return type
 
@@ -214,7 +220,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -283,7 +289,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
