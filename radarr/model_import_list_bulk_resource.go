@@ -19,6 +19,7 @@ type ImportListBulkResource struct {
 	Ids []*int32 `json:"ids,omitempty"`
 	Tags []*int32 `json:"tags,omitempty"`
 	ApplyTags *ApplyTags `json:"applyTags,omitempty"`
+	Enabled NullableBool `json:"enabled,omitempty"`
 	EnableAuto NullableBool `json:"enableAuto,omitempty"`
 	RootFolderPath NullableString `json:"rootFolderPath,omitempty"`
 	QualityProfileId NullableInt32 `json:"qualityProfileId,omitempty"`
@@ -137,6 +138,48 @@ func (o *ImportListBulkResource) HasApplyTags() bool {
 // SetApplyTags gets a reference to the given ApplyTags and assigns it to the ApplyTags field.
 func (o *ImportListBulkResource) SetApplyTags(v ApplyTags) {
 	o.ApplyTags = &v
+}
+
+// GetEnabled returns the Enabled field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *ImportListBulkResource) GetEnabled() bool {
+	if o == nil || isNil(o.Enabled.Get()) {
+		var ret bool
+		return ret
+	}
+	return *o.Enabled.Get()
+}
+
+// GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ImportListBulkResource) GetEnabledOk() (*bool, bool) {
+	if o == nil {
+    return nil, false
+	}
+	return o.Enabled.Get(), o.Enabled.IsSet()
+}
+
+// HasEnabled returns a boolean if a field has been set.
+func (o *ImportListBulkResource) HasEnabled() bool {
+	if o != nil && o.Enabled.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetEnabled gets a reference to the given NullableBool and assigns it to the Enabled field.
+func (o *ImportListBulkResource) SetEnabled(v bool) {
+	o.Enabled.Set(&v)
+}
+// SetEnabledNil sets the value for Enabled to be an explicit nil
+func (o *ImportListBulkResource) SetEnabledNil() {
+	o.Enabled.Set(nil)
+}
+
+// UnsetEnabled ensures that no value is present for Enabled, not even an explicit nil
+func (o *ImportListBulkResource) UnsetEnabled() {
+	o.Enabled.Unset()
 }
 
 // GetEnableAuto returns the EnableAuto field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -275,6 +318,9 @@ func (o ImportListBulkResource) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.ApplyTags) {
 		toSerialize["applyTags"] = o.ApplyTags
+	}
+	if o.Enabled.IsSet() {
+		toSerialize["enabled"] = o.Enabled.Get()
 	}
 	if o.EnableAuto.IsSet() {
 		toSerialize["enableAuto"] = o.EnableAuto.Get()

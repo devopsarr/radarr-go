@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Ids** | Pointer to **[]int32** |  | [optional] 
 **Tags** | Pointer to **[]int32** |  | [optional] 
 **ApplyTags** | Pointer to [**ApplyTags**](ApplyTags.md) |  | [optional] 
+**Enabled** | Pointer to **NullableBool** |  | [optional] 
 **EnableAuto** | Pointer to **NullableBool** |  | [optional] 
 **RootFolderPath** | Pointer to **NullableString** |  | [optional] 
 **QualityProfileId** | Pointer to **NullableInt32** |  | [optional] 
@@ -125,6 +126,41 @@ SetApplyTags sets ApplyTags field to given value.
 
 HasApplyTags returns a boolean if a field has been set.
 
+### GetEnabled
+
+`func (o *ImportListBulkResource) GetEnabled() bool`
+
+GetEnabled returns the Enabled field if non-nil, zero value otherwise.
+
+### GetEnabledOk
+
+`func (o *ImportListBulkResource) GetEnabledOk() (*bool, bool)`
+
+GetEnabledOk returns a tuple with the Enabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnabled
+
+`func (o *ImportListBulkResource) SetEnabled(v bool)`
+
+SetEnabled sets Enabled field to given value.
+
+### HasEnabled
+
+`func (o *ImportListBulkResource) HasEnabled() bool`
+
+HasEnabled returns a boolean if a field has been set.
+
+### SetEnabledNil
+
+`func (o *ImportListBulkResource) SetEnabledNil(b bool)`
+
+ SetEnabledNil sets the value for Enabled to be an explicit nil
+
+### UnsetEnabled
+`func (o *ImportListBulkResource) UnsetEnabled()`
+
+UnsetEnabled ensures that no value is present for Enabled, not even an explicit nil
 ### GetEnableAuto
 
 `func (o *ImportListBulkResource) GetEnableAuto() bool`

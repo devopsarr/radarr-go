@@ -13223,6 +13223,7 @@ components:
         - 0
         - 0
         enableAuto: true
+        enabled: true
         tags:
         - 6
         - 6
@@ -13241,6 +13242,9 @@ components:
           type: array
         applyTags:
           $ref: '#/components/schemas/ApplyTags'
+        enabled:
+          nullable: true
+          type: boolean
         enableAuto:
           nullable: true
           type: boolean
@@ -22285,6 +22289,7 @@ components:
         releaseWeight: 7
         qualityWeight: 1
         indexerId: 9
+        downloadClient: downloadClient
         mappedMovieId: 3
         movieTitles:
         - movieTitles
@@ -22718,6 +22723,9 @@ components:
           format: int32
           nullable: true
           type: integer
+        downloadClient:
+          nullable: true
+          type: string
         shouldOverride:
           nullable: true
           type: boolean
