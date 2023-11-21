@@ -12983,6 +12983,7 @@ components:
         sslPort: 1
         bindAddress: bindAddress
         updateMechanism: null
+        passwordConfirmation: passwordConfirmation
         backupRetention: 2
         urlBase: urlBase
         port: 6
@@ -13018,6 +13019,9 @@ components:
           nullable: true
           type: string
         password:
+          nullable: true
+          type: string
+        passwordConfirmation:
           nullable: true
           type: string
         logLevel:
