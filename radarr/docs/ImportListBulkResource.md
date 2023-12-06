@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **EnableAuto** | Pointer to **NullableBool** |  | [optional] 
 **RootFolderPath** | Pointer to **NullableString** |  | [optional] 
 **QualityProfileId** | Pointer to **NullableInt32** |  | [optional] 
+**MinimumAvailability** | Pointer to [**MovieStatusType**](MovieStatusType.md) |  | [optional] 
 
 ## Methods
 
@@ -266,6 +267,31 @@ HasQualityProfileId returns a boolean if a field has been set.
 `func (o *ImportListBulkResource) UnsetQualityProfileId()`
 
 UnsetQualityProfileId ensures that no value is present for QualityProfileId, not even an explicit nil
+### GetMinimumAvailability
+
+`func (o *ImportListBulkResource) GetMinimumAvailability() MovieStatusType`
+
+GetMinimumAvailability returns the MinimumAvailability field if non-nil, zero value otherwise.
+
+### GetMinimumAvailabilityOk
+
+`func (o *ImportListBulkResource) GetMinimumAvailabilityOk() (*MovieStatusType, bool)`
+
+GetMinimumAvailabilityOk returns a tuple with the MinimumAvailability field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMinimumAvailability
+
+`func (o *ImportListBulkResource) SetMinimumAvailability(v MovieStatusType)`
+
+SetMinimumAvailability sets MinimumAvailability field to given value.
+
+### HasMinimumAvailability
+
+`func (o *ImportListBulkResource) HasMinimumAvailability() bool`
+
+HasMinimumAvailability returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
