@@ -23,6 +23,7 @@ type ImportListBulkResource struct {
 	EnableAuto NullableBool `json:"enableAuto,omitempty"`
 	RootFolderPath NullableString `json:"rootFolderPath,omitempty"`
 	QualityProfileId NullableInt32 `json:"qualityProfileId,omitempty"`
+	MinimumAvailability *MovieStatusType `json:"minimumAvailability,omitempty"`
 }
 
 // NewImportListBulkResource instantiates a new ImportListBulkResource object
@@ -308,6 +309,38 @@ func (o *ImportListBulkResource) UnsetQualityProfileId() {
 	o.QualityProfileId.Unset()
 }
 
+// GetMinimumAvailability returns the MinimumAvailability field value if set, zero value otherwise.
+func (o *ImportListBulkResource) GetMinimumAvailability() MovieStatusType {
+	if o == nil || isNil(o.MinimumAvailability) {
+		var ret MovieStatusType
+		return ret
+	}
+	return *o.MinimumAvailability
+}
+
+// GetMinimumAvailabilityOk returns a tuple with the MinimumAvailability field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ImportListBulkResource) GetMinimumAvailabilityOk() (*MovieStatusType, bool) {
+	if o == nil || isNil(o.MinimumAvailability) {
+    return nil, false
+	}
+	return o.MinimumAvailability, true
+}
+
+// HasMinimumAvailability returns a boolean if a field has been set.
+func (o *ImportListBulkResource) HasMinimumAvailability() bool {
+	if o != nil && !isNil(o.MinimumAvailability) {
+		return true
+	}
+
+	return false
+}
+
+// SetMinimumAvailability gets a reference to the given MovieStatusType and assigns it to the MinimumAvailability field.
+func (o *ImportListBulkResource) SetMinimumAvailability(v MovieStatusType) {
+	o.MinimumAvailability = &v
+}
+
 func (o ImportListBulkResource) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Ids != nil {
@@ -330,6 +363,9 @@ func (o ImportListBulkResource) MarshalJSON() ([]byte, error) {
 	}
 	if o.QualityProfileId.IsSet() {
 		toSerialize["qualityProfileId"] = o.QualityProfileId.Get()
+	}
+	if !isNil(o.MinimumAvailability) {
+		toSerialize["minimumAvailability"] = o.MinimumAvailability
 	}
 	return json.Marshal(toSerialize)
 }

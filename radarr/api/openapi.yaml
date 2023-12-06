@@ -13223,6 +13223,7 @@ components:
         applyTags: null
         rootFolderPath: rootFolderPath
         qualityProfileId: 1
+        minimumAvailability: null
         ids:
         - 0
         - 0
@@ -13259,6 +13260,8 @@ components:
           format: int32
           nullable: true
           type: integer
+        minimumAvailability:
+          $ref: '#/components/schemas/MovieStatusType'
       type: object
     ImportListConfigResource:
       additionalProperties: false
