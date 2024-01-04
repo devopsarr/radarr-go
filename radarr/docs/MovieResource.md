@@ -46,7 +46,7 @@ Name | Type | Description | Notes
 **AddOptions** | Pointer to [**AddMovieOptions**](AddMovieOptions.md) |  | [optional] 
 **Ratings** | Pointer to [**Ratings**](Ratings.md) |  | [optional] 
 **MovieFile** | Pointer to [**MovieFileResource**](MovieFileResource.md) |  | [optional] 
-**Collection** | Pointer to [**MovieCollection**](MovieCollection.md) |  | [optional] 
+**Collection** | Pointer to [**MovieCollectionResource**](MovieCollectionResource.md) |  | [optional] 
 **Popularity** | Pointer to **float32** |  | [optional] 
 
 ## Methods
@@ -1380,20 +1380,20 @@ HasMovieFile returns a boolean if a field has been set.
 
 ### GetCollection
 
-`func (o *MovieResource) GetCollection() MovieCollection`
+`func (o *MovieResource) GetCollection() MovieCollectionResource`
 
 GetCollection returns the Collection field if non-nil, zero value otherwise.
 
 ### GetCollectionOk
 
-`func (o *MovieResource) GetCollectionOk() (*MovieCollection, bool)`
+`func (o *MovieResource) GetCollectionOk() (*MovieCollectionResource, bool)`
 
 GetCollectionOk returns a tuple with the Collection field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCollection
 
-`func (o *MovieResource) SetCollection(v MovieCollection)`
+`func (o *MovieResource) SetCollection(v MovieCollectionResource)`
 
 SetCollection sets Collection field to given value.
 
