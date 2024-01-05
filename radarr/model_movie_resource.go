@@ -59,7 +59,7 @@ type MovieResource struct {
 	AddOptions *AddMovieOptions `json:"addOptions,omitempty"`
 	Ratings *Ratings `json:"ratings,omitempty"`
 	MovieFile *MovieFileResource `json:"movieFile,omitempty"`
-	Collection *MovieCollection `json:"collection,omitempty"`
+	Collection *MovieCollectionResource `json:"collection,omitempty"`
 	Popularity *float32 `json:"popularity,omitempty"`
 }
 
@@ -1649,9 +1649,9 @@ func (o *MovieResource) SetMovieFile(v MovieFileResource) {
 }
 
 // GetCollection returns the Collection field value if set, zero value otherwise.
-func (o *MovieResource) GetCollection() MovieCollection {
+func (o *MovieResource) GetCollection() MovieCollectionResource {
 	if o == nil || isNil(o.Collection) {
-		var ret MovieCollection
+		var ret MovieCollectionResource
 		return ret
 	}
 	return *o.Collection
@@ -1659,7 +1659,7 @@ func (o *MovieResource) GetCollection() MovieCollection {
 
 // GetCollectionOk returns a tuple with the Collection field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MovieResource) GetCollectionOk() (*MovieCollection, bool) {
+func (o *MovieResource) GetCollectionOk() (*MovieCollectionResource, bool) {
 	if o == nil || isNil(o.Collection) {
     return nil, false
 	}
@@ -1675,8 +1675,8 @@ func (o *MovieResource) HasCollection() bool {
 	return false
 }
 
-// SetCollection gets a reference to the given MovieCollection and assigns it to the Collection field.
-func (o *MovieResource) SetCollection(v MovieCollection) {
+// SetCollection gets a reference to the given MovieCollectionResource and assigns it to the Collection field.
+func (o *MovieResource) SetCollection(v MovieCollectionResource) {
 	o.Collection = &v
 }
 

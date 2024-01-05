@@ -73,7 +73,6 @@ client.go
 configuration.go
 docs/AddMovieMethod.md
 docs/AddMovieOptions.md
-docs/AlternativeTitle.md
 docs/AlternativeTitleAPI.md
 docs/AlternativeTitleResource.md
 docs/ApiInfoAPI.md
@@ -182,7 +181,7 @@ docs/MetadataResource.md
 docs/Modifier.md
 docs/MonitorTypes.md
 docs/MovieAPI.md
-docs/MovieCollection.md
+docs/MovieCollectionResource.md
 docs/MovieEditorAPI.md
 docs/MovieEditorResource.md
 docs/MovieFileAPI.md
@@ -191,11 +190,9 @@ docs/MovieFileResource.md
 docs/MovieHistoryEventType.md
 docs/MovieImportAPI.md
 docs/MovieLookupAPI.md
-docs/MovieMetadata.md
 docs/MovieResource.md
 docs/MovieRuntimeFormatType.md
 docs/MovieStatusType.md
-docs/MovieTranslation.md
 docs/NamingConfigAPI.md
 docs/NamingConfigResource.md
 docs/NotificationAPI.md
@@ -274,7 +271,6 @@ docs/UpdateResource.md
 go.mod
 model_add_movie_method.go
 model_add_movie_options.go
-model_alternative_title.go
 model_alternative_title_resource.go
 model_api_info_resource.go
 model_apply_tags.go
@@ -344,16 +340,14 @@ model_metadata_config_resource.go
 model_metadata_resource.go
 model_modifier.go
 model_monitor_types.go
-model_movie_collection.go
+model_movie_collection_resource.go
 model_movie_editor_resource.go
 model_movie_file_list_resource.go
 model_movie_file_resource.go
 model_movie_history_event_type.go
-model_movie_metadata.go
 model_movie_resource.go
 model_movie_runtime_format_type.go
 model_movie_status_type.go
-model_movie_translation.go
 model_naming_config_resource.go
 model_notification_resource.go
 model_parse_resource.go
