@@ -149,7 +149,7 @@ type ApiGetHistoryRequest struct {
 	sortKey *string
 	sortDirection *SortDirection
 	includeMovie *bool
-	eventType *int32
+	eventType *[]int32
 	downloadId *string
 	movieIds *[]int32
 	languages *[]int32
@@ -181,7 +181,7 @@ func (r ApiGetHistoryRequest) IncludeMovie(includeMovie bool) ApiGetHistoryReque
 	return r
 }
 
-func (r ApiGetHistoryRequest) EventType(eventType int32) ApiGetHistoryRequest {
+func (r ApiGetHistoryRequest) EventType(eventType []int32) ApiGetHistoryRequest {
 	r.eventType = &eventType
 	return r
 }
@@ -260,7 +260,15 @@ func (a *HistoryAPIService) GetHistoryExecute(r ApiGetHistoryRequest) (*HistoryR
 		localVarQueryParams.Add("includeMovie", parameterToString(*r.includeMovie, ""))
 	}
 	if r.eventType != nil {
-		localVarQueryParams.Add("eventType", parameterToString(*r.eventType, ""))
+		t := *r.eventType
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				localVarQueryParams.Add("eventType", parameterToString(s.Index(i), "multi"))
+			}
+		} else {
+			localVarQueryParams.Add("eventType", parameterToString(t, "multi"))
+		}
 	}
 	if r.downloadId != nil {
 		localVarQueryParams.Add("downloadId", parameterToString(*r.downloadId, ""))

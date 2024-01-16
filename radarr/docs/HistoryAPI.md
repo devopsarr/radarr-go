@@ -101,7 +101,7 @@ func main() {
     sortKey := "sortKey_example" // string |  (optional)
     sortDirection := radarrClient.SortDirection("default") // SortDirection |  (optional)
     includeMovie := true // bool |  (optional)
-    eventType := int32(56) // int32 |  (optional)
+    eventType := []int32{int32(123)} // []int32 |  (optional)
     downloadId := "downloadId_example" // string |  (optional)
     movieIds := []int32{int32(123)} // []int32 |  (optional)
     languages := []int32{int32(123)} // []int32 |  (optional)
@@ -135,7 +135,7 @@ Name | Type | Description  | Notes
  **sortKey** | **string** |  | 
  **sortDirection** | [**SortDirection**](SortDirection.md) |  | 
  **includeMovie** | **bool** |  | 
- **eventType** | **int32** |  | 
+ **eventType** | **[]int32** |  | 
  **downloadId** | **string** |  | 
  **movieIds** | **[]int32** |  | 
  **languages** | **[]int32** |  | 
