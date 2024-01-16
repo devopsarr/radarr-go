@@ -1723,8 +1723,10 @@ paths:
         name: eventType
         required: false
         schema:
-          format: int32
-          type: integer
+          items:
+            format: int32
+            type: integer
+          type: array
         style: form
       - explode: true
         in: query
