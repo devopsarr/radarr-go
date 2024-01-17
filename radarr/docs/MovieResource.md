@@ -23,11 +23,11 @@ Name | Type | Description | Notes
 **Website** | Pointer to **NullableString** |  | [optional] 
 **RemotePoster** | Pointer to **NullableString** |  | [optional] 
 **Year** | Pointer to **int32** |  | [optional] 
-**HasFile** | Pointer to **bool** |  | [optional] 
 **YouTubeTrailerId** | Pointer to **NullableString** |  | [optional] 
 **Studio** | Pointer to **NullableString** |  | [optional] 
 **Path** | Pointer to **NullableString** |  | [optional] 
 **QualityProfileId** | Pointer to **int32** |  | [optional] 
+**HasFile** | Pointer to **bool** |  | [optional] 
 **Monitored** | Pointer to **bool** |  | [optional] 
 **MinimumAvailability** | Pointer to [**MovieStatusType**](MovieStatusType.md) |  | [optional] 
 **IsAvailable** | Pointer to **bool** |  | [optional] 
@@ -48,6 +48,7 @@ Name | Type | Description | Notes
 **MovieFile** | Pointer to [**MovieFileResource**](MovieFileResource.md) |  | [optional] 
 **Collection** | Pointer to [**MovieCollectionResource**](MovieCollectionResource.md) |  | [optional] 
 **Popularity** | Pointer to **float32** |  | [optional] 
+**Statistics** | Pointer to [**MovieStatisticsResource**](MovieStatisticsResource.md) |  | [optional] 
 
 ## Methods
 
@@ -683,31 +684,6 @@ SetYear sets Year field to given value.
 
 HasYear returns a boolean if a field has been set.
 
-### GetHasFile
-
-`func (o *MovieResource) GetHasFile() bool`
-
-GetHasFile returns the HasFile field if non-nil, zero value otherwise.
-
-### GetHasFileOk
-
-`func (o *MovieResource) GetHasFileOk() (*bool, bool)`
-
-GetHasFileOk returns a tuple with the HasFile field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetHasFile
-
-`func (o *MovieResource) SetHasFile(v bool)`
-
-SetHasFile sets HasFile field to given value.
-
-### HasHasFile
-
-`func (o *MovieResource) HasHasFile() bool`
-
-HasHasFile returns a boolean if a field has been set.
-
 ### GetYouTubeTrailerId
 
 `func (o *MovieResource) GetYouTubeTrailerId() string`
@@ -837,6 +813,31 @@ SetQualityProfileId sets QualityProfileId field to given value.
 `func (o *MovieResource) HasQualityProfileId() bool`
 
 HasQualityProfileId returns a boolean if a field has been set.
+
+### GetHasFile
+
+`func (o *MovieResource) GetHasFile() bool`
+
+GetHasFile returns the HasFile field if non-nil, zero value otherwise.
+
+### GetHasFileOk
+
+`func (o *MovieResource) GetHasFileOk() (*bool, bool)`
+
+GetHasFileOk returns a tuple with the HasFile field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHasFile
+
+`func (o *MovieResource) SetHasFile(v bool)`
+
+SetHasFile sets HasFile field to given value.
+
+### HasHasFile
+
+`func (o *MovieResource) HasHasFile() bool`
+
+HasHasFile returns a boolean if a field has been set.
 
 ### GetMonitored
 
@@ -1427,6 +1428,31 @@ SetPopularity sets Popularity field to given value.
 `func (o *MovieResource) HasPopularity() bool`
 
 HasPopularity returns a boolean if a field has been set.
+
+### GetStatistics
+
+`func (o *MovieResource) GetStatistics() MovieStatisticsResource`
+
+GetStatistics returns the Statistics field if non-nil, zero value otherwise.
+
+### GetStatisticsOk
+
+`func (o *MovieResource) GetStatisticsOk() (*MovieStatisticsResource, bool)`
+
+GetStatisticsOk returns a tuple with the Statistics field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatistics
+
+`func (o *MovieResource) SetStatistics(v MovieStatisticsResource)`
+
+SetStatistics sets Statistics field to given value.
+
+### HasStatistics
+
+`func (o *MovieResource) HasStatistics() bool`
+
+HasStatistics returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
