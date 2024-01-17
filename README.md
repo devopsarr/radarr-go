@@ -400,6 +400,7 @@ Class | Method | HTTP request | Description
  - [MovieHistoryEventType](docs/MovieHistoryEventType.md)
  - [MovieResource](docs/MovieResource.md)
  - [MovieRuntimeFormatType](docs/MovieRuntimeFormatType.md)
+ - [MovieStatisticsResource](docs/MovieStatisticsResource.md)
  - [MovieStatusType](docs/MovieStatusType.md)
  - [NamingConfigResource](docs/NamingConfigResource.md)
  - [NotificationResource](docs/NotificationResource.md)

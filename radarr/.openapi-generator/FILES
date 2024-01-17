@@ -192,6 +192,7 @@ docs/MovieImportAPI.md
 docs/MovieLookupAPI.md
 docs/MovieResource.md
 docs/MovieRuntimeFormatType.md
+docs/MovieStatisticsResource.md
 docs/MovieStatusType.md
 docs/NamingConfigAPI.md
 docs/NamingConfigResource.md
@@ -347,6 +348,7 @@ model_movie_file_resource.go
 model_movie_history_event_type.go
 model_movie_resource.go
 model_movie_runtime_format_type.go
+model_movie_statistics_resource.go
 model_movie_status_type.go
 model_naming_config_resource.go
 model_notification_resource.go
