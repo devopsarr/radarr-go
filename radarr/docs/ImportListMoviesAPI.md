@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ## GetImportlistMovie
 
-> GetImportlistMovie(ctx).IncludeRecommendations(includeRecommendations).Execute()
+> GetImportlistMovie(ctx).IncludeRecommendations(includeRecommendations).IncludeTrending(includeTrending).IncludePopular(includePopular).Execute()
 
 
 
@@ -91,10 +91,12 @@ import (
 
 func main() {
     includeRecommendations := true // bool |  (optional) (default to false)
+    includeTrending := true // bool |  (optional) (default to false)
+    includePopular := true // bool |  (optional) (default to false)
 
     configuration := radarrClient.NewConfiguration()
     apiClient := radarrClient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ImportListMoviesAPI.GetImportlistMovie(context.Background()).IncludeRecommendations(includeRecommendations).Execute()
+    resp, r, err := apiClient.ImportListMoviesAPI.GetImportlistMovie(context.Background()).IncludeRecommendations(includeRecommendations).IncludeTrending(includeTrending).IncludePopular(includePopular).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ImportListMoviesAPI.GetImportlistMovie``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -114,6 +116,8 @@ Other parameters are passed through a pointer to a apiGetImportlistMovieRequest 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **includeRecommendations** | **bool** |  | [default to false]
+ **includeTrending** | **bool** |  | [default to false]
+ **includePopular** | **bool** |  | [default to false]
 
 ### Return type
 

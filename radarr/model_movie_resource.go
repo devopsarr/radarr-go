@@ -40,7 +40,7 @@ type MovieResource struct {
 	Studio NullableString `json:"studio,omitempty"`
 	Path NullableString `json:"path,omitempty"`
 	QualityProfileId *int32 `json:"qualityProfileId,omitempty"`
-	HasFile *bool `json:"hasFile,omitempty"`
+	HasFile NullableBool `json:"hasFile,omitempty"`
 	Monitored *bool `json:"monitored,omitempty"`
 	MinimumAvailability *MovieStatusType `json:"minimumAvailability,omitempty"`
 	IsAvailable *bool `json:"isAvailable,omitempty"`
@@ -969,36 +969,46 @@ func (o *MovieResource) SetQualityProfileId(v int32) {
 	o.QualityProfileId = &v
 }
 
-// GetHasFile returns the HasFile field value if set, zero value otherwise.
+// GetHasFile returns the HasFile field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MovieResource) GetHasFile() bool {
-	if o == nil || isNil(o.HasFile) {
+	if o == nil || isNil(o.HasFile.Get()) {
 		var ret bool
 		return ret
 	}
-	return *o.HasFile
+	return *o.HasFile.Get()
 }
 
 // GetHasFileOk returns a tuple with the HasFile field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MovieResource) GetHasFileOk() (*bool, bool) {
-	if o == nil || isNil(o.HasFile) {
+	if o == nil {
     return nil, false
 	}
-	return o.HasFile, true
+	return o.HasFile.Get(), o.HasFile.IsSet()
 }
 
 // HasHasFile returns a boolean if a field has been set.
 func (o *MovieResource) HasHasFile() bool {
-	if o != nil && !isNil(o.HasFile) {
+	if o != nil && o.HasFile.IsSet() {
 		return true
 	}
 
 	return false
 }
 
-// SetHasFile gets a reference to the given bool and assigns it to the HasFile field.
+// SetHasFile gets a reference to the given NullableBool and assigns it to the HasFile field.
 func (o *MovieResource) SetHasFile(v bool) {
-	o.HasFile = &v
+	o.HasFile.Set(&v)
+}
+// SetHasFileNil sets the value for HasFile to be an explicit nil
+func (o *MovieResource) SetHasFileNil() {
+	o.HasFile.Set(nil)
+}
+
+// UnsetHasFile ensures that no value is present for HasFile, not even an explicit nil
+func (o *MovieResource) UnsetHasFile() {
+	o.HasFile.Unset()
 }
 
 // GetMonitored returns the Monitored field value if set, zero value otherwise.
@@ -1816,8 +1826,8 @@ func (o MovieResource) MarshalJSON() ([]byte, error) {
 	if !isNil(o.QualityProfileId) {
 		toSerialize["qualityProfileId"] = o.QualityProfileId
 	}
-	if !isNil(o.HasFile) {
-		toSerialize["hasFile"] = o.HasFile
+	if o.HasFile.IsSet() {
+		toSerialize["hasFile"] = o.HasFile.Get()
 	}
 	if !isNil(o.Monitored) {
 		toSerialize["monitored"] = o.Monitored

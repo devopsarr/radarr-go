@@ -2410,6 +2410,22 @@ paths:
           default: false
           type: boolean
         style: form
+      - explode: true
+        in: query
+        name: includeTrending
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: includePopular
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
       responses:
         "200":
           description: Success
@@ -2968,17 +2984,7 @@ paths:
       responses:
         "200":
           content:
-            text/plain:
-              schema:
-                items:
-                  $ref: '#/components/schemas/ManualImportResource'
-                type: array
             application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/ManualImportResource'
-                type: array
-            text/json:
               schema:
                 items:
                   $ref: '#/components/schemas/ManualImportResource'
@@ -2991,16 +2997,6 @@ paths:
       requestBody:
         content:
           application/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/ManualImportReprocessResource'
-              type: array
-          text/json:
-            schema:
-              items:
-                $ref: '#/components/schemas/ManualImportReprocessResource'
-              type: array
-          application/*+json:
             schema:
               items:
                 $ref: '#/components/schemas/ManualImportReprocessResource'
@@ -3587,8 +3583,10 @@ paths:
         name: movieId
         required: false
         schema:
-          format: int32
-          type: integer
+          items:
+            format: int32
+            type: integer
+          type: array
         style: form
       - explode: true
         in: query
@@ -4537,6 +4535,14 @@ paths:
           default: false
           type: boolean
         style: form
+      - explode: true
+        in: query
+        name: changeCategory
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
       responses:
         "200":
           description: Success
@@ -4591,6 +4597,14 @@ paths:
       - explode: true
         in: query
         name: skipRedownload
+        required: false
+        schema:
+          default: false
+          type: boolean
+        style: form
+      - explode: true
+        in: query
+        name: changeCategory
         required: false
         schema:
           default: false
@@ -15493,6 +15507,7 @@ components:
           format: int32
           type: integer
         hasFile:
+          nullable: true
           type: boolean
         monitored:
           type: boolean
@@ -17364,6 +17379,7 @@ components:
         - name: name
           id: 2
         estimatedCompletionTime: 2000-01-23T04:56:07.000+00:00
+        added: 2000-01-23T04:56:07.000+00:00
         customFormats:
         - name: name
           includeCustomFormatWhenRenaming: true
@@ -17665,6 +17681,7 @@ components:
           title: title
         protocol: null
         size: 5.962133916683182
+        downloadClientHasPostImportCategory: true
         outputPath: outputPath
         id: 0
         status: status
@@ -17709,6 +17726,10 @@ components:
           format: date-time
           nullable: true
           type: string
+        added:
+          format: date-time
+          nullable: true
+          type: string
         status:
           nullable: true
           type: string
@@ -17732,6 +17753,8 @@ components:
         downloadClient:
           nullable: true
           type: string
+        downloadClientHasPostImportCategory:
+          type: boolean
         indexer:
           nullable: true
           type: string
@@ -18163,6 +18186,7 @@ components:
           - name: name
             id: 2
           estimatedCompletionTime: 2000-01-23T04:56:07.000+00:00
+          added: 2000-01-23T04:56:07.000+00:00
           customFormats:
           - name: name
             includeCustomFormatWhenRenaming: true
@@ -18464,6 +18488,7 @@ components:
             title: title
           protocol: null
           size: 5.962133916683182
+          downloadClientHasPostImportCategory: true
           outputPath: outputPath
           id: 0
           status: status
@@ -18885,6 +18910,7 @@ components:
           - name: name
             id: 2
           estimatedCompletionTime: 2000-01-23T04:56:07.000+00:00
+          added: 2000-01-23T04:56:07.000+00:00
           customFormats:
           - name: name
             includeCustomFormatWhenRenaming: true
@@ -19186,6 +19212,7 @@ components:
             title: title
           protocol: null
           size: 5.962133916683182
+          downloadClientHasPostImportCategory: true
           outputPath: outputPath
           id: 0
           status: status
