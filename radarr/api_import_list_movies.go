@@ -146,10 +146,22 @@ type ApiGetImportlistMovieRequest struct {
 	ctx context.Context
 	ApiService *ImportListMoviesAPIService
 	includeRecommendations *bool
+	includeTrending *bool
+	includePopular *bool
 }
 
 func (r ApiGetImportlistMovieRequest) IncludeRecommendations(includeRecommendations bool) ApiGetImportlistMovieRequest {
 	r.includeRecommendations = &includeRecommendations
+	return r
+}
+
+func (r ApiGetImportlistMovieRequest) IncludeTrending(includeTrending bool) ApiGetImportlistMovieRequest {
+	r.includeTrending = &includeTrending
+	return r
+}
+
+func (r ApiGetImportlistMovieRequest) IncludePopular(includePopular bool) ApiGetImportlistMovieRequest {
+	r.includePopular = &includePopular
 	return r
 }
 
@@ -191,6 +203,12 @@ func (a *ImportListMoviesAPIService) GetImportlistMovieExecute(r ApiGetImportlis
 
 	if r.includeRecommendations != nil {
 		localVarQueryParams.Add("includeRecommendations", parameterToString(*r.includeRecommendations, ""))
+	}
+	if r.includeTrending != nil {
+		localVarQueryParams.Add("includeTrending", parameterToString(*r.includeTrending, ""))
+	}
+	if r.includePopular != nil {
+		localVarQueryParams.Add("includePopular", parameterToString(*r.includePopular, ""))
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

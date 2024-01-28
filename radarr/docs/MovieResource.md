@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 **Studio** | Pointer to **NullableString** |  | [optional] 
 **Path** | Pointer to **NullableString** |  | [optional] 
 **QualityProfileId** | Pointer to **int32** |  | [optional] 
-**HasFile** | Pointer to **bool** |  | [optional] 
+**HasFile** | Pointer to **NullableBool** |  | [optional] 
 **Monitored** | Pointer to **bool** |  | [optional] 
 **MinimumAvailability** | Pointer to [**MovieStatusType**](MovieStatusType.md) |  | [optional] 
 **IsAvailable** | Pointer to **bool** |  | [optional] 
@@ -839,6 +839,16 @@ SetHasFile sets HasFile field to given value.
 
 HasHasFile returns a boolean if a field has been set.
 
+### SetHasFileNil
+
+`func (o *MovieResource) SetHasFileNil(b bool)`
+
+ SetHasFileNil sets the value for HasFile to be an explicit nil
+
+### UnsetHasFile
+`func (o *MovieResource) UnsetHasFile()`
+
+UnsetHasFile ensures that no value is present for HasFile, not even an explicit nil
 ### GetMonitored
 
 `func (o *MovieResource) GetMonitored() bool`

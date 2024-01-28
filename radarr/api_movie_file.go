@@ -392,11 +392,11 @@ func (a *MovieFileAPIService) GetMovieFileByIdExecute(r ApiGetMovieFileByIdReque
 type ApiListMovieFileRequest struct {
 	ctx context.Context
 	ApiService *MovieFileAPIService
-	movieId *int32
+	movieId *[]int32
 	movieFileIds *[]int32
 }
 
-func (r ApiListMovieFileRequest) MovieId(movieId int32) ApiListMovieFileRequest {
+func (r ApiListMovieFileRequest) MovieId(movieId []int32) ApiListMovieFileRequest {
 	r.movieId = &movieId
 	return r
 }
@@ -445,7 +445,15 @@ func (a *MovieFileAPIService) ListMovieFileExecute(r ApiListMovieFileRequest) ([
 	localVarFormParams := url.Values{}
 
 	if r.movieId != nil {
-		localVarQueryParams.Add("movieId", parameterToString(*r.movieId, ""))
+		t := *r.movieId
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				localVarQueryParams.Add("movieId", parameterToString(s.Index(i), "multi"))
+			}
+		} else {
+			localVarQueryParams.Add("movieId", parameterToString(t, "multi"))
+		}
 	}
 	if r.movieFileIds != nil {
 		t := *r.movieFileIds
