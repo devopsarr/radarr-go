@@ -19,6 +19,7 @@ type CollectionUpdateResource struct {
 	CollectionIds []*int32 `json:"collectionIds,omitempty"`
 	Monitored NullableBool `json:"monitored,omitempty"`
 	MonitorMovies NullableBool `json:"monitorMovies,omitempty"`
+	SearchOnAdd NullableBool `json:"searchOnAdd,omitempty"`
 	QualityProfileId NullableInt32 `json:"qualityProfileId,omitempty"`
 	RootFolderPath NullableString `json:"rootFolderPath,omitempty"`
 	MinimumAvailability *MovieStatusType `json:"minimumAvailability,omitempty"`
@@ -158,6 +159,48 @@ func (o *CollectionUpdateResource) UnsetMonitorMovies() {
 	o.MonitorMovies.Unset()
 }
 
+// GetSearchOnAdd returns the SearchOnAdd field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *CollectionUpdateResource) GetSearchOnAdd() bool {
+	if o == nil || isNil(o.SearchOnAdd.Get()) {
+		var ret bool
+		return ret
+	}
+	return *o.SearchOnAdd.Get()
+}
+
+// GetSearchOnAddOk returns a tuple with the SearchOnAdd field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *CollectionUpdateResource) GetSearchOnAddOk() (*bool, bool) {
+	if o == nil {
+    return nil, false
+	}
+	return o.SearchOnAdd.Get(), o.SearchOnAdd.IsSet()
+}
+
+// HasSearchOnAdd returns a boolean if a field has been set.
+func (o *CollectionUpdateResource) HasSearchOnAdd() bool {
+	if o != nil && o.SearchOnAdd.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetSearchOnAdd gets a reference to the given NullableBool and assigns it to the SearchOnAdd field.
+func (o *CollectionUpdateResource) SetSearchOnAdd(v bool) {
+	o.SearchOnAdd.Set(&v)
+}
+// SetSearchOnAddNil sets the value for SearchOnAdd to be an explicit nil
+func (o *CollectionUpdateResource) SetSearchOnAddNil() {
+	o.SearchOnAdd.Set(nil)
+}
+
+// UnsetSearchOnAdd ensures that no value is present for SearchOnAdd, not even an explicit nil
+func (o *CollectionUpdateResource) UnsetSearchOnAdd() {
+	o.SearchOnAdd.Unset()
+}
+
 // GetQualityProfileId returns the QualityProfileId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CollectionUpdateResource) GetQualityProfileId() int32 {
 	if o == nil || isNil(o.QualityProfileId.Get()) {
@@ -284,6 +327,9 @@ func (o CollectionUpdateResource) MarshalJSON() ([]byte, error) {
 	}
 	if o.MonitorMovies.IsSet() {
 		toSerialize["monitorMovies"] = o.MonitorMovies.Get()
+	}
+	if o.SearchOnAdd.IsSet() {
+		toSerialize["searchOnAdd"] = o.SearchOnAdd.Get()
 	}
 	if o.QualityProfileId.IsSet() {
 		toSerialize["qualityProfileId"] = o.QualityProfileId.Get()
