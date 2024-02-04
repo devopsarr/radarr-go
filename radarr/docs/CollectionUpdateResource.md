@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **CollectionIds** | Pointer to **[]int32** |  | [optional] 
 **Monitored** | Pointer to **NullableBool** |  | [optional] 
 **MonitorMovies** | Pointer to **NullableBool** |  | [optional] 
+**SearchOnAdd** | Pointer to **NullableBool** |  | [optional] 
 **QualityProfileId** | Pointer to **NullableInt32** |  | [optional] 
 **RootFolderPath** | Pointer to **NullableString** |  | [optional] 
 **MinimumAvailability** | Pointer to [**MovieStatusType**](MovieStatusType.md) |  | [optional] 
@@ -135,6 +136,41 @@ HasMonitorMovies returns a boolean if a field has been set.
 `func (o *CollectionUpdateResource) UnsetMonitorMovies()`
 
 UnsetMonitorMovies ensures that no value is present for MonitorMovies, not even an explicit nil
+### GetSearchOnAdd
+
+`func (o *CollectionUpdateResource) GetSearchOnAdd() bool`
+
+GetSearchOnAdd returns the SearchOnAdd field if non-nil, zero value otherwise.
+
+### GetSearchOnAddOk
+
+`func (o *CollectionUpdateResource) GetSearchOnAddOk() (*bool, bool)`
+
+GetSearchOnAddOk returns a tuple with the SearchOnAdd field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSearchOnAdd
+
+`func (o *CollectionUpdateResource) SetSearchOnAdd(v bool)`
+
+SetSearchOnAdd sets SearchOnAdd field to given value.
+
+### HasSearchOnAdd
+
+`func (o *CollectionUpdateResource) HasSearchOnAdd() bool`
+
+HasSearchOnAdd returns a boolean if a field has been set.
+
+### SetSearchOnAddNil
+
+`func (o *CollectionUpdateResource) SetSearchOnAddNil(b bool)`
+
+ SetSearchOnAddNil sets the value for SearchOnAdd to be an explicit nil
+
+### UnsetSearchOnAdd
+`func (o *CollectionUpdateResource) UnsetSearchOnAdd()`
+
+UnsetSearchOnAdd ensures that no value is present for SearchOnAdd, not even an explicit nil
 ### GetQualityProfileId
 
 `func (o *CollectionUpdateResource) GetQualityProfileId() int32`
