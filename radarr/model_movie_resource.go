@@ -36,11 +36,11 @@ type MovieResource struct {
 	Website NullableString `json:"website,omitempty"`
 	RemotePoster NullableString `json:"remotePoster,omitempty"`
 	Year *int32 `json:"year,omitempty"`
+	HasFile *bool `json:"hasFile,omitempty"`
 	YouTubeTrailerId NullableString `json:"youTubeTrailerId,omitempty"`
 	Studio NullableString `json:"studio,omitempty"`
 	Path NullableString `json:"path,omitempty"`
 	QualityProfileId *int32 `json:"qualityProfileId,omitempty"`
-	HasFile NullableBool `json:"hasFile,omitempty"`
 	Monitored *bool `json:"monitored,omitempty"`
 	MinimumAvailability *MovieStatusType `json:"minimumAvailability,omitempty"`
 	IsAvailable *bool `json:"isAvailable,omitempty"`
@@ -59,9 +59,8 @@ type MovieResource struct {
 	AddOptions *AddMovieOptions `json:"addOptions,omitempty"`
 	Ratings *Ratings `json:"ratings,omitempty"`
 	MovieFile *MovieFileResource `json:"movieFile,omitempty"`
-	Collection *MovieCollectionResource `json:"collection,omitempty"`
+	Collection *MovieCollection `json:"collection,omitempty"`
 	Popularity *float32 `json:"popularity,omitempty"`
-	Statistics *MovieStatisticsResource `json:"statistics,omitempty"`
 }
 
 // NewMovieResource instantiates a new MovieResource object
@@ -811,6 +810,38 @@ func (o *MovieResource) SetYear(v int32) {
 	o.Year = &v
 }
 
+// GetHasFile returns the HasFile field value if set, zero value otherwise.
+func (o *MovieResource) GetHasFile() bool {
+	if o == nil || isNil(o.HasFile) {
+		var ret bool
+		return ret
+	}
+	return *o.HasFile
+}
+
+// GetHasFileOk returns a tuple with the HasFile field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MovieResource) GetHasFileOk() (*bool, bool) {
+	if o == nil || isNil(o.HasFile) {
+    return nil, false
+	}
+	return o.HasFile, true
+}
+
+// HasHasFile returns a boolean if a field has been set.
+func (o *MovieResource) HasHasFile() bool {
+	if o != nil && !isNil(o.HasFile) {
+		return true
+	}
+
+	return false
+}
+
+// SetHasFile gets a reference to the given bool and assigns it to the HasFile field.
+func (o *MovieResource) SetHasFile(v bool) {
+	o.HasFile = &v
+}
+
 // GetYouTubeTrailerId returns the YouTubeTrailerId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MovieResource) GetYouTubeTrailerId() string {
 	if o == nil || isNil(o.YouTubeTrailerId.Get()) {
@@ -967,48 +998,6 @@ func (o *MovieResource) HasQualityProfileId() bool {
 // SetQualityProfileId gets a reference to the given int32 and assigns it to the QualityProfileId field.
 func (o *MovieResource) SetQualityProfileId(v int32) {
 	o.QualityProfileId = &v
-}
-
-// GetHasFile returns the HasFile field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *MovieResource) GetHasFile() bool {
-	if o == nil || isNil(o.HasFile.Get()) {
-		var ret bool
-		return ret
-	}
-	return *o.HasFile.Get()
-}
-
-// GetHasFileOk returns a tuple with the HasFile field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *MovieResource) GetHasFileOk() (*bool, bool) {
-	if o == nil {
-    return nil, false
-	}
-	return o.HasFile.Get(), o.HasFile.IsSet()
-}
-
-// HasHasFile returns a boolean if a field has been set.
-func (o *MovieResource) HasHasFile() bool {
-	if o != nil && o.HasFile.IsSet() {
-		return true
-	}
-
-	return false
-}
-
-// SetHasFile gets a reference to the given NullableBool and assigns it to the HasFile field.
-func (o *MovieResource) SetHasFile(v bool) {
-	o.HasFile.Set(&v)
-}
-// SetHasFileNil sets the value for HasFile to be an explicit nil
-func (o *MovieResource) SetHasFileNil() {
-	o.HasFile.Set(nil)
-}
-
-// UnsetHasFile ensures that no value is present for HasFile, not even an explicit nil
-func (o *MovieResource) UnsetHasFile() {
-	o.HasFile.Unset()
 }
 
 // GetMonitored returns the Monitored field value if set, zero value otherwise.
@@ -1660,9 +1649,9 @@ func (o *MovieResource) SetMovieFile(v MovieFileResource) {
 }
 
 // GetCollection returns the Collection field value if set, zero value otherwise.
-func (o *MovieResource) GetCollection() MovieCollectionResource {
+func (o *MovieResource) GetCollection() MovieCollection {
 	if o == nil || isNil(o.Collection) {
-		var ret MovieCollectionResource
+		var ret MovieCollection
 		return ret
 	}
 	return *o.Collection
@@ -1670,7 +1659,7 @@ func (o *MovieResource) GetCollection() MovieCollectionResource {
 
 // GetCollectionOk returns a tuple with the Collection field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MovieResource) GetCollectionOk() (*MovieCollectionResource, bool) {
+func (o *MovieResource) GetCollectionOk() (*MovieCollection, bool) {
 	if o == nil || isNil(o.Collection) {
     return nil, false
 	}
@@ -1686,8 +1675,8 @@ func (o *MovieResource) HasCollection() bool {
 	return false
 }
 
-// SetCollection gets a reference to the given MovieCollectionResource and assigns it to the Collection field.
-func (o *MovieResource) SetCollection(v MovieCollectionResource) {
+// SetCollection gets a reference to the given MovieCollection and assigns it to the Collection field.
+func (o *MovieResource) SetCollection(v MovieCollection) {
 	o.Collection = &v
 }
 
@@ -1721,38 +1710,6 @@ func (o *MovieResource) HasPopularity() bool {
 // SetPopularity gets a reference to the given float32 and assigns it to the Popularity field.
 func (o *MovieResource) SetPopularity(v float32) {
 	o.Popularity = &v
-}
-
-// GetStatistics returns the Statistics field value if set, zero value otherwise.
-func (o *MovieResource) GetStatistics() MovieStatisticsResource {
-	if o == nil || isNil(o.Statistics) {
-		var ret MovieStatisticsResource
-		return ret
-	}
-	return *o.Statistics
-}
-
-// GetStatisticsOk returns a tuple with the Statistics field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *MovieResource) GetStatisticsOk() (*MovieStatisticsResource, bool) {
-	if o == nil || isNil(o.Statistics) {
-    return nil, false
-	}
-	return o.Statistics, true
-}
-
-// HasStatistics returns a boolean if a field has been set.
-func (o *MovieResource) HasStatistics() bool {
-	if o != nil && !isNil(o.Statistics) {
-		return true
-	}
-
-	return false
-}
-
-// SetStatistics gets a reference to the given MovieStatisticsResource and assigns it to the Statistics field.
-func (o *MovieResource) SetStatistics(v MovieStatisticsResource) {
-	o.Statistics = &v
 }
 
 func (o MovieResource) MarshalJSON() ([]byte, error) {
@@ -1814,6 +1771,9 @@ func (o MovieResource) MarshalJSON() ([]byte, error) {
 	if !isNil(o.Year) {
 		toSerialize["year"] = o.Year
 	}
+	if !isNil(o.HasFile) {
+		toSerialize["hasFile"] = o.HasFile
+	}
 	if o.YouTubeTrailerId.IsSet() {
 		toSerialize["youTubeTrailerId"] = o.YouTubeTrailerId.Get()
 	}
@@ -1825,9 +1785,6 @@ func (o MovieResource) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.QualityProfileId) {
 		toSerialize["qualityProfileId"] = o.QualityProfileId
-	}
-	if o.HasFile.IsSet() {
-		toSerialize["hasFile"] = o.HasFile.Get()
 	}
 	if !isNil(o.Monitored) {
 		toSerialize["monitored"] = o.Monitored
@@ -1888,9 +1845,6 @@ func (o MovieResource) MarshalJSON() ([]byte, error) {
 	}
 	if !isNil(o.Popularity) {
 		toSerialize["popularity"] = o.Popularity
-	}
-	if !isNil(o.Statistics) {
-		toSerialize["statistics"] = o.Statistics
 	}
 	return json.Marshal(toSerialize)
 }
