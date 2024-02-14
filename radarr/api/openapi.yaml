@@ -5,7 +5,7 @@ info:
     name: GPL-3.0
     url: https://github.com/Radarr/Radarr/blob/develop/LICENSE
   title: Radarr
-  version: 3.0.0
+  version: v5.2.6.8376
 servers:
 - url: "{protocol}://{hostpath}"
   variables:
