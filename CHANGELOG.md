@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.0.0](https://github.com/devopsarr/radarr-go/compare/v0.5.0...v1.0.0) (2024-02-15)
+
+
+### ⚠ BREAKING CHANGES
+
+* **devopsarr/prowlarr-py#39:** update sdk generator to use pydantic 2.x
+
+### Features
+
+* align to go sdk ([5fcdc5a](https://github.com/devopsarr/radarr-go/commit/5fcdc5ae1c355f6c46608f8a8ee534c203a35b42))
+* **devopsarr/prowlarr-py#39:** update sdk generator to use pydantic 2.x ([4568fb5](https://github.com/devopsarr/radarr-go/commit/4568fb56e3f596ed1f7e1fdc5a80224b3cccb89c))
+* inject api version into readme ([9f13d94](https://github.com/devopsarr/radarr-go/commit/9f13d947832f4b2266ed237e2a0997025155b7b3))
+
+
+### Bug Fixes
+
+* release please commented lines ([63e3c7c](https://github.com/devopsarr/radarr-go/commit/63e3c7cf26ebc4936999f79c03f41279271cffe8))
+* remove middle elements from method name ([94752ff](https://github.com/devopsarr/radarr-go/commit/94752ff3b7a2616cfb51ba9be8d9e294dc31ae90))
+
 ## [0.5.0](https://github.com/devopsarr/radarr-go/compare/v0.4.0...v0.5.0) (2023-09-12)
 
 
