@@ -22,6 +22,7 @@ import (
 
 // QueueStatusAPIService QueueStatusAPI service
 type QueueStatusAPIService service
+
 type ApiGetQueueStatusRequest struct {
 	ctx context.Context
 	ApiService *QueueStatusAPIService
@@ -146,6 +147,7 @@ func (a *QueueStatusAPIService) GetQueueStatusExecute(r ApiGetQueueStatusRequest
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiGetQueueStatusByIdRequest struct {
 	ctx context.Context
 	ApiService *QueueStatusAPIService
@@ -187,7 +189,7 @@ func (a *QueueStatusAPIService) GetQueueStatusByIdExecute(r ApiGetQueueStatusByI
 	}
 
 	localVarPath := localBasePath + "/api/v3/queue/status/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

@@ -21,12 +21,13 @@ import (
 
 // IndexerFlagAPIService IndexerFlagAPI service
 type IndexerFlagAPIService service
+
 type ApiListIndexerFlagRequest struct {
 	ctx context.Context
 	ApiService *IndexerFlagAPIService
 }
 
-func (r ApiListIndexerFlagRequest) Execute() ([]*IndexerFlagResource, *http.Response, error) {
+func (r ApiListIndexerFlagRequest) Execute() ([]IndexerFlagResource, *http.Response, error) {
 	return r.ApiService.ListIndexerFlagExecute(r)
 }
 
@@ -45,12 +46,12 @@ func (a *IndexerFlagAPIService) ListIndexerFlag(ctx context.Context) ApiListInde
 
 // Execute executes the request
 //  @return []IndexerFlagResource
-func (a *IndexerFlagAPIService) ListIndexerFlagExecute(r ApiListIndexerFlagRequest) ([]*IndexerFlagResource, *http.Response, error) {
+func (a *IndexerFlagAPIService) ListIndexerFlagExecute(r ApiListIndexerFlagRequest) ([]IndexerFlagResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*IndexerFlagResource
+		localVarReturnValue  []IndexerFlagResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "IndexerFlagAPIService.ListIndexerFlag")

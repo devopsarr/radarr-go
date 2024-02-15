@@ -14,18 +14,21 @@ import (
 	"encoding/json"
 )
 
+// checks if the ImportListResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ImportListResource{}
+
 // ImportListResource struct for ImportListResource
 type ImportListResource struct {
 	Id *int32 `json:"id,omitempty"`
 	Name NullableString `json:"name,omitempty"`
-	Fields []*Field `json:"fields,omitempty"`
+	Fields []Field `json:"fields,omitempty"`
 	ImplementationName NullableString `json:"implementationName,omitempty"`
 	Implementation NullableString `json:"implementation,omitempty"`
 	ConfigContract NullableString `json:"configContract,omitempty"`
 	InfoLink NullableString `json:"infoLink,omitempty"`
 	Message *ProviderMessage `json:"message,omitempty"`
-	Tags []*int32 `json:"tags,omitempty"`
-	Presets []*ImportListResource `json:"presets,omitempty"`
+	Tags []int32 `json:"tags,omitempty"`
+	Presets []ImportListResource `json:"presets,omitempty"`
 	Enabled *bool `json:"enabled,omitempty"`
 	EnableAuto *bool `json:"enableAuto,omitempty"`
 	Monitor *MonitorTypes `json:"monitor,omitempty"`
@@ -57,7 +60,7 @@ func NewImportListResourceWithDefaults() *ImportListResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *ImportListResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -67,15 +70,15 @@ func (o *ImportListResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ImportListResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *ImportListResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -89,7 +92,7 @@ func (o *ImportListResource) SetId(v int32) {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ImportListResource) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -101,7 +104,7 @@ func (o *ImportListResource) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ImportListResource) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -130,9 +133,9 @@ func (o *ImportListResource) UnsetName() {
 }
 
 // GetFields returns the Fields field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ImportListResource) GetFields() []*Field {
+func (o *ImportListResource) GetFields() []Field {
 	if o == nil {
-		var ret []*Field
+		var ret []Field
 		return ret
 	}
 	return o.Fields
@@ -141,16 +144,16 @@ func (o *ImportListResource) GetFields() []*Field {
 // GetFieldsOk returns a tuple with the Fields field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ImportListResource) GetFieldsOk() ([]*Field, bool) {
-	if o == nil || isNil(o.Fields) {
-    return nil, false
+func (o *ImportListResource) GetFieldsOk() ([]Field, bool) {
+	if o == nil || IsNil(o.Fields) {
+		return nil, false
 	}
 	return o.Fields, true
 }
 
 // HasFields returns a boolean if a field has been set.
 func (o *ImportListResource) HasFields() bool {
-	if o != nil && isNil(o.Fields) {
+	if o != nil && IsNil(o.Fields) {
 		return true
 	}
 
@@ -158,13 +161,13 @@ func (o *ImportListResource) HasFields() bool {
 }
 
 // SetFields gets a reference to the given []Field and assigns it to the Fields field.
-func (o *ImportListResource) SetFields(v []*Field) {
+func (o *ImportListResource) SetFields(v []Field) {
 	o.Fields = v
 }
 
 // GetImplementationName returns the ImplementationName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ImportListResource) GetImplementationName() string {
-	if o == nil || isNil(o.ImplementationName.Get()) {
+	if o == nil || IsNil(o.ImplementationName.Get()) {
 		var ret string
 		return ret
 	}
@@ -176,7 +179,7 @@ func (o *ImportListResource) GetImplementationName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ImportListResource) GetImplementationNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ImplementationName.Get(), o.ImplementationName.IsSet()
 }
@@ -206,7 +209,7 @@ func (o *ImportListResource) UnsetImplementationName() {
 
 // GetImplementation returns the Implementation field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ImportListResource) GetImplementation() string {
-	if o == nil || isNil(o.Implementation.Get()) {
+	if o == nil || IsNil(o.Implementation.Get()) {
 		var ret string
 		return ret
 	}
@@ -218,7 +221,7 @@ func (o *ImportListResource) GetImplementation() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ImportListResource) GetImplementationOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Implementation.Get(), o.Implementation.IsSet()
 }
@@ -248,7 +251,7 @@ func (o *ImportListResource) UnsetImplementation() {
 
 // GetConfigContract returns the ConfigContract field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ImportListResource) GetConfigContract() string {
-	if o == nil || isNil(o.ConfigContract.Get()) {
+	if o == nil || IsNil(o.ConfigContract.Get()) {
 		var ret string
 		return ret
 	}
@@ -260,7 +263,7 @@ func (o *ImportListResource) GetConfigContract() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ImportListResource) GetConfigContractOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ConfigContract.Get(), o.ConfigContract.IsSet()
 }
@@ -290,7 +293,7 @@ func (o *ImportListResource) UnsetConfigContract() {
 
 // GetInfoLink returns the InfoLink field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ImportListResource) GetInfoLink() string {
-	if o == nil || isNil(o.InfoLink.Get()) {
+	if o == nil || IsNil(o.InfoLink.Get()) {
 		var ret string
 		return ret
 	}
@@ -302,7 +305,7 @@ func (o *ImportListResource) GetInfoLink() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ImportListResource) GetInfoLinkOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.InfoLink.Get(), o.InfoLink.IsSet()
 }
@@ -332,7 +335,7 @@ func (o *ImportListResource) UnsetInfoLink() {
 
 // GetMessage returns the Message field value if set, zero value otherwise.
 func (o *ImportListResource) GetMessage() ProviderMessage {
-	if o == nil || isNil(o.Message) {
+	if o == nil || IsNil(o.Message) {
 		var ret ProviderMessage
 		return ret
 	}
@@ -342,15 +345,15 @@ func (o *ImportListResource) GetMessage() ProviderMessage {
 // GetMessageOk returns a tuple with the Message field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ImportListResource) GetMessageOk() (*ProviderMessage, bool) {
-	if o == nil || isNil(o.Message) {
-    return nil, false
+	if o == nil || IsNil(o.Message) {
+		return nil, false
 	}
 	return o.Message, true
 }
 
 // HasMessage returns a boolean if a field has been set.
 func (o *ImportListResource) HasMessage() bool {
-	if o != nil && !isNil(o.Message) {
+	if o != nil && !IsNil(o.Message) {
 		return true
 	}
 
@@ -363,9 +366,9 @@ func (o *ImportListResource) SetMessage(v ProviderMessage) {
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ImportListResource) GetTags() []*int32 {
+func (o *ImportListResource) GetTags() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.Tags
@@ -374,16 +377,16 @@ func (o *ImportListResource) GetTags() []*int32 {
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ImportListResource) GetTagsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.Tags) {
-    return nil, false
+func (o *ImportListResource) GetTagsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
 	}
 	return o.Tags, true
 }
 
 // HasTags returns a boolean if a field has been set.
 func (o *ImportListResource) HasTags() bool {
-	if o != nil && isNil(o.Tags) {
+	if o != nil && IsNil(o.Tags) {
 		return true
 	}
 
@@ -391,14 +394,14 @@ func (o *ImportListResource) HasTags() bool {
 }
 
 // SetTags gets a reference to the given []int32 and assigns it to the Tags field.
-func (o *ImportListResource) SetTags(v []*int32) {
+func (o *ImportListResource) SetTags(v []int32) {
 	o.Tags = v
 }
 
 // GetPresets returns the Presets field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ImportListResource) GetPresets() []*ImportListResource {
+func (o *ImportListResource) GetPresets() []ImportListResource {
 	if o == nil {
-		var ret []*ImportListResource
+		var ret []ImportListResource
 		return ret
 	}
 	return o.Presets
@@ -407,16 +410,16 @@ func (o *ImportListResource) GetPresets() []*ImportListResource {
 // GetPresetsOk returns a tuple with the Presets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ImportListResource) GetPresetsOk() ([]*ImportListResource, bool) {
-	if o == nil || isNil(o.Presets) {
-    return nil, false
+func (o *ImportListResource) GetPresetsOk() ([]ImportListResource, bool) {
+	if o == nil || IsNil(o.Presets) {
+		return nil, false
 	}
 	return o.Presets, true
 }
 
 // HasPresets returns a boolean if a field has been set.
 func (o *ImportListResource) HasPresets() bool {
-	if o != nil && isNil(o.Presets) {
+	if o != nil && IsNil(o.Presets) {
 		return true
 	}
 
@@ -424,13 +427,13 @@ func (o *ImportListResource) HasPresets() bool {
 }
 
 // SetPresets gets a reference to the given []ImportListResource and assigns it to the Presets field.
-func (o *ImportListResource) SetPresets(v []*ImportListResource) {
+func (o *ImportListResource) SetPresets(v []ImportListResource) {
 	o.Presets = v
 }
 
 // GetEnabled returns the Enabled field value if set, zero value otherwise.
 func (o *ImportListResource) GetEnabled() bool {
-	if o == nil || isNil(o.Enabled) {
+	if o == nil || IsNil(o.Enabled) {
 		var ret bool
 		return ret
 	}
@@ -440,15 +443,15 @@ func (o *ImportListResource) GetEnabled() bool {
 // GetEnabledOk returns a tuple with the Enabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ImportListResource) GetEnabledOk() (*bool, bool) {
-	if o == nil || isNil(o.Enabled) {
-    return nil, false
+	if o == nil || IsNil(o.Enabled) {
+		return nil, false
 	}
 	return o.Enabled, true
 }
 
 // HasEnabled returns a boolean if a field has been set.
 func (o *ImportListResource) HasEnabled() bool {
-	if o != nil && !isNil(o.Enabled) {
+	if o != nil && !IsNil(o.Enabled) {
 		return true
 	}
 
@@ -462,7 +465,7 @@ func (o *ImportListResource) SetEnabled(v bool) {
 
 // GetEnableAuto returns the EnableAuto field value if set, zero value otherwise.
 func (o *ImportListResource) GetEnableAuto() bool {
-	if o == nil || isNil(o.EnableAuto) {
+	if o == nil || IsNil(o.EnableAuto) {
 		var ret bool
 		return ret
 	}
@@ -472,15 +475,15 @@ func (o *ImportListResource) GetEnableAuto() bool {
 // GetEnableAutoOk returns a tuple with the EnableAuto field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ImportListResource) GetEnableAutoOk() (*bool, bool) {
-	if o == nil || isNil(o.EnableAuto) {
-    return nil, false
+	if o == nil || IsNil(o.EnableAuto) {
+		return nil, false
 	}
 	return o.EnableAuto, true
 }
 
 // HasEnableAuto returns a boolean if a field has been set.
 func (o *ImportListResource) HasEnableAuto() bool {
-	if o != nil && !isNil(o.EnableAuto) {
+	if o != nil && !IsNil(o.EnableAuto) {
 		return true
 	}
 
@@ -494,7 +497,7 @@ func (o *ImportListResource) SetEnableAuto(v bool) {
 
 // GetMonitor returns the Monitor field value if set, zero value otherwise.
 func (o *ImportListResource) GetMonitor() MonitorTypes {
-	if o == nil || isNil(o.Monitor) {
+	if o == nil || IsNil(o.Monitor) {
 		var ret MonitorTypes
 		return ret
 	}
@@ -504,15 +507,15 @@ func (o *ImportListResource) GetMonitor() MonitorTypes {
 // GetMonitorOk returns a tuple with the Monitor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ImportListResource) GetMonitorOk() (*MonitorTypes, bool) {
-	if o == nil || isNil(o.Monitor) {
-    return nil, false
+	if o == nil || IsNil(o.Monitor) {
+		return nil, false
 	}
 	return o.Monitor, true
 }
 
 // HasMonitor returns a boolean if a field has been set.
 func (o *ImportListResource) HasMonitor() bool {
-	if o != nil && !isNil(o.Monitor) {
+	if o != nil && !IsNil(o.Monitor) {
 		return true
 	}
 
@@ -526,7 +529,7 @@ func (o *ImportListResource) SetMonitor(v MonitorTypes) {
 
 // GetRootFolderPath returns the RootFolderPath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ImportListResource) GetRootFolderPath() string {
-	if o == nil || isNil(o.RootFolderPath.Get()) {
+	if o == nil || IsNil(o.RootFolderPath.Get()) {
 		var ret string
 		return ret
 	}
@@ -538,7 +541,7 @@ func (o *ImportListResource) GetRootFolderPath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ImportListResource) GetRootFolderPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.RootFolderPath.Get(), o.RootFolderPath.IsSet()
 }
@@ -568,7 +571,7 @@ func (o *ImportListResource) UnsetRootFolderPath() {
 
 // GetQualityProfileId returns the QualityProfileId field value if set, zero value otherwise.
 func (o *ImportListResource) GetQualityProfileId() int32 {
-	if o == nil || isNil(o.QualityProfileId) {
+	if o == nil || IsNil(o.QualityProfileId) {
 		var ret int32
 		return ret
 	}
@@ -578,15 +581,15 @@ func (o *ImportListResource) GetQualityProfileId() int32 {
 // GetQualityProfileIdOk returns a tuple with the QualityProfileId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ImportListResource) GetQualityProfileIdOk() (*int32, bool) {
-	if o == nil || isNil(o.QualityProfileId) {
-    return nil, false
+	if o == nil || IsNil(o.QualityProfileId) {
+		return nil, false
 	}
 	return o.QualityProfileId, true
 }
 
 // HasQualityProfileId returns a boolean if a field has been set.
 func (o *ImportListResource) HasQualityProfileId() bool {
-	if o != nil && !isNil(o.QualityProfileId) {
+	if o != nil && !IsNil(o.QualityProfileId) {
 		return true
 	}
 
@@ -600,7 +603,7 @@ func (o *ImportListResource) SetQualityProfileId(v int32) {
 
 // GetSearchOnAdd returns the SearchOnAdd field value if set, zero value otherwise.
 func (o *ImportListResource) GetSearchOnAdd() bool {
-	if o == nil || isNil(o.SearchOnAdd) {
+	if o == nil || IsNil(o.SearchOnAdd) {
 		var ret bool
 		return ret
 	}
@@ -610,15 +613,15 @@ func (o *ImportListResource) GetSearchOnAdd() bool {
 // GetSearchOnAddOk returns a tuple with the SearchOnAdd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ImportListResource) GetSearchOnAddOk() (*bool, bool) {
-	if o == nil || isNil(o.SearchOnAdd) {
-    return nil, false
+	if o == nil || IsNil(o.SearchOnAdd) {
+		return nil, false
 	}
 	return o.SearchOnAdd, true
 }
 
 // HasSearchOnAdd returns a boolean if a field has been set.
 func (o *ImportListResource) HasSearchOnAdd() bool {
-	if o != nil && !isNil(o.SearchOnAdd) {
+	if o != nil && !IsNil(o.SearchOnAdd) {
 		return true
 	}
 
@@ -632,7 +635,7 @@ func (o *ImportListResource) SetSearchOnAdd(v bool) {
 
 // GetMinimumAvailability returns the MinimumAvailability field value if set, zero value otherwise.
 func (o *ImportListResource) GetMinimumAvailability() MovieStatusType {
-	if o == nil || isNil(o.MinimumAvailability) {
+	if o == nil || IsNil(o.MinimumAvailability) {
 		var ret MovieStatusType
 		return ret
 	}
@@ -642,15 +645,15 @@ func (o *ImportListResource) GetMinimumAvailability() MovieStatusType {
 // GetMinimumAvailabilityOk returns a tuple with the MinimumAvailability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ImportListResource) GetMinimumAvailabilityOk() (*MovieStatusType, bool) {
-	if o == nil || isNil(o.MinimumAvailability) {
-    return nil, false
+	if o == nil || IsNil(o.MinimumAvailability) {
+		return nil, false
 	}
 	return o.MinimumAvailability, true
 }
 
 // HasMinimumAvailability returns a boolean if a field has been set.
 func (o *ImportListResource) HasMinimumAvailability() bool {
-	if o != nil && !isNil(o.MinimumAvailability) {
+	if o != nil && !IsNil(o.MinimumAvailability) {
 		return true
 	}
 
@@ -664,7 +667,7 @@ func (o *ImportListResource) SetMinimumAvailability(v MovieStatusType) {
 
 // GetListType returns the ListType field value if set, zero value otherwise.
 func (o *ImportListResource) GetListType() ImportListType {
-	if o == nil || isNil(o.ListType) {
+	if o == nil || IsNil(o.ListType) {
 		var ret ImportListType
 		return ret
 	}
@@ -674,15 +677,15 @@ func (o *ImportListResource) GetListType() ImportListType {
 // GetListTypeOk returns a tuple with the ListType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ImportListResource) GetListTypeOk() (*ImportListType, bool) {
-	if o == nil || isNil(o.ListType) {
-    return nil, false
+	if o == nil || IsNil(o.ListType) {
+		return nil, false
 	}
 	return o.ListType, true
 }
 
 // HasListType returns a boolean if a field has been set.
 func (o *ImportListResource) HasListType() bool {
-	if o != nil && !isNil(o.ListType) {
+	if o != nil && !IsNil(o.ListType) {
 		return true
 	}
 
@@ -696,7 +699,7 @@ func (o *ImportListResource) SetListType(v ImportListType) {
 
 // GetListOrder returns the ListOrder field value if set, zero value otherwise.
 func (o *ImportListResource) GetListOrder() int32 {
-	if o == nil || isNil(o.ListOrder) {
+	if o == nil || IsNil(o.ListOrder) {
 		var ret int32
 		return ret
 	}
@@ -706,15 +709,15 @@ func (o *ImportListResource) GetListOrder() int32 {
 // GetListOrderOk returns a tuple with the ListOrder field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ImportListResource) GetListOrderOk() (*int32, bool) {
-	if o == nil || isNil(o.ListOrder) {
-    return nil, false
+	if o == nil || IsNil(o.ListOrder) {
+		return nil, false
 	}
 	return o.ListOrder, true
 }
 
 // HasListOrder returns a boolean if a field has been set.
 func (o *ImportListResource) HasListOrder() bool {
-	if o != nil && !isNil(o.ListOrder) {
+	if o != nil && !IsNil(o.ListOrder) {
 		return true
 	}
 
@@ -728,7 +731,7 @@ func (o *ImportListResource) SetListOrder(v int32) {
 
 // GetMinRefreshInterval returns the MinRefreshInterval field value if set, zero value otherwise.
 func (o *ImportListResource) GetMinRefreshInterval() string {
-	if o == nil || isNil(o.MinRefreshInterval) {
+	if o == nil || IsNil(o.MinRefreshInterval) {
 		var ret string
 		return ret
 	}
@@ -738,15 +741,15 @@ func (o *ImportListResource) GetMinRefreshInterval() string {
 // GetMinRefreshIntervalOk returns a tuple with the MinRefreshInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ImportListResource) GetMinRefreshIntervalOk() (*string, bool) {
-	if o == nil || isNil(o.MinRefreshInterval) {
-    return nil, false
+	if o == nil || IsNil(o.MinRefreshInterval) {
+		return nil, false
 	}
 	return o.MinRefreshInterval, true
 }
 
 // HasMinRefreshInterval returns a boolean if a field has been set.
 func (o *ImportListResource) HasMinRefreshInterval() bool {
-	if o != nil && !isNil(o.MinRefreshInterval) {
+	if o != nil && !IsNil(o.MinRefreshInterval) {
 		return true
 	}
 
@@ -759,8 +762,16 @@ func (o *ImportListResource) SetMinRefreshInterval(v string) {
 }
 
 func (o ImportListResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ImportListResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Name.IsSet() {
@@ -781,7 +792,7 @@ func (o ImportListResource) MarshalJSON() ([]byte, error) {
 	if o.InfoLink.IsSet() {
 		toSerialize["infoLink"] = o.InfoLink.Get()
 	}
-	if !isNil(o.Message) {
+	if !IsNil(o.Message) {
 		toSerialize["message"] = o.Message
 	}
 	if o.Tags != nil {
@@ -790,37 +801,37 @@ func (o ImportListResource) MarshalJSON() ([]byte, error) {
 	if o.Presets != nil {
 		toSerialize["presets"] = o.Presets
 	}
-	if !isNil(o.Enabled) {
+	if !IsNil(o.Enabled) {
 		toSerialize["enabled"] = o.Enabled
 	}
-	if !isNil(o.EnableAuto) {
+	if !IsNil(o.EnableAuto) {
 		toSerialize["enableAuto"] = o.EnableAuto
 	}
-	if !isNil(o.Monitor) {
+	if !IsNil(o.Monitor) {
 		toSerialize["monitor"] = o.Monitor
 	}
 	if o.RootFolderPath.IsSet() {
 		toSerialize["rootFolderPath"] = o.RootFolderPath.Get()
 	}
-	if !isNil(o.QualityProfileId) {
+	if !IsNil(o.QualityProfileId) {
 		toSerialize["qualityProfileId"] = o.QualityProfileId
 	}
-	if !isNil(o.SearchOnAdd) {
+	if !IsNil(o.SearchOnAdd) {
 		toSerialize["searchOnAdd"] = o.SearchOnAdd
 	}
-	if !isNil(o.MinimumAvailability) {
+	if !IsNil(o.MinimumAvailability) {
 		toSerialize["minimumAvailability"] = o.MinimumAvailability
 	}
-	if !isNil(o.ListType) {
+	if !IsNil(o.ListType) {
 		toSerialize["listType"] = o.ListType
 	}
-	if !isNil(o.ListOrder) {
+	if !IsNil(o.ListOrder) {
 		toSerialize["listOrder"] = o.ListOrder
 	}
-	if !isNil(o.MinRefreshInterval) {
+	if !IsNil(o.MinRefreshInterval) {
 		toSerialize["minRefreshInterval"] = o.MinRefreshInterval
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableImportListResource struct {

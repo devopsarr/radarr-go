@@ -22,6 +22,7 @@ import (
 
 // ImportListConfigAPIService ImportListConfigAPI service
 type ImportListConfigAPIService service
+
 type ApiGetImportListConfigRequest struct {
 	ctx context.Context
 	ApiService *ImportListConfigAPIService
@@ -146,6 +147,7 @@ func (a *ImportListConfigAPIService) GetImportListConfigExecute(r ApiGetImportLi
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiGetImportListConfigByIdRequest struct {
 	ctx context.Context
 	ApiService *ImportListConfigAPIService
@@ -187,7 +189,7 @@ func (a *ImportListConfigAPIService) GetImportListConfigByIdExecute(r ApiGetImpo
 	}
 
 	localVarPath := localBasePath + "/api/v3/config/importlist/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -274,6 +276,7 @@ func (a *ImportListConfigAPIService) GetImportListConfigByIdExecute(r ApiGetImpo
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiUpdateImportListConfigRequest struct {
 	ctx context.Context
 	ApiService *ImportListConfigAPIService
@@ -321,7 +324,7 @@ func (a *ImportListConfigAPIService) UpdateImportListConfigExecute(r ApiUpdateIm
 	}
 
 	localVarPath := localBasePath + "/api/v3/config/importlist/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

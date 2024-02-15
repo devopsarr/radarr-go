@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the MovieTranslation type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &MovieTranslation{}
+
 // MovieTranslation struct for MovieTranslation
 type MovieTranslation struct {
 	Id *int32 `json:"id,omitempty"`
@@ -43,7 +46,7 @@ func NewMovieTranslationWithDefaults() *MovieTranslation {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *MovieTranslation) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -53,15 +56,15 @@ func (o *MovieTranslation) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MovieTranslation) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *MovieTranslation) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -75,7 +78,7 @@ func (o *MovieTranslation) SetId(v int32) {
 
 // GetMovieMetadataId returns the MovieMetadataId field value if set, zero value otherwise.
 func (o *MovieTranslation) GetMovieMetadataId() int32 {
-	if o == nil || isNil(o.MovieMetadataId) {
+	if o == nil || IsNil(o.MovieMetadataId) {
 		var ret int32
 		return ret
 	}
@@ -85,15 +88,15 @@ func (o *MovieTranslation) GetMovieMetadataId() int32 {
 // GetMovieMetadataIdOk returns a tuple with the MovieMetadataId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MovieTranslation) GetMovieMetadataIdOk() (*int32, bool) {
-	if o == nil || isNil(o.MovieMetadataId) {
-    return nil, false
+	if o == nil || IsNil(o.MovieMetadataId) {
+		return nil, false
 	}
 	return o.MovieMetadataId, true
 }
 
 // HasMovieMetadataId returns a boolean if a field has been set.
 func (o *MovieTranslation) HasMovieMetadataId() bool {
-	if o != nil && !isNil(o.MovieMetadataId) {
+	if o != nil && !IsNil(o.MovieMetadataId) {
 		return true
 	}
 
@@ -107,7 +110,7 @@ func (o *MovieTranslation) SetMovieMetadataId(v int32) {
 
 // GetTitle returns the Title field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MovieTranslation) GetTitle() string {
-	if o == nil || isNil(o.Title.Get()) {
+	if o == nil || IsNil(o.Title.Get()) {
 		var ret string
 		return ret
 	}
@@ -119,7 +122,7 @@ func (o *MovieTranslation) GetTitle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MovieTranslation) GetTitleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Title.Get(), o.Title.IsSet()
 }
@@ -149,7 +152,7 @@ func (o *MovieTranslation) UnsetTitle() {
 
 // GetCleanTitle returns the CleanTitle field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MovieTranslation) GetCleanTitle() string {
-	if o == nil || isNil(o.CleanTitle.Get()) {
+	if o == nil || IsNil(o.CleanTitle.Get()) {
 		var ret string
 		return ret
 	}
@@ -161,7 +164,7 @@ func (o *MovieTranslation) GetCleanTitle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MovieTranslation) GetCleanTitleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.CleanTitle.Get(), o.CleanTitle.IsSet()
 }
@@ -191,7 +194,7 @@ func (o *MovieTranslation) UnsetCleanTitle() {
 
 // GetOverview returns the Overview field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MovieTranslation) GetOverview() string {
-	if o == nil || isNil(o.Overview.Get()) {
+	if o == nil || IsNil(o.Overview.Get()) {
 		var ret string
 		return ret
 	}
@@ -203,7 +206,7 @@ func (o *MovieTranslation) GetOverview() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MovieTranslation) GetOverviewOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Overview.Get(), o.Overview.IsSet()
 }
@@ -233,7 +236,7 @@ func (o *MovieTranslation) UnsetOverview() {
 
 // GetLanguage returns the Language field value if set, zero value otherwise.
 func (o *MovieTranslation) GetLanguage() Language {
-	if o == nil || isNil(o.Language) {
+	if o == nil || IsNil(o.Language) {
 		var ret Language
 		return ret
 	}
@@ -243,15 +246,15 @@ func (o *MovieTranslation) GetLanguage() Language {
 // GetLanguageOk returns a tuple with the Language field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MovieTranslation) GetLanguageOk() (*Language, bool) {
-	if o == nil || isNil(o.Language) {
-    return nil, false
+	if o == nil || IsNil(o.Language) {
+		return nil, false
 	}
 	return o.Language, true
 }
 
 // HasLanguage returns a boolean if a field has been set.
 func (o *MovieTranslation) HasLanguage() bool {
-	if o != nil && !isNil(o.Language) {
+	if o != nil && !IsNil(o.Language) {
 		return true
 	}
 
@@ -264,11 +267,19 @@ func (o *MovieTranslation) SetLanguage(v Language) {
 }
 
 func (o MovieTranslation) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o MovieTranslation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !isNil(o.MovieMetadataId) {
+	if !IsNil(o.MovieMetadataId) {
 		toSerialize["movieMetadataId"] = o.MovieMetadataId
 	}
 	if o.Title.IsSet() {
@@ -280,10 +291,10 @@ func (o MovieTranslation) MarshalJSON() ([]byte, error) {
 	if o.Overview.IsSet() {
 		toSerialize["overview"] = o.Overview.Get()
 	}
-	if !isNil(o.Language) {
+	if !IsNil(o.Language) {
 		toSerialize["language"] = o.Language
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableMovieTranslation struct {

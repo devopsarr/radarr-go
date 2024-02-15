@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the RatingChild type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &RatingChild{}
+
 // RatingChild struct for RatingChild
 type RatingChild struct {
 	Votes *int32 `json:"votes,omitempty"`
@@ -40,7 +43,7 @@ func NewRatingChildWithDefaults() *RatingChild {
 
 // GetVotes returns the Votes field value if set, zero value otherwise.
 func (o *RatingChild) GetVotes() int32 {
-	if o == nil || isNil(o.Votes) {
+	if o == nil || IsNil(o.Votes) {
 		var ret int32
 		return ret
 	}
@@ -50,15 +53,15 @@ func (o *RatingChild) GetVotes() int32 {
 // GetVotesOk returns a tuple with the Votes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RatingChild) GetVotesOk() (*int32, bool) {
-	if o == nil || isNil(o.Votes) {
-    return nil, false
+	if o == nil || IsNil(o.Votes) {
+		return nil, false
 	}
 	return o.Votes, true
 }
 
 // HasVotes returns a boolean if a field has been set.
 func (o *RatingChild) HasVotes() bool {
-	if o != nil && !isNil(o.Votes) {
+	if o != nil && !IsNil(o.Votes) {
 		return true
 	}
 
@@ -72,7 +75,7 @@ func (o *RatingChild) SetVotes(v int32) {
 
 // GetValue returns the Value field value if set, zero value otherwise.
 func (o *RatingChild) GetValue() float64 {
-	if o == nil || isNil(o.Value) {
+	if o == nil || IsNil(o.Value) {
 		var ret float64
 		return ret
 	}
@@ -82,15 +85,15 @@ func (o *RatingChild) GetValue() float64 {
 // GetValueOk returns a tuple with the Value field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RatingChild) GetValueOk() (*float64, bool) {
-	if o == nil || isNil(o.Value) {
-    return nil, false
+	if o == nil || IsNil(o.Value) {
+		return nil, false
 	}
 	return o.Value, true
 }
 
 // HasValue returns a boolean if a field has been set.
 func (o *RatingChild) HasValue() bool {
-	if o != nil && !isNil(o.Value) {
+	if o != nil && !IsNil(o.Value) {
 		return true
 	}
 
@@ -104,7 +107,7 @@ func (o *RatingChild) SetValue(v float64) {
 
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *RatingChild) GetType() RatingType {
-	if o == nil || isNil(o.Type) {
+	if o == nil || IsNil(o.Type) {
 		var ret RatingType
 		return ret
 	}
@@ -114,15 +117,15 @@ func (o *RatingChild) GetType() RatingType {
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RatingChild) GetTypeOk() (*RatingType, bool) {
-	if o == nil || isNil(o.Type) {
-    return nil, false
+	if o == nil || IsNil(o.Type) {
+		return nil, false
 	}
 	return o.Type, true
 }
 
 // HasType returns a boolean if a field has been set.
 func (o *RatingChild) HasType() bool {
-	if o != nil && !isNil(o.Type) {
+	if o != nil && !IsNil(o.Type) {
 		return true
 	}
 
@@ -135,17 +138,25 @@ func (o *RatingChild) SetType(v RatingType) {
 }
 
 func (o RatingChild) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Votes) {
-		toSerialize["votes"] = o.Votes
-	}
-	if !isNil(o.Value) {
-		toSerialize["value"] = o.Value
-	}
-	if !isNil(o.Type) {
-		toSerialize["type"] = o.Type
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o RatingChild) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Votes) {
+		toSerialize["votes"] = o.Votes
+	}
+	if !IsNil(o.Value) {
+		toSerialize["value"] = o.Value
+	}
+	if !IsNil(o.Type) {
+		toSerialize["type"] = o.Type
+	}
+	return toSerialize, nil
 }
 
 type NullableRatingChild struct {

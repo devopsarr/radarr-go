@@ -22,6 +22,7 @@ import (
 
 // HealthAPIService HealthAPI service
 type HealthAPIService service
+
 type ApiGetHealthByIdRequest struct {
 	ctx context.Context
 	ApiService *HealthAPIService
@@ -63,7 +64,7 @@ func (a *HealthAPIService) GetHealthByIdExecute(r ApiGetHealthByIdRequest) (*Hea
 	}
 
 	localVarPath := localBasePath + "/api/v3/health/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -150,12 +151,13 @@ func (a *HealthAPIService) GetHealthByIdExecute(r ApiGetHealthByIdRequest) (*Hea
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListHealthRequest struct {
 	ctx context.Context
 	ApiService *HealthAPIService
 }
 
-func (r ApiListHealthRequest) Execute() ([]*HealthResource, *http.Response, error) {
+func (r ApiListHealthRequest) Execute() ([]HealthResource, *http.Response, error) {
 	return r.ApiService.ListHealthExecute(r)
 }
 
@@ -174,12 +176,12 @@ func (a *HealthAPIService) ListHealth(ctx context.Context) ApiListHealthRequest 
 
 // Execute executes the request
 //  @return []HealthResource
-func (a *HealthAPIService) ListHealthExecute(r ApiListHealthRequest) ([]*HealthResource, *http.Response, error) {
+func (a *HealthAPIService) ListHealthExecute(r ApiListHealthRequest) ([]HealthResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*HealthResource
+		localVarReturnValue  []HealthResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HealthAPIService.ListHealth")

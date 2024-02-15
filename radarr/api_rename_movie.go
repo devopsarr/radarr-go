@@ -21,6 +21,7 @@ import (
 
 // RenameMovieAPIService RenameMovieAPI service
 type RenameMovieAPIService service
+
 type ApiListRenameRequest struct {
 	ctx context.Context
 	ApiService *RenameMovieAPIService
@@ -32,7 +33,7 @@ func (r ApiListRenameRequest) MovieId(movieId int32) ApiListRenameRequest {
 	return r
 }
 
-func (r ApiListRenameRequest) Execute() ([]*RenameMovieResource, *http.Response, error) {
+func (r ApiListRenameRequest) Execute() ([]RenameMovieResource, *http.Response, error) {
 	return r.ApiService.ListRenameExecute(r)
 }
 
@@ -51,12 +52,12 @@ func (a *RenameMovieAPIService) ListRename(ctx context.Context) ApiListRenameReq
 
 // Execute executes the request
 //  @return []RenameMovieResource
-func (a *RenameMovieAPIService) ListRenameExecute(r ApiListRenameRequest) ([]*RenameMovieResource, *http.Response, error) {
+func (a *RenameMovieAPIService) ListRenameExecute(r ApiListRenameRequest) ([]RenameMovieResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*RenameMovieResource
+		localVarReturnValue  []RenameMovieResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RenameMovieAPIService.ListRename")
@@ -71,7 +72,7 @@ func (a *RenameMovieAPIService) ListRenameExecute(r ApiListRenameRequest) ([]*Re
 	localVarFormParams := url.Values{}
 
 	if r.movieId != nil {
-		localVarQueryParams.Add("movieId", parameterToString(*r.movieId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "movieId", r.movieId, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

@@ -22,6 +22,7 @@ import (
 
 // MovieLookupAPIService MovieLookupAPI service
 type MovieLookupAPIService service
+
 type ApiGetMovieLookupRequest struct {
 	ctx context.Context
 	ApiService *MovieLookupAPIService
@@ -70,7 +71,7 @@ func (a *MovieLookupAPIService) GetMovieLookupExecute(r ApiGetMovieLookupRequest
 	localVarFormParams := url.Values{}
 
 	if r.term != nil {
-		localVarQueryParams.Add("term", parameterToString(*r.term, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "term", r.term, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -144,6 +145,7 @@ func (a *MovieLookupAPIService) GetMovieLookupExecute(r ApiGetMovieLookupRequest
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetMovieLookupByIdRequest struct {
 	ctx context.Context
 	ApiService *MovieLookupAPIService
@@ -185,7 +187,7 @@ func (a *MovieLookupAPIService) GetMovieLookupByIdExecute(r ApiGetMovieLookupByI
 	}
 
 	localVarPath := localBasePath + "/api/v3/movie/lookup/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -272,6 +274,7 @@ func (a *MovieLookupAPIService) GetMovieLookupByIdExecute(r ApiGetMovieLookupByI
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiGetMovieLookupImdbRequest struct {
 	ctx context.Context
 	ApiService *MovieLookupAPIService
@@ -320,7 +323,7 @@ func (a *MovieLookupAPIService) GetMovieLookupImdbExecute(r ApiGetMovieLookupImd
 	localVarFormParams := url.Values{}
 
 	if r.imdbId != nil {
-		localVarQueryParams.Add("imdbId", parameterToString(*r.imdbId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "imdbId", r.imdbId, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -394,6 +397,7 @@ func (a *MovieLookupAPIService) GetMovieLookupImdbExecute(r ApiGetMovieLookupImd
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetMovieLookupTmdbRequest struct {
 	ctx context.Context
 	ApiService *MovieLookupAPIService
@@ -442,7 +446,7 @@ func (a *MovieLookupAPIService) GetMovieLookupTmdbExecute(r ApiGetMovieLookupTmd
 	localVarFormParams := url.Values{}
 
 	if r.tmdbId != nil {
-		localVarQueryParams.Add("tmdbId", parameterToString(*r.tmdbId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "tmdbId", r.tmdbId, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

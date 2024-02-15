@@ -15,6 +15,9 @@ import (
 	"time"
 )
 
+// checks if the Command type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &Command{}
+
 // Command struct for Command
 type Command struct {
 	SendUpdatesToClient *bool `json:"sendUpdatesToClient,omitempty"`
@@ -51,7 +54,7 @@ func NewCommandWithDefaults() *Command {
 
 // GetSendUpdatesToClient returns the SendUpdatesToClient field value if set, zero value otherwise.
 func (o *Command) GetSendUpdatesToClient() bool {
-	if o == nil || isNil(o.SendUpdatesToClient) {
+	if o == nil || IsNil(o.SendUpdatesToClient) {
 		var ret bool
 		return ret
 	}
@@ -61,15 +64,15 @@ func (o *Command) GetSendUpdatesToClient() bool {
 // GetSendUpdatesToClientOk returns a tuple with the SendUpdatesToClient field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Command) GetSendUpdatesToClientOk() (*bool, bool) {
-	if o == nil || isNil(o.SendUpdatesToClient) {
-    return nil, false
+	if o == nil || IsNil(o.SendUpdatesToClient) {
+		return nil, false
 	}
 	return o.SendUpdatesToClient, true
 }
 
 // HasSendUpdatesToClient returns a boolean if a field has been set.
 func (o *Command) HasSendUpdatesToClient() bool {
-	if o != nil && !isNil(o.SendUpdatesToClient) {
+	if o != nil && !IsNil(o.SendUpdatesToClient) {
 		return true
 	}
 
@@ -83,7 +86,7 @@ func (o *Command) SetSendUpdatesToClient(v bool) {
 
 // GetUpdateScheduledTask returns the UpdateScheduledTask field value if set, zero value otherwise.
 func (o *Command) GetUpdateScheduledTask() bool {
-	if o == nil || isNil(o.UpdateScheduledTask) {
+	if o == nil || IsNil(o.UpdateScheduledTask) {
 		var ret bool
 		return ret
 	}
@@ -93,15 +96,15 @@ func (o *Command) GetUpdateScheduledTask() bool {
 // GetUpdateScheduledTaskOk returns a tuple with the UpdateScheduledTask field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Command) GetUpdateScheduledTaskOk() (*bool, bool) {
-	if o == nil || isNil(o.UpdateScheduledTask) {
-    return nil, false
+	if o == nil || IsNil(o.UpdateScheduledTask) {
+		return nil, false
 	}
 	return o.UpdateScheduledTask, true
 }
 
 // HasUpdateScheduledTask returns a boolean if a field has been set.
 func (o *Command) HasUpdateScheduledTask() bool {
-	if o != nil && !isNil(o.UpdateScheduledTask) {
+	if o != nil && !IsNil(o.UpdateScheduledTask) {
 		return true
 	}
 
@@ -115,7 +118,7 @@ func (o *Command) SetUpdateScheduledTask(v bool) {
 
 // GetCompletionMessage returns the CompletionMessage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Command) GetCompletionMessage() string {
-	if o == nil || isNil(o.CompletionMessage.Get()) {
+	if o == nil || IsNil(o.CompletionMessage.Get()) {
 		var ret string
 		return ret
 	}
@@ -127,7 +130,7 @@ func (o *Command) GetCompletionMessage() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Command) GetCompletionMessageOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.CompletionMessage.Get(), o.CompletionMessage.IsSet()
 }
@@ -157,7 +160,7 @@ func (o *Command) UnsetCompletionMessage() {
 
 // GetRequiresDiskAccess returns the RequiresDiskAccess field value if set, zero value otherwise.
 func (o *Command) GetRequiresDiskAccess() bool {
-	if o == nil || isNil(o.RequiresDiskAccess) {
+	if o == nil || IsNil(o.RequiresDiskAccess) {
 		var ret bool
 		return ret
 	}
@@ -167,15 +170,15 @@ func (o *Command) GetRequiresDiskAccess() bool {
 // GetRequiresDiskAccessOk returns a tuple with the RequiresDiskAccess field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Command) GetRequiresDiskAccessOk() (*bool, bool) {
-	if o == nil || isNil(o.RequiresDiskAccess) {
-    return nil, false
+	if o == nil || IsNil(o.RequiresDiskAccess) {
+		return nil, false
 	}
 	return o.RequiresDiskAccess, true
 }
 
 // HasRequiresDiskAccess returns a boolean if a field has been set.
 func (o *Command) HasRequiresDiskAccess() bool {
-	if o != nil && !isNil(o.RequiresDiskAccess) {
+	if o != nil && !IsNil(o.RequiresDiskAccess) {
 		return true
 	}
 
@@ -189,7 +192,7 @@ func (o *Command) SetRequiresDiskAccess(v bool) {
 
 // GetIsExclusive returns the IsExclusive field value if set, zero value otherwise.
 func (o *Command) GetIsExclusive() bool {
-	if o == nil || isNil(o.IsExclusive) {
+	if o == nil || IsNil(o.IsExclusive) {
 		var ret bool
 		return ret
 	}
@@ -199,15 +202,15 @@ func (o *Command) GetIsExclusive() bool {
 // GetIsExclusiveOk returns a tuple with the IsExclusive field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Command) GetIsExclusiveOk() (*bool, bool) {
-	if o == nil || isNil(o.IsExclusive) {
-    return nil, false
+	if o == nil || IsNil(o.IsExclusive) {
+		return nil, false
 	}
 	return o.IsExclusive, true
 }
 
 // HasIsExclusive returns a boolean if a field has been set.
 func (o *Command) HasIsExclusive() bool {
-	if o != nil && !isNil(o.IsExclusive) {
+	if o != nil && !IsNil(o.IsExclusive) {
 		return true
 	}
 
@@ -221,7 +224,7 @@ func (o *Command) SetIsExclusive(v bool) {
 
 // GetIsTypeExclusive returns the IsTypeExclusive field value if set, zero value otherwise.
 func (o *Command) GetIsTypeExclusive() bool {
-	if o == nil || isNil(o.IsTypeExclusive) {
+	if o == nil || IsNil(o.IsTypeExclusive) {
 		var ret bool
 		return ret
 	}
@@ -231,15 +234,15 @@ func (o *Command) GetIsTypeExclusive() bool {
 // GetIsTypeExclusiveOk returns a tuple with the IsTypeExclusive field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Command) GetIsTypeExclusiveOk() (*bool, bool) {
-	if o == nil || isNil(o.IsTypeExclusive) {
-    return nil, false
+	if o == nil || IsNil(o.IsTypeExclusive) {
+		return nil, false
 	}
 	return o.IsTypeExclusive, true
 }
 
 // HasIsTypeExclusive returns a boolean if a field has been set.
 func (o *Command) HasIsTypeExclusive() bool {
-	if o != nil && !isNil(o.IsTypeExclusive) {
+	if o != nil && !IsNil(o.IsTypeExclusive) {
 		return true
 	}
 
@@ -253,7 +256,7 @@ func (o *Command) SetIsTypeExclusive(v bool) {
 
 // GetIsLongRunning returns the IsLongRunning field value if set, zero value otherwise.
 func (o *Command) GetIsLongRunning() bool {
-	if o == nil || isNil(o.IsLongRunning) {
+	if o == nil || IsNil(o.IsLongRunning) {
 		var ret bool
 		return ret
 	}
@@ -263,15 +266,15 @@ func (o *Command) GetIsLongRunning() bool {
 // GetIsLongRunningOk returns a tuple with the IsLongRunning field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Command) GetIsLongRunningOk() (*bool, bool) {
-	if o == nil || isNil(o.IsLongRunning) {
-    return nil, false
+	if o == nil || IsNil(o.IsLongRunning) {
+		return nil, false
 	}
 	return o.IsLongRunning, true
 }
 
 // HasIsLongRunning returns a boolean if a field has been set.
 func (o *Command) HasIsLongRunning() bool {
-	if o != nil && !isNil(o.IsLongRunning) {
+	if o != nil && !IsNil(o.IsLongRunning) {
 		return true
 	}
 
@@ -285,7 +288,7 @@ func (o *Command) SetIsLongRunning(v bool) {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Command) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -297,7 +300,7 @@ func (o *Command) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Command) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -327,7 +330,7 @@ func (o *Command) UnsetName() {
 
 // GetLastExecutionTime returns the LastExecutionTime field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Command) GetLastExecutionTime() time.Time {
-	if o == nil || isNil(o.LastExecutionTime.Get()) {
+	if o == nil || IsNil(o.LastExecutionTime.Get()) {
 		var ret time.Time
 		return ret
 	}
@@ -339,7 +342,7 @@ func (o *Command) GetLastExecutionTime() time.Time {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Command) GetLastExecutionTimeOk() (*time.Time, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.LastExecutionTime.Get(), o.LastExecutionTime.IsSet()
 }
@@ -369,7 +372,7 @@ func (o *Command) UnsetLastExecutionTime() {
 
 // GetLastStartTime returns the LastStartTime field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Command) GetLastStartTime() time.Time {
-	if o == nil || isNil(o.LastStartTime.Get()) {
+	if o == nil || IsNil(o.LastStartTime.Get()) {
 		var ret time.Time
 		return ret
 	}
@@ -381,7 +384,7 @@ func (o *Command) GetLastStartTime() time.Time {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Command) GetLastStartTimeOk() (*time.Time, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.LastStartTime.Get(), o.LastStartTime.IsSet()
 }
@@ -411,7 +414,7 @@ func (o *Command) UnsetLastStartTime() {
 
 // GetTrigger returns the Trigger field value if set, zero value otherwise.
 func (o *Command) GetTrigger() CommandTrigger {
-	if o == nil || isNil(o.Trigger) {
+	if o == nil || IsNil(o.Trigger) {
 		var ret CommandTrigger
 		return ret
 	}
@@ -421,15 +424,15 @@ func (o *Command) GetTrigger() CommandTrigger {
 // GetTriggerOk returns a tuple with the Trigger field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Command) GetTriggerOk() (*CommandTrigger, bool) {
-	if o == nil || isNil(o.Trigger) {
-    return nil, false
+	if o == nil || IsNil(o.Trigger) {
+		return nil, false
 	}
 	return o.Trigger, true
 }
 
 // HasTrigger returns a boolean if a field has been set.
 func (o *Command) HasTrigger() bool {
-	if o != nil && !isNil(o.Trigger) {
+	if o != nil && !IsNil(o.Trigger) {
 		return true
 	}
 
@@ -443,7 +446,7 @@ func (o *Command) SetTrigger(v CommandTrigger) {
 
 // GetSuppressMessages returns the SuppressMessages field value if set, zero value otherwise.
 func (o *Command) GetSuppressMessages() bool {
-	if o == nil || isNil(o.SuppressMessages) {
+	if o == nil || IsNil(o.SuppressMessages) {
 		var ret bool
 		return ret
 	}
@@ -453,15 +456,15 @@ func (o *Command) GetSuppressMessages() bool {
 // GetSuppressMessagesOk returns a tuple with the SuppressMessages field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Command) GetSuppressMessagesOk() (*bool, bool) {
-	if o == nil || isNil(o.SuppressMessages) {
-    return nil, false
+	if o == nil || IsNil(o.SuppressMessages) {
+		return nil, false
 	}
 	return o.SuppressMessages, true
 }
 
 // HasSuppressMessages returns a boolean if a field has been set.
 func (o *Command) HasSuppressMessages() bool {
-	if o != nil && !isNil(o.SuppressMessages) {
+	if o != nil && !IsNil(o.SuppressMessages) {
 		return true
 	}
 
@@ -475,7 +478,7 @@ func (o *Command) SetSuppressMessages(v bool) {
 
 // GetClientUserAgent returns the ClientUserAgent field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *Command) GetClientUserAgent() string {
-	if o == nil || isNil(o.ClientUserAgent.Get()) {
+	if o == nil || IsNil(o.ClientUserAgent.Get()) {
 		var ret string
 		return ret
 	}
@@ -487,7 +490,7 @@ func (o *Command) GetClientUserAgent() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *Command) GetClientUserAgentOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ClientUserAgent.Get(), o.ClientUserAgent.IsSet()
 }
@@ -516,26 +519,34 @@ func (o *Command) UnsetClientUserAgent() {
 }
 
 func (o Command) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o Command) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.SendUpdatesToClient) {
+	if !IsNil(o.SendUpdatesToClient) {
 		toSerialize["sendUpdatesToClient"] = o.SendUpdatesToClient
 	}
-	if !isNil(o.UpdateScheduledTask) {
+	if !IsNil(o.UpdateScheduledTask) {
 		toSerialize["updateScheduledTask"] = o.UpdateScheduledTask
 	}
 	if o.CompletionMessage.IsSet() {
 		toSerialize["completionMessage"] = o.CompletionMessage.Get()
 	}
-	if !isNil(o.RequiresDiskAccess) {
+	if !IsNil(o.RequiresDiskAccess) {
 		toSerialize["requiresDiskAccess"] = o.RequiresDiskAccess
 	}
-	if !isNil(o.IsExclusive) {
+	if !IsNil(o.IsExclusive) {
 		toSerialize["isExclusive"] = o.IsExclusive
 	}
-	if !isNil(o.IsTypeExclusive) {
+	if !IsNil(o.IsTypeExclusive) {
 		toSerialize["isTypeExclusive"] = o.IsTypeExclusive
 	}
-	if !isNil(o.IsLongRunning) {
+	if !IsNil(o.IsLongRunning) {
 		toSerialize["isLongRunning"] = o.IsLongRunning
 	}
 	if o.Name.IsSet() {
@@ -547,16 +558,16 @@ func (o Command) MarshalJSON() ([]byte, error) {
 	if o.LastStartTime.IsSet() {
 		toSerialize["lastStartTime"] = o.LastStartTime.Get()
 	}
-	if !isNil(o.Trigger) {
+	if !IsNil(o.Trigger) {
 		toSerialize["trigger"] = o.Trigger
 	}
-	if !isNil(o.SuppressMessages) {
+	if !IsNil(o.SuppressMessages) {
 		toSerialize["suppressMessages"] = o.SuppressMessages
 	}
 	if o.ClientUserAgent.IsSet() {
 		toSerialize["clientUserAgent"] = o.ClientUserAgent.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableCommand struct {

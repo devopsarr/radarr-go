@@ -23,6 +23,7 @@ import (
 
 // MovieFileAPIService MovieFileAPI service
 type MovieFileAPIService service
+
 type ApiDeleteMovieFileRequest struct {
 	ctx context.Context
 	ApiService *MovieFileAPIService
@@ -62,7 +63,7 @@ func (a *MovieFileAPIService) DeleteMovieFileExecute(r ApiDeleteMovieFileRequest
 	}
 
 	localVarPath := localBasePath + "/api/v3/moviefile/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -140,6 +141,7 @@ func (a *MovieFileAPIService) DeleteMovieFileExecute(r ApiDeleteMovieFileRequest
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiDeleteMovieFileBulkRequest struct {
 	ctx context.Context
 	ApiService *MovieFileAPIService
@@ -261,6 +263,7 @@ func (a *MovieFileAPIService) DeleteMovieFileBulkExecute(r ApiDeleteMovieFileBul
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetMovieFileByIdRequest struct {
 	ctx context.Context
 	ApiService *MovieFileAPIService
@@ -302,7 +305,7 @@ func (a *MovieFileAPIService) GetMovieFileByIdExecute(r ApiGetMovieFileByIdReque
 	}
 
 	localVarPath := localBasePath + "/api/v3/moviefile/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -389,6 +392,7 @@ func (a *MovieFileAPIService) GetMovieFileByIdExecute(r ApiGetMovieFileByIdReque
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListMovieFileRequest struct {
 	ctx context.Context
 	ApiService *MovieFileAPIService
@@ -406,7 +410,7 @@ func (r ApiListMovieFileRequest) MovieFileIds(movieFileIds []int32) ApiListMovie
 	return r
 }
 
-func (r ApiListMovieFileRequest) Execute() ([]*MovieFileResource, *http.Response, error) {
+func (r ApiListMovieFileRequest) Execute() ([]MovieFileResource, *http.Response, error) {
 	return r.ApiService.ListMovieFileExecute(r)
 }
 
@@ -425,12 +429,12 @@ func (a *MovieFileAPIService) ListMovieFile(ctx context.Context) ApiListMovieFil
 
 // Execute executes the request
 //  @return []MovieFileResource
-func (a *MovieFileAPIService) ListMovieFileExecute(r ApiListMovieFileRequest) ([]*MovieFileResource, *http.Response, error) {
+func (a *MovieFileAPIService) ListMovieFileExecute(r ApiListMovieFileRequest) ([]MovieFileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*MovieFileResource
+		localVarReturnValue  []MovieFileResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieFileAPIService.ListMovieFile")
@@ -445,17 +449,17 @@ func (a *MovieFileAPIService) ListMovieFileExecute(r ApiListMovieFileRequest) ([
 	localVarFormParams := url.Values{}
 
 	if r.movieId != nil {
-		localVarQueryParams.Add("movieId", parameterToString(*r.movieId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "movieId", r.movieId, "")
 	}
 	if r.movieFileIds != nil {
 		t := *r.movieFileIds
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				localVarQueryParams.Add("movieFileIds", parameterToString(s.Index(i), "multi"))
+				parameterAddToHeaderOrQuery(localVarQueryParams, "movieFileIds", s.Index(i).Interface(), "multi")
 			}
 		} else {
-			localVarQueryParams.Add("movieFileIds", parameterToString(t, "multi"))
+			parameterAddToHeaderOrQuery(localVarQueryParams, "movieFileIds", t, "multi")
 		}
 	}
 	// to determine the Content-Type header
@@ -539,6 +543,7 @@ func (a *MovieFileAPIService) ListMovieFileExecute(r ApiListMovieFileRequest) ([
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiPutMovieFileEditorRequest struct {
 	ctx context.Context
 	ApiService *MovieFileAPIService
@@ -660,6 +665,7 @@ func (a *MovieFileAPIService) PutMovieFileEditorExecute(r ApiPutMovieFileEditorR
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiUpdateMovieFileRequest struct {
 	ctx context.Context
 	ApiService *MovieFileAPIService
@@ -707,7 +713,7 @@ func (a *MovieFileAPIService) UpdateMovieFileExecute(r ApiUpdateMovieFileRequest
 	}
 
 	localVarPath := localBasePath + "/api/v3/moviefile/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

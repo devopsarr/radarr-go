@@ -21,6 +21,7 @@ import (
 
 // LocalizationAPIService LocalizationAPI service
 type LocalizationAPIService service
+
 type ApiGetLocalizationRequest struct {
 	ctx context.Context
 	ApiService *LocalizationAPIService
@@ -145,6 +146,7 @@ func (a *LocalizationAPIService) GetLocalizationExecute(r ApiGetLocalizationRequ
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiGetLocalizationLanguageRequest struct {
 	ctx context.Context
 	ApiService *LocalizationAPIService

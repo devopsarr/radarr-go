@@ -14,9 +14,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the CollectionUpdateResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CollectionUpdateResource{}
+
 // CollectionUpdateResource struct for CollectionUpdateResource
 type CollectionUpdateResource struct {
-	CollectionIds []*int32 `json:"collectionIds,omitempty"`
+	CollectionIds []int32 `json:"collectionIds,omitempty"`
 	Monitored NullableBool `json:"monitored,omitempty"`
 	MonitorMovies NullableBool `json:"monitorMovies,omitempty"`
 	QualityProfileId NullableInt32 `json:"qualityProfileId,omitempty"`
@@ -42,9 +45,9 @@ func NewCollectionUpdateResourceWithDefaults() *CollectionUpdateResource {
 }
 
 // GetCollectionIds returns the CollectionIds field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CollectionUpdateResource) GetCollectionIds() []*int32 {
+func (o *CollectionUpdateResource) GetCollectionIds() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.CollectionIds
@@ -53,16 +56,16 @@ func (o *CollectionUpdateResource) GetCollectionIds() []*int32 {
 // GetCollectionIdsOk returns a tuple with the CollectionIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CollectionUpdateResource) GetCollectionIdsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.CollectionIds) {
-    return nil, false
+func (o *CollectionUpdateResource) GetCollectionIdsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.CollectionIds) {
+		return nil, false
 	}
 	return o.CollectionIds, true
 }
 
 // HasCollectionIds returns a boolean if a field has been set.
 func (o *CollectionUpdateResource) HasCollectionIds() bool {
-	if o != nil && isNil(o.CollectionIds) {
+	if o != nil && IsNil(o.CollectionIds) {
 		return true
 	}
 
@@ -70,13 +73,13 @@ func (o *CollectionUpdateResource) HasCollectionIds() bool {
 }
 
 // SetCollectionIds gets a reference to the given []int32 and assigns it to the CollectionIds field.
-func (o *CollectionUpdateResource) SetCollectionIds(v []*int32) {
+func (o *CollectionUpdateResource) SetCollectionIds(v []int32) {
 	o.CollectionIds = v
 }
 
 // GetMonitored returns the Monitored field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CollectionUpdateResource) GetMonitored() bool {
-	if o == nil || isNil(o.Monitored.Get()) {
+	if o == nil || IsNil(o.Monitored.Get()) {
 		var ret bool
 		return ret
 	}
@@ -88,7 +91,7 @@ func (o *CollectionUpdateResource) GetMonitored() bool {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CollectionUpdateResource) GetMonitoredOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Monitored.Get(), o.Monitored.IsSet()
 }
@@ -118,7 +121,7 @@ func (o *CollectionUpdateResource) UnsetMonitored() {
 
 // GetMonitorMovies returns the MonitorMovies field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CollectionUpdateResource) GetMonitorMovies() bool {
-	if o == nil || isNil(o.MonitorMovies.Get()) {
+	if o == nil || IsNil(o.MonitorMovies.Get()) {
 		var ret bool
 		return ret
 	}
@@ -130,7 +133,7 @@ func (o *CollectionUpdateResource) GetMonitorMovies() bool {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CollectionUpdateResource) GetMonitorMoviesOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.MonitorMovies.Get(), o.MonitorMovies.IsSet()
 }
@@ -160,7 +163,7 @@ func (o *CollectionUpdateResource) UnsetMonitorMovies() {
 
 // GetQualityProfileId returns the QualityProfileId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CollectionUpdateResource) GetQualityProfileId() int32 {
-	if o == nil || isNil(o.QualityProfileId.Get()) {
+	if o == nil || IsNil(o.QualityProfileId.Get()) {
 		var ret int32
 		return ret
 	}
@@ -172,7 +175,7 @@ func (o *CollectionUpdateResource) GetQualityProfileId() int32 {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CollectionUpdateResource) GetQualityProfileIdOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.QualityProfileId.Get(), o.QualityProfileId.IsSet()
 }
@@ -202,7 +205,7 @@ func (o *CollectionUpdateResource) UnsetQualityProfileId() {
 
 // GetRootFolderPath returns the RootFolderPath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CollectionUpdateResource) GetRootFolderPath() string {
-	if o == nil || isNil(o.RootFolderPath.Get()) {
+	if o == nil || IsNil(o.RootFolderPath.Get()) {
 		var ret string
 		return ret
 	}
@@ -214,7 +217,7 @@ func (o *CollectionUpdateResource) GetRootFolderPath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CollectionUpdateResource) GetRootFolderPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.RootFolderPath.Get(), o.RootFolderPath.IsSet()
 }
@@ -244,7 +247,7 @@ func (o *CollectionUpdateResource) UnsetRootFolderPath() {
 
 // GetMinimumAvailability returns the MinimumAvailability field value if set, zero value otherwise.
 func (o *CollectionUpdateResource) GetMinimumAvailability() MovieStatusType {
-	if o == nil || isNil(o.MinimumAvailability) {
+	if o == nil || IsNil(o.MinimumAvailability) {
 		var ret MovieStatusType
 		return ret
 	}
@@ -254,15 +257,15 @@ func (o *CollectionUpdateResource) GetMinimumAvailability() MovieStatusType {
 // GetMinimumAvailabilityOk returns a tuple with the MinimumAvailability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CollectionUpdateResource) GetMinimumAvailabilityOk() (*MovieStatusType, bool) {
-	if o == nil || isNil(o.MinimumAvailability) {
-    return nil, false
+	if o == nil || IsNil(o.MinimumAvailability) {
+		return nil, false
 	}
 	return o.MinimumAvailability, true
 }
 
 // HasMinimumAvailability returns a boolean if a field has been set.
 func (o *CollectionUpdateResource) HasMinimumAvailability() bool {
-	if o != nil && !isNil(o.MinimumAvailability) {
+	if o != nil && !IsNil(o.MinimumAvailability) {
 		return true
 	}
 
@@ -275,6 +278,14 @@ func (o *CollectionUpdateResource) SetMinimumAvailability(v MovieStatusType) {
 }
 
 func (o CollectionUpdateResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o CollectionUpdateResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.CollectionIds != nil {
 		toSerialize["collectionIds"] = o.CollectionIds
@@ -291,10 +302,10 @@ func (o CollectionUpdateResource) MarshalJSON() ([]byte, error) {
 	if o.RootFolderPath.IsSet() {
 		toSerialize["rootFolderPath"] = o.RootFolderPath.Get()
 	}
-	if !isNil(o.MinimumAvailability) {
+	if !IsNil(o.MinimumAvailability) {
 		toSerialize["minimumAvailability"] = o.MinimumAvailability
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableCollectionUpdateResource struct {

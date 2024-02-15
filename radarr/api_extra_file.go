@@ -21,6 +21,7 @@ import (
 
 // ExtraFileAPIService ExtraFileAPI service
 type ExtraFileAPIService service
+
 type ApiListExtraFileRequest struct {
 	ctx context.Context
 	ApiService *ExtraFileAPIService
@@ -32,7 +33,7 @@ func (r ApiListExtraFileRequest) MovieId(movieId int32) ApiListExtraFileRequest 
 	return r
 }
 
-func (r ApiListExtraFileRequest) Execute() ([]*ExtraFileResource, *http.Response, error) {
+func (r ApiListExtraFileRequest) Execute() ([]ExtraFileResource, *http.Response, error) {
 	return r.ApiService.ListExtraFileExecute(r)
 }
 
@@ -51,12 +52,12 @@ func (a *ExtraFileAPIService) ListExtraFile(ctx context.Context) ApiListExtraFil
 
 // Execute executes the request
 //  @return []ExtraFileResource
-func (a *ExtraFileAPIService) ListExtraFileExecute(r ApiListExtraFileRequest) ([]*ExtraFileResource, *http.Response, error) {
+func (a *ExtraFileAPIService) ListExtraFileExecute(r ApiListExtraFileRequest) ([]ExtraFileResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*ExtraFileResource
+		localVarReturnValue  []ExtraFileResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtraFileAPIService.ListExtraFile")
@@ -71,7 +72,7 @@ func (a *ExtraFileAPIService) ListExtraFileExecute(r ApiListExtraFileRequest) ([
 	localVarFormParams := url.Values{}
 
 	if r.movieId != nil {
-		localVarQueryParams.Add("movieId", parameterToString(*r.movieId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "movieId", r.movieId, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

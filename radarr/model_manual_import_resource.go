@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ManualImportResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ManualImportResource{}
+
 // ManualImportResource struct for ManualImportResource
 type ManualImportResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -24,13 +27,13 @@ type ManualImportResource struct {
 	Size *int64 `json:"size,omitempty"`
 	Movie *MovieResource `json:"movie,omitempty"`
 	Quality *QualityModel `json:"quality,omitempty"`
-	Languages []*Language `json:"languages,omitempty"`
+	Languages []Language `json:"languages,omitempty"`
 	ReleaseGroup NullableString `json:"releaseGroup,omitempty"`
 	QualityWeight *int32 `json:"qualityWeight,omitempty"`
 	DownloadId NullableString `json:"downloadId,omitempty"`
-	CustomFormats []*CustomFormatResource `json:"customFormats,omitempty"`
+	CustomFormats []CustomFormatResource `json:"customFormats,omitempty"`
 	CustomFormatScore *int32 `json:"customFormatScore,omitempty"`
-	Rejections []*Rejection `json:"rejections,omitempty"`
+	Rejections []Rejection `json:"rejections,omitempty"`
 }
 
 // NewManualImportResource instantiates a new ManualImportResource object
@@ -52,7 +55,7 @@ func NewManualImportResourceWithDefaults() *ManualImportResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *ManualImportResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -62,15 +65,15 @@ func (o *ManualImportResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManualImportResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *ManualImportResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -84,7 +87,7 @@ func (o *ManualImportResource) SetId(v int32) {
 
 // GetPath returns the Path field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ManualImportResource) GetPath() string {
-	if o == nil || isNil(o.Path.Get()) {
+	if o == nil || IsNil(o.Path.Get()) {
 		var ret string
 		return ret
 	}
@@ -96,7 +99,7 @@ func (o *ManualImportResource) GetPath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ManualImportResource) GetPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Path.Get(), o.Path.IsSet()
 }
@@ -126,7 +129,7 @@ func (o *ManualImportResource) UnsetPath() {
 
 // GetRelativePath returns the RelativePath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ManualImportResource) GetRelativePath() string {
-	if o == nil || isNil(o.RelativePath.Get()) {
+	if o == nil || IsNil(o.RelativePath.Get()) {
 		var ret string
 		return ret
 	}
@@ -138,7 +141,7 @@ func (o *ManualImportResource) GetRelativePath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ManualImportResource) GetRelativePathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.RelativePath.Get(), o.RelativePath.IsSet()
 }
@@ -168,7 +171,7 @@ func (o *ManualImportResource) UnsetRelativePath() {
 
 // GetFolderName returns the FolderName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ManualImportResource) GetFolderName() string {
-	if o == nil || isNil(o.FolderName.Get()) {
+	if o == nil || IsNil(o.FolderName.Get()) {
 		var ret string
 		return ret
 	}
@@ -180,7 +183,7 @@ func (o *ManualImportResource) GetFolderName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ManualImportResource) GetFolderNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.FolderName.Get(), o.FolderName.IsSet()
 }
@@ -210,7 +213,7 @@ func (o *ManualImportResource) UnsetFolderName() {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ManualImportResource) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -222,7 +225,7 @@ func (o *ManualImportResource) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ManualImportResource) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -252,7 +255,7 @@ func (o *ManualImportResource) UnsetName() {
 
 // GetSize returns the Size field value if set, zero value otherwise.
 func (o *ManualImportResource) GetSize() int64 {
-	if o == nil || isNil(o.Size) {
+	if o == nil || IsNil(o.Size) {
 		var ret int64
 		return ret
 	}
@@ -262,15 +265,15 @@ func (o *ManualImportResource) GetSize() int64 {
 // GetSizeOk returns a tuple with the Size field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManualImportResource) GetSizeOk() (*int64, bool) {
-	if o == nil || isNil(o.Size) {
-    return nil, false
+	if o == nil || IsNil(o.Size) {
+		return nil, false
 	}
 	return o.Size, true
 }
 
 // HasSize returns a boolean if a field has been set.
 func (o *ManualImportResource) HasSize() bool {
-	if o != nil && !isNil(o.Size) {
+	if o != nil && !IsNil(o.Size) {
 		return true
 	}
 
@@ -284,7 +287,7 @@ func (o *ManualImportResource) SetSize(v int64) {
 
 // GetMovie returns the Movie field value if set, zero value otherwise.
 func (o *ManualImportResource) GetMovie() MovieResource {
-	if o == nil || isNil(o.Movie) {
+	if o == nil || IsNil(o.Movie) {
 		var ret MovieResource
 		return ret
 	}
@@ -294,15 +297,15 @@ func (o *ManualImportResource) GetMovie() MovieResource {
 // GetMovieOk returns a tuple with the Movie field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManualImportResource) GetMovieOk() (*MovieResource, bool) {
-	if o == nil || isNil(o.Movie) {
-    return nil, false
+	if o == nil || IsNil(o.Movie) {
+		return nil, false
 	}
 	return o.Movie, true
 }
 
 // HasMovie returns a boolean if a field has been set.
 func (o *ManualImportResource) HasMovie() bool {
-	if o != nil && !isNil(o.Movie) {
+	if o != nil && !IsNil(o.Movie) {
 		return true
 	}
 
@@ -316,7 +319,7 @@ func (o *ManualImportResource) SetMovie(v MovieResource) {
 
 // GetQuality returns the Quality field value if set, zero value otherwise.
 func (o *ManualImportResource) GetQuality() QualityModel {
-	if o == nil || isNil(o.Quality) {
+	if o == nil || IsNil(o.Quality) {
 		var ret QualityModel
 		return ret
 	}
@@ -326,15 +329,15 @@ func (o *ManualImportResource) GetQuality() QualityModel {
 // GetQualityOk returns a tuple with the Quality field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManualImportResource) GetQualityOk() (*QualityModel, bool) {
-	if o == nil || isNil(o.Quality) {
-    return nil, false
+	if o == nil || IsNil(o.Quality) {
+		return nil, false
 	}
 	return o.Quality, true
 }
 
 // HasQuality returns a boolean if a field has been set.
 func (o *ManualImportResource) HasQuality() bool {
-	if o != nil && !isNil(o.Quality) {
+	if o != nil && !IsNil(o.Quality) {
 		return true
 	}
 
@@ -347,9 +350,9 @@ func (o *ManualImportResource) SetQuality(v QualityModel) {
 }
 
 // GetLanguages returns the Languages field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ManualImportResource) GetLanguages() []*Language {
+func (o *ManualImportResource) GetLanguages() []Language {
 	if o == nil {
-		var ret []*Language
+		var ret []Language
 		return ret
 	}
 	return o.Languages
@@ -358,16 +361,16 @@ func (o *ManualImportResource) GetLanguages() []*Language {
 // GetLanguagesOk returns a tuple with the Languages field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ManualImportResource) GetLanguagesOk() ([]*Language, bool) {
-	if o == nil || isNil(o.Languages) {
-    return nil, false
+func (o *ManualImportResource) GetLanguagesOk() ([]Language, bool) {
+	if o == nil || IsNil(o.Languages) {
+		return nil, false
 	}
 	return o.Languages, true
 }
 
 // HasLanguages returns a boolean if a field has been set.
 func (o *ManualImportResource) HasLanguages() bool {
-	if o != nil && isNil(o.Languages) {
+	if o != nil && IsNil(o.Languages) {
 		return true
 	}
 
@@ -375,13 +378,13 @@ func (o *ManualImportResource) HasLanguages() bool {
 }
 
 // SetLanguages gets a reference to the given []Language and assigns it to the Languages field.
-func (o *ManualImportResource) SetLanguages(v []*Language) {
+func (o *ManualImportResource) SetLanguages(v []Language) {
 	o.Languages = v
 }
 
 // GetReleaseGroup returns the ReleaseGroup field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ManualImportResource) GetReleaseGroup() string {
-	if o == nil || isNil(o.ReleaseGroup.Get()) {
+	if o == nil || IsNil(o.ReleaseGroup.Get()) {
 		var ret string
 		return ret
 	}
@@ -393,7 +396,7 @@ func (o *ManualImportResource) GetReleaseGroup() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ManualImportResource) GetReleaseGroupOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ReleaseGroup.Get(), o.ReleaseGroup.IsSet()
 }
@@ -423,7 +426,7 @@ func (o *ManualImportResource) UnsetReleaseGroup() {
 
 // GetQualityWeight returns the QualityWeight field value if set, zero value otherwise.
 func (o *ManualImportResource) GetQualityWeight() int32 {
-	if o == nil || isNil(o.QualityWeight) {
+	if o == nil || IsNil(o.QualityWeight) {
 		var ret int32
 		return ret
 	}
@@ -433,15 +436,15 @@ func (o *ManualImportResource) GetQualityWeight() int32 {
 // GetQualityWeightOk returns a tuple with the QualityWeight field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManualImportResource) GetQualityWeightOk() (*int32, bool) {
-	if o == nil || isNil(o.QualityWeight) {
-    return nil, false
+	if o == nil || IsNil(o.QualityWeight) {
+		return nil, false
 	}
 	return o.QualityWeight, true
 }
 
 // HasQualityWeight returns a boolean if a field has been set.
 func (o *ManualImportResource) HasQualityWeight() bool {
-	if o != nil && !isNil(o.QualityWeight) {
+	if o != nil && !IsNil(o.QualityWeight) {
 		return true
 	}
 
@@ -455,7 +458,7 @@ func (o *ManualImportResource) SetQualityWeight(v int32) {
 
 // GetDownloadId returns the DownloadId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ManualImportResource) GetDownloadId() string {
-	if o == nil || isNil(o.DownloadId.Get()) {
+	if o == nil || IsNil(o.DownloadId.Get()) {
 		var ret string
 		return ret
 	}
@@ -467,7 +470,7 @@ func (o *ManualImportResource) GetDownloadId() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ManualImportResource) GetDownloadIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.DownloadId.Get(), o.DownloadId.IsSet()
 }
@@ -496,9 +499,9 @@ func (o *ManualImportResource) UnsetDownloadId() {
 }
 
 // GetCustomFormats returns the CustomFormats field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ManualImportResource) GetCustomFormats() []*CustomFormatResource {
+func (o *ManualImportResource) GetCustomFormats() []CustomFormatResource {
 	if o == nil {
-		var ret []*CustomFormatResource
+		var ret []CustomFormatResource
 		return ret
 	}
 	return o.CustomFormats
@@ -507,16 +510,16 @@ func (o *ManualImportResource) GetCustomFormats() []*CustomFormatResource {
 // GetCustomFormatsOk returns a tuple with the CustomFormats field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ManualImportResource) GetCustomFormatsOk() ([]*CustomFormatResource, bool) {
-	if o == nil || isNil(o.CustomFormats) {
-    return nil, false
+func (o *ManualImportResource) GetCustomFormatsOk() ([]CustomFormatResource, bool) {
+	if o == nil || IsNil(o.CustomFormats) {
+		return nil, false
 	}
 	return o.CustomFormats, true
 }
 
 // HasCustomFormats returns a boolean if a field has been set.
 func (o *ManualImportResource) HasCustomFormats() bool {
-	if o != nil && isNil(o.CustomFormats) {
+	if o != nil && IsNil(o.CustomFormats) {
 		return true
 	}
 
@@ -524,13 +527,13 @@ func (o *ManualImportResource) HasCustomFormats() bool {
 }
 
 // SetCustomFormats gets a reference to the given []CustomFormatResource and assigns it to the CustomFormats field.
-func (o *ManualImportResource) SetCustomFormats(v []*CustomFormatResource) {
+func (o *ManualImportResource) SetCustomFormats(v []CustomFormatResource) {
 	o.CustomFormats = v
 }
 
 // GetCustomFormatScore returns the CustomFormatScore field value if set, zero value otherwise.
 func (o *ManualImportResource) GetCustomFormatScore() int32 {
-	if o == nil || isNil(o.CustomFormatScore) {
+	if o == nil || IsNil(o.CustomFormatScore) {
 		var ret int32
 		return ret
 	}
@@ -540,15 +543,15 @@ func (o *ManualImportResource) GetCustomFormatScore() int32 {
 // GetCustomFormatScoreOk returns a tuple with the CustomFormatScore field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManualImportResource) GetCustomFormatScoreOk() (*int32, bool) {
-	if o == nil || isNil(o.CustomFormatScore) {
-    return nil, false
+	if o == nil || IsNil(o.CustomFormatScore) {
+		return nil, false
 	}
 	return o.CustomFormatScore, true
 }
 
 // HasCustomFormatScore returns a boolean if a field has been set.
 func (o *ManualImportResource) HasCustomFormatScore() bool {
-	if o != nil && !isNil(o.CustomFormatScore) {
+	if o != nil && !IsNil(o.CustomFormatScore) {
 		return true
 	}
 
@@ -561,9 +564,9 @@ func (o *ManualImportResource) SetCustomFormatScore(v int32) {
 }
 
 // GetRejections returns the Rejections field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ManualImportResource) GetRejections() []*Rejection {
+func (o *ManualImportResource) GetRejections() []Rejection {
 	if o == nil {
-		var ret []*Rejection
+		var ret []Rejection
 		return ret
 	}
 	return o.Rejections
@@ -572,16 +575,16 @@ func (o *ManualImportResource) GetRejections() []*Rejection {
 // GetRejectionsOk returns a tuple with the Rejections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ManualImportResource) GetRejectionsOk() ([]*Rejection, bool) {
-	if o == nil || isNil(o.Rejections) {
-    return nil, false
+func (o *ManualImportResource) GetRejectionsOk() ([]Rejection, bool) {
+	if o == nil || IsNil(o.Rejections) {
+		return nil, false
 	}
 	return o.Rejections, true
 }
 
 // HasRejections returns a boolean if a field has been set.
 func (o *ManualImportResource) HasRejections() bool {
-	if o != nil && isNil(o.Rejections) {
+	if o != nil && IsNil(o.Rejections) {
 		return true
 	}
 
@@ -589,13 +592,21 @@ func (o *ManualImportResource) HasRejections() bool {
 }
 
 // SetRejections gets a reference to the given []Rejection and assigns it to the Rejections field.
-func (o *ManualImportResource) SetRejections(v []*Rejection) {
+func (o *ManualImportResource) SetRejections(v []Rejection) {
 	o.Rejections = v
 }
 
 func (o ManualImportResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ManualImportResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Path.IsSet() {
@@ -610,13 +621,13 @@ func (o ManualImportResource) MarshalJSON() ([]byte, error) {
 	if o.Name.IsSet() {
 		toSerialize["name"] = o.Name.Get()
 	}
-	if !isNil(o.Size) {
+	if !IsNil(o.Size) {
 		toSerialize["size"] = o.Size
 	}
-	if !isNil(o.Movie) {
+	if !IsNil(o.Movie) {
 		toSerialize["movie"] = o.Movie
 	}
-	if !isNil(o.Quality) {
+	if !IsNil(o.Quality) {
 		toSerialize["quality"] = o.Quality
 	}
 	if o.Languages != nil {
@@ -625,7 +636,7 @@ func (o ManualImportResource) MarshalJSON() ([]byte, error) {
 	if o.ReleaseGroup.IsSet() {
 		toSerialize["releaseGroup"] = o.ReleaseGroup.Get()
 	}
-	if !isNil(o.QualityWeight) {
+	if !IsNil(o.QualityWeight) {
 		toSerialize["qualityWeight"] = o.QualityWeight
 	}
 	if o.DownloadId.IsSet() {
@@ -634,13 +645,13 @@ func (o ManualImportResource) MarshalJSON() ([]byte, error) {
 	if o.CustomFormats != nil {
 		toSerialize["customFormats"] = o.CustomFormats
 	}
-	if !isNil(o.CustomFormatScore) {
+	if !IsNil(o.CustomFormatScore) {
 		toSerialize["customFormatScore"] = o.CustomFormatScore
 	}
 	if o.Rejections != nil {
 		toSerialize["rejections"] = o.Rejections
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableManualImportResource struct {

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the RenameMovieResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &RenameMovieResource{}
+
 // RenameMovieResource struct for RenameMovieResource
 type RenameMovieResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -42,7 +45,7 @@ func NewRenameMovieResourceWithDefaults() *RenameMovieResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *RenameMovieResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -52,15 +55,15 @@ func (o *RenameMovieResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RenameMovieResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *RenameMovieResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -74,7 +77,7 @@ func (o *RenameMovieResource) SetId(v int32) {
 
 // GetMovieId returns the MovieId field value if set, zero value otherwise.
 func (o *RenameMovieResource) GetMovieId() int32 {
-	if o == nil || isNil(o.MovieId) {
+	if o == nil || IsNil(o.MovieId) {
 		var ret int32
 		return ret
 	}
@@ -84,15 +87,15 @@ func (o *RenameMovieResource) GetMovieId() int32 {
 // GetMovieIdOk returns a tuple with the MovieId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RenameMovieResource) GetMovieIdOk() (*int32, bool) {
-	if o == nil || isNil(o.MovieId) {
-    return nil, false
+	if o == nil || IsNil(o.MovieId) {
+		return nil, false
 	}
 	return o.MovieId, true
 }
 
 // HasMovieId returns a boolean if a field has been set.
 func (o *RenameMovieResource) HasMovieId() bool {
-	if o != nil && !isNil(o.MovieId) {
+	if o != nil && !IsNil(o.MovieId) {
 		return true
 	}
 
@@ -106,7 +109,7 @@ func (o *RenameMovieResource) SetMovieId(v int32) {
 
 // GetMovieFileId returns the MovieFileId field value if set, zero value otherwise.
 func (o *RenameMovieResource) GetMovieFileId() int32 {
-	if o == nil || isNil(o.MovieFileId) {
+	if o == nil || IsNil(o.MovieFileId) {
 		var ret int32
 		return ret
 	}
@@ -116,15 +119,15 @@ func (o *RenameMovieResource) GetMovieFileId() int32 {
 // GetMovieFileIdOk returns a tuple with the MovieFileId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RenameMovieResource) GetMovieFileIdOk() (*int32, bool) {
-	if o == nil || isNil(o.MovieFileId) {
-    return nil, false
+	if o == nil || IsNil(o.MovieFileId) {
+		return nil, false
 	}
 	return o.MovieFileId, true
 }
 
 // HasMovieFileId returns a boolean if a field has been set.
 func (o *RenameMovieResource) HasMovieFileId() bool {
-	if o != nil && !isNil(o.MovieFileId) {
+	if o != nil && !IsNil(o.MovieFileId) {
 		return true
 	}
 
@@ -138,7 +141,7 @@ func (o *RenameMovieResource) SetMovieFileId(v int32) {
 
 // GetExistingPath returns the ExistingPath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RenameMovieResource) GetExistingPath() string {
-	if o == nil || isNil(o.ExistingPath.Get()) {
+	if o == nil || IsNil(o.ExistingPath.Get()) {
 		var ret string
 		return ret
 	}
@@ -150,7 +153,7 @@ func (o *RenameMovieResource) GetExistingPath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RenameMovieResource) GetExistingPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ExistingPath.Get(), o.ExistingPath.IsSet()
 }
@@ -180,7 +183,7 @@ func (o *RenameMovieResource) UnsetExistingPath() {
 
 // GetNewPath returns the NewPath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *RenameMovieResource) GetNewPath() string {
-	if o == nil || isNil(o.NewPath.Get()) {
+	if o == nil || IsNil(o.NewPath.Get()) {
 		var ret string
 		return ret
 	}
@@ -192,7 +195,7 @@ func (o *RenameMovieResource) GetNewPath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RenameMovieResource) GetNewPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.NewPath.Get(), o.NewPath.IsSet()
 }
@@ -221,14 +224,22 @@ func (o *RenameMovieResource) UnsetNewPath() {
 }
 
 func (o RenameMovieResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o RenameMovieResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !isNil(o.MovieId) {
+	if !IsNil(o.MovieId) {
 		toSerialize["movieId"] = o.MovieId
 	}
-	if !isNil(o.MovieFileId) {
+	if !IsNil(o.MovieFileId) {
 		toSerialize["movieFileId"] = o.MovieFileId
 	}
 	if o.ExistingPath.IsSet() {
@@ -237,7 +248,7 @@ func (o RenameMovieResource) MarshalJSON() ([]byte, error) {
 	if o.NewPath.IsSet() {
 		toSerialize["newPath"] = o.NewPath.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableRenameMovieResource struct {

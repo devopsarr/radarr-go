@@ -22,6 +22,7 @@ import (
 
 // QueueDetailsAPIService QueueDetailsAPI service
 type QueueDetailsAPIService service
+
 type ApiGetQueueDetailsByIdRequest struct {
 	ctx context.Context
 	ApiService *QueueDetailsAPIService
@@ -63,7 +64,7 @@ func (a *QueueDetailsAPIService) GetQueueDetailsByIdExecute(r ApiGetQueueDetails
 	}
 
 	localVarPath := localBasePath + "/api/v3/queue/details/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -150,6 +151,7 @@ func (a *QueueDetailsAPIService) GetQueueDetailsByIdExecute(r ApiGetQueueDetails
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListQueueDetailsRequest struct {
 	ctx context.Context
 	ApiService *QueueDetailsAPIService
@@ -167,7 +169,7 @@ func (r ApiListQueueDetailsRequest) IncludeMovie(includeMovie bool) ApiListQueue
 	return r
 }
 
-func (r ApiListQueueDetailsRequest) Execute() ([]*QueueResource, *http.Response, error) {
+func (r ApiListQueueDetailsRequest) Execute() ([]QueueResource, *http.Response, error) {
 	return r.ApiService.ListQueueDetailsExecute(r)
 }
 
@@ -186,12 +188,12 @@ func (a *QueueDetailsAPIService) ListQueueDetails(ctx context.Context) ApiListQu
 
 // Execute executes the request
 //  @return []QueueResource
-func (a *QueueDetailsAPIService) ListQueueDetailsExecute(r ApiListQueueDetailsRequest) ([]*QueueResource, *http.Response, error) {
+func (a *QueueDetailsAPIService) ListQueueDetailsExecute(r ApiListQueueDetailsRequest) ([]QueueResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*QueueResource
+		localVarReturnValue  []QueueResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "QueueDetailsAPIService.ListQueueDetails")
@@ -206,10 +208,13 @@ func (a *QueueDetailsAPIService) ListQueueDetailsExecute(r ApiListQueueDetailsRe
 	localVarFormParams := url.Values{}
 
 	if r.movieId != nil {
-		localVarQueryParams.Add("movieId", parameterToString(*r.movieId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "movieId", r.movieId, "")
 	}
 	if r.includeMovie != nil {
-		localVarQueryParams.Add("includeMovie", parameterToString(*r.includeMovie, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeMovie", r.includeMovie, "")
+	} else {
+		var defaultValue bool = false
+		r.includeMovie = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

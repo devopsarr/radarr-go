@@ -22,6 +22,7 @@ import (
 
 // CollectionAPIService CollectionAPI service
 type CollectionAPIService service
+
 type ApiGetCollectionByIdRequest struct {
 	ctx context.Context
 	ApiService *CollectionAPIService
@@ -63,7 +64,7 @@ func (a *CollectionAPIService) GetCollectionByIdExecute(r ApiGetCollectionByIdRe
 	}
 
 	localVarPath := localBasePath + "/api/v3/collection/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -150,6 +151,7 @@ func (a *CollectionAPIService) GetCollectionByIdExecute(r ApiGetCollectionByIdRe
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListCollectionRequest struct {
 	ctx context.Context
 	ApiService *CollectionAPIService
@@ -161,7 +163,7 @@ func (r ApiListCollectionRequest) TmdbId(tmdbId int32) ApiListCollectionRequest 
 	return r
 }
 
-func (r ApiListCollectionRequest) Execute() ([]*CollectionResource, *http.Response, error) {
+func (r ApiListCollectionRequest) Execute() ([]CollectionResource, *http.Response, error) {
 	return r.ApiService.ListCollectionExecute(r)
 }
 
@@ -180,12 +182,12 @@ func (a *CollectionAPIService) ListCollection(ctx context.Context) ApiListCollec
 
 // Execute executes the request
 //  @return []CollectionResource
-func (a *CollectionAPIService) ListCollectionExecute(r ApiListCollectionRequest) ([]*CollectionResource, *http.Response, error) {
+func (a *CollectionAPIService) ListCollectionExecute(r ApiListCollectionRequest) ([]CollectionResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*CollectionResource
+		localVarReturnValue  []CollectionResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CollectionAPIService.ListCollection")
@@ -200,7 +202,7 @@ func (a *CollectionAPIService) ListCollectionExecute(r ApiListCollectionRequest)
 	localVarFormParams := url.Values{}
 
 	if r.tmdbId != nil {
-		localVarQueryParams.Add("tmdbId", parameterToString(*r.tmdbId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "tmdbId", r.tmdbId, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -283,6 +285,7 @@ func (a *CollectionAPIService) ListCollectionExecute(r ApiListCollectionRequest)
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiPutCollectionRequest struct {
 	ctx context.Context
 	ApiService *CollectionAPIService
@@ -404,6 +407,7 @@ func (a *CollectionAPIService) PutCollectionExecute(r ApiPutCollectionRequest) (
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiUpdateCollectionRequest struct {
 	ctx context.Context
 	ApiService *CollectionAPIService
@@ -451,7 +455,7 @@ func (a *CollectionAPIService) UpdateCollectionExecute(r ApiUpdateCollectionRequ
 	}
 
 	localVarPath := localBasePath + "/api/v3/collection/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

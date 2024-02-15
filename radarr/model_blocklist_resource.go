@@ -15,14 +15,17 @@ import (
 	"time"
 )
 
+// checks if the BlocklistResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &BlocklistResource{}
+
 // BlocklistResource struct for BlocklistResource
 type BlocklistResource struct {
 	Id *int32 `json:"id,omitempty"`
 	MovieId *int32 `json:"movieId,omitempty"`
 	SourceTitle NullableString `json:"sourceTitle,omitempty"`
-	Languages []*Language `json:"languages,omitempty"`
+	Languages []Language `json:"languages,omitempty"`
 	Quality *QualityModel `json:"quality,omitempty"`
-	CustomFormats []*CustomFormatResource `json:"customFormats,omitempty"`
+	CustomFormats []CustomFormatResource `json:"customFormats,omitempty"`
 	Date *time.Time `json:"date,omitempty"`
 	Protocol *DownloadProtocol `json:"protocol,omitempty"`
 	Indexer NullableString `json:"indexer,omitempty"`
@@ -49,7 +52,7 @@ func NewBlocklistResourceWithDefaults() *BlocklistResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *BlocklistResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -59,15 +62,15 @@ func (o *BlocklistResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BlocklistResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *BlocklistResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -81,7 +84,7 @@ func (o *BlocklistResource) SetId(v int32) {
 
 // GetMovieId returns the MovieId field value if set, zero value otherwise.
 func (o *BlocklistResource) GetMovieId() int32 {
-	if o == nil || isNil(o.MovieId) {
+	if o == nil || IsNil(o.MovieId) {
 		var ret int32
 		return ret
 	}
@@ -91,15 +94,15 @@ func (o *BlocklistResource) GetMovieId() int32 {
 // GetMovieIdOk returns a tuple with the MovieId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BlocklistResource) GetMovieIdOk() (*int32, bool) {
-	if o == nil || isNil(o.MovieId) {
-    return nil, false
+	if o == nil || IsNil(o.MovieId) {
+		return nil, false
 	}
 	return o.MovieId, true
 }
 
 // HasMovieId returns a boolean if a field has been set.
 func (o *BlocklistResource) HasMovieId() bool {
-	if o != nil && !isNil(o.MovieId) {
+	if o != nil && !IsNil(o.MovieId) {
 		return true
 	}
 
@@ -113,7 +116,7 @@ func (o *BlocklistResource) SetMovieId(v int32) {
 
 // GetSourceTitle returns the SourceTitle field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BlocklistResource) GetSourceTitle() string {
-	if o == nil || isNil(o.SourceTitle.Get()) {
+	if o == nil || IsNil(o.SourceTitle.Get()) {
 		var ret string
 		return ret
 	}
@@ -125,7 +128,7 @@ func (o *BlocklistResource) GetSourceTitle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BlocklistResource) GetSourceTitleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.SourceTitle.Get(), o.SourceTitle.IsSet()
 }
@@ -154,9 +157,9 @@ func (o *BlocklistResource) UnsetSourceTitle() {
 }
 
 // GetLanguages returns the Languages field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *BlocklistResource) GetLanguages() []*Language {
+func (o *BlocklistResource) GetLanguages() []Language {
 	if o == nil {
-		var ret []*Language
+		var ret []Language
 		return ret
 	}
 	return o.Languages
@@ -165,16 +168,16 @@ func (o *BlocklistResource) GetLanguages() []*Language {
 // GetLanguagesOk returns a tuple with the Languages field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *BlocklistResource) GetLanguagesOk() ([]*Language, bool) {
-	if o == nil || isNil(o.Languages) {
-    return nil, false
+func (o *BlocklistResource) GetLanguagesOk() ([]Language, bool) {
+	if o == nil || IsNil(o.Languages) {
+		return nil, false
 	}
 	return o.Languages, true
 }
 
 // HasLanguages returns a boolean if a field has been set.
 func (o *BlocklistResource) HasLanguages() bool {
-	if o != nil && isNil(o.Languages) {
+	if o != nil && IsNil(o.Languages) {
 		return true
 	}
 
@@ -182,13 +185,13 @@ func (o *BlocklistResource) HasLanguages() bool {
 }
 
 // SetLanguages gets a reference to the given []Language and assigns it to the Languages field.
-func (o *BlocklistResource) SetLanguages(v []*Language) {
+func (o *BlocklistResource) SetLanguages(v []Language) {
 	o.Languages = v
 }
 
 // GetQuality returns the Quality field value if set, zero value otherwise.
 func (o *BlocklistResource) GetQuality() QualityModel {
-	if o == nil || isNil(o.Quality) {
+	if o == nil || IsNil(o.Quality) {
 		var ret QualityModel
 		return ret
 	}
@@ -198,15 +201,15 @@ func (o *BlocklistResource) GetQuality() QualityModel {
 // GetQualityOk returns a tuple with the Quality field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BlocklistResource) GetQualityOk() (*QualityModel, bool) {
-	if o == nil || isNil(o.Quality) {
-    return nil, false
+	if o == nil || IsNil(o.Quality) {
+		return nil, false
 	}
 	return o.Quality, true
 }
 
 // HasQuality returns a boolean if a field has been set.
 func (o *BlocklistResource) HasQuality() bool {
-	if o != nil && !isNil(o.Quality) {
+	if o != nil && !IsNil(o.Quality) {
 		return true
 	}
 
@@ -219,9 +222,9 @@ func (o *BlocklistResource) SetQuality(v QualityModel) {
 }
 
 // GetCustomFormats returns the CustomFormats field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *BlocklistResource) GetCustomFormats() []*CustomFormatResource {
+func (o *BlocklistResource) GetCustomFormats() []CustomFormatResource {
 	if o == nil {
-		var ret []*CustomFormatResource
+		var ret []CustomFormatResource
 		return ret
 	}
 	return o.CustomFormats
@@ -230,16 +233,16 @@ func (o *BlocklistResource) GetCustomFormats() []*CustomFormatResource {
 // GetCustomFormatsOk returns a tuple with the CustomFormats field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *BlocklistResource) GetCustomFormatsOk() ([]*CustomFormatResource, bool) {
-	if o == nil || isNil(o.CustomFormats) {
-    return nil, false
+func (o *BlocklistResource) GetCustomFormatsOk() ([]CustomFormatResource, bool) {
+	if o == nil || IsNil(o.CustomFormats) {
+		return nil, false
 	}
 	return o.CustomFormats, true
 }
 
 // HasCustomFormats returns a boolean if a field has been set.
 func (o *BlocklistResource) HasCustomFormats() bool {
-	if o != nil && isNil(o.CustomFormats) {
+	if o != nil && IsNil(o.CustomFormats) {
 		return true
 	}
 
@@ -247,13 +250,13 @@ func (o *BlocklistResource) HasCustomFormats() bool {
 }
 
 // SetCustomFormats gets a reference to the given []CustomFormatResource and assigns it to the CustomFormats field.
-func (o *BlocklistResource) SetCustomFormats(v []*CustomFormatResource) {
+func (o *BlocklistResource) SetCustomFormats(v []CustomFormatResource) {
 	o.CustomFormats = v
 }
 
 // GetDate returns the Date field value if set, zero value otherwise.
 func (o *BlocklistResource) GetDate() time.Time {
-	if o == nil || isNil(o.Date) {
+	if o == nil || IsNil(o.Date) {
 		var ret time.Time
 		return ret
 	}
@@ -263,15 +266,15 @@ func (o *BlocklistResource) GetDate() time.Time {
 // GetDateOk returns a tuple with the Date field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BlocklistResource) GetDateOk() (*time.Time, bool) {
-	if o == nil || isNil(o.Date) {
-    return nil, false
+	if o == nil || IsNil(o.Date) {
+		return nil, false
 	}
 	return o.Date, true
 }
 
 // HasDate returns a boolean if a field has been set.
 func (o *BlocklistResource) HasDate() bool {
-	if o != nil && !isNil(o.Date) {
+	if o != nil && !IsNil(o.Date) {
 		return true
 	}
 
@@ -285,7 +288,7 @@ func (o *BlocklistResource) SetDate(v time.Time) {
 
 // GetProtocol returns the Protocol field value if set, zero value otherwise.
 func (o *BlocklistResource) GetProtocol() DownloadProtocol {
-	if o == nil || isNil(o.Protocol) {
+	if o == nil || IsNil(o.Protocol) {
 		var ret DownloadProtocol
 		return ret
 	}
@@ -295,15 +298,15 @@ func (o *BlocklistResource) GetProtocol() DownloadProtocol {
 // GetProtocolOk returns a tuple with the Protocol field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BlocklistResource) GetProtocolOk() (*DownloadProtocol, bool) {
-	if o == nil || isNil(o.Protocol) {
-    return nil, false
+	if o == nil || IsNil(o.Protocol) {
+		return nil, false
 	}
 	return o.Protocol, true
 }
 
 // HasProtocol returns a boolean if a field has been set.
 func (o *BlocklistResource) HasProtocol() bool {
-	if o != nil && !isNil(o.Protocol) {
+	if o != nil && !IsNil(o.Protocol) {
 		return true
 	}
 
@@ -317,7 +320,7 @@ func (o *BlocklistResource) SetProtocol(v DownloadProtocol) {
 
 // GetIndexer returns the Indexer field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BlocklistResource) GetIndexer() string {
-	if o == nil || isNil(o.Indexer.Get()) {
+	if o == nil || IsNil(o.Indexer.Get()) {
 		var ret string
 		return ret
 	}
@@ -329,7 +332,7 @@ func (o *BlocklistResource) GetIndexer() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BlocklistResource) GetIndexerOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Indexer.Get(), o.Indexer.IsSet()
 }
@@ -359,7 +362,7 @@ func (o *BlocklistResource) UnsetIndexer() {
 
 // GetMessage returns the Message field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *BlocklistResource) GetMessage() string {
-	if o == nil || isNil(o.Message.Get()) {
+	if o == nil || IsNil(o.Message.Get()) {
 		var ret string
 		return ret
 	}
@@ -371,7 +374,7 @@ func (o *BlocklistResource) GetMessage() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BlocklistResource) GetMessageOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Message.Get(), o.Message.IsSet()
 }
@@ -401,7 +404,7 @@ func (o *BlocklistResource) UnsetMessage() {
 
 // GetMovie returns the Movie field value if set, zero value otherwise.
 func (o *BlocklistResource) GetMovie() MovieResource {
-	if o == nil || isNil(o.Movie) {
+	if o == nil || IsNil(o.Movie) {
 		var ret MovieResource
 		return ret
 	}
@@ -411,15 +414,15 @@ func (o *BlocklistResource) GetMovie() MovieResource {
 // GetMovieOk returns a tuple with the Movie field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BlocklistResource) GetMovieOk() (*MovieResource, bool) {
-	if o == nil || isNil(o.Movie) {
-    return nil, false
+	if o == nil || IsNil(o.Movie) {
+		return nil, false
 	}
 	return o.Movie, true
 }
 
 // HasMovie returns a boolean if a field has been set.
 func (o *BlocklistResource) HasMovie() bool {
-	if o != nil && !isNil(o.Movie) {
+	if o != nil && !IsNil(o.Movie) {
 		return true
 	}
 
@@ -432,11 +435,19 @@ func (o *BlocklistResource) SetMovie(v MovieResource) {
 }
 
 func (o BlocklistResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o BlocklistResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !isNil(o.MovieId) {
+	if !IsNil(o.MovieId) {
 		toSerialize["movieId"] = o.MovieId
 	}
 	if o.SourceTitle.IsSet() {
@@ -445,16 +456,16 @@ func (o BlocklistResource) MarshalJSON() ([]byte, error) {
 	if o.Languages != nil {
 		toSerialize["languages"] = o.Languages
 	}
-	if !isNil(o.Quality) {
+	if !IsNil(o.Quality) {
 		toSerialize["quality"] = o.Quality
 	}
 	if o.CustomFormats != nil {
 		toSerialize["customFormats"] = o.CustomFormats
 	}
-	if !isNil(o.Date) {
+	if !IsNil(o.Date) {
 		toSerialize["date"] = o.Date
 	}
-	if !isNil(o.Protocol) {
+	if !IsNil(o.Protocol) {
 		toSerialize["protocol"] = o.Protocol
 	}
 	if o.Indexer.IsSet() {
@@ -463,10 +474,10 @@ func (o BlocklistResource) MarshalJSON() ([]byte, error) {
 	if o.Message.IsSet() {
 		toSerialize["message"] = o.Message.Get()
 	}
-	if !isNil(o.Movie) {
+	if !IsNil(o.Movie) {
 		toSerialize["movie"] = o.Movie
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableBlocklistResource struct {

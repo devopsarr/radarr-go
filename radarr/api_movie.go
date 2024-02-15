@@ -22,6 +22,7 @@ import (
 
 // MovieAPIService MovieAPI service
 type MovieAPIService service
+
 type ApiCreateMovieRequest struct {
 	ctx context.Context
 	ApiService *MovieAPIService
@@ -154,6 +155,7 @@ func (a *MovieAPIService) CreateMovieExecute(r ApiCreateMovieRequest) (*MovieRes
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiDeleteMovieRequest struct {
 	ctx context.Context
 	ApiService *MovieAPIService
@@ -205,17 +207,23 @@ func (a *MovieAPIService) DeleteMovieExecute(r ApiDeleteMovieRequest) (*http.Res
 	}
 
 	localVarPath := localBasePath + "/api/v3/movie/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if r.deleteFiles != nil {
-		localVarQueryParams.Add("deleteFiles", parameterToString(*r.deleteFiles, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "deleteFiles", r.deleteFiles, "")
+	} else {
+		var defaultValue bool = false
+		r.deleteFiles = &defaultValue
 	}
 	if r.addImportExclusion != nil {
-		localVarQueryParams.Add("addImportExclusion", parameterToString(*r.addImportExclusion, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "addImportExclusion", r.addImportExclusion, "")
+	} else {
+		var defaultValue bool = false
+		r.addImportExclusion = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -289,6 +297,7 @@ func (a *MovieAPIService) DeleteMovieExecute(r ApiDeleteMovieRequest) (*http.Res
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetMovieByIdRequest struct {
 	ctx context.Context
 	ApiService *MovieAPIService
@@ -330,7 +339,7 @@ func (a *MovieAPIService) GetMovieByIdExecute(r ApiGetMovieByIdRequest) (*MovieR
 	}
 
 	localVarPath := localBasePath + "/api/v3/movie/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -417,6 +426,7 @@ func (a *MovieAPIService) GetMovieByIdExecute(r ApiGetMovieByIdRequest) (*MovieR
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListMovieRequest struct {
 	ctx context.Context
 	ApiService *MovieAPIService
@@ -434,7 +444,7 @@ func (r ApiListMovieRequest) ExcludeLocalCovers(excludeLocalCovers bool) ApiList
 	return r
 }
 
-func (r ApiListMovieRequest) Execute() ([]*MovieResource, *http.Response, error) {
+func (r ApiListMovieRequest) Execute() ([]MovieResource, *http.Response, error) {
 	return r.ApiService.ListMovieExecute(r)
 }
 
@@ -453,12 +463,12 @@ func (a *MovieAPIService) ListMovie(ctx context.Context) ApiListMovieRequest {
 
 // Execute executes the request
 //  @return []MovieResource
-func (a *MovieAPIService) ListMovieExecute(r ApiListMovieRequest) ([]*MovieResource, *http.Response, error) {
+func (a *MovieAPIService) ListMovieExecute(r ApiListMovieRequest) ([]MovieResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*MovieResource
+		localVarReturnValue  []MovieResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieAPIService.ListMovie")
@@ -473,10 +483,13 @@ func (a *MovieAPIService) ListMovieExecute(r ApiListMovieRequest) ([]*MovieResou
 	localVarFormParams := url.Values{}
 
 	if r.tmdbId != nil {
-		localVarQueryParams.Add("tmdbId", parameterToString(*r.tmdbId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "tmdbId", r.tmdbId, "")
 	}
 	if r.excludeLocalCovers != nil {
-		localVarQueryParams.Add("excludeLocalCovers", parameterToString(*r.excludeLocalCovers, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "excludeLocalCovers", r.excludeLocalCovers, "")
+	} else {
+		var defaultValue bool = false
+		r.excludeLocalCovers = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -559,6 +572,7 @@ func (a *MovieAPIService) ListMovieExecute(r ApiListMovieRequest) ([]*MovieResou
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiUpdateMovieRequest struct {
 	ctx context.Context
 	ApiService *MovieAPIService
@@ -612,14 +626,17 @@ func (a *MovieAPIService) UpdateMovieExecute(r ApiUpdateMovieRequest) (*MovieRes
 	}
 
 	localVarPath := localBasePath + "/api/v3/movie/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
 	if r.moveFiles != nil {
-		localVarQueryParams.Add("moveFiles", parameterToString(*r.moveFiles, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "moveFiles", r.moveFiles, "")
+	} else {
+		var defaultValue bool = false
+		r.moveFiles = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"application/json", "text/json", "application/*+json"}

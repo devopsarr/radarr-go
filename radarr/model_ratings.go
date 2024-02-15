@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the Ratings type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &Ratings{}
+
 // Ratings struct for Ratings
 type Ratings struct {
 	Imdb *RatingChild `json:"imdb,omitempty"`
@@ -41,7 +44,7 @@ func NewRatingsWithDefaults() *Ratings {
 
 // GetImdb returns the Imdb field value if set, zero value otherwise.
 func (o *Ratings) GetImdb() RatingChild {
-	if o == nil || isNil(o.Imdb) {
+	if o == nil || IsNil(o.Imdb) {
 		var ret RatingChild
 		return ret
 	}
@@ -51,15 +54,15 @@ func (o *Ratings) GetImdb() RatingChild {
 // GetImdbOk returns a tuple with the Imdb field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Ratings) GetImdbOk() (*RatingChild, bool) {
-	if o == nil || isNil(o.Imdb) {
-    return nil, false
+	if o == nil || IsNil(o.Imdb) {
+		return nil, false
 	}
 	return o.Imdb, true
 }
 
 // HasImdb returns a boolean if a field has been set.
 func (o *Ratings) HasImdb() bool {
-	if o != nil && !isNil(o.Imdb) {
+	if o != nil && !IsNil(o.Imdb) {
 		return true
 	}
 
@@ -73,7 +76,7 @@ func (o *Ratings) SetImdb(v RatingChild) {
 
 // GetTmdb returns the Tmdb field value if set, zero value otherwise.
 func (o *Ratings) GetTmdb() RatingChild {
-	if o == nil || isNil(o.Tmdb) {
+	if o == nil || IsNil(o.Tmdb) {
 		var ret RatingChild
 		return ret
 	}
@@ -83,15 +86,15 @@ func (o *Ratings) GetTmdb() RatingChild {
 // GetTmdbOk returns a tuple with the Tmdb field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Ratings) GetTmdbOk() (*RatingChild, bool) {
-	if o == nil || isNil(o.Tmdb) {
-    return nil, false
+	if o == nil || IsNil(o.Tmdb) {
+		return nil, false
 	}
 	return o.Tmdb, true
 }
 
 // HasTmdb returns a boolean if a field has been set.
 func (o *Ratings) HasTmdb() bool {
-	if o != nil && !isNil(o.Tmdb) {
+	if o != nil && !IsNil(o.Tmdb) {
 		return true
 	}
 
@@ -105,7 +108,7 @@ func (o *Ratings) SetTmdb(v RatingChild) {
 
 // GetMetacritic returns the Metacritic field value if set, zero value otherwise.
 func (o *Ratings) GetMetacritic() RatingChild {
-	if o == nil || isNil(o.Metacritic) {
+	if o == nil || IsNil(o.Metacritic) {
 		var ret RatingChild
 		return ret
 	}
@@ -115,15 +118,15 @@ func (o *Ratings) GetMetacritic() RatingChild {
 // GetMetacriticOk returns a tuple with the Metacritic field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Ratings) GetMetacriticOk() (*RatingChild, bool) {
-	if o == nil || isNil(o.Metacritic) {
-    return nil, false
+	if o == nil || IsNil(o.Metacritic) {
+		return nil, false
 	}
 	return o.Metacritic, true
 }
 
 // HasMetacritic returns a boolean if a field has been set.
 func (o *Ratings) HasMetacritic() bool {
-	if o != nil && !isNil(o.Metacritic) {
+	if o != nil && !IsNil(o.Metacritic) {
 		return true
 	}
 
@@ -137,7 +140,7 @@ func (o *Ratings) SetMetacritic(v RatingChild) {
 
 // GetRottenTomatoes returns the RottenTomatoes field value if set, zero value otherwise.
 func (o *Ratings) GetRottenTomatoes() RatingChild {
-	if o == nil || isNil(o.RottenTomatoes) {
+	if o == nil || IsNil(o.RottenTomatoes) {
 		var ret RatingChild
 		return ret
 	}
@@ -147,15 +150,15 @@ func (o *Ratings) GetRottenTomatoes() RatingChild {
 // GetRottenTomatoesOk returns a tuple with the RottenTomatoes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Ratings) GetRottenTomatoesOk() (*RatingChild, bool) {
-	if o == nil || isNil(o.RottenTomatoes) {
-    return nil, false
+	if o == nil || IsNil(o.RottenTomatoes) {
+		return nil, false
 	}
 	return o.RottenTomatoes, true
 }
 
 // HasRottenTomatoes returns a boolean if a field has been set.
 func (o *Ratings) HasRottenTomatoes() bool {
-	if o != nil && !isNil(o.RottenTomatoes) {
+	if o != nil && !IsNil(o.RottenTomatoes) {
 		return true
 	}
 
@@ -168,20 +171,28 @@ func (o *Ratings) SetRottenTomatoes(v RatingChild) {
 }
 
 func (o Ratings) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Imdb) {
-		toSerialize["imdb"] = o.Imdb
-	}
-	if !isNil(o.Tmdb) {
-		toSerialize["tmdb"] = o.Tmdb
-	}
-	if !isNil(o.Metacritic) {
-		toSerialize["metacritic"] = o.Metacritic
-	}
-	if !isNil(o.RottenTomatoes) {
-		toSerialize["rottenTomatoes"] = o.RottenTomatoes
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o Ratings) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Imdb) {
+		toSerialize["imdb"] = o.Imdb
+	}
+	if !IsNil(o.Tmdb) {
+		toSerialize["tmdb"] = o.Tmdb
+	}
+	if !IsNil(o.Metacritic) {
+		toSerialize["metacritic"] = o.Metacritic
+	}
+	if !IsNil(o.RottenTomatoes) {
+		toSerialize["rottenTomatoes"] = o.RottenTomatoes
+	}
+	return toSerialize, nil
 }
 
 type NullableRatings struct {

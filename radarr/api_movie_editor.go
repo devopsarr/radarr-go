@@ -21,6 +21,7 @@ import (
 
 // MovieEditorAPIService MovieEditorAPI service
 type MovieEditorAPIService service
+
 type ApiDeleteMovieEditorRequest struct {
 	ctx context.Context
 	ApiService *MovieEditorAPIService
@@ -142,6 +143,7 @@ func (a *MovieEditorAPIService) DeleteMovieEditorExecute(r ApiDeleteMovieEditorR
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiPutMovieEditorRequest struct {
 	ctx context.Context
 	ApiService *MovieEditorAPIService
