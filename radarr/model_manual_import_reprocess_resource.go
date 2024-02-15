@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ManualImportReprocessResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ManualImportReprocessResource{}
+
 // ManualImportReprocessResource struct for ManualImportReprocessResource
 type ManualImportReprocessResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -21,12 +24,12 @@ type ManualImportReprocessResource struct {
 	MovieId *int32 `json:"movieId,omitempty"`
 	Movie *MovieResource `json:"movie,omitempty"`
 	Quality *QualityModel `json:"quality,omitempty"`
-	Languages []*Language `json:"languages,omitempty"`
+	Languages []Language `json:"languages,omitempty"`
 	ReleaseGroup NullableString `json:"releaseGroup,omitempty"`
 	DownloadId NullableString `json:"downloadId,omitempty"`
-	CustomFormats []*CustomFormatResource `json:"customFormats,omitempty"`
+	CustomFormats []CustomFormatResource `json:"customFormats,omitempty"`
 	CustomFormatScore *int32 `json:"customFormatScore,omitempty"`
-	Rejections []*Rejection `json:"rejections,omitempty"`
+	Rejections []Rejection `json:"rejections,omitempty"`
 }
 
 // NewManualImportReprocessResource instantiates a new ManualImportReprocessResource object
@@ -48,7 +51,7 @@ func NewManualImportReprocessResourceWithDefaults() *ManualImportReprocessResour
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *ManualImportReprocessResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -58,15 +61,15 @@ func (o *ManualImportReprocessResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManualImportReprocessResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *ManualImportReprocessResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -80,7 +83,7 @@ func (o *ManualImportReprocessResource) SetId(v int32) {
 
 // GetPath returns the Path field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ManualImportReprocessResource) GetPath() string {
-	if o == nil || isNil(o.Path.Get()) {
+	if o == nil || IsNil(o.Path.Get()) {
 		var ret string
 		return ret
 	}
@@ -92,7 +95,7 @@ func (o *ManualImportReprocessResource) GetPath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ManualImportReprocessResource) GetPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Path.Get(), o.Path.IsSet()
 }
@@ -122,7 +125,7 @@ func (o *ManualImportReprocessResource) UnsetPath() {
 
 // GetMovieId returns the MovieId field value if set, zero value otherwise.
 func (o *ManualImportReprocessResource) GetMovieId() int32 {
-	if o == nil || isNil(o.MovieId) {
+	if o == nil || IsNil(o.MovieId) {
 		var ret int32
 		return ret
 	}
@@ -132,15 +135,15 @@ func (o *ManualImportReprocessResource) GetMovieId() int32 {
 // GetMovieIdOk returns a tuple with the MovieId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManualImportReprocessResource) GetMovieIdOk() (*int32, bool) {
-	if o == nil || isNil(o.MovieId) {
-    return nil, false
+	if o == nil || IsNil(o.MovieId) {
+		return nil, false
 	}
 	return o.MovieId, true
 }
 
 // HasMovieId returns a boolean if a field has been set.
 func (o *ManualImportReprocessResource) HasMovieId() bool {
-	if o != nil && !isNil(o.MovieId) {
+	if o != nil && !IsNil(o.MovieId) {
 		return true
 	}
 
@@ -154,7 +157,7 @@ func (o *ManualImportReprocessResource) SetMovieId(v int32) {
 
 // GetMovie returns the Movie field value if set, zero value otherwise.
 func (o *ManualImportReprocessResource) GetMovie() MovieResource {
-	if o == nil || isNil(o.Movie) {
+	if o == nil || IsNil(o.Movie) {
 		var ret MovieResource
 		return ret
 	}
@@ -164,15 +167,15 @@ func (o *ManualImportReprocessResource) GetMovie() MovieResource {
 // GetMovieOk returns a tuple with the Movie field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManualImportReprocessResource) GetMovieOk() (*MovieResource, bool) {
-	if o == nil || isNil(o.Movie) {
-    return nil, false
+	if o == nil || IsNil(o.Movie) {
+		return nil, false
 	}
 	return o.Movie, true
 }
 
 // HasMovie returns a boolean if a field has been set.
 func (o *ManualImportReprocessResource) HasMovie() bool {
-	if o != nil && !isNil(o.Movie) {
+	if o != nil && !IsNil(o.Movie) {
 		return true
 	}
 
@@ -186,7 +189,7 @@ func (o *ManualImportReprocessResource) SetMovie(v MovieResource) {
 
 // GetQuality returns the Quality field value if set, zero value otherwise.
 func (o *ManualImportReprocessResource) GetQuality() QualityModel {
-	if o == nil || isNil(o.Quality) {
+	if o == nil || IsNil(o.Quality) {
 		var ret QualityModel
 		return ret
 	}
@@ -196,15 +199,15 @@ func (o *ManualImportReprocessResource) GetQuality() QualityModel {
 // GetQualityOk returns a tuple with the Quality field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManualImportReprocessResource) GetQualityOk() (*QualityModel, bool) {
-	if o == nil || isNil(o.Quality) {
-    return nil, false
+	if o == nil || IsNil(o.Quality) {
+		return nil, false
 	}
 	return o.Quality, true
 }
 
 // HasQuality returns a boolean if a field has been set.
 func (o *ManualImportReprocessResource) HasQuality() bool {
-	if o != nil && !isNil(o.Quality) {
+	if o != nil && !IsNil(o.Quality) {
 		return true
 	}
 
@@ -217,9 +220,9 @@ func (o *ManualImportReprocessResource) SetQuality(v QualityModel) {
 }
 
 // GetLanguages returns the Languages field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ManualImportReprocessResource) GetLanguages() []*Language {
+func (o *ManualImportReprocessResource) GetLanguages() []Language {
 	if o == nil {
-		var ret []*Language
+		var ret []Language
 		return ret
 	}
 	return o.Languages
@@ -228,16 +231,16 @@ func (o *ManualImportReprocessResource) GetLanguages() []*Language {
 // GetLanguagesOk returns a tuple with the Languages field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ManualImportReprocessResource) GetLanguagesOk() ([]*Language, bool) {
-	if o == nil || isNil(o.Languages) {
-    return nil, false
+func (o *ManualImportReprocessResource) GetLanguagesOk() ([]Language, bool) {
+	if o == nil || IsNil(o.Languages) {
+		return nil, false
 	}
 	return o.Languages, true
 }
 
 // HasLanguages returns a boolean if a field has been set.
 func (o *ManualImportReprocessResource) HasLanguages() bool {
-	if o != nil && isNil(o.Languages) {
+	if o != nil && IsNil(o.Languages) {
 		return true
 	}
 
@@ -245,13 +248,13 @@ func (o *ManualImportReprocessResource) HasLanguages() bool {
 }
 
 // SetLanguages gets a reference to the given []Language and assigns it to the Languages field.
-func (o *ManualImportReprocessResource) SetLanguages(v []*Language) {
+func (o *ManualImportReprocessResource) SetLanguages(v []Language) {
 	o.Languages = v
 }
 
 // GetReleaseGroup returns the ReleaseGroup field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ManualImportReprocessResource) GetReleaseGroup() string {
-	if o == nil || isNil(o.ReleaseGroup.Get()) {
+	if o == nil || IsNil(o.ReleaseGroup.Get()) {
 		var ret string
 		return ret
 	}
@@ -263,7 +266,7 @@ func (o *ManualImportReprocessResource) GetReleaseGroup() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ManualImportReprocessResource) GetReleaseGroupOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ReleaseGroup.Get(), o.ReleaseGroup.IsSet()
 }
@@ -293,7 +296,7 @@ func (o *ManualImportReprocessResource) UnsetReleaseGroup() {
 
 // GetDownloadId returns the DownloadId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ManualImportReprocessResource) GetDownloadId() string {
-	if o == nil || isNil(o.DownloadId.Get()) {
+	if o == nil || IsNil(o.DownloadId.Get()) {
 		var ret string
 		return ret
 	}
@@ -305,7 +308,7 @@ func (o *ManualImportReprocessResource) GetDownloadId() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ManualImportReprocessResource) GetDownloadIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.DownloadId.Get(), o.DownloadId.IsSet()
 }
@@ -334,9 +337,9 @@ func (o *ManualImportReprocessResource) UnsetDownloadId() {
 }
 
 // GetCustomFormats returns the CustomFormats field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ManualImportReprocessResource) GetCustomFormats() []*CustomFormatResource {
+func (o *ManualImportReprocessResource) GetCustomFormats() []CustomFormatResource {
 	if o == nil {
-		var ret []*CustomFormatResource
+		var ret []CustomFormatResource
 		return ret
 	}
 	return o.CustomFormats
@@ -345,16 +348,16 @@ func (o *ManualImportReprocessResource) GetCustomFormats() []*CustomFormatResour
 // GetCustomFormatsOk returns a tuple with the CustomFormats field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ManualImportReprocessResource) GetCustomFormatsOk() ([]*CustomFormatResource, bool) {
-	if o == nil || isNil(o.CustomFormats) {
-    return nil, false
+func (o *ManualImportReprocessResource) GetCustomFormatsOk() ([]CustomFormatResource, bool) {
+	if o == nil || IsNil(o.CustomFormats) {
+		return nil, false
 	}
 	return o.CustomFormats, true
 }
 
 // HasCustomFormats returns a boolean if a field has been set.
 func (o *ManualImportReprocessResource) HasCustomFormats() bool {
-	if o != nil && isNil(o.CustomFormats) {
+	if o != nil && IsNil(o.CustomFormats) {
 		return true
 	}
 
@@ -362,13 +365,13 @@ func (o *ManualImportReprocessResource) HasCustomFormats() bool {
 }
 
 // SetCustomFormats gets a reference to the given []CustomFormatResource and assigns it to the CustomFormats field.
-func (o *ManualImportReprocessResource) SetCustomFormats(v []*CustomFormatResource) {
+func (o *ManualImportReprocessResource) SetCustomFormats(v []CustomFormatResource) {
 	o.CustomFormats = v
 }
 
 // GetCustomFormatScore returns the CustomFormatScore field value if set, zero value otherwise.
 func (o *ManualImportReprocessResource) GetCustomFormatScore() int32 {
-	if o == nil || isNil(o.CustomFormatScore) {
+	if o == nil || IsNil(o.CustomFormatScore) {
 		var ret int32
 		return ret
 	}
@@ -378,15 +381,15 @@ func (o *ManualImportReprocessResource) GetCustomFormatScore() int32 {
 // GetCustomFormatScoreOk returns a tuple with the CustomFormatScore field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManualImportReprocessResource) GetCustomFormatScoreOk() (*int32, bool) {
-	if o == nil || isNil(o.CustomFormatScore) {
-    return nil, false
+	if o == nil || IsNil(o.CustomFormatScore) {
+		return nil, false
 	}
 	return o.CustomFormatScore, true
 }
 
 // HasCustomFormatScore returns a boolean if a field has been set.
 func (o *ManualImportReprocessResource) HasCustomFormatScore() bool {
-	if o != nil && !isNil(o.CustomFormatScore) {
+	if o != nil && !IsNil(o.CustomFormatScore) {
 		return true
 	}
 
@@ -399,9 +402,9 @@ func (o *ManualImportReprocessResource) SetCustomFormatScore(v int32) {
 }
 
 // GetRejections returns the Rejections field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ManualImportReprocessResource) GetRejections() []*Rejection {
+func (o *ManualImportReprocessResource) GetRejections() []Rejection {
 	if o == nil {
-		var ret []*Rejection
+		var ret []Rejection
 		return ret
 	}
 	return o.Rejections
@@ -410,16 +413,16 @@ func (o *ManualImportReprocessResource) GetRejections() []*Rejection {
 // GetRejectionsOk returns a tuple with the Rejections field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ManualImportReprocessResource) GetRejectionsOk() ([]*Rejection, bool) {
-	if o == nil || isNil(o.Rejections) {
-    return nil, false
+func (o *ManualImportReprocessResource) GetRejectionsOk() ([]Rejection, bool) {
+	if o == nil || IsNil(o.Rejections) {
+		return nil, false
 	}
 	return o.Rejections, true
 }
 
 // HasRejections returns a boolean if a field has been set.
 func (o *ManualImportReprocessResource) HasRejections() bool {
-	if o != nil && isNil(o.Rejections) {
+	if o != nil && IsNil(o.Rejections) {
 		return true
 	}
 
@@ -427,25 +430,33 @@ func (o *ManualImportReprocessResource) HasRejections() bool {
 }
 
 // SetRejections gets a reference to the given []Rejection and assigns it to the Rejections field.
-func (o *ManualImportReprocessResource) SetRejections(v []*Rejection) {
+func (o *ManualImportReprocessResource) SetRejections(v []Rejection) {
 	o.Rejections = v
 }
 
 func (o ManualImportReprocessResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ManualImportReprocessResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Path.IsSet() {
 		toSerialize["path"] = o.Path.Get()
 	}
-	if !isNil(o.MovieId) {
+	if !IsNil(o.MovieId) {
 		toSerialize["movieId"] = o.MovieId
 	}
-	if !isNil(o.Movie) {
+	if !IsNil(o.Movie) {
 		toSerialize["movie"] = o.Movie
 	}
-	if !isNil(o.Quality) {
+	if !IsNil(o.Quality) {
 		toSerialize["quality"] = o.Quality
 	}
 	if o.Languages != nil {
@@ -460,13 +471,13 @@ func (o ManualImportReprocessResource) MarshalJSON() ([]byte, error) {
 	if o.CustomFormats != nil {
 		toSerialize["customFormats"] = o.CustomFormats
 	}
-	if !isNil(o.CustomFormatScore) {
+	if !IsNil(o.CustomFormatScore) {
 		toSerialize["customFormatScore"] = o.CustomFormatScore
 	}
 	if o.Rejections != nil {
 		toSerialize["rejections"] = o.Rejections
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableManualImportReprocessResource struct {

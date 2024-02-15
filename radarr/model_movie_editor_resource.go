@@ -14,14 +14,17 @@ import (
 	"encoding/json"
 )
 
+// checks if the MovieEditorResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &MovieEditorResource{}
+
 // MovieEditorResource struct for MovieEditorResource
 type MovieEditorResource struct {
-	MovieIds []*int32 `json:"movieIds,omitempty"`
+	MovieIds []int32 `json:"movieIds,omitempty"`
 	Monitored NullableBool `json:"monitored,omitempty"`
 	QualityProfileId NullableInt32 `json:"qualityProfileId,omitempty"`
 	MinimumAvailability *MovieStatusType `json:"minimumAvailability,omitempty"`
 	RootFolderPath NullableString `json:"rootFolderPath,omitempty"`
-	Tags []*int32 `json:"tags,omitempty"`
+	Tags []int32 `json:"tags,omitempty"`
 	ApplyTags *ApplyTags `json:"applyTags,omitempty"`
 	MoveFiles *bool `json:"moveFiles,omitempty"`
 	DeleteFiles *bool `json:"deleteFiles,omitempty"`
@@ -46,9 +49,9 @@ func NewMovieEditorResourceWithDefaults() *MovieEditorResource {
 }
 
 // GetMovieIds returns the MovieIds field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *MovieEditorResource) GetMovieIds() []*int32 {
+func (o *MovieEditorResource) GetMovieIds() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.MovieIds
@@ -57,16 +60,16 @@ func (o *MovieEditorResource) GetMovieIds() []*int32 {
 // GetMovieIdsOk returns a tuple with the MovieIds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *MovieEditorResource) GetMovieIdsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.MovieIds) {
-    return nil, false
+func (o *MovieEditorResource) GetMovieIdsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.MovieIds) {
+		return nil, false
 	}
 	return o.MovieIds, true
 }
 
 // HasMovieIds returns a boolean if a field has been set.
 func (o *MovieEditorResource) HasMovieIds() bool {
-	if o != nil && isNil(o.MovieIds) {
+	if o != nil && IsNil(o.MovieIds) {
 		return true
 	}
 
@@ -74,13 +77,13 @@ func (o *MovieEditorResource) HasMovieIds() bool {
 }
 
 // SetMovieIds gets a reference to the given []int32 and assigns it to the MovieIds field.
-func (o *MovieEditorResource) SetMovieIds(v []*int32) {
+func (o *MovieEditorResource) SetMovieIds(v []int32) {
 	o.MovieIds = v
 }
 
 // GetMonitored returns the Monitored field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MovieEditorResource) GetMonitored() bool {
-	if o == nil || isNil(o.Monitored.Get()) {
+	if o == nil || IsNil(o.Monitored.Get()) {
 		var ret bool
 		return ret
 	}
@@ -92,7 +95,7 @@ func (o *MovieEditorResource) GetMonitored() bool {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MovieEditorResource) GetMonitoredOk() (*bool, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Monitored.Get(), o.Monitored.IsSet()
 }
@@ -122,7 +125,7 @@ func (o *MovieEditorResource) UnsetMonitored() {
 
 // GetQualityProfileId returns the QualityProfileId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MovieEditorResource) GetQualityProfileId() int32 {
-	if o == nil || isNil(o.QualityProfileId.Get()) {
+	if o == nil || IsNil(o.QualityProfileId.Get()) {
 		var ret int32
 		return ret
 	}
@@ -134,7 +137,7 @@ func (o *MovieEditorResource) GetQualityProfileId() int32 {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MovieEditorResource) GetQualityProfileIdOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.QualityProfileId.Get(), o.QualityProfileId.IsSet()
 }
@@ -164,7 +167,7 @@ func (o *MovieEditorResource) UnsetQualityProfileId() {
 
 // GetMinimumAvailability returns the MinimumAvailability field value if set, zero value otherwise.
 func (o *MovieEditorResource) GetMinimumAvailability() MovieStatusType {
-	if o == nil || isNil(o.MinimumAvailability) {
+	if o == nil || IsNil(o.MinimumAvailability) {
 		var ret MovieStatusType
 		return ret
 	}
@@ -174,15 +177,15 @@ func (o *MovieEditorResource) GetMinimumAvailability() MovieStatusType {
 // GetMinimumAvailabilityOk returns a tuple with the MinimumAvailability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MovieEditorResource) GetMinimumAvailabilityOk() (*MovieStatusType, bool) {
-	if o == nil || isNil(o.MinimumAvailability) {
-    return nil, false
+	if o == nil || IsNil(o.MinimumAvailability) {
+		return nil, false
 	}
 	return o.MinimumAvailability, true
 }
 
 // HasMinimumAvailability returns a boolean if a field has been set.
 func (o *MovieEditorResource) HasMinimumAvailability() bool {
-	if o != nil && !isNil(o.MinimumAvailability) {
+	if o != nil && !IsNil(o.MinimumAvailability) {
 		return true
 	}
 
@@ -196,7 +199,7 @@ func (o *MovieEditorResource) SetMinimumAvailability(v MovieStatusType) {
 
 // GetRootFolderPath returns the RootFolderPath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MovieEditorResource) GetRootFolderPath() string {
-	if o == nil || isNil(o.RootFolderPath.Get()) {
+	if o == nil || IsNil(o.RootFolderPath.Get()) {
 		var ret string
 		return ret
 	}
@@ -208,7 +211,7 @@ func (o *MovieEditorResource) GetRootFolderPath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MovieEditorResource) GetRootFolderPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.RootFolderPath.Get(), o.RootFolderPath.IsSet()
 }
@@ -237,9 +240,9 @@ func (o *MovieEditorResource) UnsetRootFolderPath() {
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *MovieEditorResource) GetTags() []*int32 {
+func (o *MovieEditorResource) GetTags() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.Tags
@@ -248,16 +251,16 @@ func (o *MovieEditorResource) GetTags() []*int32 {
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *MovieEditorResource) GetTagsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.Tags) {
-    return nil, false
+func (o *MovieEditorResource) GetTagsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
 	}
 	return o.Tags, true
 }
 
 // HasTags returns a boolean if a field has been set.
 func (o *MovieEditorResource) HasTags() bool {
-	if o != nil && isNil(o.Tags) {
+	if o != nil && IsNil(o.Tags) {
 		return true
 	}
 
@@ -265,13 +268,13 @@ func (o *MovieEditorResource) HasTags() bool {
 }
 
 // SetTags gets a reference to the given []int32 and assigns it to the Tags field.
-func (o *MovieEditorResource) SetTags(v []*int32) {
+func (o *MovieEditorResource) SetTags(v []int32) {
 	o.Tags = v
 }
 
 // GetApplyTags returns the ApplyTags field value if set, zero value otherwise.
 func (o *MovieEditorResource) GetApplyTags() ApplyTags {
-	if o == nil || isNil(o.ApplyTags) {
+	if o == nil || IsNil(o.ApplyTags) {
 		var ret ApplyTags
 		return ret
 	}
@@ -281,15 +284,15 @@ func (o *MovieEditorResource) GetApplyTags() ApplyTags {
 // GetApplyTagsOk returns a tuple with the ApplyTags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MovieEditorResource) GetApplyTagsOk() (*ApplyTags, bool) {
-	if o == nil || isNil(o.ApplyTags) {
-    return nil, false
+	if o == nil || IsNil(o.ApplyTags) {
+		return nil, false
 	}
 	return o.ApplyTags, true
 }
 
 // HasApplyTags returns a boolean if a field has been set.
 func (o *MovieEditorResource) HasApplyTags() bool {
-	if o != nil && !isNil(o.ApplyTags) {
+	if o != nil && !IsNil(o.ApplyTags) {
 		return true
 	}
 
@@ -303,7 +306,7 @@ func (o *MovieEditorResource) SetApplyTags(v ApplyTags) {
 
 // GetMoveFiles returns the MoveFiles field value if set, zero value otherwise.
 func (o *MovieEditorResource) GetMoveFiles() bool {
-	if o == nil || isNil(o.MoveFiles) {
+	if o == nil || IsNil(o.MoveFiles) {
 		var ret bool
 		return ret
 	}
@@ -313,15 +316,15 @@ func (o *MovieEditorResource) GetMoveFiles() bool {
 // GetMoveFilesOk returns a tuple with the MoveFiles field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MovieEditorResource) GetMoveFilesOk() (*bool, bool) {
-	if o == nil || isNil(o.MoveFiles) {
-    return nil, false
+	if o == nil || IsNil(o.MoveFiles) {
+		return nil, false
 	}
 	return o.MoveFiles, true
 }
 
 // HasMoveFiles returns a boolean if a field has been set.
 func (o *MovieEditorResource) HasMoveFiles() bool {
-	if o != nil && !isNil(o.MoveFiles) {
+	if o != nil && !IsNil(o.MoveFiles) {
 		return true
 	}
 
@@ -335,7 +338,7 @@ func (o *MovieEditorResource) SetMoveFiles(v bool) {
 
 // GetDeleteFiles returns the DeleteFiles field value if set, zero value otherwise.
 func (o *MovieEditorResource) GetDeleteFiles() bool {
-	if o == nil || isNil(o.DeleteFiles) {
+	if o == nil || IsNil(o.DeleteFiles) {
 		var ret bool
 		return ret
 	}
@@ -345,15 +348,15 @@ func (o *MovieEditorResource) GetDeleteFiles() bool {
 // GetDeleteFilesOk returns a tuple with the DeleteFiles field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MovieEditorResource) GetDeleteFilesOk() (*bool, bool) {
-	if o == nil || isNil(o.DeleteFiles) {
-    return nil, false
+	if o == nil || IsNil(o.DeleteFiles) {
+		return nil, false
 	}
 	return o.DeleteFiles, true
 }
 
 // HasDeleteFiles returns a boolean if a field has been set.
 func (o *MovieEditorResource) HasDeleteFiles() bool {
-	if o != nil && !isNil(o.DeleteFiles) {
+	if o != nil && !IsNil(o.DeleteFiles) {
 		return true
 	}
 
@@ -367,7 +370,7 @@ func (o *MovieEditorResource) SetDeleteFiles(v bool) {
 
 // GetAddImportExclusion returns the AddImportExclusion field value if set, zero value otherwise.
 func (o *MovieEditorResource) GetAddImportExclusion() bool {
-	if o == nil || isNil(o.AddImportExclusion) {
+	if o == nil || IsNil(o.AddImportExclusion) {
 		var ret bool
 		return ret
 	}
@@ -377,15 +380,15 @@ func (o *MovieEditorResource) GetAddImportExclusion() bool {
 // GetAddImportExclusionOk returns a tuple with the AddImportExclusion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MovieEditorResource) GetAddImportExclusionOk() (*bool, bool) {
-	if o == nil || isNil(o.AddImportExclusion) {
-    return nil, false
+	if o == nil || IsNil(o.AddImportExclusion) {
+		return nil, false
 	}
 	return o.AddImportExclusion, true
 }
 
 // HasAddImportExclusion returns a boolean if a field has been set.
 func (o *MovieEditorResource) HasAddImportExclusion() bool {
-	if o != nil && !isNil(o.AddImportExclusion) {
+	if o != nil && !IsNil(o.AddImportExclusion) {
 		return true
 	}
 
@@ -398,6 +401,14 @@ func (o *MovieEditorResource) SetAddImportExclusion(v bool) {
 }
 
 func (o MovieEditorResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o MovieEditorResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.MovieIds != nil {
 		toSerialize["movieIds"] = o.MovieIds
@@ -408,7 +419,7 @@ func (o MovieEditorResource) MarshalJSON() ([]byte, error) {
 	if o.QualityProfileId.IsSet() {
 		toSerialize["qualityProfileId"] = o.QualityProfileId.Get()
 	}
-	if !isNil(o.MinimumAvailability) {
+	if !IsNil(o.MinimumAvailability) {
 		toSerialize["minimumAvailability"] = o.MinimumAvailability
 	}
 	if o.RootFolderPath.IsSet() {
@@ -417,19 +428,19 @@ func (o MovieEditorResource) MarshalJSON() ([]byte, error) {
 	if o.Tags != nil {
 		toSerialize["tags"] = o.Tags
 	}
-	if !isNil(o.ApplyTags) {
+	if !IsNil(o.ApplyTags) {
 		toSerialize["applyTags"] = o.ApplyTags
 	}
-	if !isNil(o.MoveFiles) {
+	if !IsNil(o.MoveFiles) {
 		toSerialize["moveFiles"] = o.MoveFiles
 	}
-	if !isNil(o.DeleteFiles) {
+	if !IsNil(o.DeleteFiles) {
 		toSerialize["deleteFiles"] = o.DeleteFiles
 	}
-	if !isNil(o.AddImportExclusion) {
+	if !IsNil(o.AddImportExclusion) {
 		toSerialize["addImportExclusion"] = o.AddImportExclusion
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableMovieEditorResource struct {

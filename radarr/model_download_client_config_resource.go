@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the DownloadClientConfigResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &DownloadClientConfigResource{}
+
 // DownloadClientConfigResource struct for DownloadClientConfigResource
 type DownloadClientConfigResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -43,7 +46,7 @@ func NewDownloadClientConfigResourceWithDefaults() *DownloadClientConfigResource
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *DownloadClientConfigResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -53,15 +56,15 @@ func (o *DownloadClientConfigResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DownloadClientConfigResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *DownloadClientConfigResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -75,7 +78,7 @@ func (o *DownloadClientConfigResource) SetId(v int32) {
 
 // GetDownloadClientWorkingFolders returns the DownloadClientWorkingFolders field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *DownloadClientConfigResource) GetDownloadClientWorkingFolders() string {
-	if o == nil || isNil(o.DownloadClientWorkingFolders.Get()) {
+	if o == nil || IsNil(o.DownloadClientWorkingFolders.Get()) {
 		var ret string
 		return ret
 	}
@@ -87,7 +90,7 @@ func (o *DownloadClientConfigResource) GetDownloadClientWorkingFolders() string 
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *DownloadClientConfigResource) GetDownloadClientWorkingFoldersOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.DownloadClientWorkingFolders.Get(), o.DownloadClientWorkingFolders.IsSet()
 }
@@ -117,7 +120,7 @@ func (o *DownloadClientConfigResource) UnsetDownloadClientWorkingFolders() {
 
 // GetEnableCompletedDownloadHandling returns the EnableCompletedDownloadHandling field value if set, zero value otherwise.
 func (o *DownloadClientConfigResource) GetEnableCompletedDownloadHandling() bool {
-	if o == nil || isNil(o.EnableCompletedDownloadHandling) {
+	if o == nil || IsNil(o.EnableCompletedDownloadHandling) {
 		var ret bool
 		return ret
 	}
@@ -127,15 +130,15 @@ func (o *DownloadClientConfigResource) GetEnableCompletedDownloadHandling() bool
 // GetEnableCompletedDownloadHandlingOk returns a tuple with the EnableCompletedDownloadHandling field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DownloadClientConfigResource) GetEnableCompletedDownloadHandlingOk() (*bool, bool) {
-	if o == nil || isNil(o.EnableCompletedDownloadHandling) {
-    return nil, false
+	if o == nil || IsNil(o.EnableCompletedDownloadHandling) {
+		return nil, false
 	}
 	return o.EnableCompletedDownloadHandling, true
 }
 
 // HasEnableCompletedDownloadHandling returns a boolean if a field has been set.
 func (o *DownloadClientConfigResource) HasEnableCompletedDownloadHandling() bool {
-	if o != nil && !isNil(o.EnableCompletedDownloadHandling) {
+	if o != nil && !IsNil(o.EnableCompletedDownloadHandling) {
 		return true
 	}
 
@@ -149,7 +152,7 @@ func (o *DownloadClientConfigResource) SetEnableCompletedDownloadHandling(v bool
 
 // GetCheckForFinishedDownloadInterval returns the CheckForFinishedDownloadInterval field value if set, zero value otherwise.
 func (o *DownloadClientConfigResource) GetCheckForFinishedDownloadInterval() int32 {
-	if o == nil || isNil(o.CheckForFinishedDownloadInterval) {
+	if o == nil || IsNil(o.CheckForFinishedDownloadInterval) {
 		var ret int32
 		return ret
 	}
@@ -159,15 +162,15 @@ func (o *DownloadClientConfigResource) GetCheckForFinishedDownloadInterval() int
 // GetCheckForFinishedDownloadIntervalOk returns a tuple with the CheckForFinishedDownloadInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DownloadClientConfigResource) GetCheckForFinishedDownloadIntervalOk() (*int32, bool) {
-	if o == nil || isNil(o.CheckForFinishedDownloadInterval) {
-    return nil, false
+	if o == nil || IsNil(o.CheckForFinishedDownloadInterval) {
+		return nil, false
 	}
 	return o.CheckForFinishedDownloadInterval, true
 }
 
 // HasCheckForFinishedDownloadInterval returns a boolean if a field has been set.
 func (o *DownloadClientConfigResource) HasCheckForFinishedDownloadInterval() bool {
-	if o != nil && !isNil(o.CheckForFinishedDownloadInterval) {
+	if o != nil && !IsNil(o.CheckForFinishedDownloadInterval) {
 		return true
 	}
 
@@ -181,7 +184,7 @@ func (o *DownloadClientConfigResource) SetCheckForFinishedDownloadInterval(v int
 
 // GetAutoRedownloadFailed returns the AutoRedownloadFailed field value if set, zero value otherwise.
 func (o *DownloadClientConfigResource) GetAutoRedownloadFailed() bool {
-	if o == nil || isNil(o.AutoRedownloadFailed) {
+	if o == nil || IsNil(o.AutoRedownloadFailed) {
 		var ret bool
 		return ret
 	}
@@ -191,15 +194,15 @@ func (o *DownloadClientConfigResource) GetAutoRedownloadFailed() bool {
 // GetAutoRedownloadFailedOk returns a tuple with the AutoRedownloadFailed field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DownloadClientConfigResource) GetAutoRedownloadFailedOk() (*bool, bool) {
-	if o == nil || isNil(o.AutoRedownloadFailed) {
-    return nil, false
+	if o == nil || IsNil(o.AutoRedownloadFailed) {
+		return nil, false
 	}
 	return o.AutoRedownloadFailed, true
 }
 
 // HasAutoRedownloadFailed returns a boolean if a field has been set.
 func (o *DownloadClientConfigResource) HasAutoRedownloadFailed() bool {
-	if o != nil && !isNil(o.AutoRedownloadFailed) {
+	if o != nil && !IsNil(o.AutoRedownloadFailed) {
 		return true
 	}
 
@@ -213,7 +216,7 @@ func (o *DownloadClientConfigResource) SetAutoRedownloadFailed(v bool) {
 
 // GetAutoRedownloadFailedFromInteractiveSearch returns the AutoRedownloadFailedFromInteractiveSearch field value if set, zero value otherwise.
 func (o *DownloadClientConfigResource) GetAutoRedownloadFailedFromInteractiveSearch() bool {
-	if o == nil || isNil(o.AutoRedownloadFailedFromInteractiveSearch) {
+	if o == nil || IsNil(o.AutoRedownloadFailedFromInteractiveSearch) {
 		var ret bool
 		return ret
 	}
@@ -223,15 +226,15 @@ func (o *DownloadClientConfigResource) GetAutoRedownloadFailedFromInteractiveSea
 // GetAutoRedownloadFailedFromInteractiveSearchOk returns a tuple with the AutoRedownloadFailedFromInteractiveSearch field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DownloadClientConfigResource) GetAutoRedownloadFailedFromInteractiveSearchOk() (*bool, bool) {
-	if o == nil || isNil(o.AutoRedownloadFailedFromInteractiveSearch) {
-    return nil, false
+	if o == nil || IsNil(o.AutoRedownloadFailedFromInteractiveSearch) {
+		return nil, false
 	}
 	return o.AutoRedownloadFailedFromInteractiveSearch, true
 }
 
 // HasAutoRedownloadFailedFromInteractiveSearch returns a boolean if a field has been set.
 func (o *DownloadClientConfigResource) HasAutoRedownloadFailedFromInteractiveSearch() bool {
-	if o != nil && !isNil(o.AutoRedownloadFailedFromInteractiveSearch) {
+	if o != nil && !IsNil(o.AutoRedownloadFailedFromInteractiveSearch) {
 		return true
 	}
 
@@ -244,26 +247,34 @@ func (o *DownloadClientConfigResource) SetAutoRedownloadFailedFromInteractiveSea
 }
 
 func (o DownloadClientConfigResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o DownloadClientConfigResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.DownloadClientWorkingFolders.IsSet() {
 		toSerialize["downloadClientWorkingFolders"] = o.DownloadClientWorkingFolders.Get()
 	}
-	if !isNil(o.EnableCompletedDownloadHandling) {
+	if !IsNil(o.EnableCompletedDownloadHandling) {
 		toSerialize["enableCompletedDownloadHandling"] = o.EnableCompletedDownloadHandling
 	}
-	if !isNil(o.CheckForFinishedDownloadInterval) {
+	if !IsNil(o.CheckForFinishedDownloadInterval) {
 		toSerialize["checkForFinishedDownloadInterval"] = o.CheckForFinishedDownloadInterval
 	}
-	if !isNil(o.AutoRedownloadFailed) {
+	if !IsNil(o.AutoRedownloadFailed) {
 		toSerialize["autoRedownloadFailed"] = o.AutoRedownloadFailed
 	}
-	if !isNil(o.AutoRedownloadFailedFromInteractiveSearch) {
+	if !IsNil(o.AutoRedownloadFailedFromInteractiveSearch) {
 		toSerialize["autoRedownloadFailedFromInteractiveSearch"] = o.AutoRedownloadFailedFromInteractiveSearch
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableDownloadClientConfigResource struct {

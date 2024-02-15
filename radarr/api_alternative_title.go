@@ -22,6 +22,7 @@ import (
 
 // AlternativeTitleAPIService AlternativeTitleAPI service
 type AlternativeTitleAPIService service
+
 type ApiGetAlttitleByIdRequest struct {
 	ctx context.Context
 	ApiService *AlternativeTitleAPIService
@@ -63,7 +64,7 @@ func (a *AlternativeTitleAPIService) GetAlttitleByIdExecute(r ApiGetAlttitleById
 	}
 
 	localVarPath := localBasePath + "/api/v3/alttitle/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -150,6 +151,7 @@ func (a *AlternativeTitleAPIService) GetAlttitleByIdExecute(r ApiGetAlttitleById
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListAlttitleRequest struct {
 	ctx context.Context
 	ApiService *AlternativeTitleAPIService
@@ -167,7 +169,7 @@ func (r ApiListAlttitleRequest) MovieMetadataId(movieMetadataId int32) ApiListAl
 	return r
 }
 
-func (r ApiListAlttitleRequest) Execute() ([]*AlternativeTitleResource, *http.Response, error) {
+func (r ApiListAlttitleRequest) Execute() ([]AlternativeTitleResource, *http.Response, error) {
 	return r.ApiService.ListAlttitleExecute(r)
 }
 
@@ -186,12 +188,12 @@ func (a *AlternativeTitleAPIService) ListAlttitle(ctx context.Context) ApiListAl
 
 // Execute executes the request
 //  @return []AlternativeTitleResource
-func (a *AlternativeTitleAPIService) ListAlttitleExecute(r ApiListAlttitleRequest) ([]*AlternativeTitleResource, *http.Response, error) {
+func (a *AlternativeTitleAPIService) ListAlttitleExecute(r ApiListAlttitleRequest) ([]AlternativeTitleResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*AlternativeTitleResource
+		localVarReturnValue  []AlternativeTitleResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AlternativeTitleAPIService.ListAlttitle")
@@ -206,10 +208,10 @@ func (a *AlternativeTitleAPIService) ListAlttitleExecute(r ApiListAlttitleReques
 	localVarFormParams := url.Values{}
 
 	if r.movieId != nil {
-		localVarQueryParams.Add("movieId", parameterToString(*r.movieId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "movieId", r.movieId, "")
 	}
 	if r.movieMetadataId != nil {
-		localVarQueryParams.Add("movieMetadataId", parameterToString(*r.movieMetadataId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "movieMetadataId", r.movieMetadataId, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

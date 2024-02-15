@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the UiConfigResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &UiConfigResource{}
+
 // UiConfigResource struct for UiConfigResource
 type UiConfigResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -49,7 +52,7 @@ func NewUiConfigResourceWithDefaults() *UiConfigResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *UiConfigResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -59,15 +62,15 @@ func (o *UiConfigResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UiConfigResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *UiConfigResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -81,7 +84,7 @@ func (o *UiConfigResource) SetId(v int32) {
 
 // GetFirstDayOfWeek returns the FirstDayOfWeek field value if set, zero value otherwise.
 func (o *UiConfigResource) GetFirstDayOfWeek() int32 {
-	if o == nil || isNil(o.FirstDayOfWeek) {
+	if o == nil || IsNil(o.FirstDayOfWeek) {
 		var ret int32
 		return ret
 	}
@@ -91,15 +94,15 @@ func (o *UiConfigResource) GetFirstDayOfWeek() int32 {
 // GetFirstDayOfWeekOk returns a tuple with the FirstDayOfWeek field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UiConfigResource) GetFirstDayOfWeekOk() (*int32, bool) {
-	if o == nil || isNil(o.FirstDayOfWeek) {
-    return nil, false
+	if o == nil || IsNil(o.FirstDayOfWeek) {
+		return nil, false
 	}
 	return o.FirstDayOfWeek, true
 }
 
 // HasFirstDayOfWeek returns a boolean if a field has been set.
 func (o *UiConfigResource) HasFirstDayOfWeek() bool {
-	if o != nil && !isNil(o.FirstDayOfWeek) {
+	if o != nil && !IsNil(o.FirstDayOfWeek) {
 		return true
 	}
 
@@ -113,7 +116,7 @@ func (o *UiConfigResource) SetFirstDayOfWeek(v int32) {
 
 // GetCalendarWeekColumnHeader returns the CalendarWeekColumnHeader field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UiConfigResource) GetCalendarWeekColumnHeader() string {
-	if o == nil || isNil(o.CalendarWeekColumnHeader.Get()) {
+	if o == nil || IsNil(o.CalendarWeekColumnHeader.Get()) {
 		var ret string
 		return ret
 	}
@@ -125,7 +128,7 @@ func (o *UiConfigResource) GetCalendarWeekColumnHeader() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UiConfigResource) GetCalendarWeekColumnHeaderOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.CalendarWeekColumnHeader.Get(), o.CalendarWeekColumnHeader.IsSet()
 }
@@ -155,7 +158,7 @@ func (o *UiConfigResource) UnsetCalendarWeekColumnHeader() {
 
 // GetMovieRuntimeFormat returns the MovieRuntimeFormat field value if set, zero value otherwise.
 func (o *UiConfigResource) GetMovieRuntimeFormat() MovieRuntimeFormatType {
-	if o == nil || isNil(o.MovieRuntimeFormat) {
+	if o == nil || IsNil(o.MovieRuntimeFormat) {
 		var ret MovieRuntimeFormatType
 		return ret
 	}
@@ -165,15 +168,15 @@ func (o *UiConfigResource) GetMovieRuntimeFormat() MovieRuntimeFormatType {
 // GetMovieRuntimeFormatOk returns a tuple with the MovieRuntimeFormat field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UiConfigResource) GetMovieRuntimeFormatOk() (*MovieRuntimeFormatType, bool) {
-	if o == nil || isNil(o.MovieRuntimeFormat) {
-    return nil, false
+	if o == nil || IsNil(o.MovieRuntimeFormat) {
+		return nil, false
 	}
 	return o.MovieRuntimeFormat, true
 }
 
 // HasMovieRuntimeFormat returns a boolean if a field has been set.
 func (o *UiConfigResource) HasMovieRuntimeFormat() bool {
-	if o != nil && !isNil(o.MovieRuntimeFormat) {
+	if o != nil && !IsNil(o.MovieRuntimeFormat) {
 		return true
 	}
 
@@ -187,7 +190,7 @@ func (o *UiConfigResource) SetMovieRuntimeFormat(v MovieRuntimeFormatType) {
 
 // GetShortDateFormat returns the ShortDateFormat field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UiConfigResource) GetShortDateFormat() string {
-	if o == nil || isNil(o.ShortDateFormat.Get()) {
+	if o == nil || IsNil(o.ShortDateFormat.Get()) {
 		var ret string
 		return ret
 	}
@@ -199,7 +202,7 @@ func (o *UiConfigResource) GetShortDateFormat() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UiConfigResource) GetShortDateFormatOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ShortDateFormat.Get(), o.ShortDateFormat.IsSet()
 }
@@ -229,7 +232,7 @@ func (o *UiConfigResource) UnsetShortDateFormat() {
 
 // GetLongDateFormat returns the LongDateFormat field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UiConfigResource) GetLongDateFormat() string {
-	if o == nil || isNil(o.LongDateFormat.Get()) {
+	if o == nil || IsNil(o.LongDateFormat.Get()) {
 		var ret string
 		return ret
 	}
@@ -241,7 +244,7 @@ func (o *UiConfigResource) GetLongDateFormat() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UiConfigResource) GetLongDateFormatOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.LongDateFormat.Get(), o.LongDateFormat.IsSet()
 }
@@ -271,7 +274,7 @@ func (o *UiConfigResource) UnsetLongDateFormat() {
 
 // GetTimeFormat returns the TimeFormat field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UiConfigResource) GetTimeFormat() string {
-	if o == nil || isNil(o.TimeFormat.Get()) {
+	if o == nil || IsNil(o.TimeFormat.Get()) {
 		var ret string
 		return ret
 	}
@@ -283,7 +286,7 @@ func (o *UiConfigResource) GetTimeFormat() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UiConfigResource) GetTimeFormatOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.TimeFormat.Get(), o.TimeFormat.IsSet()
 }
@@ -313,7 +316,7 @@ func (o *UiConfigResource) UnsetTimeFormat() {
 
 // GetShowRelativeDates returns the ShowRelativeDates field value if set, zero value otherwise.
 func (o *UiConfigResource) GetShowRelativeDates() bool {
-	if o == nil || isNil(o.ShowRelativeDates) {
+	if o == nil || IsNil(o.ShowRelativeDates) {
 		var ret bool
 		return ret
 	}
@@ -323,15 +326,15 @@ func (o *UiConfigResource) GetShowRelativeDates() bool {
 // GetShowRelativeDatesOk returns a tuple with the ShowRelativeDates field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UiConfigResource) GetShowRelativeDatesOk() (*bool, bool) {
-	if o == nil || isNil(o.ShowRelativeDates) {
-    return nil, false
+	if o == nil || IsNil(o.ShowRelativeDates) {
+		return nil, false
 	}
 	return o.ShowRelativeDates, true
 }
 
 // HasShowRelativeDates returns a boolean if a field has been set.
 func (o *UiConfigResource) HasShowRelativeDates() bool {
-	if o != nil && !isNil(o.ShowRelativeDates) {
+	if o != nil && !IsNil(o.ShowRelativeDates) {
 		return true
 	}
 
@@ -345,7 +348,7 @@ func (o *UiConfigResource) SetShowRelativeDates(v bool) {
 
 // GetEnableColorImpairedMode returns the EnableColorImpairedMode field value if set, zero value otherwise.
 func (o *UiConfigResource) GetEnableColorImpairedMode() bool {
-	if o == nil || isNil(o.EnableColorImpairedMode) {
+	if o == nil || IsNil(o.EnableColorImpairedMode) {
 		var ret bool
 		return ret
 	}
@@ -355,15 +358,15 @@ func (o *UiConfigResource) GetEnableColorImpairedMode() bool {
 // GetEnableColorImpairedModeOk returns a tuple with the EnableColorImpairedMode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UiConfigResource) GetEnableColorImpairedModeOk() (*bool, bool) {
-	if o == nil || isNil(o.EnableColorImpairedMode) {
-    return nil, false
+	if o == nil || IsNil(o.EnableColorImpairedMode) {
+		return nil, false
 	}
 	return o.EnableColorImpairedMode, true
 }
 
 // HasEnableColorImpairedMode returns a boolean if a field has been set.
 func (o *UiConfigResource) HasEnableColorImpairedMode() bool {
-	if o != nil && !isNil(o.EnableColorImpairedMode) {
+	if o != nil && !IsNil(o.EnableColorImpairedMode) {
 		return true
 	}
 
@@ -377,7 +380,7 @@ func (o *UiConfigResource) SetEnableColorImpairedMode(v bool) {
 
 // GetMovieInfoLanguage returns the MovieInfoLanguage field value if set, zero value otherwise.
 func (o *UiConfigResource) GetMovieInfoLanguage() int32 {
-	if o == nil || isNil(o.MovieInfoLanguage) {
+	if o == nil || IsNil(o.MovieInfoLanguage) {
 		var ret int32
 		return ret
 	}
@@ -387,15 +390,15 @@ func (o *UiConfigResource) GetMovieInfoLanguage() int32 {
 // GetMovieInfoLanguageOk returns a tuple with the MovieInfoLanguage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UiConfigResource) GetMovieInfoLanguageOk() (*int32, bool) {
-	if o == nil || isNil(o.MovieInfoLanguage) {
-    return nil, false
+	if o == nil || IsNil(o.MovieInfoLanguage) {
+		return nil, false
 	}
 	return o.MovieInfoLanguage, true
 }
 
 // HasMovieInfoLanguage returns a boolean if a field has been set.
 func (o *UiConfigResource) HasMovieInfoLanguage() bool {
-	if o != nil && !isNil(o.MovieInfoLanguage) {
+	if o != nil && !IsNil(o.MovieInfoLanguage) {
 		return true
 	}
 
@@ -409,7 +412,7 @@ func (o *UiConfigResource) SetMovieInfoLanguage(v int32) {
 
 // GetUiLanguage returns the UiLanguage field value if set, zero value otherwise.
 func (o *UiConfigResource) GetUiLanguage() int32 {
-	if o == nil || isNil(o.UiLanguage) {
+	if o == nil || IsNil(o.UiLanguage) {
 		var ret int32
 		return ret
 	}
@@ -419,15 +422,15 @@ func (o *UiConfigResource) GetUiLanguage() int32 {
 // GetUiLanguageOk returns a tuple with the UiLanguage field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *UiConfigResource) GetUiLanguageOk() (*int32, bool) {
-	if o == nil || isNil(o.UiLanguage) {
-    return nil, false
+	if o == nil || IsNil(o.UiLanguage) {
+		return nil, false
 	}
 	return o.UiLanguage, true
 }
 
 // HasUiLanguage returns a boolean if a field has been set.
 func (o *UiConfigResource) HasUiLanguage() bool {
-	if o != nil && !isNil(o.UiLanguage) {
+	if o != nil && !IsNil(o.UiLanguage) {
 		return true
 	}
 
@@ -441,7 +444,7 @@ func (o *UiConfigResource) SetUiLanguage(v int32) {
 
 // GetTheme returns the Theme field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *UiConfigResource) GetTheme() string {
-	if o == nil || isNil(o.Theme.Get()) {
+	if o == nil || IsNil(o.Theme.Get()) {
 		var ret string
 		return ret
 	}
@@ -453,7 +456,7 @@ func (o *UiConfigResource) GetTheme() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *UiConfigResource) GetThemeOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Theme.Get(), o.Theme.IsSet()
 }
@@ -482,17 +485,25 @@ func (o *UiConfigResource) UnsetTheme() {
 }
 
 func (o UiConfigResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o UiConfigResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !isNil(o.FirstDayOfWeek) {
+	if !IsNil(o.FirstDayOfWeek) {
 		toSerialize["firstDayOfWeek"] = o.FirstDayOfWeek
 	}
 	if o.CalendarWeekColumnHeader.IsSet() {
 		toSerialize["calendarWeekColumnHeader"] = o.CalendarWeekColumnHeader.Get()
 	}
-	if !isNil(o.MovieRuntimeFormat) {
+	if !IsNil(o.MovieRuntimeFormat) {
 		toSerialize["movieRuntimeFormat"] = o.MovieRuntimeFormat
 	}
 	if o.ShortDateFormat.IsSet() {
@@ -504,22 +515,22 @@ func (o UiConfigResource) MarshalJSON() ([]byte, error) {
 	if o.TimeFormat.IsSet() {
 		toSerialize["timeFormat"] = o.TimeFormat.Get()
 	}
-	if !isNil(o.ShowRelativeDates) {
+	if !IsNil(o.ShowRelativeDates) {
 		toSerialize["showRelativeDates"] = o.ShowRelativeDates
 	}
-	if !isNil(o.EnableColorImpairedMode) {
+	if !IsNil(o.EnableColorImpairedMode) {
 		toSerialize["enableColorImpairedMode"] = o.EnableColorImpairedMode
 	}
-	if !isNil(o.MovieInfoLanguage) {
+	if !IsNil(o.MovieInfoLanguage) {
 		toSerialize["movieInfoLanguage"] = o.MovieInfoLanguage
 	}
-	if !isNil(o.UiLanguage) {
+	if !IsNil(o.UiLanguage) {
 		toSerialize["uiLanguage"] = o.UiLanguage
 	}
 	if o.Theme.IsSet() {
 		toSerialize["theme"] = o.Theme.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableUiConfigResource struct {

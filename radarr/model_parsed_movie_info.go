@@ -14,14 +14,17 @@ import (
 	"encoding/json"
 )
 
+// checks if the ParsedMovieInfo type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ParsedMovieInfo{}
+
 // ParsedMovieInfo struct for ParsedMovieInfo
 type ParsedMovieInfo struct {
-	MovieTitles []*string `json:"movieTitles,omitempty"`
+	MovieTitles []string `json:"movieTitles,omitempty"`
 	OriginalTitle NullableString `json:"originalTitle,omitempty"`
 	ReleaseTitle NullableString `json:"releaseTitle,omitempty"`
 	SimpleReleaseTitle NullableString `json:"simpleReleaseTitle,omitempty"`
 	Quality *QualityModel `json:"quality,omitempty"`
-	Languages []*Language `json:"languages,omitempty"`
+	Languages []Language `json:"languages,omitempty"`
 	ReleaseGroup NullableString `json:"releaseGroup,omitempty"`
 	ReleaseHash NullableString `json:"releaseHash,omitempty"`
 	Edition NullableString `json:"edition,omitempty"`
@@ -51,9 +54,9 @@ func NewParsedMovieInfoWithDefaults() *ParsedMovieInfo {
 }
 
 // GetMovieTitles returns the MovieTitles field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ParsedMovieInfo) GetMovieTitles() []*string {
+func (o *ParsedMovieInfo) GetMovieTitles() []string {
 	if o == nil {
-		var ret []*string
+		var ret []string
 		return ret
 	}
 	return o.MovieTitles
@@ -62,16 +65,16 @@ func (o *ParsedMovieInfo) GetMovieTitles() []*string {
 // GetMovieTitlesOk returns a tuple with the MovieTitles field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ParsedMovieInfo) GetMovieTitlesOk() ([]*string, bool) {
-	if o == nil || isNil(o.MovieTitles) {
-    return nil, false
+func (o *ParsedMovieInfo) GetMovieTitlesOk() ([]string, bool) {
+	if o == nil || IsNil(o.MovieTitles) {
+		return nil, false
 	}
 	return o.MovieTitles, true
 }
 
 // HasMovieTitles returns a boolean if a field has been set.
 func (o *ParsedMovieInfo) HasMovieTitles() bool {
-	if o != nil && isNil(o.MovieTitles) {
+	if o != nil && IsNil(o.MovieTitles) {
 		return true
 	}
 
@@ -79,13 +82,13 @@ func (o *ParsedMovieInfo) HasMovieTitles() bool {
 }
 
 // SetMovieTitles gets a reference to the given []string and assigns it to the MovieTitles field.
-func (o *ParsedMovieInfo) SetMovieTitles(v []*string) {
+func (o *ParsedMovieInfo) SetMovieTitles(v []string) {
 	o.MovieTitles = v
 }
 
 // GetOriginalTitle returns the OriginalTitle field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ParsedMovieInfo) GetOriginalTitle() string {
-	if o == nil || isNil(o.OriginalTitle.Get()) {
+	if o == nil || IsNil(o.OriginalTitle.Get()) {
 		var ret string
 		return ret
 	}
@@ -97,7 +100,7 @@ func (o *ParsedMovieInfo) GetOriginalTitle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ParsedMovieInfo) GetOriginalTitleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.OriginalTitle.Get(), o.OriginalTitle.IsSet()
 }
@@ -127,7 +130,7 @@ func (o *ParsedMovieInfo) UnsetOriginalTitle() {
 
 // GetReleaseTitle returns the ReleaseTitle field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ParsedMovieInfo) GetReleaseTitle() string {
-	if o == nil || isNil(o.ReleaseTitle.Get()) {
+	if o == nil || IsNil(o.ReleaseTitle.Get()) {
 		var ret string
 		return ret
 	}
@@ -139,7 +142,7 @@ func (o *ParsedMovieInfo) GetReleaseTitle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ParsedMovieInfo) GetReleaseTitleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ReleaseTitle.Get(), o.ReleaseTitle.IsSet()
 }
@@ -169,7 +172,7 @@ func (o *ParsedMovieInfo) UnsetReleaseTitle() {
 
 // GetSimpleReleaseTitle returns the SimpleReleaseTitle field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ParsedMovieInfo) GetSimpleReleaseTitle() string {
-	if o == nil || isNil(o.SimpleReleaseTitle.Get()) {
+	if o == nil || IsNil(o.SimpleReleaseTitle.Get()) {
 		var ret string
 		return ret
 	}
@@ -181,7 +184,7 @@ func (o *ParsedMovieInfo) GetSimpleReleaseTitle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ParsedMovieInfo) GetSimpleReleaseTitleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.SimpleReleaseTitle.Get(), o.SimpleReleaseTitle.IsSet()
 }
@@ -211,7 +214,7 @@ func (o *ParsedMovieInfo) UnsetSimpleReleaseTitle() {
 
 // GetQuality returns the Quality field value if set, zero value otherwise.
 func (o *ParsedMovieInfo) GetQuality() QualityModel {
-	if o == nil || isNil(o.Quality) {
+	if o == nil || IsNil(o.Quality) {
 		var ret QualityModel
 		return ret
 	}
@@ -221,15 +224,15 @@ func (o *ParsedMovieInfo) GetQuality() QualityModel {
 // GetQualityOk returns a tuple with the Quality field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParsedMovieInfo) GetQualityOk() (*QualityModel, bool) {
-	if o == nil || isNil(o.Quality) {
-    return nil, false
+	if o == nil || IsNil(o.Quality) {
+		return nil, false
 	}
 	return o.Quality, true
 }
 
 // HasQuality returns a boolean if a field has been set.
 func (o *ParsedMovieInfo) HasQuality() bool {
-	if o != nil && !isNil(o.Quality) {
+	if o != nil && !IsNil(o.Quality) {
 		return true
 	}
 
@@ -242,9 +245,9 @@ func (o *ParsedMovieInfo) SetQuality(v QualityModel) {
 }
 
 // GetLanguages returns the Languages field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ParsedMovieInfo) GetLanguages() []*Language {
+func (o *ParsedMovieInfo) GetLanguages() []Language {
 	if o == nil {
-		var ret []*Language
+		var ret []Language
 		return ret
 	}
 	return o.Languages
@@ -253,16 +256,16 @@ func (o *ParsedMovieInfo) GetLanguages() []*Language {
 // GetLanguagesOk returns a tuple with the Languages field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ParsedMovieInfo) GetLanguagesOk() ([]*Language, bool) {
-	if o == nil || isNil(o.Languages) {
-    return nil, false
+func (o *ParsedMovieInfo) GetLanguagesOk() ([]Language, bool) {
+	if o == nil || IsNil(o.Languages) {
+		return nil, false
 	}
 	return o.Languages, true
 }
 
 // HasLanguages returns a boolean if a field has been set.
 func (o *ParsedMovieInfo) HasLanguages() bool {
-	if o != nil && isNil(o.Languages) {
+	if o != nil && IsNil(o.Languages) {
 		return true
 	}
 
@@ -270,13 +273,13 @@ func (o *ParsedMovieInfo) HasLanguages() bool {
 }
 
 // SetLanguages gets a reference to the given []Language and assigns it to the Languages field.
-func (o *ParsedMovieInfo) SetLanguages(v []*Language) {
+func (o *ParsedMovieInfo) SetLanguages(v []Language) {
 	o.Languages = v
 }
 
 // GetReleaseGroup returns the ReleaseGroup field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ParsedMovieInfo) GetReleaseGroup() string {
-	if o == nil || isNil(o.ReleaseGroup.Get()) {
+	if o == nil || IsNil(o.ReleaseGroup.Get()) {
 		var ret string
 		return ret
 	}
@@ -288,7 +291,7 @@ func (o *ParsedMovieInfo) GetReleaseGroup() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ParsedMovieInfo) GetReleaseGroupOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ReleaseGroup.Get(), o.ReleaseGroup.IsSet()
 }
@@ -318,7 +321,7 @@ func (o *ParsedMovieInfo) UnsetReleaseGroup() {
 
 // GetReleaseHash returns the ReleaseHash field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ParsedMovieInfo) GetReleaseHash() string {
-	if o == nil || isNil(o.ReleaseHash.Get()) {
+	if o == nil || IsNil(o.ReleaseHash.Get()) {
 		var ret string
 		return ret
 	}
@@ -330,7 +333,7 @@ func (o *ParsedMovieInfo) GetReleaseHash() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ParsedMovieInfo) GetReleaseHashOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ReleaseHash.Get(), o.ReleaseHash.IsSet()
 }
@@ -360,7 +363,7 @@ func (o *ParsedMovieInfo) UnsetReleaseHash() {
 
 // GetEdition returns the Edition field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ParsedMovieInfo) GetEdition() string {
-	if o == nil || isNil(o.Edition.Get()) {
+	if o == nil || IsNil(o.Edition.Get()) {
 		var ret string
 		return ret
 	}
@@ -372,7 +375,7 @@ func (o *ParsedMovieInfo) GetEdition() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ParsedMovieInfo) GetEditionOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Edition.Get(), o.Edition.IsSet()
 }
@@ -402,7 +405,7 @@ func (o *ParsedMovieInfo) UnsetEdition() {
 
 // GetYear returns the Year field value if set, zero value otherwise.
 func (o *ParsedMovieInfo) GetYear() int32 {
-	if o == nil || isNil(o.Year) {
+	if o == nil || IsNil(o.Year) {
 		var ret int32
 		return ret
 	}
@@ -412,15 +415,15 @@ func (o *ParsedMovieInfo) GetYear() int32 {
 // GetYearOk returns a tuple with the Year field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParsedMovieInfo) GetYearOk() (*int32, bool) {
-	if o == nil || isNil(o.Year) {
-    return nil, false
+	if o == nil || IsNil(o.Year) {
+		return nil, false
 	}
 	return o.Year, true
 }
 
 // HasYear returns a boolean if a field has been set.
 func (o *ParsedMovieInfo) HasYear() bool {
-	if o != nil && !isNil(o.Year) {
+	if o != nil && !IsNil(o.Year) {
 		return true
 	}
 
@@ -434,7 +437,7 @@ func (o *ParsedMovieInfo) SetYear(v int32) {
 
 // GetImdbId returns the ImdbId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ParsedMovieInfo) GetImdbId() string {
-	if o == nil || isNil(o.ImdbId.Get()) {
+	if o == nil || IsNil(o.ImdbId.Get()) {
 		var ret string
 		return ret
 	}
@@ -446,7 +449,7 @@ func (o *ParsedMovieInfo) GetImdbId() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ParsedMovieInfo) GetImdbIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ImdbId.Get(), o.ImdbId.IsSet()
 }
@@ -476,7 +479,7 @@ func (o *ParsedMovieInfo) UnsetImdbId() {
 
 // GetTmdbId returns the TmdbId field value if set, zero value otherwise.
 func (o *ParsedMovieInfo) GetTmdbId() int32 {
-	if o == nil || isNil(o.TmdbId) {
+	if o == nil || IsNil(o.TmdbId) {
 		var ret int32
 		return ret
 	}
@@ -486,15 +489,15 @@ func (o *ParsedMovieInfo) GetTmdbId() int32 {
 // GetTmdbIdOk returns a tuple with the TmdbId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParsedMovieInfo) GetTmdbIdOk() (*int32, bool) {
-	if o == nil || isNil(o.TmdbId) {
-    return nil, false
+	if o == nil || IsNil(o.TmdbId) {
+		return nil, false
 	}
 	return o.TmdbId, true
 }
 
 // HasTmdbId returns a boolean if a field has been set.
 func (o *ParsedMovieInfo) HasTmdbId() bool {
-	if o != nil && !isNil(o.TmdbId) {
+	if o != nil && !IsNil(o.TmdbId) {
 		return true
 	}
 
@@ -508,7 +511,7 @@ func (o *ParsedMovieInfo) SetTmdbId(v int32) {
 
 // GetHardcodedSubs returns the HardcodedSubs field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ParsedMovieInfo) GetHardcodedSubs() string {
-	if o == nil || isNil(o.HardcodedSubs.Get()) {
+	if o == nil || IsNil(o.HardcodedSubs.Get()) {
 		var ret string
 		return ret
 	}
@@ -520,7 +523,7 @@ func (o *ParsedMovieInfo) GetHardcodedSubs() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ParsedMovieInfo) GetHardcodedSubsOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.HardcodedSubs.Get(), o.HardcodedSubs.IsSet()
 }
@@ -550,7 +553,7 @@ func (o *ParsedMovieInfo) UnsetHardcodedSubs() {
 
 // GetMovieTitle returns the MovieTitle field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ParsedMovieInfo) GetMovieTitle() string {
-	if o == nil || isNil(o.MovieTitle.Get()) {
+	if o == nil || IsNil(o.MovieTitle.Get()) {
 		var ret string
 		return ret
 	}
@@ -562,7 +565,7 @@ func (o *ParsedMovieInfo) GetMovieTitle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ParsedMovieInfo) GetMovieTitleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.MovieTitle.Get(), o.MovieTitle.IsSet()
 }
@@ -592,7 +595,7 @@ func (o *ParsedMovieInfo) UnsetMovieTitle() {
 
 // GetPrimaryMovieTitle returns the PrimaryMovieTitle field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ParsedMovieInfo) GetPrimaryMovieTitle() string {
-	if o == nil || isNil(o.PrimaryMovieTitle.Get()) {
+	if o == nil || IsNil(o.PrimaryMovieTitle.Get()) {
 		var ret string
 		return ret
 	}
@@ -604,7 +607,7 @@ func (o *ParsedMovieInfo) GetPrimaryMovieTitle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ParsedMovieInfo) GetPrimaryMovieTitleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.PrimaryMovieTitle.Get(), o.PrimaryMovieTitle.IsSet()
 }
@@ -633,6 +636,14 @@ func (o *ParsedMovieInfo) UnsetPrimaryMovieTitle() {
 }
 
 func (o ParsedMovieInfo) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ParsedMovieInfo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.MovieTitles != nil {
 		toSerialize["movieTitles"] = o.MovieTitles
@@ -646,7 +657,7 @@ func (o ParsedMovieInfo) MarshalJSON() ([]byte, error) {
 	if o.SimpleReleaseTitle.IsSet() {
 		toSerialize["simpleReleaseTitle"] = o.SimpleReleaseTitle.Get()
 	}
-	if !isNil(o.Quality) {
+	if !IsNil(o.Quality) {
 		toSerialize["quality"] = o.Quality
 	}
 	if o.Languages != nil {
@@ -661,13 +672,13 @@ func (o ParsedMovieInfo) MarshalJSON() ([]byte, error) {
 	if o.Edition.IsSet() {
 		toSerialize["edition"] = o.Edition.Get()
 	}
-	if !isNil(o.Year) {
+	if !IsNil(o.Year) {
 		toSerialize["year"] = o.Year
 	}
 	if o.ImdbId.IsSet() {
 		toSerialize["imdbId"] = o.ImdbId.Get()
 	}
-	if !isNil(o.TmdbId) {
+	if !IsNil(o.TmdbId) {
 		toSerialize["tmdbId"] = o.TmdbId
 	}
 	if o.HardcodedSubs.IsSet() {
@@ -679,7 +690,7 @@ func (o ParsedMovieInfo) MarshalJSON() ([]byte, error) {
 	if o.PrimaryMovieTitle.IsSet() {
 		toSerialize["primaryMovieTitle"] = o.PrimaryMovieTitle.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableParsedMovieInfo struct {

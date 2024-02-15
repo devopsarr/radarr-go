@@ -14,18 +14,21 @@ import (
 	"encoding/json"
 )
 
+// checks if the ImportExclusionsResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ImportExclusionsResource{}
+
 // ImportExclusionsResource struct for ImportExclusionsResource
 type ImportExclusionsResource struct {
 	Id *int32 `json:"id,omitempty"`
 	Name NullableString `json:"name,omitempty"`
-	Fields []*Field `json:"fields,omitempty"`
+	Fields []Field `json:"fields,omitempty"`
 	ImplementationName NullableString `json:"implementationName,omitempty"`
 	Implementation NullableString `json:"implementation,omitempty"`
 	ConfigContract NullableString `json:"configContract,omitempty"`
 	InfoLink NullableString `json:"infoLink,omitempty"`
 	Message *ProviderMessage `json:"message,omitempty"`
-	Tags []*int32 `json:"tags,omitempty"`
-	Presets []*ImportExclusionsResource `json:"presets,omitempty"`
+	Tags []int32 `json:"tags,omitempty"`
+	Presets []ImportExclusionsResource `json:"presets,omitempty"`
 	TmdbId *int32 `json:"tmdbId,omitempty"`
 	MovieTitle NullableString `json:"movieTitle,omitempty"`
 	MovieYear *int32 `json:"movieYear,omitempty"`
@@ -50,7 +53,7 @@ func NewImportExclusionsResourceWithDefaults() *ImportExclusionsResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *ImportExclusionsResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -60,15 +63,15 @@ func (o *ImportExclusionsResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ImportExclusionsResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *ImportExclusionsResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -82,7 +85,7 @@ func (o *ImportExclusionsResource) SetId(v int32) {
 
 // GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ImportExclusionsResource) GetName() string {
-	if o == nil || isNil(o.Name.Get()) {
+	if o == nil || IsNil(o.Name.Get()) {
 		var ret string
 		return ret
 	}
@@ -94,7 +97,7 @@ func (o *ImportExclusionsResource) GetName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ImportExclusionsResource) GetNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Name.Get(), o.Name.IsSet()
 }
@@ -123,9 +126,9 @@ func (o *ImportExclusionsResource) UnsetName() {
 }
 
 // GetFields returns the Fields field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ImportExclusionsResource) GetFields() []*Field {
+func (o *ImportExclusionsResource) GetFields() []Field {
 	if o == nil {
-		var ret []*Field
+		var ret []Field
 		return ret
 	}
 	return o.Fields
@@ -134,16 +137,16 @@ func (o *ImportExclusionsResource) GetFields() []*Field {
 // GetFieldsOk returns a tuple with the Fields field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ImportExclusionsResource) GetFieldsOk() ([]*Field, bool) {
-	if o == nil || isNil(o.Fields) {
-    return nil, false
+func (o *ImportExclusionsResource) GetFieldsOk() ([]Field, bool) {
+	if o == nil || IsNil(o.Fields) {
+		return nil, false
 	}
 	return o.Fields, true
 }
 
 // HasFields returns a boolean if a field has been set.
 func (o *ImportExclusionsResource) HasFields() bool {
-	if o != nil && isNil(o.Fields) {
+	if o != nil && IsNil(o.Fields) {
 		return true
 	}
 
@@ -151,13 +154,13 @@ func (o *ImportExclusionsResource) HasFields() bool {
 }
 
 // SetFields gets a reference to the given []Field and assigns it to the Fields field.
-func (o *ImportExclusionsResource) SetFields(v []*Field) {
+func (o *ImportExclusionsResource) SetFields(v []Field) {
 	o.Fields = v
 }
 
 // GetImplementationName returns the ImplementationName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ImportExclusionsResource) GetImplementationName() string {
-	if o == nil || isNil(o.ImplementationName.Get()) {
+	if o == nil || IsNil(o.ImplementationName.Get()) {
 		var ret string
 		return ret
 	}
@@ -169,7 +172,7 @@ func (o *ImportExclusionsResource) GetImplementationName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ImportExclusionsResource) GetImplementationNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ImplementationName.Get(), o.ImplementationName.IsSet()
 }
@@ -199,7 +202,7 @@ func (o *ImportExclusionsResource) UnsetImplementationName() {
 
 // GetImplementation returns the Implementation field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ImportExclusionsResource) GetImplementation() string {
-	if o == nil || isNil(o.Implementation.Get()) {
+	if o == nil || IsNil(o.Implementation.Get()) {
 		var ret string
 		return ret
 	}
@@ -211,7 +214,7 @@ func (o *ImportExclusionsResource) GetImplementation() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ImportExclusionsResource) GetImplementationOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Implementation.Get(), o.Implementation.IsSet()
 }
@@ -241,7 +244,7 @@ func (o *ImportExclusionsResource) UnsetImplementation() {
 
 // GetConfigContract returns the ConfigContract field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ImportExclusionsResource) GetConfigContract() string {
-	if o == nil || isNil(o.ConfigContract.Get()) {
+	if o == nil || IsNil(o.ConfigContract.Get()) {
 		var ret string
 		return ret
 	}
@@ -253,7 +256,7 @@ func (o *ImportExclusionsResource) GetConfigContract() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ImportExclusionsResource) GetConfigContractOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ConfigContract.Get(), o.ConfigContract.IsSet()
 }
@@ -283,7 +286,7 @@ func (o *ImportExclusionsResource) UnsetConfigContract() {
 
 // GetInfoLink returns the InfoLink field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ImportExclusionsResource) GetInfoLink() string {
-	if o == nil || isNil(o.InfoLink.Get()) {
+	if o == nil || IsNil(o.InfoLink.Get()) {
 		var ret string
 		return ret
 	}
@@ -295,7 +298,7 @@ func (o *ImportExclusionsResource) GetInfoLink() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ImportExclusionsResource) GetInfoLinkOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.InfoLink.Get(), o.InfoLink.IsSet()
 }
@@ -325,7 +328,7 @@ func (o *ImportExclusionsResource) UnsetInfoLink() {
 
 // GetMessage returns the Message field value if set, zero value otherwise.
 func (o *ImportExclusionsResource) GetMessage() ProviderMessage {
-	if o == nil || isNil(o.Message) {
+	if o == nil || IsNil(o.Message) {
 		var ret ProviderMessage
 		return ret
 	}
@@ -335,15 +338,15 @@ func (o *ImportExclusionsResource) GetMessage() ProviderMessage {
 // GetMessageOk returns a tuple with the Message field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ImportExclusionsResource) GetMessageOk() (*ProviderMessage, bool) {
-	if o == nil || isNil(o.Message) {
-    return nil, false
+	if o == nil || IsNil(o.Message) {
+		return nil, false
 	}
 	return o.Message, true
 }
 
 // HasMessage returns a boolean if a field has been set.
 func (o *ImportExclusionsResource) HasMessage() bool {
-	if o != nil && !isNil(o.Message) {
+	if o != nil && !IsNil(o.Message) {
 		return true
 	}
 
@@ -356,9 +359,9 @@ func (o *ImportExclusionsResource) SetMessage(v ProviderMessage) {
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ImportExclusionsResource) GetTags() []*int32 {
+func (o *ImportExclusionsResource) GetTags() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.Tags
@@ -367,16 +370,16 @@ func (o *ImportExclusionsResource) GetTags() []*int32 {
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ImportExclusionsResource) GetTagsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.Tags) {
-    return nil, false
+func (o *ImportExclusionsResource) GetTagsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
 	}
 	return o.Tags, true
 }
 
 // HasTags returns a boolean if a field has been set.
 func (o *ImportExclusionsResource) HasTags() bool {
-	if o != nil && isNil(o.Tags) {
+	if o != nil && IsNil(o.Tags) {
 		return true
 	}
 
@@ -384,14 +387,14 @@ func (o *ImportExclusionsResource) HasTags() bool {
 }
 
 // SetTags gets a reference to the given []int32 and assigns it to the Tags field.
-func (o *ImportExclusionsResource) SetTags(v []*int32) {
+func (o *ImportExclusionsResource) SetTags(v []int32) {
 	o.Tags = v
 }
 
 // GetPresets returns the Presets field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ImportExclusionsResource) GetPresets() []*ImportExclusionsResource {
+func (o *ImportExclusionsResource) GetPresets() []ImportExclusionsResource {
 	if o == nil {
-		var ret []*ImportExclusionsResource
+		var ret []ImportExclusionsResource
 		return ret
 	}
 	return o.Presets
@@ -400,16 +403,16 @@ func (o *ImportExclusionsResource) GetPresets() []*ImportExclusionsResource {
 // GetPresetsOk returns a tuple with the Presets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ImportExclusionsResource) GetPresetsOk() ([]*ImportExclusionsResource, bool) {
-	if o == nil || isNil(o.Presets) {
-    return nil, false
+func (o *ImportExclusionsResource) GetPresetsOk() ([]ImportExclusionsResource, bool) {
+	if o == nil || IsNil(o.Presets) {
+		return nil, false
 	}
 	return o.Presets, true
 }
 
 // HasPresets returns a boolean if a field has been set.
 func (o *ImportExclusionsResource) HasPresets() bool {
-	if o != nil && isNil(o.Presets) {
+	if o != nil && IsNil(o.Presets) {
 		return true
 	}
 
@@ -417,13 +420,13 @@ func (o *ImportExclusionsResource) HasPresets() bool {
 }
 
 // SetPresets gets a reference to the given []ImportExclusionsResource and assigns it to the Presets field.
-func (o *ImportExclusionsResource) SetPresets(v []*ImportExclusionsResource) {
+func (o *ImportExclusionsResource) SetPresets(v []ImportExclusionsResource) {
 	o.Presets = v
 }
 
 // GetTmdbId returns the TmdbId field value if set, zero value otherwise.
 func (o *ImportExclusionsResource) GetTmdbId() int32 {
-	if o == nil || isNil(o.TmdbId) {
+	if o == nil || IsNil(o.TmdbId) {
 		var ret int32
 		return ret
 	}
@@ -433,15 +436,15 @@ func (o *ImportExclusionsResource) GetTmdbId() int32 {
 // GetTmdbIdOk returns a tuple with the TmdbId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ImportExclusionsResource) GetTmdbIdOk() (*int32, bool) {
-	if o == nil || isNil(o.TmdbId) {
-    return nil, false
+	if o == nil || IsNil(o.TmdbId) {
+		return nil, false
 	}
 	return o.TmdbId, true
 }
 
 // HasTmdbId returns a boolean if a field has been set.
 func (o *ImportExclusionsResource) HasTmdbId() bool {
-	if o != nil && !isNil(o.TmdbId) {
+	if o != nil && !IsNil(o.TmdbId) {
 		return true
 	}
 
@@ -455,7 +458,7 @@ func (o *ImportExclusionsResource) SetTmdbId(v int32) {
 
 // GetMovieTitle returns the MovieTitle field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ImportExclusionsResource) GetMovieTitle() string {
-	if o == nil || isNil(o.MovieTitle.Get()) {
+	if o == nil || IsNil(o.MovieTitle.Get()) {
 		var ret string
 		return ret
 	}
@@ -467,7 +470,7 @@ func (o *ImportExclusionsResource) GetMovieTitle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ImportExclusionsResource) GetMovieTitleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.MovieTitle.Get(), o.MovieTitle.IsSet()
 }
@@ -497,7 +500,7 @@ func (o *ImportExclusionsResource) UnsetMovieTitle() {
 
 // GetMovieYear returns the MovieYear field value if set, zero value otherwise.
 func (o *ImportExclusionsResource) GetMovieYear() int32 {
-	if o == nil || isNil(o.MovieYear) {
+	if o == nil || IsNil(o.MovieYear) {
 		var ret int32
 		return ret
 	}
@@ -507,15 +510,15 @@ func (o *ImportExclusionsResource) GetMovieYear() int32 {
 // GetMovieYearOk returns a tuple with the MovieYear field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ImportExclusionsResource) GetMovieYearOk() (*int32, bool) {
-	if o == nil || isNil(o.MovieYear) {
-    return nil, false
+	if o == nil || IsNil(o.MovieYear) {
+		return nil, false
 	}
 	return o.MovieYear, true
 }
 
 // HasMovieYear returns a boolean if a field has been set.
 func (o *ImportExclusionsResource) HasMovieYear() bool {
-	if o != nil && !isNil(o.MovieYear) {
+	if o != nil && !IsNil(o.MovieYear) {
 		return true
 	}
 
@@ -528,8 +531,16 @@ func (o *ImportExclusionsResource) SetMovieYear(v int32) {
 }
 
 func (o ImportExclusionsResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ImportExclusionsResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Name.IsSet() {
@@ -550,7 +561,7 @@ func (o ImportExclusionsResource) MarshalJSON() ([]byte, error) {
 	if o.InfoLink.IsSet() {
 		toSerialize["infoLink"] = o.InfoLink.Get()
 	}
-	if !isNil(o.Message) {
+	if !IsNil(o.Message) {
 		toSerialize["message"] = o.Message
 	}
 	if o.Tags != nil {
@@ -559,16 +570,16 @@ func (o ImportExclusionsResource) MarshalJSON() ([]byte, error) {
 	if o.Presets != nil {
 		toSerialize["presets"] = o.Presets
 	}
-	if !isNil(o.TmdbId) {
+	if !IsNil(o.TmdbId) {
 		toSerialize["tmdbId"] = o.TmdbId
 	}
 	if o.MovieTitle.IsSet() {
 		toSerialize["movieTitle"] = o.MovieTitle.Get()
 	}
-	if !isNil(o.MovieYear) {
+	if !IsNil(o.MovieYear) {
 		toSerialize["movieYear"] = o.MovieYear
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableImportExclusionsResource struct {

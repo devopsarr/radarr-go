@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ImportListConfigResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ImportListConfigResource{}
+
 // ImportListConfigResource struct for ImportListConfigResource
 type ImportListConfigResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -40,7 +43,7 @@ func NewImportListConfigResourceWithDefaults() *ImportListConfigResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *ImportListConfigResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -50,15 +53,15 @@ func (o *ImportListConfigResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ImportListConfigResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *ImportListConfigResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -72,7 +75,7 @@ func (o *ImportListConfigResource) SetId(v int32) {
 
 // GetListSyncLevel returns the ListSyncLevel field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ImportListConfigResource) GetListSyncLevel() string {
-	if o == nil || isNil(o.ListSyncLevel.Get()) {
+	if o == nil || IsNil(o.ListSyncLevel.Get()) {
 		var ret string
 		return ret
 	}
@@ -84,7 +87,7 @@ func (o *ImportListConfigResource) GetListSyncLevel() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ImportListConfigResource) GetListSyncLevelOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ListSyncLevel.Get(), o.ListSyncLevel.IsSet()
 }
@@ -114,7 +117,7 @@ func (o *ImportListConfigResource) UnsetListSyncLevel() {
 
 // GetImportExclusions returns the ImportExclusions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ImportListConfigResource) GetImportExclusions() string {
-	if o == nil || isNil(o.ImportExclusions.Get()) {
+	if o == nil || IsNil(o.ImportExclusions.Get()) {
 		var ret string
 		return ret
 	}
@@ -126,7 +129,7 @@ func (o *ImportListConfigResource) GetImportExclusions() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ImportListConfigResource) GetImportExclusionsOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ImportExclusions.Get(), o.ImportExclusions.IsSet()
 }
@@ -155,8 +158,16 @@ func (o *ImportListConfigResource) UnsetImportExclusions() {
 }
 
 func (o ImportListConfigResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ImportListConfigResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.ListSyncLevel.IsSet() {
@@ -165,7 +176,7 @@ func (o ImportListConfigResource) MarshalJSON() ([]byte, error) {
 	if o.ImportExclusions.IsSet() {
 		toSerialize["importExclusions"] = o.ImportExclusions.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableImportListConfigResource struct {

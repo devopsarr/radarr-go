@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ExtraFileResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ExtraFileResource{}
+
 // ExtraFileResource struct for ExtraFileResource
 type ExtraFileResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -43,7 +46,7 @@ func NewExtraFileResourceWithDefaults() *ExtraFileResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *ExtraFileResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -53,15 +56,15 @@ func (o *ExtraFileResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExtraFileResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *ExtraFileResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -75,7 +78,7 @@ func (o *ExtraFileResource) SetId(v int32) {
 
 // GetMovieId returns the MovieId field value if set, zero value otherwise.
 func (o *ExtraFileResource) GetMovieId() int32 {
-	if o == nil || isNil(o.MovieId) {
+	if o == nil || IsNil(o.MovieId) {
 		var ret int32
 		return ret
 	}
@@ -85,15 +88,15 @@ func (o *ExtraFileResource) GetMovieId() int32 {
 // GetMovieIdOk returns a tuple with the MovieId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExtraFileResource) GetMovieIdOk() (*int32, bool) {
-	if o == nil || isNil(o.MovieId) {
-    return nil, false
+	if o == nil || IsNil(o.MovieId) {
+		return nil, false
 	}
 	return o.MovieId, true
 }
 
 // HasMovieId returns a boolean if a field has been set.
 func (o *ExtraFileResource) HasMovieId() bool {
-	if o != nil && !isNil(o.MovieId) {
+	if o != nil && !IsNil(o.MovieId) {
 		return true
 	}
 
@@ -107,7 +110,7 @@ func (o *ExtraFileResource) SetMovieId(v int32) {
 
 // GetMovieFileId returns the MovieFileId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ExtraFileResource) GetMovieFileId() int32 {
-	if o == nil || isNil(o.MovieFileId.Get()) {
+	if o == nil || IsNil(o.MovieFileId.Get()) {
 		var ret int32
 		return ret
 	}
@@ -119,7 +122,7 @@ func (o *ExtraFileResource) GetMovieFileId() int32 {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ExtraFileResource) GetMovieFileIdOk() (*int32, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.MovieFileId.Get(), o.MovieFileId.IsSet()
 }
@@ -149,7 +152,7 @@ func (o *ExtraFileResource) UnsetMovieFileId() {
 
 // GetRelativePath returns the RelativePath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ExtraFileResource) GetRelativePath() string {
-	if o == nil || isNil(o.RelativePath.Get()) {
+	if o == nil || IsNil(o.RelativePath.Get()) {
 		var ret string
 		return ret
 	}
@@ -161,7 +164,7 @@ func (o *ExtraFileResource) GetRelativePath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ExtraFileResource) GetRelativePathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.RelativePath.Get(), o.RelativePath.IsSet()
 }
@@ -191,7 +194,7 @@ func (o *ExtraFileResource) UnsetRelativePath() {
 
 // GetExtension returns the Extension field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ExtraFileResource) GetExtension() string {
-	if o == nil || isNil(o.Extension.Get()) {
+	if o == nil || IsNil(o.Extension.Get()) {
 		var ret string
 		return ret
 	}
@@ -203,7 +206,7 @@ func (o *ExtraFileResource) GetExtension() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ExtraFileResource) GetExtensionOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Extension.Get(), o.Extension.IsSet()
 }
@@ -233,7 +236,7 @@ func (o *ExtraFileResource) UnsetExtension() {
 
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *ExtraFileResource) GetType() ExtraFileType {
-	if o == nil || isNil(o.Type) {
+	if o == nil || IsNil(o.Type) {
 		var ret ExtraFileType
 		return ret
 	}
@@ -243,15 +246,15 @@ func (o *ExtraFileResource) GetType() ExtraFileType {
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExtraFileResource) GetTypeOk() (*ExtraFileType, bool) {
-	if o == nil || isNil(o.Type) {
-    return nil, false
+	if o == nil || IsNil(o.Type) {
+		return nil, false
 	}
 	return o.Type, true
 }
 
 // HasType returns a boolean if a field has been set.
 func (o *ExtraFileResource) HasType() bool {
-	if o != nil && !isNil(o.Type) {
+	if o != nil && !IsNil(o.Type) {
 		return true
 	}
 
@@ -264,11 +267,19 @@ func (o *ExtraFileResource) SetType(v ExtraFileType) {
 }
 
 func (o ExtraFileResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ExtraFileResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !isNil(o.MovieId) {
+	if !IsNil(o.MovieId) {
 		toSerialize["movieId"] = o.MovieId
 	}
 	if o.MovieFileId.IsSet() {
@@ -280,10 +291,10 @@ func (o ExtraFileResource) MarshalJSON() ([]byte, error) {
 	if o.Extension.IsSet() {
 		toSerialize["extension"] = o.Extension.Get()
 	}
-	if !isNil(o.Type) {
+	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableExtraFileResource struct {

@@ -15,6 +15,9 @@ import (
 	"time"
 )
 
+// checks if the SystemResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SystemResource{}
+
 // SystemResource struct for SystemResource
 type SystemResource struct {
 	AppName NullableString `json:"appName,omitempty"`
@@ -69,7 +72,7 @@ func NewSystemResourceWithDefaults() *SystemResource {
 
 // GetAppName returns the AppName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SystemResource) GetAppName() string {
-	if o == nil || isNil(o.AppName.Get()) {
+	if o == nil || IsNil(o.AppName.Get()) {
 		var ret string
 		return ret
 	}
@@ -81,7 +84,7 @@ func (o *SystemResource) GetAppName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SystemResource) GetAppNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.AppName.Get(), o.AppName.IsSet()
 }
@@ -111,7 +114,7 @@ func (o *SystemResource) UnsetAppName() {
 
 // GetInstanceName returns the InstanceName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SystemResource) GetInstanceName() string {
-	if o == nil || isNil(o.InstanceName.Get()) {
+	if o == nil || IsNil(o.InstanceName.Get()) {
 		var ret string
 		return ret
 	}
@@ -123,7 +126,7 @@ func (o *SystemResource) GetInstanceName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SystemResource) GetInstanceNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.InstanceName.Get(), o.InstanceName.IsSet()
 }
@@ -153,7 +156,7 @@ func (o *SystemResource) UnsetInstanceName() {
 
 // GetVersion returns the Version field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SystemResource) GetVersion() string {
-	if o == nil || isNil(o.Version.Get()) {
+	if o == nil || IsNil(o.Version.Get()) {
 		var ret string
 		return ret
 	}
@@ -165,7 +168,7 @@ func (o *SystemResource) GetVersion() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SystemResource) GetVersionOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Version.Get(), o.Version.IsSet()
 }
@@ -195,7 +198,7 @@ func (o *SystemResource) UnsetVersion() {
 
 // GetBuildTime returns the BuildTime field value if set, zero value otherwise.
 func (o *SystemResource) GetBuildTime() time.Time {
-	if o == nil || isNil(o.BuildTime) {
+	if o == nil || IsNil(o.BuildTime) {
 		var ret time.Time
 		return ret
 	}
@@ -205,15 +208,15 @@ func (o *SystemResource) GetBuildTime() time.Time {
 // GetBuildTimeOk returns a tuple with the BuildTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SystemResource) GetBuildTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.BuildTime) {
-    return nil, false
+	if o == nil || IsNil(o.BuildTime) {
+		return nil, false
 	}
 	return o.BuildTime, true
 }
 
 // HasBuildTime returns a boolean if a field has been set.
 func (o *SystemResource) HasBuildTime() bool {
-	if o != nil && !isNil(o.BuildTime) {
+	if o != nil && !IsNil(o.BuildTime) {
 		return true
 	}
 
@@ -227,7 +230,7 @@ func (o *SystemResource) SetBuildTime(v time.Time) {
 
 // GetIsDebug returns the IsDebug field value if set, zero value otherwise.
 func (o *SystemResource) GetIsDebug() bool {
-	if o == nil || isNil(o.IsDebug) {
+	if o == nil || IsNil(o.IsDebug) {
 		var ret bool
 		return ret
 	}
@@ -237,15 +240,15 @@ func (o *SystemResource) GetIsDebug() bool {
 // GetIsDebugOk returns a tuple with the IsDebug field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SystemResource) GetIsDebugOk() (*bool, bool) {
-	if o == nil || isNil(o.IsDebug) {
-    return nil, false
+	if o == nil || IsNil(o.IsDebug) {
+		return nil, false
 	}
 	return o.IsDebug, true
 }
 
 // HasIsDebug returns a boolean if a field has been set.
 func (o *SystemResource) HasIsDebug() bool {
-	if o != nil && !isNil(o.IsDebug) {
+	if o != nil && !IsNil(o.IsDebug) {
 		return true
 	}
 
@@ -259,7 +262,7 @@ func (o *SystemResource) SetIsDebug(v bool) {
 
 // GetIsProduction returns the IsProduction field value if set, zero value otherwise.
 func (o *SystemResource) GetIsProduction() bool {
-	if o == nil || isNil(o.IsProduction) {
+	if o == nil || IsNil(o.IsProduction) {
 		var ret bool
 		return ret
 	}
@@ -269,15 +272,15 @@ func (o *SystemResource) GetIsProduction() bool {
 // GetIsProductionOk returns a tuple with the IsProduction field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SystemResource) GetIsProductionOk() (*bool, bool) {
-	if o == nil || isNil(o.IsProduction) {
-    return nil, false
+	if o == nil || IsNil(o.IsProduction) {
+		return nil, false
 	}
 	return o.IsProduction, true
 }
 
 // HasIsProduction returns a boolean if a field has been set.
 func (o *SystemResource) HasIsProduction() bool {
-	if o != nil && !isNil(o.IsProduction) {
+	if o != nil && !IsNil(o.IsProduction) {
 		return true
 	}
 
@@ -291,7 +294,7 @@ func (o *SystemResource) SetIsProduction(v bool) {
 
 // GetIsAdmin returns the IsAdmin field value if set, zero value otherwise.
 func (o *SystemResource) GetIsAdmin() bool {
-	if o == nil || isNil(o.IsAdmin) {
+	if o == nil || IsNil(o.IsAdmin) {
 		var ret bool
 		return ret
 	}
@@ -301,15 +304,15 @@ func (o *SystemResource) GetIsAdmin() bool {
 // GetIsAdminOk returns a tuple with the IsAdmin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SystemResource) GetIsAdminOk() (*bool, bool) {
-	if o == nil || isNil(o.IsAdmin) {
-    return nil, false
+	if o == nil || IsNil(o.IsAdmin) {
+		return nil, false
 	}
 	return o.IsAdmin, true
 }
 
 // HasIsAdmin returns a boolean if a field has been set.
 func (o *SystemResource) HasIsAdmin() bool {
-	if o != nil && !isNil(o.IsAdmin) {
+	if o != nil && !IsNil(o.IsAdmin) {
 		return true
 	}
 
@@ -323,7 +326,7 @@ func (o *SystemResource) SetIsAdmin(v bool) {
 
 // GetIsUserInteractive returns the IsUserInteractive field value if set, zero value otherwise.
 func (o *SystemResource) GetIsUserInteractive() bool {
-	if o == nil || isNil(o.IsUserInteractive) {
+	if o == nil || IsNil(o.IsUserInteractive) {
 		var ret bool
 		return ret
 	}
@@ -333,15 +336,15 @@ func (o *SystemResource) GetIsUserInteractive() bool {
 // GetIsUserInteractiveOk returns a tuple with the IsUserInteractive field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SystemResource) GetIsUserInteractiveOk() (*bool, bool) {
-	if o == nil || isNil(o.IsUserInteractive) {
-    return nil, false
+	if o == nil || IsNil(o.IsUserInteractive) {
+		return nil, false
 	}
 	return o.IsUserInteractive, true
 }
 
 // HasIsUserInteractive returns a boolean if a field has been set.
 func (o *SystemResource) HasIsUserInteractive() bool {
-	if o != nil && !isNil(o.IsUserInteractive) {
+	if o != nil && !IsNil(o.IsUserInteractive) {
 		return true
 	}
 
@@ -355,7 +358,7 @@ func (o *SystemResource) SetIsUserInteractive(v bool) {
 
 // GetStartupPath returns the StartupPath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SystemResource) GetStartupPath() string {
-	if o == nil || isNil(o.StartupPath.Get()) {
+	if o == nil || IsNil(o.StartupPath.Get()) {
 		var ret string
 		return ret
 	}
@@ -367,7 +370,7 @@ func (o *SystemResource) GetStartupPath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SystemResource) GetStartupPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.StartupPath.Get(), o.StartupPath.IsSet()
 }
@@ -397,7 +400,7 @@ func (o *SystemResource) UnsetStartupPath() {
 
 // GetAppData returns the AppData field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SystemResource) GetAppData() string {
-	if o == nil || isNil(o.AppData.Get()) {
+	if o == nil || IsNil(o.AppData.Get()) {
 		var ret string
 		return ret
 	}
@@ -409,7 +412,7 @@ func (o *SystemResource) GetAppData() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SystemResource) GetAppDataOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.AppData.Get(), o.AppData.IsSet()
 }
@@ -439,7 +442,7 @@ func (o *SystemResource) UnsetAppData() {
 
 // GetOsName returns the OsName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SystemResource) GetOsName() string {
-	if o == nil || isNil(o.OsName.Get()) {
+	if o == nil || IsNil(o.OsName.Get()) {
 		var ret string
 		return ret
 	}
@@ -451,7 +454,7 @@ func (o *SystemResource) GetOsName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SystemResource) GetOsNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.OsName.Get(), o.OsName.IsSet()
 }
@@ -481,7 +484,7 @@ func (o *SystemResource) UnsetOsName() {
 
 // GetOsVersion returns the OsVersion field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SystemResource) GetOsVersion() string {
-	if o == nil || isNil(o.OsVersion.Get()) {
+	if o == nil || IsNil(o.OsVersion.Get()) {
 		var ret string
 		return ret
 	}
@@ -493,7 +496,7 @@ func (o *SystemResource) GetOsVersion() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SystemResource) GetOsVersionOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.OsVersion.Get(), o.OsVersion.IsSet()
 }
@@ -523,7 +526,7 @@ func (o *SystemResource) UnsetOsVersion() {
 
 // GetIsNetCore returns the IsNetCore field value if set, zero value otherwise.
 func (o *SystemResource) GetIsNetCore() bool {
-	if o == nil || isNil(o.IsNetCore) {
+	if o == nil || IsNil(o.IsNetCore) {
 		var ret bool
 		return ret
 	}
@@ -533,15 +536,15 @@ func (o *SystemResource) GetIsNetCore() bool {
 // GetIsNetCoreOk returns a tuple with the IsNetCore field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SystemResource) GetIsNetCoreOk() (*bool, bool) {
-	if o == nil || isNil(o.IsNetCore) {
-    return nil, false
+	if o == nil || IsNil(o.IsNetCore) {
+		return nil, false
 	}
 	return o.IsNetCore, true
 }
 
 // HasIsNetCore returns a boolean if a field has been set.
 func (o *SystemResource) HasIsNetCore() bool {
-	if o != nil && !isNil(o.IsNetCore) {
+	if o != nil && !IsNil(o.IsNetCore) {
 		return true
 	}
 
@@ -555,7 +558,7 @@ func (o *SystemResource) SetIsNetCore(v bool) {
 
 // GetIsLinux returns the IsLinux field value if set, zero value otherwise.
 func (o *SystemResource) GetIsLinux() bool {
-	if o == nil || isNil(o.IsLinux) {
+	if o == nil || IsNil(o.IsLinux) {
 		var ret bool
 		return ret
 	}
@@ -565,15 +568,15 @@ func (o *SystemResource) GetIsLinux() bool {
 // GetIsLinuxOk returns a tuple with the IsLinux field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SystemResource) GetIsLinuxOk() (*bool, bool) {
-	if o == nil || isNil(o.IsLinux) {
-    return nil, false
+	if o == nil || IsNil(o.IsLinux) {
+		return nil, false
 	}
 	return o.IsLinux, true
 }
 
 // HasIsLinux returns a boolean if a field has been set.
 func (o *SystemResource) HasIsLinux() bool {
-	if o != nil && !isNil(o.IsLinux) {
+	if o != nil && !IsNil(o.IsLinux) {
 		return true
 	}
 
@@ -587,7 +590,7 @@ func (o *SystemResource) SetIsLinux(v bool) {
 
 // GetIsOsx returns the IsOsx field value if set, zero value otherwise.
 func (o *SystemResource) GetIsOsx() bool {
-	if o == nil || isNil(o.IsOsx) {
+	if o == nil || IsNil(o.IsOsx) {
 		var ret bool
 		return ret
 	}
@@ -597,15 +600,15 @@ func (o *SystemResource) GetIsOsx() bool {
 // GetIsOsxOk returns a tuple with the IsOsx field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SystemResource) GetIsOsxOk() (*bool, bool) {
-	if o == nil || isNil(o.IsOsx) {
-    return nil, false
+	if o == nil || IsNil(o.IsOsx) {
+		return nil, false
 	}
 	return o.IsOsx, true
 }
 
 // HasIsOsx returns a boolean if a field has been set.
 func (o *SystemResource) HasIsOsx() bool {
-	if o != nil && !isNil(o.IsOsx) {
+	if o != nil && !IsNil(o.IsOsx) {
 		return true
 	}
 
@@ -619,7 +622,7 @@ func (o *SystemResource) SetIsOsx(v bool) {
 
 // GetIsWindows returns the IsWindows field value if set, zero value otherwise.
 func (o *SystemResource) GetIsWindows() bool {
-	if o == nil || isNil(o.IsWindows) {
+	if o == nil || IsNil(o.IsWindows) {
 		var ret bool
 		return ret
 	}
@@ -629,15 +632,15 @@ func (o *SystemResource) GetIsWindows() bool {
 // GetIsWindowsOk returns a tuple with the IsWindows field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SystemResource) GetIsWindowsOk() (*bool, bool) {
-	if o == nil || isNil(o.IsWindows) {
-    return nil, false
+	if o == nil || IsNil(o.IsWindows) {
+		return nil, false
 	}
 	return o.IsWindows, true
 }
 
 // HasIsWindows returns a boolean if a field has been set.
 func (o *SystemResource) HasIsWindows() bool {
-	if o != nil && !isNil(o.IsWindows) {
+	if o != nil && !IsNil(o.IsWindows) {
 		return true
 	}
 
@@ -651,7 +654,7 @@ func (o *SystemResource) SetIsWindows(v bool) {
 
 // GetIsDocker returns the IsDocker field value if set, zero value otherwise.
 func (o *SystemResource) GetIsDocker() bool {
-	if o == nil || isNil(o.IsDocker) {
+	if o == nil || IsNil(o.IsDocker) {
 		var ret bool
 		return ret
 	}
@@ -661,15 +664,15 @@ func (o *SystemResource) GetIsDocker() bool {
 // GetIsDockerOk returns a tuple with the IsDocker field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SystemResource) GetIsDockerOk() (*bool, bool) {
-	if o == nil || isNil(o.IsDocker) {
-    return nil, false
+	if o == nil || IsNil(o.IsDocker) {
+		return nil, false
 	}
 	return o.IsDocker, true
 }
 
 // HasIsDocker returns a boolean if a field has been set.
 func (o *SystemResource) HasIsDocker() bool {
-	if o != nil && !isNil(o.IsDocker) {
+	if o != nil && !IsNil(o.IsDocker) {
 		return true
 	}
 
@@ -683,7 +686,7 @@ func (o *SystemResource) SetIsDocker(v bool) {
 
 // GetMode returns the Mode field value if set, zero value otherwise.
 func (o *SystemResource) GetMode() RuntimeMode {
-	if o == nil || isNil(o.Mode) {
+	if o == nil || IsNil(o.Mode) {
 		var ret RuntimeMode
 		return ret
 	}
@@ -693,15 +696,15 @@ func (o *SystemResource) GetMode() RuntimeMode {
 // GetModeOk returns a tuple with the Mode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SystemResource) GetModeOk() (*RuntimeMode, bool) {
-	if o == nil || isNil(o.Mode) {
-    return nil, false
+	if o == nil || IsNil(o.Mode) {
+		return nil, false
 	}
 	return o.Mode, true
 }
 
 // HasMode returns a boolean if a field has been set.
 func (o *SystemResource) HasMode() bool {
-	if o != nil && !isNil(o.Mode) {
+	if o != nil && !IsNil(o.Mode) {
 		return true
 	}
 
@@ -715,7 +718,7 @@ func (o *SystemResource) SetMode(v RuntimeMode) {
 
 // GetBranch returns the Branch field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SystemResource) GetBranch() string {
-	if o == nil || isNil(o.Branch.Get()) {
+	if o == nil || IsNil(o.Branch.Get()) {
 		var ret string
 		return ret
 	}
@@ -727,7 +730,7 @@ func (o *SystemResource) GetBranch() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SystemResource) GetBranchOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Branch.Get(), o.Branch.IsSet()
 }
@@ -757,7 +760,7 @@ func (o *SystemResource) UnsetBranch() {
 
 // GetDatabaseType returns the DatabaseType field value if set, zero value otherwise.
 func (o *SystemResource) GetDatabaseType() DatabaseType {
-	if o == nil || isNil(o.DatabaseType) {
+	if o == nil || IsNil(o.DatabaseType) {
 		var ret DatabaseType
 		return ret
 	}
@@ -767,15 +770,15 @@ func (o *SystemResource) GetDatabaseType() DatabaseType {
 // GetDatabaseTypeOk returns a tuple with the DatabaseType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SystemResource) GetDatabaseTypeOk() (*DatabaseType, bool) {
-	if o == nil || isNil(o.DatabaseType) {
-    return nil, false
+	if o == nil || IsNil(o.DatabaseType) {
+		return nil, false
 	}
 	return o.DatabaseType, true
 }
 
 // HasDatabaseType returns a boolean if a field has been set.
 func (o *SystemResource) HasDatabaseType() bool {
-	if o != nil && !isNil(o.DatabaseType) {
+	if o != nil && !IsNil(o.DatabaseType) {
 		return true
 	}
 
@@ -789,7 +792,7 @@ func (o *SystemResource) SetDatabaseType(v DatabaseType) {
 
 // GetDatabaseVersion returns the DatabaseVersion field value if set, zero value otherwise.
 func (o *SystemResource) GetDatabaseVersion() string {
-	if o == nil || isNil(o.DatabaseVersion) {
+	if o == nil || IsNil(o.DatabaseVersion) {
 		var ret string
 		return ret
 	}
@@ -799,15 +802,15 @@ func (o *SystemResource) GetDatabaseVersion() string {
 // GetDatabaseVersionOk returns a tuple with the DatabaseVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SystemResource) GetDatabaseVersionOk() (*string, bool) {
-	if o == nil || isNil(o.DatabaseVersion) {
-    return nil, false
+	if o == nil || IsNil(o.DatabaseVersion) {
+		return nil, false
 	}
 	return o.DatabaseVersion, true
 }
 
 // HasDatabaseVersion returns a boolean if a field has been set.
 func (o *SystemResource) HasDatabaseVersion() bool {
-	if o != nil && !isNil(o.DatabaseVersion) {
+	if o != nil && !IsNil(o.DatabaseVersion) {
 		return true
 	}
 
@@ -821,7 +824,7 @@ func (o *SystemResource) SetDatabaseVersion(v string) {
 
 // GetAuthentication returns the Authentication field value if set, zero value otherwise.
 func (o *SystemResource) GetAuthentication() AuthenticationType {
-	if o == nil || isNil(o.Authentication) {
+	if o == nil || IsNil(o.Authentication) {
 		var ret AuthenticationType
 		return ret
 	}
@@ -831,15 +834,15 @@ func (o *SystemResource) GetAuthentication() AuthenticationType {
 // GetAuthenticationOk returns a tuple with the Authentication field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SystemResource) GetAuthenticationOk() (*AuthenticationType, bool) {
-	if o == nil || isNil(o.Authentication) {
-    return nil, false
+	if o == nil || IsNil(o.Authentication) {
+		return nil, false
 	}
 	return o.Authentication, true
 }
 
 // HasAuthentication returns a boolean if a field has been set.
 func (o *SystemResource) HasAuthentication() bool {
-	if o != nil && !isNil(o.Authentication) {
+	if o != nil && !IsNil(o.Authentication) {
 		return true
 	}
 
@@ -853,7 +856,7 @@ func (o *SystemResource) SetAuthentication(v AuthenticationType) {
 
 // GetMigrationVersion returns the MigrationVersion field value if set, zero value otherwise.
 func (o *SystemResource) GetMigrationVersion() int32 {
-	if o == nil || isNil(o.MigrationVersion) {
+	if o == nil || IsNil(o.MigrationVersion) {
 		var ret int32
 		return ret
 	}
@@ -863,15 +866,15 @@ func (o *SystemResource) GetMigrationVersion() int32 {
 // GetMigrationVersionOk returns a tuple with the MigrationVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SystemResource) GetMigrationVersionOk() (*int32, bool) {
-	if o == nil || isNil(o.MigrationVersion) {
-    return nil, false
+	if o == nil || IsNil(o.MigrationVersion) {
+		return nil, false
 	}
 	return o.MigrationVersion, true
 }
 
 // HasMigrationVersion returns a boolean if a field has been set.
 func (o *SystemResource) HasMigrationVersion() bool {
-	if o != nil && !isNil(o.MigrationVersion) {
+	if o != nil && !IsNil(o.MigrationVersion) {
 		return true
 	}
 
@@ -885,7 +888,7 @@ func (o *SystemResource) SetMigrationVersion(v int32) {
 
 // GetUrlBase returns the UrlBase field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SystemResource) GetUrlBase() string {
-	if o == nil || isNil(o.UrlBase.Get()) {
+	if o == nil || IsNil(o.UrlBase.Get()) {
 		var ret string
 		return ret
 	}
@@ -897,7 +900,7 @@ func (o *SystemResource) GetUrlBase() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SystemResource) GetUrlBaseOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.UrlBase.Get(), o.UrlBase.IsSet()
 }
@@ -927,7 +930,7 @@ func (o *SystemResource) UnsetUrlBase() {
 
 // GetRuntimeVersion returns the RuntimeVersion field value if set, zero value otherwise.
 func (o *SystemResource) GetRuntimeVersion() string {
-	if o == nil || isNil(o.RuntimeVersion) {
+	if o == nil || IsNil(o.RuntimeVersion) {
 		var ret string
 		return ret
 	}
@@ -937,15 +940,15 @@ func (o *SystemResource) GetRuntimeVersion() string {
 // GetRuntimeVersionOk returns a tuple with the RuntimeVersion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SystemResource) GetRuntimeVersionOk() (*string, bool) {
-	if o == nil || isNil(o.RuntimeVersion) {
-    return nil, false
+	if o == nil || IsNil(o.RuntimeVersion) {
+		return nil, false
 	}
 	return o.RuntimeVersion, true
 }
 
 // HasRuntimeVersion returns a boolean if a field has been set.
 func (o *SystemResource) HasRuntimeVersion() bool {
-	if o != nil && !isNil(o.RuntimeVersion) {
+	if o != nil && !IsNil(o.RuntimeVersion) {
 		return true
 	}
 
@@ -959,7 +962,7 @@ func (o *SystemResource) SetRuntimeVersion(v string) {
 
 // GetRuntimeName returns the RuntimeName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SystemResource) GetRuntimeName() string {
-	if o == nil || isNil(o.RuntimeName.Get()) {
+	if o == nil || IsNil(o.RuntimeName.Get()) {
 		var ret string
 		return ret
 	}
@@ -971,7 +974,7 @@ func (o *SystemResource) GetRuntimeName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SystemResource) GetRuntimeNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.RuntimeName.Get(), o.RuntimeName.IsSet()
 }
@@ -1001,7 +1004,7 @@ func (o *SystemResource) UnsetRuntimeName() {
 
 // GetStartTime returns the StartTime field value if set, zero value otherwise.
 func (o *SystemResource) GetStartTime() time.Time {
-	if o == nil || isNil(o.StartTime) {
+	if o == nil || IsNil(o.StartTime) {
 		var ret time.Time
 		return ret
 	}
@@ -1011,15 +1014,15 @@ func (o *SystemResource) GetStartTime() time.Time {
 // GetStartTimeOk returns a tuple with the StartTime field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SystemResource) GetStartTimeOk() (*time.Time, bool) {
-	if o == nil || isNil(o.StartTime) {
-    return nil, false
+	if o == nil || IsNil(o.StartTime) {
+		return nil, false
 	}
 	return o.StartTime, true
 }
 
 // HasStartTime returns a boolean if a field has been set.
 func (o *SystemResource) HasStartTime() bool {
-	if o != nil && !isNil(o.StartTime) {
+	if o != nil && !IsNil(o.StartTime) {
 		return true
 	}
 
@@ -1033,7 +1036,7 @@ func (o *SystemResource) SetStartTime(v time.Time) {
 
 // GetPackageVersion returns the PackageVersion field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SystemResource) GetPackageVersion() string {
-	if o == nil || isNil(o.PackageVersion.Get()) {
+	if o == nil || IsNil(o.PackageVersion.Get()) {
 		var ret string
 		return ret
 	}
@@ -1045,7 +1048,7 @@ func (o *SystemResource) GetPackageVersion() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SystemResource) GetPackageVersionOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.PackageVersion.Get(), o.PackageVersion.IsSet()
 }
@@ -1075,7 +1078,7 @@ func (o *SystemResource) UnsetPackageVersion() {
 
 // GetPackageAuthor returns the PackageAuthor field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SystemResource) GetPackageAuthor() string {
-	if o == nil || isNil(o.PackageAuthor.Get()) {
+	if o == nil || IsNil(o.PackageAuthor.Get()) {
 		var ret string
 		return ret
 	}
@@ -1087,7 +1090,7 @@ func (o *SystemResource) GetPackageAuthor() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SystemResource) GetPackageAuthorOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.PackageAuthor.Get(), o.PackageAuthor.IsSet()
 }
@@ -1117,7 +1120,7 @@ func (o *SystemResource) UnsetPackageAuthor() {
 
 // GetPackageUpdateMechanism returns the PackageUpdateMechanism field value if set, zero value otherwise.
 func (o *SystemResource) GetPackageUpdateMechanism() UpdateMechanism {
-	if o == nil || isNil(o.PackageUpdateMechanism) {
+	if o == nil || IsNil(o.PackageUpdateMechanism) {
 		var ret UpdateMechanism
 		return ret
 	}
@@ -1127,15 +1130,15 @@ func (o *SystemResource) GetPackageUpdateMechanism() UpdateMechanism {
 // GetPackageUpdateMechanismOk returns a tuple with the PackageUpdateMechanism field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SystemResource) GetPackageUpdateMechanismOk() (*UpdateMechanism, bool) {
-	if o == nil || isNil(o.PackageUpdateMechanism) {
-    return nil, false
+	if o == nil || IsNil(o.PackageUpdateMechanism) {
+		return nil, false
 	}
 	return o.PackageUpdateMechanism, true
 }
 
 // HasPackageUpdateMechanism returns a boolean if a field has been set.
 func (o *SystemResource) HasPackageUpdateMechanism() bool {
-	if o != nil && !isNil(o.PackageUpdateMechanism) {
+	if o != nil && !IsNil(o.PackageUpdateMechanism) {
 		return true
 	}
 
@@ -1149,7 +1152,7 @@ func (o *SystemResource) SetPackageUpdateMechanism(v UpdateMechanism) {
 
 // GetPackageUpdateMechanismMessage returns the PackageUpdateMechanismMessage field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SystemResource) GetPackageUpdateMechanismMessage() string {
-	if o == nil || isNil(o.PackageUpdateMechanismMessage.Get()) {
+	if o == nil || IsNil(o.PackageUpdateMechanismMessage.Get()) {
 		var ret string
 		return ret
 	}
@@ -1161,7 +1164,7 @@ func (o *SystemResource) GetPackageUpdateMechanismMessage() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SystemResource) GetPackageUpdateMechanismMessageOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.PackageUpdateMechanismMessage.Get(), o.PackageUpdateMechanismMessage.IsSet()
 }
@@ -1190,6 +1193,14 @@ func (o *SystemResource) UnsetPackageUpdateMechanismMessage() {
 }
 
 func (o SystemResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o SystemResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.AppName.IsSet() {
 		toSerialize["appName"] = o.AppName.Get()
@@ -1200,19 +1211,19 @@ func (o SystemResource) MarshalJSON() ([]byte, error) {
 	if o.Version.IsSet() {
 		toSerialize["version"] = o.Version.Get()
 	}
-	if !isNil(o.BuildTime) {
+	if !IsNil(o.BuildTime) {
 		toSerialize["buildTime"] = o.BuildTime
 	}
-	if !isNil(o.IsDebug) {
+	if !IsNil(o.IsDebug) {
 		toSerialize["isDebug"] = o.IsDebug
 	}
-	if !isNil(o.IsProduction) {
+	if !IsNil(o.IsProduction) {
 		toSerialize["isProduction"] = o.IsProduction
 	}
-	if !isNil(o.IsAdmin) {
+	if !IsNil(o.IsAdmin) {
 		toSerialize["isAdmin"] = o.IsAdmin
 	}
-	if !isNil(o.IsUserInteractive) {
+	if !IsNil(o.IsUserInteractive) {
 		toSerialize["isUserInteractive"] = o.IsUserInteractive
 	}
 	if o.StartupPath.IsSet() {
@@ -1227,49 +1238,49 @@ func (o SystemResource) MarshalJSON() ([]byte, error) {
 	if o.OsVersion.IsSet() {
 		toSerialize["osVersion"] = o.OsVersion.Get()
 	}
-	if !isNil(o.IsNetCore) {
+	if !IsNil(o.IsNetCore) {
 		toSerialize["isNetCore"] = o.IsNetCore
 	}
-	if !isNil(o.IsLinux) {
+	if !IsNil(o.IsLinux) {
 		toSerialize["isLinux"] = o.IsLinux
 	}
-	if !isNil(o.IsOsx) {
+	if !IsNil(o.IsOsx) {
 		toSerialize["isOsx"] = o.IsOsx
 	}
-	if !isNil(o.IsWindows) {
+	if !IsNil(o.IsWindows) {
 		toSerialize["isWindows"] = o.IsWindows
 	}
-	if !isNil(o.IsDocker) {
+	if !IsNil(o.IsDocker) {
 		toSerialize["isDocker"] = o.IsDocker
 	}
-	if !isNil(o.Mode) {
+	if !IsNil(o.Mode) {
 		toSerialize["mode"] = o.Mode
 	}
 	if o.Branch.IsSet() {
 		toSerialize["branch"] = o.Branch.Get()
 	}
-	if !isNil(o.DatabaseType) {
+	if !IsNil(o.DatabaseType) {
 		toSerialize["databaseType"] = o.DatabaseType
 	}
-	if !isNil(o.DatabaseVersion) {
+	if !IsNil(o.DatabaseVersion) {
 		toSerialize["databaseVersion"] = o.DatabaseVersion
 	}
-	if !isNil(o.Authentication) {
+	if !IsNil(o.Authentication) {
 		toSerialize["authentication"] = o.Authentication
 	}
-	if !isNil(o.MigrationVersion) {
+	if !IsNil(o.MigrationVersion) {
 		toSerialize["migrationVersion"] = o.MigrationVersion
 	}
 	if o.UrlBase.IsSet() {
 		toSerialize["urlBase"] = o.UrlBase.Get()
 	}
-	if !isNil(o.RuntimeVersion) {
+	if !IsNil(o.RuntimeVersion) {
 		toSerialize["runtimeVersion"] = o.RuntimeVersion
 	}
 	if o.RuntimeName.IsSet() {
 		toSerialize["runtimeName"] = o.RuntimeName.Get()
 	}
-	if !isNil(o.StartTime) {
+	if !IsNil(o.StartTime) {
 		toSerialize["startTime"] = o.StartTime
 	}
 	if o.PackageVersion.IsSet() {
@@ -1278,13 +1289,13 @@ func (o SystemResource) MarshalJSON() ([]byte, error) {
 	if o.PackageAuthor.IsSet() {
 		toSerialize["packageAuthor"] = o.PackageAuthor.Get()
 	}
-	if !isNil(o.PackageUpdateMechanism) {
+	if !IsNil(o.PackageUpdateMechanism) {
 		toSerialize["packageUpdateMechanism"] = o.PackageUpdateMechanism
 	}
 	if o.PackageUpdateMechanismMessage.IsSet() {
 		toSerialize["packageUpdateMechanismMessage"] = o.PackageUpdateMechanismMessage.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableSystemResource struct {

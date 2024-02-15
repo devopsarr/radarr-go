@@ -22,6 +22,7 @@ import (
 
 // MetadataConfigAPIService MetadataConfigAPI service
 type MetadataConfigAPIService service
+
 type ApiGetMetadataConfigRequest struct {
 	ctx context.Context
 	ApiService *MetadataConfigAPIService
@@ -146,6 +147,7 @@ func (a *MetadataConfigAPIService) GetMetadataConfigExecute(r ApiGetMetadataConf
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiGetMetadataConfigByIdRequest struct {
 	ctx context.Context
 	ApiService *MetadataConfigAPIService
@@ -187,7 +189,7 @@ func (a *MetadataConfigAPIService) GetMetadataConfigByIdExecute(r ApiGetMetadata
 	}
 
 	localVarPath := localBasePath + "/api/v3/config/metadata/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -274,6 +276,7 @@ func (a *MetadataConfigAPIService) GetMetadataConfigByIdExecute(r ApiGetMetadata
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiUpdateMetadataConfigRequest struct {
 	ctx context.Context
 	ApiService *MetadataConfigAPIService
@@ -321,7 +324,7 @@ func (a *MetadataConfigAPIService) UpdateMetadataConfigExecute(r ApiUpdateMetada
 	}
 
 	localVarPath := localBasePath + "/api/v3/config/metadata/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

@@ -14,22 +14,25 @@ import (
 	"encoding/json"
 )
 
+// checks if the CollectionResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CollectionResource{}
+
 // CollectionResource struct for CollectionResource
 type CollectionResource struct {
 	Id *int32 `json:"id,omitempty"`
 	Title NullableString `json:"title,omitempty"`
 	SortTitle NullableString `json:"sortTitle,omitempty"`
 	TmdbId *int32 `json:"tmdbId,omitempty"`
-	Images []*MediaCover `json:"images,omitempty"`
+	Images []MediaCover `json:"images,omitempty"`
 	Overview NullableString `json:"overview,omitempty"`
 	Monitored *bool `json:"monitored,omitempty"`
 	RootFolderPath NullableString `json:"rootFolderPath,omitempty"`
 	QualityProfileId *int32 `json:"qualityProfileId,omitempty"`
 	SearchOnAdd *bool `json:"searchOnAdd,omitempty"`
 	MinimumAvailability *MovieStatusType `json:"minimumAvailability,omitempty"`
-	Movies []*CollectionMovieResource `json:"movies,omitempty"`
+	Movies []CollectionMovieResource `json:"movies,omitempty"`
 	MissingMovies *int32 `json:"missingMovies,omitempty"`
-	Tags []*int32 `json:"tags,omitempty"`
+	Tags []int32 `json:"tags,omitempty"`
 }
 
 // NewCollectionResource instantiates a new CollectionResource object
@@ -51,7 +54,7 @@ func NewCollectionResourceWithDefaults() *CollectionResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *CollectionResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -61,15 +64,15 @@ func (o *CollectionResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CollectionResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *CollectionResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -83,7 +86,7 @@ func (o *CollectionResource) SetId(v int32) {
 
 // GetTitle returns the Title field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CollectionResource) GetTitle() string {
-	if o == nil || isNil(o.Title.Get()) {
+	if o == nil || IsNil(o.Title.Get()) {
 		var ret string
 		return ret
 	}
@@ -95,7 +98,7 @@ func (o *CollectionResource) GetTitle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CollectionResource) GetTitleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Title.Get(), o.Title.IsSet()
 }
@@ -125,7 +128,7 @@ func (o *CollectionResource) UnsetTitle() {
 
 // GetSortTitle returns the SortTitle field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CollectionResource) GetSortTitle() string {
-	if o == nil || isNil(o.SortTitle.Get()) {
+	if o == nil || IsNil(o.SortTitle.Get()) {
 		var ret string
 		return ret
 	}
@@ -137,7 +140,7 @@ func (o *CollectionResource) GetSortTitle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CollectionResource) GetSortTitleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.SortTitle.Get(), o.SortTitle.IsSet()
 }
@@ -167,7 +170,7 @@ func (o *CollectionResource) UnsetSortTitle() {
 
 // GetTmdbId returns the TmdbId field value if set, zero value otherwise.
 func (o *CollectionResource) GetTmdbId() int32 {
-	if o == nil || isNil(o.TmdbId) {
+	if o == nil || IsNil(o.TmdbId) {
 		var ret int32
 		return ret
 	}
@@ -177,15 +180,15 @@ func (o *CollectionResource) GetTmdbId() int32 {
 // GetTmdbIdOk returns a tuple with the TmdbId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CollectionResource) GetTmdbIdOk() (*int32, bool) {
-	if o == nil || isNil(o.TmdbId) {
-    return nil, false
+	if o == nil || IsNil(o.TmdbId) {
+		return nil, false
 	}
 	return o.TmdbId, true
 }
 
 // HasTmdbId returns a boolean if a field has been set.
 func (o *CollectionResource) HasTmdbId() bool {
-	if o != nil && !isNil(o.TmdbId) {
+	if o != nil && !IsNil(o.TmdbId) {
 		return true
 	}
 
@@ -198,9 +201,9 @@ func (o *CollectionResource) SetTmdbId(v int32) {
 }
 
 // GetImages returns the Images field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CollectionResource) GetImages() []*MediaCover {
+func (o *CollectionResource) GetImages() []MediaCover {
 	if o == nil {
-		var ret []*MediaCover
+		var ret []MediaCover
 		return ret
 	}
 	return o.Images
@@ -209,16 +212,16 @@ func (o *CollectionResource) GetImages() []*MediaCover {
 // GetImagesOk returns a tuple with the Images field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CollectionResource) GetImagesOk() ([]*MediaCover, bool) {
-	if o == nil || isNil(o.Images) {
-    return nil, false
+func (o *CollectionResource) GetImagesOk() ([]MediaCover, bool) {
+	if o == nil || IsNil(o.Images) {
+		return nil, false
 	}
 	return o.Images, true
 }
 
 // HasImages returns a boolean if a field has been set.
 func (o *CollectionResource) HasImages() bool {
-	if o != nil && isNil(o.Images) {
+	if o != nil && IsNil(o.Images) {
 		return true
 	}
 
@@ -226,13 +229,13 @@ func (o *CollectionResource) HasImages() bool {
 }
 
 // SetImages gets a reference to the given []MediaCover and assigns it to the Images field.
-func (o *CollectionResource) SetImages(v []*MediaCover) {
+func (o *CollectionResource) SetImages(v []MediaCover) {
 	o.Images = v
 }
 
 // GetOverview returns the Overview field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CollectionResource) GetOverview() string {
-	if o == nil || isNil(o.Overview.Get()) {
+	if o == nil || IsNil(o.Overview.Get()) {
 		var ret string
 		return ret
 	}
@@ -244,7 +247,7 @@ func (o *CollectionResource) GetOverview() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CollectionResource) GetOverviewOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Overview.Get(), o.Overview.IsSet()
 }
@@ -274,7 +277,7 @@ func (o *CollectionResource) UnsetOverview() {
 
 // GetMonitored returns the Monitored field value if set, zero value otherwise.
 func (o *CollectionResource) GetMonitored() bool {
-	if o == nil || isNil(o.Monitored) {
+	if o == nil || IsNil(o.Monitored) {
 		var ret bool
 		return ret
 	}
@@ -284,15 +287,15 @@ func (o *CollectionResource) GetMonitored() bool {
 // GetMonitoredOk returns a tuple with the Monitored field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CollectionResource) GetMonitoredOk() (*bool, bool) {
-	if o == nil || isNil(o.Monitored) {
-    return nil, false
+	if o == nil || IsNil(o.Monitored) {
+		return nil, false
 	}
 	return o.Monitored, true
 }
 
 // HasMonitored returns a boolean if a field has been set.
 func (o *CollectionResource) HasMonitored() bool {
-	if o != nil && !isNil(o.Monitored) {
+	if o != nil && !IsNil(o.Monitored) {
 		return true
 	}
 
@@ -306,7 +309,7 @@ func (o *CollectionResource) SetMonitored(v bool) {
 
 // GetRootFolderPath returns the RootFolderPath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CollectionResource) GetRootFolderPath() string {
-	if o == nil || isNil(o.RootFolderPath.Get()) {
+	if o == nil || IsNil(o.RootFolderPath.Get()) {
 		var ret string
 		return ret
 	}
@@ -318,7 +321,7 @@ func (o *CollectionResource) GetRootFolderPath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CollectionResource) GetRootFolderPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.RootFolderPath.Get(), o.RootFolderPath.IsSet()
 }
@@ -348,7 +351,7 @@ func (o *CollectionResource) UnsetRootFolderPath() {
 
 // GetQualityProfileId returns the QualityProfileId field value if set, zero value otherwise.
 func (o *CollectionResource) GetQualityProfileId() int32 {
-	if o == nil || isNil(o.QualityProfileId) {
+	if o == nil || IsNil(o.QualityProfileId) {
 		var ret int32
 		return ret
 	}
@@ -358,15 +361,15 @@ func (o *CollectionResource) GetQualityProfileId() int32 {
 // GetQualityProfileIdOk returns a tuple with the QualityProfileId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CollectionResource) GetQualityProfileIdOk() (*int32, bool) {
-	if o == nil || isNil(o.QualityProfileId) {
-    return nil, false
+	if o == nil || IsNil(o.QualityProfileId) {
+		return nil, false
 	}
 	return o.QualityProfileId, true
 }
 
 // HasQualityProfileId returns a boolean if a field has been set.
 func (o *CollectionResource) HasQualityProfileId() bool {
-	if o != nil && !isNil(o.QualityProfileId) {
+	if o != nil && !IsNil(o.QualityProfileId) {
 		return true
 	}
 
@@ -380,7 +383,7 @@ func (o *CollectionResource) SetQualityProfileId(v int32) {
 
 // GetSearchOnAdd returns the SearchOnAdd field value if set, zero value otherwise.
 func (o *CollectionResource) GetSearchOnAdd() bool {
-	if o == nil || isNil(o.SearchOnAdd) {
+	if o == nil || IsNil(o.SearchOnAdd) {
 		var ret bool
 		return ret
 	}
@@ -390,15 +393,15 @@ func (o *CollectionResource) GetSearchOnAdd() bool {
 // GetSearchOnAddOk returns a tuple with the SearchOnAdd field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CollectionResource) GetSearchOnAddOk() (*bool, bool) {
-	if o == nil || isNil(o.SearchOnAdd) {
-    return nil, false
+	if o == nil || IsNil(o.SearchOnAdd) {
+		return nil, false
 	}
 	return o.SearchOnAdd, true
 }
 
 // HasSearchOnAdd returns a boolean if a field has been set.
 func (o *CollectionResource) HasSearchOnAdd() bool {
-	if o != nil && !isNil(o.SearchOnAdd) {
+	if o != nil && !IsNil(o.SearchOnAdd) {
 		return true
 	}
 
@@ -412,7 +415,7 @@ func (o *CollectionResource) SetSearchOnAdd(v bool) {
 
 // GetMinimumAvailability returns the MinimumAvailability field value if set, zero value otherwise.
 func (o *CollectionResource) GetMinimumAvailability() MovieStatusType {
-	if o == nil || isNil(o.MinimumAvailability) {
+	if o == nil || IsNil(o.MinimumAvailability) {
 		var ret MovieStatusType
 		return ret
 	}
@@ -422,15 +425,15 @@ func (o *CollectionResource) GetMinimumAvailability() MovieStatusType {
 // GetMinimumAvailabilityOk returns a tuple with the MinimumAvailability field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CollectionResource) GetMinimumAvailabilityOk() (*MovieStatusType, bool) {
-	if o == nil || isNil(o.MinimumAvailability) {
-    return nil, false
+	if o == nil || IsNil(o.MinimumAvailability) {
+		return nil, false
 	}
 	return o.MinimumAvailability, true
 }
 
 // HasMinimumAvailability returns a boolean if a field has been set.
 func (o *CollectionResource) HasMinimumAvailability() bool {
-	if o != nil && !isNil(o.MinimumAvailability) {
+	if o != nil && !IsNil(o.MinimumAvailability) {
 		return true
 	}
 
@@ -443,9 +446,9 @@ func (o *CollectionResource) SetMinimumAvailability(v MovieStatusType) {
 }
 
 // GetMovies returns the Movies field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CollectionResource) GetMovies() []*CollectionMovieResource {
+func (o *CollectionResource) GetMovies() []CollectionMovieResource {
 	if o == nil {
-		var ret []*CollectionMovieResource
+		var ret []CollectionMovieResource
 		return ret
 	}
 	return o.Movies
@@ -454,16 +457,16 @@ func (o *CollectionResource) GetMovies() []*CollectionMovieResource {
 // GetMoviesOk returns a tuple with the Movies field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CollectionResource) GetMoviesOk() ([]*CollectionMovieResource, bool) {
-	if o == nil || isNil(o.Movies) {
-    return nil, false
+func (o *CollectionResource) GetMoviesOk() ([]CollectionMovieResource, bool) {
+	if o == nil || IsNil(o.Movies) {
+		return nil, false
 	}
 	return o.Movies, true
 }
 
 // HasMovies returns a boolean if a field has been set.
 func (o *CollectionResource) HasMovies() bool {
-	if o != nil && isNil(o.Movies) {
+	if o != nil && IsNil(o.Movies) {
 		return true
 	}
 
@@ -471,13 +474,13 @@ func (o *CollectionResource) HasMovies() bool {
 }
 
 // SetMovies gets a reference to the given []CollectionMovieResource and assigns it to the Movies field.
-func (o *CollectionResource) SetMovies(v []*CollectionMovieResource) {
+func (o *CollectionResource) SetMovies(v []CollectionMovieResource) {
 	o.Movies = v
 }
 
 // GetMissingMovies returns the MissingMovies field value if set, zero value otherwise.
 func (o *CollectionResource) GetMissingMovies() int32 {
-	if o == nil || isNil(o.MissingMovies) {
+	if o == nil || IsNil(o.MissingMovies) {
 		var ret int32
 		return ret
 	}
@@ -487,15 +490,15 @@ func (o *CollectionResource) GetMissingMovies() int32 {
 // GetMissingMoviesOk returns a tuple with the MissingMovies field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CollectionResource) GetMissingMoviesOk() (*int32, bool) {
-	if o == nil || isNil(o.MissingMovies) {
-    return nil, false
+	if o == nil || IsNil(o.MissingMovies) {
+		return nil, false
 	}
 	return o.MissingMovies, true
 }
 
 // HasMissingMovies returns a boolean if a field has been set.
 func (o *CollectionResource) HasMissingMovies() bool {
-	if o != nil && !isNil(o.MissingMovies) {
+	if o != nil && !IsNil(o.MissingMovies) {
 		return true
 	}
 
@@ -508,9 +511,9 @@ func (o *CollectionResource) SetMissingMovies(v int32) {
 }
 
 // GetTags returns the Tags field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CollectionResource) GetTags() []*int32 {
+func (o *CollectionResource) GetTags() []int32 {
 	if o == nil {
-		var ret []*int32
+		var ret []int32
 		return ret
 	}
 	return o.Tags
@@ -519,16 +522,16 @@ func (o *CollectionResource) GetTags() []*int32 {
 // GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CollectionResource) GetTagsOk() ([]*int32, bool) {
-	if o == nil || isNil(o.Tags) {
-    return nil, false
+func (o *CollectionResource) GetTagsOk() ([]int32, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
 	}
 	return o.Tags, true
 }
 
 // HasTags returns a boolean if a field has been set.
 func (o *CollectionResource) HasTags() bool {
-	if o != nil && isNil(o.Tags) {
+	if o != nil && IsNil(o.Tags) {
 		return true
 	}
 
@@ -536,13 +539,21 @@ func (o *CollectionResource) HasTags() bool {
 }
 
 // SetTags gets a reference to the given []int32 and assigns it to the Tags field.
-func (o *CollectionResource) SetTags(v []*int32) {
+func (o *CollectionResource) SetTags(v []int32) {
 	o.Tags = v
 }
 
 func (o CollectionResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o CollectionResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.Title.IsSet() {
@@ -551,7 +562,7 @@ func (o CollectionResource) MarshalJSON() ([]byte, error) {
 	if o.SortTitle.IsSet() {
 		toSerialize["sortTitle"] = o.SortTitle.Get()
 	}
-	if !isNil(o.TmdbId) {
+	if !IsNil(o.TmdbId) {
 		toSerialize["tmdbId"] = o.TmdbId
 	}
 	if o.Images != nil {
@@ -560,31 +571,31 @@ func (o CollectionResource) MarshalJSON() ([]byte, error) {
 	if o.Overview.IsSet() {
 		toSerialize["overview"] = o.Overview.Get()
 	}
-	if !isNil(o.Monitored) {
+	if !IsNil(o.Monitored) {
 		toSerialize["monitored"] = o.Monitored
 	}
 	if o.RootFolderPath.IsSet() {
 		toSerialize["rootFolderPath"] = o.RootFolderPath.Get()
 	}
-	if !isNil(o.QualityProfileId) {
+	if !IsNil(o.QualityProfileId) {
 		toSerialize["qualityProfileId"] = o.QualityProfileId
 	}
-	if !isNil(o.SearchOnAdd) {
+	if !IsNil(o.SearchOnAdd) {
 		toSerialize["searchOnAdd"] = o.SearchOnAdd
 	}
-	if !isNil(o.MinimumAvailability) {
+	if !IsNil(o.MinimumAvailability) {
 		toSerialize["minimumAvailability"] = o.MinimumAvailability
 	}
 	if o.Movies != nil {
 		toSerialize["movies"] = o.Movies
 	}
-	if !isNil(o.MissingMovies) {
+	if !IsNil(o.MissingMovies) {
 		toSerialize["missingMovies"] = o.MissingMovies
 	}
 	if o.Tags != nil {
 		toSerialize["tags"] = o.Tags
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableCollectionResource struct {

@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the MetadataConfigResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &MetadataConfigResource{}
+
 // MetadataConfigResource struct for MetadataConfigResource
 type MetadataConfigResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -39,7 +42,7 @@ func NewMetadataConfigResourceWithDefaults() *MetadataConfigResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *MetadataConfigResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -49,15 +52,15 @@ func (o *MetadataConfigResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MetadataConfigResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *MetadataConfigResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -71,7 +74,7 @@ func (o *MetadataConfigResource) SetId(v int32) {
 
 // GetCertificationCountry returns the CertificationCountry field value if set, zero value otherwise.
 func (o *MetadataConfigResource) GetCertificationCountry() TMDbCountryCode {
-	if o == nil || isNil(o.CertificationCountry) {
+	if o == nil || IsNil(o.CertificationCountry) {
 		var ret TMDbCountryCode
 		return ret
 	}
@@ -81,15 +84,15 @@ func (o *MetadataConfigResource) GetCertificationCountry() TMDbCountryCode {
 // GetCertificationCountryOk returns a tuple with the CertificationCountry field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MetadataConfigResource) GetCertificationCountryOk() (*TMDbCountryCode, bool) {
-	if o == nil || isNil(o.CertificationCountry) {
-    return nil, false
+	if o == nil || IsNil(o.CertificationCountry) {
+		return nil, false
 	}
 	return o.CertificationCountry, true
 }
 
 // HasCertificationCountry returns a boolean if a field has been set.
 func (o *MetadataConfigResource) HasCertificationCountry() bool {
-	if o != nil && !isNil(o.CertificationCountry) {
+	if o != nil && !IsNil(o.CertificationCountry) {
 		return true
 	}
 
@@ -102,14 +105,22 @@ func (o *MetadataConfigResource) SetCertificationCountry(v TMDbCountryCode) {
 }
 
 func (o MetadataConfigResource) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
-		toSerialize["id"] = o.Id
-	}
-	if !isNil(o.CertificationCountry) {
-		toSerialize["certificationCountry"] = o.CertificationCountry
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o MetadataConfigResource) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Id) {
+		toSerialize["id"] = o.Id
+	}
+	if !IsNil(o.CertificationCountry) {
+		toSerialize["certificationCountry"] = o.CertificationCountry
+	}
+	return toSerialize, nil
 }
 
 type NullableMetadataConfigResource struct {

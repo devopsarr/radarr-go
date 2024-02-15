@@ -14,10 +14,13 @@ import (
 	"encoding/json"
 )
 
+// checks if the ApiInfoResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ApiInfoResource{}
+
 // ApiInfoResource struct for ApiInfoResource
 type ApiInfoResource struct {
 	Current NullableString `json:"current,omitempty"`
-	Deprecated []*string `json:"deprecated,omitempty"`
+	Deprecated []string `json:"deprecated,omitempty"`
 }
 
 // NewApiInfoResource instantiates a new ApiInfoResource object
@@ -39,7 +42,7 @@ func NewApiInfoResourceWithDefaults() *ApiInfoResource {
 
 // GetCurrent returns the Current field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *ApiInfoResource) GetCurrent() string {
-	if o == nil || isNil(o.Current.Get()) {
+	if o == nil || IsNil(o.Current.Get()) {
 		var ret string
 		return ret
 	}
@@ -51,7 +54,7 @@ func (o *ApiInfoResource) GetCurrent() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ApiInfoResource) GetCurrentOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Current.Get(), o.Current.IsSet()
 }
@@ -80,9 +83,9 @@ func (o *ApiInfoResource) UnsetCurrent() {
 }
 
 // GetDeprecated returns the Deprecated field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *ApiInfoResource) GetDeprecated() []*string {
+func (o *ApiInfoResource) GetDeprecated() []string {
 	if o == nil {
-		var ret []*string
+		var ret []string
 		return ret
 	}
 	return o.Deprecated
@@ -91,16 +94,16 @@ func (o *ApiInfoResource) GetDeprecated() []*string {
 // GetDeprecatedOk returns a tuple with the Deprecated field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *ApiInfoResource) GetDeprecatedOk() ([]*string, bool) {
-	if o == nil || isNil(o.Deprecated) {
-    return nil, false
+func (o *ApiInfoResource) GetDeprecatedOk() ([]string, bool) {
+	if o == nil || IsNil(o.Deprecated) {
+		return nil, false
 	}
 	return o.Deprecated, true
 }
 
 // HasDeprecated returns a boolean if a field has been set.
 func (o *ApiInfoResource) HasDeprecated() bool {
-	if o != nil && isNil(o.Deprecated) {
+	if o != nil && IsNil(o.Deprecated) {
 		return true
 	}
 
@@ -108,11 +111,19 @@ func (o *ApiInfoResource) HasDeprecated() bool {
 }
 
 // SetDeprecated gets a reference to the given []string and assigns it to the Deprecated field.
-func (o *ApiInfoResource) SetDeprecated(v []*string) {
+func (o *ApiInfoResource) SetDeprecated(v []string) {
 	o.Deprecated = v
 }
 
 func (o ApiInfoResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ApiInfoResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Current.IsSet() {
 		toSerialize["current"] = o.Current.Get()
@@ -120,7 +131,7 @@ func (o ApiInfoResource) MarshalJSON() ([]byte, error) {
 	if o.Deprecated != nil {
 		toSerialize["deprecated"] = o.Deprecated
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableApiInfoResource struct {

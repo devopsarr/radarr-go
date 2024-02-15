@@ -21,6 +21,7 @@ import (
 
 // ImportListMoviesAPIService ImportListMoviesAPI service
 type ImportListMoviesAPIService service
+
 type ApiCreateImportlistMovieRequest struct {
 	ctx context.Context
 	ApiService *ImportListMoviesAPIService
@@ -142,6 +143,7 @@ func (a *ImportListMoviesAPIService) CreateImportlistMovieExecute(r ApiCreateImp
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetImportlistMovieRequest struct {
 	ctx context.Context
 	ApiService *ImportListMoviesAPIService
@@ -190,7 +192,10 @@ func (a *ImportListMoviesAPIService) GetImportlistMovieExecute(r ApiGetImportlis
 	localVarFormParams := url.Values{}
 
 	if r.includeRecommendations != nil {
-		localVarQueryParams.Add("includeRecommendations", parameterToString(*r.includeRecommendations, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeRecommendations", r.includeRecommendations, "")
+	} else {
+		var defaultValue bool = false
+		r.includeRecommendations = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

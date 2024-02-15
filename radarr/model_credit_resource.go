@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the CreditResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CreditResource{}
+
 // CreditResource struct for CreditResource
 type CreditResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -21,7 +24,7 @@ type CreditResource struct {
 	CreditTmdbId NullableString `json:"creditTmdbId,omitempty"`
 	PersonTmdbId *int32 `json:"personTmdbId,omitempty"`
 	MovieMetadataId *int32 `json:"movieMetadataId,omitempty"`
-	Images []*MediaCover `json:"images,omitempty"`
+	Images []MediaCover `json:"images,omitempty"`
 	Department NullableString `json:"department,omitempty"`
 	Job NullableString `json:"job,omitempty"`
 	Character NullableString `json:"character,omitempty"`
@@ -48,7 +51,7 @@ func NewCreditResourceWithDefaults() *CreditResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *CreditResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -58,15 +61,15 @@ func (o *CreditResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreditResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *CreditResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -80,7 +83,7 @@ func (o *CreditResource) SetId(v int32) {
 
 // GetPersonName returns the PersonName field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreditResource) GetPersonName() string {
-	if o == nil || isNil(o.PersonName.Get()) {
+	if o == nil || IsNil(o.PersonName.Get()) {
 		var ret string
 		return ret
 	}
@@ -92,7 +95,7 @@ func (o *CreditResource) GetPersonName() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreditResource) GetPersonNameOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.PersonName.Get(), o.PersonName.IsSet()
 }
@@ -122,7 +125,7 @@ func (o *CreditResource) UnsetPersonName() {
 
 // GetCreditTmdbId returns the CreditTmdbId field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreditResource) GetCreditTmdbId() string {
-	if o == nil || isNil(o.CreditTmdbId.Get()) {
+	if o == nil || IsNil(o.CreditTmdbId.Get()) {
 		var ret string
 		return ret
 	}
@@ -134,7 +137,7 @@ func (o *CreditResource) GetCreditTmdbId() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreditResource) GetCreditTmdbIdOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.CreditTmdbId.Get(), o.CreditTmdbId.IsSet()
 }
@@ -164,7 +167,7 @@ func (o *CreditResource) UnsetCreditTmdbId() {
 
 // GetPersonTmdbId returns the PersonTmdbId field value if set, zero value otherwise.
 func (o *CreditResource) GetPersonTmdbId() int32 {
-	if o == nil || isNil(o.PersonTmdbId) {
+	if o == nil || IsNil(o.PersonTmdbId) {
 		var ret int32
 		return ret
 	}
@@ -174,15 +177,15 @@ func (o *CreditResource) GetPersonTmdbId() int32 {
 // GetPersonTmdbIdOk returns a tuple with the PersonTmdbId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreditResource) GetPersonTmdbIdOk() (*int32, bool) {
-	if o == nil || isNil(o.PersonTmdbId) {
-    return nil, false
+	if o == nil || IsNil(o.PersonTmdbId) {
+		return nil, false
 	}
 	return o.PersonTmdbId, true
 }
 
 // HasPersonTmdbId returns a boolean if a field has been set.
 func (o *CreditResource) HasPersonTmdbId() bool {
-	if o != nil && !isNil(o.PersonTmdbId) {
+	if o != nil && !IsNil(o.PersonTmdbId) {
 		return true
 	}
 
@@ -196,7 +199,7 @@ func (o *CreditResource) SetPersonTmdbId(v int32) {
 
 // GetMovieMetadataId returns the MovieMetadataId field value if set, zero value otherwise.
 func (o *CreditResource) GetMovieMetadataId() int32 {
-	if o == nil || isNil(o.MovieMetadataId) {
+	if o == nil || IsNil(o.MovieMetadataId) {
 		var ret int32
 		return ret
 	}
@@ -206,15 +209,15 @@ func (o *CreditResource) GetMovieMetadataId() int32 {
 // GetMovieMetadataIdOk returns a tuple with the MovieMetadataId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreditResource) GetMovieMetadataIdOk() (*int32, bool) {
-	if o == nil || isNil(o.MovieMetadataId) {
-    return nil, false
+	if o == nil || IsNil(o.MovieMetadataId) {
+		return nil, false
 	}
 	return o.MovieMetadataId, true
 }
 
 // HasMovieMetadataId returns a boolean if a field has been set.
 func (o *CreditResource) HasMovieMetadataId() bool {
-	if o != nil && !isNil(o.MovieMetadataId) {
+	if o != nil && !IsNil(o.MovieMetadataId) {
 		return true
 	}
 
@@ -227,9 +230,9 @@ func (o *CreditResource) SetMovieMetadataId(v int32) {
 }
 
 // GetImages returns the Images field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *CreditResource) GetImages() []*MediaCover {
+func (o *CreditResource) GetImages() []MediaCover {
 	if o == nil {
-		var ret []*MediaCover
+		var ret []MediaCover
 		return ret
 	}
 	return o.Images
@@ -238,16 +241,16 @@ func (o *CreditResource) GetImages() []*MediaCover {
 // GetImagesOk returns a tuple with the Images field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *CreditResource) GetImagesOk() ([]*MediaCover, bool) {
-	if o == nil || isNil(o.Images) {
-    return nil, false
+func (o *CreditResource) GetImagesOk() ([]MediaCover, bool) {
+	if o == nil || IsNil(o.Images) {
+		return nil, false
 	}
 	return o.Images, true
 }
 
 // HasImages returns a boolean if a field has been set.
 func (o *CreditResource) HasImages() bool {
-	if o != nil && isNil(o.Images) {
+	if o != nil && IsNil(o.Images) {
 		return true
 	}
 
@@ -255,13 +258,13 @@ func (o *CreditResource) HasImages() bool {
 }
 
 // SetImages gets a reference to the given []MediaCover and assigns it to the Images field.
-func (o *CreditResource) SetImages(v []*MediaCover) {
+func (o *CreditResource) SetImages(v []MediaCover) {
 	o.Images = v
 }
 
 // GetDepartment returns the Department field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreditResource) GetDepartment() string {
-	if o == nil || isNil(o.Department.Get()) {
+	if o == nil || IsNil(o.Department.Get()) {
 		var ret string
 		return ret
 	}
@@ -273,7 +276,7 @@ func (o *CreditResource) GetDepartment() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreditResource) GetDepartmentOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Department.Get(), o.Department.IsSet()
 }
@@ -303,7 +306,7 @@ func (o *CreditResource) UnsetDepartment() {
 
 // GetJob returns the Job field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreditResource) GetJob() string {
-	if o == nil || isNil(o.Job.Get()) {
+	if o == nil || IsNil(o.Job.Get()) {
 		var ret string
 		return ret
 	}
@@ -315,7 +318,7 @@ func (o *CreditResource) GetJob() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreditResource) GetJobOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Job.Get(), o.Job.IsSet()
 }
@@ -345,7 +348,7 @@ func (o *CreditResource) UnsetJob() {
 
 // GetCharacter returns the Character field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *CreditResource) GetCharacter() string {
-	if o == nil || isNil(o.Character.Get()) {
+	if o == nil || IsNil(o.Character.Get()) {
 		var ret string
 		return ret
 	}
@@ -357,7 +360,7 @@ func (o *CreditResource) GetCharacter() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CreditResource) GetCharacterOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Character.Get(), o.Character.IsSet()
 }
@@ -387,7 +390,7 @@ func (o *CreditResource) UnsetCharacter() {
 
 // GetOrder returns the Order field value if set, zero value otherwise.
 func (o *CreditResource) GetOrder() int32 {
-	if o == nil || isNil(o.Order) {
+	if o == nil || IsNil(o.Order) {
 		var ret int32
 		return ret
 	}
@@ -397,15 +400,15 @@ func (o *CreditResource) GetOrder() int32 {
 // GetOrderOk returns a tuple with the Order field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreditResource) GetOrderOk() (*int32, bool) {
-	if o == nil || isNil(o.Order) {
-    return nil, false
+	if o == nil || IsNil(o.Order) {
+		return nil, false
 	}
 	return o.Order, true
 }
 
 // HasOrder returns a boolean if a field has been set.
 func (o *CreditResource) HasOrder() bool {
-	if o != nil && !isNil(o.Order) {
+	if o != nil && !IsNil(o.Order) {
 		return true
 	}
 
@@ -419,7 +422,7 @@ func (o *CreditResource) SetOrder(v int32) {
 
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *CreditResource) GetType() CreditType {
-	if o == nil || isNil(o.Type) {
+	if o == nil || IsNil(o.Type) {
 		var ret CreditType
 		return ret
 	}
@@ -429,15 +432,15 @@ func (o *CreditResource) GetType() CreditType {
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreditResource) GetTypeOk() (*CreditType, bool) {
-	if o == nil || isNil(o.Type) {
-    return nil, false
+	if o == nil || IsNil(o.Type) {
+		return nil, false
 	}
 	return o.Type, true
 }
 
 // HasType returns a boolean if a field has been set.
 func (o *CreditResource) HasType() bool {
-	if o != nil && !isNil(o.Type) {
+	if o != nil && !IsNil(o.Type) {
 		return true
 	}
 
@@ -450,8 +453,16 @@ func (o *CreditResource) SetType(v CreditType) {
 }
 
 func (o CreditResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o CreditResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
 	if o.PersonName.IsSet() {
@@ -460,10 +471,10 @@ func (o CreditResource) MarshalJSON() ([]byte, error) {
 	if o.CreditTmdbId.IsSet() {
 		toSerialize["creditTmdbId"] = o.CreditTmdbId.Get()
 	}
-	if !isNil(o.PersonTmdbId) {
+	if !IsNil(o.PersonTmdbId) {
 		toSerialize["personTmdbId"] = o.PersonTmdbId
 	}
-	if !isNil(o.MovieMetadataId) {
+	if !IsNil(o.MovieMetadataId) {
 		toSerialize["movieMetadataId"] = o.MovieMetadataId
 	}
 	if o.Images != nil {
@@ -478,13 +489,13 @@ func (o CreditResource) MarshalJSON() ([]byte, error) {
 	if o.Character.IsSet() {
 		toSerialize["character"] = o.Character.Get()
 	}
-	if !isNil(o.Order) {
+	if !IsNil(o.Order) {
 		toSerialize["order"] = o.Order
 	}
-	if !isNil(o.Type) {
+	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableCreditResource struct {

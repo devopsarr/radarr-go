@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the IndexerConfigResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &IndexerConfigResource{}
+
 // IndexerConfigResource struct for IndexerConfigResource
 type IndexerConfigResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -46,7 +49,7 @@ func NewIndexerConfigResourceWithDefaults() *IndexerConfigResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *IndexerConfigResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -56,15 +59,15 @@ func (o *IndexerConfigResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerConfigResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *IndexerConfigResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -78,7 +81,7 @@ func (o *IndexerConfigResource) SetId(v int32) {
 
 // GetMinimumAge returns the MinimumAge field value if set, zero value otherwise.
 func (o *IndexerConfigResource) GetMinimumAge() int32 {
-	if o == nil || isNil(o.MinimumAge) {
+	if o == nil || IsNil(o.MinimumAge) {
 		var ret int32
 		return ret
 	}
@@ -88,15 +91,15 @@ func (o *IndexerConfigResource) GetMinimumAge() int32 {
 // GetMinimumAgeOk returns a tuple with the MinimumAge field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerConfigResource) GetMinimumAgeOk() (*int32, bool) {
-	if o == nil || isNil(o.MinimumAge) {
-    return nil, false
+	if o == nil || IsNil(o.MinimumAge) {
+		return nil, false
 	}
 	return o.MinimumAge, true
 }
 
 // HasMinimumAge returns a boolean if a field has been set.
 func (o *IndexerConfigResource) HasMinimumAge() bool {
-	if o != nil && !isNil(o.MinimumAge) {
+	if o != nil && !IsNil(o.MinimumAge) {
 		return true
 	}
 
@@ -110,7 +113,7 @@ func (o *IndexerConfigResource) SetMinimumAge(v int32) {
 
 // GetMaximumSize returns the MaximumSize field value if set, zero value otherwise.
 func (o *IndexerConfigResource) GetMaximumSize() int32 {
-	if o == nil || isNil(o.MaximumSize) {
+	if o == nil || IsNil(o.MaximumSize) {
 		var ret int32
 		return ret
 	}
@@ -120,15 +123,15 @@ func (o *IndexerConfigResource) GetMaximumSize() int32 {
 // GetMaximumSizeOk returns a tuple with the MaximumSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerConfigResource) GetMaximumSizeOk() (*int32, bool) {
-	if o == nil || isNil(o.MaximumSize) {
-    return nil, false
+	if o == nil || IsNil(o.MaximumSize) {
+		return nil, false
 	}
 	return o.MaximumSize, true
 }
 
 // HasMaximumSize returns a boolean if a field has been set.
 func (o *IndexerConfigResource) HasMaximumSize() bool {
-	if o != nil && !isNil(o.MaximumSize) {
+	if o != nil && !IsNil(o.MaximumSize) {
 		return true
 	}
 
@@ -142,7 +145,7 @@ func (o *IndexerConfigResource) SetMaximumSize(v int32) {
 
 // GetRetention returns the Retention field value if set, zero value otherwise.
 func (o *IndexerConfigResource) GetRetention() int32 {
-	if o == nil || isNil(o.Retention) {
+	if o == nil || IsNil(o.Retention) {
 		var ret int32
 		return ret
 	}
@@ -152,15 +155,15 @@ func (o *IndexerConfigResource) GetRetention() int32 {
 // GetRetentionOk returns a tuple with the Retention field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerConfigResource) GetRetentionOk() (*int32, bool) {
-	if o == nil || isNil(o.Retention) {
-    return nil, false
+	if o == nil || IsNil(o.Retention) {
+		return nil, false
 	}
 	return o.Retention, true
 }
 
 // HasRetention returns a boolean if a field has been set.
 func (o *IndexerConfigResource) HasRetention() bool {
-	if o != nil && !isNil(o.Retention) {
+	if o != nil && !IsNil(o.Retention) {
 		return true
 	}
 
@@ -174,7 +177,7 @@ func (o *IndexerConfigResource) SetRetention(v int32) {
 
 // GetRssSyncInterval returns the RssSyncInterval field value if set, zero value otherwise.
 func (o *IndexerConfigResource) GetRssSyncInterval() int32 {
-	if o == nil || isNil(o.RssSyncInterval) {
+	if o == nil || IsNil(o.RssSyncInterval) {
 		var ret int32
 		return ret
 	}
@@ -184,15 +187,15 @@ func (o *IndexerConfigResource) GetRssSyncInterval() int32 {
 // GetRssSyncIntervalOk returns a tuple with the RssSyncInterval field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerConfigResource) GetRssSyncIntervalOk() (*int32, bool) {
-	if o == nil || isNil(o.RssSyncInterval) {
-    return nil, false
+	if o == nil || IsNil(o.RssSyncInterval) {
+		return nil, false
 	}
 	return o.RssSyncInterval, true
 }
 
 // HasRssSyncInterval returns a boolean if a field has been set.
 func (o *IndexerConfigResource) HasRssSyncInterval() bool {
-	if o != nil && !isNil(o.RssSyncInterval) {
+	if o != nil && !IsNil(o.RssSyncInterval) {
 		return true
 	}
 
@@ -206,7 +209,7 @@ func (o *IndexerConfigResource) SetRssSyncInterval(v int32) {
 
 // GetPreferIndexerFlags returns the PreferIndexerFlags field value if set, zero value otherwise.
 func (o *IndexerConfigResource) GetPreferIndexerFlags() bool {
-	if o == nil || isNil(o.PreferIndexerFlags) {
+	if o == nil || IsNil(o.PreferIndexerFlags) {
 		var ret bool
 		return ret
 	}
@@ -216,15 +219,15 @@ func (o *IndexerConfigResource) GetPreferIndexerFlags() bool {
 // GetPreferIndexerFlagsOk returns a tuple with the PreferIndexerFlags field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerConfigResource) GetPreferIndexerFlagsOk() (*bool, bool) {
-	if o == nil || isNil(o.PreferIndexerFlags) {
-    return nil, false
+	if o == nil || IsNil(o.PreferIndexerFlags) {
+		return nil, false
 	}
 	return o.PreferIndexerFlags, true
 }
 
 // HasPreferIndexerFlags returns a boolean if a field has been set.
 func (o *IndexerConfigResource) HasPreferIndexerFlags() bool {
-	if o != nil && !isNil(o.PreferIndexerFlags) {
+	if o != nil && !IsNil(o.PreferIndexerFlags) {
 		return true
 	}
 
@@ -238,7 +241,7 @@ func (o *IndexerConfigResource) SetPreferIndexerFlags(v bool) {
 
 // GetAvailabilityDelay returns the AvailabilityDelay field value if set, zero value otherwise.
 func (o *IndexerConfigResource) GetAvailabilityDelay() int32 {
-	if o == nil || isNil(o.AvailabilityDelay) {
+	if o == nil || IsNil(o.AvailabilityDelay) {
 		var ret int32
 		return ret
 	}
@@ -248,15 +251,15 @@ func (o *IndexerConfigResource) GetAvailabilityDelay() int32 {
 // GetAvailabilityDelayOk returns a tuple with the AvailabilityDelay field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerConfigResource) GetAvailabilityDelayOk() (*int32, bool) {
-	if o == nil || isNil(o.AvailabilityDelay) {
-    return nil, false
+	if o == nil || IsNil(o.AvailabilityDelay) {
+		return nil, false
 	}
 	return o.AvailabilityDelay, true
 }
 
 // HasAvailabilityDelay returns a boolean if a field has been set.
 func (o *IndexerConfigResource) HasAvailabilityDelay() bool {
-	if o != nil && !isNil(o.AvailabilityDelay) {
+	if o != nil && !IsNil(o.AvailabilityDelay) {
 		return true
 	}
 
@@ -270,7 +273,7 @@ func (o *IndexerConfigResource) SetAvailabilityDelay(v int32) {
 
 // GetAllowHardcodedSubs returns the AllowHardcodedSubs field value if set, zero value otherwise.
 func (o *IndexerConfigResource) GetAllowHardcodedSubs() bool {
-	if o == nil || isNil(o.AllowHardcodedSubs) {
+	if o == nil || IsNil(o.AllowHardcodedSubs) {
 		var ret bool
 		return ret
 	}
@@ -280,15 +283,15 @@ func (o *IndexerConfigResource) GetAllowHardcodedSubs() bool {
 // GetAllowHardcodedSubsOk returns a tuple with the AllowHardcodedSubs field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *IndexerConfigResource) GetAllowHardcodedSubsOk() (*bool, bool) {
-	if o == nil || isNil(o.AllowHardcodedSubs) {
-    return nil, false
+	if o == nil || IsNil(o.AllowHardcodedSubs) {
+		return nil, false
 	}
 	return o.AllowHardcodedSubs, true
 }
 
 // HasAllowHardcodedSubs returns a boolean if a field has been set.
 func (o *IndexerConfigResource) HasAllowHardcodedSubs() bool {
-	if o != nil && !isNil(o.AllowHardcodedSubs) {
+	if o != nil && !IsNil(o.AllowHardcodedSubs) {
 		return true
 	}
 
@@ -302,7 +305,7 @@ func (o *IndexerConfigResource) SetAllowHardcodedSubs(v bool) {
 
 // GetWhitelistedHardcodedSubs returns the WhitelistedHardcodedSubs field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *IndexerConfigResource) GetWhitelistedHardcodedSubs() string {
-	if o == nil || isNil(o.WhitelistedHardcodedSubs.Get()) {
+	if o == nil || IsNil(o.WhitelistedHardcodedSubs.Get()) {
 		var ret string
 		return ret
 	}
@@ -314,7 +317,7 @@ func (o *IndexerConfigResource) GetWhitelistedHardcodedSubs() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *IndexerConfigResource) GetWhitelistedHardcodedSubsOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.WhitelistedHardcodedSubs.Get(), o.WhitelistedHardcodedSubs.IsSet()
 }
@@ -343,35 +346,43 @@ func (o *IndexerConfigResource) UnsetWhitelistedHardcodedSubs() {
 }
 
 func (o IndexerConfigResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o IndexerConfigResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !isNil(o.MinimumAge) {
+	if !IsNil(o.MinimumAge) {
 		toSerialize["minimumAge"] = o.MinimumAge
 	}
-	if !isNil(o.MaximumSize) {
+	if !IsNil(o.MaximumSize) {
 		toSerialize["maximumSize"] = o.MaximumSize
 	}
-	if !isNil(o.Retention) {
+	if !IsNil(o.Retention) {
 		toSerialize["retention"] = o.Retention
 	}
-	if !isNil(o.RssSyncInterval) {
+	if !IsNil(o.RssSyncInterval) {
 		toSerialize["rssSyncInterval"] = o.RssSyncInterval
 	}
-	if !isNil(o.PreferIndexerFlags) {
+	if !IsNil(o.PreferIndexerFlags) {
 		toSerialize["preferIndexerFlags"] = o.PreferIndexerFlags
 	}
-	if !isNil(o.AvailabilityDelay) {
+	if !IsNil(o.AvailabilityDelay) {
 		toSerialize["availabilityDelay"] = o.AvailabilityDelay
 	}
-	if !isNil(o.AllowHardcodedSubs) {
+	if !IsNil(o.AllowHardcodedSubs) {
 		toSerialize["allowHardcodedSubs"] = o.AllowHardcodedSubs
 	}
 	if o.WhitelistedHardcodedSubs.IsSet() {
 		toSerialize["whitelistedHardcodedSubs"] = o.WhitelistedHardcodedSubs.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableIndexerConfigResource struct {

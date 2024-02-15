@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the MediaManagementConfigResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &MediaManagementConfigResource{}
+
 // MediaManagementConfigResource struct for MediaManagementConfigResource
 type MediaManagementConfigResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -59,7 +62,7 @@ func NewMediaManagementConfigResourceWithDefaults() *MediaManagementConfigResour
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *MediaManagementConfigResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -69,15 +72,15 @@ func (o *MediaManagementConfigResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaManagementConfigResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *MediaManagementConfigResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -91,7 +94,7 @@ func (o *MediaManagementConfigResource) SetId(v int32) {
 
 // GetAutoUnmonitorPreviouslyDownloadedMovies returns the AutoUnmonitorPreviouslyDownloadedMovies field value if set, zero value otherwise.
 func (o *MediaManagementConfigResource) GetAutoUnmonitorPreviouslyDownloadedMovies() bool {
-	if o == nil || isNil(o.AutoUnmonitorPreviouslyDownloadedMovies) {
+	if o == nil || IsNil(o.AutoUnmonitorPreviouslyDownloadedMovies) {
 		var ret bool
 		return ret
 	}
@@ -101,15 +104,15 @@ func (o *MediaManagementConfigResource) GetAutoUnmonitorPreviouslyDownloadedMovi
 // GetAutoUnmonitorPreviouslyDownloadedMoviesOk returns a tuple with the AutoUnmonitorPreviouslyDownloadedMovies field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaManagementConfigResource) GetAutoUnmonitorPreviouslyDownloadedMoviesOk() (*bool, bool) {
-	if o == nil || isNil(o.AutoUnmonitorPreviouslyDownloadedMovies) {
-    return nil, false
+	if o == nil || IsNil(o.AutoUnmonitorPreviouslyDownloadedMovies) {
+		return nil, false
 	}
 	return o.AutoUnmonitorPreviouslyDownloadedMovies, true
 }
 
 // HasAutoUnmonitorPreviouslyDownloadedMovies returns a boolean if a field has been set.
 func (o *MediaManagementConfigResource) HasAutoUnmonitorPreviouslyDownloadedMovies() bool {
-	if o != nil && !isNil(o.AutoUnmonitorPreviouslyDownloadedMovies) {
+	if o != nil && !IsNil(o.AutoUnmonitorPreviouslyDownloadedMovies) {
 		return true
 	}
 
@@ -123,7 +126,7 @@ func (o *MediaManagementConfigResource) SetAutoUnmonitorPreviouslyDownloadedMovi
 
 // GetRecycleBin returns the RecycleBin field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MediaManagementConfigResource) GetRecycleBin() string {
-	if o == nil || isNil(o.RecycleBin.Get()) {
+	if o == nil || IsNil(o.RecycleBin.Get()) {
 		var ret string
 		return ret
 	}
@@ -135,7 +138,7 @@ func (o *MediaManagementConfigResource) GetRecycleBin() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MediaManagementConfigResource) GetRecycleBinOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.RecycleBin.Get(), o.RecycleBin.IsSet()
 }
@@ -165,7 +168,7 @@ func (o *MediaManagementConfigResource) UnsetRecycleBin() {
 
 // GetRecycleBinCleanupDays returns the RecycleBinCleanupDays field value if set, zero value otherwise.
 func (o *MediaManagementConfigResource) GetRecycleBinCleanupDays() int32 {
-	if o == nil || isNil(o.RecycleBinCleanupDays) {
+	if o == nil || IsNil(o.RecycleBinCleanupDays) {
 		var ret int32
 		return ret
 	}
@@ -175,15 +178,15 @@ func (o *MediaManagementConfigResource) GetRecycleBinCleanupDays() int32 {
 // GetRecycleBinCleanupDaysOk returns a tuple with the RecycleBinCleanupDays field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaManagementConfigResource) GetRecycleBinCleanupDaysOk() (*int32, bool) {
-	if o == nil || isNil(o.RecycleBinCleanupDays) {
-    return nil, false
+	if o == nil || IsNil(o.RecycleBinCleanupDays) {
+		return nil, false
 	}
 	return o.RecycleBinCleanupDays, true
 }
 
 // HasRecycleBinCleanupDays returns a boolean if a field has been set.
 func (o *MediaManagementConfigResource) HasRecycleBinCleanupDays() bool {
-	if o != nil && !isNil(o.RecycleBinCleanupDays) {
+	if o != nil && !IsNil(o.RecycleBinCleanupDays) {
 		return true
 	}
 
@@ -197,7 +200,7 @@ func (o *MediaManagementConfigResource) SetRecycleBinCleanupDays(v int32) {
 
 // GetDownloadPropersAndRepacks returns the DownloadPropersAndRepacks field value if set, zero value otherwise.
 func (o *MediaManagementConfigResource) GetDownloadPropersAndRepacks() ProperDownloadTypes {
-	if o == nil || isNil(o.DownloadPropersAndRepacks) {
+	if o == nil || IsNil(o.DownloadPropersAndRepacks) {
 		var ret ProperDownloadTypes
 		return ret
 	}
@@ -207,15 +210,15 @@ func (o *MediaManagementConfigResource) GetDownloadPropersAndRepacks() ProperDow
 // GetDownloadPropersAndRepacksOk returns a tuple with the DownloadPropersAndRepacks field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaManagementConfigResource) GetDownloadPropersAndRepacksOk() (*ProperDownloadTypes, bool) {
-	if o == nil || isNil(o.DownloadPropersAndRepacks) {
-    return nil, false
+	if o == nil || IsNil(o.DownloadPropersAndRepacks) {
+		return nil, false
 	}
 	return o.DownloadPropersAndRepacks, true
 }
 
 // HasDownloadPropersAndRepacks returns a boolean if a field has been set.
 func (o *MediaManagementConfigResource) HasDownloadPropersAndRepacks() bool {
-	if o != nil && !isNil(o.DownloadPropersAndRepacks) {
+	if o != nil && !IsNil(o.DownloadPropersAndRepacks) {
 		return true
 	}
 
@@ -229,7 +232,7 @@ func (o *MediaManagementConfigResource) SetDownloadPropersAndRepacks(v ProperDow
 
 // GetCreateEmptyMovieFolders returns the CreateEmptyMovieFolders field value if set, zero value otherwise.
 func (o *MediaManagementConfigResource) GetCreateEmptyMovieFolders() bool {
-	if o == nil || isNil(o.CreateEmptyMovieFolders) {
+	if o == nil || IsNil(o.CreateEmptyMovieFolders) {
 		var ret bool
 		return ret
 	}
@@ -239,15 +242,15 @@ func (o *MediaManagementConfigResource) GetCreateEmptyMovieFolders() bool {
 // GetCreateEmptyMovieFoldersOk returns a tuple with the CreateEmptyMovieFolders field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaManagementConfigResource) GetCreateEmptyMovieFoldersOk() (*bool, bool) {
-	if o == nil || isNil(o.CreateEmptyMovieFolders) {
-    return nil, false
+	if o == nil || IsNil(o.CreateEmptyMovieFolders) {
+		return nil, false
 	}
 	return o.CreateEmptyMovieFolders, true
 }
 
 // HasCreateEmptyMovieFolders returns a boolean if a field has been set.
 func (o *MediaManagementConfigResource) HasCreateEmptyMovieFolders() bool {
-	if o != nil && !isNil(o.CreateEmptyMovieFolders) {
+	if o != nil && !IsNil(o.CreateEmptyMovieFolders) {
 		return true
 	}
 
@@ -261,7 +264,7 @@ func (o *MediaManagementConfigResource) SetCreateEmptyMovieFolders(v bool) {
 
 // GetDeleteEmptyFolders returns the DeleteEmptyFolders field value if set, zero value otherwise.
 func (o *MediaManagementConfigResource) GetDeleteEmptyFolders() bool {
-	if o == nil || isNil(o.DeleteEmptyFolders) {
+	if o == nil || IsNil(o.DeleteEmptyFolders) {
 		var ret bool
 		return ret
 	}
@@ -271,15 +274,15 @@ func (o *MediaManagementConfigResource) GetDeleteEmptyFolders() bool {
 // GetDeleteEmptyFoldersOk returns a tuple with the DeleteEmptyFolders field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaManagementConfigResource) GetDeleteEmptyFoldersOk() (*bool, bool) {
-	if o == nil || isNil(o.DeleteEmptyFolders) {
-    return nil, false
+	if o == nil || IsNil(o.DeleteEmptyFolders) {
+		return nil, false
 	}
 	return o.DeleteEmptyFolders, true
 }
 
 // HasDeleteEmptyFolders returns a boolean if a field has been set.
 func (o *MediaManagementConfigResource) HasDeleteEmptyFolders() bool {
-	if o != nil && !isNil(o.DeleteEmptyFolders) {
+	if o != nil && !IsNil(o.DeleteEmptyFolders) {
 		return true
 	}
 
@@ -293,7 +296,7 @@ func (o *MediaManagementConfigResource) SetDeleteEmptyFolders(v bool) {
 
 // GetFileDate returns the FileDate field value if set, zero value otherwise.
 func (o *MediaManagementConfigResource) GetFileDate() FileDateType {
-	if o == nil || isNil(o.FileDate) {
+	if o == nil || IsNil(o.FileDate) {
 		var ret FileDateType
 		return ret
 	}
@@ -303,15 +306,15 @@ func (o *MediaManagementConfigResource) GetFileDate() FileDateType {
 // GetFileDateOk returns a tuple with the FileDate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaManagementConfigResource) GetFileDateOk() (*FileDateType, bool) {
-	if o == nil || isNil(o.FileDate) {
-    return nil, false
+	if o == nil || IsNil(o.FileDate) {
+		return nil, false
 	}
 	return o.FileDate, true
 }
 
 // HasFileDate returns a boolean if a field has been set.
 func (o *MediaManagementConfigResource) HasFileDate() bool {
-	if o != nil && !isNil(o.FileDate) {
+	if o != nil && !IsNil(o.FileDate) {
 		return true
 	}
 
@@ -325,7 +328,7 @@ func (o *MediaManagementConfigResource) SetFileDate(v FileDateType) {
 
 // GetRescanAfterRefresh returns the RescanAfterRefresh field value if set, zero value otherwise.
 func (o *MediaManagementConfigResource) GetRescanAfterRefresh() RescanAfterRefreshType {
-	if o == nil || isNil(o.RescanAfterRefresh) {
+	if o == nil || IsNil(o.RescanAfterRefresh) {
 		var ret RescanAfterRefreshType
 		return ret
 	}
@@ -335,15 +338,15 @@ func (o *MediaManagementConfigResource) GetRescanAfterRefresh() RescanAfterRefre
 // GetRescanAfterRefreshOk returns a tuple with the RescanAfterRefresh field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaManagementConfigResource) GetRescanAfterRefreshOk() (*RescanAfterRefreshType, bool) {
-	if o == nil || isNil(o.RescanAfterRefresh) {
-    return nil, false
+	if o == nil || IsNil(o.RescanAfterRefresh) {
+		return nil, false
 	}
 	return o.RescanAfterRefresh, true
 }
 
 // HasRescanAfterRefresh returns a boolean if a field has been set.
 func (o *MediaManagementConfigResource) HasRescanAfterRefresh() bool {
-	if o != nil && !isNil(o.RescanAfterRefresh) {
+	if o != nil && !IsNil(o.RescanAfterRefresh) {
 		return true
 	}
 
@@ -357,7 +360,7 @@ func (o *MediaManagementConfigResource) SetRescanAfterRefresh(v RescanAfterRefre
 
 // GetAutoRenameFolders returns the AutoRenameFolders field value if set, zero value otherwise.
 func (o *MediaManagementConfigResource) GetAutoRenameFolders() bool {
-	if o == nil || isNil(o.AutoRenameFolders) {
+	if o == nil || IsNil(o.AutoRenameFolders) {
 		var ret bool
 		return ret
 	}
@@ -367,15 +370,15 @@ func (o *MediaManagementConfigResource) GetAutoRenameFolders() bool {
 // GetAutoRenameFoldersOk returns a tuple with the AutoRenameFolders field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaManagementConfigResource) GetAutoRenameFoldersOk() (*bool, bool) {
-	if o == nil || isNil(o.AutoRenameFolders) {
-    return nil, false
+	if o == nil || IsNil(o.AutoRenameFolders) {
+		return nil, false
 	}
 	return o.AutoRenameFolders, true
 }
 
 // HasAutoRenameFolders returns a boolean if a field has been set.
 func (o *MediaManagementConfigResource) HasAutoRenameFolders() bool {
-	if o != nil && !isNil(o.AutoRenameFolders) {
+	if o != nil && !IsNil(o.AutoRenameFolders) {
 		return true
 	}
 
@@ -389,7 +392,7 @@ func (o *MediaManagementConfigResource) SetAutoRenameFolders(v bool) {
 
 // GetPathsDefaultStatic returns the PathsDefaultStatic field value if set, zero value otherwise.
 func (o *MediaManagementConfigResource) GetPathsDefaultStatic() bool {
-	if o == nil || isNil(o.PathsDefaultStatic) {
+	if o == nil || IsNil(o.PathsDefaultStatic) {
 		var ret bool
 		return ret
 	}
@@ -399,15 +402,15 @@ func (o *MediaManagementConfigResource) GetPathsDefaultStatic() bool {
 // GetPathsDefaultStaticOk returns a tuple with the PathsDefaultStatic field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaManagementConfigResource) GetPathsDefaultStaticOk() (*bool, bool) {
-	if o == nil || isNil(o.PathsDefaultStatic) {
-    return nil, false
+	if o == nil || IsNil(o.PathsDefaultStatic) {
+		return nil, false
 	}
 	return o.PathsDefaultStatic, true
 }
 
 // HasPathsDefaultStatic returns a boolean if a field has been set.
 func (o *MediaManagementConfigResource) HasPathsDefaultStatic() bool {
-	if o != nil && !isNil(o.PathsDefaultStatic) {
+	if o != nil && !IsNil(o.PathsDefaultStatic) {
 		return true
 	}
 
@@ -421,7 +424,7 @@ func (o *MediaManagementConfigResource) SetPathsDefaultStatic(v bool) {
 
 // GetSetPermissionsLinux returns the SetPermissionsLinux field value if set, zero value otherwise.
 func (o *MediaManagementConfigResource) GetSetPermissionsLinux() bool {
-	if o == nil || isNil(o.SetPermissionsLinux) {
+	if o == nil || IsNil(o.SetPermissionsLinux) {
 		var ret bool
 		return ret
 	}
@@ -431,15 +434,15 @@ func (o *MediaManagementConfigResource) GetSetPermissionsLinux() bool {
 // GetSetPermissionsLinuxOk returns a tuple with the SetPermissionsLinux field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaManagementConfigResource) GetSetPermissionsLinuxOk() (*bool, bool) {
-	if o == nil || isNil(o.SetPermissionsLinux) {
-    return nil, false
+	if o == nil || IsNil(o.SetPermissionsLinux) {
+		return nil, false
 	}
 	return o.SetPermissionsLinux, true
 }
 
 // HasSetPermissionsLinux returns a boolean if a field has been set.
 func (o *MediaManagementConfigResource) HasSetPermissionsLinux() bool {
-	if o != nil && !isNil(o.SetPermissionsLinux) {
+	if o != nil && !IsNil(o.SetPermissionsLinux) {
 		return true
 	}
 
@@ -453,7 +456,7 @@ func (o *MediaManagementConfigResource) SetSetPermissionsLinux(v bool) {
 
 // GetChmodFolder returns the ChmodFolder field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MediaManagementConfigResource) GetChmodFolder() string {
-	if o == nil || isNil(o.ChmodFolder.Get()) {
+	if o == nil || IsNil(o.ChmodFolder.Get()) {
 		var ret string
 		return ret
 	}
@@ -465,7 +468,7 @@ func (o *MediaManagementConfigResource) GetChmodFolder() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MediaManagementConfigResource) GetChmodFolderOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ChmodFolder.Get(), o.ChmodFolder.IsSet()
 }
@@ -495,7 +498,7 @@ func (o *MediaManagementConfigResource) UnsetChmodFolder() {
 
 // GetChownGroup returns the ChownGroup field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MediaManagementConfigResource) GetChownGroup() string {
-	if o == nil || isNil(o.ChownGroup.Get()) {
+	if o == nil || IsNil(o.ChownGroup.Get()) {
 		var ret string
 		return ret
 	}
@@ -507,7 +510,7 @@ func (o *MediaManagementConfigResource) GetChownGroup() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MediaManagementConfigResource) GetChownGroupOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ChownGroup.Get(), o.ChownGroup.IsSet()
 }
@@ -537,7 +540,7 @@ func (o *MediaManagementConfigResource) UnsetChownGroup() {
 
 // GetSkipFreeSpaceCheckWhenImporting returns the SkipFreeSpaceCheckWhenImporting field value if set, zero value otherwise.
 func (o *MediaManagementConfigResource) GetSkipFreeSpaceCheckWhenImporting() bool {
-	if o == nil || isNil(o.SkipFreeSpaceCheckWhenImporting) {
+	if o == nil || IsNil(o.SkipFreeSpaceCheckWhenImporting) {
 		var ret bool
 		return ret
 	}
@@ -547,15 +550,15 @@ func (o *MediaManagementConfigResource) GetSkipFreeSpaceCheckWhenImporting() boo
 // GetSkipFreeSpaceCheckWhenImportingOk returns a tuple with the SkipFreeSpaceCheckWhenImporting field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaManagementConfigResource) GetSkipFreeSpaceCheckWhenImportingOk() (*bool, bool) {
-	if o == nil || isNil(o.SkipFreeSpaceCheckWhenImporting) {
-    return nil, false
+	if o == nil || IsNil(o.SkipFreeSpaceCheckWhenImporting) {
+		return nil, false
 	}
 	return o.SkipFreeSpaceCheckWhenImporting, true
 }
 
 // HasSkipFreeSpaceCheckWhenImporting returns a boolean if a field has been set.
 func (o *MediaManagementConfigResource) HasSkipFreeSpaceCheckWhenImporting() bool {
-	if o != nil && !isNil(o.SkipFreeSpaceCheckWhenImporting) {
+	if o != nil && !IsNil(o.SkipFreeSpaceCheckWhenImporting) {
 		return true
 	}
 
@@ -569,7 +572,7 @@ func (o *MediaManagementConfigResource) SetSkipFreeSpaceCheckWhenImporting(v boo
 
 // GetMinimumFreeSpaceWhenImporting returns the MinimumFreeSpaceWhenImporting field value if set, zero value otherwise.
 func (o *MediaManagementConfigResource) GetMinimumFreeSpaceWhenImporting() int32 {
-	if o == nil || isNil(o.MinimumFreeSpaceWhenImporting) {
+	if o == nil || IsNil(o.MinimumFreeSpaceWhenImporting) {
 		var ret int32
 		return ret
 	}
@@ -579,15 +582,15 @@ func (o *MediaManagementConfigResource) GetMinimumFreeSpaceWhenImporting() int32
 // GetMinimumFreeSpaceWhenImportingOk returns a tuple with the MinimumFreeSpaceWhenImporting field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaManagementConfigResource) GetMinimumFreeSpaceWhenImportingOk() (*int32, bool) {
-	if o == nil || isNil(o.MinimumFreeSpaceWhenImporting) {
-    return nil, false
+	if o == nil || IsNil(o.MinimumFreeSpaceWhenImporting) {
+		return nil, false
 	}
 	return o.MinimumFreeSpaceWhenImporting, true
 }
 
 // HasMinimumFreeSpaceWhenImporting returns a boolean if a field has been set.
 func (o *MediaManagementConfigResource) HasMinimumFreeSpaceWhenImporting() bool {
-	if o != nil && !isNil(o.MinimumFreeSpaceWhenImporting) {
+	if o != nil && !IsNil(o.MinimumFreeSpaceWhenImporting) {
 		return true
 	}
 
@@ -601,7 +604,7 @@ func (o *MediaManagementConfigResource) SetMinimumFreeSpaceWhenImporting(v int32
 
 // GetCopyUsingHardlinks returns the CopyUsingHardlinks field value if set, zero value otherwise.
 func (o *MediaManagementConfigResource) GetCopyUsingHardlinks() bool {
-	if o == nil || isNil(o.CopyUsingHardlinks) {
+	if o == nil || IsNil(o.CopyUsingHardlinks) {
 		var ret bool
 		return ret
 	}
@@ -611,15 +614,15 @@ func (o *MediaManagementConfigResource) GetCopyUsingHardlinks() bool {
 // GetCopyUsingHardlinksOk returns a tuple with the CopyUsingHardlinks field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaManagementConfigResource) GetCopyUsingHardlinksOk() (*bool, bool) {
-	if o == nil || isNil(o.CopyUsingHardlinks) {
-    return nil, false
+	if o == nil || IsNil(o.CopyUsingHardlinks) {
+		return nil, false
 	}
 	return o.CopyUsingHardlinks, true
 }
 
 // HasCopyUsingHardlinks returns a boolean if a field has been set.
 func (o *MediaManagementConfigResource) HasCopyUsingHardlinks() bool {
-	if o != nil && !isNil(o.CopyUsingHardlinks) {
+	if o != nil && !IsNil(o.CopyUsingHardlinks) {
 		return true
 	}
 
@@ -633,7 +636,7 @@ func (o *MediaManagementConfigResource) SetCopyUsingHardlinks(v bool) {
 
 // GetUseScriptImport returns the UseScriptImport field value if set, zero value otherwise.
 func (o *MediaManagementConfigResource) GetUseScriptImport() bool {
-	if o == nil || isNil(o.UseScriptImport) {
+	if o == nil || IsNil(o.UseScriptImport) {
 		var ret bool
 		return ret
 	}
@@ -643,15 +646,15 @@ func (o *MediaManagementConfigResource) GetUseScriptImport() bool {
 // GetUseScriptImportOk returns a tuple with the UseScriptImport field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaManagementConfigResource) GetUseScriptImportOk() (*bool, bool) {
-	if o == nil || isNil(o.UseScriptImport) {
-    return nil, false
+	if o == nil || IsNil(o.UseScriptImport) {
+		return nil, false
 	}
 	return o.UseScriptImport, true
 }
 
 // HasUseScriptImport returns a boolean if a field has been set.
 func (o *MediaManagementConfigResource) HasUseScriptImport() bool {
-	if o != nil && !isNil(o.UseScriptImport) {
+	if o != nil && !IsNil(o.UseScriptImport) {
 		return true
 	}
 
@@ -665,7 +668,7 @@ func (o *MediaManagementConfigResource) SetUseScriptImport(v bool) {
 
 // GetScriptImportPath returns the ScriptImportPath field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MediaManagementConfigResource) GetScriptImportPath() string {
-	if o == nil || isNil(o.ScriptImportPath.Get()) {
+	if o == nil || IsNil(o.ScriptImportPath.Get()) {
 		var ret string
 		return ret
 	}
@@ -677,7 +680,7 @@ func (o *MediaManagementConfigResource) GetScriptImportPath() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MediaManagementConfigResource) GetScriptImportPathOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ScriptImportPath.Get(), o.ScriptImportPath.IsSet()
 }
@@ -707,7 +710,7 @@ func (o *MediaManagementConfigResource) UnsetScriptImportPath() {
 
 // GetImportExtraFiles returns the ImportExtraFiles field value if set, zero value otherwise.
 func (o *MediaManagementConfigResource) GetImportExtraFiles() bool {
-	if o == nil || isNil(o.ImportExtraFiles) {
+	if o == nil || IsNil(o.ImportExtraFiles) {
 		var ret bool
 		return ret
 	}
@@ -717,15 +720,15 @@ func (o *MediaManagementConfigResource) GetImportExtraFiles() bool {
 // GetImportExtraFilesOk returns a tuple with the ImportExtraFiles field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaManagementConfigResource) GetImportExtraFilesOk() (*bool, bool) {
-	if o == nil || isNil(o.ImportExtraFiles) {
-    return nil, false
+	if o == nil || IsNil(o.ImportExtraFiles) {
+		return nil, false
 	}
 	return o.ImportExtraFiles, true
 }
 
 // HasImportExtraFiles returns a boolean if a field has been set.
 func (o *MediaManagementConfigResource) HasImportExtraFiles() bool {
-	if o != nil && !isNil(o.ImportExtraFiles) {
+	if o != nil && !IsNil(o.ImportExtraFiles) {
 		return true
 	}
 
@@ -739,7 +742,7 @@ func (o *MediaManagementConfigResource) SetImportExtraFiles(v bool) {
 
 // GetExtraFileExtensions returns the ExtraFileExtensions field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *MediaManagementConfigResource) GetExtraFileExtensions() string {
-	if o == nil || isNil(o.ExtraFileExtensions.Get()) {
+	if o == nil || IsNil(o.ExtraFileExtensions.Get()) {
 		var ret string
 		return ret
 	}
@@ -751,7 +754,7 @@ func (o *MediaManagementConfigResource) GetExtraFileExtensions() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MediaManagementConfigResource) GetExtraFileExtensionsOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.ExtraFileExtensions.Get(), o.ExtraFileExtensions.IsSet()
 }
@@ -781,7 +784,7 @@ func (o *MediaManagementConfigResource) UnsetExtraFileExtensions() {
 
 // GetEnableMediaInfo returns the EnableMediaInfo field value if set, zero value otherwise.
 func (o *MediaManagementConfigResource) GetEnableMediaInfo() bool {
-	if o == nil || isNil(o.EnableMediaInfo) {
+	if o == nil || IsNil(o.EnableMediaInfo) {
 		var ret bool
 		return ret
 	}
@@ -791,15 +794,15 @@ func (o *MediaManagementConfigResource) GetEnableMediaInfo() bool {
 // GetEnableMediaInfoOk returns a tuple with the EnableMediaInfo field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MediaManagementConfigResource) GetEnableMediaInfoOk() (*bool, bool) {
-	if o == nil || isNil(o.EnableMediaInfo) {
-    return nil, false
+	if o == nil || IsNil(o.EnableMediaInfo) {
+		return nil, false
 	}
 	return o.EnableMediaInfo, true
 }
 
 // HasEnableMediaInfo returns a boolean if a field has been set.
 func (o *MediaManagementConfigResource) HasEnableMediaInfo() bool {
-	if o != nil && !isNil(o.EnableMediaInfo) {
+	if o != nil && !IsNil(o.EnableMediaInfo) {
 		return true
 	}
 
@@ -812,41 +815,49 @@ func (o *MediaManagementConfigResource) SetEnableMediaInfo(v bool) {
 }
 
 func (o MediaManagementConfigResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o MediaManagementConfigResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !isNil(o.AutoUnmonitorPreviouslyDownloadedMovies) {
+	if !IsNil(o.AutoUnmonitorPreviouslyDownloadedMovies) {
 		toSerialize["autoUnmonitorPreviouslyDownloadedMovies"] = o.AutoUnmonitorPreviouslyDownloadedMovies
 	}
 	if o.RecycleBin.IsSet() {
 		toSerialize["recycleBin"] = o.RecycleBin.Get()
 	}
-	if !isNil(o.RecycleBinCleanupDays) {
+	if !IsNil(o.RecycleBinCleanupDays) {
 		toSerialize["recycleBinCleanupDays"] = o.RecycleBinCleanupDays
 	}
-	if !isNil(o.DownloadPropersAndRepacks) {
+	if !IsNil(o.DownloadPropersAndRepacks) {
 		toSerialize["downloadPropersAndRepacks"] = o.DownloadPropersAndRepacks
 	}
-	if !isNil(o.CreateEmptyMovieFolders) {
+	if !IsNil(o.CreateEmptyMovieFolders) {
 		toSerialize["createEmptyMovieFolders"] = o.CreateEmptyMovieFolders
 	}
-	if !isNil(o.DeleteEmptyFolders) {
+	if !IsNil(o.DeleteEmptyFolders) {
 		toSerialize["deleteEmptyFolders"] = o.DeleteEmptyFolders
 	}
-	if !isNil(o.FileDate) {
+	if !IsNil(o.FileDate) {
 		toSerialize["fileDate"] = o.FileDate
 	}
-	if !isNil(o.RescanAfterRefresh) {
+	if !IsNil(o.RescanAfterRefresh) {
 		toSerialize["rescanAfterRefresh"] = o.RescanAfterRefresh
 	}
-	if !isNil(o.AutoRenameFolders) {
+	if !IsNil(o.AutoRenameFolders) {
 		toSerialize["autoRenameFolders"] = o.AutoRenameFolders
 	}
-	if !isNil(o.PathsDefaultStatic) {
+	if !IsNil(o.PathsDefaultStatic) {
 		toSerialize["pathsDefaultStatic"] = o.PathsDefaultStatic
 	}
-	if !isNil(o.SetPermissionsLinux) {
+	if !IsNil(o.SetPermissionsLinux) {
 		toSerialize["setPermissionsLinux"] = o.SetPermissionsLinux
 	}
 	if o.ChmodFolder.IsSet() {
@@ -855,31 +866,31 @@ func (o MediaManagementConfigResource) MarshalJSON() ([]byte, error) {
 	if o.ChownGroup.IsSet() {
 		toSerialize["chownGroup"] = o.ChownGroup.Get()
 	}
-	if !isNil(o.SkipFreeSpaceCheckWhenImporting) {
+	if !IsNil(o.SkipFreeSpaceCheckWhenImporting) {
 		toSerialize["skipFreeSpaceCheckWhenImporting"] = o.SkipFreeSpaceCheckWhenImporting
 	}
-	if !isNil(o.MinimumFreeSpaceWhenImporting) {
+	if !IsNil(o.MinimumFreeSpaceWhenImporting) {
 		toSerialize["minimumFreeSpaceWhenImporting"] = o.MinimumFreeSpaceWhenImporting
 	}
-	if !isNil(o.CopyUsingHardlinks) {
+	if !IsNil(o.CopyUsingHardlinks) {
 		toSerialize["copyUsingHardlinks"] = o.CopyUsingHardlinks
 	}
-	if !isNil(o.UseScriptImport) {
+	if !IsNil(o.UseScriptImport) {
 		toSerialize["useScriptImport"] = o.UseScriptImport
 	}
 	if o.ScriptImportPath.IsSet() {
 		toSerialize["scriptImportPath"] = o.ScriptImportPath.Get()
 	}
-	if !isNil(o.ImportExtraFiles) {
+	if !IsNil(o.ImportExtraFiles) {
 		toSerialize["importExtraFiles"] = o.ImportExtraFiles
 	}
 	if o.ExtraFileExtensions.IsSet() {
 		toSerialize["extraFileExtensions"] = o.ExtraFileExtensions.Get()
 	}
-	if !isNil(o.EnableMediaInfo) {
+	if !IsNil(o.EnableMediaInfo) {
 		toSerialize["enableMediaInfo"] = o.EnableMediaInfo
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableMediaManagementConfigResource struct {

@@ -22,6 +22,7 @@ import (
 
 // ReleasePushAPIService ReleasePushAPI service
 type ReleasePushAPIService service
+
 type ApiCreateReleasePushRequest struct {
 	ctx context.Context
 	ApiService *ReleasePushAPIService
@@ -33,7 +34,7 @@ func (r ApiCreateReleasePushRequest) ReleaseResource(releaseResource ReleaseReso
 	return r
 }
 
-func (r ApiCreateReleasePushRequest) Execute() ([]*ReleaseResource, *http.Response, error) {
+func (r ApiCreateReleasePushRequest) Execute() ([]ReleaseResource, *http.Response, error) {
 	return r.ApiService.CreateReleasePushExecute(r)
 }
 
@@ -52,12 +53,12 @@ func (a *ReleasePushAPIService) CreateReleasePush(ctx context.Context) ApiCreate
 
 // Execute executes the request
 //  @return []ReleaseResource
-func (a *ReleasePushAPIService) CreateReleasePushExecute(r ApiCreateReleasePushRequest) ([]*ReleaseResource, *http.Response, error) {
+func (a *ReleasePushAPIService) CreateReleasePushExecute(r ApiCreateReleasePushRequest) ([]ReleaseResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*ReleaseResource
+		localVarReturnValue  []ReleaseResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleasePushAPIService.CreateReleasePush")
@@ -154,6 +155,7 @@ func (a *ReleasePushAPIService) CreateReleasePushExecute(r ApiCreateReleasePushR
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiGetReleasePushByIdRequest struct {
 	ctx context.Context
 	ApiService *ReleasePushAPIService
@@ -195,7 +197,7 @@ func (a *ReleasePushAPIService) GetReleasePushByIdExecute(r ApiGetReleasePushByI
 	}
 
 	localVarPath := localBasePath + "/api/v3/release/push/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

@@ -22,6 +22,7 @@ import (
 
 // ReleaseAPIService ReleaseAPI service
 type ReleaseAPIService service
+
 type ApiCreateReleaseRequest struct {
 	ctx context.Context
 	ApiService *ReleaseAPIService
@@ -143,6 +144,7 @@ func (a *ReleaseAPIService) CreateReleaseExecute(r ApiCreateReleaseRequest) (*ht
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetReleaseByIdRequest struct {
 	ctx context.Context
 	ApiService *ReleaseAPIService
@@ -184,7 +186,7 @@ func (a *ReleaseAPIService) GetReleaseByIdExecute(r ApiGetReleaseByIdRequest) (*
 	}
 
 	localVarPath := localBasePath + "/api/v3/release/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -271,6 +273,7 @@ func (a *ReleaseAPIService) GetReleaseByIdExecute(r ApiGetReleaseByIdRequest) (*
 
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
+
 type ApiListReleaseRequest struct {
 	ctx context.Context
 	ApiService *ReleaseAPIService
@@ -282,7 +285,7 @@ func (r ApiListReleaseRequest) MovieId(movieId int32) ApiListReleaseRequest {
 	return r
 }
 
-func (r ApiListReleaseRequest) Execute() ([]*ReleaseResource, *http.Response, error) {
+func (r ApiListReleaseRequest) Execute() ([]ReleaseResource, *http.Response, error) {
 	return r.ApiService.ListReleaseExecute(r)
 }
 
@@ -301,12 +304,12 @@ func (a *ReleaseAPIService) ListRelease(ctx context.Context) ApiListReleaseReque
 
 // Execute executes the request
 //  @return []ReleaseResource
-func (a *ReleaseAPIService) ListReleaseExecute(r ApiListReleaseRequest) ([]*ReleaseResource, *http.Response, error) {
+func (a *ReleaseAPIService) ListReleaseExecute(r ApiListReleaseRequest) ([]ReleaseResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []*ReleaseResource
+		localVarReturnValue  []ReleaseResource
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReleaseAPIService.ListRelease")
@@ -321,7 +324,7 @@ func (a *ReleaseAPIService) ListReleaseExecute(r ApiListReleaseRequest) ([]*Rele
 	localVarFormParams := url.Values{}
 
 	if r.movieId != nil {
-		localVarQueryParams.Add("movieId", parameterToString(*r.movieId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "movieId", r.movieId, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

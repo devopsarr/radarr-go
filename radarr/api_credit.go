@@ -22,6 +22,7 @@ import (
 
 // CreditAPIService CreditAPI service
 type CreditAPIService service
+
 type ApiGetCreditRequest struct {
 	ctx context.Context
 	ApiService *CreditAPIService
@@ -76,10 +77,10 @@ func (a *CreditAPIService) GetCreditExecute(r ApiGetCreditRequest) (*http.Respon
 	localVarFormParams := url.Values{}
 
 	if r.movieId != nil {
-		localVarQueryParams.Add("movieId", parameterToString(*r.movieId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "movieId", r.movieId, "")
 	}
 	if r.movieMetadataId != nil {
-		localVarQueryParams.Add("movieMetadataId", parameterToString(*r.movieMetadataId, ""))
+		parameterAddToHeaderOrQuery(localVarQueryParams, "movieMetadataId", r.movieMetadataId, "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -153,6 +154,7 @@ func (a *CreditAPIService) GetCreditExecute(r ApiGetCreditRequest) (*http.Respon
 
 	return localVarHTTPResponse, nil
 }
+
 type ApiGetCreditByIdRequest struct {
 	ctx context.Context
 	ApiService *CreditAPIService
@@ -194,7 +196,7 @@ func (a *CreditAPIService) GetCreditByIdExecute(r ApiGetCreditByIdRequest) (*Cre
 	}
 
 	localVarPath := localBasePath + "/api/v3/credit/{id}"
-	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterToString(r.id, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

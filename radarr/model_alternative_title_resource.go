@@ -14,6 +14,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AlternativeTitleResource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AlternativeTitleResource{}
+
 // AlternativeTitleResource struct for AlternativeTitleResource
 type AlternativeTitleResource struct {
 	Id *int32 `json:"id,omitempty"`
@@ -42,7 +45,7 @@ func NewAlternativeTitleResourceWithDefaults() *AlternativeTitleResource {
 
 // GetId returns the Id field value if set, zero value otherwise.
 func (o *AlternativeTitleResource) GetId() int32 {
-	if o == nil || isNil(o.Id) {
+	if o == nil || IsNil(o.Id) {
 		var ret int32
 		return ret
 	}
@@ -52,15 +55,15 @@ func (o *AlternativeTitleResource) GetId() int32 {
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlternativeTitleResource) GetIdOk() (*int32, bool) {
-	if o == nil || isNil(o.Id) {
-    return nil, false
+	if o == nil || IsNil(o.Id) {
+		return nil, false
 	}
 	return o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *AlternativeTitleResource) HasId() bool {
-	if o != nil && !isNil(o.Id) {
+	if o != nil && !IsNil(o.Id) {
 		return true
 	}
 
@@ -74,7 +77,7 @@ func (o *AlternativeTitleResource) SetId(v int32) {
 
 // GetSourceType returns the SourceType field value if set, zero value otherwise.
 func (o *AlternativeTitleResource) GetSourceType() SourceType {
-	if o == nil || isNil(o.SourceType) {
+	if o == nil || IsNil(o.SourceType) {
 		var ret SourceType
 		return ret
 	}
@@ -84,15 +87,15 @@ func (o *AlternativeTitleResource) GetSourceType() SourceType {
 // GetSourceTypeOk returns a tuple with the SourceType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlternativeTitleResource) GetSourceTypeOk() (*SourceType, bool) {
-	if o == nil || isNil(o.SourceType) {
-    return nil, false
+	if o == nil || IsNil(o.SourceType) {
+		return nil, false
 	}
 	return o.SourceType, true
 }
 
 // HasSourceType returns a boolean if a field has been set.
 func (o *AlternativeTitleResource) HasSourceType() bool {
-	if o != nil && !isNil(o.SourceType) {
+	if o != nil && !IsNil(o.SourceType) {
 		return true
 	}
 
@@ -106,7 +109,7 @@ func (o *AlternativeTitleResource) SetSourceType(v SourceType) {
 
 // GetMovieMetadataId returns the MovieMetadataId field value if set, zero value otherwise.
 func (o *AlternativeTitleResource) GetMovieMetadataId() int32 {
-	if o == nil || isNil(o.MovieMetadataId) {
+	if o == nil || IsNil(o.MovieMetadataId) {
 		var ret int32
 		return ret
 	}
@@ -116,15 +119,15 @@ func (o *AlternativeTitleResource) GetMovieMetadataId() int32 {
 // GetMovieMetadataIdOk returns a tuple with the MovieMetadataId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AlternativeTitleResource) GetMovieMetadataIdOk() (*int32, bool) {
-	if o == nil || isNil(o.MovieMetadataId) {
-    return nil, false
+	if o == nil || IsNil(o.MovieMetadataId) {
+		return nil, false
 	}
 	return o.MovieMetadataId, true
 }
 
 // HasMovieMetadataId returns a boolean if a field has been set.
 func (o *AlternativeTitleResource) HasMovieMetadataId() bool {
-	if o != nil && !isNil(o.MovieMetadataId) {
+	if o != nil && !IsNil(o.MovieMetadataId) {
 		return true
 	}
 
@@ -138,7 +141,7 @@ func (o *AlternativeTitleResource) SetMovieMetadataId(v int32) {
 
 // GetTitle returns the Title field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AlternativeTitleResource) GetTitle() string {
-	if o == nil || isNil(o.Title.Get()) {
+	if o == nil || IsNil(o.Title.Get()) {
 		var ret string
 		return ret
 	}
@@ -150,7 +153,7 @@ func (o *AlternativeTitleResource) GetTitle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AlternativeTitleResource) GetTitleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.Title.Get(), o.Title.IsSet()
 }
@@ -180,7 +183,7 @@ func (o *AlternativeTitleResource) UnsetTitle() {
 
 // GetCleanTitle returns the CleanTitle field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AlternativeTitleResource) GetCleanTitle() string {
-	if o == nil || isNil(o.CleanTitle.Get()) {
+	if o == nil || IsNil(o.CleanTitle.Get()) {
 		var ret string
 		return ret
 	}
@@ -192,7 +195,7 @@ func (o *AlternativeTitleResource) GetCleanTitle() string {
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AlternativeTitleResource) GetCleanTitleOk() (*string, bool) {
 	if o == nil {
-    return nil, false
+		return nil, false
 	}
 	return o.CleanTitle.Get(), o.CleanTitle.IsSet()
 }
@@ -221,14 +224,22 @@ func (o *AlternativeTitleResource) UnsetCleanTitle() {
 }
 
 func (o AlternativeTitleResource) MarshalJSON() ([]byte, error) {
+	toSerialize,err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o AlternativeTitleResource) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !isNil(o.Id) {
+	if !IsNil(o.Id) {
 		toSerialize["id"] = o.Id
 	}
-	if !isNil(o.SourceType) {
+	if !IsNil(o.SourceType) {
 		toSerialize["sourceType"] = o.SourceType
 	}
-	if !isNil(o.MovieMetadataId) {
+	if !IsNil(o.MovieMetadataId) {
 		toSerialize["movieMetadataId"] = o.MovieMetadataId
 	}
 	if o.Title.IsSet() {
@@ -237,7 +248,7 @@ func (o AlternativeTitleResource) MarshalJSON() ([]byte, error) {
 	if o.CleanTitle.IsSet() {
 		toSerialize["cleanTitle"] = o.CleanTitle.Get()
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableAlternativeTitleResource struct {
