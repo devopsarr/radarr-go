@@ -10,10 +10,6 @@ Name | Type | Description | Notes
 **ColonReplacementFormat** | Pointer to [**ColonReplacementFormat**](ColonReplacementFormat.md) |  | [optional] 
 **StandardMovieFormat** | Pointer to **NullableString** |  | [optional] 
 **MovieFolderFormat** | Pointer to **NullableString** |  | [optional] 
-**IncludeQuality** | Pointer to **bool** |  | [optional] 
-**ReplaceSpaces** | Pointer to **bool** |  | [optional] 
-**Separator** | Pointer to **NullableString** |  | [optional] 
-**NumberStyle** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -204,126 +200,6 @@ HasMovieFolderFormat returns a boolean if a field has been set.
 `func (o *NamingConfigResource) UnsetMovieFolderFormat()`
 
 UnsetMovieFolderFormat ensures that no value is present for MovieFolderFormat, not even an explicit nil
-### GetIncludeQuality
-
-`func (o *NamingConfigResource) GetIncludeQuality() bool`
-
-GetIncludeQuality returns the IncludeQuality field if non-nil, zero value otherwise.
-
-### GetIncludeQualityOk
-
-`func (o *NamingConfigResource) GetIncludeQualityOk() (*bool, bool)`
-
-GetIncludeQualityOk returns a tuple with the IncludeQuality field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIncludeQuality
-
-`func (o *NamingConfigResource) SetIncludeQuality(v bool)`
-
-SetIncludeQuality sets IncludeQuality field to given value.
-
-### HasIncludeQuality
-
-`func (o *NamingConfigResource) HasIncludeQuality() bool`
-
-HasIncludeQuality returns a boolean if a field has been set.
-
-### GetReplaceSpaces
-
-`func (o *NamingConfigResource) GetReplaceSpaces() bool`
-
-GetReplaceSpaces returns the ReplaceSpaces field if non-nil, zero value otherwise.
-
-### GetReplaceSpacesOk
-
-`func (o *NamingConfigResource) GetReplaceSpacesOk() (*bool, bool)`
-
-GetReplaceSpacesOk returns a tuple with the ReplaceSpaces field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetReplaceSpaces
-
-`func (o *NamingConfigResource) SetReplaceSpaces(v bool)`
-
-SetReplaceSpaces sets ReplaceSpaces field to given value.
-
-### HasReplaceSpaces
-
-`func (o *NamingConfigResource) HasReplaceSpaces() bool`
-
-HasReplaceSpaces returns a boolean if a field has been set.
-
-### GetSeparator
-
-`func (o *NamingConfigResource) GetSeparator() string`
-
-GetSeparator returns the Separator field if non-nil, zero value otherwise.
-
-### GetSeparatorOk
-
-`func (o *NamingConfigResource) GetSeparatorOk() (*string, bool)`
-
-GetSeparatorOk returns a tuple with the Separator field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSeparator
-
-`func (o *NamingConfigResource) SetSeparator(v string)`
-
-SetSeparator sets Separator field to given value.
-
-### HasSeparator
-
-`func (o *NamingConfigResource) HasSeparator() bool`
-
-HasSeparator returns a boolean if a field has been set.
-
-### SetSeparatorNil
-
-`func (o *NamingConfigResource) SetSeparatorNil(b bool)`
-
- SetSeparatorNil sets the value for Separator to be an explicit nil
-
-### UnsetSeparator
-`func (o *NamingConfigResource) UnsetSeparator()`
-
-UnsetSeparator ensures that no value is present for Separator, not even an explicit nil
-### GetNumberStyle
-
-`func (o *NamingConfigResource) GetNumberStyle() string`
-
-GetNumberStyle returns the NumberStyle field if non-nil, zero value otherwise.
-
-### GetNumberStyleOk
-
-`func (o *NamingConfigResource) GetNumberStyleOk() (*string, bool)`
-
-GetNumberStyleOk returns a tuple with the NumberStyle field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNumberStyle
-
-`func (o *NamingConfigResource) SetNumberStyle(v string)`
-
-SetNumberStyle sets NumberStyle field to given value.
-
-### HasNumberStyle
-
-`func (o *NamingConfigResource) HasNumberStyle() bool`
-
-HasNumberStyle returns a boolean if a field has been set.
-
-### SetNumberStyleNil
-
-`func (o *NamingConfigResource) SetNumberStyleNil(b bool)`
-
- SetNumberStyleNil sets the value for NumberStyle to be an explicit nil
-
-### UnsetNumberStyle
-`func (o *NamingConfigResource) UnsetNumberStyle()`
-
-UnsetNumberStyle ensures that no value is present for NumberStyle, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
