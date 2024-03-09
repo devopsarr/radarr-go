@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ## GetNamingConfigExamples
 
-> GetNamingConfigExamples(ctx).RenameMovies(renameMovies).ReplaceIllegalCharacters(replaceIllegalCharacters).ColonReplacementFormat(colonReplacementFormat).StandardMovieFormat(standardMovieFormat).MovieFolderFormat(movieFolderFormat).IncludeQuality(includeQuality).ReplaceSpaces(replaceSpaces).Separator(separator).NumberStyle(numberStyle).Id(id).ResourceName(resourceName).Execute()
+> GetNamingConfigExamples(ctx).RenameMovies(renameMovies).ReplaceIllegalCharacters(replaceIllegalCharacters).ColonReplacementFormat(colonReplacementFormat).StandardMovieFormat(standardMovieFormat).MovieFolderFormat(movieFolderFormat).Id(id).ResourceName(resourceName).Execute()
 
 
 
@@ -162,16 +162,12 @@ func main() {
 	colonReplacementFormat := radarrClient.ColonReplacementFormat("delete") // ColonReplacementFormat |  (optional)
 	standardMovieFormat := "standardMovieFormat_example" // string |  (optional)
 	movieFolderFormat := "movieFolderFormat_example" // string |  (optional)
-	includeQuality := true // bool |  (optional)
-	replaceSpaces := true // bool |  (optional)
-	separator := "separator_example" // string |  (optional)
-	numberStyle := "numberStyle_example" // string |  (optional)
 	id := int32(56) // int32 |  (optional)
 	resourceName := "resourceName_example" // string |  (optional)
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	r, err := apiClient.NamingConfigAPI.GetNamingConfigExamples(context.Background()).RenameMovies(renameMovies).ReplaceIllegalCharacters(replaceIllegalCharacters).ColonReplacementFormat(colonReplacementFormat).StandardMovieFormat(standardMovieFormat).MovieFolderFormat(movieFolderFormat).IncludeQuality(includeQuality).ReplaceSpaces(replaceSpaces).Separator(separator).NumberStyle(numberStyle).Id(id).ResourceName(resourceName).Execute()
+	r, err := apiClient.NamingConfigAPI.GetNamingConfigExamples(context.Background()).RenameMovies(renameMovies).ReplaceIllegalCharacters(replaceIllegalCharacters).ColonReplacementFormat(colonReplacementFormat).StandardMovieFormat(standardMovieFormat).MovieFolderFormat(movieFolderFormat).Id(id).ResourceName(resourceName).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `NamingConfigAPI.GetNamingConfigExamples``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -195,10 +191,6 @@ Name | Type | Description  | Notes
  **colonReplacementFormat** | [**ColonReplacementFormat**](ColonReplacementFormat.md) |  | 
  **standardMovieFormat** | **string** |  | 
  **movieFolderFormat** | **string** |  | 
- **includeQuality** | **bool** |  | 
- **replaceSpaces** | **bool** |  | 
- **separator** | **string** |  | 
- **numberStyle** | **string** |  | 
  **id** | **int32** |  | 
  **resourceName** | **string** |  | 
 
