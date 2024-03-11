@@ -69,7 +69,7 @@ func (o *MovieEditorResource) GetMovieIdsOk() ([]int32, bool) {
 
 // HasMovieIds returns a boolean if a field has been set.
 func (o *MovieEditorResource) HasMovieIds() bool {
-	if o != nil && IsNil(o.MovieIds) {
+	if o != nil && !IsNil(o.MovieIds) {
 		return true
 	}
 
@@ -260,7 +260,7 @@ func (o *MovieEditorResource) GetTagsOk() ([]int32, bool) {
 
 // HasTags returns a boolean if a field has been set.
 func (o *MovieEditorResource) HasTags() bool {
-	if o != nil && IsNil(o.Tags) {
+	if o != nil && !IsNil(o.Tags) {
 		return true
 	}
 

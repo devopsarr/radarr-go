@@ -395,7 +395,7 @@ func (o *MovieFileResource) GetCustomFormatsOk() ([]CustomFormatResource, bool) 
 
 // HasCustomFormats returns a boolean if a field has been set.
 func (o *MovieFileResource) HasCustomFormats() bool {
-	if o != nil && IsNil(o.CustomFormats) {
+	if o != nil && !IsNil(o.CustomFormats) {
 		return true
 	}
 
@@ -566,7 +566,7 @@ func (o *MovieFileResource) GetLanguagesOk() ([]Language, bool) {
 
 // HasLanguages returns a boolean if a field has been set.
 func (o *MovieFileResource) HasLanguages() bool {
-	if o != nil && IsNil(o.Languages) {
+	if o != nil && !IsNil(o.Languages) {
 		return true
 	}
 

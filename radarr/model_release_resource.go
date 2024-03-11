@@ -209,7 +209,7 @@ func (o *ReleaseResource) GetCustomFormatsOk() ([]CustomFormatResource, bool) {
 
 // HasCustomFormats returns a boolean if a field has been set.
 func (o *ReleaseResource) HasCustomFormats() bool {
-	if o != nil && IsNil(o.CustomFormats) {
+	if o != nil && !IsNil(o.CustomFormats) {
 		return true
 	}
 
@@ -708,7 +708,7 @@ func (o *ReleaseResource) GetMovieTitlesOk() ([]string, bool) {
 
 // HasMovieTitles returns a boolean if a field has been set.
 func (o *ReleaseResource) HasMovieTitles() bool {
-	if o != nil && IsNil(o.MovieTitles) {
+	if o != nil && !IsNil(o.MovieTitles) {
 		return true
 	}
 
@@ -741,7 +741,7 @@ func (o *ReleaseResource) GetLanguagesOk() ([]Language, bool) {
 
 // HasLanguages returns a boolean if a field has been set.
 func (o *ReleaseResource) HasLanguages() bool {
-	if o != nil && IsNil(o.Languages) {
+	if o != nil && !IsNil(o.Languages) {
 		return true
 	}
 
@@ -976,7 +976,7 @@ func (o *ReleaseResource) GetRejectionsOk() ([]string, bool) {
 
 // HasRejections returns a boolean if a field has been set.
 func (o *ReleaseResource) HasRejections() bool {
-	if o != nil && IsNil(o.Rejections) {
+	if o != nil && !IsNil(o.Rejections) {
 		return true
 	}
 
@@ -1231,7 +1231,7 @@ func (o *ReleaseResource) GetIndexerFlagsOk() ([]string, bool) {
 
 // HasIndexerFlags returns a boolean if a field has been set.
 func (o *ReleaseResource) HasIndexerFlags() bool {
-	if o != nil && IsNil(o.IndexerFlags) {
+	if o != nil && !IsNil(o.IndexerFlags) {
 		return true
 	}
 

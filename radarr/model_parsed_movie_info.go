@@ -74,7 +74,7 @@ func (o *ParsedMovieInfo) GetMovieTitlesOk() ([]string, bool) {
 
 // HasMovieTitles returns a boolean if a field has been set.
 func (o *ParsedMovieInfo) HasMovieTitles() bool {
-	if o != nil && IsNil(o.MovieTitles) {
+	if o != nil && !IsNil(o.MovieTitles) {
 		return true
 	}
 
@@ -265,7 +265,7 @@ func (o *ParsedMovieInfo) GetLanguagesOk() ([]Language, bool) {
 
 // HasLanguages returns a boolean if a field has been set.
 func (o *ParsedMovieInfo) HasLanguages() bool {
-	if o != nil && IsNil(o.Languages) {
+	if o != nil && !IsNil(o.Languages) {
 		return true
 	}
 

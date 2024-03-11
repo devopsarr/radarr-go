@@ -126,7 +126,7 @@ func (o *MovieStatisticsResource) GetReleaseGroupsOk() ([]string, bool) {
 
 // HasReleaseGroups returns a boolean if a field has been set.
 func (o *MovieStatisticsResource) HasReleaseGroups() bool {
-	if o != nil && IsNil(o.ReleaseGroups) {
+	if o != nil && !IsNil(o.ReleaseGroups) {
 		return true
 	}
 

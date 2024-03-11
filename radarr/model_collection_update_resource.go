@@ -66,7 +66,7 @@ func (o *CollectionUpdateResource) GetCollectionIdsOk() ([]int32, bool) {
 
 // HasCollectionIds returns a boolean if a field has been set.
 func (o *CollectionUpdateResource) HasCollectionIds() bool {
-	if o != nil && IsNil(o.CollectionIds) {
+	if o != nil && !IsNil(o.CollectionIds) {
 		return true
 	}
 

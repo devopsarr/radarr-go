@@ -221,7 +221,7 @@ func (o *CollectionResource) GetImagesOk() ([]MediaCover, bool) {
 
 // HasImages returns a boolean if a field has been set.
 func (o *CollectionResource) HasImages() bool {
-	if o != nil && IsNil(o.Images) {
+	if o != nil && !IsNil(o.Images) {
 		return true
 	}
 
@@ -466,7 +466,7 @@ func (o *CollectionResource) GetMoviesOk() ([]CollectionMovieResource, bool) {
 
 // HasMovies returns a boolean if a field has been set.
 func (o *CollectionResource) HasMovies() bool {
-	if o != nil && IsNil(o.Movies) {
+	if o != nil && !IsNil(o.Movies) {
 		return true
 	}
 
@@ -531,7 +531,7 @@ func (o *CollectionResource) GetTagsOk() ([]int32, bool) {
 
 // HasTags returns a boolean if a field has been set.
 func (o *CollectionResource) HasTags() bool {
-	if o != nil && IsNil(o.Tags) {
+	if o != nil && !IsNil(o.Tags) {
 		return true
 	}
 

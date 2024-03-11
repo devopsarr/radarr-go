@@ -153,7 +153,7 @@ func (o *ImportListResource) GetFieldsOk() ([]Field, bool) {
 
 // HasFields returns a boolean if a field has been set.
 func (o *ImportListResource) HasFields() bool {
-	if o != nil && IsNil(o.Fields) {
+	if o != nil && !IsNil(o.Fields) {
 		return true
 	}
 
@@ -386,7 +386,7 @@ func (o *ImportListResource) GetTagsOk() ([]int32, bool) {
 
 // HasTags returns a boolean if a field has been set.
 func (o *ImportListResource) HasTags() bool {
-	if o != nil && IsNil(o.Tags) {
+	if o != nil && !IsNil(o.Tags) {
 		return true
 	}
 
@@ -419,7 +419,7 @@ func (o *ImportListResource) GetPresetsOk() ([]ImportListResource, bool) {
 
 // HasPresets returns a boolean if a field has been set.
 func (o *ImportListResource) HasPresets() bool {
-	if o != nil && IsNil(o.Presets) {
+	if o != nil && !IsNil(o.Presets) {
 		return true
 	}
 

@@ -146,7 +146,7 @@ func (o *ImportExclusionsResource) GetFieldsOk() ([]Field, bool) {
 
 // HasFields returns a boolean if a field has been set.
 func (o *ImportExclusionsResource) HasFields() bool {
-	if o != nil && IsNil(o.Fields) {
+	if o != nil && !IsNil(o.Fields) {
 		return true
 	}
 
@@ -379,7 +379,7 @@ func (o *ImportExclusionsResource) GetTagsOk() ([]int32, bool) {
 
 // HasTags returns a boolean if a field has been set.
 func (o *ImportExclusionsResource) HasTags() bool {
-	if o != nil && IsNil(o.Tags) {
+	if o != nil && !IsNil(o.Tags) {
 		return true
 	}
 
@@ -412,7 +412,7 @@ func (o *ImportExclusionsResource) GetPresetsOk() ([]ImportExclusionsResource, b
 
 // HasPresets returns a boolean if a field has been set.
 func (o *ImportExclusionsResource) HasPresets() bool {
-	if o != nil && IsNil(o.Presets) {
+	if o != nil && !IsNil(o.Presets) {
 		return true
 	}
 

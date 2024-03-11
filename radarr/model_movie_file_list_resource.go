@@ -66,7 +66,7 @@ func (o *MovieFileListResource) GetMovieFileIdsOk() ([]int32, bool) {
 
 // HasMovieFileIds returns a boolean if a field has been set.
 func (o *MovieFileListResource) HasMovieFileIds() bool {
-	if o != nil && IsNil(o.MovieFileIds) {
+	if o != nil && !IsNil(o.MovieFileIds) {
 		return true
 	}
 
@@ -99,7 +99,7 @@ func (o *MovieFileListResource) GetLanguagesOk() ([]Language, bool) {
 
 // HasLanguages returns a boolean if a field has been set.
 func (o *MovieFileListResource) HasLanguages() bool {
-	if o != nil && IsNil(o.Languages) {
+	if o != nil && !IsNil(o.Languages) {
 		return true
 	}
 

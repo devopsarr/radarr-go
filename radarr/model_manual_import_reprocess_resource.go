@@ -240,7 +240,7 @@ func (o *ManualImportReprocessResource) GetLanguagesOk() ([]Language, bool) {
 
 // HasLanguages returns a boolean if a field has been set.
 func (o *ManualImportReprocessResource) HasLanguages() bool {
-	if o != nil && IsNil(o.Languages) {
+	if o != nil && !IsNil(o.Languages) {
 		return true
 	}
 
@@ -357,7 +357,7 @@ func (o *ManualImportReprocessResource) GetCustomFormatsOk() ([]CustomFormatReso
 
 // HasCustomFormats returns a boolean if a field has been set.
 func (o *ManualImportReprocessResource) HasCustomFormats() bool {
-	if o != nil && IsNil(o.CustomFormats) {
+	if o != nil && !IsNil(o.CustomFormats) {
 		return true
 	}
 
@@ -422,7 +422,7 @@ func (o *ManualImportReprocessResource) GetRejectionsOk() ([]Rejection, bool) {
 
 // HasRejections returns a boolean if a field has been set.
 func (o *ManualImportReprocessResource) HasRejections() bool {
-	if o != nil && IsNil(o.Rejections) {
+	if o != nil && !IsNil(o.Rejections) {
 		return true
 	}
 
