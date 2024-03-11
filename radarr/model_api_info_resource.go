@@ -103,7 +103,7 @@ func (o *ApiInfoResource) GetDeprecatedOk() ([]string, bool) {
 
 // HasDeprecated returns a boolean if a field has been set.
 func (o *ApiInfoResource) HasDeprecated() bool {
-	if o != nil && IsNil(o.Deprecated) {
+	if o != nil && !IsNil(o.Deprecated) {
 		return true
 	}
 

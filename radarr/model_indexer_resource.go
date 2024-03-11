@@ -151,7 +151,7 @@ func (o *IndexerResource) GetFieldsOk() ([]Field, bool) {
 
 // HasFields returns a boolean if a field has been set.
 func (o *IndexerResource) HasFields() bool {
-	if o != nil && IsNil(o.Fields) {
+	if o != nil && !IsNil(o.Fields) {
 		return true
 	}
 
@@ -384,7 +384,7 @@ func (o *IndexerResource) GetTagsOk() ([]int32, bool) {
 
 // HasTags returns a boolean if a field has been set.
 func (o *IndexerResource) HasTags() bool {
-	if o != nil && IsNil(o.Tags) {
+	if o != nil && !IsNil(o.Tags) {
 		return true
 	}
 
@@ -417,7 +417,7 @@ func (o *IndexerResource) GetPresetsOk() ([]IndexerResource, bool) {
 
 // HasPresets returns a boolean if a field has been set.
 func (o *IndexerResource) HasPresets() bool {
-	if o != nil && IsNil(o.Presets) {
+	if o != nil && !IsNil(o.Presets) {
 		return true
 	}
 

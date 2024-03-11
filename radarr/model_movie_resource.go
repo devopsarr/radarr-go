@@ -253,7 +253,7 @@ func (o *MovieResource) GetAlternateTitlesOk() ([]AlternativeTitleResource, bool
 
 // HasAlternateTitles returns a boolean if a field has been set.
 func (o *MovieResource) HasAlternateTitles() bool {
-	if o != nil && IsNil(o.AlternateTitles) {
+	if o != nil && !IsNil(o.AlternateTitles) {
 		return true
 	}
 
@@ -686,7 +686,7 @@ func (o *MovieResource) GetImagesOk() ([]MediaCover, bool) {
 
 // HasImages returns a boolean if a field has been set.
 func (o *MovieResource) HasImages() bool {
-	if o != nil && IsNil(o.Images) {
+	if o != nil && !IsNil(o.Images) {
 		return true
 	}
 
@@ -1489,7 +1489,7 @@ func (o *MovieResource) GetGenresOk() ([]string, bool) {
 
 // HasGenres returns a boolean if a field has been set.
 func (o *MovieResource) HasGenres() bool {
-	if o != nil && IsNil(o.Genres) {
+	if o != nil && !IsNil(o.Genres) {
 		return true
 	}
 
@@ -1522,7 +1522,7 @@ func (o *MovieResource) GetTagsOk() ([]int32, bool) {
 
 // HasTags returns a boolean if a field has been set.
 func (o *MovieResource) HasTags() bool {
-	if o != nil && IsNil(o.Tags) {
+	if o != nil && !IsNil(o.Tags) {
 		return true
 	}
 
