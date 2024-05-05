@@ -36,13 +36,13 @@ Name | Type | Description | Notes
 **InfoUrl** | Pointer to **NullableString** |  | [optional] 
 **DownloadAllowed** | Pointer to **bool** |  | [optional] 
 **ReleaseWeight** | Pointer to **int32** |  | [optional] 
-**IndexerFlags** | Pointer to **[]string** |  | [optional] 
 **Edition** | Pointer to **NullableString** |  | [optional] 
 **MagnetUrl** | Pointer to **NullableString** |  | [optional] 
 **InfoHash** | Pointer to **NullableString** |  | [optional] 
 **Seeders** | Pointer to **NullableInt32** |  | [optional] 
 **Leechers** | Pointer to **NullableInt32** |  | [optional] 
 **Protocol** | Pointer to [**DownloadProtocol**](DownloadProtocol.md) |  | [optional] 
+**IndexerFlags** | Pointer to **[]string** |  | [optional] 
 **MovieId** | Pointer to **NullableInt32** |  | [optional] 
 **DownloadClientId** | Pointer to **NullableInt32** |  | [optional] 
 **DownloadClient** | Pointer to **NullableString** |  | [optional] 
@@ -1007,41 +1007,6 @@ SetReleaseWeight sets ReleaseWeight field to given value.
 
 HasReleaseWeight returns a boolean if a field has been set.
 
-### GetIndexerFlags
-
-`func (o *ReleaseResource) GetIndexerFlags() []string`
-
-GetIndexerFlags returns the IndexerFlags field if non-nil, zero value otherwise.
-
-### GetIndexerFlagsOk
-
-`func (o *ReleaseResource) GetIndexerFlagsOk() (*[]string, bool)`
-
-GetIndexerFlagsOk returns a tuple with the IndexerFlags field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIndexerFlags
-
-`func (o *ReleaseResource) SetIndexerFlags(v []string)`
-
-SetIndexerFlags sets IndexerFlags field to given value.
-
-### HasIndexerFlags
-
-`func (o *ReleaseResource) HasIndexerFlags() bool`
-
-HasIndexerFlags returns a boolean if a field has been set.
-
-### SetIndexerFlagsNil
-
-`func (o *ReleaseResource) SetIndexerFlagsNil(b bool)`
-
- SetIndexerFlagsNil sets the value for IndexerFlags to be an explicit nil
-
-### UnsetIndexerFlags
-`func (o *ReleaseResource) UnsetIndexerFlags()`
-
-UnsetIndexerFlags ensures that no value is present for IndexerFlags, not even an explicit nil
 ### GetEdition
 
 `func (o *ReleaseResource) GetEdition() string`
@@ -1242,6 +1207,41 @@ SetProtocol sets Protocol field to given value.
 
 HasProtocol returns a boolean if a field has been set.
 
+### GetIndexerFlags
+
+`func (o *ReleaseResource) GetIndexerFlags() []string`
+
+GetIndexerFlags returns the IndexerFlags field if non-nil, zero value otherwise.
+
+### GetIndexerFlagsOk
+
+`func (o *ReleaseResource) GetIndexerFlagsOk() (*[]string, bool)`
+
+GetIndexerFlagsOk returns a tuple with the IndexerFlags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIndexerFlags
+
+`func (o *ReleaseResource) SetIndexerFlags(v []string)`
+
+SetIndexerFlags sets IndexerFlags field to given value.
+
+### HasIndexerFlags
+
+`func (o *ReleaseResource) HasIndexerFlags() bool`
+
+HasIndexerFlags returns a boolean if a field has been set.
+
+### SetIndexerFlagsNil
+
+`func (o *ReleaseResource) SetIndexerFlagsNil(b bool)`
+
+ SetIndexerFlagsNil sets the value for IndexerFlags to be an explicit nil
+
+### UnsetIndexerFlags
+`func (o *ReleaseResource) UnsetIndexerFlags()`
+
+UnsetIndexerFlags ensures that no value is present for IndexerFlags, not even an explicit nil
 ### GetMovieId
 
 `func (o *ReleaseResource) GetMovieId() int32`

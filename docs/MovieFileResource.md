@@ -11,16 +11,16 @@ Name | Type | Description | Notes
 **Size** | Pointer to **int64** |  | [optional] 
 **DateAdded** | Pointer to **time.Time** |  | [optional] 
 **SceneName** | Pointer to **NullableString** |  | [optional] 
-**IndexerFlags** | Pointer to **int32** |  | [optional] 
+**ReleaseGroup** | Pointer to **NullableString** |  | [optional] 
+**Edition** | Pointer to **NullableString** |  | [optional] 
+**Languages** | Pointer to [**[]Language**](Language.md) |  | [optional] 
 **Quality** | Pointer to [**QualityModel**](QualityModel.md) |  | [optional] 
 **CustomFormats** | Pointer to [**[]CustomFormatResource**](CustomFormatResource.md) |  | [optional] 
 **CustomFormatScore** | Pointer to **int32** |  | [optional] 
+**IndexerFlags** | Pointer to **NullableInt32** |  | [optional] 
 **MediaInfo** | Pointer to [**MediaInfoResource**](MediaInfoResource.md) |  | [optional] 
 **OriginalFilePath** | Pointer to **NullableString** |  | [optional] 
 **QualityCutoffNotMet** | Pointer to **bool** |  | [optional] 
-**Languages** | Pointer to [**[]Language**](Language.md) |  | [optional] 
-**ReleaseGroup** | Pointer to **NullableString** |  | [optional] 
-**Edition** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -246,31 +246,111 @@ HasSceneName returns a boolean if a field has been set.
 `func (o *MovieFileResource) UnsetSceneName()`
 
 UnsetSceneName ensures that no value is present for SceneName, not even an explicit nil
-### GetIndexerFlags
+### GetReleaseGroup
 
-`func (o *MovieFileResource) GetIndexerFlags() int32`
+`func (o *MovieFileResource) GetReleaseGroup() string`
 
-GetIndexerFlags returns the IndexerFlags field if non-nil, zero value otherwise.
+GetReleaseGroup returns the ReleaseGroup field if non-nil, zero value otherwise.
 
-### GetIndexerFlagsOk
+### GetReleaseGroupOk
 
-`func (o *MovieFileResource) GetIndexerFlagsOk() (*int32, bool)`
+`func (o *MovieFileResource) GetReleaseGroupOk() (*string, bool)`
 
-GetIndexerFlagsOk returns a tuple with the IndexerFlags field if it's non-nil, zero value otherwise
+GetReleaseGroupOk returns a tuple with the ReleaseGroup field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetIndexerFlags
+### SetReleaseGroup
 
-`func (o *MovieFileResource) SetIndexerFlags(v int32)`
+`func (o *MovieFileResource) SetReleaseGroup(v string)`
 
-SetIndexerFlags sets IndexerFlags field to given value.
+SetReleaseGroup sets ReleaseGroup field to given value.
 
-### HasIndexerFlags
+### HasReleaseGroup
 
-`func (o *MovieFileResource) HasIndexerFlags() bool`
+`func (o *MovieFileResource) HasReleaseGroup() bool`
 
-HasIndexerFlags returns a boolean if a field has been set.
+HasReleaseGroup returns a boolean if a field has been set.
 
+### SetReleaseGroupNil
+
+`func (o *MovieFileResource) SetReleaseGroupNil(b bool)`
+
+ SetReleaseGroupNil sets the value for ReleaseGroup to be an explicit nil
+
+### UnsetReleaseGroup
+`func (o *MovieFileResource) UnsetReleaseGroup()`
+
+UnsetReleaseGroup ensures that no value is present for ReleaseGroup, not even an explicit nil
+### GetEdition
+
+`func (o *MovieFileResource) GetEdition() string`
+
+GetEdition returns the Edition field if non-nil, zero value otherwise.
+
+### GetEditionOk
+
+`func (o *MovieFileResource) GetEditionOk() (*string, bool)`
+
+GetEditionOk returns a tuple with the Edition field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEdition
+
+`func (o *MovieFileResource) SetEdition(v string)`
+
+SetEdition sets Edition field to given value.
+
+### HasEdition
+
+`func (o *MovieFileResource) HasEdition() bool`
+
+HasEdition returns a boolean if a field has been set.
+
+### SetEditionNil
+
+`func (o *MovieFileResource) SetEditionNil(b bool)`
+
+ SetEditionNil sets the value for Edition to be an explicit nil
+
+### UnsetEdition
+`func (o *MovieFileResource) UnsetEdition()`
+
+UnsetEdition ensures that no value is present for Edition, not even an explicit nil
+### GetLanguages
+
+`func (o *MovieFileResource) GetLanguages() []Language`
+
+GetLanguages returns the Languages field if non-nil, zero value otherwise.
+
+### GetLanguagesOk
+
+`func (o *MovieFileResource) GetLanguagesOk() (*[]Language, bool)`
+
+GetLanguagesOk returns a tuple with the Languages field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLanguages
+
+`func (o *MovieFileResource) SetLanguages(v []Language)`
+
+SetLanguages sets Languages field to given value.
+
+### HasLanguages
+
+`func (o *MovieFileResource) HasLanguages() bool`
+
+HasLanguages returns a boolean if a field has been set.
+
+### SetLanguagesNil
+
+`func (o *MovieFileResource) SetLanguagesNil(b bool)`
+
+ SetLanguagesNil sets the value for Languages to be an explicit nil
+
+### UnsetLanguages
+`func (o *MovieFileResource) UnsetLanguages()`
+
+UnsetLanguages ensures that no value is present for Languages, not even an explicit nil
 ### GetQuality
 
 `func (o *MovieFileResource) GetQuality() QualityModel`
@@ -356,6 +436,41 @@ SetCustomFormatScore sets CustomFormatScore field to given value.
 
 HasCustomFormatScore returns a boolean if a field has been set.
 
+### GetIndexerFlags
+
+`func (o *MovieFileResource) GetIndexerFlags() int32`
+
+GetIndexerFlags returns the IndexerFlags field if non-nil, zero value otherwise.
+
+### GetIndexerFlagsOk
+
+`func (o *MovieFileResource) GetIndexerFlagsOk() (*int32, bool)`
+
+GetIndexerFlagsOk returns a tuple with the IndexerFlags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIndexerFlags
+
+`func (o *MovieFileResource) SetIndexerFlags(v int32)`
+
+SetIndexerFlags sets IndexerFlags field to given value.
+
+### HasIndexerFlags
+
+`func (o *MovieFileResource) HasIndexerFlags() bool`
+
+HasIndexerFlags returns a boolean if a field has been set.
+
+### SetIndexerFlagsNil
+
+`func (o *MovieFileResource) SetIndexerFlagsNil(b bool)`
+
+ SetIndexerFlagsNil sets the value for IndexerFlags to be an explicit nil
+
+### UnsetIndexerFlags
+`func (o *MovieFileResource) UnsetIndexerFlags()`
+
+UnsetIndexerFlags ensures that no value is present for IndexerFlags, not even an explicit nil
 ### GetMediaInfo
 
 `func (o *MovieFileResource) GetMediaInfo() MediaInfoResource`
@@ -441,111 +556,6 @@ SetQualityCutoffNotMet sets QualityCutoffNotMet field to given value.
 
 HasQualityCutoffNotMet returns a boolean if a field has been set.
 
-### GetLanguages
-
-`func (o *MovieFileResource) GetLanguages() []Language`
-
-GetLanguages returns the Languages field if non-nil, zero value otherwise.
-
-### GetLanguagesOk
-
-`func (o *MovieFileResource) GetLanguagesOk() (*[]Language, bool)`
-
-GetLanguagesOk returns a tuple with the Languages field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetLanguages
-
-`func (o *MovieFileResource) SetLanguages(v []Language)`
-
-SetLanguages sets Languages field to given value.
-
-### HasLanguages
-
-`func (o *MovieFileResource) HasLanguages() bool`
-
-HasLanguages returns a boolean if a field has been set.
-
-### SetLanguagesNil
-
-`func (o *MovieFileResource) SetLanguagesNil(b bool)`
-
- SetLanguagesNil sets the value for Languages to be an explicit nil
-
-### UnsetLanguages
-`func (o *MovieFileResource) UnsetLanguages()`
-
-UnsetLanguages ensures that no value is present for Languages, not even an explicit nil
-### GetReleaseGroup
-
-`func (o *MovieFileResource) GetReleaseGroup() string`
-
-GetReleaseGroup returns the ReleaseGroup field if non-nil, zero value otherwise.
-
-### GetReleaseGroupOk
-
-`func (o *MovieFileResource) GetReleaseGroupOk() (*string, bool)`
-
-GetReleaseGroupOk returns a tuple with the ReleaseGroup field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetReleaseGroup
-
-`func (o *MovieFileResource) SetReleaseGroup(v string)`
-
-SetReleaseGroup sets ReleaseGroup field to given value.
-
-### HasReleaseGroup
-
-`func (o *MovieFileResource) HasReleaseGroup() bool`
-
-HasReleaseGroup returns a boolean if a field has been set.
-
-### SetReleaseGroupNil
-
-`func (o *MovieFileResource) SetReleaseGroupNil(b bool)`
-
- SetReleaseGroupNil sets the value for ReleaseGroup to be an explicit nil
-
-### UnsetReleaseGroup
-`func (o *MovieFileResource) UnsetReleaseGroup()`
-
-UnsetReleaseGroup ensures that no value is present for ReleaseGroup, not even an explicit nil
-### GetEdition
-
-`func (o *MovieFileResource) GetEdition() string`
-
-GetEdition returns the Edition field if non-nil, zero value otherwise.
-
-### GetEditionOk
-
-`func (o *MovieFileResource) GetEditionOk() (*string, bool)`
-
-GetEditionOk returns a tuple with the Edition field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEdition
-
-`func (o *MovieFileResource) SetEdition(v string)`
-
-SetEdition sets Edition field to given value.
-
-### HasEdition
-
-`func (o *MovieFileResource) HasEdition() bool`
-
-HasEdition returns a boolean if a field has been set.
-
-### SetEditionNil
-
-`func (o *MovieFileResource) SetEditionNil(b bool)`
-
- SetEditionNil sets the value for Edition to be an explicit nil
-
-### UnsetEdition
-`func (o *MovieFileResource) UnsetEdition()`
-
-UnsetEdition ensures that no value is present for Edition, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
