@@ -17,6 +17,8 @@ Name | Type | Description | Notes
 **Ratings** | Pointer to [**Ratings**](Ratings.md) |  | [optional] 
 **Genres** | Pointer to **[]string** |  | [optional] 
 **Folder** | Pointer to **NullableString** |  | [optional] 
+**IsExisting** | Pointer to **bool** |  | [optional] 
+**IsExcluded** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
@@ -442,6 +444,56 @@ HasFolder returns a boolean if a field has been set.
 `func (o *CollectionMovieResource) UnsetFolder()`
 
 UnsetFolder ensures that no value is present for Folder, not even an explicit nil
+### GetIsExisting
+
+`func (o *CollectionMovieResource) GetIsExisting() bool`
+
+GetIsExisting returns the IsExisting field if non-nil, zero value otherwise.
+
+### GetIsExistingOk
+
+`func (o *CollectionMovieResource) GetIsExistingOk() (*bool, bool)`
+
+GetIsExistingOk returns a tuple with the IsExisting field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsExisting
+
+`func (o *CollectionMovieResource) SetIsExisting(v bool)`
+
+SetIsExisting sets IsExisting field to given value.
+
+### HasIsExisting
+
+`func (o *CollectionMovieResource) HasIsExisting() bool`
+
+HasIsExisting returns a boolean if a field has been set.
+
+### GetIsExcluded
+
+`func (o *CollectionMovieResource) GetIsExcluded() bool`
+
+GetIsExcluded returns the IsExcluded field if non-nil, zero value otherwise.
+
+### GetIsExcludedOk
+
+`func (o *CollectionMovieResource) GetIsExcludedOk() (*bool, bool)`
+
+GetIsExcludedOk returns a tuple with the IsExcluded field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsExcluded
+
+`func (o *CollectionMovieResource) SetIsExcluded(v bool)`
+
+SetIsExcluded sets IsExcluded field to given value.
+
+### HasIsExcluded
+
+`func (o *CollectionMovieResource) HasIsExcluded() bool`
+
+HasIsExcluded returns a boolean if a field has been set.
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

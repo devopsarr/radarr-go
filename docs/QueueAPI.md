@@ -7,7 +7,6 @@ Method | HTTP request | Description
 [**DeleteQueue**](QueueAPI.md#DeleteQueue) | **Delete** /api/v3/queue/{id} | 
 [**DeleteQueueBulk**](QueueAPI.md#DeleteQueueBulk) | **Delete** /api/v3/queue/bulk | 
 [**GetQueue**](QueueAPI.md#GetQueue) | **Get** /api/v3/queue | 
-[**GetQueueById**](QueueAPI.md#GetQueueById) | **Get** /api/v3/queue/{id} | 
 
 
 
@@ -231,74 +230,6 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetQueueById
-
-> QueueResource GetQueueById(ctx, id).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	radarrClient "github.com/devopsarr/radarr-go/radarr"
-)
-
-func main() {
-	id := int32(56) // int32 | 
-
-	configuration := radarrClient.NewConfiguration()
-	apiClient := radarrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.QueueAPI.GetQueueById(context.Background(), id).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `QueueAPI.GetQueueById``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `GetQueueById`: QueueResource
-	fmt.Fprintf(os.Stdout, "Response from `QueueAPI.GetQueueById`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **int32** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetQueueByIdRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**QueueResource**](QueueResource.md)
-
-### Authorization
-
-[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

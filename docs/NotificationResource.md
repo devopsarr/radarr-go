@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **OnMovieFileDelete** | Pointer to **bool** |  | [optional] 
 **OnMovieFileDeleteForUpgrade** | Pointer to **bool** |  | [optional] 
 **OnHealthIssue** | Pointer to **bool** |  | [optional] 
+**IncludeHealthWarnings** | Pointer to **bool** |  | [optional] 
 **OnHealthRestored** | Pointer to **bool** |  | [optional] 
 **OnApplicationUpdate** | Pointer to **bool** |  | [optional] 
 **OnManualInteractionRequired** | Pointer to **bool** |  | [optional] 
@@ -39,7 +40,6 @@ Name | Type | Description | Notes
 **SupportsOnHealthRestored** | Pointer to **bool** |  | [optional] 
 **SupportsOnApplicationUpdate** | Pointer to **bool** |  | [optional] 
 **SupportsOnManualInteractionRequired** | Pointer to **bool** |  | [optional] 
-**IncludeHealthWarnings** | Pointer to **bool** |  | [optional] 
 **TestCommand** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
@@ -651,6 +651,31 @@ SetOnHealthIssue sets OnHealthIssue field to given value.
 
 HasOnHealthIssue returns a boolean if a field has been set.
 
+### GetIncludeHealthWarnings
+
+`func (o *NotificationResource) GetIncludeHealthWarnings() bool`
+
+GetIncludeHealthWarnings returns the IncludeHealthWarnings field if non-nil, zero value otherwise.
+
+### GetIncludeHealthWarningsOk
+
+`func (o *NotificationResource) GetIncludeHealthWarningsOk() (*bool, bool)`
+
+GetIncludeHealthWarningsOk returns a tuple with the IncludeHealthWarnings field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIncludeHealthWarnings
+
+`func (o *NotificationResource) SetIncludeHealthWarnings(v bool)`
+
+SetIncludeHealthWarnings sets IncludeHealthWarnings field to given value.
+
+### HasIncludeHealthWarnings
+
+`func (o *NotificationResource) HasIncludeHealthWarnings() bool`
+
+HasIncludeHealthWarnings returns a boolean if a field has been set.
+
 ### GetOnHealthRestored
 
 `func (o *NotificationResource) GetOnHealthRestored() bool`
@@ -1025,31 +1050,6 @@ SetSupportsOnManualInteractionRequired sets SupportsOnManualInteractionRequired 
 `func (o *NotificationResource) HasSupportsOnManualInteractionRequired() bool`
 
 HasSupportsOnManualInteractionRequired returns a boolean if a field has been set.
-
-### GetIncludeHealthWarnings
-
-`func (o *NotificationResource) GetIncludeHealthWarnings() bool`
-
-GetIncludeHealthWarnings returns the IncludeHealthWarnings field if non-nil, zero value otherwise.
-
-### GetIncludeHealthWarningsOk
-
-`func (o *NotificationResource) GetIncludeHealthWarningsOk() (*bool, bool)`
-
-GetIncludeHealthWarningsOk returns a tuple with the IncludeHealthWarnings field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIncludeHealthWarnings
-
-`func (o *NotificationResource) SetIncludeHealthWarnings(v bool)`
-
-SetIncludeHealthWarnings sets IncludeHealthWarnings field to given value.
-
-### HasIncludeHealthWarnings
-
-`func (o *NotificationResource) HasIncludeHealthWarnings() bool`
-
-HasIncludeHealthWarnings returns a boolean if a field has been set.
 
 ### GetTestCommand
 

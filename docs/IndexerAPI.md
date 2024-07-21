@@ -400,7 +400,7 @@ Other parameters are passed through a pointer to a apiListIndexerRequest struct 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -459,7 +459,7 @@ Other parameters are passed through a pointer to a apiListIndexerSchemaRequest s
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -532,7 +532,7 @@ Name | Type | Description  | Notes
 
 ## TestIndexer
 
-> TestIndexer(ctx).IndexerResource(indexerResource).Execute()
+> TestIndexer(ctx).ForceTest(forceTest).IndexerResource(indexerResource).Execute()
 
 
 
@@ -549,11 +549,12 @@ import (
 )
 
 func main() {
+	forceTest := true // bool |  (optional) (default to false)
 	indexerResource := *radarrClient.NewIndexerResource() // IndexerResource |  (optional)
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	r, err := apiClient.IndexerAPI.TestIndexer(context.Background()).IndexerResource(indexerResource).Execute()
+	r, err := apiClient.IndexerAPI.TestIndexer(context.Background()).ForceTest(forceTest).IndexerResource(indexerResource).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IndexerAPI.TestIndexer``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -572,6 +573,7 @@ Other parameters are passed through a pointer to a apiTestIndexerRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **forceTest** | **bool** |  | [default to false]
  **indexerResource** | [**IndexerResource**](IndexerResource.md) |  | 
 
 ### Return type
@@ -584,7 +586,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/*+json
+- **Content-Type**: application/json
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
