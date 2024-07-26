@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/*+json
+- **Content-Type**: application/json
 - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 
 ## ListMovie
 
-> []MovieResource ListMovie(ctx).TmdbId(tmdbId).ExcludeLocalCovers(excludeLocalCovers).Execute()
+> []MovieResource ListMovie(ctx).TmdbId(tmdbId).ExcludeLocalCovers(excludeLocalCovers).LanguageId(languageId).Execute()
 
 
 
@@ -235,10 +235,11 @@ import (
 func main() {
 	tmdbId := int32(56) // int32 |  (optional)
 	excludeLocalCovers := true // bool |  (optional) (default to false)
+	languageId := int32(56) // int32 |  (optional)
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MovieAPI.ListMovie(context.Background()).TmdbId(tmdbId).ExcludeLocalCovers(excludeLocalCovers).Execute()
+	resp, r, err := apiClient.MovieAPI.ListMovie(context.Background()).TmdbId(tmdbId).ExcludeLocalCovers(excludeLocalCovers).LanguageId(languageId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MovieAPI.ListMovie``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -261,6 +262,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **tmdbId** | **int32** |  | 
  **excludeLocalCovers** | **bool** |  | [default to false]
+ **languageId** | **int32** |  | 
 
 ### Return type
 
@@ -344,7 +346,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/*+json
+- **Content-Type**: application/json
 - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **Path** | Pointer to **NullableString** |  | [optional] 
 **QualityProfileId** | Pointer to **int32** |  | [optional] 
 **HasFile** | Pointer to **NullableBool** |  | [optional] 
+**MovieFileId** | Pointer to **int32** |  | [optional] 
 **Monitored** | Pointer to **bool** |  | [optional] 
 **MinimumAvailability** | Pointer to [**MovieStatusType**](MovieStatusType.md) |  | [optional] 
 **IsAvailable** | Pointer to **bool** |  | [optional] 
@@ -849,6 +850,31 @@ HasHasFile returns a boolean if a field has been set.
 `func (o *MovieResource) UnsetHasFile()`
 
 UnsetHasFile ensures that no value is present for HasFile, not even an explicit nil
+### GetMovieFileId
+
+`func (o *MovieResource) GetMovieFileId() int32`
+
+GetMovieFileId returns the MovieFileId field if non-nil, zero value otherwise.
+
+### GetMovieFileIdOk
+
+`func (o *MovieResource) GetMovieFileIdOk() (*int32, bool)`
+
+GetMovieFileIdOk returns a tuple with the MovieFileId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMovieFileId
+
+`func (o *MovieResource) SetMovieFileId(v int32)`
+
+SetMovieFileId sets MovieFileId field to given value.
+
+### HasMovieFileId
+
+`func (o *MovieResource) HasMovieFileId() bool`
+
+HasMovieFileId returns a boolean if a field has been set.
+
 ### GetMonitored
 
 `func (o *MovieResource) GetMonitored() bool`

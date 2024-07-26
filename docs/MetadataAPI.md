@@ -336,7 +336,7 @@ Other parameters are passed through a pointer to a apiListMetadataRequest struct
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -395,7 +395,7 @@ Other parameters are passed through a pointer to a apiListMetadataSchemaRequest 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -404,7 +404,7 @@ Other parameters are passed through a pointer to a apiListMetadataSchemaRequest 
 
 ## TestMetadata
 
-> TestMetadata(ctx).MetadataResource(metadataResource).Execute()
+> TestMetadata(ctx).ForceTest(forceTest).MetadataResource(metadataResource).Execute()
 
 
 
@@ -421,11 +421,12 @@ import (
 )
 
 func main() {
+	forceTest := true // bool |  (optional) (default to false)
 	metadataResource := *radarrClient.NewMetadataResource() // MetadataResource |  (optional)
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	r, err := apiClient.MetadataAPI.TestMetadata(context.Background()).MetadataResource(metadataResource).Execute()
+	r, err := apiClient.MetadataAPI.TestMetadata(context.Background()).ForceTest(forceTest).MetadataResource(metadataResource).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MetadataAPI.TestMetadata``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -444,6 +445,7 @@ Other parameters are passed through a pointer to a apiTestMetadataRequest struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **forceTest** | **bool** |  | [default to false]
  **metadataResource** | [**MetadataResource**](MetadataResource.md) |  | 
 
 ### Return type
@@ -456,7 +458,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/*+json
+- **Content-Type**: application/json
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

@@ -42,7 +42,7 @@ Name | Type | Description | Notes
 **Seeders** | Pointer to **NullableInt32** |  | [optional] 
 **Leechers** | Pointer to **NullableInt32** |  | [optional] 
 **Protocol** | Pointer to [**DownloadProtocol**](DownloadProtocol.md) |  | [optional] 
-**IndexerFlags** | Pointer to **[]string** |  | [optional] 
+**IndexerFlags** | Pointer to **interface{}** |  | [optional] 
 **MovieId** | Pointer to **NullableInt32** |  | [optional] 
 **DownloadClientId** | Pointer to **NullableInt32** |  | [optional] 
 **DownloadClient** | Pointer to **NullableString** |  | [optional] 
@@ -1209,20 +1209,20 @@ HasProtocol returns a boolean if a field has been set.
 
 ### GetIndexerFlags
 
-`func (o *ReleaseResource) GetIndexerFlags() []string`
+`func (o *ReleaseResource) GetIndexerFlags() interface{}`
 
 GetIndexerFlags returns the IndexerFlags field if non-nil, zero value otherwise.
 
 ### GetIndexerFlagsOk
 
-`func (o *ReleaseResource) GetIndexerFlagsOk() (*[]string, bool)`
+`func (o *ReleaseResource) GetIndexerFlagsOk() (*interface{}, bool)`
 
 GetIndexerFlagsOk returns a tuple with the IndexerFlags field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIndexerFlags
 
-`func (o *ReleaseResource) SetIndexerFlags(v []string)`
+`func (o *ReleaseResource) SetIndexerFlags(v interface{})`
 
 SetIndexerFlags sets IndexerFlags field to given value.
 

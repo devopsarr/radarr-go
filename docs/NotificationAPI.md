@@ -336,7 +336,7 @@ Other parameters are passed through a pointer to a apiListNotificationRequest st
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -395,7 +395,7 @@ Other parameters are passed through a pointer to a apiListNotificationSchemaRequ
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -404,7 +404,7 @@ Other parameters are passed through a pointer to a apiListNotificationSchemaRequ
 
 ## TestNotification
 
-> TestNotification(ctx).NotificationResource(notificationResource).Execute()
+> TestNotification(ctx).ForceTest(forceTest).NotificationResource(notificationResource).Execute()
 
 
 
@@ -421,11 +421,12 @@ import (
 )
 
 func main() {
+	forceTest := true // bool |  (optional) (default to false)
 	notificationResource := *radarrClient.NewNotificationResource() // NotificationResource |  (optional)
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	r, err := apiClient.NotificationAPI.TestNotification(context.Background()).NotificationResource(notificationResource).Execute()
+	r, err := apiClient.NotificationAPI.TestNotification(context.Background()).ForceTest(forceTest).NotificationResource(notificationResource).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `NotificationAPI.TestNotification``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -444,6 +445,7 @@ Other parameters are passed through a pointer to a apiTestNotificationRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **forceTest** | **bool** |  | [default to false]
  **notificationResource** | [**NotificationResource**](NotificationResource.md) |  | 
 
 ### Return type
@@ -456,7 +458,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/*+json
+- **Content-Type**: application/json
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
