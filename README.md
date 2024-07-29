@@ -231,9 +231,9 @@ Class | Method | HTTP request | Description
 *MovieFileAPI* | [**PutMovieFileEditor**](docs/MovieFileAPI.md#putmoviefileeditor) | **Put** /api/v3/moviefile/editor | 
 *MovieFileAPI* | [**UpdateMovieFile**](docs/MovieFileAPI.md#updatemoviefile) | **Put** /api/v3/moviefile/{id} | 
 *MovieImportAPI* | [**CreateMovieImport**](docs/MovieImportAPI.md#createmovieimport) | **Post** /api/v3/movie/import | 
-*MovieLookupAPI* | [**GetMovieLookup**](docs/MovieLookupAPI.md#getmovielookup) | **Get** /api/v3/movie/lookup | 
-*MovieLookupAPI* | [**GetMovieLookupImdb**](docs/MovieLookupAPI.md#getmovielookupimdb) | **Get** /api/v3/movie/lookup/imdb | 
-*MovieLookupAPI* | [**GetMovieLookupTmdb**](docs/MovieLookupAPI.md#getmovielookuptmdb) | **Get** /api/v3/movie/lookup/tmdb | 
+*MovieLookupAPI* | [**ListMovieLookup**](docs/MovieLookupAPI.md#listmovielookup) | **Get** /api/v3/movie/lookup | 
+*MovieLookupAPI* | [**ListMovieLookupImdb**](docs/MovieLookupAPI.md#listmovielookupimdb) | **Get** /api/v3/movie/lookup/imdb | 
+*MovieLookupAPI* | [**ListMovieLookupTmdb**](docs/MovieLookupAPI.md#listmovielookuptmdb) | **Get** /api/v3/movie/lookup/tmdb | 
 *NamingConfigAPI* | [**GetNamingConfig**](docs/NamingConfigAPI.md#getnamingconfig) | **Get** /api/v3/config/naming | 
 *NamingConfigAPI* | [**GetNamingConfigById**](docs/NamingConfigAPI.md#getnamingconfigbyid) | **Get** /api/v3/config/naming/{id} | 
 *NamingConfigAPI* | [**GetNamingConfigExamples**](docs/NamingConfigAPI.md#getnamingconfigexamples) | **Get** /api/v3/config/naming/examples | 
