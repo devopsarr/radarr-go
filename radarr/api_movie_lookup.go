@@ -22,45 +22,47 @@ import (
 // MovieLookupAPIService MovieLookupAPI service
 type MovieLookupAPIService service
 
-type ApiGetMovieLookupRequest struct {
+type ApiListMovieLookupRequest struct {
 	ctx context.Context
 	ApiService *MovieLookupAPIService
 	term *string
 }
 
-func (r ApiGetMovieLookupRequest) Term(term string) ApiGetMovieLookupRequest {
+func (r ApiListMovieLookupRequest) Term(term string) ApiListMovieLookupRequest {
 	r.term = &term
 	return r
 }
 
-func (r ApiGetMovieLookupRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetMovieLookupExecute(r)
+func (r ApiListMovieLookupRequest) Execute() ([]MovieResource, *http.Response, error) {
+	return r.ApiService.ListMovieLookupExecute(r)
 }
 
 /*
-GetMovieLookup Method for GetMovieLookup
+ListMovieLookup Method for ListMovieLookup
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetMovieLookupRequest
+ @return ApiListMovieLookupRequest
 */
-func (a *MovieLookupAPIService) GetMovieLookup(ctx context.Context) ApiGetMovieLookupRequest {
-	return ApiGetMovieLookupRequest{
+func (a *MovieLookupAPIService) ListMovieLookup(ctx context.Context) ApiListMovieLookupRequest {
+	return ApiListMovieLookupRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *MovieLookupAPIService) GetMovieLookupExecute(r ApiGetMovieLookupRequest) (*http.Response, error) {
+//  @return []MovieResource
+func (a *MovieLookupAPIService) ListMovieLookupExecute(r ApiListMovieLookupRequest) ([]MovieResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
+		localVarReturnValue  []MovieResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieLookupAPIService.GetMovieLookup")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieLookupAPIService.ListMovieLookup")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/api/v3/movie/lookup"
@@ -82,7 +84,7 @@ func (a *MovieLookupAPIService) GetMovieLookupExecute(r ApiGetMovieLookupRequest
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -119,19 +121,19 @@ func (a *MovieLookupAPIService) GetMovieLookupExecute(r ApiGetMovieLookupRequest
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -139,51 +141,62 @@ func (a *MovieLookupAPIService) GetMovieLookupExecute(r ApiGetMovieLookupRequest
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetMovieLookupImdbRequest struct {
+type ApiListMovieLookupImdbRequest struct {
 	ctx context.Context
 	ApiService *MovieLookupAPIService
 	imdbId *string
 }
 
-func (r ApiGetMovieLookupImdbRequest) ImdbId(imdbId string) ApiGetMovieLookupImdbRequest {
+func (r ApiListMovieLookupImdbRequest) ImdbId(imdbId string) ApiListMovieLookupImdbRequest {
 	r.imdbId = &imdbId
 	return r
 }
 
-func (r ApiGetMovieLookupImdbRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetMovieLookupImdbExecute(r)
+func (r ApiListMovieLookupImdbRequest) Execute() ([]MovieResource, *http.Response, error) {
+	return r.ApiService.ListMovieLookupImdbExecute(r)
 }
 
 /*
-GetMovieLookupImdb Method for GetMovieLookupImdb
+ListMovieLookupImdb Method for ListMovieLookupImdb
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetMovieLookupImdbRequest
+ @return ApiListMovieLookupImdbRequest
 */
-func (a *MovieLookupAPIService) GetMovieLookupImdb(ctx context.Context) ApiGetMovieLookupImdbRequest {
-	return ApiGetMovieLookupImdbRequest{
+func (a *MovieLookupAPIService) ListMovieLookupImdb(ctx context.Context) ApiListMovieLookupImdbRequest {
+	return ApiListMovieLookupImdbRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *MovieLookupAPIService) GetMovieLookupImdbExecute(r ApiGetMovieLookupImdbRequest) (*http.Response, error) {
+//  @return []MovieResource
+func (a *MovieLookupAPIService) ListMovieLookupImdbExecute(r ApiListMovieLookupImdbRequest) ([]MovieResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
+		localVarReturnValue  []MovieResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieLookupAPIService.GetMovieLookupImdb")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieLookupAPIService.ListMovieLookupImdb")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/api/v3/movie/lookup/imdb"
@@ -205,7 +218,7 @@ func (a *MovieLookupAPIService) GetMovieLookupImdbExecute(r ApiGetMovieLookupImd
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -242,19 +255,19 @@ func (a *MovieLookupAPIService) GetMovieLookupImdbExecute(r ApiGetMovieLookupImd
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -262,51 +275,62 @@ func (a *MovieLookupAPIService) GetMovieLookupImdbExecute(r ApiGetMovieLookupImd
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetMovieLookupTmdbRequest struct {
+type ApiListMovieLookupTmdbRequest struct {
 	ctx context.Context
 	ApiService *MovieLookupAPIService
 	tmdbId *int32
 }
 
-func (r ApiGetMovieLookupTmdbRequest) TmdbId(tmdbId int32) ApiGetMovieLookupTmdbRequest {
+func (r ApiListMovieLookupTmdbRequest) TmdbId(tmdbId int32) ApiListMovieLookupTmdbRequest {
 	r.tmdbId = &tmdbId
 	return r
 }
 
-func (r ApiGetMovieLookupTmdbRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GetMovieLookupTmdbExecute(r)
+func (r ApiListMovieLookupTmdbRequest) Execute() ([]MovieResource, *http.Response, error) {
+	return r.ApiService.ListMovieLookupTmdbExecute(r)
 }
 
 /*
-GetMovieLookupTmdb Method for GetMovieLookupTmdb
+ListMovieLookupTmdb Method for ListMovieLookupTmdb
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetMovieLookupTmdbRequest
+ @return ApiListMovieLookupTmdbRequest
 */
-func (a *MovieLookupAPIService) GetMovieLookupTmdb(ctx context.Context) ApiGetMovieLookupTmdbRequest {
-	return ApiGetMovieLookupTmdbRequest{
+func (a *MovieLookupAPIService) ListMovieLookupTmdb(ctx context.Context) ApiListMovieLookupTmdbRequest {
+	return ApiListMovieLookupTmdbRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *MovieLookupAPIService) GetMovieLookupTmdbExecute(r ApiGetMovieLookupTmdbRequest) (*http.Response, error) {
+//  @return []MovieResource
+func (a *MovieLookupAPIService) ListMovieLookupTmdbExecute(r ApiListMovieLookupTmdbRequest) ([]MovieResource, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
+		localVarReturnValue  []MovieResource
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieLookupAPIService.GetMovieLookupTmdb")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MovieLookupAPIService.ListMovieLookupTmdb")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/api/v3/movie/lookup/tmdb"
@@ -328,7 +352,7 @@ func (a *MovieLookupAPIService) GetMovieLookupTmdbExecute(r ApiGetMovieLookupTmd
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -365,19 +389,19 @@ func (a *MovieLookupAPIService) GetMovieLookupTmdbExecute(r ApiGetMovieLookupTmd
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -385,8 +409,17 @@ func (a *MovieLookupAPIService) GetMovieLookupTmdbExecute(r ApiGetMovieLookupTmd
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }

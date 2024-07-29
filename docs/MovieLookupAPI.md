@@ -4,15 +4,15 @@ All URIs are relative to *http://localhost:7878*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetMovieLookup**](MovieLookupAPI.md#GetMovieLookup) | **Get** /api/v3/movie/lookup | 
-[**GetMovieLookupImdb**](MovieLookupAPI.md#GetMovieLookupImdb) | **Get** /api/v3/movie/lookup/imdb | 
-[**GetMovieLookupTmdb**](MovieLookupAPI.md#GetMovieLookupTmdb) | **Get** /api/v3/movie/lookup/tmdb | 
+[**ListMovieLookup**](MovieLookupAPI.md#ListMovieLookup) | **Get** /api/v3/movie/lookup | 
+[**ListMovieLookupImdb**](MovieLookupAPI.md#ListMovieLookupImdb) | **Get** /api/v3/movie/lookup/imdb | 
+[**ListMovieLookupTmdb**](MovieLookupAPI.md#ListMovieLookupTmdb) | **Get** /api/v3/movie/lookup/tmdb | 
 
 
 
-## GetMovieLookup
+## ListMovieLookup
 
-> GetMovieLookup(ctx).Term(term).Execute()
+> []MovieResource ListMovieLookup(ctx).Term(term).Execute()
 
 
 
@@ -33,11 +33,13 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	r, err := apiClient.MovieLookupAPI.GetMovieLookup(context.Background()).Term(term).Execute()
+	resp, r, err := apiClient.MovieLookupAPI.ListMovieLookup(context.Background()).Term(term).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `MovieLookupAPI.GetMovieLookup``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `MovieLookupAPI.ListMovieLookup``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ListMovieLookup`: []MovieResource
+	fmt.Fprintf(os.Stdout, "Response from `MovieLookupAPI.ListMovieLookup`: %v\n", resp)
 }
 ```
 
@@ -47,7 +49,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetMovieLookupRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListMovieLookupRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -56,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**[]MovieResource**](MovieResource.md)
 
 ### Authorization
 
@@ -65,16 +67,16 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## GetMovieLookupImdb
+## ListMovieLookupImdb
 
-> GetMovieLookupImdb(ctx).ImdbId(imdbId).Execute()
+> []MovieResource ListMovieLookupImdb(ctx).ImdbId(imdbId).Execute()
 
 
 
@@ -95,11 +97,13 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	r, err := apiClient.MovieLookupAPI.GetMovieLookupImdb(context.Background()).ImdbId(imdbId).Execute()
+	resp, r, err := apiClient.MovieLookupAPI.ListMovieLookupImdb(context.Background()).ImdbId(imdbId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `MovieLookupAPI.GetMovieLookupImdb``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `MovieLookupAPI.ListMovieLookupImdb``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ListMovieLookupImdb`: []MovieResource
+	fmt.Fprintf(os.Stdout, "Response from `MovieLookupAPI.ListMovieLookupImdb`: %v\n", resp)
 }
 ```
 
@@ -109,7 +113,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetMovieLookupImdbRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListMovieLookupImdbRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -118,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**[]MovieResource**](MovieResource.md)
 
 ### Authorization
 
@@ -127,16 +131,16 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## GetMovieLookupTmdb
+## ListMovieLookupTmdb
 
-> GetMovieLookupTmdb(ctx).TmdbId(tmdbId).Execute()
+> []MovieResource ListMovieLookupTmdb(ctx).TmdbId(tmdbId).Execute()
 
 
 
@@ -157,11 +161,13 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	r, err := apiClient.MovieLookupAPI.GetMovieLookupTmdb(context.Background()).TmdbId(tmdbId).Execute()
+	resp, r, err := apiClient.MovieLookupAPI.ListMovieLookupTmdb(context.Background()).TmdbId(tmdbId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `MovieLookupAPI.GetMovieLookupTmdb``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `MovieLookupAPI.ListMovieLookupTmdb``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ListMovieLookupTmdb`: []MovieResource
+	fmt.Fprintf(os.Stdout, "Response from `MovieLookupAPI.ListMovieLookupTmdb`: %v\n", resp)
 }
 ```
 
@@ -171,7 +177,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetMovieLookupTmdbRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListMovieLookupTmdbRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -180,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**[]MovieResource**](MovieResource.md)
 
 ### Authorization
 
@@ -189,7 +195,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
