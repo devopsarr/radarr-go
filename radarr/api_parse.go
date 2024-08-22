@@ -72,7 +72,7 @@ func (a *ParseAPIService) GetParseExecute(r ApiGetParseRequest) (*ParseResource,
 	localVarFormParams := url.Values{}
 
 	if r.title != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "title", r.title, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "title", r.title, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

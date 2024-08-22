@@ -453,10 +453,10 @@ func (a *MovieFileAPIService) ListMovieFileExecute(r ApiListMovieFileRequest) ([
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "movieId", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "movieId", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "movieId", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "movieId", t, "form", "multi")
 		}
 	}
 	if r.movieFileIds != nil {
@@ -464,10 +464,10 @@ func (a *MovieFileAPIService) ListMovieFileExecute(r ApiListMovieFileRequest) ([
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "movieFileIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "movieFileIds", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "movieFileIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "movieFileIds", t, "form", "multi")
 		}
 	}
 	// to determine the Content-Type header

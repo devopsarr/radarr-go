@@ -214,13 +214,13 @@ func (a *MovieAPIService) DeleteMovieExecute(r ApiDeleteMovieRequest) (*http.Res
 	localVarFormParams := url.Values{}
 
 	if r.deleteFiles != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "deleteFiles", r.deleteFiles, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "deleteFiles", r.deleteFiles, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.deleteFiles = &defaultValue
 	}
 	if r.addImportExclusion != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "addImportExclusion", r.addImportExclusion, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "addImportExclusion", r.addImportExclusion, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.addImportExclusion = &defaultValue
@@ -489,16 +489,16 @@ func (a *MovieAPIService) ListMovieExecute(r ApiListMovieRequest) ([]MovieResour
 	localVarFormParams := url.Values{}
 
 	if r.tmdbId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "tmdbId", r.tmdbId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "tmdbId", r.tmdbId, "form", "")
 	}
 	if r.excludeLocalCovers != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "excludeLocalCovers", r.excludeLocalCovers, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "excludeLocalCovers", r.excludeLocalCovers, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.excludeLocalCovers = &defaultValue
 	}
 	if r.languageId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "languageId", r.languageId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "languageId", r.languageId, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -642,7 +642,7 @@ func (a *MovieAPIService) UpdateMovieExecute(r ApiUpdateMovieRequest) (*MovieRes
 	localVarFormParams := url.Values{}
 
 	if r.moveFiles != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "moveFiles", r.moveFiles, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "moveFiles", r.moveFiles, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.moveFiles = &defaultValue

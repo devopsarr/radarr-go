@@ -72,7 +72,7 @@ func (a *RenameMovieAPIService) ListRenameExecute(r ApiListRenameRequest) ([]Ren
 	localVarFormParams := url.Values{}
 
 	if r.movieId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "movieId", r.movieId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "movieId", r.movieId, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

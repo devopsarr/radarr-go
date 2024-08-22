@@ -194,7 +194,7 @@ func (a *ReleaseAPIService) ListReleaseExecute(r ApiListReleaseRequest) ([]Relea
 	localVarFormParams := url.Values{}
 
 	if r.movieId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "movieId", r.movieId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "movieId", r.movieId, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

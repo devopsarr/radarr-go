@@ -204,19 +204,19 @@ func (a *ImportListMoviesAPIService) GetImportlistMovieExecute(r ApiGetImportlis
 	localVarFormParams := url.Values{}
 
 	if r.includeRecommendations != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeRecommendations", r.includeRecommendations, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeRecommendations", r.includeRecommendations, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeRecommendations = &defaultValue
 	}
 	if r.includeTrending != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeTrending", r.includeTrending, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeTrending", r.includeTrending, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeTrending = &defaultValue
 	}
 	if r.includePopular != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includePopular", r.includePopular, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includePopular", r.includePopular, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includePopular = &defaultValue

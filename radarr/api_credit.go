@@ -77,10 +77,10 @@ func (a *CreditAPIService) GetCreditExecute(r ApiGetCreditRequest) (*http.Respon
 	localVarFormParams := url.Values{}
 
 	if r.movieId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "movieId", r.movieId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "movieId", r.movieId, "form", "")
 	}
 	if r.movieMetadataId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "movieMetadataId", r.movieMetadataId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "movieMetadataId", r.movieMetadataId, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
