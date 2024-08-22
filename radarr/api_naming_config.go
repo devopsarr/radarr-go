@@ -361,25 +361,25 @@ func (a *NamingConfigAPIService) GetNamingConfigExamplesExecute(r ApiGetNamingCo
 	localVarFormParams := url.Values{}
 
 	if r.renameMovies != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "renameMovies", r.renameMovies, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "renameMovies", r.renameMovies, "form", "")
 	}
 	if r.replaceIllegalCharacters != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "replaceIllegalCharacters", r.replaceIllegalCharacters, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "replaceIllegalCharacters", r.replaceIllegalCharacters, "form", "")
 	}
 	if r.colonReplacementFormat != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "colonReplacementFormat", r.colonReplacementFormat, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "colonReplacementFormat", r.colonReplacementFormat, "form", "")
 	}
 	if r.standardMovieFormat != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "standardMovieFormat", r.standardMovieFormat, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "standardMovieFormat", r.standardMovieFormat, "form", "")
 	}
 	if r.movieFolderFormat != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "movieFolderFormat", r.movieFolderFormat, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "movieFolderFormat", r.movieFolderFormat, "form", "")
 	}
 	if r.id != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "id", r.id, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "id", r.id, "form", "")
 	}
 	if r.resourceName != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "resourceName", r.resourceName, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "resourceName", r.resourceName, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

@@ -202,7 +202,7 @@ func (a *CollectionAPIService) ListCollectionExecute(r ApiListCollectionRequest)
 	localVarFormParams := url.Values{}
 
 	if r.tmdbId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "tmdbId", r.tmdbId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "tmdbId", r.tmdbId, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

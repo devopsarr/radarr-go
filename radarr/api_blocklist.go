@@ -344,32 +344,32 @@ func (a *BlocklistAPIService) GetBlocklistExecute(r ApiGetBlocklistRequest) (*Bl
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	} else {
 		var defaultValue int32 = 1
 		r.page = &defaultValue
 	}
 	if r.pageSize != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
 	} else {
 		var defaultValue int32 = 10
 		r.pageSize = &defaultValue
 	}
 	if r.sortKey != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "sortKey", r.sortKey, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sortKey", r.sortKey, "form", "")
 	}
 	if r.sortDirection != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "sortDirection", r.sortDirection, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sortDirection", r.sortDirection, "form", "")
 	}
 	if r.movieIds != nil {
 		t := *r.movieIds
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "movieIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "movieIds", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "movieIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "movieIds", t, "form", "multi")
 		}
 	}
 	if r.protocols != nil {
@@ -377,10 +377,10 @@ func (a *BlocklistAPIService) GetBlocklistExecute(r ApiGetBlocklistRequest) (*Bl
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "protocols", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "protocols", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "protocols", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "protocols", t, "form", "multi")
 		}
 	}
 	// to determine the Content-Type header
@@ -515,7 +515,7 @@ func (a *BlocklistAPIService) ListBlocklistMovieExecute(r ApiListBlocklistMovieR
 	localVarFormParams := url.Values{}
 
 	if r.movieId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "movieId", r.movieId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "movieId", r.movieId, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

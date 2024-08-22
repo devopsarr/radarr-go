@@ -94,25 +94,25 @@ func (a *QueueAPIService) DeleteQueueExecute(r ApiDeleteQueueRequest) (*http.Res
 	localVarFormParams := url.Values{}
 
 	if r.removeFromClient != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "removeFromClient", r.removeFromClient, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "removeFromClient", r.removeFromClient, "form", "")
 	} else {
 		var defaultValue bool = true
 		r.removeFromClient = &defaultValue
 	}
 	if r.blocklist != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "blocklist", r.blocklist, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "blocklist", r.blocklist, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.blocklist = &defaultValue
 	}
 	if r.skipRedownload != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "skipRedownload", r.skipRedownload, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "skipRedownload", r.skipRedownload, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.skipRedownload = &defaultValue
 	}
 	if r.changeCategory != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "changeCategory", r.changeCategory, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "changeCategory", r.changeCategory, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.changeCategory = &defaultValue
@@ -262,25 +262,25 @@ func (a *QueueAPIService) DeleteQueueBulkExecute(r ApiDeleteQueueBulkRequest) (*
 	localVarFormParams := url.Values{}
 
 	if r.removeFromClient != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "removeFromClient", r.removeFromClient, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "removeFromClient", r.removeFromClient, "form", "")
 	} else {
 		var defaultValue bool = true
 		r.removeFromClient = &defaultValue
 	}
 	if r.blocklist != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "blocklist", r.blocklist, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "blocklist", r.blocklist, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.blocklist = &defaultValue
 	}
 	if r.skipRedownload != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "skipRedownload", r.skipRedownload, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "skipRedownload", r.skipRedownload, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.skipRedownload = &defaultValue
 	}
 	if r.changeCategory != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "changeCategory", r.changeCategory, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "changeCategory", r.changeCategory, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.changeCategory = &defaultValue
@@ -464,31 +464,31 @@ func (a *QueueAPIService) GetQueueExecute(r ApiGetQueueRequest) (*QueueResourceP
 	localVarFormParams := url.Values{}
 
 	if r.page != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	} else {
 		var defaultValue int32 = 1
 		r.page = &defaultValue
 	}
 	if r.pageSize != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
 	} else {
 		var defaultValue int32 = 10
 		r.pageSize = &defaultValue
 	}
 	if r.sortKey != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "sortKey", r.sortKey, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sortKey", r.sortKey, "form", "")
 	}
 	if r.sortDirection != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "sortDirection", r.sortDirection, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sortDirection", r.sortDirection, "form", "")
 	}
 	if r.includeUnknownMovieItems != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeUnknownMovieItems", r.includeUnknownMovieItems, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeUnknownMovieItems", r.includeUnknownMovieItems, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeUnknownMovieItems = &defaultValue
 	}
 	if r.includeMovie != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeMovie", r.includeMovie, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeMovie", r.includeMovie, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeMovie = &defaultValue
@@ -498,28 +498,28 @@ func (a *QueueAPIService) GetQueueExecute(r ApiGetQueueRequest) (*QueueResourceP
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "movieIds", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "movieIds", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "movieIds", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "movieIds", t, "form", "multi")
 		}
 	}
 	if r.protocol != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "protocol", r.protocol, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "protocol", r.protocol, "form", "")
 	}
 	if r.languages != nil {
 		t := *r.languages
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
 			s := reflect.ValueOf(t)
 			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "languages", s.Index(i).Interface(), "multi")
+				parameterAddToHeaderOrQuery(localVarQueryParams, "languages", s.Index(i).Interface(), "form", "multi")
 			}
 		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "languages", t, "multi")
+			parameterAddToHeaderOrQuery(localVarQueryParams, "languages", t, "form", "multi")
 		}
 	}
 	if r.quality != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "quality", r.quality, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "quality", r.quality, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

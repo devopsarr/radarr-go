@@ -212,16 +212,16 @@ func (a *ManualImportAPIService) ListManualImportExecute(r ApiListManualImportRe
 	localVarFormParams := url.Values{}
 
 	if r.folder != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "folder", r.folder, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "folder", r.folder, "form", "")
 	}
 	if r.downloadId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "downloadId", r.downloadId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "downloadId", r.downloadId, "form", "")
 	}
 	if r.movieId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "movieId", r.movieId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "movieId", r.movieId, "form", "")
 	}
 	if r.filterExistingFiles != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "filterExistingFiles", r.filterExistingFiles, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "filterExistingFiles", r.filterExistingFiles, "form", "")
 	} else {
 		var defaultValue bool = true
 		r.filterExistingFiles = &defaultValue

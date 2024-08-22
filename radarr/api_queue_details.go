@@ -78,10 +78,10 @@ func (a *QueueDetailsAPIService) ListQueueDetailsExecute(r ApiListQueueDetailsRe
 	localVarFormParams := url.Values{}
 
 	if r.movieId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "movieId", r.movieId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "movieId", r.movieId, "form", "")
 	}
 	if r.includeMovie != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "includeMovie", r.includeMovie, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "includeMovie", r.includeMovie, "form", "")
 	} else {
 		var defaultValue bool = false
 		r.includeMovie = &defaultValue
