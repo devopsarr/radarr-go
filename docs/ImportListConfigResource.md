@@ -6,7 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **int32** |  | [optional] 
 **ListSyncLevel** | Pointer to **NullableString** |  | [optional] 
-**ImportExclusions** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -87,41 +86,6 @@ HasListSyncLevel returns a boolean if a field has been set.
 `func (o *ImportListConfigResource) UnsetListSyncLevel()`
 
 UnsetListSyncLevel ensures that no value is present for ListSyncLevel, not even an explicit nil
-### GetImportExclusions
-
-`func (o *ImportListConfigResource) GetImportExclusions() string`
-
-GetImportExclusions returns the ImportExclusions field if non-nil, zero value otherwise.
-
-### GetImportExclusionsOk
-
-`func (o *ImportListConfigResource) GetImportExclusionsOk() (*string, bool)`
-
-GetImportExclusionsOk returns a tuple with the ImportExclusions field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetImportExclusions
-
-`func (o *ImportListConfigResource) SetImportExclusions(v string)`
-
-SetImportExclusions sets ImportExclusions field to given value.
-
-### HasImportExclusions
-
-`func (o *ImportListConfigResource) HasImportExclusions() bool`
-
-HasImportExclusions returns a boolean if a field has been set.
-
-### SetImportExclusionsNil
-
-`func (o *ImportListConfigResource) SetImportExclusionsNil(b bool)`
-
- SetImportExclusionsNil sets the value for ImportExclusions to be an explicit nil
-
-### UnsetImportExclusions
-`func (o *ImportListConfigResource) UnsetImportExclusions()`
-
-UnsetImportExclusions ensures that no value is present for ImportExclusions, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
