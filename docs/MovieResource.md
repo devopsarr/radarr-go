@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **InCinemas** | Pointer to **NullableTime** |  | [optional] 
 **PhysicalRelease** | Pointer to **NullableTime** |  | [optional] 
 **DigitalRelease** | Pointer to **NullableTime** |  | [optional] 
+**ReleaseDate** | Pointer to **NullableTime** |  | [optional] 
 **PhysicalReleaseNote** | Pointer to **NullableString** |  | [optional] 
 **Images** | Pointer to [**[]MediaCover**](MediaCover.md) |  | [optional] 
 **Website** | Pointer to **NullableString** |  | [optional] 
@@ -49,6 +50,7 @@ Name | Type | Description | Notes
 **MovieFile** | Pointer to [**MovieFileResource**](MovieFileResource.md) |  | [optional] 
 **Collection** | Pointer to [**MovieCollectionResource**](MovieCollectionResource.md) |  | [optional] 
 **Popularity** | Pointer to **float32** |  | [optional] 
+**LastSearchTime** | Pointer to **NullableTime** |  | [optional] 
 **Statistics** | Pointer to [**MovieStatisticsResource**](MovieStatisticsResource.md) |  | [optional] 
 
 ## Methods
@@ -520,6 +522,41 @@ HasDigitalRelease returns a boolean if a field has been set.
 `func (o *MovieResource) UnsetDigitalRelease()`
 
 UnsetDigitalRelease ensures that no value is present for DigitalRelease, not even an explicit nil
+### GetReleaseDate
+
+`func (o *MovieResource) GetReleaseDate() time.Time`
+
+GetReleaseDate returns the ReleaseDate field if non-nil, zero value otherwise.
+
+### GetReleaseDateOk
+
+`func (o *MovieResource) GetReleaseDateOk() (*time.Time, bool)`
+
+GetReleaseDateOk returns a tuple with the ReleaseDate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReleaseDate
+
+`func (o *MovieResource) SetReleaseDate(v time.Time)`
+
+SetReleaseDate sets ReleaseDate field to given value.
+
+### HasReleaseDate
+
+`func (o *MovieResource) HasReleaseDate() bool`
+
+HasReleaseDate returns a boolean if a field has been set.
+
+### SetReleaseDateNil
+
+`func (o *MovieResource) SetReleaseDateNil(b bool)`
+
+ SetReleaseDateNil sets the value for ReleaseDate to be an explicit nil
+
+### UnsetReleaseDate
+`func (o *MovieResource) UnsetReleaseDate()`
+
+UnsetReleaseDate ensures that no value is present for ReleaseDate, not even an explicit nil
 ### GetPhysicalReleaseNote
 
 `func (o *MovieResource) GetPhysicalReleaseNote() string`
@@ -1465,6 +1502,41 @@ SetPopularity sets Popularity field to given value.
 
 HasPopularity returns a boolean if a field has been set.
 
+### GetLastSearchTime
+
+`func (o *MovieResource) GetLastSearchTime() time.Time`
+
+GetLastSearchTime returns the LastSearchTime field if non-nil, zero value otherwise.
+
+### GetLastSearchTimeOk
+
+`func (o *MovieResource) GetLastSearchTimeOk() (*time.Time, bool)`
+
+GetLastSearchTimeOk returns a tuple with the LastSearchTime field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastSearchTime
+
+`func (o *MovieResource) SetLastSearchTime(v time.Time)`
+
+SetLastSearchTime sets LastSearchTime field to given value.
+
+### HasLastSearchTime
+
+`func (o *MovieResource) HasLastSearchTime() bool`
+
+HasLastSearchTime returns a boolean if a field has been set.
+
+### SetLastSearchTimeNil
+
+`func (o *MovieResource) SetLastSearchTimeNil(b bool)`
+
+ SetLastSearchTimeNil sets the value for LastSearchTime to be an explicit nil
+
+### UnsetLastSearchTime
+`func (o *MovieResource) UnsetLastSearchTime()`
+
+UnsetLastSearchTime ensures that no value is present for LastSearchTime, not even an explicit nil
 ### GetStatistics
 
 `func (o *MovieResource) GetStatistics() MovieStatisticsResource`
