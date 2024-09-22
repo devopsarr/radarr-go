@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/devopsarr/radarr-go/compare/v1.1.0...v1.1.1) (2024-09-22)
+
+
+### Bug Fixes
+
+* **deps:** update dependency radarr/radarr to v5.10.4.9218 ([d70ce21](https://github.com/devopsarr/radarr-go/commit/d70ce2188bf51cb477ccea18bb82830bbfc16aa7))
+
 ## [1.1.0](https://github.com/devopsarr/radarr-go/compare/v1.0.1...v1.1.0) (2024-07-29)
 
 
