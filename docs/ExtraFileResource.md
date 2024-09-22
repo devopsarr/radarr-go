@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **MovieFileId** | Pointer to **NullableInt32** |  | [optional] 
 **RelativePath** | Pointer to **NullableString** |  | [optional] 
 **Extension** | Pointer to **NullableString** |  | [optional] 
+**LanguageTags** | Pointer to **[]string** |  | [optional] 
+**Title** | Pointer to **NullableString** |  | [optional] 
 **Type** | Pointer to [**ExtraFileType**](ExtraFileType.md) |  | [optional] 
 
 ## Methods
@@ -185,6 +187,76 @@ HasExtension returns a boolean if a field has been set.
 `func (o *ExtraFileResource) UnsetExtension()`
 
 UnsetExtension ensures that no value is present for Extension, not even an explicit nil
+### GetLanguageTags
+
+`func (o *ExtraFileResource) GetLanguageTags() []string`
+
+GetLanguageTags returns the LanguageTags field if non-nil, zero value otherwise.
+
+### GetLanguageTagsOk
+
+`func (o *ExtraFileResource) GetLanguageTagsOk() (*[]string, bool)`
+
+GetLanguageTagsOk returns a tuple with the LanguageTags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLanguageTags
+
+`func (o *ExtraFileResource) SetLanguageTags(v []string)`
+
+SetLanguageTags sets LanguageTags field to given value.
+
+### HasLanguageTags
+
+`func (o *ExtraFileResource) HasLanguageTags() bool`
+
+HasLanguageTags returns a boolean if a field has been set.
+
+### SetLanguageTagsNil
+
+`func (o *ExtraFileResource) SetLanguageTagsNil(b bool)`
+
+ SetLanguageTagsNil sets the value for LanguageTags to be an explicit nil
+
+### UnsetLanguageTags
+`func (o *ExtraFileResource) UnsetLanguageTags()`
+
+UnsetLanguageTags ensures that no value is present for LanguageTags, not even an explicit nil
+### GetTitle
+
+`func (o *ExtraFileResource) GetTitle() string`
+
+GetTitle returns the Title field if non-nil, zero value otherwise.
+
+### GetTitleOk
+
+`func (o *ExtraFileResource) GetTitleOk() (*string, bool)`
+
+GetTitleOk returns a tuple with the Title field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTitle
+
+`func (o *ExtraFileResource) SetTitle(v string)`
+
+SetTitle sets Title field to given value.
+
+### HasTitle
+
+`func (o *ExtraFileResource) HasTitle() bool`
+
+HasTitle returns a boolean if a field has been set.
+
+### SetTitleNil
+
+`func (o *ExtraFileResource) SetTitleNil(b bool)`
+
+ SetTitleNil sets the value for Title to be an explicit nil
+
+### UnsetTitle
+`func (o *ExtraFileResource) UnsetTitle()`
+
+UnsetTitle ensures that no value is present for Title, not even an explicit nil
 ### GetType
 
 `func (o *ExtraFileResource) GetType() ExtraFileType`
