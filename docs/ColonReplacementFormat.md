@@ -11,6 +11,8 @@
 
 * `SPACE_DASH_SPACE` (value: `"spaceDashSpace"`)
 
+* `SMART` (value: `"smart"`)
+
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
