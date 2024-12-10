@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.3](https://github.com/devopsarr/radarr-go/compare/v1.1.2...v1.1.3) (2024-12-10)
+
+
+### Bug Fixes
+
+* **deps:** update dependency radarr/radarr to v5.14.0.9383 ([f793991](https://github.com/devopsarr/radarr-go/commit/f793991505c4ae337dbf9f871e23d1a559c555b7))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.10.0 ([5ba1c8f](https://github.com/devopsarr/radarr-go/commit/5ba1c8fd37b5d8233a0fd152b390adf2f52da3c4))
+
 ## [1.1.2](https://github.com/devopsarr/radarr-go/compare/v1.1.1...v1.1.2) (2024-10-15)
 
 
