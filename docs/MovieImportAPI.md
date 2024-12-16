@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## CreateMovieImport
 
-> CreateMovieImport(ctx).MovieResource(movieResource).Execute()
+> []MovieResource CreateMovieImport(ctx).MovieResource(movieResource).Execute()
 
 
 
@@ -31,11 +31,13 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	r, err := apiClient.MovieImportAPI.CreateMovieImport(context.Background()).MovieResource(movieResource).Execute()
+	resp, r, err := apiClient.MovieImportAPI.CreateMovieImport(context.Background()).MovieResource(movieResource).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MovieImportAPI.CreateMovieImport``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `CreateMovieImport`: []MovieResource
+	fmt.Fprintf(os.Stdout, "Response from `MovieImportAPI.CreateMovieImport`: %v\n", resp)
 }
 ```
 
@@ -54,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**[]MovieResource**](MovieResource.md)
 
 ### Authorization
 
@@ -62,8 +64,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/*+json
-- **Accept**: Not defined
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
