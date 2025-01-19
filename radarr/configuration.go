@@ -89,7 +89,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader:    make(map[string]string),
-		UserAgent:        "radarr-go/v1.1.3", // x-release-please-version
+		UserAgent:        "radarr-go/v1.2.0", // x-release-please-version
 		Debug:            false,
 		Servers:          ServerConfigurations{
 			{

@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.0](https://github.com/devopsarr/radarr-go/compare/v1.1.3...v1.2.0) (2025-01-19)
+
+
+### Features
+
+* remove broken root api path ([6f7b6dd](https://github.com/devopsarr/radarr-go/commit/6f7b6dd55235956566d3e13118b72374396f1864))
+
+
+### Bug Fixes
+
+* **deps:** update dependency radarr/radarr to v5.16.3.9541 ([499c924](https://github.com/devopsarr/radarr-go/commit/499c9244fe9876e176a6e710fbab970dbb0e9140))
+* **deps:** update dependency radarr/radarr to v5.17.2.9580 ([11c8a50](https://github.com/devopsarr/radarr-go/commit/11c8a504c39c93f99c92c70769cb8fa50136d58b))
+
 ## [1.1.3](https://github.com/devopsarr/radarr-go/compare/v1.1.2...v1.1.3) (2024-12-10)
 
 
