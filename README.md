@@ -289,7 +289,6 @@ Class | Method | HTTP request | Description
 *RootFolderAPI* | [**DeleteRootFolder**](docs/RootFolderAPI.md#deleterootfolder) | **Delete** /api/v3/rootfolder/{id} | 
 *RootFolderAPI* | [**GetRootFolderById**](docs/RootFolderAPI.md#getrootfolderbyid) | **Get** /api/v3/rootfolder/{id} | 
 *RootFolderAPI* | [**ListRootFolder**](docs/RootFolderAPI.md#listrootfolder) | **Get** /api/v3/rootfolder | 
-*StaticResourceAPI* | [**Get**](docs/StaticResourceAPI.md#get) | **Get** / | 
 *StaticResourceAPI* | [**GetByPath**](docs/StaticResourceAPI.md#getbypath) | **Get** /{path} | 
 *StaticResourceAPI* | [**GetContentByPath**](docs/StaticResourceAPI.md#getcontentbypath) | **Get** /content/{path} | 
 *StaticResourceAPI* | [**GetLogin**](docs/StaticResourceAPI.md#getlogin) | **Get** /login | 
