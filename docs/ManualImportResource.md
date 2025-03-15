@@ -11,15 +11,16 @@ Name | Type | Description | Notes
 **Name** | Pointer to **NullableString** |  | [optional] 
 **Size** | Pointer to **int64** |  | [optional] 
 **Movie** | Pointer to [**MovieResource**](MovieResource.md) |  | [optional] 
+**MovieFileId** | Pointer to **NullableInt32** |  | [optional] 
+**ReleaseGroup** | Pointer to **NullableString** |  | [optional] 
 **Quality** | Pointer to [**QualityModel**](QualityModel.md) |  | [optional] 
 **Languages** | Pointer to [**[]Language**](Language.md) |  | [optional] 
-**ReleaseGroup** | Pointer to **NullableString** |  | [optional] 
 **QualityWeight** | Pointer to **int32** |  | [optional] 
 **DownloadId** | Pointer to **NullableString** |  | [optional] 
 **CustomFormats** | Pointer to [**[]CustomFormatResource**](CustomFormatResource.md) |  | [optional] 
 **CustomFormatScore** | Pointer to **int32** |  | [optional] 
 **IndexerFlags** | Pointer to **int32** |  | [optional] 
-**Rejections** | Pointer to [**[]Rejection**](Rejection.md) |  | [optional] 
+**Rejections** | Pointer to [**[]ImportRejectionResource**](ImportRejectionResource.md) |  | [optional] 
 
 ## Methods
 
@@ -255,6 +256,76 @@ SetMovie sets Movie field to given value.
 
 HasMovie returns a boolean if a field has been set.
 
+### GetMovieFileId
+
+`func (o *ManualImportResource) GetMovieFileId() int32`
+
+GetMovieFileId returns the MovieFileId field if non-nil, zero value otherwise.
+
+### GetMovieFileIdOk
+
+`func (o *ManualImportResource) GetMovieFileIdOk() (*int32, bool)`
+
+GetMovieFileIdOk returns a tuple with the MovieFileId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMovieFileId
+
+`func (o *ManualImportResource) SetMovieFileId(v int32)`
+
+SetMovieFileId sets MovieFileId field to given value.
+
+### HasMovieFileId
+
+`func (o *ManualImportResource) HasMovieFileId() bool`
+
+HasMovieFileId returns a boolean if a field has been set.
+
+### SetMovieFileIdNil
+
+`func (o *ManualImportResource) SetMovieFileIdNil(b bool)`
+
+ SetMovieFileIdNil sets the value for MovieFileId to be an explicit nil
+
+### UnsetMovieFileId
+`func (o *ManualImportResource) UnsetMovieFileId()`
+
+UnsetMovieFileId ensures that no value is present for MovieFileId, not even an explicit nil
+### GetReleaseGroup
+
+`func (o *ManualImportResource) GetReleaseGroup() string`
+
+GetReleaseGroup returns the ReleaseGroup field if non-nil, zero value otherwise.
+
+### GetReleaseGroupOk
+
+`func (o *ManualImportResource) GetReleaseGroupOk() (*string, bool)`
+
+GetReleaseGroupOk returns a tuple with the ReleaseGroup field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReleaseGroup
+
+`func (o *ManualImportResource) SetReleaseGroup(v string)`
+
+SetReleaseGroup sets ReleaseGroup field to given value.
+
+### HasReleaseGroup
+
+`func (o *ManualImportResource) HasReleaseGroup() bool`
+
+HasReleaseGroup returns a boolean if a field has been set.
+
+### SetReleaseGroupNil
+
+`func (o *ManualImportResource) SetReleaseGroupNil(b bool)`
+
+ SetReleaseGroupNil sets the value for ReleaseGroup to be an explicit nil
+
+### UnsetReleaseGroup
+`func (o *ManualImportResource) UnsetReleaseGroup()`
+
+UnsetReleaseGroup ensures that no value is present for ReleaseGroup, not even an explicit nil
 ### GetQuality
 
 `func (o *ManualImportResource) GetQuality() QualityModel`
@@ -315,41 +386,6 @@ HasLanguages returns a boolean if a field has been set.
 `func (o *ManualImportResource) UnsetLanguages()`
 
 UnsetLanguages ensures that no value is present for Languages, not even an explicit nil
-### GetReleaseGroup
-
-`func (o *ManualImportResource) GetReleaseGroup() string`
-
-GetReleaseGroup returns the ReleaseGroup field if non-nil, zero value otherwise.
-
-### GetReleaseGroupOk
-
-`func (o *ManualImportResource) GetReleaseGroupOk() (*string, bool)`
-
-GetReleaseGroupOk returns a tuple with the ReleaseGroup field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetReleaseGroup
-
-`func (o *ManualImportResource) SetReleaseGroup(v string)`
-
-SetReleaseGroup sets ReleaseGroup field to given value.
-
-### HasReleaseGroup
-
-`func (o *ManualImportResource) HasReleaseGroup() bool`
-
-HasReleaseGroup returns a boolean if a field has been set.
-
-### SetReleaseGroupNil
-
-`func (o *ManualImportResource) SetReleaseGroupNil(b bool)`
-
- SetReleaseGroupNil sets the value for ReleaseGroup to be an explicit nil
-
-### UnsetReleaseGroup
-`func (o *ManualImportResource) UnsetReleaseGroup()`
-
-UnsetReleaseGroup ensures that no value is present for ReleaseGroup, not even an explicit nil
 ### GetQualityWeight
 
 `func (o *ManualImportResource) GetQualityWeight() int32`
@@ -497,20 +533,20 @@ HasIndexerFlags returns a boolean if a field has been set.
 
 ### GetRejections
 
-`func (o *ManualImportResource) GetRejections() []Rejection`
+`func (o *ManualImportResource) GetRejections() []ImportRejectionResource`
 
 GetRejections returns the Rejections field if non-nil, zero value otherwise.
 
 ### GetRejectionsOk
 
-`func (o *ManualImportResource) GetRejectionsOk() (*[]Rejection, bool)`
+`func (o *ManualImportResource) GetRejectionsOk() (*[]ImportRejectionResource, bool)`
 
 GetRejectionsOk returns a tuple with the Rejections field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRejections
 
-`func (o *ManualImportResource) SetRejections(v []Rejection)`
+`func (o *ManualImportResource) SetRejections(v []ImportRejectionResource)`
 
 SetRejections sets Rejections field to given value.
 

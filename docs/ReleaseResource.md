@@ -34,6 +34,7 @@ Name | Type | Description | Notes
 **CommentUrl** | Pointer to **NullableString** |  | [optional] 
 **DownloadUrl** | Pointer to **NullableString** |  | [optional] 
 **InfoUrl** | Pointer to **NullableString** |  | [optional] 
+**MovieRequested** | Pointer to **bool** |  | [optional] 
 **DownloadAllowed** | Pointer to **bool** |  | [optional] 
 **ReleaseWeight** | Pointer to **int32** |  | [optional] 
 **Edition** | Pointer to **NullableString** |  | [optional] 
@@ -957,6 +958,31 @@ HasInfoUrl returns a boolean if a field has been set.
 `func (o *ReleaseResource) UnsetInfoUrl()`
 
 UnsetInfoUrl ensures that no value is present for InfoUrl, not even an explicit nil
+### GetMovieRequested
+
+`func (o *ReleaseResource) GetMovieRequested() bool`
+
+GetMovieRequested returns the MovieRequested field if non-nil, zero value otherwise.
+
+### GetMovieRequestedOk
+
+`func (o *ReleaseResource) GetMovieRequestedOk() (*bool, bool)`
+
+GetMovieRequestedOk returns a tuple with the MovieRequested field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMovieRequested
+
+`func (o *ReleaseResource) SetMovieRequested(v bool)`
+
+SetMovieRequested sets MovieRequested field to given value.
+
+### HasMovieRequested
+
+`func (o *ReleaseResource) HasMovieRequested() bool`
+
+HasMovieRequested returns a boolean if a field has been set.
+
 ### GetDownloadAllowed
 
 `func (o *ReleaseResource) GetDownloadAllowed() bool`
