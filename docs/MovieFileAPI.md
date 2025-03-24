@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**DeleteMovieFileBulk**](MovieFileAPI.md#DeleteMovieFileBulk) | **Delete** /api/v3/moviefile/bulk | 
 [**GetMovieFileById**](MovieFileAPI.md#GetMovieFileById) | **Get** /api/v3/moviefile/{id} | 
 [**ListMovieFile**](MovieFileAPI.md#ListMovieFile) | **Get** /api/v3/moviefile | 
+[**PutMovieFileBulk**](MovieFileAPI.md#PutMovieFileBulk) | **Put** /api/v3/moviefile/bulk | 
 [**PutMovieFileEditor**](MovieFileAPI.md#PutMovieFileEditor) | **Put** /api/v3/moviefile/editor | 
 [**UpdateMovieFile**](MovieFileAPI.md#UpdateMovieFile) | **Put** /api/v3/moviefile/{id} | 
 
@@ -269,6 +270,68 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## PutMovieFileBulk
+
+> PutMovieFileBulk(ctx).MovieFileResource(movieFileResource).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	radarrClient "github.com/devopsarr/radarr-go/radarr"
+)
+
+func main() {
+	movieFileResource := []radarrClient.MovieFileResource{*radarrClient.NewMovieFileResource()} // []MovieFileResource |  (optional)
+
+	configuration := radarrClient.NewConfiguration()
+	apiClient := radarrClient.NewAPIClient(configuration)
+	r, err := apiClient.MovieFileAPI.PutMovieFileBulk(context.Background()).MovieFileResource(movieFileResource).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `MovieFileAPI.PutMovieFileBulk``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiPutMovieFileBulkRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **movieFileResource** | [**[]MovieFileResource**](MovieFileResource.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
