@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## GetFeedV3CalendarRadarrIcs
 
-> GetFeedV3CalendarRadarrIcs(ctx).PastDays(pastDays).FutureDays(futureDays).Tags(tags).Unmonitored(unmonitored).Execute()
+> GetFeedV3CalendarRadarrIcs(ctx).PastDays(pastDays).FutureDays(futureDays).Tags(tags).Unmonitored(unmonitored).ReleaseTypes(releaseTypes).Execute()
 
 
 
@@ -31,10 +31,11 @@ func main() {
 	futureDays := int32(56) // int32 |  (optional) (default to 28)
 	tags := "tags_example" // string |  (optional) (default to "")
 	unmonitored := true // bool |  (optional) (default to false)
+	releaseTypes := []radarrClient.CalendarReleaseType{radarrClient.CalendarReleaseType("cinemaRelease")} // []CalendarReleaseType |  (optional)
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	r, err := apiClient.CalendarFeedAPI.GetFeedV3CalendarRadarrIcs(context.Background()).PastDays(pastDays).FutureDays(futureDays).Tags(tags).Unmonitored(unmonitored).Execute()
+	r, err := apiClient.CalendarFeedAPI.GetFeedV3CalendarRadarrIcs(context.Background()).PastDays(pastDays).FutureDays(futureDays).Tags(tags).Unmonitored(unmonitored).ReleaseTypes(releaseTypes).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CalendarFeedAPI.GetFeedV3CalendarRadarrIcs``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -57,6 +58,7 @@ Name | Type | Description  | Notes
  **futureDays** | **int32** |  | [default to 28]
  **tags** | **string** |  | [default to &quot;&quot;]
  **unmonitored** | **bool** |  | [default to false]
+ **releaseTypes** | [**[]CalendarReleaseType**](CalendarReleaseType.md) |  | 
 
 ### Return type
 

@@ -43,6 +43,7 @@ Name | Type | Description | Notes
 **Folder** | Pointer to **NullableString** |  | [optional] 
 **Certification** | Pointer to **NullableString** |  | [optional] 
 **Genres** | Pointer to **[]string** |  | [optional] 
+**Keywords** | Pointer to **[]string** |  | [optional] 
 **Tags** | Pointer to **[]int32** |  | [optional] 
 **Added** | Pointer to **time.Time** |  | [optional] 
 **AddOptions** | Pointer to [**AddMovieOptions**](AddMovieOptions.md) |  | [optional] 
@@ -1317,6 +1318,41 @@ HasGenres returns a boolean if a field has been set.
 `func (o *MovieResource) UnsetGenres()`
 
 UnsetGenres ensures that no value is present for Genres, not even an explicit nil
+### GetKeywords
+
+`func (o *MovieResource) GetKeywords() []string`
+
+GetKeywords returns the Keywords field if non-nil, zero value otherwise.
+
+### GetKeywordsOk
+
+`func (o *MovieResource) GetKeywordsOk() (*[]string, bool)`
+
+GetKeywordsOk returns a tuple with the Keywords field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetKeywords
+
+`func (o *MovieResource) SetKeywords(v []string)`
+
+SetKeywords sets Keywords field to given value.
+
+### HasKeywords
+
+`func (o *MovieResource) HasKeywords() bool`
+
+HasKeywords returns a boolean if a field has been set.
+
+### SetKeywordsNil
+
+`func (o *MovieResource) SetKeywordsNil(b bool)`
+
+ SetKeywordsNil sets the value for Keywords to be an explicit nil
+
+### UnsetKeywords
+`func (o *MovieResource) UnsetKeywords()`
+
+UnsetKeywords ensures that no value is present for Keywords, not even an explicit nil
 ### GetTags
 
 `func (o *MovieResource) GetTags() []int32`
