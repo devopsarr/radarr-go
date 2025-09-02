@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **Languages** | Pointer to [**[]Language**](Language.md) |  | [optional] 
 **Quality** | Pointer to [**QualityModel**](QualityModel.md) |  | [optional] 
 **CustomFormats** | Pointer to [**[]CustomFormatResource**](CustomFormatResource.md) |  | [optional] 
-**CustomFormatScore** | Pointer to **int32** |  | [optional] 
+**CustomFormatScore** | Pointer to **NullableInt32** |  | [optional] 
 **IndexerFlags** | Pointer to **NullableInt32** |  | [optional] 
 **MediaInfo** | Pointer to [**MediaInfoResource**](MediaInfoResource.md) |  | [optional] 
 **OriginalFilePath** | Pointer to **NullableString** |  | [optional] 
@@ -436,6 +436,16 @@ SetCustomFormatScore sets CustomFormatScore field to given value.
 
 HasCustomFormatScore returns a boolean if a field has been set.
 
+### SetCustomFormatScoreNil
+
+`func (o *MovieFileResource) SetCustomFormatScoreNil(b bool)`
+
+ SetCustomFormatScoreNil sets the value for CustomFormatScore to be an explicit nil
+
+### UnsetCustomFormatScore
+`func (o *MovieFileResource) UnsetCustomFormatScore()`
+
+UnsetCustomFormatScore ensures that no value is present for CustomFormatScore, not even an explicit nil
 ### GetIndexerFlags
 
 `func (o *MovieFileResource) GetIndexerFlags() int32`

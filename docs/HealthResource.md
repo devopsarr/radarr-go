@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Source** | Pointer to **NullableString** |  | [optional] 
 **Type** | Pointer to [**HealthCheckResult**](HealthCheckResult.md) |  | [optional] 
 **Message** | Pointer to **NullableString** |  | [optional] 
-**WikiUrl** | Pointer to **string** |  | [optional] 
+**WikiUrl** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -174,6 +174,16 @@ SetWikiUrl sets WikiUrl field to given value.
 
 HasWikiUrl returns a boolean if a field has been set.
 
+### SetWikiUrlNil
+
+`func (o *HealthResource) SetWikiUrlNil(b bool)`
+
+ SetWikiUrlNil sets the value for WikiUrl to be an explicit nil
+
+### UnsetWikiUrl
+`func (o *HealthResource) UnsetWikiUrl()`
+
+UnsetWikiUrl ensures that no value is present for WikiUrl, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
