@@ -27,7 +27,7 @@ import (
 )
 
 func main() {
-	movieId := int32(56) // int32 |  (optional)
+	movieId := []int32{int32(123)} // []int32 |  (optional)
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
@@ -52,7 +52,7 @@ Other parameters are passed through a pointer to a apiListRenameRequest struct v
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **movieId** | **int32** |  | 
+ **movieId** | **[]int32** |  | 
 
 ### Return type
 
