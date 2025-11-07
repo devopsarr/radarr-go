@@ -717,14 +717,16 @@ func (a *ImportListExclusionAPIService) GetExclusionsPagedExecute(r ApiGetExclus
 	if r.page != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	} else {
-		var defaultValue int32 = 1
-		r.page = &defaultValue
+        var defaultValue int32 = 1
+        parameterAddToHeaderOrQuery(localVarQueryParams, "page", defaultValue, "form", "")
+        r.page = &defaultValue
 	}
 	if r.pageSize != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
 	} else {
-		var defaultValue int32 = 10
-		r.pageSize = &defaultValue
+        var defaultValue int32 = 10
+        parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", defaultValue, "form", "")
+        r.pageSize = &defaultValue
 	}
 	if r.sortKey != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "sortKey", r.sortKey, "form", "")

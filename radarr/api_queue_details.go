@@ -83,8 +83,9 @@ func (a *QueueDetailsAPIService) ListQueueDetailsExecute(r ApiListQueueDetailsRe
 	if r.includeMovie != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "includeMovie", r.includeMovie, "form", "")
 	} else {
-		var defaultValue bool = false
-		r.includeMovie = &defaultValue
+        var defaultValue bool = false
+        parameterAddToHeaderOrQuery(localVarQueryParams, "includeMovie", defaultValue, "form", "")
+        r.includeMovie = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

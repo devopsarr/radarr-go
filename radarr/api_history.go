@@ -249,14 +249,16 @@ func (a *HistoryAPIService) GetHistoryExecute(r ApiGetHistoryRequest) (*HistoryR
 	if r.page != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "page", r.page, "form", "")
 	} else {
-		var defaultValue int32 = 1
-		r.page = &defaultValue
+        var defaultValue int32 = 1
+        parameterAddToHeaderOrQuery(localVarQueryParams, "page", defaultValue, "form", "")
+        r.page = &defaultValue
 	}
 	if r.pageSize != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", r.pageSize, "form", "")
 	} else {
-		var defaultValue int32 = 10
-		r.pageSize = &defaultValue
+        var defaultValue int32 = 10
+        parameterAddToHeaderOrQuery(localVarQueryParams, "pageSize", defaultValue, "form", "")
+        r.pageSize = &defaultValue
 	}
 	if r.sortKey != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "sortKey", r.sortKey, "form", "")
@@ -466,8 +468,9 @@ func (a *HistoryAPIService) ListHistoryMovieExecute(r ApiListHistoryMovieRequest
 	if r.includeMovie != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "includeMovie", r.includeMovie, "form", "")
 	} else {
-		var defaultValue bool = false
-		r.includeMovie = &defaultValue
+        var defaultValue bool = false
+        parameterAddToHeaderOrQuery(localVarQueryParams, "includeMovie", defaultValue, "form", "")
+        r.includeMovie = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -621,8 +624,9 @@ func (a *HistoryAPIService) ListHistorySinceExecute(r ApiListHistorySinceRequest
 	if r.includeMovie != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "includeMovie", r.includeMovie, "form", "")
 	} else {
-		var defaultValue bool = false
-		r.includeMovie = &defaultValue
+        var defaultValue bool = false
+        parameterAddToHeaderOrQuery(localVarQueryParams, "includeMovie", defaultValue, "form", "")
+        r.includeMovie = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
