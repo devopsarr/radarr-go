@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.2](https://github.com/devopsarr/radarr-go/compare/v1.2.1...v1.2.2) (2025-11-07)
+
+
+### Bug Fixes
+
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.17.0 ([0cdc464](https://github.com/devopsarr/radarr-go/commit/0cdc46401a767455c2f23b943c94fda817a75adb))
+
 ## [1.2.1](https://github.com/devopsarr/radarr-go/compare/v1.2.0...v1.2.1) (2025-09-04)
 
 
