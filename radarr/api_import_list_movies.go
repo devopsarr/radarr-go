@@ -206,20 +206,23 @@ func (a *ImportListMoviesAPIService) GetImportlistMovieExecute(r ApiGetImportlis
 	if r.includeRecommendations != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "includeRecommendations", r.includeRecommendations, "form", "")
 	} else {
-		var defaultValue bool = false
-		r.includeRecommendations = &defaultValue
+        var defaultValue bool = false
+        parameterAddToHeaderOrQuery(localVarQueryParams, "includeRecommendations", defaultValue, "form", "")
+        r.includeRecommendations = &defaultValue
 	}
 	if r.includeTrending != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "includeTrending", r.includeTrending, "form", "")
 	} else {
-		var defaultValue bool = false
-		r.includeTrending = &defaultValue
+        var defaultValue bool = false
+        parameterAddToHeaderOrQuery(localVarQueryParams, "includeTrending", defaultValue, "form", "")
+        r.includeTrending = &defaultValue
 	}
 	if r.includePopular != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "includePopular", r.includePopular, "form", "")
 	} else {
-		var defaultValue bool = false
-		r.includePopular = &defaultValue
+        var defaultValue bool = false
+        parameterAddToHeaderOrQuery(localVarQueryParams, "includePopular", defaultValue, "form", "")
+        r.includePopular = &defaultValue
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
