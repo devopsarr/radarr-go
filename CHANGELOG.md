@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.2.2](https://github.com/devopsarr/radarr-go/compare/v1.2.1...v1.2.2) (2026-03-13)
+
+
+### Bug Fixes
+
+* **deps:** update dependency radarr/radarr to v5.28.0.10274 ([722334e](https://github.com/devopsarr/radarr-go/commit/722334e33c81cbacbc14165622e4f1d70ea2c50d))
+* **deps:** update dependency radarr/radarr to v5.28.0.10274 ([5daa953](https://github.com/devopsarr/radarr-go/commit/5daa953b3ed3cc5d994f5410a1156779b85df167))
+* **deps:** update dependency radarr/radarr to v6 ([d9c7364](https://github.com/devopsarr/radarr-go/commit/d9c7364d1ba4d5a1348cf15a0cbf8eb4ea5caff3))
+* **deps:** update dependency radarr/radarr to v6 ([331d5b1](https://github.com/devopsarr/radarr-go/commit/331d5b11a100556685b7bd9ab2c3d94595d8ebd2))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.16.0 ([e9fd6d0](https://github.com/devopsarr/radarr-go/commit/e9fd6d007c1b243f14ec881849e124020e522eba))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.17.0 ([0cdc464](https://github.com/devopsarr/radarr-go/commit/0cdc46401a767455c2f23b943c94fda817a75adb))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.18.0 ([a65a8b6](https://github.com/devopsarr/radarr-go/commit/a65a8b659fcaf31e519eacc2bb1d63d7587d2b64))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.18.0 ([3b5ebf6](https://github.com/devopsarr/radarr-go/commit/3b5ebf6ee37b01d18b25801a2f0a67236983668f))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.19.0 ([d527ae1](https://github.com/devopsarr/radarr-go/commit/d527ae179d0e9f78543f8582311d546fd3fb0857))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.19.0 ([bf66a14](https://github.com/devopsarr/radarr-go/commit/bf66a14f8a7c6a785b06433b8906a74122533909))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.20.0 ([b456ad2](https://github.com/devopsarr/radarr-go/commit/b456ad2fbc1b1ee09e18e970b41ef5b684a42250))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.20.0 ([d5a16f8](https://github.com/devopsarr/radarr-go/commit/d5a16f89b694d3ae1293cece49d7c0dff11aff8c))
+
 ## [1.2.1](https://github.com/devopsarr/radarr-go/compare/v1.2.0...v1.2.1) (2025-09-04)
 
 
