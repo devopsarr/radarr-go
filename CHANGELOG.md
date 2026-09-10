@@ -1,5 +1,41 @@
 # Changelog
 
+## [1.2.2](https://github.com/devopsarr/radarr-go/compare/v1.2.1...v1.2.2) (2026-09-10)
+
+
+### Bug Fixes
+
+* add .goreleaser.yml template and update Makefile for Go release ([11855d1](https://github.com/devopsarr/radarr-go/commit/11855d16b3b7f5c1048061d649334eec63399ecf))
+* **deps:** update dependency radarr/radarr to v5.28.0.10274 ([722334e](https://github.com/devopsarr/radarr-go/commit/722334e33c81cbacbc14165622e4f1d70ea2c50d))
+* **deps:** update dependency radarr/radarr to v5.28.0.10274 ([5daa953](https://github.com/devopsarr/radarr-go/commit/5daa953b3ed3cc5d994f5410a1156779b85df167))
+* **deps:** update dependency radarr/radarr to v6 ([d9c7364](https://github.com/devopsarr/radarr-go/commit/d9c7364d1ba4d5a1348cf15a0cbf8eb4ea5caff3))
+* **deps:** update dependency radarr/radarr to v6 ([331d5b1](https://github.com/devopsarr/radarr-go/commit/331d5b11a100556685b7bd9ab2c3d94595d8ebd2))
+* **deps:** update dependency radarr/radarr to v6.1.1.10360 ([800ca85](https://github.com/devopsarr/radarr-go/commit/800ca85b9fef3dc93f2d809cfbddf51490fe4f85))
+* **deps:** update dependency radarr/radarr to v6.1.1.10360 ([bb2ab67](https://github.com/devopsarr/radarr-go/commit/bb2ab67707377c514224f4ba337697b120bd8920))
+* **deps:** update dependency radarr/radarr to v6.1.1.10360 ([67f38d7](https://github.com/devopsarr/radarr-go/commit/67f38d7c0b11319699265952c069ecae1b6d385a))
+* **deps:** update dependency radarr/radarr to v6.2.1.10461 ([bf80969](https://github.com/devopsarr/radarr-go/commit/bf809694fb56a987627d164ab71ee663f9bcced6))
+* **deps:** update dependency radarr/radarr to v6.2.1.10461 ([6e87b22](https://github.com/devopsarr/radarr-go/commit/6e87b222d9e78bf3fbaab4c45bdcde26a1ddad9c))
+* **deps:** update dependency radarr/radarr to v6.2.1.10461 ([be99f69](https://github.com/devopsarr/radarr-go/commit/be99f692ba0f5acffed970d50694f307d7d5aa1c))
+* **deps:** update dependency radarr/radarr to v6.3.0.10514 ([4511ffc](https://github.com/devopsarr/radarr-go/commit/4511ffc13c2df6106ffd8028b00fd86ce7e099ec))
+* **deps:** update dependency radarr/radarr to v6.3.0.10514 ([40e2c52](https://github.com/devopsarr/radarr-go/commit/40e2c5285f9addea7a267f1d06a0f706412cc685))
+* **deps:** update dependency radarr/radarr to v6.3.0.10514 ([683e78d](https://github.com/devopsarr/radarr-go/commit/683e78d08071d2759393d2e6591f32d6a652561b))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.16.0 ([e9fd6d0](https://github.com/devopsarr/radarr-go/commit/e9fd6d007c1b243f14ec881849e124020e522eba))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.17.0 ([0cdc464](https://github.com/devopsarr/radarr-go/commit/0cdc46401a767455c2f23b943c94fda817a75adb))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.18.0 ([a65a8b6](https://github.com/devopsarr/radarr-go/commit/a65a8b659fcaf31e519eacc2bb1d63d7587d2b64))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.18.0 ([3b5ebf6](https://github.com/devopsarr/radarr-go/commit/3b5ebf6ee37b01d18b25801a2f0a67236983668f))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.19.0 ([d527ae1](https://github.com/devopsarr/radarr-go/commit/d527ae179d0e9f78543f8582311d546fd3fb0857))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.19.0 ([bf66a14](https://github.com/devopsarr/radarr-go/commit/bf66a14f8a7c6a785b06433b8906a74122533909))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.20.0 ([b456ad2](https://github.com/devopsarr/radarr-go/commit/b456ad2fbc1b1ee09e18e970b41ef5b684a42250))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.20.0 ([d5a16f8](https://github.com/devopsarr/radarr-go/commit/d5a16f89b694d3ae1293cece49d7c0dff11aff8c))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.21.0 ([f1e8a29](https://github.com/devopsarr/radarr-go/commit/f1e8a295cca8cc55f677551c6e4ae568c082d0a8))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.22.0 ([77f3695](https://github.com/devopsarr/radarr-go/commit/77f3695baa991acde9a57a580e6528a31dc0ca7c))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.22.0 ([90c8270](https://github.com/devopsarr/radarr-go/commit/90c82701c5a59c60e02abfa230b4965460f3446b))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.23.0 ([0c46ab3](https://github.com/devopsarr/radarr-go/commit/0c46ab3bb74d77041ac5a4c98910a63b8c38e27d))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.23.0 ([aa4dea9](https://github.com/devopsarr/radarr-go/commit/aa4dea9aeb7e09cb5582bfc02e29fb2e572c0a8c))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.24.0 ([1006819](https://github.com/devopsarr/radarr-go/commit/100681936bcaf241e935e2b4a54f90e843f9e1e1))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.25.0 ([71a3470](https://github.com/devopsarr/radarr-go/commit/71a34704cc67b885e696f292347cf900c8f53ab8))
+* **deps:** update openapitools/openapi-generator-cli docker tag to v7.25.0 ([382cb0d](https://github.com/devopsarr/radarr-go/commit/382cb0d59fe0598538a7b1cdb43d2562a3c4abc9))
+
 ## [1.2.1](https://github.com/devopsarr/radarr-go/compare/v1.2.0...v1.2.1) (2025-09-04)
 
 
