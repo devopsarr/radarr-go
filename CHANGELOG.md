@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.3](https://github.com/devopsarr/radarr-go/compare/v1.2.2...v1.2.3) (2026-11-10)
+
+
+### Bug Fixes
+
+* add go releaser file version ([c139b31](https://github.com/devopsarr/radarr-go/commit/c139b31f04187599bf553b3211ee276eee6ebd94))
+* add go releaser file version ([da006d4](https://github.com/devopsarr/radarr-go/commit/da006d4e22664096d9865b628e12fa5314aa4e82))
+
 ## [1.2.2](https://github.com/devopsarr/radarr-go/compare/v1.2.1...v1.2.2) (2026-11-10)
 
 
