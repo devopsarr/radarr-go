@@ -12,18 +12,26 @@ Name | Type | Description | Notes
 **LaunchBrowser** | Pointer to **bool** |  | [optional] 
 **AuthenticationMethod** | Pointer to [**AuthenticationType**](AuthenticationType.md) |  | [optional] 
 **AuthenticationRequired** | Pointer to [**AuthenticationRequiredType**](AuthenticationRequiredType.md) |  | [optional] 
+**AllowedHosts** | Pointer to **NullableString** |  | [optional] 
 **AnalyticsEnabled** | Pointer to **bool** |  | [optional] 
 **Username** | Pointer to **NullableString** |  | [optional] 
 **Password** | Pointer to **NullableString** |  | [optional] 
 **PasswordConfirmation** | Pointer to **NullableString** |  | [optional] 
+**OidcAuthority** | Pointer to **NullableString** |  | [optional] 
+**OidcClientId** | Pointer to **NullableString** |  | [optional] 
+**OidcClientSecret** | Pointer to **NullableString** |  | [optional] 
+**OidcUserIdentifier** | Pointer to **NullableString** |  | [optional] 
+**OidcScopes** | Pointer to **NullableString** |  | [optional] 
 **LogLevel** | Pointer to **NullableString** |  | [optional] 
 **LogSizeLimit** | Pointer to **int32** |  | [optional] 
 **ConsoleLogLevel** | Pointer to **NullableString** |  | [optional] 
 **Branch** | Pointer to **NullableString** |  | [optional] 
 **ApiKey** | Pointer to **NullableString** |  | [optional] 
 **SslCertPath** | Pointer to **NullableString** |  | [optional] 
+**SslKeyPath** | Pointer to **NullableString** |  | [optional] 
 **SslCertPassword** | Pointer to **NullableString** |  | [optional] 
 **UrlBase** | Pointer to **NullableString** |  | [optional] 
+**TrustedNetworks** | Pointer to **NullableString** |  | [optional] 
 **InstanceName** | Pointer to **NullableString** |  | [optional] 
 **ApplicationUrl** | Pointer to **NullableString** |  | [optional] 
 **UpdateAutomatically** | Pointer to **bool** |  | [optional] 
@@ -272,6 +280,41 @@ SetAuthenticationRequired sets AuthenticationRequired field to given value.
 
 HasAuthenticationRequired returns a boolean if a field has been set.
 
+### GetAllowedHosts
+
+`func (o *HostConfigResource) GetAllowedHosts() string`
+
+GetAllowedHosts returns the AllowedHosts field if non-nil, zero value otherwise.
+
+### GetAllowedHostsOk
+
+`func (o *HostConfigResource) GetAllowedHostsOk() (*string, bool)`
+
+GetAllowedHostsOk returns a tuple with the AllowedHosts field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAllowedHosts
+
+`func (o *HostConfigResource) SetAllowedHosts(v string)`
+
+SetAllowedHosts sets AllowedHosts field to given value.
+
+### HasAllowedHosts
+
+`func (o *HostConfigResource) HasAllowedHosts() bool`
+
+HasAllowedHosts returns a boolean if a field has been set.
+
+### SetAllowedHostsNil
+
+`func (o *HostConfigResource) SetAllowedHostsNil(b bool)`
+
+ SetAllowedHostsNil sets the value for AllowedHosts to be an explicit nil
+
+### UnsetAllowedHosts
+`func (o *HostConfigResource) UnsetAllowedHosts()`
+
+UnsetAllowedHosts ensures that no value is present for AllowedHosts, not even an explicit nil
 ### GetAnalyticsEnabled
 
 `func (o *HostConfigResource) GetAnalyticsEnabled() bool`
@@ -402,6 +445,181 @@ HasPasswordConfirmation returns a boolean if a field has been set.
 `func (o *HostConfigResource) UnsetPasswordConfirmation()`
 
 UnsetPasswordConfirmation ensures that no value is present for PasswordConfirmation, not even an explicit nil
+### GetOidcAuthority
+
+`func (o *HostConfigResource) GetOidcAuthority() string`
+
+GetOidcAuthority returns the OidcAuthority field if non-nil, zero value otherwise.
+
+### GetOidcAuthorityOk
+
+`func (o *HostConfigResource) GetOidcAuthorityOk() (*string, bool)`
+
+GetOidcAuthorityOk returns a tuple with the OidcAuthority field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOidcAuthority
+
+`func (o *HostConfigResource) SetOidcAuthority(v string)`
+
+SetOidcAuthority sets OidcAuthority field to given value.
+
+### HasOidcAuthority
+
+`func (o *HostConfigResource) HasOidcAuthority() bool`
+
+HasOidcAuthority returns a boolean if a field has been set.
+
+### SetOidcAuthorityNil
+
+`func (o *HostConfigResource) SetOidcAuthorityNil(b bool)`
+
+ SetOidcAuthorityNil sets the value for OidcAuthority to be an explicit nil
+
+### UnsetOidcAuthority
+`func (o *HostConfigResource) UnsetOidcAuthority()`
+
+UnsetOidcAuthority ensures that no value is present for OidcAuthority, not even an explicit nil
+### GetOidcClientId
+
+`func (o *HostConfigResource) GetOidcClientId() string`
+
+GetOidcClientId returns the OidcClientId field if non-nil, zero value otherwise.
+
+### GetOidcClientIdOk
+
+`func (o *HostConfigResource) GetOidcClientIdOk() (*string, bool)`
+
+GetOidcClientIdOk returns a tuple with the OidcClientId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOidcClientId
+
+`func (o *HostConfigResource) SetOidcClientId(v string)`
+
+SetOidcClientId sets OidcClientId field to given value.
+
+### HasOidcClientId
+
+`func (o *HostConfigResource) HasOidcClientId() bool`
+
+HasOidcClientId returns a boolean if a field has been set.
+
+### SetOidcClientIdNil
+
+`func (o *HostConfigResource) SetOidcClientIdNil(b bool)`
+
+ SetOidcClientIdNil sets the value for OidcClientId to be an explicit nil
+
+### UnsetOidcClientId
+`func (o *HostConfigResource) UnsetOidcClientId()`
+
+UnsetOidcClientId ensures that no value is present for OidcClientId, not even an explicit nil
+### GetOidcClientSecret
+
+`func (o *HostConfigResource) GetOidcClientSecret() string`
+
+GetOidcClientSecret returns the OidcClientSecret field if non-nil, zero value otherwise.
+
+### GetOidcClientSecretOk
+
+`func (o *HostConfigResource) GetOidcClientSecretOk() (*string, bool)`
+
+GetOidcClientSecretOk returns a tuple with the OidcClientSecret field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOidcClientSecret
+
+`func (o *HostConfigResource) SetOidcClientSecret(v string)`
+
+SetOidcClientSecret sets OidcClientSecret field to given value.
+
+### HasOidcClientSecret
+
+`func (o *HostConfigResource) HasOidcClientSecret() bool`
+
+HasOidcClientSecret returns a boolean if a field has been set.
+
+### SetOidcClientSecretNil
+
+`func (o *HostConfigResource) SetOidcClientSecretNil(b bool)`
+
+ SetOidcClientSecretNil sets the value for OidcClientSecret to be an explicit nil
+
+### UnsetOidcClientSecret
+`func (o *HostConfigResource) UnsetOidcClientSecret()`
+
+UnsetOidcClientSecret ensures that no value is present for OidcClientSecret, not even an explicit nil
+### GetOidcUserIdentifier
+
+`func (o *HostConfigResource) GetOidcUserIdentifier() string`
+
+GetOidcUserIdentifier returns the OidcUserIdentifier field if non-nil, zero value otherwise.
+
+### GetOidcUserIdentifierOk
+
+`func (o *HostConfigResource) GetOidcUserIdentifierOk() (*string, bool)`
+
+GetOidcUserIdentifierOk returns a tuple with the OidcUserIdentifier field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOidcUserIdentifier
+
+`func (o *HostConfigResource) SetOidcUserIdentifier(v string)`
+
+SetOidcUserIdentifier sets OidcUserIdentifier field to given value.
+
+### HasOidcUserIdentifier
+
+`func (o *HostConfigResource) HasOidcUserIdentifier() bool`
+
+HasOidcUserIdentifier returns a boolean if a field has been set.
+
+### SetOidcUserIdentifierNil
+
+`func (o *HostConfigResource) SetOidcUserIdentifierNil(b bool)`
+
+ SetOidcUserIdentifierNil sets the value for OidcUserIdentifier to be an explicit nil
+
+### UnsetOidcUserIdentifier
+`func (o *HostConfigResource) UnsetOidcUserIdentifier()`
+
+UnsetOidcUserIdentifier ensures that no value is present for OidcUserIdentifier, not even an explicit nil
+### GetOidcScopes
+
+`func (o *HostConfigResource) GetOidcScopes() string`
+
+GetOidcScopes returns the OidcScopes field if non-nil, zero value otherwise.
+
+### GetOidcScopesOk
+
+`func (o *HostConfigResource) GetOidcScopesOk() (*string, bool)`
+
+GetOidcScopesOk returns a tuple with the OidcScopes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOidcScopes
+
+`func (o *HostConfigResource) SetOidcScopes(v string)`
+
+SetOidcScopes sets OidcScopes field to given value.
+
+### HasOidcScopes
+
+`func (o *HostConfigResource) HasOidcScopes() bool`
+
+HasOidcScopes returns a boolean if a field has been set.
+
+### SetOidcScopesNil
+
+`func (o *HostConfigResource) SetOidcScopesNil(b bool)`
+
+ SetOidcScopesNil sets the value for OidcScopes to be an explicit nil
+
+### UnsetOidcScopes
+`func (o *HostConfigResource) UnsetOidcScopes()`
+
+UnsetOidcScopes ensures that no value is present for OidcScopes, not even an explicit nil
 ### GetLogLevel
 
 `func (o *HostConfigResource) GetLogLevel() string`
@@ -602,6 +820,41 @@ HasSslCertPath returns a boolean if a field has been set.
 `func (o *HostConfigResource) UnsetSslCertPath()`
 
 UnsetSslCertPath ensures that no value is present for SslCertPath, not even an explicit nil
+### GetSslKeyPath
+
+`func (o *HostConfigResource) GetSslKeyPath() string`
+
+GetSslKeyPath returns the SslKeyPath field if non-nil, zero value otherwise.
+
+### GetSslKeyPathOk
+
+`func (o *HostConfigResource) GetSslKeyPathOk() (*string, bool)`
+
+GetSslKeyPathOk returns a tuple with the SslKeyPath field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSslKeyPath
+
+`func (o *HostConfigResource) SetSslKeyPath(v string)`
+
+SetSslKeyPath sets SslKeyPath field to given value.
+
+### HasSslKeyPath
+
+`func (o *HostConfigResource) HasSslKeyPath() bool`
+
+HasSslKeyPath returns a boolean if a field has been set.
+
+### SetSslKeyPathNil
+
+`func (o *HostConfigResource) SetSslKeyPathNil(b bool)`
+
+ SetSslKeyPathNil sets the value for SslKeyPath to be an explicit nil
+
+### UnsetSslKeyPath
+`func (o *HostConfigResource) UnsetSslKeyPath()`
+
+UnsetSslKeyPath ensures that no value is present for SslKeyPath, not even an explicit nil
 ### GetSslCertPassword
 
 `func (o *HostConfigResource) GetSslCertPassword() string`
@@ -672,6 +925,41 @@ HasUrlBase returns a boolean if a field has been set.
 `func (o *HostConfigResource) UnsetUrlBase()`
 
 UnsetUrlBase ensures that no value is present for UrlBase, not even an explicit nil
+### GetTrustedNetworks
+
+`func (o *HostConfigResource) GetTrustedNetworks() string`
+
+GetTrustedNetworks returns the TrustedNetworks field if non-nil, zero value otherwise.
+
+### GetTrustedNetworksOk
+
+`func (o *HostConfigResource) GetTrustedNetworksOk() (*string, bool)`
+
+GetTrustedNetworksOk returns a tuple with the TrustedNetworks field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTrustedNetworks
+
+`func (o *HostConfigResource) SetTrustedNetworks(v string)`
+
+SetTrustedNetworks sets TrustedNetworks field to given value.
+
+### HasTrustedNetworks
+
+`func (o *HostConfigResource) HasTrustedNetworks() bool`
+
+HasTrustedNetworks returns a boolean if a field has been set.
+
+### SetTrustedNetworksNil
+
+`func (o *HostConfigResource) SetTrustedNetworksNil(b bool)`
+
+ SetTrustedNetworksNil sets the value for TrustedNetworks to be an explicit nil
+
+### UnsetTrustedNetworks
+`func (o *HostConfigResource) UnsetTrustedNetworks()`
+
+UnsetTrustedNetworks ensures that no value is present for TrustedNetworks, not even an explicit nil
 ### GetInstanceName
 
 `func (o *HostConfigResource) GetInstanceName() string`
