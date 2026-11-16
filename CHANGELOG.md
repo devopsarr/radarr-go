@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.2.4 (2026-11-16)
+
+## What's Changed
+* chore: edit changelog type to github by @devopsarr[bot] in https://github.com/devopsarr/radarr-go/pull/113
+* fix(deps): update dependency seerr-team/seerr to v3.5.2 by @devopsarr[bot] in https://github.com/devopsarr/radarr-go/pull/115
+* fix(deps): update dependency radarr/radarr to v7 by @devopsarr[bot] in https://github.com/devopsarr/radarr-go/pull/116
+
+
+**Full Changelog**: https://github.com/devopsarr/radarr-go/compare/v1.2.3...v1.2.4
+
 ## [1.2.3](https://github.com/devopsarr/radarr-go/compare/v1.2.2...v1.2.3) (2026-11-10)
 
 
