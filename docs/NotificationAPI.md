@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ## DeleteNotification
 
-> DeleteNotification(ctx, id).Execute()
+> interface{} DeleteNotification(ctx, id).Execute()
 
 
 
@@ -173,11 +173,13 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	r, err := apiClient.NotificationAPI.DeleteNotification(context.Background(), id).Execute()
+	resp, r, err := apiClient.NotificationAPI.DeleteNotification(context.Background(), id).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `NotificationAPI.DeleteNotification``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `DeleteNotification`: interface{}
+	fmt.Fprintf(os.Stdout, "Response from `NotificationAPI.DeleteNotification`: %v\n", resp)
 }
 ```
 
@@ -200,7 +202,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+**interface{}**
 
 ### Authorization
 
@@ -209,7 +211,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -277,7 +279,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -468,7 +470,7 @@ Name | Type | Description  | Notes
 
 ## TestallNotification
 
-> TestallNotification(ctx).Execute()
+> []ProviderTestAllResult TestallNotification(ctx).Execute()
 
 
 
@@ -488,11 +490,13 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	r, err := apiClient.NotificationAPI.TestallNotification(context.Background()).Execute()
+	resp, r, err := apiClient.NotificationAPI.TestallNotification(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `NotificationAPI.TestallNotification``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `TestallNotification`: []ProviderTestAllResult
+	fmt.Fprintf(os.Stdout, "Response from `NotificationAPI.TestallNotification`: %v\n", resp)
 }
 ```
 
@@ -507,7 +511,7 @@ Other parameters are passed through a pointer to a apiTestallNotificationRequest
 
 ### Return type
 
- (empty response body)
+[**[]ProviderTestAllResult**](ProviderTestAllResult.md)
 
 ### Authorization
 
@@ -516,7 +520,7 @@ Other parameters are passed through a pointer to a apiTestallNotificationRequest
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Quality** | Pointer to [**QualityModel**](QualityModel.md) |  | [optional] 
 **CustomFormats** | Pointer to [**[]CustomFormatResource**](CustomFormatResource.md) |  | [optional] 
 **CustomFormatScore** | Pointer to **int32** |  | [optional] 
+**History** | Pointer to [**ReleaseHistoryResource**](ReleaseHistoryResource.md) |  | [optional] 
 **QualityWeight** | Pointer to **int32** |  | [optional] 
 **Age** | Pointer to **int32** |  | [optional] 
 **AgeHours** | Pointer to **float64** |  | [optional] 
@@ -212,6 +213,31 @@ SetCustomFormatScore sets CustomFormatScore field to given value.
 `func (o *ReleaseResource) HasCustomFormatScore() bool`
 
 HasCustomFormatScore returns a boolean if a field has been set.
+
+### GetHistory
+
+`func (o *ReleaseResource) GetHistory() ReleaseHistoryResource`
+
+GetHistory returns the History field if non-nil, zero value otherwise.
+
+### GetHistoryOk
+
+`func (o *ReleaseResource) GetHistoryOk() (*ReleaseHistoryResource, bool)`
+
+GetHistoryOk returns a tuple with the History field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHistory
+
+`func (o *ReleaseResource) SetHistory(v ReleaseHistoryResource)`
+
+SetHistory sets History field to given value.
+
+### HasHistory
+
+`func (o *ReleaseResource) HasHistory() bool`
+
+HasHistory returns a boolean if a field has been set.
 
 ### GetQualityWeight
 
