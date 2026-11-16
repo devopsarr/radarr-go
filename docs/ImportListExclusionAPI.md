@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 
 ## CreateExclusionsBulk
 
-> []ImportListExclusionResource CreateExclusionsBulk(ctx).ImportListExclusionResource(importListExclusionResource).Execute()
+> CreateExclusionsBulk(ctx).ImportListExclusionResource(importListExclusionResource).Execute()
 
 
 
@@ -102,13 +102,11 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ImportListExclusionAPI.CreateExclusionsBulk(context.Background()).ImportListExclusionResource(importListExclusionResource).Execute()
+	r, err := apiClient.ImportListExclusionAPI.CreateExclusionsBulk(context.Background()).ImportListExclusionResource(importListExclusionResource).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ImportListExclusionAPI.CreateExclusionsBulk``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateExclusionsBulk`: []ImportListExclusionResource
-	fmt.Fprintf(os.Stdout, "Response from `ImportListExclusionAPI.CreateExclusionsBulk`: %v\n", resp)
 }
 ```
 
@@ -127,7 +125,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]ImportListExclusionResource**](ImportListExclusionResource.md)
+ (empty response body)
 
 ### Authorization
 
@@ -135,8 +133,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json, text/json, application/*+json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -211,7 +209,7 @@ Name | Type | Description  | Notes
 
 ## DeleteExclusionsBulk
 
-> interface{} DeleteExclusionsBulk(ctx).ImportListExclusionBulkResource(importListExclusionBulkResource).Execute()
+> DeleteExclusionsBulk(ctx).ImportListExclusionBulkResource(importListExclusionBulkResource).Execute()
 
 
 
@@ -232,13 +230,11 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ImportListExclusionAPI.DeleteExclusionsBulk(context.Background()).ImportListExclusionBulkResource(importListExclusionBulkResource).Execute()
+	r, err := apiClient.ImportListExclusionAPI.DeleteExclusionsBulk(context.Background()).ImportListExclusionBulkResource(importListExclusionBulkResource).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ImportListExclusionAPI.DeleteExclusionsBulk``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DeleteExclusionsBulk`: interface{}
-	fmt.Fprintf(os.Stdout, "Response from `ImportListExclusionAPI.DeleteExclusionsBulk`: %v\n", resp)
 }
 ```
 
@@ -257,7 +253,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**interface{}**
+ (empty response body)
 
 ### Authorization
 
@@ -265,8 +261,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json, text/json, application/*+json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -334,7 +330,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -533,7 +529,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

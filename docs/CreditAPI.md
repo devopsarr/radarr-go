@@ -4,9 +4,73 @@ All URIs are relative to *http://localhost:7878*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**GetCredit**](CreditAPI.md#GetCredit) | **Get** /api/v3/credit | 
 [**GetCreditById**](CreditAPI.md#GetCreditById) | **Get** /api/v3/credit/{id} | 
-[**ListCredit**](CreditAPI.md#ListCredit) | **Get** /api/v3/credit | 
 
+
+
+## GetCredit
+
+> GetCredit(ctx).MovieId(movieId).MovieMetadataId(movieMetadataId).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	radarrClient "github.com/devopsarr/radarr-go/radarr"
+)
+
+func main() {
+	movieId := int32(56) // int32 |  (optional)
+	movieMetadataId := int32(56) // int32 |  (optional)
+
+	configuration := radarrClient.NewConfiguration()
+	apiClient := radarrClient.NewAPIClient(configuration)
+	r, err := apiClient.CreditAPI.GetCredit(context.Background()).MovieId(movieId).MovieMetadataId(movieMetadataId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CreditAPI.GetCredit``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCreditRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **movieId** | **int32** |  | 
+ **movieMetadataId** | **int32** |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## GetCreditById
@@ -70,73 +134,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ListCredit
-
-> []CreditResource ListCredit(ctx).MovieId(movieId).MovieMetadataId(movieMetadataId).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	radarrClient "github.com/devopsarr/radarr-go/radarr"
-)
-
-func main() {
-	movieId := int32(56) // int32 |  (optional)
-	movieMetadataId := int32(56) // int32 |  (optional)
-
-	configuration := radarrClient.NewConfiguration()
-	apiClient := radarrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.CreditAPI.ListCredit(context.Background()).MovieId(movieId).MovieMetadataId(movieMetadataId).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CreditAPI.ListCredit``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ListCredit`: []CreditResource
-	fmt.Fprintf(os.Stdout, "Response from `CreditAPI.ListCredit`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiListCreditRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **movieId** | **int32** |  | 
- **movieMetadataId** | **int32** |  | 
-
-### Return type
-
-[**[]CreditResource**](CreditResource.md)
-
-### Authorization
-
-[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

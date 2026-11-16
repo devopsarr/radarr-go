@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ## DeleteIndexer
 
-> interface{} DeleteIndexer(ctx, id).Execute()
+> DeleteIndexer(ctx, id).Execute()
 
 
 
@@ -175,13 +175,11 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IndexerAPI.DeleteIndexer(context.Background(), id).Execute()
+	r, err := apiClient.IndexerAPI.DeleteIndexer(context.Background(), id).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IndexerAPI.DeleteIndexer``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DeleteIndexer`: interface{}
-	fmt.Fprintf(os.Stdout, "Response from `IndexerAPI.DeleteIndexer`: %v\n", resp)
 }
 ```
 
@@ -204,7 +202,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**interface{}**
+ (empty response body)
 
 ### Authorization
 
@@ -213,7 +211,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -222,7 +220,7 @@ Name | Type | Description  | Notes
 
 ## DeleteIndexerBulk
 
-> interface{} DeleteIndexerBulk(ctx).IndexerBulkResource(indexerBulkResource).Execute()
+> DeleteIndexerBulk(ctx).IndexerBulkResource(indexerBulkResource).Execute()
 
 
 
@@ -243,13 +241,11 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IndexerAPI.DeleteIndexerBulk(context.Background()).IndexerBulkResource(indexerBulkResource).Execute()
+	r, err := apiClient.IndexerAPI.DeleteIndexerBulk(context.Background()).IndexerBulkResource(indexerBulkResource).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IndexerAPI.DeleteIndexerBulk``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DeleteIndexerBulk`: interface{}
-	fmt.Fprintf(os.Stdout, "Response from `IndexerAPI.DeleteIndexerBulk`: %v\n", resp)
 }
 ```
 
@@ -268,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**interface{}**
+ (empty response body)
 
 ### Authorization
 
@@ -277,7 +273,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -345,7 +341,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -472,7 +468,7 @@ Other parameters are passed through a pointer to a apiListIndexerSchemaRequest s
 
 ## PutIndexerBulk
 
-> []IndexerResource PutIndexerBulk(ctx).IndexerBulkResource(indexerBulkResource).Execute()
+> IndexerResource PutIndexerBulk(ctx).IndexerBulkResource(indexerBulkResource).Execute()
 
 
 
@@ -498,7 +494,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `IndexerAPI.PutIndexerBulk``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PutIndexerBulk`: []IndexerResource
+	// response from `PutIndexerBulk`: IndexerResource
 	fmt.Fprintf(os.Stdout, "Response from `IndexerAPI.PutIndexerBulk`: %v\n", resp)
 }
 ```
@@ -518,7 +514,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]IndexerResource**](IndexerResource.md)
+[**IndexerResource**](IndexerResource.md)
 
 ### Authorization
 
@@ -600,7 +596,7 @@ Name | Type | Description  | Notes
 
 ## TestallIndexer
 
-> []ProviderTestAllResult TestallIndexer(ctx).Execute()
+> TestallIndexer(ctx).Execute()
 
 
 
@@ -620,13 +616,11 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.IndexerAPI.TestallIndexer(context.Background()).Execute()
+	r, err := apiClient.IndexerAPI.TestallIndexer(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `IndexerAPI.TestallIndexer``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `TestallIndexer`: []ProviderTestAllResult
-	fmt.Fprintf(os.Stdout, "Response from `IndexerAPI.TestallIndexer`: %v\n", resp)
 }
 ```
 
@@ -641,7 +635,7 @@ Other parameters are passed through a pointer to a apiTestallIndexerRequest stru
 
 ### Return type
 
-[**[]ProviderTestAllResult**](ProviderTestAllResult.md)
+ (empty response body)
 
 ### Authorization
 
@@ -650,7 +644,7 @@ Other parameters are passed through a pointer to a apiTestallIndexerRequest stru
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

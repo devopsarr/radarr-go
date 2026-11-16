@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -132,7 +132,7 @@ Other parameters are passed through a pointer to a apiGetQualityDefinitionLimits
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -191,7 +191,7 @@ Other parameters are passed through a pointer to a apiListQualityDefinitionReque
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -200,7 +200,7 @@ Other parameters are passed through a pointer to a apiListQualityDefinitionReque
 
 ## PutQualityDefinitionUpdate
 
-> []QualityDefinitionResource PutQualityDefinitionUpdate(ctx).QualityDefinitionResource(qualityDefinitionResource).Execute()
+> PutQualityDefinitionUpdate(ctx).QualityDefinitionResource(qualityDefinitionResource).Execute()
 
 
 
@@ -221,13 +221,11 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.QualityDefinitionAPI.PutQualityDefinitionUpdate(context.Background()).QualityDefinitionResource(qualityDefinitionResource).Execute()
+	r, err := apiClient.QualityDefinitionAPI.PutQualityDefinitionUpdate(context.Background()).QualityDefinitionResource(qualityDefinitionResource).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `QualityDefinitionAPI.PutQualityDefinitionUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PutQualityDefinitionUpdate`: []QualityDefinitionResource
-	fmt.Fprintf(os.Stdout, "Response from `QualityDefinitionAPI.PutQualityDefinitionUpdate`: %v\n", resp)
 }
 ```
 
@@ -246,7 +244,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]QualityDefinitionResource**](QualityDefinitionResource.md)
+ (empty response body)
 
 ### Authorization
 
@@ -254,8 +252,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json, text/json, application/*+json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -324,8 +322,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json, text/json, application/*+json
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

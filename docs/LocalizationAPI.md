@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## GetLocalization
 
-> GetLocalization(ctx).Execute()
+> string GetLocalization(ctx).Execute()
 
 
 
@@ -31,11 +31,13 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	r, err := apiClient.LocalizationAPI.GetLocalization(context.Background()).Execute()
+	resp, r, err := apiClient.LocalizationAPI.GetLocalization(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `LocalizationAPI.GetLocalization``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `GetLocalization`: string
+	fmt.Fprintf(os.Stdout, "Response from `LocalizationAPI.GetLocalization`: %v\n", resp)
 }
 ```
 
@@ -50,7 +52,7 @@ Other parameters are passed through a pointer to a apiGetLocalizationRequest str
 
 ### Return type
 
- (empty response body)
+**string**
 
 ### Authorization
 
@@ -59,7 +61,7 @@ Other parameters are passed through a pointer to a apiGetLocalizationRequest str
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

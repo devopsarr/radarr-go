@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 **MovieFileCount** | Pointer to **int32** |  | [optional] 
 **SizeOnDisk** | Pointer to **int64** |  | [optional] 
 **ReleaseGroups** | Pointer to **[]string** |  | [optional] 
-**MovieFileQualities** | Pointer to [**[]Quality**](Quality.md) |  | [optional] 
 
 ## Methods
 
@@ -113,41 +112,6 @@ HasReleaseGroups returns a boolean if a field has been set.
 `func (o *MovieStatisticsResource) UnsetReleaseGroups()`
 
 UnsetReleaseGroups ensures that no value is present for ReleaseGroups, not even an explicit nil
-### GetMovieFileQualities
-
-`func (o *MovieStatisticsResource) GetMovieFileQualities() []Quality`
-
-GetMovieFileQualities returns the MovieFileQualities field if non-nil, zero value otherwise.
-
-### GetMovieFileQualitiesOk
-
-`func (o *MovieStatisticsResource) GetMovieFileQualitiesOk() (*[]Quality, bool)`
-
-GetMovieFileQualitiesOk returns a tuple with the MovieFileQualities field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMovieFileQualities
-
-`func (o *MovieStatisticsResource) SetMovieFileQualities(v []Quality)`
-
-SetMovieFileQualities sets MovieFileQualities field to given value.
-
-### HasMovieFileQualities
-
-`func (o *MovieStatisticsResource) HasMovieFileQualities() bool`
-
-HasMovieFileQualities returns a boolean if a field has been set.
-
-### SetMovieFileQualitiesNil
-
-`func (o *MovieStatisticsResource) SetMovieFileQualitiesNil(b bool)`
-
- SetMovieFileQualitiesNil sets the value for MovieFileQualities to be an explicit nil
-
-### UnsetMovieFileQualities
-`func (o *MovieStatisticsResource) UnsetMovieFileQualities()`
-
-UnsetMovieFileQualities ensures that no value is present for MovieFileQualities, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

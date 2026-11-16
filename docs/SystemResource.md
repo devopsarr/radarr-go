@@ -21,7 +21,6 @@ Name | Type | Description | Notes
 **IsOsx** | Pointer to **bool** |  | [optional] 
 **IsWindows** | Pointer to **bool** |  | [optional] 
 **IsDocker** | Pointer to **bool** |  | [optional] 
-**IsContainerized** | Pointer to **bool** |  | [optional] 
 **Mode** | Pointer to [**RuntimeMode**](RuntimeMode.md) |  | [optional] 
 **Branch** | Pointer to **NullableString** |  | [optional] 
 **DatabaseType** | Pointer to [**DatabaseType**](DatabaseType.md) |  | [optional] 
@@ -550,31 +549,6 @@ SetIsDocker sets IsDocker field to given value.
 `func (o *SystemResource) HasIsDocker() bool`
 
 HasIsDocker returns a boolean if a field has been set.
-
-### GetIsContainerized
-
-`func (o *SystemResource) GetIsContainerized() bool`
-
-GetIsContainerized returns the IsContainerized field if non-nil, zero value otherwise.
-
-### GetIsContainerizedOk
-
-`func (o *SystemResource) GetIsContainerizedOk() (*bool, bool)`
-
-GetIsContainerizedOk returns a tuple with the IsContainerized field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetIsContainerized
-
-`func (o *SystemResource) SetIsContainerized(v bool)`
-
-SetIsContainerized sets IsContainerized field to given value.
-
-### HasIsContainerized
-
-`func (o *SystemResource) HasIsContainerized() bool`
-
-HasIsContainerized returns a boolean if a field has been set.
 
 ### GetMode
 

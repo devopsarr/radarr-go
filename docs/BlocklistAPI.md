@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 
 ## DeleteBlocklistBulk
 
-> interface{} DeleteBlocklistBulk(ctx).BlocklistBulkResource(blocklistBulkResource).Execute()
+> DeleteBlocklistBulk(ctx).BlocklistBulkResource(blocklistBulkResource).Execute()
 
 
 
@@ -100,13 +100,11 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BlocklistAPI.DeleteBlocklistBulk(context.Background()).BlocklistBulkResource(blocklistBulkResource).Execute()
+	r, err := apiClient.BlocklistAPI.DeleteBlocklistBulk(context.Background()).BlocklistBulkResource(blocklistBulkResource).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `BlocklistAPI.DeleteBlocklistBulk``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DeleteBlocklistBulk`: interface{}
-	fmt.Fprintf(os.Stdout, "Response from `BlocklistAPI.DeleteBlocklistBulk`: %v\n", resp)
 }
 ```
 
@@ -125,7 +123,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**interface{}**
+ (empty response body)
 
 ### Authorization
 
@@ -133,8 +131,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json, text/json, application/*+json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -272,7 +270,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
