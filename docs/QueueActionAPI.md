@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## CreateQueueGrabBulk
 
-> CreateQueueGrabBulk(ctx).QueueBulkResource(queueBulkResource).Execute()
+> interface{} CreateQueueGrabBulk(ctx).QueueBulkResource(queueBulkResource).Execute()
 
 
 
@@ -32,11 +32,13 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	r, err := apiClient.QueueActionAPI.CreateQueueGrabBulk(context.Background()).QueueBulkResource(queueBulkResource).Execute()
+	resp, r, err := apiClient.QueueActionAPI.CreateQueueGrabBulk(context.Background()).QueueBulkResource(queueBulkResource).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `QueueActionAPI.CreateQueueGrabBulk``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `CreateQueueGrabBulk`: interface{}
+	fmt.Fprintf(os.Stdout, "Response from `QueueActionAPI.CreateQueueGrabBulk`: %v\n", resp)
 }
 ```
 
@@ -55,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+**interface{}**
 
 ### Authorization
 
@@ -64,7 +66,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -73,7 +75,7 @@ Name | Type | Description  | Notes
 
 ## CreateQueueGrabById
 
-> CreateQueueGrabById(ctx, id).Execute()
+> interface{} CreateQueueGrabById(ctx, id).Execute()
 
 
 
@@ -94,11 +96,13 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	r, err := apiClient.QueueActionAPI.CreateQueueGrabById(context.Background(), id).Execute()
+	resp, r, err := apiClient.QueueActionAPI.CreateQueueGrabById(context.Background(), id).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `QueueActionAPI.CreateQueueGrabById``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `CreateQueueGrabById`: interface{}
+	fmt.Fprintf(os.Stdout, "Response from `QueueActionAPI.CreateQueueGrabById`: %v\n", resp)
 }
 ```
 
@@ -121,7 +125,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+**interface{}**
 
 ### Authorization
 
@@ -130,7 +134,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

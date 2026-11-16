@@ -5,14 +5,14 @@ All URIs are relative to *http://localhost:7878*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetFileSystem**](FileSystemAPI.md#GetFileSystem) | **Get** /api/v3/filesystem | 
-[**GetFileSystemMediafiles**](FileSystemAPI.md#GetFileSystemMediafiles) | **Get** /api/v3/filesystem/mediafiles | 
 [**GetFileSystemType**](FileSystemAPI.md#GetFileSystemType) | **Get** /api/v3/filesystem/type | 
+[**ListFileSystemMediafiles**](FileSystemAPI.md#ListFileSystemMediafiles) | **Get** /api/v3/filesystem/mediafiles | 
 
 
 
 ## GetFileSystem
 
-> GetFileSystem(ctx).Path(path).IncludeFiles(includeFiles).AllowFoldersWithoutTrailingSlashes(allowFoldersWithoutTrailingSlashes).Execute()
+> FileSystemResult GetFileSystem(ctx).Path(path).IncludeFiles(includeFiles).AllowFoldersWithoutTrailingSlashes(allowFoldersWithoutTrailingSlashes).Execute()
 
 
 
@@ -35,11 +35,13 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	r, err := apiClient.FileSystemAPI.GetFileSystem(context.Background()).Path(path).IncludeFiles(includeFiles).AllowFoldersWithoutTrailingSlashes(allowFoldersWithoutTrailingSlashes).Execute()
+	resp, r, err := apiClient.FileSystemAPI.GetFileSystem(context.Background()).Path(path).IncludeFiles(includeFiles).AllowFoldersWithoutTrailingSlashes(allowFoldersWithoutTrailingSlashes).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `FileSystemAPI.GetFileSystem``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `GetFileSystem`: FileSystemResult
+	fmt.Fprintf(os.Stdout, "Response from `FileSystemAPI.GetFileSystem`: %v\n", resp)
 }
 ```
 
@@ -60,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**FileSystemResult**](FileSystemResult.md)
 
 ### Authorization
 
@@ -69,69 +71,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetFileSystemMediafiles
-
-> GetFileSystemMediafiles(ctx).Path(path).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	radarrClient "github.com/devopsarr/radarr-go/radarr"
-)
-
-func main() {
-	path := "path_example" // string |  (optional)
-
-	configuration := radarrClient.NewConfiguration()
-	apiClient := radarrClient.NewAPIClient(configuration)
-	r, err := apiClient.FileSystemAPI.GetFileSystemMediafiles(context.Background()).Path(path).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `FileSystemAPI.GetFileSystemMediafiles``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetFileSystemMediafilesRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **path** | **string** |  | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -140,7 +80,7 @@ Name | Type | Description  | Notes
 
 ## GetFileSystemType
 
-> GetFileSystemType(ctx).Path(path).Execute()
+> FileSystemTypeResource GetFileSystemType(ctx).Path(path).Execute()
 
 
 
@@ -161,11 +101,13 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	r, err := apiClient.FileSystemAPI.GetFileSystemType(context.Background()).Path(path).Execute()
+	resp, r, err := apiClient.FileSystemAPI.GetFileSystemType(context.Background()).Path(path).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `FileSystemAPI.GetFileSystemType``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `GetFileSystemType`: FileSystemTypeResource
+	fmt.Fprintf(os.Stdout, "Response from `FileSystemAPI.GetFileSystemType`: %v\n", resp)
 }
 ```
 
@@ -184,7 +126,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**FileSystemTypeResource**](FileSystemTypeResource.md)
 
 ### Authorization
 
@@ -193,7 +135,71 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListFileSystemMediafiles
+
+> []FileSystemMediaFileResource ListFileSystemMediafiles(ctx).Path(path).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	radarrClient "github.com/devopsarr/radarr-go/radarr"
+)
+
+func main() {
+	path := "path_example" // string |  (optional)
+
+	configuration := radarrClient.NewConfiguration()
+	apiClient := radarrClient.NewAPIClient(configuration)
+	resp, r, err := apiClient.FileSystemAPI.ListFileSystemMediafiles(context.Background()).Path(path).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `FileSystemAPI.ListFileSystemMediafiles``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListFileSystemMediafiles`: []FileSystemMediaFileResource
+	fmt.Fprintf(os.Stdout, "Response from `FileSystemAPI.ListFileSystemMediafiles`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListFileSystemMediafilesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **path** | **string** |  | 
+
+### Return type
+
+[**[]FileSystemMediaFileResource**](FileSystemMediaFileResource.md)
+
+### Authorization
+
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

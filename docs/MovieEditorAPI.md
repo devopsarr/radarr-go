@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## DeleteMovieEditor
 
-> DeleteMovieEditor(ctx).MovieEditorResource(movieEditorResource).Execute()
+> interface{} DeleteMovieEditor(ctx).MovieEditorResource(movieEditorResource).Execute()
 
 
 
@@ -32,11 +32,13 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	r, err := apiClient.MovieEditorAPI.DeleteMovieEditor(context.Background()).MovieEditorResource(movieEditorResource).Execute()
+	resp, r, err := apiClient.MovieEditorAPI.DeleteMovieEditor(context.Background()).MovieEditorResource(movieEditorResource).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MovieEditorAPI.DeleteMovieEditor``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `DeleteMovieEditor`: interface{}
+	fmt.Fprintf(os.Stdout, "Response from `MovieEditorAPI.DeleteMovieEditor`: %v\n", resp)
 }
 ```
 
@@ -55,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+**interface{}**
 
 ### Authorization
 
@@ -63,8 +65,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/*+json
-- **Accept**: Not defined
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -73,7 +75,7 @@ Name | Type | Description  | Notes
 
 ## PutMovieEditor
 
-> PutMovieEditor(ctx).MovieEditorResource(movieEditorResource).Execute()
+> []MovieResource PutMovieEditor(ctx).MovieEditorResource(movieEditorResource).Execute()
 
 
 
@@ -94,11 +96,13 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	r, err := apiClient.MovieEditorAPI.PutMovieEditor(context.Background()).MovieEditorResource(movieEditorResource).Execute()
+	resp, r, err := apiClient.MovieEditorAPI.PutMovieEditor(context.Background()).MovieEditorResource(movieEditorResource).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MovieEditorAPI.PutMovieEditor``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `PutMovieEditor`: []MovieResource
+	fmt.Fprintf(os.Stdout, "Response from `MovieEditorAPI.PutMovieEditor`: %v\n", resp)
 }
 ```
 
@@ -117,7 +121,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**[]MovieResource**](MovieResource.md)
 
 ### Authorization
 
@@ -125,8 +129,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/*+json
-- **Accept**: Not defined
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

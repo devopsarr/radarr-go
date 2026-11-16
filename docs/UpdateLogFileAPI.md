@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## GetLogFileUpdateByFilename
 
-> GetLogFileUpdateByFilename(ctx, filename).Execute()
+> string GetLogFileUpdateByFilename(ctx, filename).Execute()
 
 
 
@@ -32,11 +32,13 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	r, err := apiClient.UpdateLogFileAPI.GetLogFileUpdateByFilename(context.Background(), filename).Execute()
+	resp, r, err := apiClient.UpdateLogFileAPI.GetLogFileUpdateByFilename(context.Background(), filename).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UpdateLogFileAPI.GetLogFileUpdateByFilename``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `GetLogFileUpdateByFilename`: string
+	fmt.Fprintf(os.Stdout, "Response from `UpdateLogFileAPI.GetLogFileUpdateByFilename`: %v\n", resp)
 }
 ```
 
@@ -59,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+**string**
 
 ### Authorization
 
@@ -68,7 +70,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: text/plain
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -127,7 +129,7 @@ Other parameters are passed through a pointer to a apiListLogFileUpdateRequest s
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
