@@ -63,7 +63,7 @@ Other parameters are passed through a pointer to a apiGetNamingConfigRequest str
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ## GetNamingConfigExamples
 
-> NamingExampleResource GetNamingConfigExamples(ctx).RenameMovies(renameMovies).ReplaceIllegalCharacters(replaceIllegalCharacters).ColonReplacementFormat(colonReplacementFormat).StandardMovieFormat(standardMovieFormat).MovieFolderFormat(movieFolderFormat).Id(id).ResourceName(resourceName).Execute()
+> GetNamingConfigExamples(ctx).RenameMovies(renameMovies).ReplaceIllegalCharacters(replaceIllegalCharacters).ColonReplacementFormat(colonReplacementFormat).StandardMovieFormat(standardMovieFormat).MovieFolderFormat(movieFolderFormat).Id(id).ResourceName(resourceName).Execute()
 
 
 
@@ -167,13 +167,11 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.NamingConfigAPI.GetNamingConfigExamples(context.Background()).RenameMovies(renameMovies).ReplaceIllegalCharacters(replaceIllegalCharacters).ColonReplacementFormat(colonReplacementFormat).StandardMovieFormat(standardMovieFormat).MovieFolderFormat(movieFolderFormat).Id(id).ResourceName(resourceName).Execute()
+	r, err := apiClient.NamingConfigAPI.GetNamingConfigExamples(context.Background()).RenameMovies(renameMovies).ReplaceIllegalCharacters(replaceIllegalCharacters).ColonReplacementFormat(colonReplacementFormat).StandardMovieFormat(standardMovieFormat).MovieFolderFormat(movieFolderFormat).Id(id).ResourceName(resourceName).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `NamingConfigAPI.GetNamingConfigExamples``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetNamingConfigExamples`: NamingExampleResource
-	fmt.Fprintf(os.Stdout, "Response from `NamingConfigAPI.GetNamingConfigExamples`: %v\n", resp)
 }
 ```
 
@@ -198,7 +196,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**NamingExampleResource**](NamingExampleResource.md)
+ (empty response body)
 
 ### Authorization
 
@@ -207,7 +205,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -276,8 +274,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json, text/json, application/*+json
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

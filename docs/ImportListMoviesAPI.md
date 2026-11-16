@@ -5,13 +5,13 @@ All URIs are relative to *http://localhost:7878*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateImportlistMovie**](ImportListMoviesAPI.md#CreateImportlistMovie) | **Post** /api/v3/importlist/movie | 
-[**ListImportlistMovie**](ImportListMoviesAPI.md#ListImportlistMovie) | **Get** /api/v3/importlist/movie | 
+[**GetImportlistMovie**](ImportListMoviesAPI.md#GetImportlistMovie) | **Get** /api/v3/importlist/movie | 
 
 
 
 ## CreateImportlistMovie
 
-> []MovieResource CreateImportlistMovie(ctx).MovieResource(movieResource).Execute()
+> CreateImportlistMovie(ctx).MovieResource(movieResource).Execute()
 
 
 
@@ -32,13 +32,11 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ImportListMoviesAPI.CreateImportlistMovie(context.Background()).MovieResource(movieResource).Execute()
+	r, err := apiClient.ImportListMoviesAPI.CreateImportlistMovie(context.Background()).MovieResource(movieResource).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ImportListMoviesAPI.CreateImportlistMovie``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateImportlistMovie`: []MovieResource
-	fmt.Fprintf(os.Stdout, "Response from `ImportListMoviesAPI.CreateImportlistMovie`: %v\n", resp)
 }
 ```
 
@@ -57,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]MovieResource**](MovieResource.md)
+ (empty response body)
 
 ### Authorization
 
@@ -65,17 +63,17 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+- **Content-Type**: application/json, text/json, application/*+json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## ListImportlistMovie
+## GetImportlistMovie
 
-> []ImportListMoviesResource ListImportlistMovie(ctx).IncludeRecommendations(includeRecommendations).IncludeTrending(includeTrending).IncludePopular(includePopular).Execute()
+> GetImportlistMovie(ctx).IncludeRecommendations(includeRecommendations).IncludeTrending(includeTrending).IncludePopular(includePopular).Execute()
 
 
 
@@ -98,13 +96,11 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ImportListMoviesAPI.ListImportlistMovie(context.Background()).IncludeRecommendations(includeRecommendations).IncludeTrending(includeTrending).IncludePopular(includePopular).Execute()
+	r, err := apiClient.ImportListMoviesAPI.GetImportlistMovie(context.Background()).IncludeRecommendations(includeRecommendations).IncludeTrending(includeTrending).IncludePopular(includePopular).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ImportListMoviesAPI.ListImportlistMovie``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ImportListMoviesAPI.GetImportlistMovie``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListImportlistMovie`: []ImportListMoviesResource
-	fmt.Fprintf(os.Stdout, "Response from `ImportListMoviesAPI.ListImportlistMovie`: %v\n", resp)
 }
 ```
 
@@ -114,7 +110,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListImportlistMovieRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetImportlistMovieRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -125,7 +121,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]ImportListMoviesResource**](ImportListMoviesResource.md)
+ (empty response body)
 
 ### Authorization
 
@@ -134,7 +130,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

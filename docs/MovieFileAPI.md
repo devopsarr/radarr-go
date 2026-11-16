@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ## DeleteMovieFileBulk
 
-> interface{} DeleteMovieFileBulk(ctx).MovieFileListResource(movieFileListResource).Execute()
+> DeleteMovieFileBulk(ctx).MovieFileListResource(movieFileListResource).Execute()
 
 
 
@@ -103,13 +103,11 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MovieFileAPI.DeleteMovieFileBulk(context.Background()).MovieFileListResource(movieFileListResource).Execute()
+	r, err := apiClient.MovieFileAPI.DeleteMovieFileBulk(context.Background()).MovieFileListResource(movieFileListResource).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MovieFileAPI.DeleteMovieFileBulk``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DeleteMovieFileBulk`: interface{}
-	fmt.Fprintf(os.Stdout, "Response from `MovieFileAPI.DeleteMovieFileBulk`: %v\n", resp)
 }
 ```
 
@@ -128,7 +126,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**interface{}**
+ (empty response body)
 
 ### Authorization
 
@@ -137,7 +135,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -205,7 +203,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -280,7 +278,7 @@ Name | Type | Description  | Notes
 
 ## PutMovieFileBulk
 
-> []MovieFileResource PutMovieFileBulk(ctx).MovieFileResource(movieFileResource).Execute()
+> PutMovieFileBulk(ctx).MovieFileResource(movieFileResource).Execute()
 
 
 
@@ -301,13 +299,11 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MovieFileAPI.PutMovieFileBulk(context.Background()).MovieFileResource(movieFileResource).Execute()
+	r, err := apiClient.MovieFileAPI.PutMovieFileBulk(context.Background()).MovieFileResource(movieFileResource).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MovieFileAPI.PutMovieFileBulk``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PutMovieFileBulk`: []MovieFileResource
-	fmt.Fprintf(os.Stdout, "Response from `MovieFileAPI.PutMovieFileBulk`: %v\n", resp)
 }
 ```
 
@@ -326,7 +322,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]MovieFileResource**](MovieFileResource.md)
+ (empty response body)
 
 ### Authorization
 
@@ -335,7 +331,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -344,7 +340,7 @@ Name | Type | Description  | Notes
 
 ## PutMovieFileEditor
 
-> []MovieFileResource PutMovieFileEditor(ctx).MovieFileListResource(movieFileListResource).Execute()
+> PutMovieFileEditor(ctx).MovieFileListResource(movieFileListResource).Execute()
 
 
 
@@ -365,13 +361,11 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MovieFileAPI.PutMovieFileEditor(context.Background()).MovieFileListResource(movieFileListResource).Execute()
+	r, err := apiClient.MovieFileAPI.PutMovieFileEditor(context.Background()).MovieFileListResource(movieFileListResource).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MovieFileAPI.PutMovieFileEditor``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PutMovieFileEditor`: []MovieFileResource
-	fmt.Fprintf(os.Stdout, "Response from `MovieFileAPI.PutMovieFileEditor`: %v\n", resp)
 }
 ```
 
@@ -390,7 +384,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]MovieFileResource**](MovieFileResource.md)
+ (empty response body)
 
 ### Authorization
 
@@ -399,7 +393,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -469,7 +463,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

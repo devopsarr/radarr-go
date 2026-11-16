@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## CreateSystemRestart
 
-> SystemRestartResource CreateSystemRestart(ctx).Execute()
+> CreateSystemRestart(ctx).Execute()
 
 
 
@@ -34,13 +34,11 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SystemAPI.CreateSystemRestart(context.Background()).Execute()
+	r, err := apiClient.SystemAPI.CreateSystemRestart(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.CreateSystemRestart``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateSystemRestart`: SystemRestartResource
-	fmt.Fprintf(os.Stdout, "Response from `SystemAPI.CreateSystemRestart`: %v\n", resp)
 }
 ```
 
@@ -55,7 +53,7 @@ Other parameters are passed through a pointer to a apiCreateSystemRestartRequest
 
 ### Return type
 
-[**SystemRestartResource**](SystemRestartResource.md)
+ (empty response body)
 
 ### Authorization
 
@@ -64,7 +62,7 @@ Other parameters are passed through a pointer to a apiCreateSystemRestartRequest
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -73,7 +71,7 @@ Other parameters are passed through a pointer to a apiCreateSystemRestartRequest
 
 ## CreateSystemShutdown
 
-> SystemShutdownResource CreateSystemShutdown(ctx).Execute()
+> CreateSystemShutdown(ctx).Execute()
 
 
 
@@ -93,13 +91,11 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SystemAPI.CreateSystemShutdown(context.Background()).Execute()
+	r, err := apiClient.SystemAPI.CreateSystemShutdown(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.CreateSystemShutdown``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateSystemShutdown`: SystemShutdownResource
-	fmt.Fprintf(os.Stdout, "Response from `SystemAPI.CreateSystemShutdown`: %v\n", resp)
 }
 ```
 
@@ -114,7 +110,7 @@ Other parameters are passed through a pointer to a apiCreateSystemShutdownReques
 
 ### Return type
 
-[**SystemShutdownResource**](SystemShutdownResource.md)
+ (empty response body)
 
 ### Authorization
 
@@ -123,7 +119,7 @@ Other parameters are passed through a pointer to a apiCreateSystemShutdownReques
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -132,7 +128,7 @@ Other parameters are passed through a pointer to a apiCreateSystemShutdownReques
 
 ## GetSystemRoutes
 
-> string GetSystemRoutes(ctx).Execute()
+> GetSystemRoutes(ctx).Execute()
 
 
 
@@ -152,13 +148,11 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SystemAPI.GetSystemRoutes(context.Background()).Execute()
+	r, err := apiClient.SystemAPI.GetSystemRoutes(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.GetSystemRoutes``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetSystemRoutes`: string
-	fmt.Fprintf(os.Stdout, "Response from `SystemAPI.GetSystemRoutes`: %v\n", resp)
 }
 ```
 
@@ -173,7 +167,7 @@ Other parameters are passed through a pointer to a apiGetSystemRoutesRequest str
 
 ### Return type
 
-**string**
+ (empty response body)
 
 ### Authorization
 
@@ -182,7 +176,7 @@ Other parameters are passed through a pointer to a apiGetSystemRoutesRequest str
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -191,7 +185,7 @@ Other parameters are passed through a pointer to a apiGetSystemRoutesRequest str
 
 ## GetSystemRoutesDuplicate
 
-> map[string][]string GetSystemRoutesDuplicate(ctx).Execute()
+> GetSystemRoutesDuplicate(ctx).Execute()
 
 
 
@@ -211,13 +205,11 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.SystemAPI.GetSystemRoutesDuplicate(context.Background()).Execute()
+	r, err := apiClient.SystemAPI.GetSystemRoutesDuplicate(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SystemAPI.GetSystemRoutesDuplicate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetSystemRoutesDuplicate`: map[string][]string
-	fmt.Fprintf(os.Stdout, "Response from `SystemAPI.GetSystemRoutesDuplicate`: %v\n", resp)
 }
 ```
 
@@ -232,7 +224,7 @@ Other parameters are passed through a pointer to a apiGetSystemRoutesDuplicateRe
 
 ### Return type
 
-[**map[string][]string**](array.md)
+ (empty response body)
 
 ### Authorization
 
@@ -241,7 +233,7 @@ Other parameters are passed through a pointer to a apiGetSystemRoutesDuplicateRe
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -300,7 +292,7 @@ Other parameters are passed through a pointer to a apiGetSystemStatusRequest str
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

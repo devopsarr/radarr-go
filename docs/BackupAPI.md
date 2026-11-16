@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 ## CreateSystemBackupRestoreById
 
-> BackupRestoreResource CreateSystemBackupRestoreById(ctx, id).Execute()
+> CreateSystemBackupRestoreById(ctx, id).Execute()
 
 
 
@@ -34,13 +34,11 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BackupAPI.CreateSystemBackupRestoreById(context.Background(), id).Execute()
+	r, err := apiClient.BackupAPI.CreateSystemBackupRestoreById(context.Background(), id).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `BackupAPI.CreateSystemBackupRestoreById``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateSystemBackupRestoreById`: BackupRestoreResource
-	fmt.Fprintf(os.Stdout, "Response from `BackupAPI.CreateSystemBackupRestoreById`: %v\n", resp)
 }
 ```
 
@@ -63,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BackupRestoreResource**](BackupRestoreResource.md)
+ (empty response body)
 
 ### Authorization
 
@@ -72,7 +70,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -81,7 +79,7 @@ Name | Type | Description  | Notes
 
 ## CreateSystemBackupRestoreUpload
 
-> BackupRestoreResource CreateSystemBackupRestoreUpload(ctx).Execute()
+> CreateSystemBackupRestoreUpload(ctx).Execute()
 
 
 
@@ -101,13 +99,11 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BackupAPI.CreateSystemBackupRestoreUpload(context.Background()).Execute()
+	r, err := apiClient.BackupAPI.CreateSystemBackupRestoreUpload(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `BackupAPI.CreateSystemBackupRestoreUpload``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateSystemBackupRestoreUpload`: BackupRestoreResource
-	fmt.Fprintf(os.Stdout, "Response from `BackupAPI.CreateSystemBackupRestoreUpload`: %v\n", resp)
 }
 ```
 
@@ -122,7 +118,7 @@ Other parameters are passed through a pointer to a apiCreateSystemBackupRestoreU
 
 ### Return type
 
-[**BackupRestoreResource**](BackupRestoreResource.md)
+ (empty response body)
 
 ### Authorization
 
@@ -131,7 +127,7 @@ Other parameters are passed through a pointer to a apiCreateSystemBackupRestoreU
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -140,7 +136,7 @@ Other parameters are passed through a pointer to a apiCreateSystemBackupRestoreU
 
 ## DeleteSystemBackup
 
-> interface{} DeleteSystemBackup(ctx, id).Execute()
+> DeleteSystemBackup(ctx, id).Execute()
 
 
 
@@ -161,13 +157,11 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.BackupAPI.DeleteSystemBackup(context.Background(), id).Execute()
+	r, err := apiClient.BackupAPI.DeleteSystemBackup(context.Background(), id).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `BackupAPI.DeleteSystemBackup``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DeleteSystemBackup`: interface{}
-	fmt.Fprintf(os.Stdout, "Response from `BackupAPI.DeleteSystemBackup`: %v\n", resp)
 }
 ```
 
@@ -190,7 +184,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**interface{}**
+ (empty response body)
 
 ### Authorization
 
@@ -199,7 +193,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -258,7 +252,7 @@ Other parameters are passed through a pointer to a apiListSystemBackupRequest st
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

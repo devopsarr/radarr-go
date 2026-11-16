@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ## DeleteDownloadClient
 
-> interface{} DeleteDownloadClient(ctx, id).Execute()
+> DeleteDownloadClient(ctx, id).Execute()
 
 
 
@@ -175,13 +175,11 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DownloadClientAPI.DeleteDownloadClient(context.Background(), id).Execute()
+	r, err := apiClient.DownloadClientAPI.DeleteDownloadClient(context.Background(), id).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientAPI.DeleteDownloadClient``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DeleteDownloadClient`: interface{}
-	fmt.Fprintf(os.Stdout, "Response from `DownloadClientAPI.DeleteDownloadClient`: %v\n", resp)
 }
 ```
 
@@ -204,7 +202,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**interface{}**
+ (empty response body)
 
 ### Authorization
 
@@ -213,7 +211,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -222,7 +220,7 @@ Name | Type | Description  | Notes
 
 ## DeleteDownloadClientBulk
 
-> interface{} DeleteDownloadClientBulk(ctx).DownloadClientBulkResource(downloadClientBulkResource).Execute()
+> DeleteDownloadClientBulk(ctx).DownloadClientBulkResource(downloadClientBulkResource).Execute()
 
 
 
@@ -243,13 +241,11 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DownloadClientAPI.DeleteDownloadClientBulk(context.Background()).DownloadClientBulkResource(downloadClientBulkResource).Execute()
+	r, err := apiClient.DownloadClientAPI.DeleteDownloadClientBulk(context.Background()).DownloadClientBulkResource(downloadClientBulkResource).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientAPI.DeleteDownloadClientBulk``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DeleteDownloadClientBulk`: interface{}
-	fmt.Fprintf(os.Stdout, "Response from `DownloadClientAPI.DeleteDownloadClientBulk`: %v\n", resp)
 }
 ```
 
@@ -268,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**interface{}**
+ (empty response body)
 
 ### Authorization
 
@@ -277,7 +273,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -345,7 +341,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -472,7 +468,7 @@ Other parameters are passed through a pointer to a apiListDownloadClientSchemaRe
 
 ## PutDownloadClientBulk
 
-> []DownloadClientResource PutDownloadClientBulk(ctx).DownloadClientBulkResource(downloadClientBulkResource).Execute()
+> DownloadClientResource PutDownloadClientBulk(ctx).DownloadClientBulkResource(downloadClientBulkResource).Execute()
 
 
 
@@ -498,7 +494,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientAPI.PutDownloadClientBulk``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PutDownloadClientBulk`: []DownloadClientResource
+	// response from `PutDownloadClientBulk`: DownloadClientResource
 	fmt.Fprintf(os.Stdout, "Response from `DownloadClientAPI.PutDownloadClientBulk`: %v\n", resp)
 }
 ```
@@ -518,7 +514,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]DownloadClientResource**](DownloadClientResource.md)
+[**DownloadClientResource**](DownloadClientResource.md)
 
 ### Authorization
 
@@ -600,7 +596,7 @@ Name | Type | Description  | Notes
 
 ## TestallDownloadClient
 
-> []ProviderTestAllResult TestallDownloadClient(ctx).Execute()
+> TestallDownloadClient(ctx).Execute()
 
 
 
@@ -620,13 +616,11 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.DownloadClientAPI.TestallDownloadClient(context.Background()).Execute()
+	r, err := apiClient.DownloadClientAPI.TestallDownloadClient(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DownloadClientAPI.TestallDownloadClient``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `TestallDownloadClient`: []ProviderTestAllResult
-	fmt.Fprintf(os.Stdout, "Response from `DownloadClientAPI.TestallDownloadClient`: %v\n", resp)
 }
 ```
 
@@ -641,7 +635,7 @@ Other parameters are passed through a pointer to a apiTestallDownloadClientReque
 
 ### Return type
 
-[**[]ProviderTestAllResult**](ProviderTestAllResult.md)
+ (empty response body)
 
 ### Authorization
 
@@ -650,7 +644,7 @@ Other parameters are passed through a pointer to a apiTestallDownloadClientReque
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

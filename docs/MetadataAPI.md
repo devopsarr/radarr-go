@@ -152,7 +152,7 @@ Name | Type | Description  | Notes
 
 ## DeleteMetadata
 
-> interface{} DeleteMetadata(ctx, id).Execute()
+> DeleteMetadata(ctx, id).Execute()
 
 
 
@@ -173,13 +173,11 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MetadataAPI.DeleteMetadata(context.Background(), id).Execute()
+	r, err := apiClient.MetadataAPI.DeleteMetadata(context.Background(), id).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MetadataAPI.DeleteMetadata``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DeleteMetadata`: interface{}
-	fmt.Fprintf(os.Stdout, "Response from `MetadataAPI.DeleteMetadata`: %v\n", resp)
 }
 ```
 
@@ -202,7 +200,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**interface{}**
+ (empty response body)
 
 ### Authorization
 
@@ -211,7 +209,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -279,7 +277,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -470,7 +468,7 @@ Name | Type | Description  | Notes
 
 ## TestallMetadata
 
-> []ProviderTestAllResult TestallMetadata(ctx).Execute()
+> TestallMetadata(ctx).Execute()
 
 
 
@@ -490,13 +488,11 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.MetadataAPI.TestallMetadata(context.Background()).Execute()
+	r, err := apiClient.MetadataAPI.TestallMetadata(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MetadataAPI.TestallMetadata``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `TestallMetadata`: []ProviderTestAllResult
-	fmt.Fprintf(os.Stdout, "Response from `MetadataAPI.TestallMetadata`: %v\n", resp)
 }
 ```
 
@@ -511,7 +507,7 @@ Other parameters are passed through a pointer to a apiTestallMetadataRequest str
 
 ### Return type
 
-[**[]ProviderTestAllResult**](ProviderTestAllResult.md)
+ (empty response body)
 
 ### Authorization
 
@@ -520,7 +516,7 @@ Other parameters are passed through a pointer to a apiTestallMetadataRequest str
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

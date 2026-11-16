@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ## DeleteImportList
 
-> interface{} DeleteImportList(ctx, id).Execute()
+> DeleteImportList(ctx, id).Execute()
 
 
 
@@ -175,13 +175,11 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ImportListAPI.DeleteImportList(context.Background(), id).Execute()
+	r, err := apiClient.ImportListAPI.DeleteImportList(context.Background(), id).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ImportListAPI.DeleteImportList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DeleteImportList`: interface{}
-	fmt.Fprintf(os.Stdout, "Response from `ImportListAPI.DeleteImportList`: %v\n", resp)
 }
 ```
 
@@ -204,7 +202,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**interface{}**
+ (empty response body)
 
 ### Authorization
 
@@ -213,7 +211,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -222,7 +220,7 @@ Name | Type | Description  | Notes
 
 ## DeleteImportListBulk
 
-> interface{} DeleteImportListBulk(ctx).ImportListBulkResource(importListBulkResource).Execute()
+> DeleteImportListBulk(ctx).ImportListBulkResource(importListBulkResource).Execute()
 
 
 
@@ -243,13 +241,11 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ImportListAPI.DeleteImportListBulk(context.Background()).ImportListBulkResource(importListBulkResource).Execute()
+	r, err := apiClient.ImportListAPI.DeleteImportListBulk(context.Background()).ImportListBulkResource(importListBulkResource).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ImportListAPI.DeleteImportListBulk``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `DeleteImportListBulk`: interface{}
-	fmt.Fprintf(os.Stdout, "Response from `ImportListAPI.DeleteImportListBulk`: %v\n", resp)
 }
 ```
 
@@ -268,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**interface{}**
+ (empty response body)
 
 ### Authorization
 
@@ -277,7 +273,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -345,7 +341,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -472,7 +468,7 @@ Other parameters are passed through a pointer to a apiListImportListSchemaReques
 
 ## PutImportListBulk
 
-> []ImportListResource PutImportListBulk(ctx).ImportListBulkResource(importListBulkResource).Execute()
+> ImportListResource PutImportListBulk(ctx).ImportListBulkResource(importListBulkResource).Execute()
 
 
 
@@ -498,7 +494,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ImportListAPI.PutImportListBulk``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PutImportListBulk`: []ImportListResource
+	// response from `PutImportListBulk`: ImportListResource
 	fmt.Fprintf(os.Stdout, "Response from `ImportListAPI.PutImportListBulk`: %v\n", resp)
 }
 ```
@@ -518,7 +514,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]ImportListResource**](ImportListResource.md)
+[**ImportListResource**](ImportListResource.md)
 
 ### Authorization
 
@@ -600,7 +596,7 @@ Name | Type | Description  | Notes
 
 ## TestallImportList
 
-> []ProviderTestAllResult TestallImportList(ctx).Execute()
+> TestallImportList(ctx).Execute()
 
 
 
@@ -620,13 +616,11 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ImportListAPI.TestallImportList(context.Background()).Execute()
+	r, err := apiClient.ImportListAPI.TestallImportList(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ImportListAPI.TestallImportList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `TestallImportList`: []ProviderTestAllResult
-	fmt.Fprintf(os.Stdout, "Response from `ImportListAPI.TestallImportList`: %v\n", resp)
 }
 ```
 
@@ -641,7 +635,7 @@ Other parameters are passed through a pointer to a apiTestallImportListRequest s
 
 ### Return type
 
-[**[]ProviderTestAllResult**](ProviderTestAllResult.md)
+ (empty response body)
 
 ### Authorization
 
@@ -650,7 +644,7 @@ Other parameters are passed through a pointer to a apiTestallImportListRequest s
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
