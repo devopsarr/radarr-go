@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ## DeleteCustomFormatBulk
 
-> DeleteCustomFormatBulk(ctx).CustomFormatBulkResource(customFormatBulkResource).Execute()
+> interface{} DeleteCustomFormatBulk(ctx).CustomFormatBulkResource(customFormatBulkResource).Execute()
 
 
 
@@ -168,11 +168,13 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	r, err := apiClient.CustomFormatAPI.DeleteCustomFormatBulk(context.Background()).CustomFormatBulkResource(customFormatBulkResource).Execute()
+	resp, r, err := apiClient.CustomFormatAPI.DeleteCustomFormatBulk(context.Background()).CustomFormatBulkResource(customFormatBulkResource).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CustomFormatAPI.DeleteCustomFormatBulk``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `DeleteCustomFormatBulk`: interface{}
+	fmt.Fprintf(os.Stdout, "Response from `CustomFormatAPI.DeleteCustomFormatBulk`: %v\n", resp)
 }
 ```
 
@@ -191,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+**interface{}**
 
 ### Authorization
 
@@ -200,7 +202,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -268,7 +270,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -395,7 +397,7 @@ Other parameters are passed through a pointer to a apiListCustomFormatSchemaRequ
 
 ## PutCustomFormatBulk
 
-> CustomFormatResource PutCustomFormatBulk(ctx).CustomFormatBulkResource(customFormatBulkResource).Execute()
+> []CustomFormatResource PutCustomFormatBulk(ctx).CustomFormatBulkResource(customFormatBulkResource).Execute()
 
 
 
@@ -421,7 +423,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `CustomFormatAPI.PutCustomFormatBulk``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `PutCustomFormatBulk`: CustomFormatResource
+	// response from `PutCustomFormatBulk`: []CustomFormatResource
 	fmt.Fprintf(os.Stdout, "Response from `CustomFormatAPI.PutCustomFormatBulk`: %v\n", resp)
 }
 ```
@@ -441,7 +443,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CustomFormatResource**](CustomFormatResource.md)
+[**[]CustomFormatResource**](CustomFormatResource.md)
 
 ### Authorization
 
@@ -520,7 +522,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: text/plain, application/json, text/json
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

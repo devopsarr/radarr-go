@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## CreateRelease
 
-> CreateRelease(ctx).ReleaseResource(releaseResource).Execute()
+> ReleaseResource CreateRelease(ctx).ReleaseResource(releaseResource).Execute()
 
 
 
@@ -32,11 +32,13 @@ func main() {
 
 	configuration := radarrClient.NewConfiguration()
 	apiClient := radarrClient.NewAPIClient(configuration)
-	r, err := apiClient.ReleaseAPI.CreateRelease(context.Background()).ReleaseResource(releaseResource).Execute()
+	resp, r, err := apiClient.ReleaseAPI.CreateRelease(context.Background()).ReleaseResource(releaseResource).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ReleaseAPI.CreateRelease``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `CreateRelease`: ReleaseResource
+	fmt.Fprintf(os.Stdout, "Response from `ReleaseAPI.CreateRelease`: %v\n", resp)
 }
 ```
 
@@ -55,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**ReleaseResource**](ReleaseResource.md)
 
 ### Authorization
 
@@ -64,7 +66,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**GetByPath**](StaticResourceAPI.md#GetByPath) | **Get** /{path} | 
 [**GetContentByPath**](StaticResourceAPI.md#GetContentByPath) | **Get** /content/{path} | 
+[**GetLoggedout**](StaticResourceAPI.md#GetLoggedout) | **Get** /loggedout | 
 [**GetLogin**](StaticResourceAPI.md#GetLogin) | **Get** /login | 
 
 
@@ -122,6 +123,63 @@ Other parameters are passed through a pointer to a apiGetContentByPathRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[apikey](../README.md#apikey), [X-Api-Key](../README.md#X-Api-Key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetLoggedout
+
+> GetLoggedout(ctx).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	radarrClient "github.com/devopsarr/radarr-go/radarr"
+)
+
+func main() {
+
+	configuration := radarrClient.NewConfiguration()
+	apiClient := radarrClient.NewAPIClient(configuration)
+	r, err := apiClient.StaticResourceAPI.GetLoggedout(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `StaticResourceAPI.GetLoggedout``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetLoggedoutRequest struct via the builder pattern
 
 
 ### Return type
