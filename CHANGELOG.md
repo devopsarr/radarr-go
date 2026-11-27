@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.5 (2026-11-27)
+
+## What's Changed
+* fix(deps): update openapitools/openapi-generator-cli docker tag to v7.28.0 by @devopsarr[bot] in https://github.com/devopsarr/radarr-go/pull/117
+
+
+**Full Changelog**: https://github.com/devopsarr/radarr-go/compare/v1.2.4...v1.2.5
+
 ## 1.2.4 (2026-11-16)
 
 ## What's Changed
